@@ -7,7 +7,7 @@ import java.util.List;
  * Created by TanvirHossain on 19/07/2016.
  */
 public class ProjectSetting {
-    public static String ProjectName    = "standard";
+    public static String ProjectName    = "hcus2018";
     public static String Namespace      = "http://chu.icddrb.org/";
 
     public static String apiName        = ProjectName.toLowerCase();

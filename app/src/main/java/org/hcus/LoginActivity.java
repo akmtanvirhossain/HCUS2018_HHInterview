@@ -1,4 +1,4 @@
-package org.icddrb.standard;
+package org.hcus;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -30,7 +30,6 @@ import Common.Connection;
 import Common.Global;
 import Common.ProjectSetting;
 import Common.Security_Permission;
-import Stat.Stat_Funcation;
 import Utility.MySharedPreferences;
 
 public class LoginActivity extends Activity {

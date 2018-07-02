@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.icddrb.standard">
+    package="org.hcus">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -50,8 +50,6 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".RecycleActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".data_form_master" />
-        <activity android:name=".test2"/>
 
 
         //Service

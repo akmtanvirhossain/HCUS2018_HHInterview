@@ -1,4 +1,4 @@
-package org.icddrb.standard;
+package org.hcus;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -66,21 +66,23 @@ public class MainActivity extends AppCompatActivity
         GridView gv = (GridView) findViewById(R.id.gridview);
         gv.setAdapter(new menuAdapter(this));
 
+
+
         gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 try
                 {
                     if(position==0)
                     {
-                        IDbundle.putString("moduleid", "1");
-                        IDbundle.putString("dataid", "1235");
-                        IDbundle.putString("name", "Sakib");
-                        IDbundle.putString("age", "5 month");
-                        IDbundle.putString("id", "#123");
-                        IDbundle.putString("moduleName", "test form");
-                        Intent intent = new Intent(getApplicationContext(), data_form_master.class);
-                        intent.putExtras(IDbundle);
-                        startActivity(intent);
+//                        IDbundle.putString("moduleid", "1");
+//                        IDbundle.putString("dataid", "1235");
+//                        IDbundle.putString("name", "Sakib");
+//                        IDbundle.putString("age", "5 month");
+//                        IDbundle.putString("id", "#123");
+//                        IDbundle.putString("moduleName", "test form");
+//                        Intent intent = new Intent(getApplicationContext(), data_form_master.class);
+//                        intent.putExtras(IDbundle);
+//                        startActivity(intent);
                     }
                     else if(position==3)
                     {

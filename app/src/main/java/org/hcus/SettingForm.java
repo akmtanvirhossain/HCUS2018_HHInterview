@@ -1,4 +1,4 @@
-package org.icddrb.standard;
+package org.hcus;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
