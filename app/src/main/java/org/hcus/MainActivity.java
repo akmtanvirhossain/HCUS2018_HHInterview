@@ -80,9 +80,10 @@ public class MainActivity extends AppCompatActivity
 //                        IDbundle.putString("age", "5 month");
 //                        IDbundle.putString("id", "#123");
 //                        IDbundle.putString("moduleName", "test form");
-//                        Intent intent = new Intent(getApplicationContext(), data_form_master.class);
+
+                        Intent intent = new Intent(getApplicationContext(), StructureListing_list.class);
 //                        intent.putExtras(IDbundle);
-//                        startActivity(intent);
+                        startActivity(intent);
                     }
                     else if(position==3)
                     {

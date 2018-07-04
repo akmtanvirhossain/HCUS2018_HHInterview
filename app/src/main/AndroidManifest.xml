@@ -50,6 +50,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".RecycleActivity" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".StructureListing_list" />
+        <activity android:name=".StructureListing" />
 
 
         //Service

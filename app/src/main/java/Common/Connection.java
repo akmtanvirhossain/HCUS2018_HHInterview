@@ -1931,6 +1931,7 @@ public class Connection extends SQLiteOpenHelper {
             C.Sync_Download("DataCollector", UniqueID, "");
 
             C.Sync_Download("module_variable", UniqueID, "");
+            C.Sync_Download("StructureListing", UniqueID, "");
 
             //Sync_Download
             // Parameter 1: table Name
