@@ -15,7 +15,9 @@ package org.hcus;
  import android.view.MotionEvent;
  import android.view.ViewGroup;
  import android.view.LayoutInflater;
+ import android.widget.ArrayAdapter;
  import android.widget.LinearLayout;
+ import android.widget.Spinner;
  import android.widget.TextView;
  import android.widget.Button;
  import android.widget.ImageButton;
@@ -63,6 +65,10 @@ package org.hcus;
     Button btnAdd;
     Button btnRefresh;
 
+    TextView tvUpazila,tvUnion,tvMoholla,tvCluster;
+    Spinner spnUpazila,spnUnion,spnMoholla,spnCluster;
+
+
     static String STARTTIME = "";
     static String UPAZILA = "";
     static String UNCODE = "";
@@ -77,6 +83,33 @@ package org.hcus;
          STARTTIME = g.CurrentTime24();
 
          TableName = "StructureListing";
+
+         tvUpazila= (TextView) findViewById(R.id.tvUpazila);
+         tvUnion= (TextView) findViewById(R.id.tvUnion);
+         tvMoholla= (TextView) findViewById(R.id.tvMoholla);
+         tvCluster= (TextView) findViewById(R.id.tvCluster);
+
+         spnUpazila= (Spinner) findViewById(R.id.spnUpazila);
+         spnUnion= (Spinner) findViewById(R.id.spnUnion);
+         spnMoholla= (Spinner) findViewById(R.id.spnMoholla);
+         spnCluster= (Spinner) findViewById(R.id.spnCluster);
+
+
+
+         spnUpazila.setAdapter((C.getArrayAdapter("Select '' Union Select distinct Upazila +'-'+ UpName from AreaDB")));
+
+
+
+         List<String> listUnion = new ArrayList<String>();
+
+         listUnion.add("");
+         listUnion.add("Ward-12");
+         listUnion.add("Ward-03");
+
+         ArrayAdapter<String> adptrUnion= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listUnion);
+         spnUnion.setAdapter(adptrUnion);
+
+
          lblHeading = (TextView)findViewById(R.id.lblHeading);
 
          ImageButton cmdBack = (ImageButton) findViewById(R.id.cmdBack);
