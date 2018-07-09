@@ -26,7 +26,12 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import Common.Connection;
+import Common.Global;
+import Utility.MySharedPreferences;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,11 +40,18 @@ public class MainActivity extends AppCompatActivity
     Boolean netwoekAvailable = false;
     Bundle IDbundle;
 
+    static String DEVICEID  = "";
+    Connection C;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.standard_navigation_drawer);
         IDbundle = new Bundle();
+
+        C = new Connection(this);
+
+        DEVICEID    = MySharedPreferences.getValue(this,"deviceid");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -122,6 +134,9 @@ public class MainActivity extends AppCompatActivity
                                                             String response;
 
                                                             try {
+
+                                                                C.Sync_Download("AreaDB", DEVICEID,"");
+                                                                C.Sync_Download("StructureDB", DEVICEID,"");
 
 
                                                                 Connection.MessageBox(MainActivity.this, "তথ্য ডাটাবেজ সার্ভারে সম্পূর্ণ ভাবে আপলোড হয়েছে। ");
