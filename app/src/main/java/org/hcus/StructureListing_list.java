@@ -110,8 +110,6 @@ package org.hcus;
 //                     spnUnion.setSelection(Global.SpinnerItemPositionAnyLength(spnUnion,"999"));
 //                 else
 //                     spnUnion.setSelection(Global.SpinnerItemPositionAnyLength(spnUnion,""));
-
-
              }
              @Override
              public void onNothingSelected(AdapterView<?> parentView) {
