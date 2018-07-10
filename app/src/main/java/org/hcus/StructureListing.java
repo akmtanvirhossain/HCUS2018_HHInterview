@@ -618,7 +618,7 @@
          listSrtoried.add("18-18");
          listSrtoried.add("19-19");
          listSrtoried.add("20-20");
-         ArrayAdapter<String> adptrSrtoried= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listSrtoried);
+         ArrayAdapter<String> adptrSrtoried= new ArrayAdapter<String>(this, R.layout.icddrb_spinner_item, listSrtoried);
          spnSrtoried.setAdapter(adptrSrtoried);
 
          secLandmark1=(LinearLayout)findViewById(R.id.secLandmark1);

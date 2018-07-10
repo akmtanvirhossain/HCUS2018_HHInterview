@@ -3,9 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HCUS2018.iml" filepath="$PROJECT_DIR$/HCUS2018.iml" />
-      <module fileurl="file://F:/AndroidProjects/HCUS2018/StandardProject.iml" filepath="F:/AndroidProjects/HCUS2018/StandardProject.iml" />
+      <module fileurl="file://F:\AndroidProjects\HCUS2018\StandardProject.iml" filepath="F:\AndroidProjects\HCUS2018\StandardProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://F:/AndroidProjects/HCUS2018/app/app.iml" filepath="F:/AndroidProjects/HCUS2018/app/app.iml" />
     </modules>
   </component>
 </project>
