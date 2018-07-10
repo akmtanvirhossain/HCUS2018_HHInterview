@@ -21,13 +21,13 @@
             android:textSize="20sp"
             android:id="@+id/tvUpazila"
             android:paddingLeft="10sp"/>
+
         <Spinner
-            android:layout_width="350sp"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
             android:id="@+id/spnUpazila"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
             android:drawSelectorOnTop="true"
-            />
+            android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/lineUpazila" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
 
@@ -39,13 +39,13 @@
             android:textSize="20sp"
             android:id="@+id/tvUnion"
             android:paddingLeft="10sp"/>
+
         <Spinner
-            android:layout_width="350sp"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
             android:id="@+id/spnUnion"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
             android:drawSelectorOnTop="true"
-            />
+            android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/lineUnion" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
 
@@ -57,13 +57,13 @@
             android:textSize="20sp"
             android:id="@+id/tvMoholla"
             android:paddingLeft="10sp"/>
+
         <Spinner
-            android:layout_width="350sp"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
             android:id="@+id/spnMoholla"
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
             android:drawSelectorOnTop="true"
-            />
+            android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/lineMoholla" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
 

@@ -15,6 +15,7 @@ package org.hcus;
  import android.view.MotionEvent;
  import android.view.ViewGroup;
  import android.view.LayoutInflater;
+ import android.widget.AdapterView;
  import android.widget.ArrayAdapter;
  import android.widget.LinearLayout;
  import android.widget.Spinner;
@@ -96,18 +97,48 @@ package org.hcus;
 
 
 
-         spnUpazila.setAdapter((C.getArrayAdapter("Select '' Union Select distinct Upazila +'-'+ UpName from AreaDB")));
+         spnUpazila.setAdapter((C.getArrayAdapter("Select '' Union Select distinct Upazila ||'-'|| UpName from AreaDB")));
+
+         spnUpazila.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+             @Override
+             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                 if (spnUpazila.getSelectedItem().toString().length() == 0) return;
+                 spnUnion.setAdapter(C.getArrayAdapter("Select '  ' Union  Select distinct UNCode ||'-'|| Uname from AreaDB where Upazila='"+ Connection.SelectedSpinnerValue(spnUpazila.getSelectedItem().toString(),"-")+"'"));
+
+                 //spnVillage.setAdapter(C.getArrayAdapter("Select VName from Village where UnName='"+ Connection.SelectedSpinnerValue(spnUnion.getSelectedItem().toString(),"-")+"'  union Select '999-Others'"));
+//                 if(Connection.SelectedSpinnerValue(spnUnion.getSelectedItem().toString(),"-").equals("999"))
+//                     spnUnion.setSelection(Global.SpinnerItemPositionAnyLength(spnUnion,"999"));
+//                 else
+//                     spnUnion.setSelection(Global.SpinnerItemPositionAnyLength(spnUnion,""));
 
 
+             }
+             @Override
+             public void onNothingSelected(AdapterView<?> parentView) {
+             }
+         });
 
-         List<String> listUnion = new ArrayList<String>();
+         spnUnion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+             @Override
+             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                 if (spnUnion.getSelectedItem().toString().length() == 0) return;
+                 spnMoholla.setAdapter(C.getArrayAdapter("Select '  ' Union  Select distinct VCode ||'-'|| Vname from AreaDB where Upazila='"+ Connection.SelectedSpinnerValue(spnUpazila.getSelectedItem().toString(),"-")+"' and UNCode='"+Connection.SelectedSpinnerValue(spnUnion.getSelectedItem().toString(),"-")+"'"));
+                 spnCluster.setAdapter(C.getArrayAdapter("Select '  ' Union  Select distinct Cluster from StructureDB where Upazila='"+ Connection.SelectedSpinnerValue(spnUpazila.getSelectedItem().toString(),"-")+"' and UNCode='"+Connection.SelectedSpinnerValue(spnUnion.getSelectedItem().toString(),"-")+"'"));
 
-         listUnion.add("");
-         listUnion.add("Ward-12");
-         listUnion.add("Ward-03");
+                 //spnVillage.setAdapter(C.getArrayAdapter("Select VName from Village where UnName='"+ Connection.SelectedSpinnerValue(spnUnion.getSelectedItem().toString(),"-")+"'  union Select '999-Others'"));
+//                 if(Connection.SelectedSpinnerValue(spnUnion.getSelectedItem().toString(),"-").equals("999"))
+//                     spnUnion.setSelection(Global.SpinnerItemPositionAnyLength(spnUnion,"999"));
+//                 else
+//                     spnUnion.setSelection(Global.SpinnerItemPositionAnyLength(spnUnion,""));
 
-         ArrayAdapter<String> adptrUnion= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listUnion);
-         spnUnion.setAdapter(adptrUnion);
+
+             }
+             @Override
+             public void onNothingSelected(AdapterView<?> parentView) {
+             }
+         });
+
+
 
 
          lblHeading = (TextView)findViewById(R.id.lblHeading);
