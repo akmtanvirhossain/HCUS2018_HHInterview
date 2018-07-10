@@ -263,6 +263,9 @@
     Bundle IDbundle;
     static String UPAZILA = "";
     static String UNCODE = "";
+     static String CLUSTER = "";
+     static String MOHOLLA = "";
+     static String STRUCTURENO = "";
 
  public void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -281,8 +284,16 @@
          IDbundle = getIntent().getExtras();
          UPAZILA = IDbundle.getString("Upazila");
          UNCODE = IDbundle.getString("UNCode");
+         MOHOLLA = IDbundle.getString("Moholla");
+         CLUSTER = IDbundle.getString("Cluster");
+         STRUCTURENO = IDbundle.getString("StructureNo");
 
          TableName = "StructureListing";
+
+         if(STRUCTURENO.equals(""))
+         {
+             STRUCTURENO=StructureNoSerial();
+         }
 
          //turnGPSOn();
 
@@ -618,7 +629,7 @@
          listSrtoried.add("18-18");
          listSrtoried.add("19-19");
          listSrtoried.add("20-20");
-         ArrayAdapter<String> adptrSrtoried= new ArrayAdapter<String>(this, R.layout.icddrb_spinner_item, listSrtoried);
+         ArrayAdapter<String> adptrSrtoried= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listSrtoried);
          spnSrtoried.setAdapter(adptrSrtoried);
 
          secLandmark1=(LinearLayout)findViewById(R.id.secLandmark1);
@@ -1612,6 +1623,14 @@
          lineLandmarkOth4.setVisibility(View.GONE);
 
 
+
+         txtUpazila.setText(UPAZILA);
+         txtUNCode.setText(UNCODE);
+         txtVCode.setText(MOHOLLA);
+         txtCluster.setText(CLUSTER);
+         txtStructureNo.setText(STRUCTURENO);
+
+
         Button cmdSave = (Button) findViewById(R.id.cmdSave);
         cmdSave.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) { 
@@ -1624,6 +1643,23 @@
          return;
      }
  }
+
+     private String StructureNoSerial()
+     {
+         String SL = C.ReturnSingleValue("Select (ifnull(max(cast(StructureNo as int)),0)+1)SL from structureDB Where Upazila='"+ UPAZILA +
+                 "' and UNCode='"+ UNCODE +"' and Cluster='"+ CLUSTER +"'");
+
+         int length=SL.length();
+         String s = "";
+         for(int i=0;i<5-length;i++)
+         {
+             s+="0";
+         }
+         SL=s+SL;
+
+
+         return SL;
+     }
 
  private void DataSave()
  {

@@ -73,6 +73,7 @@ package org.hcus;
     static String UPAZILA = "";
     static String UNCODE = "";
     static String CLUSTER = "";
+    static String MOHOLLA = "";
 
  public void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -149,6 +150,19 @@ package org.hcus;
              }
          });
 
+         spnMoholla.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+             @Override
+             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                 if (spnMoholla.getSelectedItem().toString().length() == 0) return;
+                 MOHOLLA=Connection.SelectedSpinnerValue(spnMoholla.getSelectedItem().toString(),"-");
+
+
+             }
+             @Override
+             public void onNothingSelected(AdapterView<?> parentView) {
+             }
+         });
+
          lblHeading = (TextView)findViewById(R.id.lblHeading);
 
          ImageButton cmdBack = (ImageButton) findViewById(R.id.cmdBack);
@@ -179,8 +193,11 @@ package org.hcus;
 
              public void onClick(View view) {
                          Bundle IDbundle = new Bundle();
-                         IDbundle.putString("Upazila", "");
-                         IDbundle.putString("UNCode", "");
+                         IDbundle.putString("Upazila", UPAZILA);
+                         IDbundle.putString("UNCode", UNCODE);
+                         IDbundle.putString("Moholla", MOHOLLA);
+                         IDbundle.putString("Cluster", CLUSTER);
+                         IDbundle.putString("StructureNo", "");
                          Intent intent = new Intent(getApplicationContext(), StructureListing.class);
                          intent.putExtras(IDbundle);
                          startActivityForResult(intent, 1);
@@ -310,9 +327,11 @@ package org.hcus;
                          public void run() {
                              try {
                                  Bundle IDbundle = new Bundle();
-                                 IDbundle.putString("Zila", data.getZila());
+
                                  IDbundle.putString("Upazila", data.getUpazila());
                                  IDbundle.putString("UNCode", data.getUNCode());
+                                 IDbundle.putString("Moholla", MOHOLLA);
+                                 IDbundle.putString("Cluster", data.getCluster());
                                  IDbundle.putString("StructureNo", data.getStructureNo());
                                  Intent f1 = new Intent(getApplicationContext(), StructureListing.class);
                                  f1.putExtras(IDbundle);
