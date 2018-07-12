@@ -465,9 +465,12 @@
                     secLonSec.setVisibility(View.GONE);
                     lineLonSec.setVisibility(View.GONE);
                     txtLonSec.setText("");
-                    secRemarks.setVisibility(View.GONE);
-                    lineRemarks.setVisibility(View.GONE);
-                    txtRemarks.setText("");
+                     //********************* Sharif start **********************
+//                    secRemarks.setVisibility(View.GONE);
+//                    lineRemarks.setVisibility(View.GONE);
+//                    txtRemarks.setText("");
+
+                     //********************* Sharif End **********************
                  }
                  else
                  {
@@ -1623,6 +1626,79 @@
          lineLandmarkOth4.setVisibility(View.GONE);
 
 
+         //********************* Sharif start **********************
+         secHolding.setVisibility(View.GONE);
+         lineHolding.setVisibility(View.GONE);
+         secAddress.setVisibility(View.GONE);
+         lineAddress.setVisibility(View.GONE);
+         secBuildingType.setVisibility(View.GONE);
+         lineBuildingType.setVisibility(View.GONE);
+         secBuildingTypeOth.setVisibility(View.GONE);
+         lineBuildingTypeOth.setVisibility(View.GONE);
+         secSrtoried.setVisibility(View.GONE);
+         lineSrtoried.setVisibility(View.GONE);
+         secLandmark1.setVisibility(View.GONE);
+         lineLandmark1.setVisibility(View.GONE);
+         secLandmark1Code.setVisibility(View.GONE);
+         lineLandmark1Code.setVisibility(View.GONE);
+         secLandmarkOth1.setVisibility(View.GONE);
+         lineLandmarkOth1.setVisibility(View.GONE);
+         secLandmarkName1.setVisibility(View.GONE);
+         lineLandmarkName1.setVisibility(View.GONE);
+         secLandmark2.setVisibility(View.GONE);
+         lineLandmark2.setVisibility(View.GONE);
+         secLandmark2Code.setVisibility(View.GONE);
+         lineLandmark2Code.setVisibility(View.GONE);
+         secLandmarkOth2.setVisibility(View.GONE);
+         lineLandmarkOth2.setVisibility(View.GONE);
+         secLandmark2Name.setVisibility(View.GONE);
+         lineLandmark2Name.setVisibility(View.GONE);
+         secLandmark3.setVisibility(View.GONE);
+         lineLandmark3.setVisibility(View.GONE);
+         secLandmark3Code.setVisibility(View.GONE);
+         lineLandmark3Code.setVisibility(View.GONE);
+         secLandmarkOth3.setVisibility(View.GONE);
+         lineLandmarkOth3.setVisibility(View.GONE);
+         secLandmark3Name.setVisibility(View.GONE);
+         lineLandmark3Name.setVisibility(View.GONE);
+         secLandmark4.setVisibility(View.GONE);
+         lineLandmark4.setVisibility(View.GONE);
+         secLandmark4Code.setVisibility(View.GONE);
+         lineLandmark4Code.setVisibility(View.GONE);
+         secLandmarkOth4.setVisibility(View.GONE);
+         lineLandmarkOth4.setVisibility(View.GONE);
+         secLandmark4Name.setVisibility(View.GONE);
+         lineLandmark4Name.setVisibility(View.GONE);
+         secOwnerName.setVisibility(View.GONE);
+         lineOwnerName.setVisibility(View.GONE);
+         secOccupantName.setVisibility(View.GONE);
+         lineOccupantName.setVisibility(View.GONE);
+         secTotHH.setVisibility(View.GONE);
+         lineTotHH.setVisibility(View.GONE);
+         secSlum.setVisibility(View.GONE);
+         lineSlum.setVisibility(View.GONE);
+         secWaypoint.setVisibility(View.GONE);
+         lineWaypoint.setVisibility(View.GONE);
+         secLatDeg.setVisibility(View.GONE);
+         lineLatDeg.setVisibility(View.GONE);
+         secLatMin.setVisibility(View.GONE);
+         lineLatMin.setVisibility(View.GONE);
+         secLatSec.setVisibility(View.GONE);
+         lineLatSec.setVisibility(View.GONE);
+         secLonDeg.setVisibility(View.GONE);
+         lineLonDeg.setVisibility(View.GONE);
+         secLonMin.setVisibility(View.GONE);
+         lineLonMin.setVisibility(View.GONE);
+         secLonSec.setVisibility(View.GONE);
+         lineLonSec.setVisibility(View.GONE);
+         secRemarks.setVisibility(View.GONE);
+         lineRemarks.setVisibility(View.GONE);
+
+
+
+         //********************* Sharif end **********************
+
+
 
          txtUpazila.setText(UPAZILA);
          txtUNCode.setText(UNCODE);
@@ -1848,12 +1924,14 @@
              txtLandmark4Name.requestFocus(); 
              return;	
            }
-         else if(txtOwnerName.getText().toString().length()==0 & secOwnerName.isShown())
-           {
-             Connection.MessageBox(StructureListing.this, "Required field: Owner Name.");
-             txtOwnerName.requestFocus(); 
-             return;	
-           }
+           ///*******************Sharif Start*******************************////
+//         else if(txtOwnerName.getText().toString().length()==0 & secOwnerName.isShown())
+//           {
+//             Connection.MessageBox(StructureListing.this, "Required field: Owner Name.");
+//             txtOwnerName.requestFocus();
+//             return;
+//           }
+         ///*******************Sharif End*******************************////
          else if(txtOccupantName.getText().toString().length()==0 & secOccupantName.isShown())
            {
              Connection.MessageBox(StructureListing.this, "Required field: Occupant Name.");
@@ -1963,13 +2041,14 @@
              txtLonSec.requestFocus(); 
              return;	
            }
-         else if(txtRemarks.getText().toString().length()==0 & secRemarks.isShown())
-           {
-             Connection.MessageBox(StructureListing.this, "Required field: Remarks.");
-             txtRemarks.requestFocus(); 
-             return;	
-           }
- 
+           ///*****************Sharif start***********************///
+//         else if(txtRemarks.getText().toString().length()==0 & secRemarks.isShown())
+//           {
+//             Connection.MessageBox(StructureListing.this, "Required field: Remarks.");
+//             txtRemarks.requestFocus();
+//             return;
+//           }
+         ///*****************Sharif end***********************///
          String SQL = "";
          RadioButton rb;
 
