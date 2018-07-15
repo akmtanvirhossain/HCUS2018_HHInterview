@@ -112,6 +112,18 @@ import android.content.Context;
         _modifyDate = newValue;
         }
 
+     private String _status;
+
+     public String get_status() {
+         return _status;
+     }
+
+     public void set_status(String _status) {
+         this._status = _status;
+     }
+
+
+
         String TableName = "StructureDB";
 
         public String SaveUpdateData(Context context)
@@ -142,7 +154,7 @@ import android.content.Context;
             try
               {
                  SQL = "Insert into "+ TableName +" (Division,DivName,Zila,ZilaName,Upazila,UpName,UNCode,Uname,Cluster,StructureNo,StartTime,EndTime,DeviceID,EntryUser,Lat,Lon,EnDt,Upload,modifyDate)Values('"+ _Division +"', '"+ _DivName +"', '"+ _Zila +"', '"+ _ZilaName +"', '"+ _Upazila +"', '"+ _UpName +"', '"+ _UNCode +"', '"+ _Uname +"', '"+ _Cluster +"', '"+ _StructureNo +"', '"+ _StartTime +"', '"+ _EndTime +"', '"+ _DeviceID +"', '"+ _EntryUser +"', '"+ _Lat +"', '"+ _Lon +"', '"+ _EnDt +"', '"+ _Upload +"', '"+ _modifyDate +"')";
-                 response = C.SaveData(SQL);
+//                 response = C.SaveData(SQL);
                  C.close();
               }
               catch(Exception  e)
@@ -160,7 +172,7 @@ import android.content.Context;
             try
               {
                  SQL = "Update "+ TableName +" Set Upload='2',modifyDate='" + _modifyDate + "' ,Division = '"+ _Division +"',DivName = '"+ _DivName +"',Zila = '"+ _Zila +"',ZilaName = '"+ _ZilaName +"',Upazila = '"+ _Upazila +"',UpName = '"+ _UpName +"',UNCode = '"+ _UNCode +"',Uname = '"+ _Uname +"',Cluster = '"+ _Cluster +"',StructureNo = '"+ _StructureNo +"'  Where Zila='"+ _Zila +"' and Upazila='"+ _Upazila +"' and UNCode='"+ _UNCode +"' and StructureNo='"+ _StructureNo +"'";
-                 response = C.SaveData(SQL);
+//                 response = C.SaveData(SQL);
                  C.close();
               }
               catch(Exception  e)
@@ -192,6 +204,7 @@ import android.content.Context;
                 d._Uname = cur.getString(cur.getColumnIndex("Uname"));
                 d._Cluster = cur.getString(cur.getColumnIndex("Cluster"));
                 d._StructureNo = cur.getString(cur.getColumnIndex("StructureNo"));
+                d._status=cur.getString(cur.getColumnIndex("status"));
                 data.add(d);
 
                 cur.moveToNext();

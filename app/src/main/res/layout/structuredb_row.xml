@@ -12,5 +12,6 @@
         <!--<TextView android:id="@+id/Cluster" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <TextView android:id="@+id/SlNo" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
         <TextView android:id="@+id/StructureNo" android:layout_width="wrap_content" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/status" android:layout_width="wrap_content" android:gravity="center" android:layout_height="wrap_content"/>
     </LinearLayout>
  </LinearLayout>

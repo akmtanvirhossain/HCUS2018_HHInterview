@@ -9,7 +9,8 @@
         android:background="@color/theme_color">
         <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal">
             <ImageButton android:id="@+id/cmdBack" android:background="@color/pageHeadingBack" android:src="@drawable/back" android:layout_width="50sp" android:layout_height="match_parent"/>
-            <TextView android:id="@+id/lblHeading" android:text="Structure Listing"  android:paddingLeft="10sp" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:textSize="20sp" android:textColor="@color/pageHeading"/>
+            <TextView android:id="@+id/lblHeading" android:text="Structure Listing"  android:paddingLeft="10sp" android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center_vertical" android:textSize="20sp" android:textColor="@color/pageHeading"/>
+            <TextView android:id="@+id/txtTotal" android:gravity="right" android:paddingRight="30sp" android:text="Total No:" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="20sp"  />
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
 
@@ -87,8 +88,19 @@
 
 
     <LinearLayout  android:background="#F3F3F3" android:paddingTop="5sp" android:layout_width="fill_parent" android:gravity="end" android:layout_height="wrap_content" android:orientation="horizontal">
-        <TextView android:id="@+id/txtTotal" android:text="Total No:" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp" android:layout_marginRight="200sp" />
-        <Button android:id="@+id/btnRefresh" android:textAllCaps="false" android:background="@drawable/button_style_circle_line" android:textSize="18sp" android:textColor="@color/theme_color"
+
+        <EditText
+            android:id="@+id/txtSearch"
+            style="@style/icddrb_search_edittext"
+            android:layout_width="450sp"
+            android:layout_marginRight="15sp"
+            android:layout_marginBottom="5sp"
+            android:layout_marginTop="5sp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/spnSearch"
+            android:gravity="start"/>
+
+        <Button android:id="@+id/btnRefresh" android:visibility="gone" android:textAllCaps="false" android:background="@drawable/button_style_circle_line" android:textSize="18sp" android:textColor="@color/theme_color"
             android:layout_width="wrap_content" android:layout_height="30sp" android:layout_marginTop="5dip" android:layout_marginBottom="10sp" android:text=" Refresh " android:paddingLeft="5sp" android:paddingRight="5sp"/>
         <Button android:id="@+id/btnAdd" android:textAllCaps="false" android:layout_marginLeft="20sp" android:layout_marginRight="20sp"  android:textSize="18sp" android:textColor="@color/theme_color"
             android:background="@drawable/button_style_circle_line" android:layout_width="wrap_content" android:layout_height="30sp" android:layout_marginTop="5dip" android:layout_marginBottom="10sp" android:text=" + New " android:paddingLeft="5sp" android:paddingRight="5sp"/>

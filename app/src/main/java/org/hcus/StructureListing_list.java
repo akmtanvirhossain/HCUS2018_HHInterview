@@ -8,7 +8,10 @@ package org.hcus;
  import android.content.Context;
  import android.content.DialogInterface;
  import android.content.Intent;
+ import android.graphics.Color;
  import android.location.Location;
+ import android.text.Editable;
+ import android.text.TextWatcher;
  import android.view.KeyEvent;
  import android.os.Bundle;
  import android.view.View;
@@ -68,7 +71,7 @@ package org.hcus;
     TextView tvUpazila,tvUnion,tvMoholla,tvCluster;
     Spinner spnUpazila,spnUnion,spnMoholla,spnCluster;
 
-     TextView txtTotal;
+     TextView txtTotal,txtSearch;
 
 
     static String STARTTIME = "";
@@ -96,6 +99,7 @@ package org.hcus;
 
          tvUpazila= (TextView) findViewById(R.id.tvUpazila);
          txtTotal= (TextView) findViewById(R.id.txtTotal);
+         txtSearch= (TextView) findViewById(R.id.txtSearch);
          tvUnion= (TextView) findViewById(R.id.tvUnion);
          tvMoholla= (TextView) findViewById(R.id.tvMoholla);
          tvCluster= (TextView) findViewById(R.id.tvCluster);
@@ -205,15 +209,33 @@ package org.hcus;
 
              }});
 
+         txtSearch.addTextChangedListener(new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+             }
+
+             @Override
+             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                 DataSearch(UPAZILA, UNCODE,CLUSTER);
+                 txtTotal.setText("Total No: "+dataList.size());
+             }
+
+             @Override
+             public void afterTextChanged(Editable editable) {
+
+             }
+         });
+
          btnAdd   = (Button) findViewById(R.id.btnAdd);
          btnAdd.setOnClickListener(new View.OnClickListener() {
 
              public void onClick(View view) {
 
-//                 if(UPAZILA.equals("")||UNCODE.equals("")||MOHOLLA.equals("")||CLUSTER.equals("")) {
-//                     Connection.MessageBox(StructureListing_list.this,"You have to Select All the Option Above");
-//                     return;
-//                 }
+                 if(UPAZILA.equals("")||UNCODE.equals("")||MOHOLLA.equals("")||CLUSTER.equals("")) {
+                     Connection.MessageBox(StructureListing_list.this,"You have to Select All the Option Above");
+                     return;
+                 }
                      Bundle IDbundle = new Bundle();
                      IDbundle.putString("Upazila", UPAZILA);
                      IDbundle.putString("UNCode", UNCODE);
@@ -223,6 +245,7 @@ package org.hcus;
                      IDbundle.putString("Upazila_Name", UPAZILA_NAME);
                      IDbundle.putString("Union_Name", UNION_NAME);
                      IDbundle.putString("Moholla_Name", MOHOLLA_NAME);
+                     IDbundle.putString("Mode", "New");
                      Intent intent = new Intent(getApplicationContext(), StructureListing.class);
                      intent.putExtras(IDbundle);
                      startActivityForResult(intent, 1);
@@ -271,7 +294,17 @@ package org.hcus;
 
              StructureDB_DataModel d = new StructureDB_DataModel();
 //             String SQL = "Select * from "+ TableName +"  Where Upazila='"+ Upazila +"' and UNCode='"+ UNCode +"' and Cluster='"+ Cluster +"'";
-             String SQL = "Select * from structureDB  Where Upazila='"+ Upazila +"' and UNCode='"+ UNCode +"' and Cluster='"+ Cluster +"'";
+//             String SQL = "Select * from structureDB  Where Upazila='"+ Upazila +"' and UNCode='"+ UNCode +"' and Cluster='"+ Cluster +"'";
+             String SQL = "Select sd.*,ifnull(sl.structureNo,'')status from structureDB sd" +
+                     " left outer join structurelisting sl on sd.Upazila=sl.Upazila and sd.uncode=sl.uncode and sd.cluster=sl.cluster and sd.structureno=sl.structureno" +
+                     "  Where sd.Upazila='"+ Upazila +"' and sd.UNCode='"+ UNCode +"' and sd.Cluster='"+ Cluster +"'";
+
+             if(txtSearch.getText().toString().length()>0) {
+                 SQL += " and (";
+                 SQL += " sd.StructureNo like('%"+ txtSearch.getText().toString() +"%')";
+                 SQL += " )";
+             }
+
              List<StructureDB_DataModel> data = d.SelectAll(this, SQL);
              dataList.clear();
 
@@ -305,6 +338,7 @@ package org.hcus;
 //             TextView Cluster;
              TextView SlNo;
              TextView StructureNo;
+             TextView status;
              public MyViewHolder(View convertView) {
                  super(convertView);
                  secListRow = (LinearLayout)convertView.findViewById(R.id.secListRow);
@@ -319,6 +353,7 @@ package org.hcus;
 //                 Cluster = (TextView)convertView.findViewById(R.id.Cluster);
                  StructureNo = (TextView)convertView.findViewById(R.id.StructureNo);
                  SlNo = (TextView)convertView.findViewById(R.id.SlNo);
+                 status = (TextView)convertView.findViewById(R.id.status);
              }
          }
          public DataAdapter(List<StructureDB_DataModel> datalist) {
@@ -345,6 +380,10 @@ package org.hcus;
              holder.StructureNo.setText(data.getStructureNo());
              holder.SlNo.setText(""+(position+1)+".");
 
+             if(data.get_status().toString().length()>0) {
+                holder.secListRow.setBackgroundColor(Color.GREEN);
+             }
+
              holder.secListRow.setOnClickListener(new View.OnClickListener() {
                  public void onClick(View v) {
                      final ProgressDialog progDailog = ProgressDialog.show(StructureListing_list.this, "", "Please Wait . . .", true);
@@ -361,6 +400,7 @@ package org.hcus;
                                  IDbundle.putString("Upazila_Name", UPAZILA_NAME);
                                  IDbundle.putString("Union_Name", UNION_NAME);
                                  IDbundle.putString("Moholla_Name", MOHOLLA_NAME);
+                                 IDbundle.putString("Mode", "Edit");
                                  Intent f1 = new Intent(getApplicationContext(), StructureListing.class);
                                  f1.putExtras(IDbundle);
                                  startActivityForResult(f1,1);

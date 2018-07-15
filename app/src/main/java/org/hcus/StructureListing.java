@@ -283,6 +283,7 @@
      static String UPAZILA_NAME = "";
      static String UNION_NAME = "";
      static String MOHOLLA_NAME = "";
+     static String MODE = "";
 
  public void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -308,6 +309,7 @@
          UPAZILA_NAME = IDbundle.getString("Upazila_Name");
          UNION_NAME = IDbundle.getString("Union_Name");
          MOHOLLA_NAME = IDbundle.getString("Moholla_Name");
+         MODE = IDbundle.getString("Mode");
 
          TableName = "StructureListing";
 
@@ -1773,6 +1775,10 @@
          txtCluster.setText(CLUSTER);
          txtStructureNo.setText(STRUCTURENO);
 
+         dtpColDate.setText(Global.DateConvertDMY(Global.DateTimeNowYMDHMS()));
+         txtColTime.setText(g.CurrentTime24());
+
+
          if(txtVCode.getText().toString().equals("777"))
          {
              secVCodeOth.setVisibility(View.VISIBLE);
@@ -2254,30 +2260,31 @@
          //****** save to Structure listing
          String status = objSave.SaveUpdateData(this);
 
-         //****** save to StructureID_Serial
-         StructureID_Serial_DataModel d= new StructureID_Serial_DataModel();
-         d.setDeviceId(DEVICEID.toString());
-         d.setWard(txtUNCode.getText().toString());
-         d.setNewStructure(txtStructureNo.getText().toString());
-         d.setmodifyDate(Global.DateTimeNowYMDHMS());
+         if(MODE.equals("New"))
+         {
+             //****** save to StructureID_Serial
+             StructureID_Serial_DataModel d= new StructureID_Serial_DataModel();
+             d.setDeviceId(DEVICEID.toString());
+             d.setWard(txtUNCode.getText().toString());
+             d.setNewStructure(txtStructureNo.getText().toString());
+             d.setmodifyDate(Global.DateTimeNowYMDHMS());
+             d.SaveUpdateData(this);
 
-         //****** save to StructureDB
-         StructureDB_DataModel structureDB_dataModel=new StructureDB_DataModel();
-         structureDB_dataModel.setDivision("30");
-         structureDB_dataModel.setDivName("Dhaka");
-         structureDB_dataModel.setZila("26");
-         structureDB_dataModel.setZilaName("DHAKA");
-         structureDB_dataModel.setUpazila(txtUpazila.getText().toString());
-         structureDB_dataModel.setUpName(UPAZILA_NAME);
-         structureDB_dataModel.setUNCode(txtUNCode.getText().toString());
-         structureDB_dataModel.setUname(UNION_NAME);
-         structureDB_dataModel.setCluster(txtCluster.getText().toString());
-         structureDB_dataModel.setStructureNo(txtStructureNo.getText().toString());
-         structureDB_dataModel.setmodifyDate(Global.DateTimeNowYMDHMS());
-         structureDB_dataModel.SaveUpdateData(this);
-
-
-         d.SaveUpdateData(this);
+             //****** save to StructureDB
+             StructureDB_DataModel structureDB_dataModel=new StructureDB_DataModel();
+             structureDB_dataModel.setDivision("30");
+             structureDB_dataModel.setDivName("Dhaka");
+             structureDB_dataModel.setZila("26");
+             structureDB_dataModel.setZilaName("DHAKA");
+             structureDB_dataModel.setUpazila(txtUpazila.getText().toString());
+             structureDB_dataModel.setUpName(UPAZILA_NAME);
+             structureDB_dataModel.setUNCode(txtUNCode.getText().toString());
+             structureDB_dataModel.setUname(UNION_NAME);
+             structureDB_dataModel.setCluster(txtCluster.getText().toString());
+             structureDB_dataModel.setStructureNo(txtStructureNo.getText().toString());
+             structureDB_dataModel.setmodifyDate(Global.DateTimeNowYMDHMS());
+             structureDB_dataModel.SaveUpdateData(this);
+         }
 
          if(status.length()==0) {
              Intent returnIntent = new Intent();
