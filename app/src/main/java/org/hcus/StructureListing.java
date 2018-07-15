@@ -253,6 +253,8 @@
          TextView VlblRemarks;
          EditText txtRemarks;
 
+
+
     static String TableName;
 
     static String STARTTIME = "";
@@ -367,177 +369,275 @@
              {
                  spnData = Connection.SelectedSpinnerValue(spnStructureStatus.getSelectedItem().toString(), "-");
              }
-                 if(spnData.equalsIgnoreCase("3"))
-                 {
-                    secHolding.setVisibility(View.GONE);
-                    lineHolding.setVisibility(View.GONE);
-                    txtHolding.setText("");
-                    secAddress.setVisibility(View.GONE);
-                    lineAddress.setVisibility(View.GONE);
-                    txtAddress.setText("");
-                    secBuildingType.setVisibility(View.GONE);
-                    lineBuildingType.setVisibility(View.GONE);
-                    rdogrpBuildingType.clearCheck();
-                    secBuildingTypeOth.setVisibility(View.GONE);
-                    lineBuildingTypeOth.setVisibility(View.GONE);
-                    txtBuildingTypeOth.setText("");
-                    secSrtoried.setVisibility(View.GONE);
-                    lineSrtoried.setVisibility(View.GONE);
-                    spnSrtoried.setSelection(0);
-                    secLandmark1.setVisibility(View.GONE);
-                    lineLandmark1.setVisibility(View.GONE);
-                    rdogrpLandmark1.clearCheck();
-                    secLandmark1Code.setVisibility(View.GONE);
-                    lineLandmark1Code.setVisibility(View.GONE);
-                    spnLandmark1Code.setSelection(0);
-                    secLandmarkOth1.setVisibility(View.GONE);
-                    lineLandmarkOth1.setVisibility(View.GONE);
-                    txtLandmarkOth1.setText("");
-                    secLandmarkName1.setVisibility(View.GONE);
-                    lineLandmarkName1.setVisibility(View.GONE);
-                    txtLandmarkName1.setText("");
-                    secLandmark2.setVisibility(View.GONE);
-                    lineLandmark2.setVisibility(View.GONE);
-                    rdogrpLandmark2.clearCheck();
-                    secLandmark2Code.setVisibility(View.GONE);
-                    lineLandmark2Code.setVisibility(View.GONE);
-                    spnLandmark2Code.setSelection(0);
-                    secLandmarkOth2.setVisibility(View.GONE);
-                    lineLandmarkOth2.setVisibility(View.GONE);
-                    txtLandmarkOth2.setText("");
-                    secLandmark2Name.setVisibility(View.GONE);
-                    lineLandmark2Name.setVisibility(View.GONE);
-                    txtLandmark2Name.setText("");
-                    secLandmark3.setVisibility(View.GONE);
-                    lineLandmark3.setVisibility(View.GONE);
-                    rdogrpLandmark3.clearCheck();
-                    secLandmark3Code.setVisibility(View.GONE);
-                    lineLandmark3Code.setVisibility(View.GONE);
-                    spnLandmark3Code.setSelection(0);
-                    secLandmarkOth3.setVisibility(View.GONE);
-                    lineLandmarkOth3.setVisibility(View.GONE);
-                    txtLandmarkOth3.setText("");
-                    secLandmark3Name.setVisibility(View.GONE);
-                    lineLandmark3Name.setVisibility(View.GONE);
-                    txtLandmark3Name.setText("");
-                    secLandmark4.setVisibility(View.GONE);
-                    lineLandmark4.setVisibility(View.GONE);
-                    rdogrpLandmark4.clearCheck();
-                    secLandmark4Code.setVisibility(View.GONE);
-                    lineLandmark4Code.setVisibility(View.GONE);
-                    spnLandmark4Code.setSelection(0);
-                    secLandmarkOth4.setVisibility(View.GONE);
-                    lineLandmarkOth4.setVisibility(View.GONE);
-                    txtLandmarkOth4.setText("");
-                    secLandmark4Name.setVisibility(View.GONE);
-                    lineLandmark4Name.setVisibility(View.GONE);
-                    txtLandmark4Name.setText("");
-                    secOwnerName.setVisibility(View.GONE);
-                    lineOwnerName.setVisibility(View.GONE);
-                    txtOwnerName.setText("");
-                    secOccupantName.setVisibility(View.GONE);
-                    lineOccupantName.setVisibility(View.GONE);
-                    txtOccupantName.setText("");
-                    secTotHH.setVisibility(View.GONE);
-                    lineTotHH.setVisibility(View.GONE);
-                    txtTotHH.setText("");
-                    secSlum.setVisibility(View.GONE);
-                    lineSlum.setVisibility(View.GONE);
-                    rdogrpSlum.clearCheck();
-                    secWaypoint.setVisibility(View.GONE);
-                    lineWaypoint.setVisibility(View.GONE);
-                    txtWaypoint.setText("");
-                    secLatDeg.setVisibility(View.GONE);
-                    lineLatDeg.setVisibility(View.GONE);
-                    txtLatDeg.setText("");
-                    secLatMin.setVisibility(View.GONE);
-                    lineLatMin.setVisibility(View.GONE);
-                    txtLatMin.setText("");
-                    secLatSec.setVisibility(View.GONE);
-                    lineLatSec.setVisibility(View.GONE);
-                    txtLatSec.setText("");
-                    secLonDeg.setVisibility(View.GONE);
-                    lineLonDeg.setVisibility(View.GONE);
-                    txtLonDeg.setText("");
-                    secLonMin.setVisibility(View.GONE);
-                    lineLonMin.setVisibility(View.GONE);
-                    txtLonMin.setText("");
-                    secLonSec.setVisibility(View.GONE);
-                    lineLonSec.setVisibility(View.GONE);
-                    txtLonSec.setText("");
-                     //********************* Sharif start **********************
-//                    secRemarks.setVisibility(View.GONE);
-//                    lineRemarks.setVisibility(View.GONE);
-//                    txtRemarks.setText("");
 
-                     //********************* Sharif End **********************
+                 if (spnData.equalsIgnoreCase("1"))
+                 {
+                     secHolding.setVisibility(View.VISIBLE);
+                     lineHolding.setVisibility(View.VISIBLE);
+                     secAddress.setVisibility(View.VISIBLE);
+                     lineAddress.setVisibility(View.VISIBLE);
+                     secBuildingType.setVisibility(View.VISIBLE);
+                     lineBuildingType.setVisibility(View.VISIBLE);
+//                     secBuildingTypeOth.setVisibility(View.VISIBLE);
+//                     lineBuildingTypeOth.setVisibility(View.VISIBLE);
+                     secSrtoried.setVisibility(View.VISIBLE);
+                     lineSrtoried.setVisibility(View.VISIBLE);
+                     secLandmark1.setVisibility(View.VISIBLE);
+                     lineLandmark1.setVisibility(View.VISIBLE);
+//                     secLandmark1Code.setVisibility(View.VISIBLE);
+//                     lineLandmark1Code.setVisibility(View.VISIBLE);
+//                     secLandmarkOth1.setVisibility(View.VISIBLE);
+//                     lineLandmarkOth1.setVisibility(View.VISIBLE);
+//                     secLandmarkName1.setVisibility(View.VISIBLE);
+//                     lineLandmarkName1.setVisibility(View.VISIBLE);
+//                     secLandmark2.setVisibility(View.VISIBLE);
+//                     lineLandmark2.setVisibility(View.VISIBLE);
+//                     secLandmark2Code.setVisibility(View.VISIBLE);
+//                     lineLandmark2Code.setVisibility(View.VISIBLE);
+//                     secLandmarkOth2.setVisibility(View.VISIBLE);
+//                     lineLandmarkOth2.setVisibility(View.VISIBLE);
+//                     secLandmark2Name.setVisibility(View.VISIBLE);
+//                     lineLandmark2Name.setVisibility(View.VISIBLE);
+//                     secLandmark3.setVisibility(View.VISIBLE);
+//                     lineLandmark3.setVisibility(View.VISIBLE);
+//                     secLandmark3Code.setVisibility(View.VISIBLE);
+//                     lineLandmark3Code.setVisibility(View.VISIBLE);
+//                     secLandmarkOth3.setVisibility(View.VISIBLE);
+//                     lineLandmarkOth3.setVisibility(View.VISIBLE);
+//                     secLandmark3Name.setVisibility(View.VISIBLE);
+//                     lineLandmark3Name.setVisibility(View.VISIBLE);
+//                     secLandmark4.setVisibility(View.VISIBLE);
+//                     lineLandmark4.setVisibility(View.VISIBLE);
+//                     secLandmark4Code.setVisibility(View.VISIBLE);
+//                     lineLandmark4Code.setVisibility(View.VISIBLE);
+//                     secLandmark4Name.setVisibility(View.VISIBLE);
+//                     lineLandmark4Name.setVisibility(View.VISIBLE);
+                     secOwnerName.setVisibility(View.VISIBLE);
+                     lineOwnerName.setVisibility(View.VISIBLE);
+                     secOccupantName.setVisibility(View.VISIBLE);
+                     lineOccupantName.setVisibility(View.VISIBLE);
+                     secTotHH.setVisibility(View.VISIBLE);
+                     lineTotHH.setVisibility(View.VISIBLE);
+                     secSlum.setVisibility(View.VISIBLE);
+                     lineSlum.setVisibility(View.VISIBLE);
+                     secWaypoint.setVisibility(View.VISIBLE);
+                     lineWaypoint.setVisibility(View.VISIBLE);
+                     secLatDeg.setVisibility(View.VISIBLE);
+                     lineLatDeg.setVisibility(View.VISIBLE);
+                     secLatMin.setVisibility(View.VISIBLE);
+                     lineLatMin.setVisibility(View.VISIBLE);
+                     secLatSec.setVisibility(View.VISIBLE);
+                     lineLatSec.setVisibility(View.VISIBLE);
+                     secLonDeg.setVisibility(View.VISIBLE);
+                     lineLonDeg.setVisibility(View.VISIBLE);
+                     secLonMin.setVisibility(View.VISIBLE);
+                     lineLonMin.setVisibility(View.VISIBLE);
+                     secLonSec.setVisibility(View.VISIBLE);
+                     lineLonSec.setVisibility(View.VISIBLE);
+                     secRemarks.setVisibility(View.VISIBLE);
+                     lineRemarks.setVisibility(View.VISIBLE);
+                 }
+
+                 //********************Sharif Start********
+
+                 else if (spnData.equalsIgnoreCase("2"))
+                 {
+                     secHolding.setVisibility(View.VISIBLE);
+                     lineHolding.setVisibility(View.VISIBLE);
+
+                     secAddress.setVisibility(View.VISIBLE);
+                     lineAddress.setVisibility(View.VISIBLE);
+
+                     secBuildingType.setVisibility(View.GONE);
+                     lineBuildingType.setVisibility(View.GONE);
+                     rdogrpBuildingType.clearCheck();
+                     secBuildingTypeOth.setVisibility(View.GONE);
+                     lineBuildingTypeOth.setVisibility(View.GONE);
+                     txtBuildingTypeOth.setText("");
+                     secSrtoried.setVisibility(View.GONE);
+                     lineSrtoried.setVisibility(View.GONE);
+                     spnSrtoried.setSelection(0);
+                     secLandmark1.setVisibility(View.GONE);
+                     lineLandmark1.setVisibility(View.GONE);
+                     rdogrpLandmark1.clearCheck();
+                     secLandmark1Code.setVisibility(View.GONE);
+                     lineLandmark1Code.setVisibility(View.GONE);
+                     spnLandmark1Code.setSelection(0);
+                     secLandmarkOth1.setVisibility(View.GONE);
+                     lineLandmarkOth1.setVisibility(View.GONE);
+                     txtLandmarkOth1.setText("");
+                     secLandmarkName1.setVisibility(View.GONE);
+                     lineLandmarkName1.setVisibility(View.GONE);
+                     txtLandmarkName1.setText("");
+                     secLandmark2.setVisibility(View.GONE);
+                     lineLandmark2.setVisibility(View.GONE);
+                     rdogrpLandmark2.clearCheck();
+                     secLandmark2Code.setVisibility(View.GONE);
+                     lineLandmark2Code.setVisibility(View.GONE);
+                     spnLandmark2Code.setSelection(0);
+                     secLandmarkOth2.setVisibility(View.GONE);
+                     lineLandmarkOth2.setVisibility(View.GONE);
+                     txtLandmarkOth2.setText("");
+                     secLandmark2Name.setVisibility(View.GONE);
+                     lineLandmark2Name.setVisibility(View.GONE);
+                     txtLandmark2Name.setText("");
+                     secLandmark3.setVisibility(View.GONE);
+                     lineLandmark3.setVisibility(View.GONE);
+                     rdogrpLandmark3.clearCheck();
+                     secLandmark3Code.setVisibility(View.GONE);
+                     lineLandmark3Code.setVisibility(View.GONE);
+                     spnLandmark3Code.setSelection(0);
+                     secLandmarkOth3.setVisibility(View.GONE);
+                     lineLandmarkOth3.setVisibility(View.GONE);
+                     txtLandmarkOth3.setText("");
+                     secLandmark3Name.setVisibility(View.GONE);
+                     lineLandmark3Name.setVisibility(View.GONE);
+                     txtLandmark3Name.setText("");
+                     secLandmark4.setVisibility(View.GONE);
+                     lineLandmark4.setVisibility(View.GONE);
+                     rdogrpLandmark4.clearCheck();
+                     secLandmark4Code.setVisibility(View.GONE);
+                     lineLandmark4Code.setVisibility(View.GONE);
+                     spnLandmark4Code.setSelection(0);
+                     secLandmarkOth4.setVisibility(View.GONE);
+                     lineLandmarkOth4.setVisibility(View.GONE);
+                     txtLandmarkOth4.setText("");
+                     secLandmark4Name.setVisibility(View.GONE);
+                     lineLandmark4Name.setVisibility(View.GONE);
+                     txtLandmark4Name.setText("");
+                     secOwnerName.setVisibility(View.GONE);
+                     lineOwnerName.setVisibility(View.GONE);
+                     txtOwnerName.setText("");
+                     secOccupantName.setVisibility(View.GONE);
+                     lineOccupantName.setVisibility(View.GONE);
+                     txtOccupantName.setText("");
+                     secTotHH.setVisibility(View.GONE);
+                     lineTotHH.setVisibility(View.GONE);
+                     txtTotHH.setText("");
+                     secSlum.setVisibility(View.GONE);
+                     lineSlum.setVisibility(View.GONE);
+                     rdogrpSlum.clearCheck();
+                     secWaypoint.setVisibility(View.GONE);
+                     lineWaypoint.setVisibility(View.GONE);
+                     txtWaypoint.setText("");
+                     secLatDeg.setVisibility(View.GONE);
+                     lineLatDeg.setVisibility(View.GONE);
+                     txtLatDeg.setText("");
+                     secLatMin.setVisibility(View.GONE);
+                     lineLatMin.setVisibility(View.GONE);
+                     txtLatMin.setText("");
+                     secLatSec.setVisibility(View.GONE);
+                     lineLatSec.setVisibility(View.GONE);
+                     txtLatSec.setText("");
+                     secLonDeg.setVisibility(View.GONE);
+                     lineLonDeg.setVisibility(View.GONE);
+                     txtLonDeg.setText("");
+                     secLonMin.setVisibility(View.GONE);
+                     lineLonMin.setVisibility(View.GONE);
+                     txtLonMin.setText("");
+                     secLonSec.setVisibility(View.GONE);
+                     lineLonSec.setVisibility(View.GONE);
+                     txtLonSec.setText("");
+
                  }
                  else
                  {
-                    secHolding.setVisibility(View.VISIBLE);
-                    lineHolding.setVisibility(View.VISIBLE);
-                    secAddress.setVisibility(View.VISIBLE);
-                    lineAddress.setVisibility(View.VISIBLE);
-                    secBuildingType.setVisibility(View.VISIBLE);
-                    lineBuildingType.setVisibility(View.VISIBLE);
-                    secBuildingTypeOth.setVisibility(View.VISIBLE);
-                    lineBuildingTypeOth.setVisibility(View.VISIBLE);
-                    secSrtoried.setVisibility(View.VISIBLE);
-                    lineSrtoried.setVisibility(View.VISIBLE);
-                    secLandmark1.setVisibility(View.VISIBLE);
-                    lineLandmark1.setVisibility(View.VISIBLE);
-                    secLandmark1Code.setVisibility(View.VISIBLE);
-                    lineLandmark1Code.setVisibility(View.VISIBLE);
-                    secLandmarkOth1.setVisibility(View.VISIBLE);
-                    lineLandmarkOth1.setVisibility(View.VISIBLE);
-                    secLandmarkName1.setVisibility(View.VISIBLE);
-                    lineLandmarkName1.setVisibility(View.VISIBLE);
-                    secLandmark2.setVisibility(View.VISIBLE);
-                    lineLandmark2.setVisibility(View.VISIBLE);
-                    secLandmark2Code.setVisibility(View.VISIBLE);
-                    lineLandmark2Code.setVisibility(View.VISIBLE);
-                    secLandmarkOth2.setVisibility(View.VISIBLE);
-                    lineLandmarkOth2.setVisibility(View.VISIBLE);
-                    secLandmark2Name.setVisibility(View.VISIBLE);
-                    lineLandmark2Name.setVisibility(View.VISIBLE);
-                    secLandmark3.setVisibility(View.VISIBLE);
-                    lineLandmark3.setVisibility(View.VISIBLE);
-                    secLandmark3Code.setVisibility(View.VISIBLE);
-                    lineLandmark3Code.setVisibility(View.VISIBLE);
-                    secLandmarkOth3.setVisibility(View.VISIBLE);
-                    lineLandmarkOth3.setVisibility(View.VISIBLE);
-                    secLandmark3Name.setVisibility(View.VISIBLE);
-                    lineLandmark3Name.setVisibility(View.VISIBLE);
-                    secLandmark4.setVisibility(View.VISIBLE);
-                    lineLandmark4.setVisibility(View.VISIBLE);
-                    secLandmark4Code.setVisibility(View.VISIBLE);
-                    lineLandmark4Code.setVisibility(View.VISIBLE);
-                    secLandmark4Name.setVisibility(View.VISIBLE);
-                    lineLandmark4Name.setVisibility(View.VISIBLE);
-                    secOwnerName.setVisibility(View.VISIBLE);
-                    lineOwnerName.setVisibility(View.VISIBLE);
-                    secOccupantName.setVisibility(View.VISIBLE);
-                    lineOccupantName.setVisibility(View.VISIBLE);
-                    secTotHH.setVisibility(View.VISIBLE);
-                    lineTotHH.setVisibility(View.VISIBLE);
-                    secSlum.setVisibility(View.VISIBLE);
-                    lineSlum.setVisibility(View.VISIBLE);
-                    secWaypoint.setVisibility(View.VISIBLE);
-                    lineWaypoint.setVisibility(View.VISIBLE);
-                    secLatDeg.setVisibility(View.VISIBLE);
-                    lineLatDeg.setVisibility(View.VISIBLE);
-                    secLatMin.setVisibility(View.VISIBLE);
-                    lineLatMin.setVisibility(View.VISIBLE);
-                    secLatSec.setVisibility(View.VISIBLE);
-                    lineLatSec.setVisibility(View.VISIBLE);
-                    secLonDeg.setVisibility(View.VISIBLE);
-                    lineLonDeg.setVisibility(View.VISIBLE);
-                    secLonMin.setVisibility(View.VISIBLE);
-                    lineLonMin.setVisibility(View.VISIBLE);
-                    secLonSec.setVisibility(View.VISIBLE);
-                    lineLonSec.setVisibility(View.VISIBLE);
-                    secRemarks.setVisibility(View.VISIBLE);
-                    lineRemarks.setVisibility(View.VISIBLE);
+                     secHolding.setVisibility(View.GONE);
+                     lineHolding.setVisibility(View.GONE);
+                     txtHolding.setText("");
+                     secAddress.setVisibility(View.GONE);
+                     lineAddress.setVisibility(View.GONE);
+                     txtAddress.setText("");
+                     secBuildingType.setVisibility(View.GONE);
+                     lineBuildingType.setVisibility(View.GONE);
+                     rdogrpBuildingType.clearCheck();
+                     secBuildingTypeOth.setVisibility(View.GONE);
+                     lineBuildingTypeOth.setVisibility(View.GONE);
+                     txtBuildingTypeOth.setText("");
+                     secSrtoried.setVisibility(View.GONE);
+                     lineSrtoried.setVisibility(View.GONE);
+                     spnSrtoried.setSelection(0);
+                     secLandmark1.setVisibility(View.GONE);
+                     lineLandmark1.setVisibility(View.GONE);
+                     rdogrpLandmark1.clearCheck();
+                     secLandmark1Code.setVisibility(View.GONE);
+                     lineLandmark1Code.setVisibility(View.GONE);
+                     spnLandmark1Code.setSelection(0);
+                     secLandmarkOth1.setVisibility(View.GONE);
+                     lineLandmarkOth1.setVisibility(View.GONE);
+                     txtLandmarkOth1.setText("");
+                     secLandmarkName1.setVisibility(View.GONE);
+                     lineLandmarkName1.setVisibility(View.GONE);
+                     txtLandmarkName1.setText("");
+                     secLandmark2.setVisibility(View.GONE);
+                     lineLandmark2.setVisibility(View.GONE);
+                     rdogrpLandmark2.clearCheck();
+                     secLandmark2Code.setVisibility(View.GONE);
+                     lineLandmark2Code.setVisibility(View.GONE);
+                     spnLandmark2Code.setSelection(0);
+                     secLandmarkOth2.setVisibility(View.GONE);
+                     lineLandmarkOth2.setVisibility(View.GONE);
+                     txtLandmarkOth2.setText("");
+                     secLandmark2Name.setVisibility(View.GONE);
+                     lineLandmark2Name.setVisibility(View.GONE);
+                     txtLandmark2Name.setText("");
+                     secLandmark3.setVisibility(View.GONE);
+                     lineLandmark3.setVisibility(View.GONE);
+                     rdogrpLandmark3.clearCheck();
+                     secLandmark3Code.setVisibility(View.GONE);
+                     lineLandmark3Code.setVisibility(View.GONE);
+                     spnLandmark3Code.setSelection(0);
+                     secLandmarkOth3.setVisibility(View.GONE);
+                     lineLandmarkOth3.setVisibility(View.GONE);
+                     txtLandmarkOth3.setText("");
+                     secLandmark3Name.setVisibility(View.GONE);
+                     lineLandmark3Name.setVisibility(View.GONE);
+                     txtLandmark3Name.setText("");
+                     secLandmark4.setVisibility(View.GONE);
+                     lineLandmark4.setVisibility(View.GONE);
+                     rdogrpLandmark4.clearCheck();
+                     secLandmark4Code.setVisibility(View.GONE);
+                     lineLandmark4Code.setVisibility(View.GONE);
+                     spnLandmark4Code.setSelection(0);
+                     secLandmarkOth4.setVisibility(View.GONE);
+                     lineLandmarkOth4.setVisibility(View.GONE);
+                     txtLandmarkOth4.setText("");
+                     secLandmark4Name.setVisibility(View.GONE);
+                     lineLandmark4Name.setVisibility(View.GONE);
+                     txtLandmark4Name.setText("");
+                     secOwnerName.setVisibility(View.GONE);
+                     lineOwnerName.setVisibility(View.GONE);
+                     txtOwnerName.setText("");
+                     secOccupantName.setVisibility(View.GONE);
+                     lineOccupantName.setVisibility(View.GONE);
+                     txtOccupantName.setText("");
+                     secTotHH.setVisibility(View.GONE);
+                     lineTotHH.setVisibility(View.GONE);
+                     txtTotHH.setText("");
+                     secSlum.setVisibility(View.GONE);
+                     lineSlum.setVisibility(View.GONE);
+                     rdogrpSlum.clearCheck();
+                     secWaypoint.setVisibility(View.GONE);
+                     lineWaypoint.setVisibility(View.GONE);
+                     txtWaypoint.setText("");
+                     secLatDeg.setVisibility(View.GONE);
+                     lineLatDeg.setVisibility(View.GONE);
+                     txtLatDeg.setText("");
+                     secLatMin.setVisibility(View.GONE);
+                     lineLatMin.setVisibility(View.GONE);
+                     txtLatMin.setText("");
+                     secLatSec.setVisibility(View.GONE);
+                     lineLatSec.setVisibility(View.GONE);
+                     txtLatSec.setText("");
+                     secLonDeg.setVisibility(View.GONE);
+                     lineLonDeg.setVisibility(View.GONE);
+                     txtLonDeg.setText("");
+                     secLonMin.setVisibility(View.GONE);
+                     lineLonMin.setVisibility(View.GONE);
+                     txtLonMin.setText("");
+                     secLonSec.setVisibility(View.GONE);
+                     lineLonSec.setVisibility(View.GONE);
+                     txtLonSec.setText("");
                  }
              }
              @Override
@@ -612,26 +712,26 @@
          List<String> listSrtoried = new ArrayList<String>();
          
          listSrtoried.add("");
-         listSrtoried.add("1-1");
-         listSrtoried.add("2-2");
-         listSrtoried.add("3-3");
-         listSrtoried.add("4-4");
-         listSrtoried.add("5-5");
-         listSrtoried.add("6-6");
-         listSrtoried.add("7-7");
-         listSrtoried.add("8-8");
-         listSrtoried.add("9-9");
-         listSrtoried.add("10-10");
-         listSrtoried.add("11-11");
-         listSrtoried.add("12-12");
-         listSrtoried.add("13-13");
-         listSrtoried.add("14-14");
-         listSrtoried.add("15-15");
-         listSrtoried.add("16-16");
-         listSrtoried.add("17-17");
-         listSrtoried.add("18-18");
-         listSrtoried.add("19-19");
-         listSrtoried.add("20-20");
+         listSrtoried.add("1");
+         listSrtoried.add("2");
+         listSrtoried.add("3");
+         listSrtoried.add("4");
+         listSrtoried.add("5");
+         listSrtoried.add("6");
+         listSrtoried.add("7");
+         listSrtoried.add("8");
+         listSrtoried.add("9");
+         listSrtoried.add("10");
+         listSrtoried.add("11");
+         listSrtoried.add("12");
+         listSrtoried.add("13");
+         listSrtoried.add("14");
+         listSrtoried.add("15");
+         listSrtoried.add("16");
+         listSrtoried.add("17");
+         listSrtoried.add("18");
+         listSrtoried.add("19");
+         listSrtoried.add("20");
          ArrayAdapter<String> adptrSrtoried= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listSrtoried);
          spnSrtoried.setAdapter(adptrSrtoried);
 
@@ -654,7 +754,67 @@
                if (rb.isChecked()) rbData = d_rdogrpLandmark1[i];
              }
 
-             if(rbData.equalsIgnoreCase("2"))
+             //****Sharif******
+             if(rbData.equalsIgnoreCase("1"))
+             {
+
+                 secLandmark1Code.setVisibility(View.VISIBLE);
+                 lineLandmark1Code.setVisibility(View.VISIBLE);
+                 secLandmarkName1.setVisibility(View.VISIBLE);
+                 lineLandmarkName1.setVisibility(View.VISIBLE);
+                 secLandmark2.setVisibility(View.VISIBLE);
+                 lineLandmark2.setVisibility(View.VISIBLE);
+
+//                 secLandmark1Code.setVisibility(View.GONE);
+//                 lineLandmark1Code.setVisibility(View.GONE);
+//                 spnLandmark1Code.setSelection(0);
+                 secLandmarkOth1.setVisibility(View.GONE);
+                 lineLandmarkOth1.setVisibility(View.GONE);
+                 txtLandmarkOth1.setText("");
+//                 secLandmarkName1.setVisibility(View.GONE);
+//                 lineLandmarkName1.setVisibility(View.GONE);
+//                 txtLandmarkName1.setText("");
+//                 secLandmark2.setVisibility(View.GONE);
+//                 lineLandmark2.setVisibility(View.GONE);
+//                 rdogrpLandmark2.clearCheck();
+                 secLandmark2Code.setVisibility(View.GONE);
+                 lineLandmark2Code.setVisibility(View.GONE);
+                 spnLandmark2Code.setSelection(0);
+                 secLandmarkOth2.setVisibility(View.GONE);
+                 lineLandmarkOth2.setVisibility(View.GONE);
+                 txtLandmarkOth2.setText("");
+                 secLandmark2Name.setVisibility(View.GONE);
+                 lineLandmark2Name.setVisibility(View.GONE);
+                 txtLandmark2Name.setText("");
+                 secLandmark3.setVisibility(View.GONE);
+                 lineLandmark3.setVisibility(View.GONE);
+                 rdogrpLandmark3.clearCheck();
+                 secLandmark3Code.setVisibility(View.GONE);
+                 lineLandmark3Code.setVisibility(View.GONE);
+                 spnLandmark3Code.setSelection(0);
+                 secLandmarkOth3.setVisibility(View.GONE);
+                 lineLandmarkOth3.setVisibility(View.GONE);
+                 txtLandmarkOth3.setText("");
+                 secLandmark3Name.setVisibility(View.GONE);
+                 lineLandmark3Name.setVisibility(View.GONE);
+                 txtLandmark3Name.setText("");
+                 secLandmark4.setVisibility(View.GONE);
+                 lineLandmark4.setVisibility(View.GONE);
+                 rdogrpLandmark4.clearCheck();
+                 secLandmark4Code.setVisibility(View.GONE);
+                 lineLandmark4Code.setVisibility(View.GONE);
+                 spnLandmark4Code.setSelection(0);
+                 secLandmarkOth4.setVisibility(View.GONE);
+                 lineLandmarkOth4.setVisibility(View.GONE);
+                 txtLandmarkOth4.setText("");
+                 secLandmark4Name.setVisibility(View.GONE);
+                 lineLandmark4Name.setVisibility(View.GONE);
+                 txtLandmark4Name.setText("");
+             }
+
+             ///****sharif******
+
+             else
              {
                     secLandmark1Code.setVisibility(View.GONE);
                     lineLandmark1Code.setVisibility(View.GONE);
@@ -702,37 +862,37 @@
                     lineLandmark4Name.setVisibility(View.GONE);
                     txtLandmark4Name.setText("");
              }
-             else
-             {
-                    secLandmark1Code.setVisibility(View.VISIBLE);
-                    lineLandmark1Code.setVisibility(View.VISIBLE);
-                    secLandmarkOth1.setVisibility(View.VISIBLE);
-                    lineLandmarkOth1.setVisibility(View.VISIBLE);
-                    secLandmarkName1.setVisibility(View.VISIBLE);
-                    lineLandmarkName1.setVisibility(View.VISIBLE);
-                    secLandmark2.setVisibility(View.VISIBLE);
-                    lineLandmark2.setVisibility(View.VISIBLE);
-                    secLandmark2Code.setVisibility(View.VISIBLE);
-                    lineLandmark2Code.setVisibility(View.VISIBLE);
-                    secLandmarkOth2.setVisibility(View.VISIBLE);
-                    lineLandmarkOth2.setVisibility(View.VISIBLE);
-                    secLandmark2Name.setVisibility(View.VISIBLE);
-                    lineLandmark2Name.setVisibility(View.VISIBLE);
-                    secLandmark3.setVisibility(View.VISIBLE);
-                    lineLandmark3.setVisibility(View.VISIBLE);
-                    secLandmark3Code.setVisibility(View.VISIBLE);
-                    lineLandmark3Code.setVisibility(View.VISIBLE);
-                    secLandmarkOth3.setVisibility(View.VISIBLE);
-                    lineLandmarkOth3.setVisibility(View.VISIBLE);
-                    secLandmark3Name.setVisibility(View.VISIBLE);
-                    lineLandmark3Name.setVisibility(View.VISIBLE);
-                    secLandmark4.setVisibility(View.VISIBLE);
-                    lineLandmark4.setVisibility(View.VISIBLE);
-                    secLandmark4Code.setVisibility(View.VISIBLE);
-                    lineLandmark4Code.setVisibility(View.VISIBLE);
-                    secLandmark4Name.setVisibility(View.VISIBLE);
-                    lineLandmark4Name.setVisibility(View.VISIBLE);
-             }
+//             else
+//             {
+//                    secLandmark1Code.setVisibility(View.VISIBLE);
+//                    lineLandmark1Code.setVisibility(View.VISIBLE);
+//                    secLandmarkOth1.setVisibility(View.VISIBLE);
+//                    lineLandmarkOth1.setVisibility(View.VISIBLE);
+//                    secLandmarkName1.setVisibility(View.VISIBLE);
+//                    lineLandmarkName1.setVisibility(View.VISIBLE);
+//                    secLandmark2.setVisibility(View.VISIBLE);
+//                    lineLandmark2.setVisibility(View.VISIBLE);
+//                    secLandmark2Code.setVisibility(View.VISIBLE);
+//                    lineLandmark2Code.setVisibility(View.VISIBLE);
+//                    secLandmarkOth2.setVisibility(View.VISIBLE);
+//                    lineLandmarkOth2.setVisibility(View.VISIBLE);
+//                    secLandmark2Name.setVisibility(View.VISIBLE);
+//                    lineLandmark2Name.setVisibility(View.VISIBLE);
+//                    secLandmark3.setVisibility(View.VISIBLE);
+//                    lineLandmark3.setVisibility(View.VISIBLE);
+//                    secLandmark3Code.setVisibility(View.VISIBLE);
+//                    lineLandmark3Code.setVisibility(View.VISIBLE);
+//                    secLandmarkOth3.setVisibility(View.VISIBLE);
+//                    lineLandmarkOth3.setVisibility(View.VISIBLE);
+//                    secLandmark3Name.setVisibility(View.VISIBLE);
+//                    lineLandmark3Name.setVisibility(View.VISIBLE);
+//                    secLandmark4.setVisibility(View.VISIBLE);
+//                    lineLandmark4.setVisibility(View.VISIBLE);
+//                    secLandmark4Code.setVisibility(View.VISIBLE);
+//                    lineLandmark4Code.setVisibility(View.VISIBLE);
+//                    secLandmark4Name.setVisibility(View.VISIBLE);
+//                    lineLandmark4Name.setVisibility(View.VISIBLE);
+//             }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
              return;
@@ -768,70 +928,17 @@
              {
                  spnData = Connection.SelectedSpinnerValue(spnLandmark1Code.getSelectedItem().toString(), "-");
              }
-                 if(spnData.equalsIgnoreCase("2"))
+                 if(spnData.equalsIgnoreCase("77"))
                  {
-                    secLandmarkOth1.setVisibility(View.GONE);
-                    lineLandmarkOth1.setVisibility(View.GONE);
-                    txtLandmarkOth1.setText("");
+                     secLandmarkOth1.setVisibility(View.VISIBLE);
+                     lineLandmarkOth1.setVisibility(View.VISIBLE);
                  }
-                 else if(spnData.equalsIgnoreCase("3"))
-                 {
-                    secLandmarkOth1.setVisibility(View.GONE);
-                    lineLandmarkOth1.setVisibility(View.GONE);
-                    txtLandmarkOth1.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("4"))
-                 {
-                    secLandmarkOth1.setVisibility(View.GONE);
-                    lineLandmarkOth1.setVisibility(View.GONE);
-                    txtLandmarkOth1.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("5"))
-                 {
-                    secLandmarkOth1.setVisibility(View.GONE);
-                    lineLandmarkOth1.setVisibility(View.GONE);
-                    txtLandmarkOth1.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("6"))
-                 {
-                    secLandmarkOth1.setVisibility(View.GONE);
-                    lineLandmarkOth1.setVisibility(View.GONE);
-                    txtLandmarkOth1.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("7"))
-                 {
-                    secLandmarkOth1.setVisibility(View.GONE);
-                    lineLandmarkOth1.setVisibility(View.GONE);
-                    txtLandmarkOth1.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("8"))
-                 {
-                    secLandmarkOth1.setVisibility(View.GONE);
-                    lineLandmarkOth1.setVisibility(View.GONE);
-                    txtLandmarkOth1.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("9"))
-                 {
-                    secLandmarkOth1.setVisibility(View.GONE);
-                    lineLandmarkOth1.setVisibility(View.GONE);
-                    txtLandmarkOth1.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("10"))
-                 {
-                    secLandmarkOth1.setVisibility(View.GONE);
-                    lineLandmarkOth1.setVisibility(View.GONE);
-                    txtLandmarkOth1.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("11"))
-                 {
-                    secLandmarkOth1.setVisibility(View.GONE);
-                    lineLandmarkOth1.setVisibility(View.GONE);
-                    txtLandmarkOth1.setText("");
-                 }
+
                  else
                  {
-                    secLandmarkOth1.setVisibility(View.VISIBLE);
-                    lineLandmarkOth1.setVisibility(View.VISIBLE);
+                    secLandmarkOth1.setVisibility(View.GONE);
+                    lineLandmarkOth1.setVisibility(View.GONE);
+                    txtLandmarkOth1.setText("");
                  }
              }
              @Override
@@ -865,20 +972,27 @@
                if (rb.isChecked()) rbData = d_rdogrpLandmark2[i];
              }
 
-             if(rbData.equalsIgnoreCase("2"))
+             if(rbData.equalsIgnoreCase("1"))
              {
-                    secLandmark2Code.setVisibility(View.GONE);
-                    lineLandmark2Code.setVisibility(View.GONE);
-                    spnLandmark2Code.setSelection(0);
+                 secLandmark2Code.setVisibility(View.VISIBLE);
+                 lineLandmark2Code.setVisibility(View.VISIBLE);
+                 secLandmark2Name.setVisibility(View.VISIBLE);
+                 lineLandmark2Name.setVisibility(View.VISIBLE);
+                 secLandmark3.setVisibility(View.VISIBLE);
+                 lineLandmark3.setVisibility(View.VISIBLE);
+
+//                    secLandmark2Code.setVisibility(View.GONE);
+//                    lineLandmark2Code.setVisibility(View.GONE);
+//                    spnLandmark2Code.setSelection(0);
                     secLandmarkOth2.setVisibility(View.GONE);
                     lineLandmarkOth2.setVisibility(View.GONE);
                     txtLandmarkOth2.setText("");
-                    secLandmark2Name.setVisibility(View.GONE);
-                    lineLandmark2Name.setVisibility(View.GONE);
-                    txtLandmark2Name.setText("");
-                    secLandmark3.setVisibility(View.GONE);
-                    lineLandmark3.setVisibility(View.GONE);
-                    rdogrpLandmark3.clearCheck();
+//                    secLandmark2Name.setVisibility(View.GONE);
+//                    lineLandmark2Name.setVisibility(View.GONE);
+//                    txtLandmark2Name.setText("");
+//                    secLandmark3.setVisibility(View.GONE);
+//                    lineLandmark3.setVisibility(View.GONE);
+//                    rdogrpLandmark3.clearCheck();
                     secLandmark3Code.setVisibility(View.GONE);
                     lineLandmark3Code.setVisibility(View.GONE);
                     spnLandmark3Code.setSelection(0);
@@ -903,26 +1017,39 @@
              }
              else
              {
-                    secLandmark2Code.setVisibility(View.VISIBLE);
-                    lineLandmark2Code.setVisibility(View.VISIBLE);
-                    secLandmarkOth2.setVisibility(View.VISIBLE);
-                    lineLandmarkOth2.setVisibility(View.VISIBLE);
-                    secLandmark2Name.setVisibility(View.VISIBLE);
-                    lineLandmark2Name.setVisibility(View.VISIBLE);
-                    secLandmark3.setVisibility(View.VISIBLE);
-                    lineLandmark3.setVisibility(View.VISIBLE);
-                    secLandmark3Code.setVisibility(View.VISIBLE);
-                    lineLandmark3Code.setVisibility(View.VISIBLE);
-                    secLandmarkOth3.setVisibility(View.VISIBLE);
-                    lineLandmarkOth3.setVisibility(View.VISIBLE);
-                    secLandmark3Name.setVisibility(View.VISIBLE);
-                    lineLandmark3Name.setVisibility(View.VISIBLE);
-                    secLandmark4.setVisibility(View.VISIBLE);
-                    lineLandmark4.setVisibility(View.VISIBLE);
-                    secLandmark4Code.setVisibility(View.VISIBLE);
-                    lineLandmark4Code.setVisibility(View.VISIBLE);
-                    secLandmark4Name.setVisibility(View.VISIBLE);
-                    lineLandmark4Name.setVisibility(View.VISIBLE);
+                 secLandmark2Code.setVisibility(View.GONE);
+                 lineLandmark2Code.setVisibility(View.GONE);
+                 spnLandmark2Code.setSelection(0);
+                 secLandmarkOth2.setVisibility(View.GONE);
+                 lineLandmarkOth2.setVisibility(View.GONE);
+                 txtLandmarkOth2.setText("");
+                 secLandmark2Name.setVisibility(View.GONE);
+                 lineLandmark2Name.setVisibility(View.GONE);
+                 txtLandmark2Name.setText("");
+                 secLandmark3.setVisibility(View.GONE);
+                 lineLandmark3.setVisibility(View.GONE);
+                 rdogrpLandmark3.clearCheck();
+                 secLandmark3Code.setVisibility(View.GONE);
+                 lineLandmark3Code.setVisibility(View.GONE);
+                 spnLandmark3Code.setSelection(0);
+                 secLandmarkOth3.setVisibility(View.GONE);
+                 lineLandmarkOth3.setVisibility(View.GONE);
+                 txtLandmarkOth3.setText("");
+                 secLandmark3Name.setVisibility(View.GONE);
+                 lineLandmark3Name.setVisibility(View.GONE);
+                 txtLandmark3Name.setText("");
+                 secLandmark4.setVisibility(View.GONE);
+                 lineLandmark4.setVisibility(View.GONE);
+                 rdogrpLandmark4.clearCheck();
+                 secLandmark4Code.setVisibility(View.GONE);
+                 lineLandmark4Code.setVisibility(View.GONE);
+                 spnLandmark4Code.setSelection(0);
+                 secLandmarkOth4.setVisibility(View.GONE);
+                 lineLandmarkOth4.setVisibility(View.GONE);
+                 txtLandmarkOth4.setText("");
+                 secLandmark4Name.setVisibility(View.GONE);
+                 lineLandmark4Name.setVisibility(View.GONE);
+                 txtLandmark4Name.setText("");
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
@@ -959,71 +1086,18 @@
              {
                  spnData = Connection.SelectedSpinnerValue(spnLandmark2Code.getSelectedItem().toString(), "-");
              }
-                 if(spnData.equalsIgnoreCase("2"))
+                 if(spnData.equalsIgnoreCase("77"))
                  {
-                    secLandmarkOth2.setVisibility(View.GONE);
-                    lineLandmarkOth2.setVisibility(View.GONE);
-                    txtLandmarkOth2.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("3"))
-                 {
-                    secLandmarkOth2.setVisibility(View.GONE);
-                    lineLandmarkOth2.setVisibility(View.GONE);
-                    txtLandmarkOth2.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("4"))
-                 {
-                    secLandmarkOth2.setVisibility(View.GONE);
-                    lineLandmarkOth2.setVisibility(View.GONE);
-                    txtLandmarkOth2.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("5"))
-                 {
-                    secLandmarkOth2.setVisibility(View.GONE);
-                    lineLandmarkOth2.setVisibility(View.GONE);
-                    txtLandmarkOth2.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("6"))
-                 {
-                    secLandmarkOth2.setVisibility(View.GONE);
-                    lineLandmarkOth2.setVisibility(View.GONE);
-                    txtLandmarkOth2.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("7"))
-                 {
-                    secLandmarkOth2.setVisibility(View.GONE);
-                    lineLandmarkOth2.setVisibility(View.GONE);
-                    txtLandmarkOth2.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("8"))
-                 {
-                    secLandmarkOth2.setVisibility(View.GONE);
-                    lineLandmarkOth2.setVisibility(View.GONE);
-                    txtLandmarkOth2.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("9"))
-                 {
-                    secLandmarkOth2.setVisibility(View.GONE);
-                    lineLandmarkOth2.setVisibility(View.GONE);
-                    txtLandmarkOth2.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("10"))
-                 {
-                    secLandmarkOth2.setVisibility(View.GONE);
-                    lineLandmarkOth2.setVisibility(View.GONE);
-                    txtLandmarkOth2.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("11"))
-                 {
-                    secLandmarkOth2.setVisibility(View.GONE);
-                    lineLandmarkOth2.setVisibility(View.GONE);
-                    txtLandmarkOth2.setText("");
+                     secLandmarkOth2.setVisibility(View.VISIBLE);
+                     lineLandmarkOth2.setVisibility(View.VISIBLE);
                  }
                  else
                  {
-                    secLandmarkOth2.setVisibility(View.VISIBLE);
-                    lineLandmarkOth2.setVisibility(View.VISIBLE);
+                    secLandmarkOth2.setVisibility(View.GONE);
+                    lineLandmarkOth2.setVisibility(View.GONE);
+                    txtLandmarkOth2.setText("");
                  }
+
              }
              @Override
              public void onNothingSelected(AdapterView<?> parentView) {
@@ -1056,20 +1130,27 @@
                if (rb.isChecked()) rbData = d_rdogrpLandmark3[i];
              }
 
-             if(rbData.equalsIgnoreCase("2"))
+             if(rbData.equalsIgnoreCase("1"))
              {
-                    secLandmark3Code.setVisibility(View.GONE);
-                    lineLandmark3Code.setVisibility(View.GONE);
-                    spnLandmark3Code.setSelection(0);
+                 secLandmark3Code.setVisibility(View.VISIBLE);
+                 lineLandmark3Code.setVisibility(View.VISIBLE);
+                 secLandmark3Name.setVisibility(View.VISIBLE);
+                 lineLandmark3Name.setVisibility(View.VISIBLE);
+                 secLandmark4.setVisibility(View.VISIBLE);
+                 lineLandmark4.setVisibility(View.VISIBLE);
+
+//                    secLandmark3Code.setVisibility(View.GONE);
+//                    lineLandmark3Code.setVisibility(View.GONE);
+//                    spnLandmark3Code.setSelection(0);
                     secLandmarkOth3.setVisibility(View.GONE);
                     lineLandmarkOth3.setVisibility(View.GONE);
                     txtLandmarkOth3.setText("");
-                    secLandmark3Name.setVisibility(View.GONE);
-                    lineLandmark3Name.setVisibility(View.GONE);
-                    txtLandmark3Name.setText("");
-                    secLandmark4.setVisibility(View.GONE);
-                    lineLandmark4.setVisibility(View.GONE);
-                    rdogrpLandmark4.clearCheck();
+//                    secLandmark3Name.setVisibility(View.GONE);
+//                    lineLandmark3Name.setVisibility(View.GONE);
+//                    txtLandmark3Name.setText("");
+//                    secLandmark4.setVisibility(View.GONE);
+//                    lineLandmark4.setVisibility(View.GONE);
+//                    rdogrpLandmark4.clearCheck();
                     secLandmark4Code.setVisibility(View.GONE);
                     lineLandmark4Code.setVisibility(View.GONE);
                     spnLandmark4Code.setSelection(0);
@@ -1082,18 +1163,27 @@
              }
              else
              {
-                    secLandmark3Code.setVisibility(View.VISIBLE);
-                    lineLandmark3Code.setVisibility(View.VISIBLE);
-                    secLandmarkOth3.setVisibility(View.VISIBLE);
-                    lineLandmarkOth3.setVisibility(View.VISIBLE);
-                    secLandmark3Name.setVisibility(View.VISIBLE);
-                    lineLandmark3Name.setVisibility(View.VISIBLE);
-                    secLandmark4.setVisibility(View.VISIBLE);
-                    lineLandmark4.setVisibility(View.VISIBLE);
-                    secLandmark4Code.setVisibility(View.VISIBLE);
-                    lineLandmark4Code.setVisibility(View.VISIBLE);
-                    secLandmark4Name.setVisibility(View.VISIBLE);
-                    lineLandmark4Name.setVisibility(View.VISIBLE);
+                 secLandmark3Code.setVisibility(View.GONE);
+                 lineLandmark3Code.setVisibility(View.GONE);
+                 spnLandmark3Code.setSelection(0);
+                 secLandmarkOth3.setVisibility(View.GONE);
+                 lineLandmarkOth3.setVisibility(View.GONE);
+                 txtLandmarkOth3.setText("");
+                 secLandmark3Name.setVisibility(View.GONE);
+                 lineLandmark3Name.setVisibility(View.GONE);
+                 txtLandmark3Name.setText("");
+                 secLandmark4.setVisibility(View.GONE);
+                 lineLandmark4.setVisibility(View.GONE);
+                 rdogrpLandmark4.clearCheck();
+                 secLandmark4Code.setVisibility(View.GONE);
+                 lineLandmark4Code.setVisibility(View.GONE);
+                 spnLandmark4Code.setSelection(0);
+                 secLandmarkOth4.setVisibility(View.GONE);
+                 lineLandmarkOth4.setVisibility(View.GONE);
+                 txtLandmarkOth4.setText("");
+                 secLandmark4Name.setVisibility(View.GONE);
+                 lineLandmark4Name.setVisibility(View.GONE);
+                 txtLandmark4Name.setText("");
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
@@ -1130,70 +1220,16 @@
              {
                  spnData = Connection.SelectedSpinnerValue(spnLandmark3Code.getSelectedItem().toString(), "-");
              }
-                 if(spnData.equalsIgnoreCase("2"))
+                 if(spnData.equalsIgnoreCase("77"))
                  {
-                    secLandmarkOth3.setVisibility(View.GONE);
-                    lineLandmarkOth3.setVisibility(View.GONE);
-                    txtLandmarkOth3.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("3"))
-                 {
-                    secLandmarkOth3.setVisibility(View.GONE);
-                    lineLandmarkOth3.setVisibility(View.GONE);
-                    txtLandmarkOth3.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("4"))
-                 {
-                    secLandmarkOth3.setVisibility(View.GONE);
-                    lineLandmarkOth3.setVisibility(View.GONE);
-                    txtLandmarkOth3.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("5"))
-                 {
-                    secLandmarkOth3.setVisibility(View.GONE);
-                    lineLandmarkOth3.setVisibility(View.GONE);
-                    txtLandmarkOth3.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("6"))
-                 {
-                    secLandmarkOth3.setVisibility(View.GONE);
-                    lineLandmarkOth3.setVisibility(View.GONE);
-                    txtLandmarkOth3.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("7"))
-                 {
-                    secLandmarkOth3.setVisibility(View.GONE);
-                    lineLandmarkOth3.setVisibility(View.GONE);
-                    txtLandmarkOth3.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("8"))
-                 {
-                    secLandmarkOth3.setVisibility(View.GONE);
-                    lineLandmarkOth3.setVisibility(View.GONE);
-                    txtLandmarkOth3.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("9"))
-                 {
-                    secLandmarkOth3.setVisibility(View.GONE);
-                    lineLandmarkOth3.setVisibility(View.GONE);
-                    txtLandmarkOth3.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("10"))
-                 {
-                    secLandmarkOth3.setVisibility(View.GONE);
-                    lineLandmarkOth3.setVisibility(View.GONE);
-                    txtLandmarkOth3.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("11"))
-                 {
-                    secLandmarkOth3.setVisibility(View.GONE);
-                    lineLandmarkOth3.setVisibility(View.GONE);
-                    txtLandmarkOth3.setText("");
+                     secLandmarkOth3.setVisibility(View.VISIBLE);
+                     lineLandmarkOth3.setVisibility(View.VISIBLE);
                  }
                  else
                  {
-                    secLandmarkOth3.setVisibility(View.VISIBLE);
-                    lineLandmarkOth3.setVisibility(View.VISIBLE);
+                    secLandmarkOth3.setVisibility(View.GONE);
+                    lineLandmarkOth3.setVisibility(View.GONE);
+                    txtLandmarkOth3.setText("");
                  }
              }
              @Override
@@ -1212,6 +1248,39 @@
          lineLandmark4=(View)findViewById(R.id.lineLandmark4);
          VlblLandmark4 = (TextView) findViewById(R.id.VlblLandmark4);
          rdogrpLandmark4 = (RadioGroup) findViewById(R.id.rdogrpLandmark4);
+
+         rdogrpLandmark4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+             @Override
+             public void onCheckedChanged(RadioGroup radioGroup, int radioButtonID) {
+                 String rbData = "";
+                 RadioButton rb;
+                 String[] d_rdogrpLandmark3 = new String[] {"1","2"};
+                 for (int i = 0; i < rdogrpLandmark4.getChildCount(); i++)
+                 {
+                     rb = (RadioButton)rdogrpLandmark4.getChildAt(i);
+                     if (rb.isChecked()) rbData = d_rdogrpLandmark3[i];
+                 }
+                 if(rbData.equalsIgnoreCase("1"))
+                 {
+                     secLandmark4Code.setVisibility(View.VISIBLE);
+                     lineLandmark4Code.setVisibility(View.VISIBLE);
+                     secLandmark4Name.setVisibility(View.VISIBLE);
+                     lineLandmark4Name.setVisibility(View.VISIBLE);
+                 }else
+                 {
+                     secLandmark4Code.setVisibility(View.GONE);
+                     lineLandmark4Code.setVisibility(View.GONE);
+                     spnLandmark4Code.setSelection(0);
+                     secLandmarkOth4.setVisibility(View.GONE);
+                     lineLandmarkOth4.setVisibility(View.GONE);
+                     txtLandmarkOth4.setText("");
+                     secLandmark4Name.setVisibility(View.GONE);
+                     lineLandmark4Name.setVisibility(View.GONE);
+                     txtLandmark4Name.setText("");
+                 }
+
+             }
+         });
          
          rdoLandmark41 = (RadioButton) findViewById(R.id.rdoLandmark41);
          rdoLandmark42 = (RadioButton) findViewById(R.id.rdoLandmark42);
@@ -1245,70 +1314,16 @@
              {
                  spnData = Connection.SelectedSpinnerValue(spnLandmark4Code.getSelectedItem().toString(), "-");
              }
-                 if(spnData.equalsIgnoreCase("2"))
+                 if(spnData.equalsIgnoreCase("77"))
                  {
-                    secLandmarkOth4.setVisibility(View.GONE);
-                    lineLandmarkOth4.setVisibility(View.GONE);
-                    txtLandmarkOth4.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("3"))
-                 {
-                    secLandmarkOth4.setVisibility(View.GONE);
-                    lineLandmarkOth4.setVisibility(View.GONE);
-                    txtLandmarkOth4.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("4"))
-                 {
-                    secLandmarkOth4.setVisibility(View.GONE);
-                    lineLandmarkOth4.setVisibility(View.GONE);
-                    txtLandmarkOth4.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("5"))
-                 {
-                    secLandmarkOth4.setVisibility(View.GONE);
-                    lineLandmarkOth4.setVisibility(View.GONE);
-                    txtLandmarkOth4.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("6"))
-                 {
-                    secLandmarkOth4.setVisibility(View.GONE);
-                    lineLandmarkOth4.setVisibility(View.GONE);
-                    txtLandmarkOth4.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("7"))
-                 {
-                    secLandmarkOth4.setVisibility(View.GONE);
-                    lineLandmarkOth4.setVisibility(View.GONE);
-                    txtLandmarkOth4.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("8"))
-                 {
-                    secLandmarkOth4.setVisibility(View.GONE);
-                    lineLandmarkOth4.setVisibility(View.GONE);
-                    txtLandmarkOth4.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("9"))
-                 {
-                    secLandmarkOth4.setVisibility(View.GONE);
-                    lineLandmarkOth4.setVisibility(View.GONE);
-                    txtLandmarkOth4.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("10"))
-                 {
-                    secLandmarkOth4.setVisibility(View.GONE);
-                    lineLandmarkOth4.setVisibility(View.GONE);
-                    txtLandmarkOth4.setText("");
-                 }
-                 else if(spnData.equalsIgnoreCase("11"))
-                 {
-                    secLandmarkOth4.setVisibility(View.GONE);
-                    lineLandmarkOth4.setVisibility(View.GONE);
-                    txtLandmarkOth4.setText("");
+                     secLandmarkOth4.setVisibility(View.VISIBLE);
+                     lineLandmarkOth4.setVisibility(View.VISIBLE);
                  }
                  else
                  {
-                    secLandmarkOth4.setVisibility(View.VISIBLE);
-                    lineLandmarkOth4.setVisibility(View.VISIBLE);
+                    secLandmarkOth4.setVisibility(View.GONE);
+                    lineLandmarkOth4.setVisibility(View.GONE);
+                    txtLandmarkOth4.setText("");
                  }
              }
              @Override
@@ -1932,21 +1947,21 @@
 //             return;
 //           }
          ///*******************Sharif End*******************************////
-         else if(txtOccupantName.getText().toString().length()==0 & secOccupantName.isShown())
+//         else if(txtOccupantName.getText().toString().length()==0 & secOccupantName.isShown())
+//           {
+//             Connection.MessageBox(StructureListing.this, "Required field: Occupant Name.");
+//             txtOccupantName.requestFocus();
+//             return;
+//           }
+//         else if(txtTotHH.getText().toString().length()==0 & secTotHH.isShown())
+//           {
+//             Connection.MessageBox(StructureListing.this, "Required field: Total # of HH.");
+//             txtTotHH.requestFocus();
+//             return;
+//           }
+         else if(Integer.valueOf(txtTotHH.getText().toString().length()==0 ? "1" : txtTotHH.getText().toString()) < 1 || Integer.valueOf(txtTotHH.getText().toString().length()==0 ? "150" : txtTotHH.getText().toString()) > 150)
            {
-             Connection.MessageBox(StructureListing.this, "Required field: Occupant Name.");
-             txtOccupantName.requestFocus(); 
-             return;	
-           }
-         else if(txtTotHH.getText().toString().length()==0 & secTotHH.isShown())
-           {
-             Connection.MessageBox(StructureListing.this, "Required field: Total # of HH.");
-             txtTotHH.requestFocus(); 
-             return;	
-           }
-         else if(Integer.valueOf(txtTotHH.getText().toString().length()==0 ? "1" : txtTotHH.getText().toString()) < 1 || Integer.valueOf(txtTotHH.getText().toString().length()==0 ? "999" : txtTotHH.getText().toString()) > 999)
-           {
-             Connection.MessageBox(StructureListing.this, "Value should be between 1 and 999(Total # of HH).");
+             Connection.MessageBox(StructureListing.this, "Value should be between 1 and 150(Total # of HH).");
              txtTotHH.requestFocus(); 
              return;	
            }
@@ -1957,84 +1972,84 @@
               rdoSlum1.requestFocus();
               return;
            }
-         else if(txtWaypoint.getText().toString().length()==0 & secWaypoint.isShown())
-           {
-             Connection.MessageBox(StructureListing.this, "Required field: Waypoint.");
-             txtWaypoint.requestFocus(); 
-             return;	
-           }
+//         else if(txtWaypoint.getText().toString().length()==0 & secWaypoint.isShown())
+//           {
+//             Connection.MessageBox(StructureListing.this, "Required field: Waypoint.");
+//             txtWaypoint.requestFocus();
+//             return;
+//           }
          else if(Integer.valueOf(txtWaypoint.getText().toString().length()==0 ? "1" : txtWaypoint.getText().toString()) < 1 || Integer.valueOf(txtWaypoint.getText().toString().length()==0 ? "999" : txtWaypoint.getText().toString()) > 999)
            {
              Connection.MessageBox(StructureListing.this, "Value should be between 1 and 999(Waypoint).");
              txtWaypoint.requestFocus(); 
              return;	
            }
-         else if(txtLatDeg.getText().toString().length()==0 & secLatDeg.isShown())
-           {
-             Connection.MessageBox(StructureListing.this, "Required field: Latitude Degree.");
-             txtLatDeg.requestFocus(); 
-             return;	
-           }
+//         else if(txtLatDeg.getText().toString().length()==0 & secLatDeg.isShown())
+//           {
+//             Connection.MessageBox(StructureListing.this, "Required field: Latitude Degree.");
+//             txtLatDeg.requestFocus();
+//             return;
+//           }
          else if(Integer.valueOf(txtLatDeg.getText().toString().length()==0 ? "1" : txtLatDeg.getText().toString()) < 1 || Integer.valueOf(txtLatDeg.getText().toString().length()==0 ? "99" : txtLatDeg.getText().toString()) > 99)
            {
              Connection.MessageBox(StructureListing.this, "Value should be between 1 and 99(Latitude Degree).");
              txtLatDeg.requestFocus(); 
              return;	
            }
-         else if(txtLatMin.getText().toString().length()==0 & secLatMin.isShown())
-           {
-             Connection.MessageBox(StructureListing.this, "Required field: Latitude Minutes.");
-             txtLatMin.requestFocus(); 
-             return;	
-           }
+//         else if(txtLatMin.getText().toString().length()==0 & secLatMin.isShown())
+//           {
+//             Connection.MessageBox(StructureListing.this, "Required field: Latitude Minutes.");
+//             txtLatMin.requestFocus();
+//             return;
+//           }
          else if(Integer.valueOf(txtLatMin.getText().toString().length()==0 ? "1" : txtLatMin.getText().toString()) < 1 || Integer.valueOf(txtLatMin.getText().toString().length()==0 ? "99" : txtLatMin.getText().toString()) > 99)
            {
              Connection.MessageBox(StructureListing.this, "Value should be between 1 and 99(Latitude Minutes).");
              txtLatMin.requestFocus(); 
              return;	
            }
-         else if(txtLatSec.getText().toString().length()==0 & secLatSec.isShown())
-           {
-             Connection.MessageBox(StructureListing.this, "Required field: Latitude Seconds.");
-             txtLatSec.requestFocus(); 
-             return;	
-           }
+//         else if(txtLatSec.getText().toString().length()==0 & secLatSec.isShown())
+//           {
+//             Connection.MessageBox(StructureListing.this, "Required field: Latitude Seconds.");
+//             txtLatSec.requestFocus();
+//             return;
+//           }
          else if(Integer.valueOf(txtLatSec.getText().toString().length()==0 ? "1" : txtLatSec.getText().toString()) < 1 || Integer.valueOf(txtLatSec.getText().toString().length()==0 ? "99" : txtLatSec.getText().toString()) > 99)
            {
              Connection.MessageBox(StructureListing.this, "Value should be between 1 and 99(Latitude Seconds).");
              txtLatSec.requestFocus(); 
              return;	
            }
-         else if(txtLonDeg.getText().toString().length()==0 & secLonDeg.isShown())
-           {
-             Connection.MessageBox(StructureListing.this, "Required field: Longitude degrees.");
-             txtLonDeg.requestFocus(); 
-             return;	
-           }
+//         else if(txtLonDeg.getText().toString().length()==0 & secLonDeg.isShown())
+//           {
+//             Connection.MessageBox(StructureListing.this, "Required field: Longitude degrees.");
+//             txtLonDeg.requestFocus();
+//             return;
+//           }
          else if(Integer.valueOf(txtLonDeg.getText().toString().length()==0 ? "1" : txtLonDeg.getText().toString()) < 1 || Integer.valueOf(txtLonDeg.getText().toString().length()==0 ? "99" : txtLonDeg.getText().toString()) > 99)
            {
              Connection.MessageBox(StructureListing.this, "Value should be between 1 and 99(Longitude degrees).");
              txtLonDeg.requestFocus(); 
              return;	
            }
-         else if(txtLonMin.getText().toString().length()==0 & secLonMin.isShown())
-           {
-             Connection.MessageBox(StructureListing.this, "Required field: Longitude degrees.");
-             txtLonMin.requestFocus(); 
-             return;	
-           }
+//         else if(txtLonMin.getText().toString().length()==0 & secLonMin.isShown())
+//           {
+//             Connection.MessageBox(StructureListing.this, "Required field: Longitude degrees.");
+//             txtLonMin.requestFocus();
+//             return;
+//           }
          else if(Integer.valueOf(txtLonMin.getText().toString().length()==0 ? "1" : txtLonMin.getText().toString()) < 1 || Integer.valueOf(txtLonMin.getText().toString().length()==0 ? "99" : txtLonMin.getText().toString()) > 99)
            {
              Connection.MessageBox(StructureListing.this, "Value should be between 1 and 99(Longitude degrees).");
              txtLonMin.requestFocus(); 
              return;	
            }
-         else if(txtLonSec.getText().toString().length()==0 & secLonSec.isShown())
-           {
-             Connection.MessageBox(StructureListing.this, "Required field: Longitude seconds.");
-             txtLonSec.requestFocus(); 
-             return;	
-           }
+//         else if(txtLonSec.getText().toString().length()==0 & secLonSec.isShown())
+//           {
+//             Connection.MessageBox(StructureListing.this, "Required field: Longitude seconds.");
+//             txtLonSec.requestFocus();
+//             return;
+//           }
          else if(Integer.valueOf(txtLonSec.getText().toString().length()==0 ? "1" : txtLonSec.getText().toString()) < 1 || Integer.valueOf(txtLonSec.getText().toString().length()==0 ? "99" : txtLonSec.getText().toString()) > 99)
            {
              Connection.MessageBox(StructureListing.this, "Value should be between 1 and 99(Longitude seconds).");

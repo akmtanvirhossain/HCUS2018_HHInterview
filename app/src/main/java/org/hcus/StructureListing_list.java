@@ -68,6 +68,8 @@ package org.hcus;
     TextView tvUpazila,tvUnion,tvMoholla,tvCluster;
     Spinner spnUpazila,spnUnion,spnMoholla,spnCluster;
 
+     TextView txtTotal;
+
 
     static String STARTTIME = "";
     static String UPAZILA = "";
@@ -87,6 +89,7 @@ package org.hcus;
          TableName = "StructureListing";
 
          tvUpazila= (TextView) findViewById(R.id.tvUpazila);
+         txtTotal= (TextView) findViewById(R.id.txtTotal);
          tvUnion= (TextView) findViewById(R.id.tvUnion);
          tvMoholla= (TextView) findViewById(R.id.tvMoholla);
          tvCluster= (TextView) findViewById(R.id.tvCluster);
@@ -185,6 +188,8 @@ package org.hcus;
              public void onClick(View view) {
                    //write your code here
                    DataSearch(UPAZILA, UNCODE,CLUSTER);
+                   txtTotal.setText("Total No: "+dataList.size());
+
 
              }});
 
