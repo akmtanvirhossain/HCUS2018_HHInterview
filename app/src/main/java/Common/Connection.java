@@ -1064,6 +1064,7 @@ public class Connection extends SQLiteOpenHelper {
 
     //Rebuild Local Database from Server
     //----------------------------------------------------------------------------------------------
+    int count = 0;
     public void RebuildDatabase(String DeviceID, final ProgressDialog progDialog, Handler progHandler) {
         //------------------------------------------------------------------------------------------
         //Data Sync: Download data from server
@@ -1109,11 +1110,40 @@ public class Connection extends SQLiteOpenHelper {
 
             progHandler.post(new Runnable() {
                 public void run() {
-                    progDialog.setProgress(6);
+                    progDialog.setProgress(0);
                     progDialog.setMessage("Downloading Data Collectors Data ...");
                 }
             });
-            this.Sync_Download("DataCollector", DeviceID, "");
+            final List<String> tableList = new ArrayList<String>();
+            tableList.add("DataCollector");
+            tableList.add("AreaDB");
+            tableList.add("StructureDB");
+            tableList.add("StructureID_Serial");
+            tableList.add("StructureIDSlot");
+            tableList.add("StructureListing");
+            int progressCount = 100/tableList.size();
+
+            for (int i = 0; i < tableList.size(); i++) {
+                try {
+                    this.Sync_Download(tableList.get(i).toString(), DeviceID, "");
+                    count +=progressCount;
+                    progHandler.post(new Runnable() {
+                        public void run() {
+                            progDialog.setProgress(count);
+                            progDialog.setMessage("Downloading data, please wait...");
+                        }
+                    });
+                }catch(Exception ex){
+
+                }
+            }
+
+/*            this.Sync_Download("DataCollector", DeviceID, "");
+            this.Sync_Download("AreaDB", DeviceID, "");
+            this.Sync_Download("StructureDB", DeviceID, "");
+            this.Sync_Download("StructureID_Serial", DeviceID, "");
+            this.Sync_Download("StructureIDSlot", DeviceID, "");
+            this.Sync_Download("StructureListing", DeviceID, "");*/
 
             //Download data from server
             //------------------------------------------------------------------------------
