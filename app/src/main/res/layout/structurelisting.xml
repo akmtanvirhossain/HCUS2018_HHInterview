@@ -21,24 +21,44 @@
         <TextView android:id="@+id/lblUpazila" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <TextView android:id="@+id/VlblUpazila" android:text="Upazila/Thana" android:layout_width="220sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <EditText android:id="@+id/txtUpazila" android:enabled="false" android:maxLength="4" android:layout_width="100sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+        <TextView
+            android:id="@+id/txtUpazila_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
     <View android:id="@+id/lineUpazila" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secUNCode" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblUNCode" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <TextView android:id="@+id/VlblUNCode" android:text="Union/Ward No" android:layout_width="220sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <EditText android:id="@+id/txtUNCode" android:enabled="false" android:maxLength="2" android:layout_width="100sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+        <TextView
+            android:id="@+id/txtUnion_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
     <View android:id="@+id/lineUNCode" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secVCode" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblVCode" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <TextView android:id="@+id/VlblVCode" android:text="Village/Moholla Code" android:layout_width="220sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <EditText android:id="@+id/txtVCode" android:enabled="false" android:maxLength="3" android:layout_width="100sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+        <TextView
+            android:id="@+id/txtMoholla_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
     <View android:id="@+id/lineVCode" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+
+        <LinearLayout android:id="@+id/secVCodeOth" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+            <TextView android:id="@+id/lblVCodeOth" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+            <TextView android:id="@+id/VlblVCodeOth" android:text="Village/Moholla Name" android:layout_width="220sp" android:layout_height="wrap_content" android:textSize="20sp" />
+            <EditText android:id="@+id/txtVCodeOth"   android:layout_width="300sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+        </LinearLayout>
+        <View android:id="@+id/lineVCodeOth" android:visibility="gone" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+
     <LinearLayout android:id="@+id/secCluster" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblCluster" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <TextView android:id="@+id/VlblCluster" android:text="Cluster No." android:layout_width="220sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <EditText android:id="@+id/txtCluster" android:enabled="false" android:maxLength="3" android:layout_width="100sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+        <EditText android:id="@+id/txtCluster" android:enabled="false" android:maxLength="4" android:layout_width="100sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/lineCluster" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secStructureNo" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
@@ -64,7 +84,7 @@
             android:id="@+id/secStructureStatus"
             style="@style/rowStyle0"
             android:layout_width="fill_parent"
-            android:layout_height="51dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView

@@ -11,8 +11,10 @@
  import android.app.TimePickerDialog;
  import android.content.DialogInterface;
  import android.content.Intent;
+ import android.database.Cursor;
  import android.location.Location;
  import android.os.Bundle;
+ import android.util.Log;
  import android.view.KeyEvent;
  import android.view.MotionEvent;
  import android.view.View;
@@ -39,6 +41,8 @@
  import Common.Connection;
  import Common.Global;
  import Utility.MySharedPreferences;
+ import data_model.StructureDB_DataModel;
+ import data_model.StructureID_Serial_DataModel;
  import data_model.StructureListing_DataModel;
 
  public class StructureListing extends Activity {
@@ -253,6 +257,13 @@
          TextView VlblRemarks;
          EditText txtRemarks;
 
+         LinearLayout secVCodeOth;
+         View lineVCodeOth;
+         TextView VlblVCodeOth;
+         EditText txtVCodeOth;
+
+         TextView txtUpazila_Name,txtUnion_Name,txtMoholla_Name;
+
 
 
     static String TableName;
@@ -268,6 +279,10 @@
      static String CLUSTER = "";
      static String MOHOLLA = "";
      static String STRUCTURENO = "";
+
+     static String UPAZILA_NAME = "";
+     static String UNION_NAME = "";
+     static String MOHOLLA_NAME = "";
 
  public void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -290,11 +305,33 @@
          CLUSTER = IDbundle.getString("Cluster");
          STRUCTURENO = IDbundle.getString("StructureNo");
 
+         UPAZILA_NAME = IDbundle.getString("Upazila_Name");
+         UNION_NAME = IDbundle.getString("Union_Name");
+         MOHOLLA_NAME = IDbundle.getString("Moholla_Name");
+
          TableName = "StructureListing";
 
          if(STRUCTURENO.equals(""))
          {
              STRUCTURENO=StructureNoSerial();
+
+             String Sql="select StartStructure,EndStructure from StructureIDSlot where DeviceID='"+DEVICEID+"' and Ward='"+UNCODE+"'";
+             String start = null,end = null;
+
+             Cursor cur=C.ReadData(Sql);
+             cur.moveToFirst();
+             if(cur.getCount()>0)
+             {
+                 start=cur.getString(cur.getColumnIndex("StartStructure"));
+                 end=cur.getString(cur.getColumnIndex("EndStructure"));
+                 cur.close();
+             }
+
+//             if(!(Integer.parseInt(STRUCTURENO)>Integer.parseInt(start) & Integer.parseInt(STRUCTURENO)<=Integer.parseInt(end)))
+//             {
+//                 Connection.MessageBox(this,"You have reached the maximum limit");
+//                 return;
+//             }
          }
 
          //turnGPSOn();
@@ -319,6 +356,14 @@
                  adb.show();
              }});
 
+         txtUpazila_Name=findViewById(R.id.txtUpazila_Name);
+         txtUnion_Name=findViewById(R.id.txtUnion_Name);
+         txtMoholla_Name=findViewById(R.id.txtMoholla_Name);
+
+         txtUpazila_Name.setText(UPAZILA_NAME);
+         txtUnion_Name.setText(UNION_NAME);
+         txtMoholla_Name.setText(MOHOLLA_NAME);
+
 
          secUpazila=(LinearLayout)findViewById(R.id.secUpazila);
          lineUpazila=(View)findViewById(R.id.lineUpazila);
@@ -332,6 +377,12 @@
          lineVCode=(View)findViewById(R.id.lineVCode);
          VlblVCode=(TextView) findViewById(R.id.VlblVCode);
          txtVCode=(EditText) findViewById(R.id.txtVCode);
+
+         secVCodeOth=(LinearLayout)findViewById(R.id.secVCodeOth);
+         lineVCodeOth=(View)findViewById(R.id.lineVCodeOth);
+         VlblVCodeOth=(TextView) findViewById(R.id.VlblVCodeOth);
+         txtVCodeOth=(EditText) findViewById(R.id.txtVCodeOth);
+
          secCluster=(LinearLayout)findViewById(R.id.secCluster);
          lineCluster=(View)findViewById(R.id.lineCluster);
          VlblCluster=(TextView) findViewById(R.id.VlblCluster);
@@ -732,7 +783,7 @@
          listSrtoried.add("18");
          listSrtoried.add("19");
          listSrtoried.add("20");
-         ArrayAdapter<String> adptrSrtoried= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listSrtoried);
+         ArrayAdapter<String> adptrSrtoried= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listSrtoried);
          spnSrtoried.setAdapter(adptrSrtoried);
 
          secLandmark1=(LinearLayout)findViewById(R.id.secLandmark1);
@@ -1718,8 +1769,18 @@
          txtUpazila.setText(UPAZILA);
          txtUNCode.setText(UNCODE);
          txtVCode.setText(MOHOLLA);
+
          txtCluster.setText(CLUSTER);
          txtStructureNo.setText(STRUCTURENO);
+
+         if(txtVCode.getText().toString().equals("777"))
+         {
+             secVCodeOth.setVisibility(View.VISIBLE);
+             lineVCodeOth.setVisibility(View.VISIBLE);
+
+         }
+
+         DataSearch(UPAZILA,UNCODE,CLUSTER,STRUCTURENO);
 
 
         Button cmdSave = (Button) findViewById(R.id.cmdSave);
@@ -1727,6 +1788,8 @@
         public void onClick(View v) { 
             DataSave();
         }});
+
+
      }
      catch(Exception  e)
      {
@@ -1737,19 +1800,40 @@
 
      private String StructureNoSerial()
      {
-         String SL = C.ReturnSingleValue("Select (ifnull(max(cast(StructureNo as int)),0)+1)SL from structureDB Where Upazila='"+ UPAZILA +
-                 "' and UNCode='"+ UNCODE +"' and Cluster='"+ CLUSTER +"'");
+         String Structure_Serial = null;
+//         String SL = C.ReturnSingleValue("Select (ifnull(max(cast(StructureNo as int)),0)+1)SL from structureDB Where Upazila='"+ UPAZILA +
+//                 "' and UNCode='"+ UNCODE +"' and Cluster='"+ CLUSTER +"'");
+         Cursor cur=C.ReadData("  select s.DeviceID,s.Ward,s.StartStructure,s.EndStructure, ifnull(a.NewStructure,'')NewStructure,\n" +
+                 "  (case when a.NewStructure is null then s.StartStructure else cast(a.NewStructure as int)+1 end),\n" +
+                 "   ifnull(a.NewStructure,s.StartStructure)\n" +
+                 "    from \n" +
+                 "  StructureIDSlot s\n" +
+                 "  left outer join StructureID_Serial a on  s.DeviceID=a.DeviceID and s.Ward=a.Ward\n" +
+                 "    where s.Ward='"+UNCODE+"' and s.DeviceID='"+DEVICEID+"'");
 
-         int length=SL.length();
+
+         cur.moveToFirst();
+         if(cur.getCount()>0)
+         {
+             Structure_Serial=cur.getString(cur.getColumnIndex("NewStructure"));
+             if(Structure_Serial.equals(""))
+             {
+                 Structure_Serial=cur.getString(cur.getColumnIndex("StartStructure"));
+             }
+
+             cur.close();
+         }
+
+         int length=Structure_Serial.length();
          String s = "";
          for(int i=0;i<5-length;i++)
          {
              s+="0";
          }
-         SL=s+SL;
+         Structure_Serial=s+Structure_Serial;
 
 
-         return SL;
+         return Structure_Serial;
      }
 
  private void DataSave()
@@ -1777,6 +1861,12 @@
              txtVCode.requestFocus(); 
              return;	
            }
+         else if(txtVCodeOth.getText().toString().length()==0 & secVCodeOth.isShown())
+         {
+             Connection.MessageBox(StructureListing.this, "Required field: Village/Moholla Name.");
+             txtVCodeOth.requestFocus();
+             return;
+         }
          else if(txtCluster.getText().toString().length()==0 & secCluster.isShown())
            {
              Connection.MessageBox(StructureListing.this, "Required field: Cluster No..");
@@ -2071,6 +2161,7 @@
          objSave.setUpazila(txtUpazila.getText().toString());
          objSave.setUNCode(txtUNCode.getText().toString());
          objSave.setVCode(txtVCode.getText().toString());
+         objSave.setVname_Oth(txtVCodeOth.getText().toString());
          objSave.setCluster(txtCluster.getText().toString());
          objSave.setStructureNo(txtStructureNo.getText().toString());
          objSave.setColDate(dtpColDate.getText().toString().length() > 0 ? Global.DateConvertYMD(dtpColDate.getText().toString()) : dtpColDate.getText().toString());
@@ -2160,7 +2251,34 @@
          //objSave.setLat(Double.toString(currentLatitude));
          //objSave.setLon(Double.toString(currentLongitude));
 
+         //****** save to Structure listing
          String status = objSave.SaveUpdateData(this);
+
+         //****** save to StructureID_Serial
+         StructureID_Serial_DataModel d= new StructureID_Serial_DataModel();
+         d.setDeviceId(DEVICEID.toString());
+         d.setWard(txtUNCode.getText().toString());
+         d.setNewStructure(txtStructureNo.getText().toString());
+         d.setmodifyDate(Global.DateTimeNowYMDHMS());
+
+         //****** save to StructureDB
+         StructureDB_DataModel structureDB_dataModel=new StructureDB_DataModel();
+         structureDB_dataModel.setDivision("30");
+         structureDB_dataModel.setDivName("Dhaka");
+         structureDB_dataModel.setZila("26");
+         structureDB_dataModel.setZilaName("DHAKA");
+         structureDB_dataModel.setUpazila(txtUpazila.getText().toString());
+         structureDB_dataModel.setUpName(UPAZILA_NAME);
+         structureDB_dataModel.setUNCode(txtUNCode.getText().toString());
+         structureDB_dataModel.setUname(UNION_NAME);
+         structureDB_dataModel.setCluster(txtCluster.getText().toString());
+         structureDB_dataModel.setStructureNo(txtStructureNo.getText().toString());
+         structureDB_dataModel.setmodifyDate(Global.DateTimeNowYMDHMS());
+         structureDB_dataModel.SaveUpdateData(this);
+
+
+         d.SaveUpdateData(this);
+
          if(status.length()==0) {
              Intent returnIntent = new Intent();
              returnIntent.putExtra("res", "");
@@ -2180,19 +2298,27 @@
      }
  }
 
- private void DataSearch(String Upazila, String UNCode)
+ private void DataSearch(String Upazila, String UNCode,String CLuster,String StructureNo)
      {
        try
         {
      
            RadioButton rb;
            StructureListing_DataModel d = new StructureListing_DataModel();
-           String SQL = "Select * from "+ TableName +"  Where Upazila='"+ Upazila +"' and UNCode='"+ UNCode +"'";
+           String SQL = "Select * from "+ TableName +"  Where Upazila='"+ Upazila +"' and UNCode='"+ UNCode +"' and Cluster='"+CLUSTER+"' and StructureNo='"+StructureNo+"'";
            List<StructureListing_DataModel> data = d.SelectAll(this, SQL);
            for(StructureListing_DataModel item : data){
              txtUpazila.setText(item.getUpazila());
              txtUNCode.setText(item.getUNCode());
              txtVCode.setText(item.getVCode());
+
+             if(item.getVname_Oth().length()>0)
+             {
+                 secVCodeOth.setVisibility(View.VISIBLE);
+                 lineVCodeOth.setVisibility(View.VISIBLE);
+                 txtVCodeOth.setText(item.getVname_Oth());
+             }
+
              txtCluster.setText(item.getCluster());
              txtStructureNo.setText(item.getStructureNo());
              dtpColDate.setText(item.getColDate().toString().length()==0 ? "" : Global.DateConvertDMY(item.getColDate()));

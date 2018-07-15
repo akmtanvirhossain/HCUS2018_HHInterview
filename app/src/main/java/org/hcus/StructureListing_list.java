@@ -77,6 +77,12 @@ package org.hcus;
     static String CLUSTER = "";
     static String MOHOLLA = "";
 
+    static String UPAZILA_NAME = "";
+    static String UNION_NAME = "";
+    static String MOHOLLA_NAME = "";
+
+
+
  public void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
    try
@@ -106,7 +112,9 @@ package org.hcus;
              public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                  if (spnUpazila.getSelectedItem().toString().length() == 0) return;
                  UPAZILA=Connection.SelectedSpinnerValue(spnUpazila.getSelectedItem().toString(),"-");
+                 UPAZILA_NAME=C.ReturnSingleValue("select distinct UpName from AreaDB where Upazila='"+UPAZILA+"'");
                  spnUnion.setAdapter(C.getArrayAdapter("Select '  ' Union  Select distinct UNCode ||'-'|| Uname from AreaDB where Upazila='"+ Connection.SelectedSpinnerValue(spnUpazila.getSelectedItem().toString(),"-")+"'"));
+
 
                  //spnVillage.setAdapter(C.getArrayAdapter("Select VName from Village where UnName='"+ Connection.SelectedSpinnerValue(spnUnion.getSelectedItem().toString(),"-")+"'  union Select '999-Others'"));
 //                 if(Connection.SelectedSpinnerValue(spnUnion.getSelectedItem().toString(),"-").equals("999"))
@@ -123,9 +131,10 @@ package org.hcus;
              @Override
              public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                  if (spnUnion.getSelectedItem().toString().length() == 0) return;
-                 spnMoholla.setAdapter(C.getArrayAdapter("Select '  ' Union  Select distinct VCode ||'-'|| Vname from AreaDB where Upazila='"+ Connection.SelectedSpinnerValue(spnUpazila.getSelectedItem().toString(),"-")+"' and UNCode='"+Connection.SelectedSpinnerValue(spnUnion.getSelectedItem().toString(),"-")+"'"));
+                 spnMoholla.setAdapter(C.getArrayAdapter("Select '  ' Union  Select distinct VCode ||'-'|| Vname from AreaDB where Upazila='"+ Connection.SelectedSpinnerValue(spnUpazila.getSelectedItem().toString(),"-")+"' and UNCode='"+Connection.SelectedSpinnerValue(spnUnion.getSelectedItem().toString(),"-")+"' Union Select '777-Other'"));
                  spnCluster.setAdapter(C.getArrayAdapter("Select '  ' Union  Select distinct Cluster from StructureDB where Upazila='"+ Connection.SelectedSpinnerValue(spnUpazila.getSelectedItem().toString(),"-")+"' and UNCode='"+Connection.SelectedSpinnerValue(spnUnion.getSelectedItem().toString(),"-")+"'"));
                  UNCODE=Connection.SelectedSpinnerValue(spnUnion.getSelectedItem().toString(),"-");
+                 UNION_NAME=C.ReturnSingleValue("select distinct Uname from AreaDB where UNCode='"+UNCODE+"'");
 
                  //spnVillage.setAdapter(C.getArrayAdapter("Select VName from Village where UnName='"+ Connection.SelectedSpinnerValue(spnUnion.getSelectedItem().toString(),"-")+"'  union Select '999-Others'"));
 //                 if(Connection.SelectedSpinnerValue(spnUnion.getSelectedItem().toString(),"-").equals("999"))
@@ -145,6 +154,8 @@ package org.hcus;
              public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                  if (spnCluster.getSelectedItem().toString().length() == 0) return;
                  CLUSTER=Connection.SelectedSpinnerValue(spnCluster.getSelectedItem().toString(),"-");
+                 DataSearch(UPAZILA, UNCODE,CLUSTER);
+                 txtTotal.setText("Total No: "+dataList.size());
 
 
              }
@@ -158,6 +169,7 @@ package org.hcus;
              public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                  if (spnMoholla.getSelectedItem().toString().length() == 0) return;
                  MOHOLLA=Connection.SelectedSpinnerValue(spnMoholla.getSelectedItem().toString(),"-");
+                 MOHOLLA_NAME=C.ReturnSingleValue("select distinct Vname from AreaDB where Upazila='"+UPAZILA+"' and UNCode='"+UNCODE+"' and VCode='"+MOHOLLA+"'");
 
 
              }
@@ -197,15 +209,23 @@ package org.hcus;
          btnAdd.setOnClickListener(new View.OnClickListener() {
 
              public void onClick(View view) {
-                         Bundle IDbundle = new Bundle();
-                         IDbundle.putString("Upazila", UPAZILA);
-                         IDbundle.putString("UNCode", UNCODE);
-                         IDbundle.putString("Moholla", MOHOLLA);
-                         IDbundle.putString("Cluster", CLUSTER);
-                         IDbundle.putString("StructureNo", "");
-                         Intent intent = new Intent(getApplicationContext(), StructureListing.class);
-                         intent.putExtras(IDbundle);
-                         startActivityForResult(intent, 1);
+
+//                 if(UPAZILA.equals("")||UNCODE.equals("")||MOHOLLA.equals("")||CLUSTER.equals("")) {
+//                     Connection.MessageBox(StructureListing_list.this,"You have to Select All the Option Above");
+//                     return;
+//                 }
+                     Bundle IDbundle = new Bundle();
+                     IDbundle.putString("Upazila", UPAZILA);
+                     IDbundle.putString("UNCode", UNCODE);
+                     IDbundle.putString("Moholla", MOHOLLA);
+                     IDbundle.putString("Cluster", CLUSTER);
+                     IDbundle.putString("StructureNo", "");
+                     IDbundle.putString("Upazila_Name", UPAZILA_NAME);
+                     IDbundle.putString("Union_Name", UNION_NAME);
+                     IDbundle.putString("Moholla_Name", MOHOLLA_NAME);
+                     Intent intent = new Intent(getApplicationContext(), StructureListing.class);
+                     intent.putExtras(IDbundle);
+                     startActivityForResult(intent, 1);
 
              }});
 
@@ -338,6 +358,9 @@ package org.hcus;
                                  IDbundle.putString("Moholla", MOHOLLA);
                                  IDbundle.putString("Cluster", data.getCluster());
                                  IDbundle.putString("StructureNo", data.getStructureNo());
+                                 IDbundle.putString("Upazila_Name", UPAZILA_NAME);
+                                 IDbundle.putString("Union_Name", UNION_NAME);
+                                 IDbundle.putString("Moholla_Name", MOHOLLA_NAME);
                                  Intent f1 = new Intent(getApplicationContext(), StructureListing.class);
                                  f1.putExtras(IDbundle);
                                  startActivityForResult(f1,1);
