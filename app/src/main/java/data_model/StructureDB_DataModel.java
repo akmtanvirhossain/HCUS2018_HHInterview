@@ -153,8 +153,8 @@ import android.content.Context;
             String SQL = "";
             try
               {
-                 SQL = "Insert into "+ TableName +" (Division,DivName,Zila,ZilaName,Upazila,UpName,UNCode,Uname,Cluster,StructureNo,StartTime,EndTime,DeviceID,EntryUser,Lat,Lon,EnDt,Upload,modifyDate)Values('"+ _Division +"', '"+ _DivName +"', '"+ _Zila +"', '"+ _ZilaName +"', '"+ _Upazila +"', '"+ _UpName +"', '"+ _UNCode +"', '"+ _Uname +"', '"+ _Cluster +"', '"+ _StructureNo +"', '"+ _StartTime +"', '"+ _EndTime +"', '"+ _DeviceID +"', '"+ _EntryUser +"', '"+ _Lat +"', '"+ _Lon +"', '"+ _EnDt +"', '"+ _Upload +"', '"+ _modifyDate +"')";
-//                 response = C.SaveData(SQL);
+                 SQL = "Insert into "+ TableName +" (Division,DivName,Zila,ZilaName,Upazila,UpName,UNCode,Uname,Cluster,StructureNo,DeviceID,EntryUser,EnDt,Upload,modifyDate)Values('"+ _Division +"', '"+ _DivName +"', '"+ _Zila +"', '"+ _ZilaName +"', '"+ _Upazila +"', '"+ _UpName +"', '"+ _UNCode +"', '"+ _Uname +"', '"+ _Cluster +"', '"+ _StructureNo +"', '"+ _DeviceID +"', '"+ _EntryUser +"', '"+ _EnDt +"', '"+ _Upload +"', '"+ _modifyDate +"')";
+                 response = C.SaveData(SQL);
                  C.close();
               }
               catch(Exception  e)
@@ -172,7 +172,7 @@ import android.content.Context;
             try
               {
                  SQL = "Update "+ TableName +" Set Upload='2',modifyDate='" + _modifyDate + "' ,Division = '"+ _Division +"',DivName = '"+ _DivName +"',Zila = '"+ _Zila +"',ZilaName = '"+ _ZilaName +"',Upazila = '"+ _Upazila +"',UpName = '"+ _UpName +"',UNCode = '"+ _UNCode +"',Uname = '"+ _Uname +"',Cluster = '"+ _Cluster +"',StructureNo = '"+ _StructureNo +"'  Where Zila='"+ _Zila +"' and Upazila='"+ _Upazila +"' and UNCode='"+ _UNCode +"' and StructureNo='"+ _StructureNo +"'";
-//                 response = C.SaveData(SQL);
+                 response = C.SaveData(SQL);
                  C.close();
               }
               catch(Exception  e)

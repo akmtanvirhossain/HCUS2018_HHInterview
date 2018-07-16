@@ -261,6 +261,11 @@
          View lineVCodeOth;
          TextView VlblVCodeOth;
          EditText txtVCodeOth;
+     LinearLayout secGPSHeading;
+     LinearLayout secGPSColl;
+     RadioGroup rdogrpGPSColl;
+     RadioButton rdoGPSColl1;
+     RadioButton rdoGPSColl2;
 
          TextView txtUpazila_Name,txtUnion_Name,txtMoholla_Name;
 
@@ -315,7 +320,7 @@
 
          if(STRUCTURENO.equals(""))
          {
-             STRUCTURENO=StructureNoSerial();
+             STRUCTURENO = StructureNoSerial();
 
              String Sql="select StartStructure,EndStructure from StructureIDSlot where DeviceID='"+DEVICEID+"' and Ward='"+UNCODE+"'";
              String start = null,end = null;
@@ -357,6 +362,12 @@
                      }});
                  adb.show();
              }});
+
+         secGPSHeading=(LinearLayout)findViewById(R.id.secGPSHeading) ;
+         secGPSColl=(LinearLayout)findViewById(R.id.secGPSColl) ;
+         rdogrpGPSColl=(RadioGroup)findViewById(R.id.rdogrpGPSColl) ;
+         rdoGPSColl1=(RadioButton)findViewById(R.id.rdoGPSColl1) ;
+         rdoGPSColl2=(RadioButton)findViewById(R.id.rdoGPSColl2) ;
 
          txtUpazila_Name=findViewById(R.id.txtUpazila_Name);
          txtUnion_Name=findViewById(R.id.txtUnion_Name);
@@ -473,7 +484,7 @@
                      lineTotHH.setVisibility(View.VISIBLE);
                      secSlum.setVisibility(View.VISIBLE);
                      lineSlum.setVisibility(View.VISIBLE);
-                     secWaypoint.setVisibility(View.VISIBLE);
+                     /*secWaypoint.setVisibility(View.VISIBLE);
                      lineWaypoint.setVisibility(View.VISIBLE);
                      secLatDeg.setVisibility(View.VISIBLE);
                      lineLatDeg.setVisibility(View.VISIBLE);
@@ -486,9 +497,12 @@
                      secLonMin.setVisibility(View.VISIBLE);
                      lineLonMin.setVisibility(View.VISIBLE);
                      secLonSec.setVisibility(View.VISIBLE);
-                     lineLonSec.setVisibility(View.VISIBLE);
+                     lineLonSec.setVisibility(View.VISIBLE);*/
                      secRemarks.setVisibility(View.VISIBLE);
                      lineRemarks.setVisibility(View.VISIBLE);
+
+                     secGPSHeading.setVisibility(View.VISIBLE);
+                     secGPSColl.setVisibility(View.VISIBLE);
                  }
 
                  //********************Sharif Start********
@@ -570,6 +584,10 @@
                      secSlum.setVisibility(View.GONE);
                      lineSlum.setVisibility(View.GONE);
                      rdogrpSlum.clearCheck();
+
+                     secGPSHeading.setVisibility(View.GONE);
+                     secGPSColl.setVisibility(View.GONE);
+                     rdogrpGPSColl.clearCheck();
                      secWaypoint.setVisibility(View.GONE);
                      lineWaypoint.setVisibility(View.GONE);
                      txtWaypoint.setText("");
@@ -969,7 +987,6 @@
          listLandmark1Code.add("10-Bank");
          listLandmark1Code.add("11-Office");
          listLandmark1Code.add("77-Other");
-         listLandmark1Code.add("");
          ArrayAdapter<String> adptrLandmark1Code= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listLandmark1Code);
          spnLandmark1Code.setAdapter(adptrLandmark1Code);
 
@@ -1127,7 +1144,6 @@
          listLandmark2Code.add("10-Bank");
          listLandmark2Code.add("11-Office");
          listLandmark2Code.add("77-Other");
-         listLandmark2Code.add("");
          ArrayAdapter<String> adptrLandmark2Code= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listLandmark2Code);
          spnLandmark2Code.setAdapter(adptrLandmark2Code);
 
@@ -1261,7 +1277,6 @@
          listLandmark3Code.add("10-Bank");
          listLandmark3Code.add("11-Office");
          listLandmark3Code.add("77-Other");
-         listLandmark3Code.add("");
          ArrayAdapter<String> adptrLandmark3Code= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listLandmark3Code);
          spnLandmark3Code.setAdapter(adptrLandmark3Code);
 
@@ -1355,7 +1370,6 @@
          listLandmark4Code.add("10-Bank");
          listLandmark4Code.add("11-Office");
          listLandmark4Code.add("77-Other");
-         listLandmark4Code.add("");
          ArrayAdapter<String> adptrLandmark4Code= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listLandmark4Code);
          spnLandmark4Code.setAdapter(adptrLandmark4Code);
 
@@ -1473,7 +1487,59 @@
            }
          });
 
+
+         rdogrpGPSColl.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
+             @Override
+             public void onCheckedChanged(RadioGroup radioGroup,int radioButtonID) {
+                 if(rdoGPSColl1.isChecked()){
+                     secWaypoint.setVisibility(View.VISIBLE);
+                     lineWaypoint.setVisibility(View.VISIBLE);
+                     secLatDeg.setVisibility(View.VISIBLE);
+                     lineLatDeg.setVisibility(View.VISIBLE);
+                     secLatMin.setVisibility(View.VISIBLE);
+                     lineLatMin.setVisibility(View.VISIBLE);
+                     secLatSec.setVisibility(View.VISIBLE);
+                     lineLatSec.setVisibility(View.VISIBLE);
+                     secLonDeg.setVisibility(View.VISIBLE);
+                     lineLonDeg.setVisibility(View.VISIBLE);
+                     secLonMin.setVisibility(View.VISIBLE);
+                     lineLonMin.setVisibility(View.VISIBLE);
+                     secLonSec.setVisibility(View.VISIBLE);
+                     lineLonSec.setVisibility(View.VISIBLE);
+                 }else{
+                     secWaypoint.setVisibility(View.GONE);
+                     lineWaypoint.setVisibility(View.GONE);
+                     txtWaypoint.setText("");
+                     secLatDeg.setVisibility(View.GONE);
+                     lineLatDeg.setVisibility(View.GONE);
+                     txtLatDeg.setText("");
+                     secLatMin.setVisibility(View.GONE);
+                     lineLatMin.setVisibility(View.GONE);
+                     txtLatMin.setText("");
+                     secLatSec.setVisibility(View.GONE);
+                     txtLatSec.setText("");
+                     lineLatSec.setVisibility(View.GONE);
+                     secLonDeg.setVisibility(View.GONE);
+                     txtLonDeg.setText("");
+                     lineLonDeg.setVisibility(View.GONE);
+                     secLonMin.setVisibility(View.GONE);
+                     txtLonMin.setText("");
+                     lineLonMin.setVisibility(View.GONE);
+                     secLonSec.setVisibility(View.GONE);
+                     txtLonSec.setText("");
+                     lineLonSec.setVisibility(View.GONE);
+                 }
+             }
+             public void onNothingSelected(AdapterView<?> adapterView) {
+                 return;
+             }
+         });
+
+
          //Hide all skip variables
+         secGPSHeading.setVisibility(View.GONE);
+                 secGPSColl.setVisibility(View.GONE);
+
          secHolding.setVisibility(View.GONE);
          lineHolding.setVisibility(View.GONE);
          secAddress.setVisibility(View.GONE);
@@ -1807,21 +1873,19 @@
      private String StructureNoSerial()
      {
          String Structure_Serial = null;
-//         String SL = C.ReturnSingleValue("Select (ifnull(max(cast(StructureNo as int)),0)+1)SL from structureDB Where Upazila='"+ UPAZILA +
-//                 "' and UNCode='"+ UNCODE +"' and Cluster='"+ CLUSTER +"'");
-         Cursor cur=C.ReadData("  select s.DeviceID,s.Ward,s.StartStructure,s.EndStructure, ifnull(a.NewStructure,'')NewStructure,\n" +
-                 "  (case when a.NewStructure is null then s.StartStructure else cast(a.NewStructure as int)+1 end),\n" +
-                 "   ifnull(a.NewStructure,s.StartStructure)\n" +
+
+         Cursor cur = C.ReadData("select s.DeviceID,s.Ward,s.StartStructure,s.EndStructure,\n" +
+                 "  (case when a.NewStructure is null then s.StartStructure else cast(a.NewStructure as int)+1 end)newid\n" +
                  "    from \n" +
                  "  StructureIDSlot s\n" +
                  "  left outer join StructureID_Serial a on  s.DeviceID=a.DeviceID and s.Ward=a.Ward\n" +
-                 "    where s.Ward='"+UNCODE+"' and s.DeviceID='"+DEVICEID+"'");
+                 "    where s.Ward='"+ UNCODE +"' and s.DeviceID='"+ DEVICEID +"'");
 
 
          cur.moveToFirst();
          if(cur.getCount()>0)
          {
-             Structure_Serial=cur.getString(cur.getColumnIndex("NewStructure"));
+             Structure_Serial=cur.getString(cur.getColumnIndex("newid"));
              if(Structure_Serial.equals(""))
              {
                  Structure_Serial=cur.getString(cur.getColumnIndex("StartStructure"));
@@ -1830,13 +1894,14 @@
              cur.close();
          }
 
-         int length=Structure_Serial.length();
+         Structure_Serial = Global.Right("00000"+Structure_Serial,5);
+         /*int length=Structure_Serial.length();
          String s = "";
          for(int i=0;i<5-length;i++)
          {
              s+="0";
          }
-         Structure_Serial=s+Structure_Serial;
+         Structure_Serial=s+Structure_Serial;*/
 
 
          return Structure_Serial;
@@ -2055,6 +2120,12 @@
 //             txtTotHH.requestFocus();
 //             return;
 //           }
+
+         else if(!rdoGPSColl1.isChecked() & !rdoGPSColl2.isChecked() & secGPSColl.isShown()){
+             Connection.MessageBox(StructureListing.this, "Required field: GPS Information Collected?");
+             rdoGPSColl1.requestFocus();
+             return;
+         }
          else if(Integer.valueOf(txtTotHH.getText().toString().length()==0 ? "1" : txtTotHH.getText().toString()) < 1 || Integer.valueOf(txtTotHH.getText().toString().length()==0 ? "150" : txtTotHH.getText().toString()) > 150)
            {
              Connection.MessageBox(StructureListing.this, "Value should be between 1 and 150(Total # of HH).");
@@ -2074,7 +2145,7 @@
 //             txtWaypoint.requestFocus();
 //             return;
 //           }
-         else if(Integer.valueOf(txtWaypoint.getText().toString().length()==0 ? "1" : txtWaypoint.getText().toString()) < 1 || Integer.valueOf(txtWaypoint.getText().toString().length()==0 ? "999" : txtWaypoint.getText().toString()) > 999)
+         else if((Integer.valueOf(txtWaypoint.getText().toString().length()==0 ? "1" : txtWaypoint.getText().toString()) < 1 || Integer.valueOf(txtWaypoint.getText().toString().length()==0 ? "999" : txtWaypoint.getText().toString()) > 999) & secWaypoint.isShown())
            {
              Connection.MessageBox(StructureListing.this, "Value should be between 1 and 999(Waypoint).");
              txtWaypoint.requestFocus(); 
@@ -2086,7 +2157,7 @@
 //             txtLatDeg.requestFocus();
 //             return;
 //           }
-         else if(Integer.valueOf(txtLatDeg.getText().toString().length()==0 ? "1" : txtLatDeg.getText().toString()) < 1 || Integer.valueOf(txtLatDeg.getText().toString().length()==0 ? "99" : txtLatDeg.getText().toString()) > 99)
+         else if((Integer.valueOf(txtLatDeg.getText().toString().length()==0 ? "1" : txtLatDeg.getText().toString()) < 1 || Integer.valueOf(txtLatDeg.getText().toString().length()==0 ? "99" : txtLatDeg.getText().toString()) > 99) & secLatDeg.isShown())
            {
              Connection.MessageBox(StructureListing.this, "Value should be between 1 and 99(Latitude Degree).");
              txtLatDeg.requestFocus(); 
@@ -2098,7 +2169,7 @@
 //             txtLatMin.requestFocus();
 //             return;
 //           }
-         else if(Integer.valueOf(txtLatMin.getText().toString().length()==0 ? "1" : txtLatMin.getText().toString()) < 1 || Integer.valueOf(txtLatMin.getText().toString().length()==0 ? "99" : txtLatMin.getText().toString()) > 99)
+         else if((Integer.valueOf(txtLatMin.getText().toString().length()==0 ? "1" : txtLatMin.getText().toString()) < 1 || Integer.valueOf(txtLatMin.getText().toString().length()==0 ? "99" : txtLatMin.getText().toString()) > 99) & secLatMin.isShown())
            {
              Connection.MessageBox(StructureListing.this, "Value should be between 1 and 99(Latitude Minutes).");
              txtLatMin.requestFocus(); 
@@ -2110,7 +2181,7 @@
 //             txtLatSec.requestFocus();
 //             return;
 //           }
-         else if(Integer.valueOf(txtLatSec.getText().toString().length()==0 ? "1" : txtLatSec.getText().toString()) < 1 || Integer.valueOf(txtLatSec.getText().toString().length()==0 ? "99" : txtLatSec.getText().toString()) > 99)
+         else if((Integer.valueOf(txtLatSec.getText().toString().length()==0 ? "1" : txtLatSec.getText().toString()) < 1 || Integer.valueOf(txtLatSec.getText().toString().length()==0 ? "99" : txtLatSec.getText().toString()) > 99) & secLatSec.isShown())
            {
              Connection.MessageBox(StructureListing.this, "Value should be between 1 and 99(Latitude Seconds).");
              txtLatSec.requestFocus(); 
@@ -2122,7 +2193,7 @@
 //             txtLonDeg.requestFocus();
 //             return;
 //           }
-         else if(Integer.valueOf(txtLonDeg.getText().toString().length()==0 ? "1" : txtLonDeg.getText().toString()) < 1 || Integer.valueOf(txtLonDeg.getText().toString().length()==0 ? "99" : txtLonDeg.getText().toString()) > 99)
+         else if((Integer.valueOf(txtLonDeg.getText().toString().length()==0 ? "1" : txtLonDeg.getText().toString()) < 1 || Integer.valueOf(txtLonDeg.getText().toString().length()==0 ? "99" : txtLonDeg.getText().toString()) > 99) & secLonDeg.isShown())
            {
              Connection.MessageBox(StructureListing.this, "Value should be between 1 and 99(Longitude degrees).");
              txtLonDeg.requestFocus(); 
@@ -2134,7 +2205,7 @@
 //             txtLonMin.requestFocus();
 //             return;
 //           }
-         else if(Integer.valueOf(txtLonMin.getText().toString().length()==0 ? "1" : txtLonMin.getText().toString()) < 1 || Integer.valueOf(txtLonMin.getText().toString().length()==0 ? "99" : txtLonMin.getText().toString()) > 99)
+         else if((Integer.valueOf(txtLonMin.getText().toString().length()==0 ? "1" : txtLonMin.getText().toString()) < 1 || Integer.valueOf(txtLonMin.getText().toString().length()==0 ? "99" : txtLonMin.getText().toString()) > 99) & secLonMin.isShown())
            {
              Connection.MessageBox(StructureListing.this, "Value should be between 1 and 99(Longitude degrees).");
              txtLonMin.requestFocus(); 
@@ -2146,7 +2217,7 @@
 //             txtLonSec.requestFocus();
 //             return;
 //           }
-         else if(Integer.valueOf(txtLonSec.getText().toString().length()==0 ? "1" : txtLonSec.getText().toString()) < 1 || Integer.valueOf(txtLonSec.getText().toString().length()==0 ? "99" : txtLonSec.getText().toString()) > 99)
+         else if((Integer.valueOf(txtLonSec.getText().toString().length()==0 ? "1" : txtLonSec.getText().toString()) < 1 || Integer.valueOf(txtLonSec.getText().toString().length()==0 ? "99" : txtLonSec.getText().toString()) > 99) & secLonSec.isShown())
            {
              Connection.MessageBox(StructureListing.this, "Value should be between 1 and 99(Longitude seconds).");
              txtLonSec.requestFocus(); 
@@ -2240,6 +2311,15 @@
              if (rb.isChecked()) objSave.setSlum(Integer.valueOf(d_rdogrpSlum[i]));
          }
 
+         String[] d_rdogrpGPSColl = new String[] {"1","2"};
+         objSave.setGPSColl("");
+         for (int i = 0; i < rdogrpGPSColl.getChildCount(); i++)
+         {
+             rb = (RadioButton)rdogrpGPSColl.getChildAt(i);
+             if (rb.isChecked()) objSave.setGPSColl(d_rdogrpGPSColl[i]);
+         }
+
+
          objSave.setWaypoint(Integer.valueOf(txtWaypoint.getText().toString().length()==0?"0":txtWaypoint.getText().toString()));
          objSave.setLatDeg(Integer.valueOf(txtLatDeg.getText().toString().length()==0?"0":txtLatDeg.getText().toString()));
          objSave.setLatMin(Integer.valueOf(txtLatMin.getText().toString().length()==0?"0":txtLatMin.getText().toString()));
@@ -2282,6 +2362,9 @@
              structureDB_dataModel.setUname(UNION_NAME);
              structureDB_dataModel.setCluster(txtCluster.getText().toString());
              structureDB_dataModel.setStructureNo(txtStructureNo.getText().toString());
+             structureDB_dataModel.setEnDt(Global.DateTimeNowYMDHMS());
+             structureDB_dataModel.setDeviceID(DEVICEID);
+             structureDB_dataModel.setEntryUser(ENTRYUSER); //from data entry user list
              structureDB_dataModel.setmodifyDate(Global.DateTimeNowYMDHMS());
              structureDB_dataModel.SaveUpdateData(this);
          }
@@ -2309,7 +2392,6 @@
      {
        try
         {
-     
            RadioButton rb;
            StructureListing_DataModel d = new StructureListing_DataModel();
            String SQL = "Select * from "+ TableName +"  Where Upazila='"+ Upazila +"' and UNCode='"+ UNCode +"' and Cluster='"+CLUSTER+"' and StructureNo='"+StructureNo+"'";
@@ -2404,6 +2486,17 @@
                      rb.setChecked(true);
                  }
              }
+
+
+               String[] d_rdogrpGPSColl = new String[] {"1","2"};
+               for (int i = 0; i < d_rdogrpGPSColl.length; i++)
+               {
+                   if (String.valueOf(item.getGPSColl()).equals(String.valueOf(d_rdogrpGPSColl[i])))
+                   {
+                       rb = (RadioButton)rdogrpGPSColl.getChildAt(i);
+                       rb.setChecked(true);
+                   }
+               }
              txtWaypoint.setText(String.valueOf(item.getWaypoint()));
              txtLatDeg.setText(String.valueOf(item.getLatDeg()));
              txtLatMin.setText(String.valueOf(item.getLatMin()));

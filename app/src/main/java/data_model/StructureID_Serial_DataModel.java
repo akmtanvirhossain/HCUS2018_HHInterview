@@ -72,7 +72,7 @@ import android.content.Context;
             String SQL = "";
             try
             {
-                 if(C.Existence("Select * from "+ TableName +"  Where DeviceId='"+ _DeviceId +"' and Ward='"+ _Ward +"' and NewStructure='"+ _NewStructure +"' "))
+                 if(C.Existence("Select * from "+ TableName +"  Where DeviceId='"+ _DeviceId +"' and Ward='"+ _Ward +"'"))
                     response = UpdateData(context);
                  else
                     response = SaveData(context);
@@ -110,7 +110,7 @@ import android.content.Context;
             String SQL = "";
             try
               {
-                 SQL = "Update "+ TableName +" Set Upload='2',modifyDate='" + _modifyDate + "' ,DeviceId = '"+ _DeviceId +"',Ward = '"+ _Ward +"',NewStructure = '"+ _NewStructure +"'  Where DeviceId='"+ _DeviceId +"' and Ward='"+ _Ward +"' and NewStructure='"+ _NewStructure +"'";
+                 SQL = "Update "+ TableName +" Set Upload='2',modifyDate='" + _modifyDate + "' ,DeviceId = '"+ _DeviceId +"',Ward = '"+ _Ward +"',NewStructure = '"+ _NewStructure +"'  Where DeviceId='"+ _DeviceId +"' and Ward='"+ _Ward +"'";
                  response = C.SaveData(SQL);
                  C.close();
               }

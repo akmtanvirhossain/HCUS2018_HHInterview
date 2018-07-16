@@ -147,7 +147,7 @@
     </LinearLayout>
     <View android:id="@+id/lineSrtoried" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secLandmark1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
-        <TextView android:id="@+id/lblLandmark1" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/lblLandmark1" android:text="a)" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <TextView android:id="@+id/VlblLandmark1" android:text="Lanmark One" android:layout_width="220sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <RadioGroup android:id="@+id/rdogrpLandmark1" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoLandmark11" android:text="Yes" android:gravity="top|bottom" />
@@ -174,7 +174,7 @@
     </LinearLayout>
     <View android:id="@+id/lineLandmarkName1" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secLandmark2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
-        <TextView android:id="@+id/lblLandmark2" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/lblLandmark2" android:text="b)" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <TextView android:id="@+id/VlblLandmark2" android:text="Landmark Two" android:layout_width="220sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <RadioGroup android:id="@+id/rdogrpLandmark2" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoLandmark21" android:text="Yes" android:gravity="top|bottom" />
@@ -201,7 +201,7 @@
     </LinearLayout>
     <View android:id="@+id/lineLandmark2Name" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secLandmark3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
-        <TextView android:id="@+id/lblLandmark3" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/lblLandmark3" android:text="c)" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <TextView android:id="@+id/VlblLandmark3" android:text="Landmark Three" android:layout_width="220sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <RadioGroup android:id="@+id/rdogrpLandmark3" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoLandmark31" android:text="Yes" android:gravity="top|bottom" />
@@ -228,7 +228,7 @@
     </LinearLayout>
     <View android:id="@+id/lineLandmark3Name" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secLandmark4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
-        <TextView android:id="@+id/lblLandmark4" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/lblLandmark4" android:text="d)" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <TextView android:id="@+id/VlblLandmark4" android:text="Landmark Four" android:layout_width="220sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <RadioGroup android:id="@+id/rdogrpLandmark4" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoLandmark41" android:text="Yes" android:gravity="top|bottom" />
@@ -281,6 +281,26 @@
         </RadioGroup>
     </LinearLayout>
     <View android:id="@+id/lineSlum" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+
+        secGPSHeading
+        secGPSColl
+        rdogrpGPSColl
+        rdoGPSColl1
+        rdoGPSColl2
+        <LinearLayout android:id="@+id/secGPSHeading" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <TextView android:id="@+id/Vlblgps" android:text="GPS Information" android:layout_width="220sp" android:layout_height="wrap_content" android:textSize="20sp" style="@style/rowHeading" />
+        </LinearLayout>
+        <View android:id="@+id/lineSlum11" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+        <LinearLayout android:id="@+id/secGPSColl" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+            <TextView android:id="@+id/lblGPSColl" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+            <TextView android:id="@+id/VlblGPSColl" android:text="GPS Information Collected?" android:layout_width="220sp" android:layout_height="wrap_content" android:textSize="20sp" />
+            <RadioGroup android:id="@+id/rdogrpGPSColl" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">
+                <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoGPSColl1" android:text="Yes" android:gravity="top|bottom" />
+                <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoGPSColl2" android:text="No" android:gravity="top|bottom"/>
+            </RadioGroup>
+        </LinearLayout>
+        <View android:id="@+id/lineSlum1" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+
     <LinearLayout android:id="@+id/secWaypoint" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblWaypoint" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <TextView android:id="@+id/VlblWaypoint" android:text="Waypoint" android:layout_width="220sp" android:layout_height="wrap_content" android:textSize="20sp" />

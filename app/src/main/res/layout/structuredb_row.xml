@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scrollbars="vertical">
-    <LinearLayout android:id="@+id/secListRow" android:paddingTop="8sp" android:paddingBottom="8sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+    <LinearLayout android:id="@+id/secListRow" android:paddingTop="12sp" android:paddingBottom="12sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
         <!--<TextView android:id="@+id/Division" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <!--<TextView android:id="@+id/DivName" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <!--<TextView android:id="@+id/Zila" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
@@ -10,7 +10,7 @@
         <!--<TextView android:id="@+id/UNCode" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <!--<TextView android:id="@+id/Uname" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <!--<TextView android:id="@+id/Cluster" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <TextView android:id="@+id/SlNo" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SlNo" android:layout_width="100dp" android:gravity="center" android:layout_height="wrap_content"/>
         <TextView android:id="@+id/StructureNo" android:layout_width="wrap_content" android:gravity="center" android:layout_height="wrap_content"/>
         <TextView android:id="@+id/status" android:layout_width="wrap_content" android:gravity="center" android:layout_height="wrap_content"/>
     </LinearLayout>

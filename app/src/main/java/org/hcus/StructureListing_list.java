@@ -217,8 +217,10 @@ package org.hcus;
 
              @Override
              public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                 DataSearch(UPAZILA, UNCODE,CLUSTER);
-                 txtTotal.setText("Total No: "+dataList.size());
+                 if(txtSearch.getText().toString().length()>0) {
+                     DataSearch(UPAZILA, UNCODE, CLUSTER);
+
+                 }
              }
 
              @Override
@@ -301,7 +303,7 @@ package org.hcus;
 
              if(txtSearch.getText().toString().length()>0) {
                  SQL += " and (";
-                 SQL += " sd.StructureNo like('%"+ txtSearch.getText().toString() +"%')";
+                 SQL += " sd.StructureNo like('"+ txtSearch.getText().toString() +"%')";
                  SQL += " )";
              }
 
@@ -311,6 +313,7 @@ package org.hcus;
              dataList.addAll(data);
              try {
                  mAdapter.notifyDataSetChanged();
+                 txtTotal.setText("Total Structure: " + dataList.size());
              }catch ( Exception ex){
                  Connection.MessageBox(StructureListing_list.this,ex.getMessage());
              }
@@ -382,6 +385,8 @@ package org.hcus;
 
              if(data.get_status().toString().length()>0) {
                 holder.secListRow.setBackgroundColor(Color.GREEN);
+             }else{
+                 holder.secListRow.setBackgroundColor(Color.WHITE);
              }
 
              holder.secListRow.setOnClickListener(new View.OnClickListener() {
