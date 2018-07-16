@@ -1200,12 +1200,7 @@ public class Connection extends SQLiteOpenHelper {
 
         //Download data from server
         //------------------------------------------------------------------------------
-        tableList.add("Symptom");
-        tableList.add("Diagnosis");
-        tableList.add("referralDept");
-        tableList.add("refusalCode");
-        tableList.add("Genus");
-        tableList.add("Species");
+
 
         for (int i = 0; i < tableList.size(); i++)
             Sync_Download(tableList.get(i).toString(), UserId, "");
