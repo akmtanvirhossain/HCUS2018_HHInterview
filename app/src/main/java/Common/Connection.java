@@ -1015,25 +1015,27 @@ public class Connection extends SQLiteOpenHelper {
             dt.setdata(data);
             Gson gson = new Gson();
             String json = gson.toJson(dt);
-            UploadDataJSON_Merge u = new UploadDataJSON_Merge();
+            UploadDataJSON u = new UploadDataJSON();
             try {
                 response = u.execute(json).get();
 
                 //Process Response
                 if (response != null) {
-                    Type collType = new TypeToken<ResponseClass>() {
+                    DownloadClass d = new DownloadClass();
+                    Type collType = new TypeToken<DownloadClass>() {
                     }.getType();
-
-                    ResponseClass responseData = gson.fromJson(response, collType);
-                    Save(responseData.getdata().toString());
+                    DownloadClass responseData = gson.fromJson(response, collType);
 
                     //upload all records as successfull upload then update status of upload=2 for unsuccessfull
+                    for (int i = 0; i < responseData.getdata().size(); i++) {
+                        Save("Update " + TableName + " Set Upload='1' where " + responseData.getdata().get(i).toString());
+                    }
+
                     /*String UpdateSQL = "";
                     for (int i = 0; i < responseData.getdata().size(); i++) {
                         UpdateSQL += "Update " + TableName + " Set Upload='1' where " + responseData.getdata().get(i).toString() +";";
-                        //Save("Update " + TableName + " Set Upload='1' where " + responseData.getdata().get(i).toString());
                     }
-                    Save(UpdateSQL);*/
+                    SaveDT(UpdateSQL);*/
                 }
 
             } catch (Exception e) {

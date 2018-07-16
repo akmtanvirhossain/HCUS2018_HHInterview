@@ -135,9 +135,9 @@ public class MainActivity extends AppCompatActivity
 
                                                             try {
                                                                 List<String> tableList = new ArrayList<String>();
-                                                                tableList.add("StructureDB");
+                                                                /*tableList.add("StructureDB");
                                                                 tableList.add("StructureID_Serial");
-                                                                tableList.add("StructureIDSlot");
+                                                                tableList.add("StructureIDSlot");*/
                                                                 tableList.add("StructureListing");
                                                                 C.DataSync_UploadDownload(tableList, DEVICEID);
 
