@@ -2181,9 +2181,9 @@
 //             txtLatSec.requestFocus();
 //             return;
 //           }
-         else if((Integer.valueOf(txtLatSec.getText().toString().length()==0 ? "1" : txtLatSec.getText().toString()) < 1 || Integer.valueOf(txtLatSec.getText().toString().length()==0 ? "99" : txtLatSec.getText().toString()) > 99) & secLatSec.isShown())
+         else if((Integer.valueOf(txtLatSec.getText().toString().length()==0 ? "1" : txtLatSec.getText().toString()) < 1 || Integer.valueOf(txtLatSec.getText().toString().length()==0 ? "999" : txtLatSec.getText().toString()) > 999) & secLatSec.isShown())
            {
-             Connection.MessageBox(StructureListing.this, "Value should be between 1 and 99(Latitude Seconds).");
+             Connection.MessageBox(StructureListing.this, "Value should be between 1 and 999(Latitude Seconds).");
              txtLatSec.requestFocus(); 
              return;	
            }
@@ -2217,9 +2217,9 @@
 //             txtLonSec.requestFocus();
 //             return;
 //           }
-         else if((Integer.valueOf(txtLonSec.getText().toString().length()==0 ? "1" : txtLonSec.getText().toString()) < 1 || Integer.valueOf(txtLonSec.getText().toString().length()==0 ? "99" : txtLonSec.getText().toString()) > 99) & secLonSec.isShown())
+         else if((Integer.valueOf(txtLonSec.getText().toString().length()==0 ? "1" : txtLonSec.getText().toString()) < 1 || Integer.valueOf(txtLonSec.getText().toString().length()==0 ? "999" : txtLonSec.getText().toString()) > 999) & secLonSec.isShown())
            {
-             Connection.MessageBox(StructureListing.this, "Value should be between 1 and 99(Longitude seconds).");
+             Connection.MessageBox(StructureListing.this, "Value should be between 1 and 999(Longitude seconds).");
              txtLonSec.requestFocus(); 
              return;	
            }
