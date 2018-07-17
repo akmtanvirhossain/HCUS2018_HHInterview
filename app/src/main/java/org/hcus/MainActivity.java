@@ -86,18 +86,10 @@ public class MainActivity extends AppCompatActivity
                 {
                     if(position==0)
                     {
-//                        IDbundle.putString("moduleid", "1");
-//                        IDbundle.putString("dataid", "1235");
-//                        IDbundle.putString("name", "Sakib");
-//                        IDbundle.putString("age", "5 month");
-//                        IDbundle.putString("id", "#123");
-//                        IDbundle.putString("moduleName", "test form");
-
                         Intent intent = new Intent(getApplicationContext(), StructureListing_list.class);
-//                        intent.putExtras(IDbundle);
                         startActivity(intent);
                     }
-                    else if(position==3)
+                    else if(position==1)
                     {
                         if (Connection.haveNetworkConnection(MainActivity.this)) {
                             netwoekAvailable=true;
@@ -137,7 +129,7 @@ public class MainActivity extends AppCompatActivity
                                                                 List<String> tableList = new ArrayList<String>();
                                                                 tableList.add("StructureDB");
                                                                 tableList.add("StructureID_Serial");
-                                                                tableList.add("StructureIDSlot");
+                                                                //tableList.add("StructureIDSlot");
                                                                 tableList.add("StructureListing");
                                                                 C.DataSync_UploadDownload(tableList, DEVICEID);
 
@@ -175,7 +167,7 @@ public class MainActivity extends AppCompatActivity
 
                     //Exit from the system
                     //*******************************************************************************
-                    else if(position==4)
+                    else if(position==2)
                     {
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -325,9 +317,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         private String[] desc={
-                "New",
-                "Monitoring",
-                "Data Search",
+                "Data Collection",
                 "Data Sync",
                 "Exit"};
 
@@ -335,8 +325,6 @@ public class MainActivity extends AppCompatActivity
         //references to our images
         private Integer[] mThumbIds = {
                 R.drawable.ic_action_new,
-                R.drawable.planning,
-                R.drawable.ic_action_search,
                 R.drawable.sync,
                 R.drawable.exit1
         };

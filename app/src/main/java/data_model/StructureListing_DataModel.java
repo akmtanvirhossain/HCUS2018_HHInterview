@@ -71,6 +71,15 @@ import android.content.Context;
         public void setHolding(String newValue){
               _Holding = newValue;
          }
+
+     private String _Road = "";
+     public String getRoad(){
+         return _Road;
+     }
+     public void setRoad(String newValue){
+         _Road = newValue;
+     }
+
         private String _Address = "";
         public String getAddress(){
               return _Address;
@@ -378,7 +387,7 @@ import android.content.Context;
             String SQL = "";
             try
               {
-                 SQL = "Insert into "+ TableName +" (Upazila,UNCode,VCode,Cluster,StructureNo,ColDate,ColTime,StructureStatus,Holding,Address,BuildingType,BuildingTypeOth,Srtoried,Landmark1,Landmark1Code,LandmarkOth1,LandmarkName1,Landmark2,Landmark2Code,LandmarkOth2,Landmark2Name,Landmark3,Landmark3Code,LandmarkOth3,Landmark3Name,Landmark4,Landmark4Code,LandmarkOth4,Landmark4Name,OwnerName,OccupantName,TotHH,Slum,GPSColl,Waypoint,LatDeg,LatMin,LatSec,LonDeg,LonMin,LonSec,Remarks,StartTime,EndTime,DeviceID,EntryUser,Lat,Lon,EnDt,Upload,modifyDate,VName_Oth)Values('"+ _Upazila +"', '"+ _UNCode +"', '"+ _VCode +"', '"+ _Cluster +"', '"+ _StructureNo +"', '"+ _ColDate +"', '"+ _ColTime +"', '"+ _StructureStatus +"', '"+ _Holding +"', '"+ _Address +"', '"+ _BuildingType +"', '"+ _BuildingTypeOth +"', '"+ _Srtoried +"', '"+ _Landmark1 +"', '"+ _Landmark1Code +"', '"+ _LandmarkOth1 +"', '"+ _LandmarkName1 +"', '"+ _Landmark2 +"', '"+ _Landmark2Code +"', '"+ _LandmarkOth2 +"', '"+ _Landmark2Name +"', '"+ _Landmark3 +"', '"+ _Landmark3Code +"', '"+ _LandmarkOth3 +"', '"+ _Landmark3Name +"', '"+ _Landmark4 +"', '"+ _Landmark4Code +"', '"+ _LandmarkOth4 +"', '"+ _Landmark4Name +"', '"+ _OwnerName +"', '"+ _OccupantName +"', '"+ _TotHH +"', '"+ _Slum +"','"+ _GPSColl +"', '"+ _Waypoint +"', '"+ _LatDeg +"', '"+ _LatMin +"', '"+ _LatSec +"', '"+ _LonDeg +"', '"+ _LonMin +"', '"+ _LonSec +"', '"+ _Remarks +"', '"+ _StartTime +"', '"+ _EndTime +"', '"+ _DeviceID +"', '"+ _EntryUser +"', '"+ _Lat +"', '"+ _Lon +"', '"+ _EnDt +"', '"+ _Upload +"', '"+ _modifyDate+"', '"+_Vname_Oth +"')";
+                 SQL = "Insert into "+ TableName +" (Upazila,UNCode,VCode,Cluster,StructureNo,ColDate,ColTime,StructureStatus,Holding,Road,Address,BuildingType,BuildingTypeOth,Srtoried,Landmark1,Landmark1Code,LandmarkOth1,LandmarkName1,Landmark2,Landmark2Code,LandmarkOth2,Landmark2Name,Landmark3,Landmark3Code,LandmarkOth3,Landmark3Name,Landmark4,Landmark4Code,LandmarkOth4,Landmark4Name,OwnerName,OccupantName,TotHH,Slum,GPSColl,Waypoint,LatDeg,LatMin,LatSec,LonDeg,LonMin,LonSec,Remarks,StartTime,EndTime,DeviceID,EntryUser,Lat,Lon,EnDt,Upload,modifyDate,VName_Oth)Values('"+ _Upazila +"', '"+ _UNCode +"', '"+ _VCode +"', '"+ _Cluster +"', '"+ _StructureNo +"', '"+ _ColDate +"', '"+ _ColTime +"', '"+ _StructureStatus +"', '"+ _Holding +"','"+ _Road +"', '"+ _Address +"', '"+ _BuildingType +"', '"+ _BuildingTypeOth +"', '"+ _Srtoried +"', '"+ _Landmark1 +"', '"+ _Landmark1Code +"', '"+ _LandmarkOth1 +"', '"+ _LandmarkName1 +"', '"+ _Landmark2 +"', '"+ _Landmark2Code +"', '"+ _LandmarkOth2 +"', '"+ _Landmark2Name +"', '"+ _Landmark3 +"', '"+ _Landmark3Code +"', '"+ _LandmarkOth3 +"', '"+ _Landmark3Name +"', '"+ _Landmark4 +"', '"+ _Landmark4Code +"', '"+ _LandmarkOth4 +"', '"+ _Landmark4Name +"', '"+ _OwnerName +"', '"+ _OccupantName +"', '"+ _TotHH +"', '"+ _Slum +"','"+ _GPSColl +"', '"+ _Waypoint +"', '"+ _LatDeg +"', '"+ _LatMin +"', '"+ _LatSec +"', '"+ _LonDeg +"', '"+ _LonMin +"', '"+ _LonSec +"', '"+ _Remarks +"', '"+ _StartTime +"', '"+ _EndTime +"', '"+ _DeviceID +"', '"+ _EntryUser +"', '"+ _Lat +"', '"+ _Lon +"', '"+ _EnDt +"', '"+ _Upload +"', '"+ _modifyDate+"', '"+_Vname_Oth +"')";
                  response = C.SaveData(SQL);
                  C.close();
               }
@@ -396,7 +405,7 @@ import android.content.Context;
             String SQL = "";
             try
               {
-                 SQL = "Update "+ TableName +" Set Upload='2',modifyDate='" + _modifyDate + "' ,Upazila = '"+ _Upazila +"',UNCode = '"+ _UNCode +"',VCode = '"+ _VCode+"',VName_Oth = '"+ _Vname_Oth  +"',Cluster = '"+ _Cluster +"',StructureNo = '"+ _StructureNo +"',ColDate = '"+ _ColDate +"',ColTime = '"+ _ColTime +"',StructureStatus = '"+ _StructureStatus +"',Holding = '"+ _Holding +"',Address = '"+ _Address +"',BuildingType = '"+ _BuildingType +"',BuildingTypeOth = '"+ _BuildingTypeOth +"',Srtoried = '"+ _Srtoried +"',Landmark1 = '"+ _Landmark1 +"',Landmark1Code = '"+ _Landmark1Code +"',LandmarkOth1 = '"+ _LandmarkOth1 +"',LandmarkName1 = '"+ _LandmarkName1 +"',Landmark2 = '"+ _Landmark2 +"',Landmark2Code = '"+ _Landmark2Code +"',LandmarkOth2 = '"+ _LandmarkOth2 +"',Landmark2Name = '"+ _Landmark2Name +"',Landmark3 = '"+ _Landmark3 +"',Landmark3Code = '"+ _Landmark3Code +"',LandmarkOth3 = '"+ _LandmarkOth3 +"',Landmark3Name = '"+ _Landmark3Name +"',Landmark4 = '"+ _Landmark4 +"',Landmark4Code = '"+ _Landmark4Code +"',LandmarkOth4 = '"+ _LandmarkOth4 +"',Landmark4Name = '"+ _Landmark4Name +"',OwnerName = '"+ _OwnerName +"',OccupantName = '"+ _OccupantName +"',TotHH = '"+ _TotHH +"',Slum = '"+ _Slum +"',GPSColl='"+ _GPSColl +"',Waypoint = '"+ _Waypoint +"',LatDeg = '"+ _LatDeg +"',LatMin = '"+ _LatMin +"',LatSec = '"+ _LatSec +"',LonDeg = '"+ _LonDeg +"',LonMin = '"+ _LonMin +"',LonSec = '"+ _LonSec +"',Remarks = '"+ _Remarks +"'  Where Upazila='"+ _Upazila +"' and UNCode='"+ _UNCode +"' and vcode='"+_VCode+"' and Cluster='"+_Cluster+"' and StructureNo='"+_StructureNo+"'";
+                 SQL = "Update "+ TableName +" Set Upload='2',modifyDate='" + _modifyDate + "' ,Upazila = '"+ _Upazila +"',UNCode = '"+ _UNCode +"',VCode = '"+ _VCode+"',VName_Oth = '"+ _Vname_Oth  +"',Cluster = '"+ _Cluster +"',StructureNo = '"+ _StructureNo +"',ColDate = '"+ _ColDate +"',ColTime = '"+ _ColTime +"',StructureStatus = '"+ _StructureStatus +"',Holding = '"+ _Holding +"',Road='"+ _Road +"',Address = '"+ _Address +"',BuildingType = '"+ _BuildingType +"',BuildingTypeOth = '"+ _BuildingTypeOth +"',Srtoried = '"+ _Srtoried +"',Landmark1 = '"+ _Landmark1 +"',Landmark1Code = '"+ _Landmark1Code +"',LandmarkOth1 = '"+ _LandmarkOth1 +"',LandmarkName1 = '"+ _LandmarkName1 +"',Landmark2 = '"+ _Landmark2 +"',Landmark2Code = '"+ _Landmark2Code +"',LandmarkOth2 = '"+ _LandmarkOth2 +"',Landmark2Name = '"+ _Landmark2Name +"',Landmark3 = '"+ _Landmark3 +"',Landmark3Code = '"+ _Landmark3Code +"',LandmarkOth3 = '"+ _LandmarkOth3 +"',Landmark3Name = '"+ _Landmark3Name +"',Landmark4 = '"+ _Landmark4 +"',Landmark4Code = '"+ _Landmark4Code +"',LandmarkOth4 = '"+ _LandmarkOth4 +"',Landmark4Name = '"+ _Landmark4Name +"',OwnerName = '"+ _OwnerName +"',OccupantName = '"+ _OccupantName +"',TotHH = '"+ _TotHH +"',Slum = '"+ _Slum +"',GPSColl='"+ _GPSColl +"',Waypoint = '"+ _Waypoint +"',LatDeg = '"+ _LatDeg +"',LatMin = '"+ _LatMin +"',LatSec = '"+ _LatSec +"',LonDeg = '"+ _LonDeg +"',LonMin = '"+ _LonMin +"',LonSec = '"+ _LonSec +"',Remarks = '"+ _Remarks +"'  Where Upazila='"+ _Upazila +"' and UNCode='"+ _UNCode +"' and vcode='"+_VCode+"' and Cluster='"+_Cluster+"' and StructureNo='"+_StructureNo+"'";
                  response = C.SaveData(SQL);
                  C.close();
               }
@@ -428,6 +437,8 @@ import android.content.Context;
                 d._ColTime = cur.getString(cur.getColumnIndex("ColTime"));
                 d._StructureStatus = Integer.valueOf(cur.getString(cur.getColumnIndex("StructureStatus")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("StructureStatus")));
                 d._Holding = cur.getString(cur.getColumnIndex("Holding"));
+                d._Road = cur.getString(cur.getColumnIndex("Road"));
+
                 d._Address = cur.getString(cur.getColumnIndex("Address"));
                 d._BuildingType = Integer.valueOf(cur.getString(cur.getColumnIndex("BuildingType")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("BuildingType")));
                 d._BuildingTypeOth = cur.getString(cur.getColumnIndex("BuildingTypeOth"));

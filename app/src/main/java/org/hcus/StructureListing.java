@@ -267,6 +267,8 @@
      RadioButton rdoGPSColl1;
      RadioButton rdoGPSColl2;
 
+     EditText txtRoad;
+     LinearLayout secRoad;
          TextView txtUpazila_Name,txtUnion_Name,txtMoholla_Name;
 
 
@@ -363,6 +365,8 @@
                  adb.show();
              }});
 
+         secRoad=(LinearLayout)findViewById(R.id.secRoad);
+         txtRoad=(EditText)findViewById(R.id.txtRoad);
          secGPSHeading=(LinearLayout)findViewById(R.id.secGPSHeading) ;
          secGPSColl=(LinearLayout)findViewById(R.id.secGPSColl) ;
          rdogrpGPSColl=(RadioGroup)findViewById(R.id.rdogrpGPSColl) ;
@@ -437,6 +441,7 @@
                  if (spnData.equalsIgnoreCase("1"))
                  {
                      secHolding.setVisibility(View.VISIBLE);
+                     secRoad.setVisibility(View.VISIBLE);
                      lineHolding.setVisibility(View.VISIBLE);
                      secAddress.setVisibility(View.VISIBLE);
                      lineAddress.setVisibility(View.VISIBLE);
@@ -511,7 +516,7 @@
                  {
                      secHolding.setVisibility(View.VISIBLE);
                      lineHolding.setVisibility(View.VISIBLE);
-
+                     secRoad.setVisibility(View.VISIBLE);
                      secAddress.setVisibility(View.VISIBLE);
                      lineAddress.setVisibility(View.VISIBLE);
 
@@ -616,6 +621,8 @@
                      secHolding.setVisibility(View.GONE);
                      lineHolding.setVisibility(View.GONE);
                      txtHolding.setText("");
+                     secRoad.setVisibility(View.GONE);
+                     txtRoad.setText("");
                      secAddress.setVisibility(View.GONE);
                      lineAddress.setVisibility(View.GONE);
                      txtAddress.setText("");
@@ -709,6 +716,8 @@
                      secLonSec.setVisibility(View.GONE);
                      lineLonSec.setVisibility(View.GONE);
                      txtLonSec.setText("");
+                     secGPSHeading.setVisibility(View.GONE);
+                     secGPSColl.setVisibility(View.GONE);
                  }
              }
              @Override
@@ -803,6 +812,18 @@
          listSrtoried.add("18");
          listSrtoried.add("19");
          listSrtoried.add("20");
+
+         listSrtoried.add("21");
+         listSrtoried.add("22");
+         listSrtoried.add("23");
+         listSrtoried.add("24");
+         listSrtoried.add("25");
+         listSrtoried.add("26");
+         listSrtoried.add("27");
+         listSrtoried.add("28");
+         listSrtoried.add("29");
+         listSrtoried.add("30");
+
          ArrayAdapter<String> adptrSrtoried= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listSrtoried);
          spnSrtoried.setAdapter(adptrSrtoried);
 
@@ -976,10 +997,10 @@
          List<String> listLandmark1Code = new ArrayList<String>();
          
          listLandmark1Code.add("");
-         listLandmark1Code.add("2-School");
+         listLandmark1Code.add("2-School/Kinder Garten/Coaching Center/Madrasa");
          listLandmark1Code.add("3-College");
          listLandmark1Code.add("4-Hospital/Clinic");
-         listLandmark1Code.add("5-Mosque");
+         listLandmark1Code.add("5-Mosque/Temple/Church");
          listLandmark1Code.add("6-Pharmacy");
          listLandmark1Code.add("7-Diagnostic center");
          listLandmark1Code.add("8-Shopping mall/Market");
@@ -1133,10 +1154,10 @@
          List<String> listLandmark2Code = new ArrayList<String>();
          
          listLandmark2Code.add("");
-         listLandmark2Code.add("2-School");
+         listLandmark2Code.add("2-School/Kinder Garten/Coaching Center/Madrasa");
          listLandmark2Code.add("3-College");
          listLandmark2Code.add("4-Hospital/Clinic");
-         listLandmark2Code.add("5-Mosque");
+         listLandmark2Code.add("5-Mosque/Temple/Church");
          listLandmark2Code.add("6-Pharmacy");
          listLandmark2Code.add("7-Diagnostic center");
          listLandmark2Code.add("8-Shopping mall/Market");
@@ -1266,10 +1287,10 @@
          List<String> listLandmark3Code = new ArrayList<String>();
          
          listLandmark3Code.add("");
-         listLandmark3Code.add("2-School");
+         listLandmark3Code.add("2-School/Kinder Garten/Coaching Center/Madrasa");
          listLandmark3Code.add("3-College");
          listLandmark3Code.add("4-Hospital/Clinic");
-         listLandmark3Code.add("5-Mosque");
+         listLandmark3Code.add("5-Mosque/Temple/Church");
          listLandmark3Code.add("6-Pharmacy");
          listLandmark3Code.add("7-Diagnostic center");
          listLandmark3Code.add("8-Shopping mall/Market");
@@ -1359,10 +1380,10 @@
          List<String> listLandmark4Code = new ArrayList<String>();
          
          listLandmark4Code.add("");
-         listLandmark4Code.add("2-School");
+         listLandmark4Code.add("2-School/Kinder Garten/Coaching Center/Madrasa");
          listLandmark4Code.add("3-College");
          listLandmark4Code.add("4-Hospital/Clinic");
-         listLandmark4Code.add("5-Mosque");
+         listLandmark4Code.add("5-Mosque/Temple/Church");
          listLandmark4Code.add("6-Pharmacy");
          listLandmark4Code.add("7-Diagnostic center");
          listLandmark4Code.add("8-Shopping mall/Market");
@@ -1542,6 +1563,7 @@
 
          secHolding.setVisibility(View.GONE);
          lineHolding.setVisibility(View.GONE);
+         secRoad.setVisibility(View.GONE);
          secAddress.setVisibility(View.GONE);
          lineAddress.setVisibility(View.GONE);
          secBuildingType.setVisibility(View.GONE);
@@ -2245,6 +2267,8 @@
          objSave.setColTime(txtColTime.getText().toString());
          objSave.setStructureStatus(Integer.valueOf(spnStructureStatus.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnStructureStatus.getSelectedItem().toString(), "-")));
          objSave.setHolding(txtHolding.getText().toString());
+         objSave.setRoad(txtRoad.getText().toString());
+
          objSave.setAddress(txtAddress.getText().toString());
          String[] d_rdogrpBuildingType = new String[] {"1","2","3","7"};
          objSave.setBuildingType(0);
@@ -2414,6 +2438,8 @@
              txtColTime.setText(item.getColTime());
              spnStructureStatus.setSelection(Global.SpinnerItemPositionAnyLength(spnStructureStatus, String.valueOf(item.getStructureStatus())));
              txtHolding.setText(item.getHolding());
+             txtRoad.setText(item.getRoad());
+
              txtAddress.setText(item.getAddress());
              String[] d_rdogrpBuildingType = new String[] {"1","2","3","7"};
              for (int i = 0; i < d_rdogrpBuildingType.length; i++)
