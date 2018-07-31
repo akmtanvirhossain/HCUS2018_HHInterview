@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import org.hcus.DataSyncService;
+import org.hcus_hhinterview.DataSyncService;
 
 import Common.Connection;
 

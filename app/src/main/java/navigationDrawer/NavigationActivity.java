@@ -20,8 +20,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import org.hcus.MainMenu;
-import org.hcus.R;
+import org.hcus_hhinterview.MainMenu;
+import org.hcus_hhinterview.R;
 
 
 public class NavigationActivity extends AppCompatActivity {

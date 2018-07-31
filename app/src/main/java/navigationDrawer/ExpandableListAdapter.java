@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.HashMap;
 import java.util.List;
 
-import org.hcus.R;
+import org.hcus_hhinterview.R;
 
 
 public class ExpandableListAdapter extends BaseExpandableListAdapter {
