@@ -2,7 +2,10 @@ package data_model;
 
 import android.content.Context;
  import android.database.Cursor;
- import Common.Connection;
+
+import org.hcus_hhinterview.StructureListing;
+
+import Common.Connection;
  import java.util.ArrayList;
  import java.util.List;
  import java.util.Date;
@@ -358,6 +361,26 @@ import android.content.Context;
          _Vname_Oth = vname_Oth;
      }
 
+     private String _Visit_Status;
+
+     public String get_Visit_Status() {
+         return _Visit_Status;
+     }
+
+     public void set_Visit_Status(String _Visit_Status) {
+         this._Visit_Status = _Visit_Status;
+     }
+
+     private String _Visit_No;
+
+     public String get_Visit_No() {
+         return _Visit_No;
+     }
+
+     public void set_Visit_No(String _Visit_No) {
+         this._Visit_No = _Visit_No;
+     }
+
      String TableName = "StructureListing";
 
         public String SaveUpdateData(Context context)
@@ -473,6 +496,8 @@ import android.content.Context;
                 d._LonSec = Integer.valueOf(cur.getString(cur.getColumnIndex("LonSec")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("LonSec")));
                 d._Remarks = cur.getString(cur.getColumnIndex("Remarks"));
                 d._Vname_Oth=cur.getString(cur.getColumnIndex("VName_Oth"));
+                d._Visit_Status=cur.getString(cur.getColumnIndex("Visit_Status"));
+//                d._Visit_No==cur.getString(cur.getColumnIndex("Visit_No"));
                 data.add(d);
 
                 cur.moveToNext();

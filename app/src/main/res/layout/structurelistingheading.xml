@@ -7,6 +7,8 @@
         <!--<TextView android:text="Cluster" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <TextView android:text="Serial" android:layout_width="100dp" android:gravity="center" android:layout_height="wrap_content"/>
         <TextView android:text="Structure No" android:layout_width="wrap_content" android:gravity="center" android:layout_height="wrap_content"/>
+
+
         <!--<TextView android:text="ColDate" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <!--<TextView android:text="ColTime" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <!--<TextView android:text="StructureStatus" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
