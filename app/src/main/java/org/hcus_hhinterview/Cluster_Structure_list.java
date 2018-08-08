@@ -281,7 +281,7 @@ public class Cluster_Structure_list extends Activity {
             StructureListing_DataModel d = new StructureListing_DataModel();
 
             String SQL = "Select sd.* from StructureListing sd " +
-                    "Where sd.Upazila='"+ Upazila +"' and sd.UNCode='"+ UNCode +"' and sd.Cluster='"+ Cluster +"'";
+                    "Where sd.Upazila='"+ Upazila +"' and sd.UNCode='"+ UNCode +"' and sd.Cluster='"+ Cluster +"' and sd.structureStatus=1";
 
             if(txtSearch.getText().toString().length()>0) {
                 SQL += " and (";
@@ -347,6 +347,12 @@ public class Cluster_Structure_list extends Activity {
 
             Log.logError(""+data.get_Visit_Status());
 
+            if(data.get_Visit_Status().equals("1"))
+            {
+                holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_green);
+                holder.btnVisit.setTextColor(Color.WHITE);
+            }
+
             holder.btnVisit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -357,6 +363,8 @@ public class Cluster_Structure_list extends Activity {
 //                    IDbundle.putString("Moholla", MOHOLLA);
                     IDbundle.putString("Cluster", data.getCluster());
                     IDbundle.putString("StructureNo", data.getStructureNo());
+
+                    IDbundle.putString("VisitNo", data.get_Visit_No());
                     IDbundle.putString("Upazila_Name", UPAZILA_NAME);
                     IDbundle.putString("Union_Name", UNION_NAME);
 //                    IDbundle.putString("Moholla_Name", MOHOLLA_NAME);

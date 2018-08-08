@@ -497,7 +497,8 @@ import Common.Connection;
                 d._Remarks = cur.getString(cur.getColumnIndex("Remarks"));
                 d._Vname_Oth=cur.getString(cur.getColumnIndex("VName_Oth"));
                 d._Visit_Status=cur.getString(cur.getColumnIndex("Visit_Status"));
-//                d._Visit_No==cur.getString(cur.getColumnIndex("Visit_No"));
+                d._Visit_No=cur.getString(cur.getColumnIndex("Visit_No"));
+
                 data.add(d);
 
                 cur.moveToNext();

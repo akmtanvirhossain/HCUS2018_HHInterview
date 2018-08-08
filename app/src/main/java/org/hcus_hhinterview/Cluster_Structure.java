@@ -24,6 +24,7 @@ package org.hcus_hhinterview;
  import android.location.LocationManager;
  import android.net.Uri;
  import android.provider.Settings;
+ import android.text.TextUtils;
  import android.view.KeyEvent;
  import android.os.Bundle;
  import android.view.Menu;
@@ -169,6 +170,11 @@ package org.hcus_hhinterview;
          UNION_NAME = IDbundle.getString("Union_Name");
 
          TableName = "Cluster_Structure";
+
+//         if(TextUtils.isEmpty(VISITNO))
+//         {
+             VISITNO=C.ReturnSingleValue("Select (ifnull(max(cast(VisitNo as int)),0)+1)VisitNo from Cluster_Structure where Upazila='"+UPAZILA+"' and UNCode='"+UNCODE+"' and Cluster='"+CLUSTER+"' and StructureNo='"+STRUCTURENO+"'");;
+//         }
 
          //turnGPSOn();
 
@@ -411,6 +417,13 @@ package org.hcus_hhinterview;
      }
  }
 
+//     private String VisitNo()
+//     {
+//         String visit = C.ReturnSingleValue("Select (ifnull(max(cast(VisitNo as int)),0)+1)VisitNo from Cluster_Structure where Upazila='"+UPAZILA+"' and UNCode='"+UNCODE+"' and Cluster='"+CLUSTER+"' and StructureNo='"+STRUCTURENO+"'");
+//
+//         return visit;
+//     }
+
  private void DataSave()
  {
    try
@@ -503,6 +516,17 @@ package org.hcus_hhinterview;
          //objSave.setLon(Double.toString(currentLongitude));
 
          String status = objSave.SaveUpdateData(this);
+
+         //********** Update Structure Listing *************
+
+         int visit=Integer.valueOf(spnVisitOutcome.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnVisitOutcome.getSelectedItem().toString(), "-"));
+
+         String response=C.SaveData("Update StructureListing set Visit_Status='"+visit+"' , Visit_No='"+txtVisitNo.getText().toString()+"' where Upazila='"+txtUpazila.getText().toString()+"'" +
+                 " and UNCode='"+txtUNCode.getText().toString()+"' and Cluster='"+txtCluster.getText().toString()+"' and StructureNo='"+txtStructureNo.getText().toString()+"'");
+
+
+
+
          if(status.length()==0) {
              Intent returnIntent = new Intent();
              returnIntent.putExtra("res", "");
