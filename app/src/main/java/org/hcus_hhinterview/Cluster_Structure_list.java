@@ -345,7 +345,7 @@ public class Cluster_Structure_list extends Activity {
             holder.StructureNo.setText(data.getStructureNo());
             holder.SlNo.setText(""+(position+1)+".");
 
-            Log.logError(""+data.get_Visit_Status());
+
 
             if(data.get_Visit_Status().equals("1"))
             {
@@ -375,6 +375,23 @@ public class Cluster_Structure_list extends Activity {
 
 
 
+                }
+            });
+
+            holder.btnHHInterview.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Bundle IDbundle = new Bundle();
+
+                    IDbundle.putString("UNCode", data.getUNCode());
+//                    IDbundle.putString("Cluster", data.getCluster());
+                    IDbundle.putString("StructureNo", data.getStructureNo());
+                    IDbundle.putString("Upazila_Name", UPAZILA_NAME);
+                    IDbundle.putString("Union_Name", UNION_NAME);
+
+                    Intent f1 = new Intent(getApplicationContext(), Household_Visit_list.class);
+                    f1.putExtras(IDbundle);
+                    startActivityForResult(f1,1);
                 }
             });
 

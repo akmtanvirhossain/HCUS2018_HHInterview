@@ -54,6 +54,8 @@
         <activity android:name="org.hcus_hhinterview.StructureListing" />
         <activity android:name="org.hcus_hhinterview.Cluster_Structure_list" />
         <activity android:name="org.hcus_hhinterview.Cluster_Structure" />
+        <activity android:name="org.hcus_hhinterview.Household_Visit" />
+        <activity android:name="org.hcus_hhinterview.Household_Visit_list" />
 
 
         //Service
