@@ -17,8 +17,8 @@
         <Button android:id="@+id/btnVisit"  android:textAllCaps="false" android:layout_marginLeft="20sp" android:layout_marginRight="20sp"  android:textSize="18sp" android:textColor="@color/theme_color"
             android:background="@drawable/button_style_circle_line" android:layout_width="wrap_content" android:layout_height="40sp" android:layout_marginTop="5dip" android:layout_marginBottom="10sp" android:text="Visit" android:paddingLeft="5sp" android:paddingRight="5sp"/>
 
-        <Button android:id="@+id/btnHHInterview"  android:textAllCaps="false"  android:layout_marginRight="20sp"  android:textSize="18sp" android:textColor="@color/theme_color"
-            android:background="@drawable/button_style_circle_line" android:layout_width="wrap_content" android:layout_height="40sp" android:layout_marginTop="5dip" android:layout_marginBottom="10sp" android:text="HH Interview" android:paddingLeft="5sp" android:paddingRight="5sp"/>
+        <Button android:id="@+id/btnHHInterview"  android:textAllCaps="false"  android:layout_marginRight="20sp"  android:textSize="18sp" android:textColor="@color/color_white"
+            android:background="@drawable/button_style_circle_red" android:layout_width="wrap_content" android:layout_height="40sp" android:layout_marginTop="5dip" android:layout_marginBottom="10sp" android:text="HH Interview" android:paddingLeft="5sp" android:paddingRight="5sp"/>
 
     </LinearLayout>
 </LinearLayout>

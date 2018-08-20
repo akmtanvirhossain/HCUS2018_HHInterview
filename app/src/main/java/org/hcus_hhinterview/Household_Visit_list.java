@@ -15,6 +15,7 @@ package org.hcus_hhinterview;
  import android.view.MotionEvent;
  import android.view.ViewGroup;
  import android.view.LayoutInflater;
+ import android.widget.EditText;
  import android.widget.LinearLayout;
  import android.widget.TextView;
  import android.widget.Button;
@@ -54,6 +55,17 @@ package org.hcus_hhinterview;
 
     Connection C;
     Global g;
+
+     LinearLayout secUNCode;
+     View lineUNCode;
+     TextView VlblUNCode;
+     EditText txtUNCode;
+     LinearLayout secStructureNo;
+     View lineStructureNo;
+     TextView VlblStructureNo;
+     EditText txtStructureNo;
+     TextView txtUnion_Name;
+
     private List<Household_Visit_DataModel> dataList = new ArrayList<>();
     private RecyclerView recyclerView;
     private DataAdapter mAdapter;
@@ -62,6 +74,7 @@ package org.hcus_hhinterview;
     TextView lblHeading;
     Button btnAdd;
     Button btnRefresh;
+
 
     static String STARTTIME = "";
     static String UNCODE = "";
@@ -81,6 +94,8 @@ package org.hcus_hhinterview;
          setContentView(R.layout.household_visit_list);
          C = new Connection(this);
          g = Global.getInstance();
+
+
          STARTTIME = g.CurrentTime24();
 
          IDbundle = getIntent().getExtras();
@@ -107,13 +122,28 @@ package org.hcus_hhinterview;
                      }});
                  adb.show();
              }});
+         txtUnion_Name=findViewById(R.id.txtUnion_Name);
+         secUNCode=(LinearLayout)findViewById(R.id.secUNCode);
+         lineUNCode=(View)findViewById(R.id.lineUNCode);
+         VlblUNCode=(TextView) findViewById(R.id.VlblUNCode);
+         txtUNCode=(EditText) findViewById(R.id.txtUNCode);
+         secStructureNo=(LinearLayout)findViewById(R.id.secStructureNo);
+         lineStructureNo=(View)findViewById(R.id.lineStructureNo);
+         VlblStructureNo=(TextView) findViewById(R.id.VlblStructureNo);
+         txtStructureNo=(EditText) findViewById(R.id.txtStructureNo);
 
          btnRefresh = (Button) findViewById(R.id.btnRefresh);
+         final String SL = C.ReturnSingleValue("Select (ifnull(max(cast(HouseholdSl as int)),0)+1) from Household_Visit where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'"); //where ParticipantID='"+ ParticipantID +"'");
+
+         final String SLNO = C.ReturnSingleValue("Select (ifnull(max(cast(VisitNo as int)),0)+1) from Household_Visit where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'and HouseholdSl='"+ HOUSEHOLDSL +"'"); //where ParticipantID='"+ ParticipantID +"'");
+
+
+
          btnRefresh.setOnClickListener(new View.OnClickListener() {
 
              public void onClick(View view) {
                    //write your code here
-                   DataSearch(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO);
+                   DataSearch(UNCODE, STRUCTURENO);
 
              }});
 
@@ -122,15 +152,21 @@ package org.hcus_hhinterview;
 
              public void onClick(View view) {
                          Bundle IDbundle = new Bundle();
-                         IDbundle.putString("UNCode", "");
-                         IDbundle.putString("StructureNo", "");
-                         IDbundle.putString("HouseholdSl", "");
-                         IDbundle.putString("VisitNo", "");
+                         IDbundle.putString("UNCode",UNCODE  );
+                         IDbundle.putString("StructureNo",STRUCTURENO );
+                         IDbundle.putString("HouseholdSl", SL);
+                         IDbundle.putString("VisitNo", SLNO);
+
                          Intent intent = new Intent(getApplicationContext(), Household_Visit.class);
                          intent.putExtras(IDbundle);
                          startActivityForResult(intent, 1);
 
              }});
+
+
+         txtUNCode.setText(UNCODE);
+         txtStructureNo.setText(STRUCTURENO);
+         txtUnion_Name.setText(UNION_NAME);
 
 
         recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
@@ -146,7 +182,7 @@ package org.hcus_hhinterview;
         recyclerView.setAdapter(mAdapter);
 
 
-        DataSearch(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO);
+        DataSearch(UNCODE, STRUCTURENO);
 
 
      }
@@ -163,17 +199,20 @@ package org.hcus_hhinterview;
      if (resultCode == Activity.RESULT_CANCELED) {
          //Write your code if there's no result
      } else {
-         DataSearch(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO);
+         DataSearch(UNCODE, STRUCTURENO);
+
+
+
      }
  }
 
- private void DataSearch(String UNCode, String StructureNo, String HouseholdSl, String VisitNo)
+ private void DataSearch(String UNCode, String StructureNo)
      {
        try
         {
      
            Household_Visit_DataModel d = new Household_Visit_DataModel();
-             String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"'";
+             String SQL = "Select * from "+ TableName +" Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"'";
              List<Household_Visit_DataModel> data = d.SelectAll(this, SQL);
              dataList.clear();
 
@@ -214,27 +253,28 @@ package org.hcus_hhinterview;
          TextView Consent;
          TextView Remarks;
          TextView DataCollDate;
+         Button btnEdit;
          public MyViewHolder(View convertView) {
              super(convertView);
              secListRow = (LinearLayout)convertView.findViewById(R.id.secListRow);
              UNCode = (TextView)convertView.findViewById(R.id.UNCode);
              StructureNo = (TextView)convertView.findViewById(R.id.StructureNo);
              HouseholdSl = (TextView)convertView.findViewById(R.id.HouseholdSl);
-             VisitNo = (TextView)convertView.findViewById(R.id.VisitNo);
-             HHVisited = (TextView)convertView.findViewById(R.id.HHVisited);
-             Outcome = (TextView)convertView.findViewById(R.id.Outcome);
-             OutcomeOth = (TextView)convertView.findViewById(R.id.OutcomeOth);
-             HHMember = (TextView)convertView.findViewById(R.id.HHMember);
-             U18Yrs = (TextView)convertView.findViewById(R.id.U18Yrs);
-             U18Alive = (TextView)convertView.findViewById(R.id.U18Alive);
-             U18YrsDie = (TextView)convertView.findViewById(R.id.U18YrsDie);
-             U18Death = (TextView)convertView.findViewById(R.id.U18Death);
-             OfferedStudy = (TextView)convertView.findViewById(R.id.OfferedStudy);
-             NotOffered = (TextView)convertView.findViewById(R.id.NotOffered);
-             NotOfferedOth = (TextView)convertView.findViewById(R.id.NotOfferedOth);
-             Consent = (TextView)convertView.findViewById(R.id.Consent);
-             Remarks = (TextView)convertView.findViewById(R.id.Remarks);
-             DataCollDate = (TextView)convertView.findViewById(R.id.DataCollDate);
+//             VisitNo = (TextView)convertView.findViewById(R.id.VisitNo);
+//             HHVisited = (TextView)convertView.findViewById(R.id.HHVisited);
+//             Outcome = (TextView)convertView.findViewById(R.id.Outcome);
+//             OutcomeOth = (TextView)convertView.findViewById(R.id.OutcomeOth);
+//             HHMember = (TextView)convertView.findViewById(R.id.HHMember);
+//             U18Yrs = (TextView)convertView.findViewById(R.id.U18Yrs);
+//             U18Alive = (TextView)convertView.findViewById(R.id.U18Alive);
+//             U18YrsDie = (TextView)convertView.findViewById(R.id.U18YrsDie);
+//             U18Death = (TextView)convertView.findViewById(R.id.U18Death);
+//             OfferedStudy = (TextView)convertView.findViewById(R.id.OfferedStudy);
+//             NotOffered = (TextView)convertView.findViewById(R.id.NotOffered);
+//             NotOfferedOth = (TextView)convertView.findViewById(R.id.NotOfferedOth);
+//             Consent = (TextView)convertView.findViewById(R.id.Consent);
+//             Remarks = (TextView)convertView.findViewById(R.id.Remarks);
+//             DataCollDate = (TextView)convertView.findViewById(R.id.DataCollDate);
              }
          }
          public DataAdapter(List<Household_Visit_DataModel> datalist) {
@@ -251,22 +291,22 @@ package org.hcus_hhinterview;
              final Household_Visit_DataModel data = dataList.get(position);
              holder.UNCode.setText(data.getUNCode());
              holder.StructureNo.setText(data.getStructureNo());
-             holder.HouseholdSl.setText(data.getHouseholdSl());
-             holder.VisitNo.setText(data.getVisitNo());
-             holder.HHVisited.setText(data.getHHVisited());
-             holder.Outcome.setText(data.getOutcome());
-             holder.OutcomeOth.setText(data.getOutcomeOth());
-             holder.HHMember.setText(data.getHHMember());
-             holder.U18Yrs.setText(data.getU18Yrs());
-             holder.U18Alive.setText(data.getU18Alive());
-             holder.U18YrsDie.setText(data.getU18YrsDie());
-             holder.U18Death.setText(data.getU18Death());
-             holder.OfferedStudy.setText(data.getOfferedStudy());
-             holder.NotOffered.setText(data.getNotOffered());
-             holder.NotOfferedOth.setText(data.getNotOfferedOth());
-             holder.Consent.setText(data.getConsent());
-             holder.Remarks.setText(data.getRemarks());
-             holder.DataCollDate.setText(data.getDataCollDate());
+             holder.HouseholdSl.setText(""+data.getHouseholdSl());
+//             holder.VisitNo.setText(data.getVisitNo());
+//             holder.HHVisited.setText(data.getHHVisited());
+//             holder.Outcome.setText(data.getOutcome());
+//             holder.OutcomeOth.setText(data.getOutcomeOth());
+//             holder.HHMember.setText(data.getHHMember());
+//             holder.U18Yrs.setText(data.getU18Yrs());
+//             holder.U18Alive.setText(data.getU18Alive());
+//             holder.U18YrsDie.setText(data.getU18YrsDie());
+//             holder.U18Death.setText(data.getU18Death());
+//             holder.OfferedStudy.setText(data.getOfferedStudy());
+//             holder.NotOffered.setText(data.getNotOffered());
+//             holder.NotOfferedOth.setText(data.getNotOfferedOth());
+//             holder.Consent.setText(data.getConsent());
+//             holder.Remarks.setText(data.getRemarks());
+//             holder.DataCollDate.setText(data.getDataCollDate());
              holder.secListRow.setOnClickListener(new View.OnClickListener() {
                  public void onClick(View v) {
                      final ProgressDialog progDailog = ProgressDialog.show(Household_Visit_list.this, "", "Please Wait . . .", true);

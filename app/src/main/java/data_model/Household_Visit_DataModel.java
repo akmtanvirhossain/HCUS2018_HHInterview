@@ -5,8 +5,8 @@ import android.content.Context;
  import Common.Connection;
  import java.util.ArrayList;
  import java.util.List;
- import java.util.Date;
- public class Household_Visit_DataModel{
+
+public class  Household_Visit_DataModel{
 
         private String _UNCode = "";
         public String getUNCode(){
@@ -58,9 +58,7 @@ import android.content.Context;
               _OutcomeOth = newValue;
          }
         private int _HHMember = 0;
-        public int getHHMember(){
-              return _HHMember;
-         }
+        public int getHHMember(){ return _HHMember; }
         public void setHHMember(int newValue){
               _HHMember = newValue;
          }

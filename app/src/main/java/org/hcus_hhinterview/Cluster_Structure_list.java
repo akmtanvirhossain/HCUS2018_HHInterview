@@ -351,6 +351,15 @@ public class Cluster_Structure_list extends Activity {
             {
                 holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_green);
                 holder.btnVisit.setTextColor(Color.WHITE);
+                holder.btnHHInterview.setBackgroundResource(R.drawable.button_style_circle_line );
+                holder.btnHHInterview.setTextColor(Color.BLUE);
+                holder.btnHHInterview.setVisibility(View.VISIBLE);
+
+            }
+            else
+            {
+                holder.btnHHInterview.setVisibility(View.GONE);
+
             }
 
             holder.btnVisit.setOnClickListener(new View.OnClickListener() {
@@ -378,6 +387,8 @@ public class Cluster_Structure_list extends Activity {
                 }
             });
 
+
+
             holder.btnHHInterview.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -388,6 +399,7 @@ public class Cluster_Structure_list extends Activity {
                     IDbundle.putString("StructureNo", data.getStructureNo());
                     IDbundle.putString("Upazila_Name", UPAZILA_NAME);
                     IDbundle.putString("Union_Name", UNION_NAME);
+
 
                     Intent f1 = new Intent(getApplicationContext(), Household_Visit_list.class);
                     f1.putExtras(IDbundle);

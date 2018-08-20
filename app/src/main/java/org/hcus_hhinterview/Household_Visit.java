@@ -108,7 +108,6 @@
          
          RadioButton rdoHHVisited1;
          RadioButton rdoHHVisited2;
-         RadioButton rdoHHVisited3;
          LinearLayout secOutcome;
          View lineOutcome;
          TextView VlblOutcome;
@@ -187,6 +186,7 @@
     static String HOUSEHOLDSL = "";
     static String VISITNO = "";
 
+
  public void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
    try
@@ -205,7 +205,11 @@
          UNCODE = IDbundle.getString("UNCode");
          STRUCTURENO = IDbundle.getString("StructureNo");
          HOUSEHOLDSL = IDbundle.getString("HouseholdSl");
+
          VISITNO = IDbundle.getString("VisitNo");
+
+
+
 
          TableName = "Household_Visit";
 
@@ -232,6 +236,7 @@
              }});
 
 
+
          secUNCode=(LinearLayout)findViewById(R.id.secUNCode);
          lineUNCode=(View)findViewById(R.id.lineUNCode);
          VlblUNCode=(TextView) findViewById(R.id.VlblUNCode);
@@ -255,11 +260,80 @@
          
          rdoHHVisited1 = (RadioButton) findViewById(R.id.rdoHHVisited1);
          rdoHHVisited2 = (RadioButton) findViewById(R.id.rdoHHVisited2);
-         rdoHHVisited3 = (RadioButton) findViewById(R.id.rdoHHVisited3);
          secOutcome=(LinearLayout)findViewById(R.id.secOutcome);
          lineOutcome=(View)findViewById(R.id.lineOutcome);
          VlblOutcome=(TextView) findViewById(R.id.VlblOutcome);
          spnOutcome=(Spinner) findViewById(R.id.spnOutcome);
+
+
+         txtUNCode.setText(UNCODE);
+         txtStructureNo.setText(STRUCTURENO);
+         txtHouseholdSl.setText(HOUSEHOLDSL);
+         txtVisitNo.setText(VISITNO);
+         secOutcome.setVisibility(View.GONE);
+         lineOutcome.setVisibility(View.GONE);
+         VlblOutcome.setVisibility(View.GONE);
+
+
+
+         rdogrpHHVisited.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+             @Override
+             public void onCheckedChanged(RadioGroup group, int radioButtonId) {
+
+                 String rbData="";
+                 RadioButton rb;
+                 String[] d_rdogrpHHVisited=new String[]{"1","2"};
+                 for(int i=0;i<rdogrpHHVisited.getChildCount();i++)
+                 {
+                     rb=(RadioButton) rdogrpHHVisited.getChildAt(i);
+                     if (rb.isChecked()) rbData = d_rdogrpHHVisited[i];
+                 }
+                 if(rbData.equalsIgnoreCase("2"))
+                 {
+                     secOutcome.setVisibility(View.GONE);
+                     lineOutcome.setVisibility(View.GONE);
+                     VlblOutcome.setVisibility(View.GONE);
+                     secOutcomeOth.setVisibility(View.GONE);
+                     lineOutcomeOth.setVisibility(View.GONE);
+//                     txtOutcomeOth.setText("");
+                     secHHMember.setVisibility(View.GONE);
+                     lineHHMember.setVisibility(View.GONE);
+//                     txtHHMember.setText("");
+                     secU18Yrs.setVisibility(View.GONE);
+                     lineU18Yrs.setVisibility(View.GONE);
+//                     rdogrpU18Yrs.clearCheck();
+                     secU18Alive.setVisibility(View.GONE);
+                     lineU18Alive.setVisibility(View.GONE);
+//                     txtU18Alive.setText("");
+                     secU18YrsDie.setVisibility(View.GONE);
+                     lineU18YrsDie.setVisibility(View.GONE);
+                     rdogrpU18YrsDie.clearCheck();
+                     secU18Death.setVisibility(View.GONE);
+                     lineU18Death.setVisibility(View.GONE);
+//                     txtU18Death.setText("");
+                     secOfferedStudy.setVisibility(View.GONE);
+                     lineOfferedStudy.setVisibility(View.GONE);
+                     rdogrpOfferedStudy.clearCheck();
+                     secNotOffered.setVisibility(View.GONE);
+                     lineNotOffered.setVisibility(View.GONE);
+                     spnNotOffered.setSelection(0);
+                     secNotOfferedOth.setVisibility(View.GONE);
+                     lineNotOfferedOth.setVisibility(View.GONE);
+//                     txtNotOfferedOth.setText("");
+                     secConsent.setVisibility(View.GONE);
+                     lineConsent.setVisibility(View.GONE);
+                     rdogrpConsent.clearCheck();
+                 }
+                 else
+                 {
+                     secOutcome.setVisibility(View.VISIBLE);
+                     lineOutcome.setVisibility(View.VISIBLE);
+                     VlblOutcome.setVisibility(View.VISIBLE);
+
+                 }
+             }
+         });
+
          List<String> listOutcome = new ArrayList<String>();
          
          listOutcome.add("");
@@ -269,7 +343,6 @@
          listOutcome.add("4-Refusal");
          listOutcome.add("5-Lack of time");
          listOutcome.add("7-Other");
-         listOutcome.add("");
          ArrayAdapter<String> adptrOutcome= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listOutcome);
          spnOutcome.setAdapter(adptrOutcome);
 
@@ -281,26 +354,69 @@
              {
                  spnData = Connection.SelectedSpinnerValue(spnOutcome.getSelectedItem().toString(), "-");
              }
-                 if(spnData.equalsIgnoreCase("2"))
+                 if(spnData.equalsIgnoreCase("1"))
+                 {
+                     secOutcomeOth.setVisibility(View.GONE);
+                     lineOutcomeOth.setVisibility(View.GONE);
+//                     txtOutcomeOth.setText("");
+                     secHHMember.setVisibility(View.VISIBLE);
+                     lineHHMember.setVisibility(View.VISIBLE);
+//                     txtHHMember.setText("");
+                     secU18Yrs.setVisibility(View.VISIBLE);
+                     lineU18Yrs.setVisibility(View.VISIBLE);
+                     rdogrpU18Yrs.clearCheck();
+
+                     secOfferedStudy.setVisibility(View.VISIBLE);
+                     lineOfferedStudy.setVisibility(View.VISIBLE);
+                     rdogrpOfferedStudy.clearCheck();
+                     secNotOffered.setVisibility(View.GONE);
+                     lineNotOffered.setVisibility(View.GONE);
+                     secU18Alive.setVisibility(View.GONE);
+                     lineU18Alive.setVisibility(View.GONE);
+//                     txtU18Alive.setText("");
+                     secU18YrsDie.setVisibility(View.GONE);
+                     lineU18YrsDie.setVisibility(View.GONE);
+                     rdogrpU18YrsDie.clearCheck();
+                     secU18Death.setVisibility(View.GONE);
+                     lineU18Death.setVisibility(View.GONE);
+//                     txtU18Death.setText("");
+                     secOfferedStudy.setVisibility(View.GONE);
+                     lineOfferedStudy.setVisibility(View.GONE);
+                     rdogrpOfferedStudy.clearCheck();
+                     secNotOffered.setVisibility(View.GONE);
+                     lineNotOffered.setVisibility(View.GONE);
+                     spnNotOffered.setSelection(0);
+                     secNotOfferedOth.setVisibility(View.GONE);
+                     lineNotOfferedOth.setVisibility(View.GONE);
+//                     txtNotOfferedOth.setText("");
+                     secConsent.setVisibility(View.GONE);
+                     lineConsent.setVisibility(View.GONE);
+                     rdogrpConsent.clearCheck();
+
+
+
+
+                 }
+                  else if(spnData.equalsIgnoreCase("2"))
                  {
                     secOutcomeOth.setVisibility(View.GONE);
                     lineOutcomeOth.setVisibility(View.GONE);
-                    txtOutcomeOth.setText("");
+//                    txtOutcomeOth.setText("");
                     secHHMember.setVisibility(View.GONE);
                     lineHHMember.setVisibility(View.GONE);
-                    txtHHMember.setText("");
+//                    txtHHMember.setText("");
                     secU18Yrs.setVisibility(View.GONE);
                     lineU18Yrs.setVisibility(View.GONE);
                     rdogrpU18Yrs.clearCheck();
                     secU18Alive.setVisibility(View.GONE);
                     lineU18Alive.setVisibility(View.GONE);
-                    txtU18Alive.setText("");
+//                    txtU18Alive.setText("");
                     secU18YrsDie.setVisibility(View.GONE);
                     lineU18YrsDie.setVisibility(View.GONE);
                     rdogrpU18YrsDie.clearCheck();
                     secU18Death.setVisibility(View.GONE);
                     lineU18Death.setVisibility(View.GONE);
-                    txtU18Death.setText("");
+//                    txtU18Death.setText("");
                     secOfferedStudy.setVisibility(View.GONE);
                     lineOfferedStudy.setVisibility(View.GONE);
                     rdogrpOfferedStudy.clearCheck();
@@ -309,7 +425,7 @@
                     spnNotOffered.setSelection(0);
                     secNotOfferedOth.setVisibility(View.GONE);
                     lineNotOfferedOth.setVisibility(View.GONE);
-                    txtNotOfferedOth.setText("");
+//                    txtNotOfferedOth.setText("");
                     secConsent.setVisibility(View.GONE);
                     lineConsent.setVisibility(View.GONE);
                     rdogrpConsent.clearCheck();
@@ -318,22 +434,22 @@
                  {
                     secOutcomeOth.setVisibility(View.GONE);
                     lineOutcomeOth.setVisibility(View.GONE);
-                    txtOutcomeOth.setText("");
+//                    txtOutcomeOth.setText("");
                     secHHMember.setVisibility(View.GONE);
                     lineHHMember.setVisibility(View.GONE);
-                    txtHHMember.setText("");
+//                    txtHHMember.setText("");
                     secU18Yrs.setVisibility(View.GONE);
                     lineU18Yrs.setVisibility(View.GONE);
                     rdogrpU18Yrs.clearCheck();
                     secU18Alive.setVisibility(View.GONE);
                     lineU18Alive.setVisibility(View.GONE);
-                    txtU18Alive.setText("");
+//                    txtU18Alive.setText("");
                     secU18YrsDie.setVisibility(View.GONE);
                     lineU18YrsDie.setVisibility(View.GONE);
                     rdogrpU18YrsDie.clearCheck();
                     secU18Death.setVisibility(View.GONE);
                     lineU18Death.setVisibility(View.GONE);
-                    txtU18Death.setText("");
+//                    txtU18Death.setText("");
                     secOfferedStudy.setVisibility(View.GONE);
                     lineOfferedStudy.setVisibility(View.GONE);
                     rdogrpOfferedStudy.clearCheck();
@@ -342,7 +458,7 @@
                     spnNotOffered.setSelection(0);
                     secNotOfferedOth.setVisibility(View.GONE);
                     lineNotOfferedOth.setVisibility(View.GONE);
-                    txtNotOfferedOth.setText("");
+//                    txtNotOfferedOth.setText("");
                     secConsent.setVisibility(View.GONE);
                     lineConsent.setVisibility(View.GONE);
                     rdogrpConsent.clearCheck();
@@ -351,22 +467,22 @@
                  {
                     secOutcomeOth.setVisibility(View.GONE);
                     lineOutcomeOth.setVisibility(View.GONE);
-                    txtOutcomeOth.setText("");
+//                    txtOutcomeOth.setText("");
                     secHHMember.setVisibility(View.GONE);
                     lineHHMember.setVisibility(View.GONE);
-                    txtHHMember.setText("");
+//                    txtHHMember.setText("");
                     secU18Yrs.setVisibility(View.GONE);
                     lineU18Yrs.setVisibility(View.GONE);
                     rdogrpU18Yrs.clearCheck();
                     secU18Alive.setVisibility(View.GONE);
                     lineU18Alive.setVisibility(View.GONE);
-                    txtU18Alive.setText("");
+//                    txtU18Alive.setText("");
                     secU18YrsDie.setVisibility(View.GONE);
                     lineU18YrsDie.setVisibility(View.GONE);
                     rdogrpU18YrsDie.clearCheck();
                     secU18Death.setVisibility(View.GONE);
                     lineU18Death.setVisibility(View.GONE);
-                    txtU18Death.setText("");
+//                    txtU18Death.setText("");
                     secOfferedStudy.setVisibility(View.GONE);
                     lineOfferedStudy.setVisibility(View.GONE);
                     rdogrpOfferedStudy.clearCheck();
@@ -375,7 +491,7 @@
                     spnNotOffered.setSelection(0);
                     secNotOfferedOth.setVisibility(View.GONE);
                     lineNotOfferedOth.setVisibility(View.GONE);
-                    txtNotOfferedOth.setText("");
+//                    txtNotOfferedOth.setText("");
                     secConsent.setVisibility(View.GONE);
                     lineConsent.setVisibility(View.GONE);
                     rdogrpConsent.clearCheck();
@@ -384,22 +500,22 @@
                  {
                     secOutcomeOth.setVisibility(View.GONE);
                     lineOutcomeOth.setVisibility(View.GONE);
-                    txtOutcomeOth.setText("");
+//                    txtOutcomeOth.setText("");
                     secHHMember.setVisibility(View.GONE);
                     lineHHMember.setVisibility(View.GONE);
-                    txtHHMember.setText("");
+//                    txtHHMember.setText("");
                     secU18Yrs.setVisibility(View.GONE);
                     lineU18Yrs.setVisibility(View.GONE);
                     rdogrpU18Yrs.clearCheck();
                     secU18Alive.setVisibility(View.GONE);
                     lineU18Alive.setVisibility(View.GONE);
-                    txtU18Alive.setText("");
+//                    txtU18Alive.setText("");
                     secU18YrsDie.setVisibility(View.GONE);
                     lineU18YrsDie.setVisibility(View.GONE);
                     rdogrpU18YrsDie.clearCheck();
                     secU18Death.setVisibility(View.GONE);
                     lineU18Death.setVisibility(View.GONE);
-                    txtU18Death.setText("");
+//                    txtU18Death.setText("");
                     secOfferedStudy.setVisibility(View.GONE);
                     lineOfferedStudy.setVisibility(View.GONE);
                     rdogrpOfferedStudy.clearCheck();
@@ -408,33 +524,67 @@
                     spnNotOffered.setSelection(0);
                     secNotOfferedOth.setVisibility(View.GONE);
                     lineNotOfferedOth.setVisibility(View.GONE);
-                    txtNotOfferedOth.setText("");
+//                    txtNotOfferedOth.setText("");
                     secConsent.setVisibility(View.GONE);
                     lineConsent.setVisibility(View.GONE);
                     rdogrpConsent.clearCheck();
                  }
+
+                 else if(spnData.equalsIgnoreCase("7"))
+                 {
+                     secOutcomeOth.setVisibility(View.VISIBLE);
+                     lineOutcomeOth.setVisibility(View.VISIBLE);
+//                     txtOutcomeOth.setText("");
+                     secHHMember.setVisibility(View.GONE);
+                     lineHHMember.setVisibility(View.GONE);
+//                     txtHHMember.setText("");
+                     secU18Yrs.setVisibility(View.GONE);
+                     lineU18Yrs.setVisibility(View.GONE);
+                     rdogrpU18Yrs.clearCheck();
+                     secU18Alive.setVisibility(View.GONE);
+                     lineU18Alive.setVisibility(View.GONE);
+//                     txtU18Alive.setText("");
+                     secU18YrsDie.setVisibility(View.GONE);
+                     lineU18YrsDie.setVisibility(View.GONE);
+                     rdogrpU18YrsDie.clearCheck();
+                     secU18Death.setVisibility(View.GONE);
+                     lineU18Death.setVisibility(View.GONE);
+//                     txtU18Death.setText("");
+                     secOfferedStudy.setVisibility(View.GONE);
+                     lineOfferedStudy.setVisibility(View.GONE);
+                     rdogrpOfferedStudy.clearCheck();
+                     secNotOffered.setVisibility(View.GONE);
+                     lineNotOffered.setVisibility(View.GONE);
+                     spnNotOffered.setSelection(0);
+                     secNotOfferedOth.setVisibility(View.GONE);
+                     lineNotOfferedOth.setVisibility(View.GONE);
+//                     txtNotOfferedOth.setText("");
+                     secConsent.setVisibility(View.GONE);
+                     lineConsent.setVisibility(View.GONE);
+                     rdogrpConsent.clearCheck();
+                 }
                  else
                  {
-                    secOutcomeOth.setVisibility(View.VISIBLE);
-                    lineOutcomeOth.setVisibility(View.VISIBLE);
-                    secHHMember.setVisibility(View.VISIBLE);
-                    lineHHMember.setVisibility(View.VISIBLE);
-                    secU18Yrs.setVisibility(View.VISIBLE);
-                    lineU18Yrs.setVisibility(View.VISIBLE);
-                    secU18Alive.setVisibility(View.VISIBLE);
-                    lineU18Alive.setVisibility(View.VISIBLE);
-                    secU18YrsDie.setVisibility(View.VISIBLE);
-                    lineU18YrsDie.setVisibility(View.VISIBLE);
-                    secU18Death.setVisibility(View.VISIBLE);
-                    lineU18Death.setVisibility(View.VISIBLE);
-                    secOfferedStudy.setVisibility(View.VISIBLE);
-                    lineOfferedStudy.setVisibility(View.VISIBLE);
-                    secNotOffered.setVisibility(View.VISIBLE);
-                    lineNotOffered.setVisibility(View.VISIBLE);
-                    secNotOfferedOth.setVisibility(View.VISIBLE);
-                    lineNotOfferedOth.setVisibility(View.VISIBLE);
-                    secConsent.setVisibility(View.VISIBLE);
-                    lineConsent.setVisibility(View.VISIBLE);
+                    secOutcomeOth.setVisibility(View.GONE);
+                    lineOutcomeOth.setVisibility(View.GONE);
+                    secHHMember.setVisibility(View.GONE);
+                    lineHHMember.setVisibility(View.GONE);
+                    secU18Yrs.setVisibility(View.GONE);
+                    lineU18Yrs.setVisibility(View.GONE);
+                    secU18Alive.setVisibility(View.GONE);
+                    lineU18Alive.setVisibility(View.GONE);
+                    secU18YrsDie.setVisibility(View.GONE);
+                    lineU18YrsDie.setVisibility(View.GONE);
+                    secU18Death.setVisibility(View.GONE);
+                    lineU18Death.setVisibility(View.GONE);
+                    secOfferedStudy.setVisibility(View.GONE);
+                    lineOfferedStudy.setVisibility(View.GONE);
+                    secNotOffered.setVisibility(View.GONE);
+                    lineNotOffered.setVisibility(View.GONE);
+                    secNotOfferedOth.setVisibility(View.GONE);
+                    lineNotOfferedOth.setVisibility(View.GONE);
+                    secConsent.setVisibility(View.GONE);
+                    lineConsent.setVisibility(View.GONE);
                  }
              }
              @Override
@@ -456,6 +606,8 @@
          
          rdoU18Yrs1 = (RadioButton) findViewById(R.id.rdoU18Yrs1);
          rdoU18Yrs2 = (RadioButton) findViewById(R.id.rdoU18Yrs2);
+
+
          rdogrpU18Yrs.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
          @Override
          public void onCheckedChanged(RadioGroup radioGroup,int radioButtonID) {
@@ -472,17 +624,45 @@
              {
                     secU18Alive.setVisibility(View.GONE);
                     lineU18Alive.setVisibility(View.GONE);
-                    txtU18Alive.setText("");
-                    secU18YrsDie.setVisibility(View.GONE);
-                    lineU18YrsDie.setVisibility(View.GONE);
+//                    txtU18Alive.setText("");
+                    secU18YrsDie.setVisibility(View.VISIBLE);
+                    lineU18YrsDie.setVisibility(View.VISIBLE);
                     rdogrpU18YrsDie.clearCheck();
+                 secU18Death.setVisibility(View.GONE);
+                 lineU18Death.setVisibility(View.GONE);
+//                 txtU18Death.setText("");
+                 secOfferedStudy.setVisibility(View.GONE);
+                 lineOfferedStudy.setVisibility(View.GONE);
+                 rdogrpOfferedStudy.clearCheck();
+                 secNotOffered.setVisibility(View.GONE);
+                 lineNotOffered.setVisibility(View.GONE);
+                 spnNotOffered.setSelection(0);
+                 secNotOfferedOth.setVisibility(View.GONE);
+                 lineNotOfferedOth.setVisibility(View.GONE);
+//                 txtNotOfferedOth.setText("");
+                 secConsent.setVisibility(View.GONE);
+                 lineConsent.setVisibility(View.GONE);
+                 rdogrpConsent.clearCheck();
+
              }
              else
              {
                     secU18Alive.setVisibility(View.VISIBLE);
                     lineU18Alive.setVisibility(View.VISIBLE);
-                    secU18YrsDie.setVisibility(View.VISIBLE);
-                    lineU18YrsDie.setVisibility(View.VISIBLE);
+                    secU18YrsDie.setVisibility(View.GONE);
+                    lineU18YrsDie.setVisibility(View.GONE);
+                 secU18Death.setVisibility(View.GONE);
+                 lineU18Death.setVisibility(View.GONE);
+//                 txtU18Death.setText("");
+                 secOfferedStudy.setVisibility(View.VISIBLE);
+                 lineOfferedStudy.setVisibility(View.VISIBLE);
+                 rdogrpOfferedStudy.clearCheck();
+                 secNotOffered.setVisibility(View.GONE);
+                 lineNotOffered.setVisibility(View.GONE);
+                 spnNotOffered.setSelection(0);
+                 secNotOfferedOth.setVisibility(View.GONE);
+                 lineNotOfferedOth.setVisibility(View.GONE);
+//                 txtNotOfferedOth.setText("");
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
@@ -517,11 +697,32 @@
                     secU18Death.setVisibility(View.GONE);
                     lineU18Death.setVisibility(View.GONE);
                     txtU18Death.setText("");
+                 secOfferedStudy.setVisibility(View.GONE);
+                 lineOfferedStudy.setVisibility(View.GONE);
+                 rdogrpOfferedStudy.clearCheck();
+                 secNotOffered.setVisibility(View.GONE);
+                 lineNotOffered.setVisibility(View.GONE);
+                 spnNotOffered.setSelection(0);
+                 secNotOfferedOth.setVisibility(View.GONE);
+                 lineNotOfferedOth.setVisibility(View.GONE);
+                 txtNotOfferedOth.setText("");
+                 secConsent.setVisibility(View.GONE);
+                 lineConsent.setVisibility(View.GONE);
+                 rdogrpConsent.clearCheck();
              }
              else
              {
                     secU18Death.setVisibility(View.VISIBLE);
                     lineU18Death.setVisibility(View.VISIBLE);
+                 txtU18Death.setText("");
+                 secOfferedStudy.setVisibility(View.VISIBLE);
+                 lineOfferedStudy.setVisibility(View.VISIBLE);
+                 rdogrpOfferedStudy.clearCheck();
+                 secNotOffered.setVisibility(View.GONE);
+                 lineNotOffered.setVisibility(View.GONE);
+
+
+
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
@@ -559,11 +760,21 @@
                     secNotOfferedOth.setVisibility(View.GONE);
                     lineNotOfferedOth.setVisibility(View.GONE);
                     txtNotOfferedOth.setText("");
+                 secConsent.setVisibility(View.VISIBLE);
+                 lineConsent.setVisibility(View.VISIBLE);
+                 rdogrpConsent.clearCheck();
              }
              else
              {
+
                     secNotOffered.setVisibility(View.VISIBLE);
                     lineNotOffered.setVisibility(View.VISIBLE);
+                 secNotOfferedOth.setVisibility(View.GONE);
+                 lineNotOfferedOth.setVisibility(View.GONE);
+                 secConsent.setVisibility(View.GONE);
+                 lineConsent.setVisibility(View.GONE);
+                 rdogrpConsent.clearCheck();
+
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
@@ -579,8 +790,7 @@
          listNotOffered.add("");
          listNotOffered.add("1-Appropriate respondent was not available");
          listNotOffered.add("2-Lack of time");
-         listNotOffered.add("7=Other");
-         listNotOffered.add("");
+         listNotOffered.add("7-Other");
          ArrayAdapter<String> adptrNotOffered= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listNotOffered);
          spnNotOffered.setAdapter(adptrNotOffered);
 
@@ -610,13 +820,23 @@
                     lineConsent.setVisibility(View.GONE);
                     rdogrpConsent.clearCheck();
                  }
-                 else
+                 else if(spnData.equalsIgnoreCase("7"))
                  {
                     secNotOfferedOth.setVisibility(View.VISIBLE);
                     lineNotOfferedOth.setVisibility(View.VISIBLE);
-                    secConsent.setVisibility(View.VISIBLE);
-                    lineConsent.setVisibility(View.VISIBLE);
+                     secConsent.setVisibility(View.GONE);
+                     lineConsent.setVisibility(View.GONE);
+                     rdogrpConsent.clearCheck();
                  }
+                 else
+                     {
+                         secNotOfferedOth.setVisibility(View.GONE);
+                         lineNotOfferedOth.setVisibility(View.GONE);
+                         txtNotOfferedOth.setText("");
+                         secConsent.setVisibility(View.GONE);
+                         lineConsent.setVisibility(View.GONE);
+                         rdogrpConsent.clearCheck();
+                     }
              }
              @Override
              public void onNothingSelected(AdapterView<?> parentView) {
@@ -788,9 +1008,12 @@
 //         sec.setVisibility(View.GONE);
 //         line.setVisibility(View.GONE);
 
+         DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
+
 
         Button cmdSave = (Button) findViewById(R.id.cmdSave);
-        cmdSave.setOnClickListener(new View.OnClickListener() {
+        cmdSave.setOnClickListener(
+                new View.OnClickListener() {
         public void onClick(View v) { 
             DataSave();
         }});
@@ -840,7 +1063,7 @@
              return;	
            }
          
-         else if(!rdoHHVisited1.isChecked() & !rdoHHVisited2.isChecked() & !rdoHHVisited3.isChecked() & secHHVisited.isShown())
+         else if(!rdoHHVisited1.isChecked() & !rdoHHVisited2.isChecked()  & secHHVisited.isShown())
            {
               Connection.MessageBox(Household_Visit.this, "Select anyone options from (Household Visited ).");
               rdoHHVisited1.requestFocus();
@@ -902,7 +1125,7 @@
              txtU18Death.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtU18Death.getText().toString().length()==0 ? "1" : txtU18Death.getText().toString()) < 1 || Integer.valueOf(txtU18Death.getText().toString().length()==0 ? "2" : txtU18Death.getText().toString()) > 2)
+         else if(Integer.valueOf(txtU18Death.getText().toString().length()==0 ? "1" : txtU18Death.getText().toString()) < 0 || Integer.valueOf(txtU18Death.getText().toString().length()==0 ? "2" : txtU18Death.getText().toString()) > 2)
            {
              Connection.MessageBox(Household_Visit.this, "Value should be between 1 and 2(Number of <18 years deaths in last 12 months).");
              txtU18Death.requestFocus(); 
