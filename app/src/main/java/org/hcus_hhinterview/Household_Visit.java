@@ -364,11 +364,11 @@
 //                     txtHHMember.setText("");
                      secU18Yrs.setVisibility(View.VISIBLE);
                      lineU18Yrs.setVisibility(View.VISIBLE);
-                     rdogrpU18Yrs.clearCheck();
+//                     rdogrpU18Yrs.clearCheck();
 
                      secOfferedStudy.setVisibility(View.VISIBLE);
                      lineOfferedStudy.setVisibility(View.VISIBLE);
-                     rdogrpOfferedStudy.clearCheck();
+//                     rdogrpOfferedStudy.clearCheck();
                      secNotOffered.setVisibility(View.GONE);
                      lineNotOffered.setVisibility(View.GONE);
                      secU18Alive.setVisibility(View.GONE);
@@ -376,13 +376,13 @@
 //                     txtU18Alive.setText("");
                      secU18YrsDie.setVisibility(View.GONE);
                      lineU18YrsDie.setVisibility(View.GONE);
-                     rdogrpU18YrsDie.clearCheck();
+//                     rdogrpU18YrsDie.clearCheck();
                      secU18Death.setVisibility(View.GONE);
                      lineU18Death.setVisibility(View.GONE);
 //                     txtU18Death.setText("");
                      secOfferedStudy.setVisibility(View.GONE);
                      lineOfferedStudy.setVisibility(View.GONE);
-                     rdogrpOfferedStudy.clearCheck();
+//                     rdogrpOfferedStudy.clearCheck();
                      secNotOffered.setVisibility(View.GONE);
                      lineNotOffered.setVisibility(View.GONE);
                      spnNotOffered.setSelection(0);
@@ -391,7 +391,7 @@
 //                     txtNotOfferedOth.setText("");
                      secConsent.setVisibility(View.GONE);
                      lineConsent.setVisibility(View.GONE);
-                     rdogrpConsent.clearCheck();
+//                     rdogrpConsent.clearCheck();
 
 
 
@@ -407,19 +407,19 @@
 //                    txtHHMember.setText("");
                     secU18Yrs.setVisibility(View.GONE);
                     lineU18Yrs.setVisibility(View.GONE);
-                    rdogrpU18Yrs.clearCheck();
+//                    rdogrpU18Yrs.clearCheck();
                     secU18Alive.setVisibility(View.GONE);
                     lineU18Alive.setVisibility(View.GONE);
 //                    txtU18Alive.setText("");
                     secU18YrsDie.setVisibility(View.GONE);
                     lineU18YrsDie.setVisibility(View.GONE);
-                    rdogrpU18YrsDie.clearCheck();
+//                    rdogrpU18YrsDie.clearCheck();
                     secU18Death.setVisibility(View.GONE);
                     lineU18Death.setVisibility(View.GONE);
 //                    txtU18Death.setText("");
                     secOfferedStudy.setVisibility(View.GONE);
                     lineOfferedStudy.setVisibility(View.GONE);
-                    rdogrpOfferedStudy.clearCheck();
+//                    rdogrpOfferedStudy.clearCheck();
                     secNotOffered.setVisibility(View.GONE);
                     lineNotOffered.setVisibility(View.GONE);
                     spnNotOffered.setSelection(0);
@@ -428,7 +428,7 @@
 //                    txtNotOfferedOth.setText("");
                     secConsent.setVisibility(View.GONE);
                     lineConsent.setVisibility(View.GONE);
-                    rdogrpConsent.clearCheck();
+//                    rdogrpConsent.clearCheck();
                  }
                  else if(spnData.equalsIgnoreCase("3"))
                  {
@@ -440,19 +440,19 @@
 //                    txtHHMember.setText("");
                     secU18Yrs.setVisibility(View.GONE);
                     lineU18Yrs.setVisibility(View.GONE);
-                    rdogrpU18Yrs.clearCheck();
+//                    rdogrpU18Yrs.clearCheck();
                     secU18Alive.setVisibility(View.GONE);
                     lineU18Alive.setVisibility(View.GONE);
 //                    txtU18Alive.setText("");
                     secU18YrsDie.setVisibility(View.GONE);
                     lineU18YrsDie.setVisibility(View.GONE);
-                    rdogrpU18YrsDie.clearCheck();
+//                    rdogrpU18YrsDie.clearCheck();
                     secU18Death.setVisibility(View.GONE);
                     lineU18Death.setVisibility(View.GONE);
 //                    txtU18Death.setText("");
                     secOfferedStudy.setVisibility(View.GONE);
                     lineOfferedStudy.setVisibility(View.GONE);
-                    rdogrpOfferedStudy.clearCheck();
+//                    rdogrpOfferedStudy.clearCheck();
                     secNotOffered.setVisibility(View.GONE);
                     lineNotOffered.setVisibility(View.GONE);
                     spnNotOffered.setSelection(0);
@@ -461,7 +461,7 @@
 //                    txtNotOfferedOth.setText("");
                     secConsent.setVisibility(View.GONE);
                     lineConsent.setVisibility(View.GONE);
-                    rdogrpConsent.clearCheck();
+//                    rdogrpConsent.clearCheck();
                  }
                  else if(spnData.equalsIgnoreCase("4"))
                  {
@@ -473,19 +473,19 @@
 //                    txtHHMember.setText("");
                     secU18Yrs.setVisibility(View.GONE);
                     lineU18Yrs.setVisibility(View.GONE);
-                    rdogrpU18Yrs.clearCheck();
+//                    rdogrpU18Yrs.clearCheck();
                     secU18Alive.setVisibility(View.GONE);
                     lineU18Alive.setVisibility(View.GONE);
 //                    txtU18Alive.setText("");
                     secU18YrsDie.setVisibility(View.GONE);
                     lineU18YrsDie.setVisibility(View.GONE);
-                    rdogrpU18YrsDie.clearCheck();
+//                    rdogrpU18YrsDie.clearCheck();
                     secU18Death.setVisibility(View.GONE);
                     lineU18Death.setVisibility(View.GONE);
 //                    txtU18Death.setText("");
                     secOfferedStudy.setVisibility(View.GONE);
                     lineOfferedStudy.setVisibility(View.GONE);
-                    rdogrpOfferedStudy.clearCheck();
+//                    rdogrpOfferedStudy.clearCheck();
                     secNotOffered.setVisibility(View.GONE);
                     lineNotOffered.setVisibility(View.GONE);
                     spnNotOffered.setSelection(0);
@@ -494,7 +494,7 @@
 //                    txtNotOfferedOth.setText("");
                     secConsent.setVisibility(View.GONE);
                     lineConsent.setVisibility(View.GONE);
-                    rdogrpConsent.clearCheck();
+//                    rdogrpConsent.clearCheck();
                  }
                  else if(spnData.equalsIgnoreCase("5"))
                  {
@@ -506,19 +506,19 @@
 //                    txtHHMember.setText("");
                     secU18Yrs.setVisibility(View.GONE);
                     lineU18Yrs.setVisibility(View.GONE);
-                    rdogrpU18Yrs.clearCheck();
+//                    rdogrpU18Yrs.clearCheck();
                     secU18Alive.setVisibility(View.GONE);
                     lineU18Alive.setVisibility(View.GONE);
 //                    txtU18Alive.setText("");
                     secU18YrsDie.setVisibility(View.GONE);
                     lineU18YrsDie.setVisibility(View.GONE);
-                    rdogrpU18YrsDie.clearCheck();
+//                    rdogrpU18YrsDie.clearCheck();
                     secU18Death.setVisibility(View.GONE);
                     lineU18Death.setVisibility(View.GONE);
 //                    txtU18Death.setText("");
                     secOfferedStudy.setVisibility(View.GONE);
                     lineOfferedStudy.setVisibility(View.GONE);
-                    rdogrpOfferedStudy.clearCheck();
+//                    rdogrpOfferedStudy.clearCheck();
                     secNotOffered.setVisibility(View.GONE);
                     lineNotOffered.setVisibility(View.GONE);
                     spnNotOffered.setSelection(0);
@@ -527,7 +527,7 @@
 //                    txtNotOfferedOth.setText("");
                     secConsent.setVisibility(View.GONE);
                     lineConsent.setVisibility(View.GONE);
-                    rdogrpConsent.clearCheck();
+//                    rdogrpConsent.clearCheck();
                  }
 
                  else if(spnData.equalsIgnoreCase("7"))
@@ -540,19 +540,19 @@
 //                     txtHHMember.setText("");
                      secU18Yrs.setVisibility(View.GONE);
                      lineU18Yrs.setVisibility(View.GONE);
-                     rdogrpU18Yrs.clearCheck();
+//                     rdogrpU18Yrs.clearCheck();
                      secU18Alive.setVisibility(View.GONE);
                      lineU18Alive.setVisibility(View.GONE);
 //                     txtU18Alive.setText("");
                      secU18YrsDie.setVisibility(View.GONE);
                      lineU18YrsDie.setVisibility(View.GONE);
-                     rdogrpU18YrsDie.clearCheck();
+//                     rdogrpU18YrsDie.clearCheck();
                      secU18Death.setVisibility(View.GONE);
                      lineU18Death.setVisibility(View.GONE);
 //                     txtU18Death.setText("");
                      secOfferedStudy.setVisibility(View.GONE);
                      lineOfferedStudy.setVisibility(View.GONE);
-                     rdogrpOfferedStudy.clearCheck();
+//                     rdogrpOfferedStudy.clearCheck();
                      secNotOffered.setVisibility(View.GONE);
                      lineNotOffered.setVisibility(View.GONE);
                      spnNotOffered.setSelection(0);
@@ -561,7 +561,7 @@
 //                     txtNotOfferedOth.setText("");
                      secConsent.setVisibility(View.GONE);
                      lineConsent.setVisibility(View.GONE);
-                     rdogrpConsent.clearCheck();
+//                     rdogrpConsent.clearCheck();
                  }
                  else
                  {
@@ -627,13 +627,13 @@
 //                    txtU18Alive.setText("");
                     secU18YrsDie.setVisibility(View.VISIBLE);
                     lineU18YrsDie.setVisibility(View.VISIBLE);
-                    rdogrpU18YrsDie.clearCheck();
+//                    rdogrpU18YrsDie.clearCheck();
                  secU18Death.setVisibility(View.GONE);
                  lineU18Death.setVisibility(View.GONE);
 //                 txtU18Death.setText("");
                  secOfferedStudy.setVisibility(View.GONE);
                  lineOfferedStudy.setVisibility(View.GONE);
-                 rdogrpOfferedStudy.clearCheck();
+//                 rdogrpOfferedStudy.clearCheck();
                  secNotOffered.setVisibility(View.GONE);
                  lineNotOffered.setVisibility(View.GONE);
                  spnNotOffered.setSelection(0);
@@ -642,7 +642,7 @@
 //                 txtNotOfferedOth.setText("");
                  secConsent.setVisibility(View.GONE);
                  lineConsent.setVisibility(View.GONE);
-                 rdogrpConsent.clearCheck();
+//                 rdogrpConsent.clearCheck();
 
              }
              else
@@ -656,7 +656,7 @@
 //                 txtU18Death.setText("");
                  secOfferedStudy.setVisibility(View.VISIBLE);
                  lineOfferedStudy.setVisibility(View.VISIBLE);
-                 rdogrpOfferedStudy.clearCheck();
+//                 rdogrpOfferedStudy.clearCheck();
                  secNotOffered.setVisibility(View.GONE);
                  lineNotOffered.setVisibility(View.GONE);
                  spnNotOffered.setSelection(0);
@@ -699,25 +699,25 @@
                     txtU18Death.setText("");
                  secOfferedStudy.setVisibility(View.GONE);
                  lineOfferedStudy.setVisibility(View.GONE);
-                 rdogrpOfferedStudy.clearCheck();
+//                 rdogrpOfferedStudy.clearCheck();
                  secNotOffered.setVisibility(View.GONE);
                  lineNotOffered.setVisibility(View.GONE);
                  spnNotOffered.setSelection(0);
                  secNotOfferedOth.setVisibility(View.GONE);
                  lineNotOfferedOth.setVisibility(View.GONE);
-                 txtNotOfferedOth.setText("");
+//                 txtNotOfferedOth.setText("");
                  secConsent.setVisibility(View.GONE);
                  lineConsent.setVisibility(View.GONE);
-                 rdogrpConsent.clearCheck();
+//                 rdogrpConsent.clearCheck();
              }
              else
              {
                     secU18Death.setVisibility(View.VISIBLE);
                     lineU18Death.setVisibility(View.VISIBLE);
-                 txtU18Death.setText("");
+//                 txtU18Death.setText("");
                  secOfferedStudy.setVisibility(View.VISIBLE);
                  lineOfferedStudy.setVisibility(View.VISIBLE);
-                 rdogrpOfferedStudy.clearCheck();
+//                 rdogrpOfferedStudy.clearCheck();
                  secNotOffered.setVisibility(View.GONE);
                  lineNotOffered.setVisibility(View.GONE);
 
@@ -759,10 +759,10 @@
                     spnNotOffered.setSelection(0);
                     secNotOfferedOth.setVisibility(View.GONE);
                     lineNotOfferedOth.setVisibility(View.GONE);
-                    txtNotOfferedOth.setText("");
+//                    txtNotOfferedOth.setText("");
                  secConsent.setVisibility(View.VISIBLE);
                  lineConsent.setVisibility(View.VISIBLE);
-                 rdogrpConsent.clearCheck();
+//                 rdogrpConsent.clearCheck();
              }
              else
              {
@@ -773,7 +773,7 @@
                  lineNotOfferedOth.setVisibility(View.GONE);
                  secConsent.setVisibility(View.GONE);
                  lineConsent.setVisibility(View.GONE);
-                 rdogrpConsent.clearCheck();
+//                 rdogrpConsent.clearCheck();
 
              }
             }
@@ -806,19 +806,19 @@
                  {
                     secNotOfferedOth.setVisibility(View.GONE);
                     lineNotOfferedOth.setVisibility(View.GONE);
-                    txtNotOfferedOth.setText("");
+//                    txtNotOfferedOth.setText("");
                     secConsent.setVisibility(View.GONE);
                     lineConsent.setVisibility(View.GONE);
-                    rdogrpConsent.clearCheck();
+//                    rdogrpConsent.clearCheck();
                  }
                  else if(spnData.equalsIgnoreCase("2"))
                  {
                     secNotOfferedOth.setVisibility(View.GONE);
                     lineNotOfferedOth.setVisibility(View.GONE);
-                    txtNotOfferedOth.setText("");
+//                    txtNotOfferedOth.setText("");
                     secConsent.setVisibility(View.GONE);
                     lineConsent.setVisibility(View.GONE);
-                    rdogrpConsent.clearCheck();
+//                    rdogrpConsent.clearCheck();
                  }
                  else if(spnData.equalsIgnoreCase("7"))
                  {
@@ -826,16 +826,16 @@
                     lineNotOfferedOth.setVisibility(View.VISIBLE);
                      secConsent.setVisibility(View.GONE);
                      lineConsent.setVisibility(View.GONE);
-                     rdogrpConsent.clearCheck();
+//                     rdogrpConsent.clearCheck();
                  }
                  else
                      {
                          secNotOfferedOth.setVisibility(View.GONE);
                          lineNotOfferedOth.setVisibility(View.GONE);
-                         txtNotOfferedOth.setText("");
+//                         txtNotOfferedOth.setText("");
                          secConsent.setVisibility(View.GONE);
                          lineConsent.setVisibility(View.GONE);
-                         rdogrpConsent.clearCheck();
+//                         rdogrpConsent.clearCheck();
                      }
              }
              @Override
