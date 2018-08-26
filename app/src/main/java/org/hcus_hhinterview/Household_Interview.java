@@ -516,6 +516,14 @@
          
          rdoFHeadAvail1 = (RadioButton) findViewById(R.id.rdoFHeadAvail1);
          rdoFHeadAvail2 = (RadioButton) findViewById(R.id.rdoFHeadAvail2);
+
+         txtUNCode.setText(UNCODE);
+         txtStructureNo.setText(""+STRUCTURENO);
+         txtHouseholdSl.setText(HOUSEHOLDSL);
+         txtVisitNo.setText(VISITNO);
+
+
+
          rdogrpFHeadAvail.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
          @Override
          public void onCheckedChanged(RadioGroup radioGroup,int radioButtonID) {
@@ -543,6 +551,8 @@
                     lineRelWithFHead.setVisibility(View.VISIBLE);
                     secOthRelWithFHead.setVisibility(View.VISIBLE);
                     lineOthRelWithFHead.setVisibility(View.VISIBLE);
+                 secOthRelWithFHead.setVisibility(View.GONE);
+                 lineOthRelWithFHead.setVisibility(View.GONE);
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
@@ -572,6 +582,82 @@
          lineOthRelWithFHead=(View)findViewById(R.id.lineOthRelWithFHead);
          VlblOthRelWithFHead=(TextView) findViewById(R.id.VlblOthRelWithFHead);
          txtOthRelWithFHead=(EditText) findViewById(R.id.txtOthRelWithFHead);
+
+
+
+//         spnRelWithFHead.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//             @Override
+//             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+//                 String spnData = "";
+//                 if (spnHeadOcp.getSelectedItem().toString().length() != 0)
+//                 {
+//                     spnData = Connection.SelectedSpinnerValue(spnHeadOcp.getSelectedItem().toString(), "-");
+//                 }
+//                     if(spnData.equalsIgnoreCase("1"))
+//                     {
+//                         secOthRelWithFHead.setVisibility(View.GONE);
+//                         lineOthRelWithFHead.setVisibility(View.GONE);
+//                         txtOthRelWithFHead.setText("");
+//                     }
+//               else if(spnData.equalsIgnoreCase("2"))
+//                 {
+//                     secOthRelWithFHead.setVisibility(View.GONE);
+//                     lineOthRelWithFHead.setVisibility(View.GONE);
+//                     txtOthRelWithFHead.setText("");
+//                 }
+//                else if(spnData.equalsIgnoreCase("3"))
+//                 {
+//                     secOthRelWithFHead.setVisibility(View.GONE);
+//                     lineOthRelWithFHead.setVisibility(View.GONE);
+//                     txtOthRelWithFHead.setText("");
+//                 }
+//                else if(spnData.equalsIgnoreCase("4"))
+//                 {
+//                     secOthRelWithFHead.setVisibility(View.GONE);
+//                     lineOthRelWithFHead.setVisibility(View.GONE);
+//                     txtOthRelWithFHead.setText("");
+//                 }
+//                else if(spnData.equalsIgnoreCase("5"))
+//                 {
+//                     secOthRelWithFHead.setVisibility(View.GONE);
+//                     lineOthRelWithFHead.setVisibility(View.GONE);
+//                     txtOthRelWithFHead.setText("");
+//                 }
+//                else if(spnData.equalsIgnoreCase("6"))
+//                 {
+//                     secOthRelWithFHead.setVisibility(View.GONE);
+//                     lineOthRelWithFHead.setVisibility(View.GONE);
+//                     txtOthRelWithFHead.setText("");
+//                 }
+//                else if(spnData.equalsIgnoreCase("7"))
+//                 {
+//                     secOthRelWithFHead.setVisibility(View.GONE);
+//                     lineOthRelWithFHead.setVisibility(View.GONE);
+//                     txtOthRelWithFHead.setText("");
+//                 }
+//                else if(spnData.equalsIgnoreCase("8"))
+//                 {
+//                     secOthRelWithFHead.setVisibility(View.GONE);
+//                     lineOthRelWithFHead.setVisibility(View.GONE);
+//                     txtOthRelWithFHead.setText("");
+//                 }
+//                 else if(spnData.equalsIgnoreCase("77"))
+//                 {
+//                     secOthRelWithFHead.setVisibility(View.VISIBLE);
+//                     lineOthRelWithFHead.setVisibility(View.VISIBLE);
+//
+//                 }
+//
+//             }
+//             @Override
+//             public void onNothingSelected(AdapterView<?> parentView) {
+//             }
+//         });
+
+
+
+
+
          secFirstName=(LinearLayout)findViewById(R.id.secFirstName);
          lineFirstName=(View)findViewById(R.id.lineFirstName);
          VlblFirstName=(TextView) findViewById(R.id.VlblFirstName);
@@ -650,6 +736,11 @@
          lineDistHome=(View)findViewById(R.id.lineDistHome);
          VlblDistHome=(TextView) findViewById(R.id.VlblDistHome);
          spnDistHome=(Spinner) findViewById(R.id.spnDistHome);
+
+
+
+
+
          List<String> listDistHome = new ArrayList<String>();
          
          listDistHome.add("");
@@ -767,10 +858,17 @@
                     lineChildHcareOth.setVisibility(View.GONE);
                     txtChildHcareOth.setText("");
                  }
+                 else if(spnData.equalsIgnoreCase("77"))
+                 {
+                     secChildHcareOth.setVisibility(View.VISIBLE);
+                     lineChildHcareOth.setVisibility(View.VISIBLE);
+//                     txtChildHcareOth.setText("");
+                 }
                  else
                  {
-                    secChildHcareOth.setVisibility(View.VISIBLE);
-                    lineChildHcareOth.setVisibility(View.VISIBLE);
+                    secChildHcareOth.setVisibility(View.GONE);
+                    lineChildHcareOth.setVisibility(View.GONE);
+                     txtChildHcareOth.setText("");
                  }
              }
              @Override
@@ -847,17 +945,12 @@
              {
                  spnData = Connection.SelectedSpinnerValue(spnHeadOcp.getSelectedItem().toString(), "-");
              }
-                 if(spnData.equalsIgnoreCase("1"))
+                 if(spnData.equalsIgnoreCase("77"))
                  {
-                    secHeadOcpOth.setVisibility(View.GONE);
-                    lineHeadOcpOth.setVisibility(View.GONE);
-                    txtHeadOcpOth.setText("");
+                     secHeadOcpOth.setVisibility(View.VISIBLE);
+                     lineHeadOcpOth.setVisibility(View.VISIBLE);
                  }
-                 else
-                 {
-                    secHeadOcpOth.setVisibility(View.VISIBLE);
-                    lineHeadOcpOth.setVisibility(View.VISIBLE);
-                 }
+
              }
              @Override
              public void onNothingSelected(AdapterView<?> parentView) {
@@ -1067,10 +1160,16 @@
                     lineConsMatFloorOth.setVisibility(View.GONE);
                     txtConsMatFloorOth.setText("");
                  }
+                 else if(spnData.equalsIgnoreCase("7"))
+                 {
+                     secTypeOfToiletOth.setVisibility(View.VISIBLE);
+                     lineTypeOfToiletOth.setVisibility(View.VISIBLE);
+                 }
                  else
                  {
-                    secConsMatFloorOth.setVisibility(View.VISIBLE);
-                    lineConsMatFloorOth.setVisibility(View.VISIBLE);
+                     secTypeOfToiletOth.setVisibility(View.GONE);
+                     lineTypeOfToiletOth.setVisibility(View.GONE);
+                     txtTypeOfToiletOth.setText("");
                  }
              }
              @Override
@@ -1177,11 +1276,18 @@
                     lineConsMatWallOth.setVisibility(View.GONE);
                     txtConsMatWallOth.setText("");
                  }
+                 else if(spnData.equalsIgnoreCase("77"))
+                 {
+                     secTypeOfToiletOth.setVisibility(View.VISIBLE);
+                     lineTypeOfToiletOth.setVisibility(View.VISIBLE);
+                 }
                  else
                  {
-                    secConsMatWallOth.setVisibility(View.VISIBLE);
-                    lineConsMatWallOth.setVisibility(View.VISIBLE);
+                     secTypeOfToiletOth.setVisibility(View.GONE);
+                     lineTypeOfToiletOth.setVisibility(View.GONE);
+                     txtTypeOfToiletOth.setText("");
                  }
+
              }
              @Override
              public void onNothingSelected(AdapterView<?> parentView) {
@@ -1287,10 +1393,16 @@
                     lineConsMatRoofOth.setVisibility(View.GONE);
                     txtConsMatRoofOth.setText("");
                  }
+                 else if(spnData.equalsIgnoreCase("77"))
+                 {
+                     secTypeOfToiletOth.setVisibility(View.VISIBLE);
+                     lineTypeOfToiletOth.setVisibility(View.VISIBLE);
+                 }
                  else
                  {
-                    secConsMatRoofOth.setVisibility(View.VISIBLE);
-                    lineConsMatRoofOth.setVisibility(View.VISIBLE);
+                     secTypeOfToiletOth.setVisibility(View.GONE);
+                     lineTypeOfToiletOth.setVisibility(View.GONE);
+                     txtTypeOfToiletOth.setText("");
                  }
              }
              @Override
@@ -1390,10 +1502,16 @@
                     lineFuelOth.setVisibility(View.GONE);
                     txtFuelOth.setText("");
                  }
+                 else if(spnData.equalsIgnoreCase("97"))
+                 {
+                     secTypeOfToiletOth.setVisibility(View.VISIBLE);
+                     lineTypeOfToiletOth.setVisibility(View.VISIBLE);
+                 }
                  else
                  {
-                    secFuelOth.setVisibility(View.VISIBLE);
-                    lineFuelOth.setVisibility(View.VISIBLE);
+                     secTypeOfToiletOth.setVisibility(View.GONE);
+                     lineTypeOfToiletOth.setVisibility(View.GONE);
+                     txtTypeOfToiletOth.setText("");
                  }
              }
              @Override
@@ -1479,10 +1597,16 @@
                     lineTypeOfToiletOth.setVisibility(View.GONE);
                     txtTypeOfToiletOth.setText("");
                  }
-                 else
+                 else if(spnData.equalsIgnoreCase("9"))
                  {
                     secTypeOfToiletOth.setVisibility(View.VISIBLE);
                     lineTypeOfToiletOth.setVisibility(View.VISIBLE);
+                 }
+                 else
+                 {
+                     secTypeOfToiletOth.setVisibility(View.GONE);
+                     lineTypeOfToiletOth.setVisibility(View.GONE);
+                     txtTypeOfToiletOth.setText("");
                  }
              }
              @Override
@@ -1627,10 +1751,17 @@
                     lineTypeOfChildToiletOth.setVisibility(View.GONE);
                     txtTypeOfChildToiletOth.setText("");
                  }
-                 else
+                 else if(spnData.equalsIgnoreCase("77"))
                  {
                     secTypeOfChildToiletOth.setVisibility(View.VISIBLE);
                     lineTypeOfChildToiletOth.setVisibility(View.VISIBLE);
+                 }
+                 else
+                     {
+                         secTypeOfChildToiletOth.setVisibility(View.GONE);
+                         lineTypeOfChildToiletOth.setVisibility(View.GONE);
+                         txtTypeOfChildToiletOth.setText("");
+
                  }
              }
              @Override
@@ -1897,11 +2028,14 @@
          secTypeOfChildToiletOth.setVisibility(View.GONE);
          lineTypeOfChildToiletOth.setVisibility(View.GONE);
 
+         DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
 
         Button cmdSave = (Button) findViewById(R.id.cmdSave);
         cmdSave.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) { 
             DataSave();
+
+
         }});
      }
      catch(Exception  e)
@@ -1987,9 +2121,15 @@
            }
          else if(txtliveHouseM.getText().toString().length()==0 & secliveHouseM.isShown())
            {
-             Connection.MessageBox(Household_Interview.this, "Required field: কতমাস যাবৎ আপনার খানা/পরিবার এই বাড়িতে বাস করছে ? (How long has your household/family been living in this house for?).");
-             txtliveHouseM.requestFocus(); 
-             return;	
+                if(txtliveHouseY.getText().toString().length()==0 & secliveHouseY.isShown())
+           {
+               Connection.MessageBox(Household_Interview.this, "Required field:কতমাস যাবৎ আপনার খানা/পরিবার এই বাড়িতে বাস করছে ? (How long has your household/family been living in this house for?).");
+               txtliveHouseY.requestFocus();
+               return;
+           }
+//             Connection.MessageBox(Household_Interview.this, "Required field: কতমাস যাবৎ আপনার খানা/পরিবার এই বাড়িতে বাস করছে ? (How long has your household/family been living in this house for?).");
+//             txtliveHouseM.requestFocus();
+//             return;
            }
          else if(Integer.valueOf(txtliveHouseM.getText().toString().length()==0 ? "00" : txtliveHouseM.getText().toString()) < 00 || Integer.valueOf(txtliveHouseM.getText().toString().length()==0 ? "11" : txtliveHouseM.getText().toString()) > 11)
            {
@@ -1999,9 +2139,15 @@
            }
          else if(txtliveHouseY.getText().toString().length()==0 & secliveHouseY.isShown())
            {
-             Connection.MessageBox(Household_Interview.this, "Required field: .");
-             txtliveHouseY.requestFocus(); 
-             return;	
+                if(txtliveHouseM.getText().toString().length()==0 & secliveHouseM.isShown())
+           {
+               Connection.MessageBox(Household_Interview.this, "Required field: কতমাস যাবৎ আপনার খানা/পরিবার এই বাড়িতে বাস করছে ? (How long has your household/family been living in this house for?).");
+               txtliveHouseM.requestFocus();
+               return;
+           }
+//             Connection.MessageBox(Household_Interview.this, "Required field: .");
+//             txtliveHouseY.requestFocus();
+//             return;
            }
          else if(Integer.valueOf(txtliveHouseY.getText().toString().length()==0 ? "02" : txtliveHouseY.getText().toString()) < 02 || Integer.valueOf(txtliveHouseY.getText().toString().length()==0 ? "99" : txtliveHouseY.getText().toString()) > 99)
            {
@@ -2011,9 +2157,15 @@
            }
          else if(txtLiveHH_Mon.getText().toString().length()==0 & secLiveHH_Mon.isShown())
            {
-             Connection.MessageBox(Household_Interview.this, "Required field: এই খানায় আপনি (যে সবচেয়ে বেশি দিন যাবত আছেন) কতদিন যাবত বাস করছেন? (How many months/Years have you lived at this household?).");
-             txtLiveHH_Mon.requestFocus(); 
-             return;	
+                if(txtLiveHH_Year.getText().toString().length()==0 & secLiveHH_Year.isShown())
+           {
+               Connection.MessageBox(Household_Interview.this, "Required field: .");
+               txtLiveHH_Year.requestFocus();
+               return;
+           }
+//             Connection.MessageBox(Household_Interview.this, "Required field: এই খানায় আপনি (যে সবচেয়ে বেশি দিন যাবত আছেন) কতদিন যাবত বাস করছেন? (How many months/Years have you lived at this household?).");
+//             txtLiveHH_Mon.requestFocus();
+//             return;
            }
          else if(Integer.valueOf(txtLiveHH_Mon.getText().toString().length()==0 ? "00" : txtLiveHH_Mon.getText().toString()) < 00 || Integer.valueOf(txtLiveHH_Mon.getText().toString().length()==0 ? "11" : txtLiveHH_Mon.getText().toString()) > 11)
            {
@@ -2023,9 +2175,15 @@
            }
          else if(txtLiveHH_Year.getText().toString().length()==0 & secLiveHH_Year.isShown())
            {
-             Connection.MessageBox(Household_Interview.this, "Required field: .");
-             txtLiveHH_Year.requestFocus(); 
-             return;	
+                if(txtLiveHH_Mon.getText().toString().length()==0 & secLiveHH_Year.isShown())
+           {
+               Connection.MessageBox(Household_Interview.this, "Required field: .");
+               txtLiveHH_Mon.requestFocus();
+               return;
+           }
+//             Connection.MessageBox(Household_Interview.this, "Required field: .");
+//             txtLiveHH_Year.requestFocus();
+//             return;
            }
          else if(Integer.valueOf(txtLiveHH_Year.getText().toString().length()==0 ? "00" : txtLiveHH_Year.getText().toString()) < 00 || Integer.valueOf(txtLiveHH_Year.getText().toString().length()==0 ? "99" : txtLiveHH_Year.getText().toString()) > 99)
            {
@@ -2035,9 +2193,15 @@
            }
          else if(txtLiveCity_Mon.getText().toString().length()==0 & secLiveCity_Mon.isShown())
            {
-             Connection.MessageBox(Household_Interview.this, "Required field: এই শহরে আপনি (যে সবচেয়ে বেশি দিন যাবত আছেন) কতদিন যাবত বাস করছেন? (How many months/Years have you lived in this city?).");
-             txtLiveCity_Mon.requestFocus(); 
-             return;	
+                if(txtLiveCity_Year.getText().toString().length()==0 & secLiveCity_Year.isShown())
+           {
+               Connection.MessageBox(Household_Interview.this, "Required field: .");
+               txtLiveCity_Year.requestFocus();
+               return;
+           }
+//             Connection.MessageBox(Household_Interview.this, "Required field: এই শহরে আপনি (যে সবচেয়ে বেশি দিন যাবত আছেন) কতদিন যাবত বাস করছেন? (How many months/Years have you lived in this city?).");
+//             txtLiveCity_Mon.requestFocus();
+//             return;
            }
          else if(Integer.valueOf(txtLiveCity_Mon.getText().toString().length()==0 ? "0" : txtLiveCity_Mon.getText().toString()) < 0 || Integer.valueOf(txtLiveCity_Mon.getText().toString().length()==0 ? "11" : txtLiveCity_Mon.getText().toString()) > 11)
            {
@@ -2047,9 +2211,15 @@
            }
          else if(txtLiveCity_Year.getText().toString().length()==0 & secLiveCity_Year.isShown())
            {
-             Connection.MessageBox(Household_Interview.this, "Required field: .");
-             txtLiveCity_Year.requestFocus(); 
-             return;	
+                if(txtLiveCity_Mon.getText().toString().length()==0 & secLiveCity_Year.isShown())
+           {
+               Connection.MessageBox(Household_Interview.this, "Required field: .");
+               txtLiveCity_Mon.requestFocus();
+               return;
+           }
+//             Connection.MessageBox(Household_Interview.this, "Required field: .");
+//             txtLiveCity_Year.requestFocus();
+//             return;
            }
          else if(Integer.valueOf(txtLiveCity_Year.getText().toString().length()==0 ? "0" : txtLiveCity_Year.getText().toString()) < 0 || Integer.valueOf(txtLiveCity_Year.getText().toString().length()==0 ? "99" : txtLiveCity_Year.getText().toString()) > 99)
            {
@@ -2601,6 +2771,16 @@
              Connection.MessageBox(Household_Interview.this, status);
              return;
          }
+
+         Bundle IDbundle = new Bundle();
+         IDbundle.putString("UNCode",UNCODE  );
+         IDbundle.putString("StructureNo",STRUCTURENO );
+         IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
+         IDbundle.putString("VisitNo", VISITNO);
+
+         Intent intent = new Intent(getApplicationContext(), Knowledge_DSH_SSF.class);
+         intent.putExtras(IDbundle);
+         startActivityForResult(intent, 1);
      }
      catch(Exception  e)
      {

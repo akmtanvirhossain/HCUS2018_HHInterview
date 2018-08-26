@@ -1014,8 +1014,18 @@
         Button cmdSave = (Button) findViewById(R.id.cmdSave);
         cmdSave.setOnClickListener(
                 new View.OnClickListener() {
-        public void onClick(View v) { 
+        public void onClick(View view) {
             DataSave();
+            Bundle IDbundle = new Bundle();
+            IDbundle.putString("UNCode",UNCODE  );
+            IDbundle.putString("StructureNo",STRUCTURENO );
+            IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
+            IDbundle.putString("VisitNo", VISITNO);
+
+            Intent intent = new Intent(getApplicationContext(), Household_Interview.class);
+            intent.putExtras(IDbundle);
+            startActivityForResult(intent, 1);
+
         }});
      }
      catch(Exception  e)
