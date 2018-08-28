@@ -224,6 +224,9 @@
              }});
 
 
+
+
+
          secUNCode=(LinearLayout)findViewById(R.id.secUNCode);
          lineUNCode=(View)findViewById(R.id.lineUNCode);
          VlblUNCode=(TextView) findViewById(R.id.VlblUNCode);
@@ -271,6 +274,16 @@
          lineAgeU=(View)findViewById(R.id.lineAgeU);
          VlblAgeU=(TextView) findViewById(R.id.VlblAgeU);
          spnAgeU=(Spinner) findViewById(R.id.spnAgeU);
+
+
+         txtUNCode.setText(UNCODE);
+         txtStructureNo.setText(STRUCTURENO);
+         txtHouseholdSl.setText(HOUSEHOLDSL);
+         txtVisitNo.setText(VISITNO);
+         txtMemSl.setText(MEMSL);
+
+
+
          List<String> listAgeU = new ArrayList<String>();
          
          listAgeU.add("");
@@ -443,6 +456,7 @@
          secOthRelation.setVisibility(View.GONE);
          lineOthRelation.setVisibility(View.GONE);
 
+         DataSearch(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO, MEMSL);
 
         Button cmdSave = (Button) findViewById(R.id.cmdSave);
         cmdSave.setOnClickListener(new View.OnClickListener() {

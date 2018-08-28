@@ -4,35 +4,27 @@
 
  //Android Manifest Code
  //<activity android:name=".Household_Interview" android:label="Household_Interview" />
- import java.text.ParseException;
- import java.text.SimpleDateFormat;
  import java.util.ArrayList;
  import java.util.Calendar;
- import java.util.Date;
- import java.util.HashMap;
  import java.util.List;
  import android.app.*;
  import android.app.AlertDialog;
  import android.app.DatePickerDialog;
  import android.app.Dialog;
  import android.app.TimePickerDialog;
- import android.content.Context;
  import android.content.DialogInterface;
  import android.content.Intent;
- import android.database.Cursor;
  import android.location.Location;
- import android.location.LocationListener;
- import android.location.LocationManager;
- import android.net.Uri;
- import android.provider.Settings;
+ import android.os.PersistableBundle;
+ import android.support.annotation.Nullable;
+ import android.support.v7.widget.DefaultItemAnimator;
+ import android.support.v7.widget.LinearLayoutManager;
+ import android.support.v7.widget.RecyclerView;
+ import android.text.Editable;
+ import android.text.TextWatcher;
  import android.view.KeyEvent;
  import android.os.Bundle;
- import android.view.Menu;
- import android.view.MenuInflater;
- import android.view.MenuItem;
  import android.view.View;
- import android.view.MotionEvent;
- import android.view.View.OnFocusChangeListener;
  import android.view.ViewGroup;
  import android.view.LayoutInflater;
  import android.widget.AdapterView;
@@ -44,19 +36,19 @@
  import android.widget.LinearLayout;
  import android.widget.RadioButton;
  import android.widget.RadioGroup;
- import android.widget.ListView;
  import android.widget.SimpleAdapter;
- import android.widget.BaseAdapter;
  import android.widget.Spinner;
  import android.widget.TextView;
  import android.widget.TimePicker;
  import android.widget.ArrayAdapter;
- import android.widget.CompoundButton;
- import android.graphics.Color;
  import android.view.WindowManager;
  import Utility.*;
  import Common.*;
  import data_model.Household_Interview_DataModel;
+ import data_model.Member_DataModel;
+
+ import static org.hcus_hhinterview.Member_list.MEMSL;
+
 
  public class Household_Interview extends Activity {
     boolean networkAvailable=false;
@@ -72,7 +64,17 @@
         else { return true;  }
     }
     String VariableID;
-    private int hour;
+
+    public Member_list member;
+
+     @Override
+     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+         super.onCreate(savedInstanceState, persistentState);
+
+         member=new Member_list();
+     }
+
+     private int hour;
     private int minute;
     private int mDay;
     private int mMonth;
@@ -82,8 +84,10 @@
 
     Connection C;
     Global g;
+
     SimpleAdapter dataAdapter;
-    ArrayList<HashMap<String, String>> dataList = new ArrayList<HashMap<String, String>>();
+//    ArrayList<HashMap<String, String>> dataList = new ArrayList<HashMap<String, String>>();
+     private List<Member_DataModel> dataList = new ArrayList<>();
          TextView lblHeading;
          LinearLayout secUNCode;
          View lineUNCode;
@@ -432,19 +436,27 @@
          RadioButton rdoWater1;
          RadioButton rdoWater2;
          RadioButton rdoWater3;
+     Button btnAdd;
+
+
 
     static String TableName;
+     static String TableName_member;
 
     static String STARTTIME = "";
     static String DEVICEID  = "";
     static String ENTRYUSER = "";
     MySharedPreferences sp;
 
+     private RecyclerView recyclerView;
+     private DataAdapter mAdapter;
+
     Bundle IDbundle;
     static String UNCODE = "";
     static String STRUCTURENO = "";
     static String HOUSEHOLDSL = "";
     static String VISITNO = "";
+     static String MEMSL = "";
 
  public void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -465,8 +477,10 @@
          STRUCTURENO = IDbundle.getString("StructureNo");
          HOUSEHOLDSL = IDbundle.getString("HouseholdSl");
          VISITNO = IDbundle.getString("VisitNo");
+         MEMSL = IDbundle.getString("MemSl");
 
          TableName = "Household_Interview";
+         TableName_member = "Member";
 
          //turnGPSOn();
 
@@ -551,8 +565,8 @@
                     lineRelWithFHead.setVisibility(View.VISIBLE);
                     secOthRelWithFHead.setVisibility(View.VISIBLE);
                     lineOthRelWithFHead.setVisibility(View.VISIBLE);
-                 secOthRelWithFHead.setVisibility(View.GONE);
-                 lineOthRelWithFHead.setVisibility(View.GONE);
+//                 secOthRelWithFHead.setVisibility(View.GONE);
+//                 lineOthRelWithFHead.setVisibility(View.GONE);
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
@@ -563,6 +577,12 @@
          lineRelWithFHead=(View)findViewById(R.id.lineRelWithFHead);
          VlblRelWithFHead=(TextView) findViewById(R.id.VlblRelWithFHead);
          spnRelWithFHead=(Spinner) findViewById(R.id.spnRelWithFHead);
+         secOthRelWithFHead=(LinearLayout)findViewById(R.id.secOthRelWithFHead);
+         lineOthRelWithFHead=(View)findViewById(R.id.lineOthRelWithFHead);
+         VlblOthRelWithFHead=(TextView) findViewById(R.id.VlblOthRelWithFHead);
+         txtOthRelWithFHead=(EditText) findViewById(R.id.txtOthRelWithFHead);
+
+
          List<String> listRelWithFHead = new ArrayList<String>();
          
          listRelWithFHead.add("");
@@ -578,81 +598,82 @@
          ArrayAdapter<String> adptrRelWithFHead= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listRelWithFHead);
          spnRelWithFHead.setAdapter(adptrRelWithFHead);
 
-         secOthRelWithFHead=(LinearLayout)findViewById(R.id.secOthRelWithFHead);
-         lineOthRelWithFHead=(View)findViewById(R.id.lineOthRelWithFHead);
-         VlblOthRelWithFHead=(TextView) findViewById(R.id.VlblOthRelWithFHead);
-         txtOthRelWithFHead=(EditText) findViewById(R.id.txtOthRelWithFHead);
+         spnRelWithFHead.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+             @Override
+             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                 String spnData = "";
+                 if (spnRelWithFHead.getSelectedItem().toString().length() != 0)
+                 {
+                     spnData = Connection.SelectedSpinnerValue(spnRelWithFHead.getSelectedItem().toString(), "-");
+                 }
+                 if(spnData.equalsIgnoreCase("1"))
+                 {
+                     secOthRelWithFHead.setVisibility(View.GONE);
+                     lineOthRelWithFHead.setVisibility(View.GONE);
+                     txtOthRelWithFHead.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("2"))
+                 {
+                     secOthRelWithFHead.setVisibility(View.GONE);
+                     lineOthRelWithFHead.setVisibility(View.GONE);
+                     txtOthRelWithFHead.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("3"))
+                 {
+                     secOthRelWithFHead.setVisibility(View.GONE);
+                     lineOthRelWithFHead.setVisibility(View.GONE);
+                     txtOthRelWithFHead.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("4"))
+                 {
+                     secOthRelWithFHead.setVisibility(View.GONE);
+                     lineOthRelWithFHead.setVisibility(View.GONE);
+                     txtOthRelWithFHead.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("5"))
+                 {
+                     secOthRelWithFHead.setVisibility(View.GONE);
+                     lineOthRelWithFHead.setVisibility(View.GONE);
+                     txtOthRelWithFHead.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("6"))
+                 {
+                     secOthRelWithFHead.setVisibility(View.GONE);
+                     lineOthRelWithFHead.setVisibility(View.GONE);
+                     txtOthRelWithFHead.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("7"))
+                 {
+                     secOthRelWithFHead.setVisibility(View.GONE);
+                     lineOthRelWithFHead.setVisibility(View.GONE);
+                     txtOthRelWithFHead.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("8"))
+                 {
+                     secOthRelWithFHead.setVisibility(View.GONE);
+                     lineOthRelWithFHead.setVisibility(View.GONE);
+                     txtOthRelWithFHead.setText("");
+                 }
+
+                 else if(spnData.equalsIgnoreCase("77"))
+                 {
+                     secOthRelWithFHead.setVisibility(View.VISIBLE);
+                     lineOthRelWithFHead.setVisibility(View.VISIBLE);
+//                     txtChildHcareOth.setText("");
+                 }
+                 else
+                 {
+                     secOthRelWithFHead.setVisibility(View.GONE);
+                     lineOthRelWithFHead.setVisibility(View.GONE);
+                     txtOthRelWithFHead.setText("");
+                 }
+             }
+             @Override
+             public void onNothingSelected(AdapterView<?> parentView) {
+             }
+         });
 
 
-
-//         spnRelWithFHead.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//             @Override
-//             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-//                 String spnData = "";
-//                 if (spnHeadOcp.getSelectedItem().toString().length() != 0)
-//                 {
-//                     spnData = Connection.SelectedSpinnerValue(spnHeadOcp.getSelectedItem().toString(), "-");
-//                 }
-//                     if(spnData.equalsIgnoreCase("1"))
-//                     {
-//                         secOthRelWithFHead.setVisibility(View.GONE);
-//                         lineOthRelWithFHead.setVisibility(View.GONE);
-//                         txtOthRelWithFHead.setText("");
-//                     }
-//               else if(spnData.equalsIgnoreCase("2"))
-//                 {
-//                     secOthRelWithFHead.setVisibility(View.GONE);
-//                     lineOthRelWithFHead.setVisibility(View.GONE);
-//                     txtOthRelWithFHead.setText("");
-//                 }
-//                else if(spnData.equalsIgnoreCase("3"))
-//                 {
-//                     secOthRelWithFHead.setVisibility(View.GONE);
-//                     lineOthRelWithFHead.setVisibility(View.GONE);
-//                     txtOthRelWithFHead.setText("");
-//                 }
-//                else if(spnData.equalsIgnoreCase("4"))
-//                 {
-//                     secOthRelWithFHead.setVisibility(View.GONE);
-//                     lineOthRelWithFHead.setVisibility(View.GONE);
-//                     txtOthRelWithFHead.setText("");
-//                 }
-//                else if(spnData.equalsIgnoreCase("5"))
-//                 {
-//                     secOthRelWithFHead.setVisibility(View.GONE);
-//                     lineOthRelWithFHead.setVisibility(View.GONE);
-//                     txtOthRelWithFHead.setText("");
-//                 }
-//                else if(spnData.equalsIgnoreCase("6"))
-//                 {
-//                     secOthRelWithFHead.setVisibility(View.GONE);
-//                     lineOthRelWithFHead.setVisibility(View.GONE);
-//                     txtOthRelWithFHead.setText("");
-//                 }
-//                else if(spnData.equalsIgnoreCase("7"))
-//                 {
-//                     secOthRelWithFHead.setVisibility(View.GONE);
-//                     lineOthRelWithFHead.setVisibility(View.GONE);
-//                     txtOthRelWithFHead.setText("");
-//                 }
-//                else if(spnData.equalsIgnoreCase("8"))
-//                 {
-//                     secOthRelWithFHead.setVisibility(View.GONE);
-//                     lineOthRelWithFHead.setVisibility(View.GONE);
-//                     txtOthRelWithFHead.setText("");
-//                 }
-//                 else if(spnData.equalsIgnoreCase("77"))
-//                 {
-//                     secOthRelWithFHead.setVisibility(View.VISIBLE);
-//                     lineOthRelWithFHead.setVisibility(View.VISIBLE);
-//
-//                 }
-//
-//             }
-//             @Override
-//             public void onNothingSelected(AdapterView<?> parentView) {
-//             }
-//         });
 
 
 
@@ -694,6 +715,44 @@
          ArrayAdapter<String> adptrEduLevelMHead= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listEduLevelMHead);
          spnEduLevelMHead.setAdapter(adptrEduLevelMHead);
 
+
+         final String MSL = C.ReturnSingleValue("Select (ifnull(max(cast(MemSl as int)),0)+1) from Member where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'and HouseholdSl='"+ HOUSEHOLDSL +"'and VisitNo='"+ VISITNO +"'"); //where ParticipantID='"+ ParticipantID +"'");
+
+
+         btnAdd   = (Button) findViewById(R.id.btnAdd);
+         btnAdd.setOnClickListener(new View.OnClickListener() {
+
+             public void onClick(View view) {
+                 Bundle IDbundle = new Bundle();
+                 IDbundle.putString("UNCode", UNCODE);
+                 IDbundle.putString("StructureNo",STRUCTURENO);
+                 IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
+                 IDbundle.putString("VisitNo", VISITNO);
+                 IDbundle.putString("MemSl", MSL);
+                 Intent intent = new Intent(getApplicationContext(), Member.class);
+                 intent.putExtras(IDbundle);
+                 startActivityForResult(intent, 1);
+
+             }});
+
+
+
+         recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+         mAdapter= new DataAdapter(dataList);
+         recyclerView.setItemViewCacheSize(20);
+         recyclerView.setDrawingCacheEnabled(true);
+         recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+         recyclerView.setHasFixedSize(true);
+         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+         recyclerView.setLayoutManager(mLayoutManager);
+         recyclerView.addItemDecoration(new Member_list.DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+         recyclerView.setItemAnimator(new DefaultItemAnimator());
+         recyclerView.setAdapter(mAdapter);
+
+         DataSearch_member(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO,MEMSL);
+
+
+
          seclblh1=(LinearLayout)findViewById(R.id.seclblh1);
          linelblh1=(View)findViewById(R.id.linelblh1);
          secliveHouseM=(LinearLayout)findViewById(R.id.secliveHouseM);
@@ -724,6 +783,7 @@
          lineHlive12m=(View)findViewById(R.id.lineHlive12m);
          VlblHlive12m = (TextView) findViewById(R.id.VlblHlive12m);
          rdogrpHlive12m = (RadioGroup) findViewById(R.id.rdogrpHlive12m);
+
          
          rdoHlive12m1 = (RadioButton) findViewById(R.id.rdoHlive12m1);
          rdoHlive12m2 = (RadioButton) findViewById(R.id.rdoHlive12m2);
@@ -736,6 +796,190 @@
          lineDistHome=(View)findViewById(R.id.lineDistHome);
          VlblDistHome=(TextView) findViewById(R.id.VlblDistHome);
          spnDistHome=(Spinner) findViewById(R.id.spnDistHome);
+
+         txtliveHouseM.addTextChangedListener(new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+             }
+
+             @Override
+             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                 if(s.length()==0)
+                 txtliveHouseY.setText("0");
+
+             }
+
+             @Override
+             public void afterTextChanged(Editable s) {
+
+             }
+         });
+
+         txtliveHouseY.addTextChangedListener(new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+             }
+
+             @Override
+             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                 if(s.length()==0)
+                 txtliveHouseM.setText("0");
+
+             }
+
+             @Override
+             public void afterTextChanged(Editable s) {
+                 if(s.length()!=0) {
+                     int year = Integer.parseInt(txtliveHouseY.getText().toString());
+                     if (year == 96) {
+                         secLiveCity_Mon.setVisibility(View.GONE);
+
+                         secLiveCity_Year.setVisibility(View.GONE);
+                         secLiveHH_Mon.setVisibility(View.GONE);
+                         secLiveHH_Year.setVisibility(View.GONE);
+                         secHlive12m.setVisibility(View.GONE);
+                         secChangedHouse.setVisibility(View.GONE);
+                         secDistHome.setVisibility(View.GONE);
+                         lineLiveCity_Year.setVisibility(View.GONE);
+                         lineLiveHH_Mon.setVisibility(View.GONE);
+                         lineLiveHH_Year.setVisibility(View.GONE);
+                         lineHlive12m.setVisibility(View.GONE);
+                         lineChangedHouse.setVisibility(View.GONE);
+                         lineDistHome.setVisibility(View.GONE);
+
+                     }
+                 }
+                 else{
+                     secLiveCity_Mon.setVisibility(View.VISIBLE);
+
+                     secLiveCity_Year.setVisibility(View.VISIBLE);
+                     secLiveHH_Mon.setVisibility(View.VISIBLE);
+                     secLiveHH_Year.setVisibility(View.VISIBLE);
+                     secHlive12m.setVisibility(View.VISIBLE);
+                     secChangedHouse.setVisibility(View.VISIBLE);
+                     secDistHome.setVisibility(View.VISIBLE);
+                     lineLiveCity_Year.setVisibility(View.VISIBLE);
+                     lineLiveHH_Mon.setVisibility(View.VISIBLE);
+                     lineLiveHH_Year.setVisibility(View.VISIBLE);
+                     lineHlive12m.setVisibility(View.VISIBLE);
+                     lineChangedHouse.setVisibility(View.VISIBLE);
+                     lineDistHome.setVisibility(View.VISIBLE);
+
+                 }
+
+             }
+         });
+
+         txtLiveHH_Mon.addTextChangedListener(new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+             }
+
+             @Override
+             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                 if(s.length()==0)
+                     txtLiveHH_Year.setText("0");
+
+             }
+
+             @Override
+             public void afterTextChanged(Editable s) {
+
+             }
+         });
+
+         txtLiveHH_Year.addTextChangedListener(new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+             }
+
+             @Override
+             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                 if(s.length()==0)
+                     txtLiveCity_Mon.setText("0");
+
+             }
+
+             @Override
+             public void afterTextChanged(Editable s) {
+
+             }
+         });
+
+         txtLiveCity_Mon.addTextChangedListener(new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+             }
+
+             @Override
+             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                 if(s.length()==0)
+                     txtLiveCity_Year.setText("0");
+
+             }
+
+             @Override
+             public void afterTextChanged(Editable s) {
+
+             }
+         });
+
+         txtLiveCity_Year.addTextChangedListener(new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+             }
+
+             @Override
+             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                 if(s.length()==0)
+                     txtLiveCity_Mon.setText("0");
+
+             }
+
+             @Override
+             public void afterTextChanged(Editable s) {
+
+             }
+         });
+
+txtChangedHouse.addTextChangedListener(new TextWatcher() {
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
+        if(s.length()!=0) {
+            int year = Integer.parseInt(txtChangedHouse.getText().toString());
+            if (year == 0) {
+
+                secDistHome.setVisibility(View.GONE);
+                lineDistHome.setVisibility(View.GONE);
+
+            }
+        }
+        else{
+            secDistHome.setVisibility(View.VISIBLE);
+            lineDistHome.setVisibility(View.VISIBLE);
+        }
+
+
+    }
+});
+
 
 
 
@@ -773,8 +1017,7 @@
          listChildHcare.add("11-এখনো কোন স্বাস্থ্যসেবা গ্রহন  করেনি (has not received any health care yet)");
          listChildHcare.add("77-অন্যান্য (Others)");
          listChildHcare.add("88-জানিনা  (Don’t Know)");
-         listChildHcare.add("");
-         listChildHcare.add("");
+
          ArrayAdapter<String> adptrChildHcare= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listChildHcare);
          spnChildHcare.setAdapter(adptrChildHcare);
 
@@ -889,6 +1132,10 @@
          lineHeadOcp=(View)findViewById(R.id.lineHeadOcp);
          VlblHeadOcp=(TextView) findViewById(R.id.VlblHeadOcp);
          spnHeadOcp=(Spinner) findViewById(R.id.spnHeadOcp);
+         secHeadOcpOth=(LinearLayout)findViewById(R.id.secHeadOcpOth);
+         lineHeadOcpOth=(View)findViewById(R.id.lineHeadOcpOth);
+         VlblHeadOcpOth=(TextView) findViewById(R.id.VlblHeadOcpOth);
+         txtHeadOcpOth=(EditText) findViewById(R.id.txtHeadOcpOth);
          List<String> listHeadOcp = new ArrayList<String>();
          
          listHeadOcp.add("");
@@ -929,37 +1176,278 @@
          listHeadOcp.add("35-বিদেশে থাকে (Emigrant)");
          listHeadOcp.add("36-গার্মেন্টস কর্মী (Garment Workers)");
          listHeadOcp.add("37-বাড়িওয়ালা (Landlord)");
-         listHeadOcp.add("38.  সিকিউরিটি/ গার্ড/ কেয়ার টেকার (Security/Guard/Care taker)");
-         listHeadOcp.add("39. রঙ/ টাইলস/ স্যানিটারি মিস্ত্রি (Rong/Tiles/Sanitary Mistri)");
+         listHeadOcp.add("38-সিকিউরিটি/ গার্ড/ কেয়ার টেকার (Security/Guard/Care taker)");
+         listHeadOcp.add("39-রঙ/ টাইলস/ স্যানিটারি মিস্ত্রি (Rong/Tiles/Sanitary Mistri)");
          listHeadOcp.add("88-জানিনা (Dont know)");
          listHeadOcp.add("77-অন্যান্য");
-         listHeadOcp.add("");
+
          ArrayAdapter<String> adptrHeadOcp= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listHeadOcp);
          spnHeadOcp.setAdapter(adptrHeadOcp);
 
          spnHeadOcp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
              @Override
              public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-             String spnData = "";
-             if (spnHeadOcp.getSelectedItem().toString().length() != 0)
-             {
-                 spnData = Connection.SelectedSpinnerValue(spnHeadOcp.getSelectedItem().toString(), "-");
-             }
-                 if(spnData.equalsIgnoreCase("77"))
+                 String spnData = "";
+                 if (spnHeadOcp.getSelectedItem().toString().length() != 0)
+                 {
+                     spnData = Connection.SelectedSpinnerValue(spnHeadOcp.getSelectedItem().toString(), "-");
+                 }
+                 if(spnData.equalsIgnoreCase("1"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("2"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("3"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("4"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("5"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("6"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("7"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("8"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("9"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("10"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("11"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("13"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("14"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("15"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("16"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("17"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("18"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("19"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("20"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("21"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("22"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("23"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("24"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("25"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("26"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("27"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("28"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("29"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("30"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("31"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("32"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("33"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("34"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("35"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("36"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("37"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("38"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("39"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+                 else if(spnData.equalsIgnoreCase("88"))
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
+
+                 else if(spnData.equalsIgnoreCase("77"))
                  {
                      secHeadOcpOth.setVisibility(View.VISIBLE);
                      lineHeadOcpOth.setVisibility(View.VISIBLE);
+//                     txtHeadOcpOth.setText("");
                  }
-
+                 else
+                 {
+                     secHeadOcpOth.setVisibility(View.GONE);
+                     lineHeadOcpOth.setVisibility(View.GONE);
+                     txtHeadOcpOth.setText("");
+                 }
              }
              @Override
              public void onNothingSelected(AdapterView<?> parentView) {
              }
          });
-         secHeadOcpOth=(LinearLayout)findViewById(R.id.secHeadOcpOth);
-         lineHeadOcpOth=(View)findViewById(R.id.lineHeadOcpOth);
-         VlblHeadOcpOth=(TextView) findViewById(R.id.VlblHeadOcpOth);
-         txtHeadOcpOth=(EditText) findViewById(R.id.txtHeadOcpOth);
+
+
+
+
          secRoom=(LinearLayout)findViewById(R.id.secRoom);
          lineRoom=(View)findViewById(R.id.lineRoom);
          VlblRoom=(TextView) findViewById(R.id.VlblRoom);
@@ -1162,14 +1650,14 @@
                  }
                  else if(spnData.equalsIgnoreCase("7"))
                  {
-                     secTypeOfToiletOth.setVisibility(View.VISIBLE);
-                     lineTypeOfToiletOth.setVisibility(View.VISIBLE);
+                     secConsMatFloorOth.setVisibility(View.VISIBLE);
+                     lineConsMatFloorOth.setVisibility(View.VISIBLE);
                  }
                  else
                  {
-                     secTypeOfToiletOth.setVisibility(View.GONE);
-                     lineTypeOfToiletOth.setVisibility(View.GONE);
-                     txtTypeOfToiletOth.setText("");
+                     secConsMatFloorOth.setVisibility(View.GONE);
+                     lineConsMatFloorOth.setVisibility(View.GONE);
+                     txtConsMatFloorOth.setText("");
                  }
              }
              @Override
@@ -1278,14 +1766,14 @@
                  }
                  else if(spnData.equalsIgnoreCase("77"))
                  {
-                     secTypeOfToiletOth.setVisibility(View.VISIBLE);
-                     lineTypeOfToiletOth.setVisibility(View.VISIBLE);
+                     secConsMatWallOth.setVisibility(View.VISIBLE);
+                     lineConsMatWallOth.setVisibility(View.VISIBLE);
                  }
                  else
                  {
-                     secTypeOfToiletOth.setVisibility(View.GONE);
-                     lineTypeOfToiletOth.setVisibility(View.GONE);
-                     txtTypeOfToiletOth.setText("");
+                     secConsMatWallOth.setVisibility(View.GONE);
+                     lineConsMatWallOth.setVisibility(View.GONE);
+                     txtConsMatWallOth.setText("");
                  }
 
              }
@@ -1395,14 +1883,15 @@
                  }
                  else if(spnData.equalsIgnoreCase("77"))
                  {
-                     secTypeOfToiletOth.setVisibility(View.VISIBLE);
-                     lineTypeOfToiletOth.setVisibility(View.VISIBLE);
+                     secConsMatRoofOth.setVisibility(View.VISIBLE);
+                     lineConsMatRoofOth.setVisibility(View.VISIBLE);
                  }
                  else
                  {
-                     secTypeOfToiletOth.setVisibility(View.GONE);
-                     lineTypeOfToiletOth.setVisibility(View.GONE);
-                     txtTypeOfToiletOth.setText("");
+                     secConsMatRoofOth.setVisibility(View.GONE);
+                     lineConsMatRoofOth.setVisibility(View.GONE);
+                     txtConsMatRoofOth.setText("");
+
                  }
              }
              @Override
@@ -1504,14 +1993,12 @@
                  }
                  else if(spnData.equalsIgnoreCase("97"))
                  {
-                     secTypeOfToiletOth.setVisibility(View.VISIBLE);
-                     lineTypeOfToiletOth.setVisibility(View.VISIBLE);
+                     secFuelOth.setVisibility(View.VISIBLE);
+                     secFuelOth.setVisibility(View.VISIBLE);
                  }
-                 else
-                 {
-                     secTypeOfToiletOth.setVisibility(View.GONE);
-                     lineTypeOfToiletOth.setVisibility(View.GONE);
-                     txtTypeOfToiletOth.setText("");
+                 else {
+                     secFuelOth.setVisibility(View.GONE);
+                     secFuelOth.setVisibility(View.GONE);
                  }
              }
              @Override
@@ -1907,8 +2394,8 @@
          lineChildHcareOth.setVisibility(View.GONE);
          secChildHcareOth.setVisibility(View.GONE);
          lineChildHcareOth.setVisibility(View.GONE);
-         secHeadOcpOth.setVisibility(View.GONE);
-         lineHeadOcpOth.setVisibility(View.GONE);
+//         secHeadOcpOth.setVisibility(View.GONE);
+//         lineHeadOcpOth.setVisibility(View.GONE);
          secConsMatFloorOth.setVisibility(View.GONE);
          lineConsMatFloorOth.setVisibility(View.GONE);
          secConsMatFloorOth.setVisibility(View.GONE);
@@ -2030,6 +2517,9 @@
 
          DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
 
+
+
+
         Button cmdSave = (Button) findViewById(R.id.cmdSave);
         cmdSave.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) { 
@@ -2121,15 +2611,10 @@
            }
          else if(txtliveHouseM.getText().toString().length()==0 & secliveHouseM.isShown())
            {
-                if(txtliveHouseY.getText().toString().length()==0 & secliveHouseY.isShown())
-           {
-               Connection.MessageBox(Household_Interview.this, "Required field:কতমাস যাবৎ আপনার খানা/পরিবার এই বাড়িতে বাস করছে ? (How long has your household/family been living in this house for?).");
-               txtliveHouseY.requestFocus();
-               return;
-           }
-//             Connection.MessageBox(Household_Interview.this, "Required field: কতমাস যাবৎ আপনার খানা/পরিবার এই বাড়িতে বাস করছে ? (How long has your household/family been living in this house for?).");
-//             txtliveHouseM.requestFocus();
-//             return;
+
+             Connection.MessageBox(Household_Interview.this, "Required field: কতমাস যাবৎ আপনার খানা/পরিবার এই বাড়িতে বাস করছে ? (How long has your household/family been living in this house for?).");
+             txtliveHouseM.requestFocus();
+             return;
            }
          else if(Integer.valueOf(txtliveHouseM.getText().toString().length()==0 ? "00" : txtliveHouseM.getText().toString()) < 00 || Integer.valueOf(txtliveHouseM.getText().toString().length()==0 ? "11" : txtliveHouseM.getText().toString()) > 11)
            {
@@ -2139,15 +2624,10 @@
            }
          else if(txtliveHouseY.getText().toString().length()==0 & secliveHouseY.isShown())
            {
-                if(txtliveHouseM.getText().toString().length()==0 & secliveHouseM.isShown())
-           {
-               Connection.MessageBox(Household_Interview.this, "Required field: কতমাস যাবৎ আপনার খানা/পরিবার এই বাড়িতে বাস করছে ? (How long has your household/family been living in this house for?).");
-               txtliveHouseM.requestFocus();
-               return;
-           }
-//             Connection.MessageBox(Household_Interview.this, "Required field: .");
-//             txtliveHouseY.requestFocus();
-//             return;
+//
+             Connection.MessageBox(Household_Interview.this, "Required field: .");
+             txtliveHouseY.requestFocus();
+             return;
            }
          else if(Integer.valueOf(txtliveHouseY.getText().toString().length()==0 ? "02" : txtliveHouseY.getText().toString()) < 02 || Integer.valueOf(txtliveHouseY.getText().toString().length()==0 ? "99" : txtliveHouseY.getText().toString()) > 99)
            {
@@ -2157,15 +2637,10 @@
            }
          else if(txtLiveHH_Mon.getText().toString().length()==0 & secLiveHH_Mon.isShown())
            {
-                if(txtLiveHH_Year.getText().toString().length()==0 & secLiveHH_Year.isShown())
-           {
-               Connection.MessageBox(Household_Interview.this, "Required field: .");
-               txtLiveHH_Year.requestFocus();
-               return;
-           }
-//             Connection.MessageBox(Household_Interview.this, "Required field: এই খানায় আপনি (যে সবচেয়ে বেশি দিন যাবত আছেন) কতদিন যাবত বাস করছেন? (How many months/Years have you lived at this household?).");
-//             txtLiveHH_Mon.requestFocus();
-//             return;
+
+             Connection.MessageBox(Household_Interview.this, "Required field: এই খানায় আপনি (যে সবচেয়ে বেশি দিন যাবত আছেন) কতদিন যাবত বাস করছেন? (How many months/Years have you lived at this household?).");
+             txtLiveHH_Mon.requestFocus();
+             return;
            }
          else if(Integer.valueOf(txtLiveHH_Mon.getText().toString().length()==0 ? "00" : txtLiveHH_Mon.getText().toString()) < 00 || Integer.valueOf(txtLiveHH_Mon.getText().toString().length()==0 ? "11" : txtLiveHH_Mon.getText().toString()) > 11)
            {
@@ -2175,15 +2650,10 @@
            }
          else if(txtLiveHH_Year.getText().toString().length()==0 & secLiveHH_Year.isShown())
            {
-                if(txtLiveHH_Mon.getText().toString().length()==0 & secLiveHH_Year.isShown())
-           {
-               Connection.MessageBox(Household_Interview.this, "Required field: .");
-               txtLiveHH_Mon.requestFocus();
-               return;
-           }
-//             Connection.MessageBox(Household_Interview.this, "Required field: .");
-//             txtLiveHH_Year.requestFocus();
-//             return;
+
+             Connection.MessageBox(Household_Interview.this, "Required field: .");
+             txtLiveHH_Year.requestFocus();
+             return;
            }
          else if(Integer.valueOf(txtLiveHH_Year.getText().toString().length()==0 ? "00" : txtLiveHH_Year.getText().toString()) < 00 || Integer.valueOf(txtLiveHH_Year.getText().toString().length()==0 ? "99" : txtLiveHH_Year.getText().toString()) > 99)
            {
@@ -2193,15 +2663,10 @@
            }
          else if(txtLiveCity_Mon.getText().toString().length()==0 & secLiveCity_Mon.isShown())
            {
-                if(txtLiveCity_Year.getText().toString().length()==0 & secLiveCity_Year.isShown())
-           {
-               Connection.MessageBox(Household_Interview.this, "Required field: .");
-               txtLiveCity_Year.requestFocus();
-               return;
-           }
-//             Connection.MessageBox(Household_Interview.this, "Required field: এই শহরে আপনি (যে সবচেয়ে বেশি দিন যাবত আছেন) কতদিন যাবত বাস করছেন? (How many months/Years have you lived in this city?).");
-//             txtLiveCity_Mon.requestFocus();
-//             return;
+
+             Connection.MessageBox(Household_Interview.this, "Required field: এই শহরে আপনি (যে সবচেয়ে বেশি দিন যাবত আছেন) কতদিন যাবত বাস করছেন? (How many months/Years have you lived in this city?).");
+             txtLiveCity_Mon.requestFocus();
+             return;
            }
          else if(Integer.valueOf(txtLiveCity_Mon.getText().toString().length()==0 ? "0" : txtLiveCity_Mon.getText().toString()) < 0 || Integer.valueOf(txtLiveCity_Mon.getText().toString().length()==0 ? "11" : txtLiveCity_Mon.getText().toString()) > 11)
            {
@@ -2211,15 +2676,10 @@
            }
          else if(txtLiveCity_Year.getText().toString().length()==0 & secLiveCity_Year.isShown())
            {
-                if(txtLiveCity_Mon.getText().toString().length()==0 & secLiveCity_Year.isShown())
-           {
-               Connection.MessageBox(Household_Interview.this, "Required field: .");
-               txtLiveCity_Mon.requestFocus();
-               return;
-           }
-//             Connection.MessageBox(Household_Interview.this, "Required field: .");
-//             txtLiveCity_Year.requestFocus();
-//             return;
+
+             Connection.MessageBox(Household_Interview.this, "Required field: .");
+             txtLiveCity_Year.requestFocus();
+             return;
            }
          else if(Integer.valueOf(txtLiveCity_Year.getText().toString().length()==0 ? "0" : txtLiveCity_Year.getText().toString()) < 0 || Integer.valueOf(txtLiveCity_Year.getText().toString().length()==0 ? "99" : txtLiveCity_Year.getText().toString()) > 99)
            {
@@ -2761,26 +3221,31 @@
 
          String status = objSave.SaveUpdateData(this);
          if(status.length()==0) {
-             Intent returnIntent = new Intent();
-             returnIntent.putExtra("res", "");
-             setResult(Activity.RESULT_OK, returnIntent);
+             AlertDialog.Builder alert=new AlertDialog.Builder(this);
+             alert.setMessage("Saved Successfully");
+             alert.setTitle("Message");
+             alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                 @Override
+                 public void onClick(DialogInterface dialog, int which) {
+                     Intent intent = new Intent(getApplicationContext(), Knowledge_DSH_SSF.class);
+                     intent.putExtras(IDbundle);
+                     startActivityForResult(intent, 1);
+                 }
+             });
+             alert.show();
 
-             Connection.MessageBox(Household_Interview.this, "Saved Successfully");
+             Bundle IDbundle = new Bundle();
+             IDbundle.putString("UNCode",UNCODE  );
+             IDbundle.putString("StructureNo",STRUCTURENO );
+             IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
+             IDbundle.putString("VisitNo", VISITNO);
          }
          else{
              Connection.MessageBox(Household_Interview.this, status);
              return;
          }
 
-         Bundle IDbundle = new Bundle();
-         IDbundle.putString("UNCode",UNCODE  );
-         IDbundle.putString("StructureNo",STRUCTURENO );
-         IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
-         IDbundle.putString("VisitNo", VISITNO);
 
-         Intent intent = new Intent(getApplicationContext(), Knowledge_DSH_SSF.class);
-         intent.putExtras(IDbundle);
-         startActivityForResult(intent, 1);
      }
      catch(Exception  e)
      {
@@ -3014,6 +3479,144 @@
             Connection.MessageBox(Household_Interview.this, e.getMessage());
             return;
         }
+     }
+
+
+
+
+     public void DataSearch_member(String UNCode, String StructureNo, String HouseholdSl, String VisitNo, String MemSl)
+     {
+         try
+         {
+
+             Member_DataModel d = new Member_DataModel();
+             String SQL = "Select * from "+ TableName_member +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and MemSl='"+ MemSl +"'";
+             List<Member_DataModel> data = d.SelectAll(this, SQL);
+             dataList.clear();
+
+             dataList.addAll(data);
+             try {
+                 mAdapter.notifyDataSetChanged();
+             }catch ( Exception ex){
+                 Connection.MessageBox(Household_Interview.this,ex.getMessage());
+             }
+         }
+         catch(Exception  e)
+         {
+             Connection.MessageBox(Household_Interview.this, e.getMessage());
+             return;
+         }
+     }
+
+
+     public  class DataAdapter extends RecyclerView.Adapter<DataAdapter.MyViewHolder> {
+         private List<Member_DataModel> dataList;
+         public class MyViewHolder extends RecyclerView.ViewHolder {
+             LinearLayout secListRow;
+             TextView UNCode;
+             TextView StructureNo;
+             TextView HouseholdSl;
+             TextView VisitNo;
+             TextView MemSl;
+             TextView Name;
+             TextView Sex;
+             TextView DOB;
+             TextView DOBDk;
+             TextView Age;
+             TextView AgeU;
+             TextView Relation;
+             TextView OthRelation;
+             TextView PreStatus;
+             TextView DtofDeath;
+             TextView DAge;
+             TextView DAgeU;
+             TextView LiveInHouse;
+             public MyViewHolder(View convertView) {
+                 super(convertView);
+                 secListRow = (LinearLayout)convertView.findViewById(R.id.secListRow);
+                 UNCode = (TextView)convertView.findViewById(R.id.UNCode);
+                 StructureNo = (TextView)convertView.findViewById(R.id.StructureNo);
+                 HouseholdSl = (TextView)convertView.findViewById(R.id.HouseholdSl);
+                 VisitNo = (TextView)convertView.findViewById(R.id.VisitNo);
+                 MemSl = (TextView)convertView.findViewById(R.id.MemSl);
+                 Name = (TextView)convertView.findViewById(R.id.Name);
+                 Sex = (TextView)convertView.findViewById(R.id.Sex);
+//             DOB = (TextView)convertView.findViewById(R.id.DOB);
+//             DOBDk = (TextView)convertView.findViewById(R.id.DOBDk);
+//             Age = (TextView)convertView.findViewById(R.id.Age);
+//             AgeU = (TextView)convertView.findViewById(R.id.AgeU);
+//             Relation = (TextView)convertView.findViewById(R.id.Relation);
+//             OthRelation = (TextView)convertView.findViewById(R.id.OthRelation);
+//             PreStatus = (TextView)convertView.findViewById(R.id.PreStatus);
+//             DtofDeath = (TextView)convertView.findViewById(R.id.DtofDeath);
+//             DAge = (TextView)convertView.findViewById(R.id.DAge);
+//             DAgeU = (TextView)convertView.findViewById(R.id.DAgeU);
+//             LiveInHouse = (TextView)convertView.findViewById(R.id.LiveInHouse);
+             }
+         }
+         public DataAdapter(List<Member_DataModel> datalist) {
+             this.dataList = datalist;
+         }
+         @Override
+         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+             View itemView = LayoutInflater.from(parent.getContext())
+                     .inflate(R.layout.member_row, parent, false);
+             return new DataAdapter.MyViewHolder(itemView);
+         }
+
+//         @Override
+//         public void onBindViewHolder(MyViewHolder holder, int position) {
+//
+//         }
+
+         @Override
+         public void onBindViewHolder(MyViewHolder holder, int position) {
+             final Member_DataModel data = dataList.get(position);
+             holder.UNCode.setText(data.getUNCode());
+             holder.StructureNo.setText(data.getStructureNo());
+             holder.HouseholdSl.setText(data.getHouseholdSl());
+             holder.VisitNo.setText(data.getVisitNo());
+             holder.MemSl.setText(data.getMemSl());
+             holder.Name.setText(data.getName());
+             holder.Sex.setText(data.getSex());
+//             holder.DOB.setText(data.getDOB());
+//             holder.DOBDk.setText(data.getDOBDk());
+//             holder.Age.setText(data.getAge());
+//             holder.AgeU.setText(data.getAgeU());
+//             holder.Relation.setText(data.getRelation());
+//             holder.OthRelation.setText(data.getOthRelation());
+//             holder.PreStatus.setText(data.getPreStatus());
+//             holder.DtofDeath.setText(data.getDtofDeath());
+//             holder.DAge.setText(data.getDAge());
+//             holder.DAgeU.setText(data.getDAgeU());
+//             holder.LiveInHouse.setText(data.getLiveInHouse());
+             holder.secListRow.setOnClickListener(new View.OnClickListener() {
+                 public void onClick(View v) {
+                     final ProgressDialog progDailog = ProgressDialog.show(Household_Interview.this, "", "Please Wait . . .", true);
+                     new Thread() {
+                         public void run() {
+                             try {
+                                 Bundle IDbundle = new Bundle();
+                                 IDbundle.putString("UNCode", data.getUNCode());
+                                 IDbundle.putString("StructureNo", data.getStructureNo());
+                                 IDbundle.putString("HouseholdSl", data.getHouseholdSl());
+                                 IDbundle.putString("VisitNo", data.getVisitNo());
+                                 IDbundle.putString("MemSl", ""+data.getMemSl());
+                                 Intent f1 = new Intent(getApplicationContext(), Member.class);
+                                 f1.putExtras(IDbundle);
+                                 startActivityForResult(f1,1);
+                             } catch (Exception e) {
+                             }
+                             progDailog.dismiss();
+                         }
+                     }.start();
+                 }
+             });
+         }
+         @Override
+         public int getItemCount() {
+             return dataList.size();
+         }
      }
 
 

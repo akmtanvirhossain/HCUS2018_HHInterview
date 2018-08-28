@@ -1015,17 +1015,9 @@
         cmdSave.setOnClickListener(
                 new View.OnClickListener() {
         public void onClick(View view) {
+
+
             DataSave();
-            Bundle IDbundle = new Bundle();
-            IDbundle.putString("UNCode",UNCODE  );
-            IDbundle.putString("StructureNo",STRUCTURENO );
-            IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
-            IDbundle.putString("VisitNo", VISITNO);
-
-            Intent intent = new Intent(getApplicationContext(), Household_Interview.class);
-            intent.putExtras(IDbundle);
-            startActivityForResult(intent, 1);
-
         }});
      }
      catch(Exception  e)
@@ -1249,11 +1241,35 @@
 
          String status = objSave.SaveUpdateData(this);
          if(status.length()==0) {
-             Intent returnIntent = new Intent();
-             returnIntent.putExtra("res", "");
-             setResult(Activity.RESULT_OK, returnIntent);
+//             Intent returnIntent = new Intent();
 
-             Connection.MessageBox(Household_Visit.this, "Saved Successfully");
+
+             AlertDialog.Builder alert=new AlertDialog.Builder(this);
+             alert.setMessage("Saved Successfully");
+             alert.setTitle("Message");
+             alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                 @Override
+                 public void onClick(DialogInterface dialog, int which) {
+                     Intent intent = new Intent(getApplicationContext(), Household_Interview.class);
+                     intent.putExtras(IDbundle);
+                     startActivityForResult(intent, 1);
+                 }
+             });
+             alert.show();
+
+             Bundle IDbundle = new Bundle();
+             IDbundle.putString("UNCode",UNCODE  );
+             IDbundle.putString("StructureNo",STRUCTURENO );
+             IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
+             IDbundle.putString("VisitNo", VISITNO);
+
+
+
+
+//             returnIntent.putExtra("res", "");
+//             setResult(Activity.RESULT_OK, returnIntent);
+//             Connection.MessageBox(Household_Visit.this, "Saved Successfully");
+
          }
          else{
              Connection.MessageBox(Household_Visit.this, status);
