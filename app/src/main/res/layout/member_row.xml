@@ -4,55 +4,55 @@
 
         <TextView
             android:id="@+id/UNCode"
-            android:layout_width="86dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:gravity="center" />
 
         <TextView
             android:id="@+id/StructureNo"
-            android:layout_width="82dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:gravity="center" />
 
         <TextView
             android:id="@+id/HouseholdSl"
-            android:layout_width="76dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:gravity="center" />
 
         <TextView
             android:id="@+id/VisitNo"
-            android:layout_width="71dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:gravity="center" />
 
         <TextView
             android:id="@+id/MemSl"
-            android:layout_width="74dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:gravity="center" />
 
         <TextView
             android:id="@+id/Name"
-            android:layout_width="119dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:gravity="center" />
 
         <TextView
             android:id="@+id/Sex"
-            android:layout_width="94dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:gravity="center" />
-        <!--<TextView android:id="@+id/DOB" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:id="@+id/DOBDk" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:id="@+id/Age" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:id="@+id/AgeU" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:id="@+id/Relation" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:id="@+id/OthRelation" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:id="@+id/PreStatus" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:id="@+id/DtofDeath" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:id="@+id/DAge" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:id="@+id/DAgeU" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:id="@+id/LiveInHouse" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
+        <TextView android:id="@+id/DOB" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/DOBDk" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/Age" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/AgeU" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/Relation" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/OthRelation" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/PreStatus" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/DtofDeath" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/DAge" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/DAgeU" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/LiveInHouse" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
     </LinearLayout>
  </LinearLayout>

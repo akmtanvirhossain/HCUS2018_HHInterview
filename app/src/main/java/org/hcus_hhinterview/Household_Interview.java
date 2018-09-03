@@ -12,8 +12,13 @@
  import android.app.DatePickerDialog;
  import android.app.Dialog;
  import android.app.TimePickerDialog;
+ import android.content.Context;
  import android.content.DialogInterface;
  import android.content.Intent;
+ import android.content.res.TypedArray;
+ import android.graphics.Canvas;
+ import android.graphics.Rect;
+ import android.graphics.drawable.Drawable;
  import android.location.Location;
  import android.os.PersistableBundle;
  import android.support.annotation.Nullable;
@@ -25,6 +30,7 @@
  import android.view.KeyEvent;
  import android.os.Bundle;
  import android.view.View;
+ import android.widget.LinearLayout;
  import android.view.ViewGroup;
  import android.view.LayoutInflater;
  import android.widget.AdapterView;
@@ -33,7 +39,6 @@
  import android.widget.DatePicker;
  import android.widget.EditText;
  import android.widget.ImageButton;
- import android.widget.LinearLayout;
  import android.widget.RadioButton;
  import android.widget.RadioGroup;
  import android.widget.SimpleAdapter;
@@ -47,10 +52,10 @@
  import data_model.Household_Interview_DataModel;
  import data_model.Member_DataModel;
 
- import static org.hcus_hhinterview.Member_list.MEMSL;
 
 
- public class Household_Interview extends Activity {
+
+ public class Household_Interview extends Member_list {
     boolean networkAvailable=false;
     Location currentLocation; 
     double currentLatitude,currentLongitude; 
@@ -65,14 +70,9 @@
     }
     String VariableID;
 
-    public Member_list member;
 
-     @Override
-     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-         super.onCreate(savedInstanceState, persistentState);
+     Member_list member=new Member_list();
 
-         member=new Member_list();
-     }
 
      private int hour;
     private int minute;
@@ -87,7 +87,7 @@
 
     SimpleAdapter dataAdapter;
 //    ArrayList<HashMap<String, String>> dataList = new ArrayList<HashMap<String, String>>();
-     private List<Member_DataModel> dataList = new ArrayList<>();
+//     private List<Member_DataModel> dataList = new ArrayList<>();
          TextView lblHeading;
          LinearLayout secUNCode;
          View lineUNCode;
@@ -449,7 +449,7 @@
     MySharedPreferences sp;
 
      private RecyclerView recyclerView;
-     private DataAdapter mAdapter;
+//     private DataAdapter_member mAdapter;
 
     Bundle IDbundle;
     static String UNCODE = "";
@@ -477,7 +477,7 @@
          STRUCTURENO = IDbundle.getString("StructureNo");
          HOUSEHOLDSL = IDbundle.getString("HouseholdSl");
          VISITNO = IDbundle.getString("VisitNo");
-         MEMSL = IDbundle.getString("MemSl");
+//         MEMSL = IDbundle.getString("MemSl");
 
          TableName = "Household_Interview";
          TableName_member = "Member";
@@ -719,39 +719,58 @@
          final String MSL = C.ReturnSingleValue("Select (ifnull(max(cast(MemSl as int)),0)+1) from Member where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'and HouseholdSl='"+ HOUSEHOLDSL +"'and VisitNo='"+ VISITNO +"'"); //where ParticipantID='"+ ParticipantID +"'");
 
 
-         btnAdd   = (Button) findViewById(R.id.btnAdd);
+          btnRefresh = (Button) findViewById(R.id.btnRefresh);
+         btnRefresh.setOnClickListener(new View.OnClickListener() {
+
+             public void onClick(View view) {
+                   //write your code here
+
+
+             }});
+
+         btnAdd   = (Button) findViewById(R.id.btnAdd_member);
          btnAdd.setOnClickListener(new View.OnClickListener() {
 
              public void onClick(View view) {
-                 Bundle IDbundle = new Bundle();
-                 IDbundle.putString("UNCode", UNCODE);
-                 IDbundle.putString("StructureNo",STRUCTURENO);
-                 IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
-                 IDbundle.putString("VisitNo", VISITNO);
-                 IDbundle.putString("MemSl", MSL);
-                 Intent intent = new Intent(getApplicationContext(), Member.class);
-                 intent.putExtras(IDbundle);
-                 startActivityForResult(intent, 1);
+                         Bundle IDbundle = new Bundle();
+                         IDbundle.putString("UNCode", UNCODE);
+                         IDbundle.putString("StructureNo", STRUCTURENO);
+                         IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
+                         IDbundle.putString("VisitNo", VISITNO);
+                         IDbundle.putString("MemSl", MSL);
+                         Intent intent = new Intent(getApplicationContext(), Member.class);
+                         intent.putExtras(IDbundle);
+                         startActivityForResult(intent, 1);
 
              }});
 
 
-
-         recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
-         mAdapter= new DataAdapter(dataList);
+         recyclerView=(RecyclerView) findViewById(R.id.recycler_view_member);
+         mAdapter=new DataAdapter_member(dataList);
          recyclerView.setItemViewCacheSize(20);
          recyclerView.setDrawingCacheEnabled(true);
          recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
          recyclerView.setHasFixedSize(true);
-         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-         recyclerView.setLayoutManager(mLayoutManager);
-         recyclerView.addItemDecoration(new Member_list.DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+         RecyclerView.LayoutManager memberLayoutManager= new LinearLayoutManager(getApplicationContext());
+         recyclerView.setLayoutManager(memberLayoutManager);
+         recyclerView.addItemDecoration(new Member_list.DividerItemDecoration(this,LinearLayoutManager.VERTICAL));
          recyclerView.setItemAnimator(new DefaultItemAnimator());
          recyclerView.setAdapter(mAdapter);
 
-         DataSearch_member(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO,MEMSL);
+//         recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+//         mAdapter = new DataAdapter(dataList);
+//         recyclerView.setItemViewCacheSize(20);
+//         recyclerView.setDrawingCacheEnabled(true);
+//         recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+//         recyclerView.setHasFixedSize(true);
+//         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+//         recyclerView.setLayoutManager(mLayoutManager);
+//         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+//         recyclerView.setItemAnimator(new DefaultItemAnimator());
+//         recyclerView.setAdapter(mAdapter);
+//
 
-
+DataSearch_member(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
 
          seclblh1=(LinearLayout)findViewById(R.id.seclblh1);
          linelblh1=(View)findViewById(R.id.linelblh1);
@@ -3484,142 +3503,79 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
 
 
 
-     public void DataSearch_member(String UNCode, String StructureNo, String HouseholdSl, String VisitNo, String MemSl)
-     {
-         try
-         {
 
-             Member_DataModel d = new Member_DataModel();
-             String SQL = "Select * from "+ TableName_member +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and MemSl='"+ MemSl +"'";
-             List<Member_DataModel> data = d.SelectAll(this, SQL);
-             dataList.clear();
 
-             dataList.addAll(data);
-             try {
-                 mAdapter.notifyDataSetChanged();
-             }catch ( Exception ex){
-                 Connection.MessageBox(Household_Interview.this,ex.getMessage());
+
+
+
+
+
+     public static class DividerItemDecoration extends RecyclerView.ItemDecoration {
+         private final int[] ATTRS = new int[]{
+                 android.R.attr.listDivider
+         };
+         public static final int HORIZONTAL_LIST = LinearLayoutManager.HORIZONTAL;
+         public static final int VERTICAL_LIST = LinearLayoutManager.VERTICAL;
+         private Drawable mDivider;
+         private int mOrientation;
+         public DividerItemDecoration(Context context, int orientation) {
+             final TypedArray a = context.obtainStyledAttributes(ATTRS);
+             mDivider = a.getDrawable(0);
+             a.recycle();
+             setOrientation(orientation);
+         }
+         public void setOrientation(int orientation) {
+             if (orientation != HORIZONTAL_LIST && orientation != VERTICAL_LIST) {
+                 throw new IllegalArgumentException("invalid orientation");
+             }
+             mOrientation = orientation;
+         }
+         @Override
+         public void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.State state) {
+             if (mOrientation == VERTICAL_LIST) {
+                 drawVertical(c, parent);
+             } else {
+                 drawHorizontal(c, parent);
              }
          }
-         catch(Exception  e)
-         {
-             Connection.MessageBox(Household_Interview.this, e.getMessage());
-             return;
-         }
-     }
+         public void drawVertical(Canvas c, RecyclerView parent) {
+             final int left = parent.getPaddingLeft();
+             final int right = parent.getWidth() - parent.getPaddingRight();
 
-
-     public  class DataAdapter extends RecyclerView.Adapter<DataAdapter.MyViewHolder> {
-         private List<Member_DataModel> dataList;
-         public class MyViewHolder extends RecyclerView.ViewHolder {
-             LinearLayout secListRow;
-             TextView UNCode;
-             TextView StructureNo;
-             TextView HouseholdSl;
-             TextView VisitNo;
-             TextView MemSl;
-             TextView Name;
-             TextView Sex;
-             TextView DOB;
-             TextView DOBDk;
-             TextView Age;
-             TextView AgeU;
-             TextView Relation;
-             TextView OthRelation;
-             TextView PreStatus;
-             TextView DtofDeath;
-             TextView DAge;
-             TextView DAgeU;
-             TextView LiveInHouse;
-             public MyViewHolder(View convertView) {
-                 super(convertView);
-                 secListRow = (LinearLayout)convertView.findViewById(R.id.secListRow);
-                 UNCode = (TextView)convertView.findViewById(R.id.UNCode);
-                 StructureNo = (TextView)convertView.findViewById(R.id.StructureNo);
-                 HouseholdSl = (TextView)convertView.findViewById(R.id.HouseholdSl);
-                 VisitNo = (TextView)convertView.findViewById(R.id.VisitNo);
-                 MemSl = (TextView)convertView.findViewById(R.id.MemSl);
-                 Name = (TextView)convertView.findViewById(R.id.Name);
-                 Sex = (TextView)convertView.findViewById(R.id.Sex);
-//             DOB = (TextView)convertView.findViewById(R.id.DOB);
-//             DOBDk = (TextView)convertView.findViewById(R.id.DOBDk);
-//             Age = (TextView)convertView.findViewById(R.id.Age);
-//             AgeU = (TextView)convertView.findViewById(R.id.AgeU);
-//             Relation = (TextView)convertView.findViewById(R.id.Relation);
-//             OthRelation = (TextView)convertView.findViewById(R.id.OthRelation);
-//             PreStatus = (TextView)convertView.findViewById(R.id.PreStatus);
-//             DtofDeath = (TextView)convertView.findViewById(R.id.DtofDeath);
-//             DAge = (TextView)convertView.findViewById(R.id.DAge);
-//             DAgeU = (TextView)convertView.findViewById(R.id.DAgeU);
-//             LiveInHouse = (TextView)convertView.findViewById(R.id.LiveInHouse);
+             final int childCount = parent.getChildCount();
+             for (int i = 0; i < childCount; i++) {
+                 final View child = parent.getChildAt(i);
+                 final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child
+                         .getLayoutParams();
+                 final int top = child.getBottom() + params.bottomMargin;
+                 final int bottom = top + mDivider.getIntrinsicHeight();
+                 mDivider.setBounds(left, top, right, bottom);
+                 mDivider.draw(c);
              }
          }
-         public DataAdapter(List<Member_DataModel> datalist) {
-             this.dataList = datalist;
+         public void drawHorizontal(Canvas c, RecyclerView parent) {
+             final int top = parent.getPaddingTop();
+             final int bottom = parent.getHeight() - parent.getPaddingBottom();
+             final int childCount = parent.getChildCount();
+             for (int i = 0; i < childCount; i++) {
+                 final View child = parent.getChildAt(i);
+                 final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child
+                         .getLayoutParams();
+                 final int left = child.getRight() + params.rightMargin;
+                 final int right = left + mDivider.getIntrinsicHeight();
+                 mDivider.setBounds(left, top, right, bottom);
+                 mDivider.draw(c);
+             }
          }
          @Override
-         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-             View itemView = LayoutInflater.from(parent.getContext())
-                     .inflate(R.layout.member_row, parent, false);
-             return new DataAdapter.MyViewHolder(itemView);
-         }
-
-//         @Override
-//         public void onBindViewHolder(MyViewHolder holder, int position) {
-//
-//         }
-
-         @Override
-         public void onBindViewHolder(MyViewHolder holder, int position) {
-             final Member_DataModel data = dataList.get(position);
-             holder.UNCode.setText(data.getUNCode());
-             holder.StructureNo.setText(data.getStructureNo());
-             holder.HouseholdSl.setText(data.getHouseholdSl());
-             holder.VisitNo.setText(data.getVisitNo());
-             holder.MemSl.setText(data.getMemSl());
-             holder.Name.setText(data.getName());
-             holder.Sex.setText(data.getSex());
-//             holder.DOB.setText(data.getDOB());
-//             holder.DOBDk.setText(data.getDOBDk());
-//             holder.Age.setText(data.getAge());
-//             holder.AgeU.setText(data.getAgeU());
-//             holder.Relation.setText(data.getRelation());
-//             holder.OthRelation.setText(data.getOthRelation());
-//             holder.PreStatus.setText(data.getPreStatus());
-//             holder.DtofDeath.setText(data.getDtofDeath());
-//             holder.DAge.setText(data.getDAge());
-//             holder.DAgeU.setText(data.getDAgeU());
-//             holder.LiveInHouse.setText(data.getLiveInHouse());
-             holder.secListRow.setOnClickListener(new View.OnClickListener() {
-                 public void onClick(View v) {
-                     final ProgressDialog progDailog = ProgressDialog.show(Household_Interview.this, "", "Please Wait . . .", true);
-                     new Thread() {
-                         public void run() {
-                             try {
-                                 Bundle IDbundle = new Bundle();
-                                 IDbundle.putString("UNCode", data.getUNCode());
-                                 IDbundle.putString("StructureNo", data.getStructureNo());
-                                 IDbundle.putString("HouseholdSl", data.getHouseholdSl());
-                                 IDbundle.putString("VisitNo", data.getVisitNo());
-                                 IDbundle.putString("MemSl", ""+data.getMemSl());
-                                 Intent f1 = new Intent(getApplicationContext(), Member.class);
-                                 f1.putExtras(IDbundle);
-                                 startActivityForResult(f1,1);
-                             } catch (Exception e) {
-                             }
-                             progDailog.dismiss();
-                         }
-                     }.start();
-                 }
-             });
-         }
-         @Override
-         public int getItemCount() {
-             return dataList.size();
+         public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+             if (mOrientation == VERTICAL_LIST) {
+                 outRect.set(0, 0, 0, mDivider.getIntrinsicHeight());
+             } else {
+                 outRect.set(0, 0, mDivider.getIntrinsicWidth(), 0);
+             }
          }
      }
-
-
 
  protected Dialog onCreateDialog(int id) {
    final Calendar c = Calendar.getInstance();

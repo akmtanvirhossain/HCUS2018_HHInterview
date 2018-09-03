@@ -3,56 +3,56 @@
     <LinearLayout android:id="@+id/secListRow" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal"  android:background="#C2E0EC" android:paddingTop="5px" android:paddingBottom="5px">
 
         <TextView
-            android:layout_width="95dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="UNCode" />
 
         <TextView
-            android:layout_width="75dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="St.No" />
 
         <TextView
-            android:layout_width="72dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="HhSl" />
 
         <TextView
-            android:layout_width="85dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="VisitNo" />
 
         <TextView
-            android:layout_width="77dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="MemSl" />
 
         <TextView
-            android:layout_width="121dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Name" />
 
         <TextView
-            android:layout_width="83dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Sex" />
-        <!--<TextView android:text="DOB" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:text="DOBDk" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:text="Age" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:text="AgeU" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:text="Relation" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:text="OthRelation" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:text="PreStatus" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:text="DtofDeath" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:text="DAge" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:text="DAgeU" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:text="LiveInHouse" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
+        <TextView android:text="DOB" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="DOBDk" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="Age" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="AgeU" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="Relation" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="OthRelation" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="PreStatus" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="DtofDeath" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="DAge" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="DAgeU" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="LiveInHouse" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
     </LinearLayout>
  </LinearLayout>

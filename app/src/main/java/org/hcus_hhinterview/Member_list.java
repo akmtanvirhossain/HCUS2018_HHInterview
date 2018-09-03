@@ -1,6 +1,7 @@
 package org.hcus_hhinterview;
-//Android Manifest Code
+ //Android Manifest Code
  //<activity android:name=".Member_list" android:label="Member: List" />
+ import java.security.PrivateKey;
  import java.util.ArrayList;
  import java.util.List;
  import android.app.*;
@@ -15,11 +16,14 @@ package org.hcus_hhinterview;
  import android.view.MotionEvent;
  import android.view.ViewGroup;
  import android.view.LayoutInflater;
+ import android.widget.EditText;
  import android.widget.LinearLayout;
  import android.widget.TextView;
  import android.widget.Button;
  import android.widget.ImageButton;
  import Common.*;
+ import data_model.Member_DataModel;
+
  import android.support.v7.widget.RecyclerView;
  import android.support.v7.app.AppCompatActivity;
  import android.content.res.TypedArray;
@@ -29,18 +33,17 @@ package org.hcus_hhinterview;
  import android.support.v7.widget.LinearLayoutManager;
  import android.view.GestureDetector;
  import android.support.v7.widget.DefaultItemAnimator;
- import data_model.Member_DataModel;
 
  public class Member_list extends AppCompatActivity {
     boolean networkAvailable=false;
-    Location currentLocation;
-    double currentLatitude,currentLongitude;
+    Location currentLocation; 
+    double currentLatitude,currentLongitude; 
     //Disabled Back/Home key
     //--------------------------------------------------------------------------------------------------
-    @Override
+    @Override 
     public boolean onKeyDown(int iKeyCode, KeyEvent event)
     {
-        if(iKeyCode == KeyEvent.KEYCODE_BACK || iKeyCode == KeyEvent.KEYCODE_HOME)
+        if(iKeyCode == KeyEvent.KEYCODE_BACK || iKeyCode == KeyEvent.KEYCODE_HOME) 
              { return false; }
         else { return true;  }
     }
@@ -53,14 +56,15 @@ package org.hcus_hhinterview;
 
     Connection C;
     Global g;
-    private List<Member_DataModel> dataList = new ArrayList<>();
+    public List<Member_DataModel> dataList = new ArrayList<>();
     private RecyclerView recyclerView;
-    private DataAdapter mAdapter;
+    public DataAdapter_member mAdapter;
     static String TableName;
 
     TextView lblHeading;
     Button btnAdd;
     Button btnRefresh;
+     Bundle IDbundle;
 
     static String STARTTIME = "";
     static String UNCODE = "";
@@ -77,6 +81,13 @@ package org.hcus_hhinterview;
          C = new Connection(this);
          g = Global.getInstance();
          STARTTIME = g.CurrentTime24();
+
+         IDbundle = getIntent().getExtras();
+         UNCODE = IDbundle.getString("UNCode");
+         STRUCTURENO = IDbundle.getString("StructureNo");
+         HOUSEHOLDSL = IDbundle.getString("HouseholdSl");
+
+         VISITNO = IDbundle.getString("VisitNo");
 
          TableName = "Member";
          lblHeading = (TextView)findViewById(R.id.lblHeading);
@@ -100,20 +111,20 @@ package org.hcus_hhinterview;
 
              public void onClick(View view) {
                    //write your code here
-                   DataSearch_member(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO, MEMSL);
+                   DataSearch_member(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO);
 
              }});
 
-         btnAdd   = (Button) findViewById(R.id.btnAdd);
+         btnAdd   = (Button) findViewById(R.id.btnAdd_member);
          btnAdd.setOnClickListener(new View.OnClickListener() {
 
              public void onClick(View view) {
                          Bundle IDbundle = new Bundle();
-                         IDbundle.putString("UNCode", UNCODE);
-                         IDbundle.putString("StructureNo",STRUCTURENO);
-                         IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
-                         IDbundle.putString("VisitNo", VISITNO);
-                         IDbundle.putString("MemSl", MEMSL);
+                         IDbundle.putString("UNCode", "");
+                         IDbundle.putString("StructureNo", "");
+                         IDbundle.putString("HouseholdSl", "");
+                         IDbundle.putString("VisitNo", "");
+                         IDbundle.putString("MemSl", "");
                          Intent intent = new Intent(getApplicationContext(), Member.class);
                          intent.putExtras(IDbundle);
                          startActivityForResult(intent, 1);
@@ -121,8 +132,8 @@ package org.hcus_hhinterview;
              }});
 
 
-        recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
-        mAdapter = new DataAdapter(dataList);
+        recyclerView = (RecyclerView)findViewById(R.id.recycler_view_member);
+        mAdapter = new DataAdapter_member(dataList);
         recyclerView.setItemViewCacheSize(20);
         recyclerView.setDrawingCacheEnabled(true);
         recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
@@ -134,7 +145,7 @@ package org.hcus_hhinterview;
         recyclerView.setAdapter(mAdapter);
 
 
-        DataSearch_member(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO, MEMSL);
+        DataSearch_member(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO);
 
 
      }
@@ -144,24 +155,24 @@ package org.hcus_hhinterview;
          return;
      }
  }
-
+ 
  @Override
  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
      super.onActivityResult(requestCode, resultCode, data);
      if (resultCode == Activity.RESULT_CANCELED) {
          //Write your code if there's no result
      } else {
-         DataSearch_member(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO, MEMSL);
+         DataSearch_member(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO);
      }
  }
 
- public void DataSearch_member(String UNCode, String StructureNo, String HouseholdSl, String VisitNo, String MemSl)
+ public void DataSearch_member(String UNCode, String StructureNo, String HouseholdSl, String VisitNo)
      {
        try
         {
-
+     
            Member_DataModel d = new Member_DataModel();
-             String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and MemSl='"+ MemSl +"'";
+             String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"'";
              List<Member_DataModel> data = d.SelectAll(this, SQL);
              dataList.clear();
 
@@ -180,8 +191,8 @@ package org.hcus_hhinterview;
      }
 
 
-     public  class DataAdapter extends RecyclerView.Adapter<DataAdapter.MyViewHolder> {
-         private List<Member_DataModel> dataList;
+     public class DataAdapter_member extends RecyclerView.Adapter<DataAdapter_member.MyViewHolder> {
+         public List<Member_DataModel> dataList;
          public class MyViewHolder extends RecyclerView.ViewHolder {
          LinearLayout secListRow;
          TextView UNCode;
@@ -212,49 +223,49 @@ package org.hcus_hhinterview;
              MemSl = (TextView)convertView.findViewById(R.id.MemSl);
              Name = (TextView)convertView.findViewById(R.id.Name);
              Sex = (TextView)convertView.findViewById(R.id.Sex);
-//             DOB = (TextView)convertView.findViewById(R.id.DOB);
-//             DOBDk = (TextView)convertView.findViewById(R.id.DOBDk);
-//             Age = (TextView)convertView.findViewById(R.id.Age);
-//             AgeU = (TextView)convertView.findViewById(R.id.AgeU);
-//             Relation = (TextView)convertView.findViewById(R.id.Relation);
-//             OthRelation = (TextView)convertView.findViewById(R.id.OthRelation);
-//             PreStatus = (TextView)convertView.findViewById(R.id.PreStatus);
-//             DtofDeath = (TextView)convertView.findViewById(R.id.DtofDeath);
-//             DAge = (TextView)convertView.findViewById(R.id.DAge);
-//             DAgeU = (TextView)convertView.findViewById(R.id.DAgeU);
-//             LiveInHouse = (TextView)convertView.findViewById(R.id.LiveInHouse);
+             DOB = (TextView)convertView.findViewById(R.id.DOB);
+             DOBDk = (TextView)convertView.findViewById(R.id.DOBDk);
+             Age = (TextView)convertView.findViewById(R.id.Age);
+             AgeU = (TextView)convertView.findViewById(R.id.AgeU);
+             Relation = (TextView)convertView.findViewById(R.id.Relation);
+             OthRelation = (TextView)convertView.findViewById(R.id.OthRelation);
+             PreStatus = (TextView)convertView.findViewById(R.id.PreStatus);
+             DtofDeath = (TextView)convertView.findViewById(R.id.DtofDeath);
+             DAge = (TextView)convertView.findViewById(R.id.DAge);
+             DAgeU = (TextView)convertView.findViewById(R.id.DAgeU);
+             LiveInHouse = (TextView)convertView.findViewById(R.id.LiveInHouse);
              }
          }
-         public DataAdapter(List<Member_DataModel> datalist) {
+         public DataAdapter_member(List<Member_DataModel> datalist) {
              this.dataList = datalist;
          }
          @Override
-         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+         public DataAdapter_member.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
              View itemView = LayoutInflater.from(parent.getContext())
                      .inflate(R.layout.member_row, parent, false);
-             return new MyViewHolder(itemView);
+             return new DataAdapter_member.MyViewHolder(itemView);
          }
          @Override
-         public void onBindViewHolder(MyViewHolder holder, int position) {
+         public void onBindViewHolder(DataAdapter_member.MyViewHolder holder, int position) {
              final Member_DataModel data = dataList.get(position);
              holder.UNCode.setText(data.getUNCode());
              holder.StructureNo.setText(data.getStructureNo());
              holder.HouseholdSl.setText(data.getHouseholdSl());
              holder.VisitNo.setText(data.getVisitNo());
-             holder.MemSl.setText(data.getMemSl());
+             holder.MemSl.setText(""+data.getMemSl());
              holder.Name.setText(data.getName());
-             holder.Sex.setText(data.getSex());
-//             holder.DOB.setText(data.getDOB());
-//             holder.DOBDk.setText(data.getDOBDk());
-//             holder.Age.setText(data.getAge());
-//             holder.AgeU.setText(data.getAgeU());
-//             holder.Relation.setText(data.getRelation());
-//             holder.OthRelation.setText(data.getOthRelation());
-//             holder.PreStatus.setText(data.getPreStatus());
-//             holder.DtofDeath.setText(data.getDtofDeath());
-//             holder.DAge.setText(data.getDAge());
-//             holder.DAgeU.setText(data.getDAgeU());
-//             holder.LiveInHouse.setText(data.getLiveInHouse());
+             holder.Sex.setText(""+data.getSex());
+             holder.DOB.setText(data.getDOB());
+             holder.DOBDk.setText(""+data.getDOBDk());
+             holder.Age.setText(""+data.getAge());
+             holder.AgeU.setText(""+data.getAgeU());
+             holder.Relation.setText(""+data.getRelation());
+             holder.OthRelation.setText(data.getOthRelation());
+             holder.PreStatus.setText(""+data.getPreStatus());
+             holder.DtofDeath.setText(data.getDtofDeath());
+             holder.DAge.setText(""+data.getDAge());
+             holder.DAgeU.setText(""+data.getDAgeU());
+             holder.LiveInHouse.setText(""+data.getLiveInHouse());
              holder.secListRow.setOnClickListener(new View.OnClickListener() {
                  public void onClick(View v) {
                      final ProgressDialog progDailog = ProgressDialog.show(Member_list.this, "", "Please Wait . . .", true);
@@ -266,7 +277,7 @@ package org.hcus_hhinterview;
                                  IDbundle.putString("StructureNo", data.getStructureNo());
                                  IDbundle.putString("HouseholdSl", data.getHouseholdSl());
                                  IDbundle.putString("VisitNo", data.getVisitNo());
-                                 IDbundle.putString("MemSl", ""+data.getMemSl());
+                                 IDbundle.putString("MemSl",""+data.getMemSl());
                                  Intent f1 = new Intent(getApplicationContext(), Member.class);
                                  f1.putExtras(IDbundle);
                                  startActivityForResult(f1,1);
@@ -284,7 +295,7 @@ package org.hcus_hhinterview;
          }
      }
 
-     public static class DividerItemDecoration extends RecyclerView.ItemDecoration {
+     public class DividerItemDecoration extends RecyclerView.ItemDecoration {
              private final int[] ATTRS = new int[]{
                      android.R.attr.listDivider
              };

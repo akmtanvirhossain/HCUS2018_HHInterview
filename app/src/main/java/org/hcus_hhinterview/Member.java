@@ -224,9 +224,6 @@
              }});
 
 
-
-
-
          secUNCode=(LinearLayout)findViewById(R.id.secUNCode);
          lineUNCode=(View)findViewById(R.id.lineUNCode);
          VlblUNCode=(TextView) findViewById(R.id.VlblUNCode);
@@ -275,12 +272,40 @@
          VlblAgeU=(TextView) findViewById(R.id.VlblAgeU);
          spnAgeU=(Spinner) findViewById(R.id.spnAgeU);
 
-
          txtUNCode.setText(UNCODE);
-         txtStructureNo.setText(STRUCTURENO);
+         txtStructureNo.setText(""+STRUCTURENO);
          txtHouseholdSl.setText(HOUSEHOLDSL);
          txtVisitNo.setText(VISITNO);
          txtMemSl.setText(MEMSL);
+
+
+
+         chkDOBDk.setChecked(false);
+
+
+         chkDOBDk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+             @Override
+             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                 if (chkDOBDk.isChecked())
+                 {
+                     secAge.setVisibility(View.VISIBLE);
+                     lineAge.setVisibility(View.VISIBLE);
+                     secAgeU.setVisibility(View.VISIBLE);
+                     lineAgeU.setVisibility(View.VISIBLE);
+                 }
+                 else{
+                     secAge.setVisibility(View.GONE);
+                     lineAge.setVisibility(View.GONE);
+                     secAgeU.setVisibility(View.GONE);
+                     lineAgeU.setVisibility(View.GONE);
+                 }
+             }
+         });
+
+
+
+
+
 
 
 
@@ -363,10 +388,17 @@
                     lineOthRelation.setVisibility(View.GONE);
                     txtOthRelation.setText("");
                  }
+                 else if(spnData.equalsIgnoreCase("8"))
+                 {
+
+                     secOthRelation.setVisibility(View.VISIBLE);
+                     lineOthRelation.setVisibility(View.VISIBLE);
+
+                 }
                  else
                  {
-                    secOthRelation.setVisibility(View.VISIBLE);
-                    lineOthRelation.setVisibility(View.VISIBLE);
+                     secOthRelation.setVisibility(View.GONE);
+                     lineOthRelation.setVisibility(View.GONE);
                  }
              }
              @Override
@@ -396,6 +428,47 @@
          lineDAgeU=(View)findViewById(R.id.lineDAgeU);
          VlblDAgeU=(TextView) findViewById(R.id.VlblDAgeU);
          spnDAgeU=(Spinner) findViewById(R.id.spnDAgeU);
+
+
+         rdogrpPreStatus.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
+             @Override
+             public void onCheckedChanged(RadioGroup radioGroup,int radioButtonID) {
+                 String rbData = "";
+                 RadioButton rb;
+                 String[] d_rdogrpPreStatus = new String[] {"1","2"};
+                 for (int i = 0; i < rdogrpPreStatus.getChildCount(); i++)
+                 {
+                     rb = (RadioButton)rdogrpPreStatus.getChildAt(i);
+                     if (rb.isChecked()) rbData = d_rdogrpPreStatus[i];
+                 }
+
+                 if(rbData.equalsIgnoreCase("1"))
+                 {
+                     secDtofDeath.setVisibility(View.GONE);
+                     lineDtofDeath.setVisibility(View.GONE);
+                     secDAge.setVisibility(View.GONE);
+                     lineDAge.setVisibility(View.GONE);
+                     secDAgeU.setVisibility(View.GONE);
+                     lineDAgeU.setVisibility(View.GONE);
+                 }
+                 else
+                 {
+                     secDtofDeath.setVisibility(View.VISIBLE);
+                     lineDtofDeath.setVisibility(View.VISIBLE);
+                     secDAge.setVisibility(View.VISIBLE);
+                     lineDAge.setVisibility(View.VISIBLE);
+                     secDAgeU.setVisibility(View.VISIBLE);
+                     lineDAgeU.setVisibility(View.VISIBLE);
+                 }
+             }
+             public void onNothingSelected(AdapterView<?> adapterView) {
+                 return;
+             }
+         });
+
+
+
+
          List<String> listDAgeU = new ArrayList<String>();
          
          listDAgeU.add("");
@@ -441,6 +514,16 @@
 
 
          //Hide all skip variables
+         secAge.setVisibility(View.GONE);
+         lineAge.setVisibility(View.GONE);
+         secAgeU.setVisibility(View.GONE);
+         lineAgeU.setVisibility(View.GONE);
+         secDtofDeath.setVisibility(View.GONE);
+         lineDtofDeath.setVisibility(View.GONE);
+         secDAge.setVisibility(View.GONE);
+         lineDAge.setVisibility(View.GONE);
+         secDAgeU.setVisibility(View.GONE);
+         lineDAgeU.setVisibility(View.GONE);
          secOthRelation.setVisibility(View.GONE);
          lineOthRelation.setVisibility(View.GONE);
          secOthRelation.setVisibility(View.GONE);
@@ -456,8 +539,7 @@
          secOthRelation.setVisibility(View.GONE);
          lineOthRelation.setVisibility(View.GONE);
 
-         DataSearch(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO, MEMSL);
-
+         DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO,MEMSL);
         Button cmdSave = (Button) findViewById(R.id.cmdSave);
         cmdSave.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) { 

@@ -336,10 +336,16 @@
                     lineDSHwayOth.setVisibility(View.GONE);
                     txtDSHwayOth.setText("");
                  }
+                 else if(spnData.equalsIgnoreCase("97"))
+                 {
+                     secDSHwayOth.setVisibility(View.VISIBLE);
+                     lineDSHwayOth.setVisibility(View.VISIBLE);
+                     txtDSHwayOth.setText("");
+                 }
                  else
                  {
-                    secDSHwayOth.setVisibility(View.VISIBLE);
-                    lineDSHwayOth.setVisibility(View.VISIBLE);
+                    secDSHwayOth.setVisibility(View.GONE);
+                    lineDSHwayOth.setVisibility(View.GONE);
                  }
              }
              @Override
@@ -531,6 +537,7 @@
          secSSFwayOth.setVisibility(View.GONE);
          lineSSFwayOth.setVisibility(View.GONE);
 
+         DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
 
         Button cmdSave = (Button) findViewById(R.id.cmdSave);
         cmdSave.setOnClickListener(new View.OnClickListener() {

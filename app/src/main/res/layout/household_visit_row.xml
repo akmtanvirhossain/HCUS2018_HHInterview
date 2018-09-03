@@ -18,7 +18,7 @@
         <!--<TextView android:id="@+id/NotOffered" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <!--<TextView android:id="@+id/NotOfferedOth" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <!--<TextView android:id="@+id/Consent" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <!--<TextView android:id="@+id/Remarks" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
+        <TextView android:id="@+id/Remarks" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
         <!--<TextView android:id="@+id/DataCollDate" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
 
 

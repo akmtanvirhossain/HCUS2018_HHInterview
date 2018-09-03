@@ -273,7 +273,7 @@ package org.hcus_hhinterview;
 //             NotOffered = (TextView)convertView.findViewById(R.id.NotOffered);
 //             NotOfferedOth = (TextView)convertView.findViewById(R.id.NotOfferedOth);
 //             Consent = (TextView)convertView.findViewById(R.id.Consent);
-//             Remarks = (TextView)convertView.findViewById(R.id.Remarks);
+             Remarks = (TextView)convertView.findViewById(R.id.Remarks);
 //             DataCollDate = (TextView)convertView.findViewById(R.id.DataCollDate);
              }
          }
@@ -305,7 +305,7 @@ package org.hcus_hhinterview;
 //             holder.NotOffered.setText(data.getNotOffered());
 //             holder.NotOfferedOth.setText(data.getNotOfferedOth());
 //             holder.Consent.setText(data.getConsent());
-//             holder.Remarks.setText(data.getRemarks());
+             holder.Remarks.setText(data.getRemarks());
 //             holder.DataCollDate.setText(data.getDataCollDate());
              holder.secListRow.setOnClickListener(new View.OnClickListener() {
                  public void onClick(View v) {

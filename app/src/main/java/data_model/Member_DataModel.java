@@ -5,8 +5,8 @@ import android.content.Context;
  import Common.Connection;
  import java.util.ArrayList;
  import java.util.List;
- import java.util.Date;
- public class Member_DataModel{
+
+public class Member_DataModel{
 
         private String _UNCode = "";
         public String getUNCode(){

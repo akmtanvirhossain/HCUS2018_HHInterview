@@ -58,6 +58,8 @@
         <activity android:name="org.hcus_hhinterview.Household_Visit_list" />
         <activity android:name="org.hcus_hhinterview.Household_Interview" />
         <activity android:name="org.hcus_hhinterview.Knowledge_DSH_SSF" />
+        <activity android:name="org.hcus_hhinterview.Member" />
+        <activity android:name="org.hcus_hhinterview.Member_list" />
 
 
         //Service
