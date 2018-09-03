@@ -260,7 +260,7 @@ package org.hcus_hhinterview;
              UNCode = (TextView)convertView.findViewById(R.id.UNCode);
              StructureNo = (TextView)convertView.findViewById(R.id.StructureNo);
              HouseholdSl = (TextView)convertView.findViewById(R.id.HouseholdSl);
-//             VisitNo = (TextView)convertView.findViewById(R.id.VisitNo);
+             VisitNo = (TextView)convertView.findViewById(R.id.VisitNo);
 //             HHVisited = (TextView)convertView.findViewById(R.id.HHVisited);
 //             Outcome = (TextView)convertView.findViewById(R.id.Outcome);
 //             OutcomeOth = (TextView)convertView.findViewById(R.id.OutcomeOth);
@@ -273,7 +273,7 @@ package org.hcus_hhinterview;
 //             NotOffered = (TextView)convertView.findViewById(R.id.NotOffered);
 //             NotOfferedOth = (TextView)convertView.findViewById(R.id.NotOfferedOth);
 //             Consent = (TextView)convertView.findViewById(R.id.Consent);
-             Remarks = (TextView)convertView.findViewById(R.id.Remarks);
+//             Remarks = (TextView)convertView.findViewById(R.id.Remarks);
 //             DataCollDate = (TextView)convertView.findViewById(R.id.DataCollDate);
              }
          }
@@ -292,7 +292,7 @@ package org.hcus_hhinterview;
              holder.UNCode.setText(data.getUNCode());
              holder.StructureNo.setText(data.getStructureNo());
              holder.HouseholdSl.setText(""+data.getHouseholdSl());
-//             holder.VisitNo.setText(data.getVisitNo());
+             holder.VisitNo.setText(data.getVisitNo());
 //             holder.HHVisited.setText(data.getHHVisited());
 //             holder.Outcome.setText(data.getOutcome());
 //             holder.OutcomeOth.setText(data.getOutcomeOth());
@@ -305,7 +305,7 @@ package org.hcus_hhinterview;
 //             holder.NotOffered.setText(data.getNotOffered());
 //             holder.NotOfferedOth.setText(data.getNotOfferedOth());
 //             holder.Consent.setText(data.getConsent());
-             holder.Remarks.setText(data.getRemarks());
+//             holder.Remarks.setText(data.getRemarks());
 //             holder.DataCollDate.setText(data.getDataCollDate());
              holder.secListRow.setOnClickListener(new View.OnClickListener() {
                  public void onClick(View v) {

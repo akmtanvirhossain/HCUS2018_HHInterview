@@ -172,6 +172,7 @@
          View lineDataCollDate;
          TextView VlblDataCollDate;
          EditText dtpDataCollDate;
+     Button btnAddVisit;
 
     static String TableName;
 
@@ -209,6 +210,7 @@
          VISITNO = IDbundle.getString("VisitNo");
 
 
+         final String SLNO = C.ReturnSingleValue("Select (ifnull(max(cast(VisitNo as int)),0)+1) from Household_Visit where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'and HouseholdSl='"+ HOUSEHOLDSL +"'"); //where ParticipantID='"+ ParticipantID +"'");
 
 
          TableName = "Household_Visit";
@@ -235,6 +237,25 @@
                  adb.show();
              }});
 
+
+
+         btnAddVisit   = (Button) findViewById(R.id.btnAddVisit);
+         btnAddVisit.setOnClickListener(new View.OnClickListener() {
+
+
+
+             public void onClick(View view) {
+                 Bundle IDbundle = new Bundle();
+                 IDbundle.putString("UNCode",UNCODE  );
+                 IDbundle.putString("StructureNo",STRUCTURENO );
+                 IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
+                 IDbundle.putString("VisitNo", SLNO);
+
+                 Intent intent = new Intent(getApplicationContext(), Household_Visit.class);
+                 intent.putExtras(IDbundle);
+                 startActivityForResult(intent, 1);
+
+             }});
 
 
          secUNCode=(LinearLayout)findViewById(R.id.secUNCode);
@@ -1250,15 +1271,28 @@
              alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                  @Override
                  public void onClick(DialogInterface dialog, int which) {
-                     Bundle IDbundle = new Bundle();
-                     IDbundle.putString("UNCode",UNCODE  );
-                     IDbundle.putString("StructureNo",STRUCTURENO );
-                     IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
-                     IDbundle.putString("VisitNo", VISITNO);
 
-                     Intent intent = new Intent(getApplicationContext(), Household_Interview.class);
-                     intent.putExtras(IDbundle);
-                     startActivityForResult(intent, 1);
+                     String spnData = "";
+                     if (spnOutcome.getSelectedItem().toString().length() != 0)
+                     {
+                         spnData = Connection.SelectedSpinnerValue(spnOutcome.getSelectedItem().toString(), "-");
+                     }
+                     if(spnData.equalsIgnoreCase("1"))
+                     {
+                         Bundle IDbundle = new Bundle();
+                         IDbundle.putString("UNCode",UNCODE  );
+                         IDbundle.putString("StructureNo",STRUCTURENO );
+                         IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
+                         IDbundle.putString("VisitNo", VISITNO);
+
+                         Intent intent = new Intent(getApplicationContext(), Household_Interview.class);
+                         intent.putExtras(IDbundle);
+                         startActivityForResult(intent, 1);
+                     }
+
+
+
+
                  }
              });
              alert.show();

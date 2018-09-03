@@ -74,9 +74,13 @@ package org.hcus_hhinterview;
     String VariableID;
     private int hour;
     private int minute;
+     public int PREV;
+     public int MAIN;
+
     private int mDay;
     private int mMonth;
     private int mYear;
+    public int previous;
     static final int DATE_DIALOG = 1;
     static final int TIME_DIALOG = 2;
 
@@ -125,6 +129,8 @@ package org.hcus_hhinterview;
          View lineTotalHH;
          TextView VlblTotalHH;
          EditText txtTotalHH;
+     Button prev;
+     Button next;
 
          TextView txtUpazila_Name,txtUnion_Name;
 
@@ -141,6 +147,7 @@ package org.hcus_hhinterview;
     static String CLUSTER = "";
     static String STRUCTURENO = "";
     static String VISITNO = "";
+
 
      static String UPAZILA_NAME = "";
      static String UNION_NAME = "";
@@ -164,17 +171,18 @@ package org.hcus_hhinterview;
          UNCODE = IDbundle.getString("UNCode");
          CLUSTER = IDbundle.getString("Cluster");
          STRUCTURENO = IDbundle.getString("StructureNo");
-         VISITNO = IDbundle.getString("VisitNo");
-
          UPAZILA_NAME = IDbundle.getString("Upazila_Name");
          UNION_NAME = IDbundle.getString("Union_Name");
+         VISITNO = IDbundle.getString("VisitNo");
+
+
 
          TableName = "Cluster_Structure";
 
 //         if(TextUtils.isEmpty(VISITNO))
 //         {
-             VISITNO=C.ReturnSingleValue("Select (ifnull(max(cast(VisitNo as int)),0)+1)VisitNo from Cluster_Structure where Upazila='"+UPAZILA+"' and UNCode='"+UNCODE+"' and Cluster='"+CLUSTER+"' and StructureNo='"+STRUCTURENO+"'");;
-//         }
+              VISITNO=C.ReturnSingleValue("Select (ifnull(max(cast(VisitNo as int)),0)+1)VisitNo from Cluster_Structure where Upazila='"+UPAZILA+"' and UNCode='"+UNCODE+"' and Cluster='"+CLUSTER+"' and StructureNo='"+STRUCTURENO+"'");
+// }
 
          //turnGPSOn();
 
@@ -200,7 +208,6 @@ package org.hcus_hhinterview;
 
          txtUpazila_Name=findViewById(R.id.txtUpazila_Name);
          txtUnion_Name=findViewById(R.id.txtUnion_Name);
-
 
          secUpazila=(LinearLayout)findViewById(R.id.secUpazila);
          lineUpazila=(View)findViewById(R.id.lineUpazila);
@@ -243,8 +250,10 @@ package org.hcus_hhinterview;
          lineTotalHH=(View)findViewById(R.id.lineTotalHH);
          VlblTotalHH=(TextView) findViewById(R.id.VlblTotalHH);
          txtTotalHH=(EditText) findViewById(R.id.txtTotalHH);
-
          spnVisitOutcome=(Spinner) findViewById(R.id.spnVisitOutcome);
+
+
+
          List<String> listVisitOutcome = new ArrayList<String>();
          
          listVisitOutcome.add("");
@@ -328,6 +337,43 @@ package org.hcus_hhinterview;
              public void onNothingSelected(AdapterView<?> parentView) {
              }
          });
+
+
+         MAIN=Integer.parseInt(VISITNO);
+         PREV=Integer.parseInt(VISITNO);
+
+         prev   = (Button) findViewById(R.id.prev);
+         prev.setOnClickListener(new View.OnClickListener() {
+
+             public void onClick(View view) {
+
+                 if(PREV>1){
+                     PREV=PREV-1;
+                     txtVisitNo.setText(""+PREV);
+
+                     DataSearch(UPAZILA,UNCODE,CLUSTER,STRUCTURENO,PREV);
+                 }
+
+
+             }});
+
+         next   = (Button) findViewById(R.id.next);
+         next.setOnClickListener(new View.OnClickListener() {
+
+             public void onClick(View view) {
+
+                 if(PREV<MAIN){
+                     PREV=PREV+1;
+                     txtVisitNo.setText(""+PREV);
+
+                 }
+                 DataSearch(UPAZILA,UNCODE,CLUSTER,STRUCTURENO,PREV);
+
+
+             }});
+
+
+
 
          List<String> listReasonInVisit = new ArrayList<String>();
          
@@ -423,6 +469,10 @@ package org.hcus_hhinterview;
 //
 //         return visit;
 //     }
+
+
+
+
 
  private void DataSave()
  {
@@ -546,14 +596,14 @@ package org.hcus_hhinterview;
      }
  }
 
- private void DataSearch(String Upazila, String UNCode, String Cluster, String StructureNo, String VisitNo)
+ private void DataSearch(String Upazila, String UNCode, String Cluster, String StructureNo, Integer PREV)
      {
        try
         {
      
            RadioButton rb;
            Cluster_Structure_DataModel d = new Cluster_Structure_DataModel();
-           String SQL = "Select * from "+ TableName +"  Where Upazila='"+ Upazila +"' and UNCode='"+ UNCode +"' and Cluster='"+ Cluster +"' and StructureNo='"+ StructureNo +"' and VisitNo='"+ VisitNo +"'";
+           String SQL = "Select * from "+ TableName +"  Where Upazila='"+ Upazila +"' and UNCode='"+ UNCode +"' and Cluster='"+ Cluster +"' and StructureNo='"+ StructureNo +"' and VisitNo='"+ PREV +"'";
            List<Cluster_Structure_DataModel> data = d.SelectAll(this, SQL);
            for(Cluster_Structure_DataModel item : data){
              txtUpazila.setText(item.getUpazila());

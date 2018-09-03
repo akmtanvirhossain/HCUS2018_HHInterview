@@ -37,6 +37,7 @@ import Common.Global;
 import DataSync.Log;
 import data_model.StructureDB_DataModel;
 import data_model.StructureListing_DataModel;
+import data_model.Cluster_Structure_DataModel;
 
 /**
  * Created by tasrul on 01-Aug-18.
@@ -60,12 +61,13 @@ public class Cluster_Structure_list extends Activity {
 
     TextView txtTotal,txtSearch;
 
-
+    Bundle IDbundle;
     static String STARTTIME = "";
     static String UPAZILA = "";
     static String UNCODE = "";
     static String CLUSTER = "";
     static String MOHOLLA = "";
+    static String STRUCTURENO = "";
 
     static String UPAZILA_NAME = "";
     static String UNION_NAME = "";
@@ -80,6 +82,9 @@ public class Cluster_Structure_list extends Activity {
             STARTTIME = g.CurrentTime24();
 
             TableName = "StructureListing";
+
+            IDbundle = getIntent().getExtras();
+//            STRUCTURENO = IDbundle.data.getStructureNo();
 
             tvUpazila= (TextView) findViewById(R.id.tvUpazila);
             txtTotal= (TextView) findViewById(R.id.txtTotal);
@@ -365,7 +370,10 @@ public class Cluster_Structure_list extends Activity {
             holder.btnVisit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
                     Bundle IDbundle = new Bundle();
+
+
 
                     IDbundle.putString("Upazila", data.getUpazila());
                     IDbundle.putString("UNCode", data.getUNCode());
