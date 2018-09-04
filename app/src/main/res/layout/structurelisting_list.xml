@@ -92,6 +92,7 @@
         <EditText
             android:id="@+id/txtSearch"
             style="@style/icddrb_search_edittext"
+            android:hint="Structure No"
             android:layout_width="450sp"
             android:layout_marginRight="15sp"
             android:layout_marginBottom="5sp"

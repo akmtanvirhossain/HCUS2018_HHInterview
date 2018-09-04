@@ -359,41 +359,97 @@ public class Cluster_Structure_list extends Activity {
                 holder.btnHHInterview.setBackgroundResource(R.drawable.button_style_circle_line );
                 holder.btnHHInterview.setTextColor(Color.BLUE);
                 holder.btnHHInterview.setVisibility(View.VISIBLE);
-
+            }
+            else if(data.get_Visit_Status().equals("2"))
+            {
+                holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_red);
+                holder.btnVisit.setTextColor(Color.WHITE);
+                holder.btnHHInterview.setVisibility(View.GONE);
+            }
+            else if(data.get_Visit_Status().equals("3"))
+            {
+                holder.btnVisit.setBackgroundResource(R.drawable.button_style_sky);
+                holder.btnVisit.setTextColor(Color.WHITE);
+                holder.btnHHInterview.setVisibility(View.GONE);
+            }
+            else if(data.get_Visit_Status().equals("4"))
+            {
+                holder.btnVisit.setBackgroundResource(R.drawable.button_style_yellow);
+                holder.btnVisit.setTextColor(Color.WHITE);
+                holder.btnHHInterview.setVisibility(View.GONE);
+            }
+            else if(data.get_Visit_Status().equals("5"))
+            {
+                holder.btnVisit.setBackgroundResource(R.color.cardview_dark_background);
+                holder.btnVisit.setTextColor(Color.WHITE);
+                holder.btnHHInterview.setVisibility(View.GONE);
+            }
+            else if(data.get_Visit_Status().equals("6"))
+            {
+                holder.btnVisit.setBackgroundResource(R.color.color_light_gray);
+                holder.btnVisit.setTextColor(Color.WHITE);
+                holder.btnHHInterview.setVisibility(View.GONE);
+            }
+            else if(data.get_Visit_Status().equals("7"))
+            {
+                holder.btnVisit.setBackgroundResource(R.color.cardview_shadow_end_color);
+                holder.btnVisit.setTextColor(Color.WHITE);
+                holder.btnHHInterview.setVisibility(View.GONE);
+            }
+            else if(data.get_Visit_Status().equals("8"))
+            {
+                holder.btnVisit.setBackgroundResource(R.color.cardview_light_background);
+                holder.btnVisit.setTextColor(Color.WHITE);
+                holder.btnHHInterview.setVisibility(View.GONE);
+            }
+            else if(data.get_Visit_Status().equals("9"))
+            {
+                holder.btnVisit.setBackgroundResource(R.color.colorAccent);
+                holder.btnVisit.setTextColor(Color.WHITE);
+                holder.btnHHInterview.setVisibility(View.GONE);
+            }
+            else if(data.get_Visit_Status().equals("10"))
+            {
+                holder.btnVisit.setBackgroundResource(R.color.colorPrimaryDark);
+                holder.btnVisit.setTextColor(Color.WHITE);
+                holder.btnHHInterview.setVisibility(View.GONE);
             }
             else
             {
                 holder.btnHHInterview.setVisibility(View.GONE);
-
             }
 
             holder.btnVisit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
-                    Bundle IDbundle = new Bundle();
+                    if(data.get_Visit_Status().equals("1"))
+                        {
+                            AlertDialog.Builder popup=new AlertDialog.Builder(Cluster_Structure_list.this);
+                            popup.setMessage("Visit Completed.");
+                            popup.setTitle("Message!!!");
+                            popup.show();
+                        }
+                    else
+                        {
+                        Bundle IDbundle = new Bundle();
+                        IDbundle.putString("Upazila", data.getUpazila());
+                        IDbundle.putString("UNCode", data.getUNCode());
+                    //                    IDbundle.putString("Moholla", MOHOLLA);
+                        IDbundle.putString("Cluster", data.getCluster());
+                        IDbundle.putString("StructureNo", data.getStructureNo());
 
+                        IDbundle.putString("VisitNo", data.get_Visit_No());
+                        IDbundle.putString("Upazila_Name", UPAZILA_NAME);
+                        IDbundle.putString("Union_Name", UNION_NAME);
+                    //                    IDbundle.putString("Moholla_Name", MOHOLLA_NAME);
+                    //                    IDbundle.putString("Mode", "Edit");
+                        Intent f1 = new Intent(getApplicationContext(), Cluster_Structure.class);
+                        f1.putExtras(IDbundle);
+                        startActivityForResult(f1,1);
+                        }
 
-
-                    IDbundle.putString("Upazila", data.getUpazila());
-                    IDbundle.putString("UNCode", data.getUNCode());
-//                    IDbundle.putString("Moholla", MOHOLLA);
-                    IDbundle.putString("Cluster", data.getCluster());
-                    IDbundle.putString("StructureNo", data.getStructureNo());
-
-                    IDbundle.putString("VisitNo", data.get_Visit_No());
-                    IDbundle.putString("Upazila_Name", UPAZILA_NAME);
-                    IDbundle.putString("Union_Name", UNION_NAME);
-//                    IDbundle.putString("Moholla_Name", MOHOLLA_NAME);
-//                    IDbundle.putString("Mode", "Edit");
-                    Intent f1 = new Intent(getApplicationContext(), Cluster_Structure.class);
-                    f1.putExtras(IDbundle);
-                    startActivityForResult(f1,1);
-
-
-
-                }
-            });
+                            }});
 
 
 

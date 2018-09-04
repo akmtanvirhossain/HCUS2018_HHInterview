@@ -341,6 +341,7 @@ package org.hcus_hhinterview;
 
          MAIN=Integer.parseInt(VISITNO);
          PREV=Integer.parseInt(VISITNO);
+//         DataSearch(UPAZILA,UNCODE,CLUSTER,STRUCTURENO,PREV-1);
 
          prev   = (Button) findViewById(R.id.prev);
          prev.setOnClickListener(new View.OnClickListener() {
@@ -350,7 +351,6 @@ package org.hcus_hhinterview;
                  if(PREV>1){
                      PREV=PREV-1;
                      txtVisitNo.setText(""+PREV);
-
                      DataSearch(UPAZILA,UNCODE,CLUSTER,STRUCTURENO,PREV);
                  }
 
@@ -365,9 +365,11 @@ package org.hcus_hhinterview;
                  if(PREV<MAIN){
                      PREV=PREV+1;
                      txtVisitNo.setText(""+PREV);
+                     DataSearch(UPAZILA,UNCODE,CLUSTER,STRUCTURENO,PREV);
 
                  }
-                 DataSearch(UPAZILA,UNCODE,CLUSTER,STRUCTURENO,PREV);
+
+
 
 
              }});
@@ -605,18 +607,36 @@ package org.hcus_hhinterview;
            Cluster_Structure_DataModel d = new Cluster_Structure_DataModel();
            String SQL = "Select * from "+ TableName +"  Where Upazila='"+ Upazila +"' and UNCode='"+ UNCode +"' and Cluster='"+ Cluster +"' and StructureNo='"+ StructureNo +"' and VisitNo='"+ PREV +"'";
            List<Cluster_Structure_DataModel> data = d.SelectAll(this, SQL);
-           for(Cluster_Structure_DataModel item : data){
-             txtUpazila.setText(item.getUpazila());
-             txtUNCode.setText(item.getUNCode());
-             txtCluster.setText(item.getCluster());
-             txtStructureNo.setText(item.getStructureNo());
-             txtVisitNo.setText(item.getVisitNo());
-             spnVisitOutcome.setSelection(Global.SpinnerItemPositionAnyLength(spnVisitOutcome, String.valueOf(item.getVisitOutcome())));
-             txtVisitOutcomeOth.setText(item.getVisitOutcomeOth());
-             spnReasonInVisit.setSelection(Global.SpinnerItemPositionAnyLength(spnReasonInVisit, String.valueOf(item.getReasonInVisit())));
-             txtReasonInVisitOth.setText(item.getReasonInVisitOth());
-             txtTotalHH.setText(item.getTotalHH());
+
+           if(data.size()==0)
+           {
+               txtUpazila.setText(Upazila);
+               txtUNCode.setText(UNCode);
+               txtCluster.setText(Cluster);
+               txtStructureNo.setText(StructureNo);
+               txtVisitNo.setText(""+PREV);
+               spnVisitOutcome.setSelection(0);
+               txtVisitOutcomeOth.setText("");
+               spnReasonInVisit.setSelection(0);
+               txtReasonInVisitOth.setText("");
+               txtTotalHH.setText("");
            }
+           else{
+               for(Cluster_Structure_DataModel item : data){
+                   txtUpazila.setText(item.getUpazila());
+                   txtUNCode.setText(item.getUNCode());
+                   txtCluster.setText(item.getCluster());
+                   txtStructureNo.setText(item.getStructureNo());
+                   txtVisitNo.setText(item.getVisitNo());
+                   spnVisitOutcome.setSelection(Global.SpinnerItemPositionAnyLength(spnVisitOutcome, String.valueOf(item.getVisitOutcome())));
+                   txtVisitOutcomeOth.setText(item.getVisitOutcomeOth());
+                   spnReasonInVisit.setSelection(Global.SpinnerItemPositionAnyLength(spnReasonInVisit, String.valueOf(item.getReasonInVisit())));
+                   txtReasonInVisitOth.setText(item.getReasonInVisitOth());
+                   txtTotalHH.setText(item.getTotalHH());
+               }
+           }
+
+
         }
         catch(Exception  e)
         {

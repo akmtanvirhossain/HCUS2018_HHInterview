@@ -173,6 +173,7 @@
          TextView VlblDataCollDate;
          EditText dtpDataCollDate;
      Button btnAddVisit;
+     Button cmdSave;
 
     static String TableName;
 
@@ -210,7 +211,6 @@
          VISITNO = IDbundle.getString("VisitNo");
 
 
-         final String SLNO = C.ReturnSingleValue("Select (ifnull(max(cast(VisitNo as int)),0)+1) from Household_Visit where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'and HouseholdSl='"+ HOUSEHOLDSL +"'"); //where ParticipantID='"+ ParticipantID +"'");
 
 
          TableName = "Household_Visit";
@@ -242,6 +242,7 @@
          btnAddVisit   = (Button) findViewById(R.id.btnAddVisit);
          btnAddVisit.setOnClickListener(new View.OnClickListener() {
 
+             final String SLNO = C.ReturnSingleValue("Select (ifnull(max(cast(VisitNo as int)),0)+1) from Household_Visit where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'and HouseholdSl='"+ HOUSEHOLDSL +"'"); //where ParticipantID='"+ ParticipantID +"'");
 
 
              public void onClick(View view) {
@@ -285,7 +286,7 @@
          lineOutcome=(View)findViewById(R.id.lineOutcome);
          VlblOutcome=(TextView) findViewById(R.id.VlblOutcome);
          spnOutcome=(Spinner) findViewById(R.id.spnOutcome);
-
+         cmdSave=(Button) findViewById(R.id.cmdSave);
 
          txtUNCode.setText(UNCODE);
          txtStructureNo.setText(STRUCTURENO);
@@ -1028,11 +1029,12 @@
          lineConsent.setVisibility(View.GONE);
 //         sec.setVisibility(View.GONE);
 //         line.setVisibility(View.GONE);
+         btnAddVisit.setVisibility(View.GONE);
 
          DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
 
 
-        Button cmdSave = (Button) findViewById(R.id.cmdSave);
+       Button cmdSave = (Button) findViewById(R.id.cmdSave);
         cmdSave.setOnClickListener(
                 new View.OnClickListener() {
         public void onClick(View view) {
@@ -1040,6 +1042,7 @@
 
             DataSave();
         }});
+
      }
      catch(Exception  e)
      {
@@ -1325,11 +1328,15 @@
              txtStructureNo.setText(item.getStructureNo());
              txtHouseholdSl.setText(String.valueOf(item.getHouseholdSl()));
              txtVisitNo.setText(item.getVisitNo());
-             String[] d_rdogrpHHVisited = new String[] {"1","2",""};
+             String[] d_rdogrpHHVisited = new String[] {"1","2"};
              for (int i = 0; i < d_rdogrpHHVisited.length; i++)
              {
                  if (String.valueOf(item.getHHVisited()).equals(String.valueOf(d_rdogrpHHVisited[i])))
                  {
+                     if(i==0)
+                     {
+                         btnAddVisit.setVisibility(View.VISIBLE);
+                     }
                      rb = (RadioButton)rdogrpHHVisited.getChildAt(i);
                      rb.setChecked(true);
                  }
@@ -1379,6 +1386,9 @@
              }
              txtRemarks.setText(item.getRemarks());
              dtpDataCollDate.setText(item.getDataCollDate().toString().length()==0 ? "" : Global.DateConvertDMY(item.getDataCollDate()));
+
+//           cmdSave.setVisibility(View.GONE);
+
            }
         }
         catch(Exception  e)
