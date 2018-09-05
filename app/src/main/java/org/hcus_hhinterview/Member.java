@@ -315,7 +315,6 @@
          listAgeU.add("1-দিন (Days)");
          listAgeU.add("2-মাস (Months)");
          listAgeU.add("3-সন (Years)");
-         listAgeU.add("");
          ArrayAdapter<String> adptrAgeU= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listAgeU);
          spnAgeU.setAdapter(adptrAgeU);
 

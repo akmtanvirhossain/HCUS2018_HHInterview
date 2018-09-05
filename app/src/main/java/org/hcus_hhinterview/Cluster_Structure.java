@@ -181,7 +181,7 @@ package org.hcus_hhinterview;
 
 //         if(TextUtils.isEmpty(VISITNO))
 //         {
-              VISITNO=C.ReturnSingleValue("Select (ifnull(max(cast(VisitNo as int)),0)+1)VisitNo from Cluster_Structure where Upazila='"+UPAZILA+"' and UNCode='"+UNCODE+"' and Cluster='"+CLUSTER+"' and StructureNo='"+STRUCTURENO+"'");
+//              VISITNO=C.ReturnSingleValue("Select (ifnull(max(cast(VisitNo as int)),0)+1)VisitNo from Cluster_Structure where Upazila='"+UPAZILA+"' and UNCode='"+UNCODE+"' and Cluster='"+CLUSTER+"' and StructureNo='"+STRUCTURENO+"'");
 // }
 
          //turnGPSOn();
@@ -342,7 +342,7 @@ package org.hcus_hhinterview;
          MAIN=Integer.parseInt(VISITNO);
          PREV=Integer.parseInt(VISITNO);
 //         DataSearch(UPAZILA,UNCODE,CLUSTER,STRUCTURENO,PREV-1);
-
+//
          prev   = (Button) findViewById(R.id.prev);
          prev.setOnClickListener(new View.OnClickListener() {
 
@@ -450,7 +450,7 @@ package org.hcus_hhinterview;
          txtUpazila_Name.setText(UPAZILA_NAME);
          txtUnion_Name.setText(UNION_NAME);
 
-
+         DataSearch(UPAZILA,UNCODE,CLUSTER,STRUCTURENO,PREV);
 
         Button cmdSave = (Button) findViewById(R.id.cmdSave);
         cmdSave.setOnClickListener(new View.OnClickListener() {
@@ -602,7 +602,6 @@ package org.hcus_hhinterview;
      {
        try
         {
-     
            RadioButton rb;
            Cluster_Structure_DataModel d = new Cluster_Structure_DataModel();
            String SQL = "Select * from "+ TableName +"  Where Upazila='"+ Upazila +"' and UNCode='"+ UNCode +"' and Cluster='"+ Cluster +"' and StructureNo='"+ StructureNo +"' and VisitNo='"+ PREV +"'";
@@ -621,22 +620,26 @@ package org.hcus_hhinterview;
                txtReasonInVisitOth.setText("");
                txtTotalHH.setText("");
            }
-           else{
-               for(Cluster_Structure_DataModel item : data){
-                   txtUpazila.setText(item.getUpazila());
-                   txtUNCode.setText(item.getUNCode());
-                   txtCluster.setText(item.getCluster());
-                   txtStructureNo.setText(item.getStructureNo());
-                   txtVisitNo.setText(item.getVisitNo());
+           else
+           {
+               for(Cluster_Structure_DataModel item : data) {
+                   txtUpazila.setText(Upazila);
+                   txtUNCode.setText(UNCode);
+                   txtCluster.setText(Cluster);
+                   txtStructureNo.setText(StructureNo);
+                   txtVisitNo.setText(""+PREV);
                    spnVisitOutcome.setSelection(Global.SpinnerItemPositionAnyLength(spnVisitOutcome, String.valueOf(item.getVisitOutcome())));
+                          spnVisitOutcome.setClickable(false);
                    txtVisitOutcomeOth.setText(item.getVisitOutcomeOth());
+                           txtVisitOutcomeOth.setEnabled(false);
                    spnReasonInVisit.setSelection(Global.SpinnerItemPositionAnyLength(spnReasonInVisit, String.valueOf(item.getReasonInVisit())));
+                           spnReasonInVisit.setEnabled(false);
                    txtReasonInVisitOth.setText(item.getReasonInVisitOth());
+                           txtReasonInVisitOth.setEnabled(false);
                    txtTotalHH.setText(item.getTotalHH());
+                           txtTotalHH.setEnabled(false);
                }
            }
-
-
         }
         catch(Exception  e)
         {

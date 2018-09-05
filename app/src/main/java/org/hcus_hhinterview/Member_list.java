@@ -215,25 +215,25 @@ package org.hcus_hhinterview;
          TextView LiveInHouse;
          public MyViewHolder(View convertView) {
              super(convertView);
-             secListRow = (LinearLayout)convertView.findViewById(R.id.secListRow);
-             UNCode = (TextView)convertView.findViewById(R.id.UNCode);
-             StructureNo = (TextView)convertView.findViewById(R.id.StructureNo);
-             HouseholdSl = (TextView)convertView.findViewById(R.id.HouseholdSl);
-             VisitNo = (TextView)convertView.findViewById(R.id.VisitNo);
+//             secListRow = (LinearLayout)convertView.findViewById(R.id.secListRow);
+//             UNCode = (TextView)convertView.findViewById(R.id.UNCode);
+//             StructureNo = (TextView)convertView.findViewById(R.id.StructureNo);
+//             HouseholdSl = (TextView)convertView.findViewById(R.id.HouseholdSl);
+//             VisitNo = (TextView)convertView.findViewById(R.id.VisitNo);
              MemSl = (TextView)convertView.findViewById(R.id.MemSl);
              Name = (TextView)convertView.findViewById(R.id.Name);
              Sex = (TextView)convertView.findViewById(R.id.Sex);
              DOB = (TextView)convertView.findViewById(R.id.DOB);
-             DOBDk = (TextView)convertView.findViewById(R.id.DOBDk);
+//             DOBDk = (TextView)convertView.findViewById(R.id.DOBDk);
              Age = (TextView)convertView.findViewById(R.id.Age);
-             AgeU = (TextView)convertView.findViewById(R.id.AgeU);
-             Relation = (TextView)convertView.findViewById(R.id.Relation);
-             OthRelation = (TextView)convertView.findViewById(R.id.OthRelation);
-             PreStatus = (TextView)convertView.findViewById(R.id.PreStatus);
-             DtofDeath = (TextView)convertView.findViewById(R.id.DtofDeath);
-             DAge = (TextView)convertView.findViewById(R.id.DAge);
-             DAgeU = (TextView)convertView.findViewById(R.id.DAgeU);
-             LiveInHouse = (TextView)convertView.findViewById(R.id.LiveInHouse);
+//             AgeU = (TextView)convertView.findViewById(R.id.AgeU);
+//             Relation = (TextView)convertView.findViewById(R.id.Relation);
+//             OthRelation = (TextView)convertView.findViewById(R.id.OthRelation);
+//             PreStatus = (TextView)convertView.findViewById(R.id.PreStatus);
+//             DtofDeath = (TextView)convertView.findViewById(R.id.DtofDeath);
+//             DAge = (TextView)convertView.findViewById(R.id.DAge);
+//             DAgeU = (TextView)convertView.findViewById(R.id.DAgeU);
+//             LiveInHouse = (TextView)convertView.findViewById(R.id.LiveInHouse);
              }
          }
          public DataAdapter_member(List<Member_DataModel> datalist) {
@@ -248,24 +248,24 @@ package org.hcus_hhinterview;
          @Override
          public void onBindViewHolder(DataAdapter_member.MyViewHolder holder, int position) {
              final Member_DataModel data = dataList.get(position);
-             holder.UNCode.setText(data.getUNCode());
-             holder.StructureNo.setText(data.getStructureNo());
-             holder.HouseholdSl.setText(data.getHouseholdSl());
-             holder.VisitNo.setText(data.getVisitNo());
+//             holder.UNCode.setText(data.getUNCode());
+//             holder.StructureNo.setText(data.getStructureNo());
+//             holder.HouseholdSl.setText(data.getHouseholdSl());
+//             holder.VisitNo.setText(data.getVisitNo());
              holder.MemSl.setText(""+data.getMemSl());
              holder.Name.setText(data.getName());
              holder.Sex.setText(""+data.getSex());
              holder.DOB.setText(data.getDOB());
-             holder.DOBDk.setText(""+data.getDOBDk());
+//             holder.DOBDk.setText(""+data.getDOBDk());
              holder.Age.setText(""+data.getAge());
-             holder.AgeU.setText(""+data.getAgeU());
-             holder.Relation.setText(""+data.getRelation());
-             holder.OthRelation.setText(data.getOthRelation());
-             holder.PreStatus.setText(""+data.getPreStatus());
-             holder.DtofDeath.setText(data.getDtofDeath());
-             holder.DAge.setText(""+data.getDAge());
-             holder.DAgeU.setText(""+data.getDAgeU());
-             holder.LiveInHouse.setText(""+data.getLiveInHouse());
+//             holder.AgeU.setText(""+data.getAgeU());
+//             holder.Relation.setText(""+data.getRelation());
+//             holder.OthRelation.setText(data.getOthRelation());
+//             holder.PreStatus.setText(""+data.getPreStatus());
+//             holder.DtofDeath.setText(data.getDtofDeath());
+//             holder.DAge.setText(""+data.getDAge());
+//             holder.DAgeU.setText(""+data.getDAgeU());
+//             holder.LiveInHouse.setText(""+data.getLiveInHouse());
              holder.secListRow.setOnClickListener(new View.OnClickListener() {
                  public void onClick(View v) {
                      final ProgressDialog progDailog = ProgressDialog.show(Member_list.this, "", "Please Wait . . .", true);

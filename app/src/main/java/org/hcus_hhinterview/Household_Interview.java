@@ -1012,7 +1012,6 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
          listDistHome.add("3-৫-৫০ মাইল (5 - 50 miles) ");
          listDistHome.add("4-৫০ মাইলের উপরে (More than 50 miles)");
          listDistHome.add("8-জানি না (Don’t Know)");
-         listDistHome.add("");
          ArrayAdapter<String> adptrDistHome= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listDistHome);
          spnDistHome.setAdapter(adptrDistHome);
 
@@ -2310,7 +2309,6 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
          listSOfDrinkingWater.add("9-গাড়ির পানি (Truck or cart with tank)");
          listSOfDrinkingWater.add("10-বোতলজাত পানি (Bottled water) ");
          listSOfDrinkingWater.add("11-অন্যান্য (Other)");
-         listSOfDrinkingWater.add("");
          ArrayAdapter<String> adptrSOfDrinkingWater= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listSOfDrinkingWater);
          spnSOfDrinkingWater.setAdapter(adptrSOfDrinkingWater);
 
@@ -2350,7 +2348,6 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
          listTreatMeth.add("4-ক্লোরিন তরল/পাউডার/ ট্যাবলেট দিয়ে (Chlorine liquid, powder, or tablets)");
          listTreatMeth.add("5-ফিলটারে ছেঁকে (Filter through ceramic or other filter)");
          listTreatMeth.add("7-অন্যান্য (Other)");
-         listTreatMeth.add("");
          ArrayAdapter<String> adptrTreatMeth= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listTreatMeth);
          spnTreatMeth.setAdapter(adptrTreatMeth);
 

@@ -1341,7 +1341,23 @@
                      rb.setChecked(true);
                  }
              }
+
+
              spnOutcome.setSelection(Global.SpinnerItemPositionAnyLength(spnOutcome, String.valueOf(item.getOutcome())));
+
+               String spnData = "";
+               if (spnOutcome.getSelectedItem().toString().length() != 0)
+               {
+                   spnData = Connection.SelectedSpinnerValue(spnOutcome.getSelectedItem().toString(), "-");
+               }
+               if(spnData.equalsIgnoreCase("1")) {
+
+                   btnAddVisit.setVisibility(View.GONE);
+               }
+               else{
+                   btnAddVisit.setVisibility(View.VISIBLE);
+               }
+
              txtOutcomeOth.setText(item.getOutcomeOth());
              txtHHMember.setText(String.valueOf(item.getHHMember()));
              String[] d_rdogrpU18Yrs = new String[] {"1","2"};

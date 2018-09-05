@@ -2,7 +2,6 @@ package org.hcus_hhinterview;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -34,10 +33,7 @@ import java.util.List;
 
 import Common.Connection;
 import Common.Global;
-import DataSync.Log;
-import data_model.StructureDB_DataModel;
 import data_model.StructureListing_DataModel;
-import data_model.Cluster_Structure_DataModel;
 
 /**
  * Created by tasrul on 01-Aug-18.
@@ -68,6 +64,7 @@ public class Cluster_Structure_list extends Activity {
     static String CLUSTER = "";
     static String MOHOLLA = "";
     static String STRUCTURENO = "";
+    public int MAIN;
 
     static String UPAZILA_NAME = "";
     static String UNION_NAME = "";
@@ -206,7 +203,7 @@ public class Cluster_Structure_list extends Activity {
 
                 @Override
                 public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                    if(txtSearch.getText().toString().length()>0) {
+                    if(txtSearch.getText().toString().length()>=0) {
                         DataSearch(UPAZILA, UNCODE, CLUSTER);
 
                     }
@@ -368,49 +365,55 @@ public class Cluster_Structure_list extends Activity {
             }
             else if(data.get_Visit_Status().equals("3"))
             {
-                holder.btnVisit.setBackgroundResource(R.drawable.button_style_sky);
+                holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_orange);
                 holder.btnVisit.setTextColor(Color.WHITE);
                 holder.btnHHInterview.setVisibility(View.GONE);
             }
             else if(data.get_Visit_Status().equals("4"))
             {
-                holder.btnVisit.setBackgroundResource(R.drawable.button_style_yellow);
+                holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_gray);
                 holder.btnVisit.setTextColor(Color.WHITE);
                 holder.btnHHInterview.setVisibility(View.GONE);
             }
             else if(data.get_Visit_Status().equals("5"))
             {
-                holder.btnVisit.setBackgroundResource(R.color.cardview_dark_background);
+                holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_blue);
                 holder.btnVisit.setTextColor(Color.WHITE);
                 holder.btnHHInterview.setVisibility(View.GONE);
             }
             else if(data.get_Visit_Status().equals("6"))
             {
-                holder.btnVisit.setBackgroundResource(R.color.color_light_gray);
+                holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_deepblue);
                 holder.btnVisit.setTextColor(Color.WHITE);
                 holder.btnHHInterview.setVisibility(View.GONE);
             }
             else if(data.get_Visit_Status().equals("7"))
             {
-                holder.btnVisit.setBackgroundResource(R.color.cardview_shadow_end_color);
+                holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_yellow);
                 holder.btnVisit.setTextColor(Color.WHITE);
                 holder.btnHHInterview.setVisibility(View.GONE);
             }
             else if(data.get_Visit_Status().equals("8"))
             {
-                holder.btnVisit.setBackgroundResource(R.color.cardview_light_background);
+                holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_purple);
                 holder.btnVisit.setTextColor(Color.WHITE);
                 holder.btnHHInterview.setVisibility(View.GONE);
             }
             else if(data.get_Visit_Status().equals("9"))
             {
-                holder.btnVisit.setBackgroundResource(R.color.colorAccent);
+                holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_pink);
                 holder.btnVisit.setTextColor(Color.WHITE);
                 holder.btnHHInterview.setVisibility(View.GONE);
             }
             else if(data.get_Visit_Status().equals("10"))
             {
-                holder.btnVisit.setBackgroundResource(R.color.colorPrimaryDark);
+                holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_cyanaid);
+                holder.btnVisit.setTextColor(Color.WHITE);
+                holder.btnHHInterview.setVisibility(View.GONE);
+            }
+            else if(data.get_Visit_Status().equals("77"))
+            {
+                holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_brown);
                 holder.btnVisit.setTextColor(Color.WHITE);
                 holder.btnHHInterview.setVisibility(View.GONE);
             }
@@ -425,13 +428,22 @@ public class Cluster_Structure_list extends Activity {
 
                     if(data.get_Visit_Status().equals("1"))
                         {
-                            AlertDialog.Builder popup=new AlertDialog.Builder(Cluster_Structure_list.this);
-                            popup.setMessage("Visit Completed.");
-                            popup.setTitle("Message!!!");
-                            popup.show();
+                            Bundle IDbundle = new Bundle();
+                            IDbundle.putString("Upazila", data.getUpazila());
+                            IDbundle.putString("UNCode", data.getUNCode());
+                            IDbundle.putString("Cluster", data.getCluster());
+                            IDbundle.putString("StructureNo", data.getStructureNo());
+                            IDbundle.putString("VisitNo", data.get_Visit_No());
+                            IDbundle.putString("Upazila_Name", UPAZILA_NAME);
+                            IDbundle.putString("Union_Name", UNION_NAME);
+                            Intent f1 = new Intent(getApplicationContext(), Cluster_Structure.class);
+                            f1.putExtras(IDbundle);
+                            startActivityForResult(f1,1);
                         }
-                    else
+                        else
                         {
+                            MAIN=Integer.parseInt(data.get_Visit_No());
+                            MAIN=MAIN+1;
                         Bundle IDbundle = new Bundle();
                         IDbundle.putString("Upazila", data.getUpazila());
                         IDbundle.putString("UNCode", data.getUNCode());
@@ -439,7 +451,7 @@ public class Cluster_Structure_list extends Activity {
                         IDbundle.putString("Cluster", data.getCluster());
                         IDbundle.putString("StructureNo", data.getStructureNo());
 
-                        IDbundle.putString("VisitNo", data.get_Visit_No());
+                        IDbundle.putString("VisitNo", ""+MAIN);
                         IDbundle.putString("Upazila_Name", UPAZILA_NAME);
                         IDbundle.putString("Union_Name", UNION_NAME);
                     //                    IDbundle.putString("Moholla_Name", MOHOLLA_NAME);
