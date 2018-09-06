@@ -213,9 +213,11 @@ package org.hcus_hhinterview;
          TextView DAge;
          TextView DAgeU;
          TextView LiveInHouse;
+
+         Button btnChildForm;
          public MyViewHolder(View convertView) {
              super(convertView);
-//             secListRow = (LinearLayout)convertView.findViewById(R.id.secListRow);
+             secListRow = (LinearLayout)convertView.findViewById(R.id.secListRow);
 //             UNCode = (TextView)convertView.findViewById(R.id.UNCode);
 //             StructureNo = (TextView)convertView.findViewById(R.id.StructureNo);
 //             HouseholdSl = (TextView)convertView.findViewById(R.id.HouseholdSl);
@@ -226,6 +228,7 @@ package org.hcus_hhinterview;
              DOB = (TextView)convertView.findViewById(R.id.DOB);
 //             DOBDk = (TextView)convertView.findViewById(R.id.DOBDk);
              Age = (TextView)convertView.findViewById(R.id.Age);
+             btnChildForm = (Button) convertView.findViewById(R.id.btnChildForm);
 //             AgeU = (TextView)convertView.findViewById(R.id.AgeU);
 //             Relation = (TextView)convertView.findViewById(R.id.Relation);
 //             OthRelation = (TextView)convertView.findViewById(R.id.OthRelation);
@@ -266,6 +269,31 @@ package org.hcus_hhinterview;
 //             holder.DAge.setText(""+data.getDAge());
 //             holder.DAgeU.setText(""+data.getDAgeU());
 //             holder.LiveInHouse.setText(""+data.getLiveInHouse());
+
+             holder.btnChildForm.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View view) {
+                     final ProgressDialog progDailog = ProgressDialog.show(Member_list.this, "", "Please Wait . . .", true);
+                     new Thread() {
+                         public void run() {
+                             try {
+                                 Bundle IDbundle = new Bundle();
+                                 IDbundle.putString("UNCode", data.getUNCode());
+                                 IDbundle.putString("StructureNo", data.getStructureNo());
+                                 IDbundle.putString("HouseholdSl", data.getHouseholdSl());
+                                 IDbundle.putString("VisitNo", data.getVisitNo());
+                                 IDbundle.putString("MemSl",""+data.getMemSl());
+                                 Intent f1 = new Intent(getApplicationContext(), TyphoidCase.class);
+                                 f1.putExtras(IDbundle);
+                                 startActivityForResult(f1,1);
+                             } catch (Exception e) {
+                             }
+                             progDailog.dismiss();
+                         }
+                     }.start();
+                 }
+             });
+
              holder.secListRow.setOnClickListener(new View.OnClickListener() {
                  public void onClick(View v) {
                      final ProgressDialog progDailog = ProgressDialog.show(Member_list.this, "", "Please Wait . . .", true);
