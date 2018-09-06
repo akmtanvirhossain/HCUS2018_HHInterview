@@ -65,5 +65,20 @@
             android:textColor="@color/color_white"
             android:textSize="18sp" />
 
+        <Button
+            android:id="@+id/btnChildForm"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_marginBottom="10sp"
+            android:layout_marginRight="20sp"
+            android:layout_marginTop="5dip"
+            android:background="@drawable/button_style_circle_pink"
+            android:paddingLeft="5sp"
+            android:paddingRight="5sp"
+            android:text="Child Information"
+            android:textAllCaps="false"
+            android:textColor="@color/color_white"
+            android:textSize="18sp" />
+
     </LinearLayout>
 </LinearLayout>
