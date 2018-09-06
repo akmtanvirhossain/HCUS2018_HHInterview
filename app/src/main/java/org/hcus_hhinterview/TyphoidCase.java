@@ -615,6 +615,15 @@
          lineHaveFever=(View)findViewById(R.id.lineHaveFever);
          VlblHaveFever = (TextView) findViewById(R.id.VlblHaveFever);
          rdogrpHaveFever = (RadioGroup) findViewById(R.id.rdogrpHaveFever);
+
+
+          txtUNCode.setText(UNCODE);
+          txtStructureNo.setText(""+STRUCTURENO);
+          txtHouseholdSl.setText(HOUSEHOLDSL);
+          txtVisitNo.setText(VISITNO);
+          txtMemSl.setText(MEMSL);
+
+
          
          rdoHaveFever1 = (RadioButton) findViewById(R.id.rdoHaveFever1);
          rdoHaveFever2 = (RadioButton) findViewById(R.id.rdoHaveFever2);
@@ -667,7 +676,6 @@
                     rdogrpOther.clearCheck();
                     secTsymptOthName.setVisibility(View.GONE);
                     lineTsymptOthName.setVisibility(View.GONE);
-                    txtTsymptOthName.setText("");
                     secTakenHCFacility.setVisibility(View.GONE);
                     lineTakenHCFacility.setVisibility(View.GONE);
                     rdogrpTakenHCFacility.clearCheck();
@@ -1095,7 +1103,7 @@
                     lineTAboIll.setVisibility(View.GONE);
                     txtTAboIll.setText("");
              }
-             else
+             else if(rbData.equalsIgnoreCase("1"))
              {
                     secTsymptLabel.setVisibility(View.VISIBLE);
                     lineTsymptLabel.setVisibility(View.VISIBLE);
@@ -1119,62 +1127,12 @@
                     lineTnone.setVisibility(View.VISIBLE);
                     secOther.setVisibility(View.VISIBLE);
                     lineOther.setVisibility(View.VISIBLE);
-                    secTsymptOthName.setVisibility(View.VISIBLE);
-                    lineTsymptOthName.setVisibility(View.VISIBLE);
                     secTakenHCFacility.setVisibility(View.VISIBLE);
                     lineTakenHCFacility.setVisibility(View.VISIBLE);
-                    secTHCarTypLabel.setVisibility(View.VISIBLE);
-                    lineTHCarTypLabel.setVisibility(View.VISIBLE);
-                    secHC_PhyMBBS.setVisibility(View.VISIBLE);
-                    lineHC_PhyMBBS.setVisibility(View.VISIBLE);
-                    secHC_UnquaDoctor.setVisibility(View.VISIBLE);
-                    lineHC_UnquaDoctor.setVisibility(View.VISIBLE);
-                    secHC_Para.setVisibility(View.VISIBLE);
-                    lineHC_Para.setVisibility(View.VISIBLE);
-                    secHC_Com.setVisibility(View.VISIBLE);
-                    lineHC_Com.setVisibility(View.VISIBLE);
-                    secHC_Pha.setVisibility(View.VISIBLE);
-                    lineHC_Pha.setVisibility(View.VISIBLE);
-                    secHC_Hompath.setVisibility(View.VISIBLE);
-                    lineHC_Hompath.setVisibility(View.VISIBLE);
-                    secHC_TrHeal.setVisibility(View.VISIBLE);
-                    lineHC_TrHeal.setVisibility(View.VISIBLE);
-                    secHC_SpiHeal.setVisibility(View.VISIBLE);
-                    lineHC_SpiHeal.setVisibility(View.VISIBLE);
-                    secTHC_Oth.setVisibility(View.VISIBLE);
-                    lineTHC_Oth.setVisibility(View.VISIBLE);
-                    secTHC_OthName.setVisibility(View.VISIBLE);
-                    lineTHC_OthName.setVisibility(View.VISIBLE);
                     secHC_Hosp.setVisibility(View.VISIBLE);
                     lineHC_Hosp.setVisibility(View.VISIBLE);
-                    secHC_HospLabel.setVisibility(View.VISIBLE);
-                    lineHC_HospLabel.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a1.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a1.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a2.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a2.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a3.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a3.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a3_Oth.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a3_Oth.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a4.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a4.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a4_Oth.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a4_Oth.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a5.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a5.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a5_Oth.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a5_Oth.setVisibility(View.VISIBLE);
-                    secHC_Hosp_bLabel.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_bLabel.setVisibility(View.VISIBLE);
-                    secHC_Hosp_b.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_b.setVisibility(View.VISIBLE);
-                    secHC_Hosp_b_i.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_b_i.setVisibility(View.VISIBLE);
+
+
                     secHC_Clin.setVisibility(View.VISIBLE);
                     lineHC_Clin.setVisibility(View.VISIBLE);
                     secHC_Phy.setVisibility(View.VISIBLE);
@@ -1201,8 +1159,7 @@
                     lineTHosNam_Oth.setVisibility(View.VISIBLE);
                     secTHosNam2.setVisibility(View.VISIBLE);
                     lineTHosNam2.setVisibility(View.VISIBLE);
-                    secTHosNam2_Oth.setVisibility(View.VISIBLE);
-                    lineTHosNam2_Oth.setVisibility(View.VISIBLE);
+
                     secTHosNam3.setVisibility(View.VISIBLE);
                     lineTHosNam3.setVisibility(View.VISIBLE);
                     secTHosNam3_Oth.setVisibility(View.VISIBLE);
@@ -1223,8 +1180,7 @@
                     lineTDisDrOth.setVisibility(View.VISIBLE);
                     secTReco.setVisibility(View.VISIBLE);
                     lineTReco.setVisibility(View.VISIBLE);
-                    secTDurReco.setVisibility(View.VISIBLE);
-                    lineTDurReco.setVisibility(View.VISIBLE);
+
                     secTInRecoLabel.setVisibility(View.VISIBLE);
                     lineTInRecoLabel.setVisibility(View.VISIBLE);
                     secTInReco.setVisibility(View.VISIBLE);
@@ -1237,22 +1193,244 @@
                     lineTInRecoOth2.setVisibility(View.VISIBLE);
                     secHaveHosp.setVisibility(View.VISIBLE);
                     lineHaveHosp.setVisibility(View.VISIBLE);
-                    secHospNameLabel.setVisibility(View.VISIBLE);
-                    lineHospNameLabel.setVisibility(View.VISIBLE);
-                    secHospName.setVisibility(View.VISIBLE);
-                    lineHospName.setVisibility(View.VISIBLE);
-                    secHospName_Oth.setVisibility(View.VISIBLE);
-                    lineHospName_Oth.setVisibility(View.VISIBLE);
-                    secHaveRecordsLabel.setVisibility(View.VISIBLE);
-                    lineHaveRecordsLabel.setVisibility(View.VISIBLE);
-                    secHaveRecords.setVisibility(View.VISIBLE);
-                    lineHaveRecords.setVisibility(View.VISIBLE);
-                    secDaysOfHosp.setVisibility(View.VISIBLE);
-                    lineDaysOfHosp.setVisibility(View.VISIBLE);
-                    secDaysOfHospDK.setVisibility(View.VISIBLE);
-                    lineDaysOfHospDK.setVisibility(View.VISIBLE);
-                    secTAboIll.setVisibility(View.VISIBLE);
-                    lineTAboIll.setVisibility(View.VISIBLE);
+
+
+
+
+
+
+
+             }
+             else {
+                  secTsymptLabel.setVisibility(View.GONE);
+                  lineTsymptLabel.setVisibility(View.GONE);
+                  secAbdomPain.setVisibility(View.GONE);
+                  lineAbdomPain.setVisibility(View.GONE);
+                  rdogrpAbdomPain.clearCheck();
+                  secConstipation.setVisibility(View.GONE);
+                  lineConstipation.setVisibility(View.GONE);
+                  rdogrpConstipation.clearCheck();
+                  secHeadache.setVisibility(View.GONE);
+                  lineHeadache.setVisibility(View.GONE);
+                  rdogrpHeadache.clearCheck();
+                  secRash.setVisibility(View.GONE);
+                  lineRash.setVisibility(View.GONE);
+                  rdogrpRash.clearCheck();
+                  secDiarrhoea.setVisibility(View.GONE);
+                  lineDiarrhoea.setVisibility(View.GONE);
+                  rdogrpDiarrhoea.clearCheck();
+                  secAbdomDist.setVisibility(View.GONE);
+                  lineAbdomDist.setVisibility(View.GONE);
+                  rdogrpAbdomDist.clearCheck();
+                  secCoaTon.setVisibility(View.GONE);
+                  lineCoaTon.setVisibility(View.GONE);
+                  rdogrpCoaTon.clearCheck();
+                  secCough.setVisibility(View.GONE);
+                  lineCough.setVisibility(View.GONE);
+                  rdogrpCough.clearCheck();
+                  secTnone.setVisibility(View.GONE);
+                  lineTnone.setVisibility(View.GONE);
+                  rdogrpTnone.clearCheck();
+                  secOther.setVisibility(View.GONE);
+                  lineOther.setVisibility(View.GONE);
+                  rdogrpOther.clearCheck();
+                  secTsymptOthName.setVisibility(View.GONE);
+                  lineTsymptOthName.setVisibility(View.GONE);
+                  txtTsymptOthName.setText("");
+                  secTakenHCFacility.setVisibility(View.GONE);
+                  lineTakenHCFacility.setVisibility(View.GONE);
+                  rdogrpTakenHCFacility.clearCheck();
+                  secTHCarTypLabel.setVisibility(View.GONE);
+                  lineTHCarTypLabel.setVisibility(View.GONE);
+                  secHC_PhyMBBS.setVisibility(View.GONE);
+                  lineHC_PhyMBBS.setVisibility(View.GONE);
+                  rdogrpHC_PhyMBBS.clearCheck();
+                  secHC_UnquaDoctor.setVisibility(View.GONE);
+                  lineHC_UnquaDoctor.setVisibility(View.GONE);
+                  rdogrpHC_UnquaDoctor.clearCheck();
+                  secHC_Para.setVisibility(View.GONE);
+                  lineHC_Para.setVisibility(View.GONE);
+                  rdogrpHC_Para.clearCheck();
+                  secHC_Com.setVisibility(View.GONE);
+                  lineHC_Com.setVisibility(View.GONE);
+                  rdogrpHC_Com.clearCheck();
+                  secHC_Pha.setVisibility(View.GONE);
+                  lineHC_Pha.setVisibility(View.GONE);
+                  rdogrpHC_Pha.clearCheck();
+                  secHC_Hompath.setVisibility(View.GONE);
+                  lineHC_Hompath.setVisibility(View.GONE);
+                  rdogrpHC_Hompath.clearCheck();
+                  secHC_TrHeal.setVisibility(View.GONE);
+                  lineHC_TrHeal.setVisibility(View.GONE);
+                  rdogrpHC_TrHeal.clearCheck();
+                  secHC_SpiHeal.setVisibility(View.GONE);
+                  lineHC_SpiHeal.setVisibility(View.GONE);
+                  rdogrpHC_SpiHeal.clearCheck();
+                  secTHC_Oth.setVisibility(View.GONE);
+                  lineTHC_Oth.setVisibility(View.GONE);
+                  rdogrpTHC_Oth.clearCheck();
+                  secTHC_OthName.setVisibility(View.GONE);
+                  lineTHC_OthName.setVisibility(View.GONE);
+                  txtTHC_OthName.setText("");
+                  secHC_Hosp.setVisibility(View.GONE);
+                  lineHC_Hosp.setVisibility(View.GONE);
+                  rdogrpHC_Hosp.clearCheck();
+                  secHC_HospLabel.setVisibility(View.GONE);
+                  lineHC_HospLabel.setVisibility(View.GONE);
+                  secHC_Hosp_a1.setVisibility(View.GONE);
+                  lineHC_Hosp_a1.setVisibility(View.GONE);
+                  spnHC_Hosp_a1.setSelection(0);
+                  secHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                  lineHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                  txtHC_Hosp_a1_Oth.setText("");
+                  secHC_Hosp_a2.setVisibility(View.GONE);
+                  lineHC_Hosp_a2.setVisibility(View.GONE);
+                  spnHC_Hosp_a2.setSelection(0);
+                  secHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                  lineHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                  txtHC_Hosp_a2_Oth.setText("");
+                  secHC_Hosp_a3.setVisibility(View.GONE);
+                  lineHC_Hosp_a3.setVisibility(View.GONE);
+                  spnHC_Hosp_a3.setSelection(0);
+                  secHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                  lineHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                  txtHC_Hosp_a3_Oth.setText("");
+                  secHC_Hosp_a4.setVisibility(View.GONE);
+                  lineHC_Hosp_a4.setVisibility(View.GONE);
+                  spnHC_Hosp_a4.setSelection(0);
+                  secHC_Hosp_a4_Oth.setVisibility(View.GONE);
+                  lineHC_Hosp_a4_Oth.setVisibility(View.GONE);
+                  txtHC_Hosp_a4_Oth.setText("");
+                  secHC_Hosp_a5.setVisibility(View.GONE);
+                  lineHC_Hosp_a5.setVisibility(View.GONE);
+                  spnHC_Hosp_a5.setSelection(0);
+                  secHC_Hosp_a5_Oth.setVisibility(View.GONE);
+                  lineHC_Hosp_a5_Oth.setVisibility(View.GONE);
+                  txtHC_Hosp_a5_Oth.setText("");
+                  secHC_Hosp_bLabel.setVisibility(View.GONE);
+                  lineHC_Hosp_bLabel.setVisibility(View.GONE);
+                  secHC_Hosp_b.setVisibility(View.GONE);
+                  lineHC_Hosp_b.setVisibility(View.GONE);
+                  rdogrpHC_Hosp_b.clearCheck();
+                  secHC_Hosp_b_i.setVisibility(View.GONE);
+                  lineHC_Hosp_b_i.setVisibility(View.GONE);
+                  rdogrpHC_Hosp_b_i.clearCheck();
+                  secHC_Clin.setVisibility(View.GONE);
+                  lineHC_Clin.setVisibility(View.GONE);
+                  rdogrpHC_Clin.clearCheck();
+                  secHC_Phy.setVisibility(View.GONE);
+                  lineHC_Phy.setVisibility(View.GONE);
+                  rdogrpHC_Phy.clearCheck();
+                  secDaysOfSymp.setVisibility(View.GONE);
+                  lineDaysOfSymp.setVisibility(View.GONE);
+                  txtDaysOfSymp.setText("");
+                  secDaysOfSympDK.setVisibility(View.GONE);
+                  lineDaysOfSympDK.setVisibility(View.GONE);
+                  chkDaysOfSympDK.setChecked(false);
+                  secWorstHour.setVisibility(View.GONE);
+                  lineWorstHour.setVisibility(View.GONE);
+                  txtWorstHour.setText("");
+                  secWorstHourDK.setVisibility(View.GONE);
+                  lineWorstHourDK.setVisibility(View.GONE);
+                  chkWorstHourDK.setChecked(false);
+                  secDaysOfUnable.setVisibility(View.GONE);
+                  lineDaysOfUnable.setVisibility(View.GONE);
+                  txtDaysOfUnable.setText("");
+                  secDaysOfUnableDK.setVisibility(View.GONE);
+                  lineDaysOfUnableDK.setVisibility(View.GONE);
+                  chkDaysOfUnableDK.setChecked(false);
+                  secTAdmHos.setVisibility(View.GONE);
+                  lineTAdmHos.setVisibility(View.GONE);
+                  rdogrpTAdmHos.clearCheck();
+                  secTHosNamLabel.setVisibility(View.GONE);
+                  lineTHosNamLabel.setVisibility(View.GONE);
+                  secTHosNam.setVisibility(View.GONE);
+                  lineTHosNam.setVisibility(View.GONE);
+                  spnTHosNam.setSelection(0);
+                  secTHosNam_Oth.setVisibility(View.GONE);
+                  lineTHosNam_Oth.setVisibility(View.GONE);
+                  txtTHosNam_Oth.setText("");
+                  secTHosNam2.setVisibility(View.GONE);
+                  lineTHosNam2.setVisibility(View.GONE);
+                  rdogrpTHosNam2.clearCheck();
+                  secTHosNam2_Oth.setVisibility(View.GONE);
+                  lineTHosNam2_Oth.setVisibility(View.GONE);
+                  txtTHosNam2_Oth.setText("");
+                  secTHosNam3.setVisibility(View.GONE);
+                  lineTHosNam3.setVisibility(View.GONE);
+                  spnTHosNam3.setSelection(0);
+                  secTHosNam3_Oth.setVisibility(View.GONE);
+                  lineTHosNam3_Oth.setVisibility(View.GONE);
+                  txtTHosNam3_Oth.setText("");
+                  secTHosNamDK.setVisibility(View.GONE);
+                  lineTHosNamDK.setVisibility(View.GONE);
+                  chkTHosNamDK.setChecked(false);
+                  secTDtAdmHos.setVisibility(View.GONE);
+                  lineTDtAdmHos.setVisibility(View.GONE);
+                  dtpTDtAdmHos.setText("");
+                  secTAdmHosD.setVisibility(View.GONE);
+                  lineTAdmHosD.setVisibility(View.GONE);
+                  txtTAdmHosD.setText("");
+                  secTDurIlBeHos.setVisibility(View.GONE);
+                  lineTDurIlBeHos.setVisibility(View.GONE);
+                  txtTDurIlBeHos.setText("");
+                  secTDurIlBeHosDK.setVisibility(View.GONE);
+                  lineTDurIlBeHosDK.setVisibility(View.GONE);
+                  chkTDurIlBeHosDK.setChecked(false);
+                  secTDisDr.setVisibility(View.GONE);
+                  lineTDisDr.setVisibility(View.GONE);
+                  spnTDisDr.setSelection(0);
+                  secTDisDrOth.setVisibility(View.GONE);
+                  lineTDisDrOth.setVisibility(View.GONE);
+                  txtTDisDrOth.setText("");
+                  secTReco.setVisibility(View.GONE);
+                  lineTReco.setVisibility(View.GONE);
+                  rdogrpTReco.clearCheck();
+                  secTDurReco.setVisibility(View.GONE);
+                  lineTDurReco.setVisibility(View.GONE);
+                  txtTDurReco.setText("");
+                  secTInRecoLabel.setVisibility(View.GONE);
+                  lineTInRecoLabel.setVisibility(View.GONE);
+                  secTInReco.setVisibility(View.GONE);
+                  lineTInReco.setVisibility(View.GONE);
+                  spnTInReco.setSelection(0);
+                  secTInRecoOth.setVisibility(View.GONE);
+                  lineTInRecoOth.setVisibility(View.GONE);
+                  txtTInRecoOth.setText("");
+                  secTInReco2.setVisibility(View.GONE);
+                  lineTInReco2.setVisibility(View.GONE);
+                  spnTInReco2.setSelection(0);
+                  secTInRecoOth2.setVisibility(View.GONE);
+                  lineTInRecoOth2.setVisibility(View.GONE);
+                  txtTInRecoOth2.setText("");
+                  secHaveHosp.setVisibility(View.GONE);
+                  lineHaveHosp.setVisibility(View.GONE);
+                  rdogrpHaveHosp.clearCheck();
+                  secHospNameLabel.setVisibility(View.GONE);
+                  lineHospNameLabel.setVisibility(View.GONE);
+                  secHospName.setVisibility(View.GONE);
+                  lineHospName.setVisibility(View.GONE);
+                  spnHospName.setSelection(0);
+                  secHospName_Oth.setVisibility(View.GONE);
+                  lineHospName_Oth.setVisibility(View.GONE);
+                  txtHospName_Oth.setText("");
+                  secHaveRecordsLabel.setVisibility(View.GONE);
+                  lineHaveRecordsLabel.setVisibility(View.GONE);
+                  secHaveRecords.setVisibility(View.GONE);
+                  lineHaveRecords.setVisibility(View.GONE);
+                  rdogrpHaveRecords.clearCheck();
+                  secDidRecordMatch2.setVisibility(View.GONE);
+                  lineDidRecordMatch2.setVisibility(View.GONE);
+                  rdogrpDidRecordMatch2.clearCheck();
+                  secDaysOfHosp.setVisibility(View.GONE);
+                  lineDaysOfHosp.setVisibility(View.GONE);
+                  txtDaysOfHosp.setText("");
+                  secDaysOfHospDK.setVisibility(View.GONE);
+                  lineDaysOfHospDK.setVisibility(View.GONE);
+                  chkDaysOfHospDK.setChecked(false);
+                  secTAboIll.setVisibility(View.GONE);
+                  lineTAboIll.setVisibility(View.GONE);
+                  txtTAboIll.setText("");
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
@@ -1453,7 +1631,7 @@
                     lineTHC_OthName.setVisibility(View.GONE);
                     txtTHC_OthName.setText("");
              }
-             else
+             else if(rbData.equalsIgnoreCase("1"))
              {
                     secTHCarTypLabel.setVisibility(View.VISIBLE);
                     lineTHCarTypLabel.setVisibility(View.VISIBLE);
@@ -1476,6 +1654,41 @@
                     secTHC_Oth.setVisibility(View.VISIBLE);
                     lineTHC_Oth.setVisibility(View.VISIBLE);
              }
+             else
+             {
+                  secTHCarTypLabel.setVisibility(View.GONE);
+                  lineTHCarTypLabel.setVisibility(View.GONE);
+                  secHC_PhyMBBS.setVisibility(View.GONE);
+                  lineHC_PhyMBBS.setVisibility(View.GONE);
+                  rdogrpHC_PhyMBBS.clearCheck();
+                  secHC_UnquaDoctor.setVisibility(View.GONE);
+                  lineHC_UnquaDoctor.setVisibility(View.GONE);
+                  rdogrpHC_UnquaDoctor.clearCheck();
+                  secHC_Para.setVisibility(View.GONE);
+                  lineHC_Para.setVisibility(View.GONE);
+                  rdogrpHC_Para.clearCheck();
+                  secHC_Com.setVisibility(View.GONE);
+                  lineHC_Com.setVisibility(View.GONE);
+                  rdogrpHC_Com.clearCheck();
+                  secHC_Pha.setVisibility(View.GONE);
+                  lineHC_Pha.setVisibility(View.GONE);
+                  rdogrpHC_Pha.clearCheck();
+                  secHC_Hompath.setVisibility(View.GONE);
+                  lineHC_Hompath.setVisibility(View.GONE);
+                  rdogrpHC_Hompath.clearCheck();
+                  secHC_TrHeal.setVisibility(View.GONE);
+                  lineHC_TrHeal.setVisibility(View.GONE);
+                  rdogrpHC_TrHeal.clearCheck();
+                  secHC_SpiHeal.setVisibility(View.GONE);
+                  lineHC_SpiHeal.setVisibility(View.GONE);
+                  rdogrpHC_SpiHeal.clearCheck();
+                  secTHC_Oth.setVisibility(View.GONE);
+                  lineTHC_Oth.setVisibility(View.GONE);
+                  rdogrpTHC_Oth.clearCheck();
+                  secTHC_OthName.setVisibility(View.GONE);
+                  lineTHC_OthName.setVisibility(View.GONE);
+                  txtTHC_OthName.setText("");
+             }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
              return;
@@ -1491,7 +1704,7 @@
          rdoHC_PhyMBBS1 = (RadioButton) findViewById(R.id.rdoHC_PhyMBBS1);
          rdoHC_PhyMBBS2 = (RadioButton) findViewById(R.id.rdoHC_PhyMBBS2);
          rdoHC_PhyMBBS3 = (RadioButton) findViewById(R.id.rdoHC_PhyMBBS3);
-         rdoHC_PhyMBBS4 = (RadioButton) findViewById(R.id.rdoHC_PhyMBBS4);
+//         rdoHC_PhyMBBS4 = (RadioButton) findViewById(R.id.rdoHC_PhyMBBS4);
          secHC_UnquaDoctor=(LinearLayout)findViewById(R.id.secHC_UnquaDoctor);
          lineHC_UnquaDoctor=(View)findViewById(R.id.lineHC_UnquaDoctor);
          VlblHC_UnquaDoctor = (TextView) findViewById(R.id.VlblHC_UnquaDoctor);
@@ -1508,7 +1721,7 @@
          rdoHC_Para1 = (RadioButton) findViewById(R.id.rdoHC_Para1);
          rdoHC_Para2 = (RadioButton) findViewById(R.id.rdoHC_Para2);
          rdoHC_Para3 = (RadioButton) findViewById(R.id.rdoHC_Para3);
-         rdoHC_Para4 = (RadioButton) findViewById(R.id.rdoHC_Para4);
+//         rdoHC_Para4 = (RadioButton) findViewById(R.id.rdoHC_Para4);
          secHC_Com=(LinearLayout)findViewById(R.id.secHC_Com);
          lineHC_Com=(View)findViewById(R.id.lineHC_Com);
          VlblHC_Com = (TextView) findViewById(R.id.VlblHC_Com);
@@ -1517,7 +1730,7 @@
          rdoHC_Com1 = (RadioButton) findViewById(R.id.rdoHC_Com1);
          rdoHC_Com2 = (RadioButton) findViewById(R.id.rdoHC_Com2);
          rdoHC_Com3 = (RadioButton) findViewById(R.id.rdoHC_Com3);
-         rdoHC_Com4 = (RadioButton) findViewById(R.id.rdoHC_Com4);
+//         rdoHC_Com4 = (RadioButton) findViewById(R.id.rdoHC_Com4);
          secHC_Pha=(LinearLayout)findViewById(R.id.secHC_Pha);
          lineHC_Pha=(View)findViewById(R.id.lineHC_Pha);
          VlblHC_Pha = (TextView) findViewById(R.id.VlblHC_Pha);
@@ -1526,7 +1739,7 @@
          rdoHC_Pha1 = (RadioButton) findViewById(R.id.rdoHC_Pha1);
          rdoHC_Pha2 = (RadioButton) findViewById(R.id.rdoHC_Pha2);
          rdoHC_Pha3 = (RadioButton) findViewById(R.id.rdoHC_Pha3);
-         rdoHC_Pha4 = (RadioButton) findViewById(R.id.rdoHC_Pha4);
+//         rdoHC_Pha4 = (RadioButton) findViewById(R.id.rdoHC_Pha4);
          secHC_Hompath=(LinearLayout)findViewById(R.id.secHC_Hompath);
          lineHC_Hompath=(View)findViewById(R.id.lineHC_Hompath);
          VlblHC_Hompath = (TextView) findViewById(R.id.VlblHC_Hompath);
@@ -1543,7 +1756,7 @@
          rdoHC_TrHeal1 = (RadioButton) findViewById(R.id.rdoHC_TrHeal1);
          rdoHC_TrHeal2 = (RadioButton) findViewById(R.id.rdoHC_TrHeal2);
          rdoHC_TrHeal3 = (RadioButton) findViewById(R.id.rdoHC_TrHeal3);
-         rdoHC_TrHeal4 = (RadioButton) findViewById(R.id.rdoHC_TrHeal4);
+//         rdoHC_TrHeal4 = (RadioButton) findViewById(R.id.rdoHC_TrHeal4);
          secHC_SpiHeal=(LinearLayout)findViewById(R.id.secHC_SpiHeal);
          lineHC_SpiHeal=(View)findViewById(R.id.lineHC_SpiHeal);
          VlblHC_SpiHeal = (TextView) findViewById(R.id.VlblHC_SpiHeal);
@@ -1560,13 +1773,13 @@
          rdoTHC_Oth1 = (RadioButton) findViewById(R.id.rdoTHC_Oth1);
          rdoTHC_Oth2 = (RadioButton) findViewById(R.id.rdoTHC_Oth2);
          rdoTHC_Oth3 = (RadioButton) findViewById(R.id.rdoTHC_Oth3);
-         rdoTHC_Oth4 = (RadioButton) findViewById(R.id.rdoTHC_Oth4);
+//         rdoTHC_Oth4 = (RadioButton) findViewById(R.id.rdoTHC_Oth4);
          rdogrpTHC_Oth.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
          @Override
          public void onCheckedChanged(RadioGroup radioGroup,int radioButtonID) {
              String rbData = "";
              RadioButton rb;
-             String[] d_rdogrpTHC_Oth = new String[] {"1","2","8",""};
+             String[] d_rdogrpTHC_Oth = new String[] {"1","2","8"};
              for (int i = 0; i < rdogrpTHC_Oth.getChildCount(); i++)
              {
                rb = (RadioButton)rdogrpTHC_Oth.getChildAt(i);
@@ -1619,50 +1832,120 @@
                if (rb.isChecked()) rbData = d_rdogrpHC_Hosp[i];
              }
 
-             if(rbData.equalsIgnoreCase("2"))
+             if(rbData.equalsIgnoreCase("1"))
              {
-                    secHC_HospLabel.setVisibility(View.GONE);
-                    lineHC_HospLabel.setVisibility(View.GONE);
-                    secHC_Hosp_a1.setVisibility(View.GONE);
-                    lineHC_Hosp_a1.setVisibility(View.GONE);
-                    spnHC_Hosp_a1.setSelection(0);
-                    secHC_Hosp_a1_Oth.setVisibility(View.GONE);
-                    lineHC_Hosp_a1_Oth.setVisibility(View.GONE);
-                    txtHC_Hosp_a1_Oth.setText("");
-                    secHC_Hosp_a2.setVisibility(View.GONE);
-                    lineHC_Hosp_a2.setVisibility(View.GONE);
-                    spnHC_Hosp_a2.setSelection(0);
-                    secHC_Hosp_a2_Oth.setVisibility(View.GONE);
-                    lineHC_Hosp_a2_Oth.setVisibility(View.GONE);
-                    txtHC_Hosp_a2_Oth.setText("");
-                    secHC_Hosp_a3.setVisibility(View.GONE);
-                    lineHC_Hosp_a3.setVisibility(View.GONE);
-                    spnHC_Hosp_a3.setSelection(0);
-                    secHC_Hosp_a3_Oth.setVisibility(View.GONE);
-                    lineHC_Hosp_a3_Oth.setVisibility(View.GONE);
-                    txtHC_Hosp_a3_Oth.setText("");
-                    secHC_Hosp_a4.setVisibility(View.GONE);
-                    lineHC_Hosp_a4.setVisibility(View.GONE);
-                    spnHC_Hosp_a4.setSelection(0);
-                    secHC_Hosp_a4_Oth.setVisibility(View.GONE);
-                    lineHC_Hosp_a4_Oth.setVisibility(View.GONE);
-                    txtHC_Hosp_a4_Oth.setText("");
-                    secHC_Hosp_a5.setVisibility(View.GONE);
-                    lineHC_Hosp_a5.setVisibility(View.GONE);
-                    spnHC_Hosp_a5.setSelection(0);
-                    secHC_Hosp_a5_Oth.setVisibility(View.GONE);
-                    lineHC_Hosp_a5_Oth.setVisibility(View.GONE);
-                    txtHC_Hosp_a5_Oth.setText("");
-                    secHC_Hosp_bLabel.setVisibility(View.GONE);
-                    lineHC_Hosp_bLabel.setVisibility(View.GONE);
-                    secHC_Hosp_b.setVisibility(View.GONE);
-                    lineHC_Hosp_b.setVisibility(View.GONE);
-                    rdogrpHC_Hosp_b.clearCheck();
-                    secHC_Hosp_b_i.setVisibility(View.GONE);
-                    lineHC_Hosp_b_i.setVisibility(View.GONE);
-                    rdogrpHC_Hosp_b_i.clearCheck();
+                  secHC_HospLabel.setVisibility(View.VISIBLE);
+                  lineHC_HospLabel.setVisibility(View.VISIBLE);
+                  secHC_Hosp_a1.setVisibility(View.VISIBLE);
+                  lineHC_Hosp_a1.setVisibility(View.VISIBLE);
+
+                  secHC_Hosp_a2.setVisibility(View.VISIBLE);
+                  lineHC_Hosp_a2.setVisibility(View.VISIBLE);
+
+                  secHC_Hosp_a3.setVisibility(View.VISIBLE);
+                  lineHC_Hosp_a3.setVisibility(View.VISIBLE);
+
+                  secHC_Hosp_a4.setVisibility(View.VISIBLE);
+                  lineHC_Hosp_a4.setVisibility(View.VISIBLE);
+
+                  secHC_Hosp_a5.setVisibility(View.VISIBLE);
+                  lineHC_Hosp_a5.setVisibility(View.VISIBLE);
+
+                  secHC_Hosp_bLabel.setVisibility(View.VISIBLE);
+                  lineHC_Hosp_bLabel.setVisibility(View.VISIBLE);
+                  secHC_Hosp_b.setVisibility(View.VISIBLE);
+                  lineHC_Hosp_b.setVisibility(View.VISIBLE);
+                  secHC_Hosp_b_i.setVisibility(View.GONE);
+                  lineHC_Hosp_b_i.setVisibility(View.GONE);
+                  rdogrpHC_Hosp_b_i.clearCheck();
+             }
+             else if(rbData.equalsIgnoreCase("2"))
+             {
+                  secHC_HospLabel.setVisibility(View.GONE);
+                  lineHC_HospLabel.setVisibility(View.GONE);
+                  secHC_Hosp_a1.setVisibility(View.GONE);
+                  lineHC_Hosp_a1.setVisibility(View.GONE);
+                  spnHC_Hosp_a1.setSelection(0);
+                  secHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                  lineHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                  txtHC_Hosp_a1_Oth.setText("");
+                  secHC_Hosp_a2.setVisibility(View.GONE);
+                  lineHC_Hosp_a2.setVisibility(View.GONE);
+                  spnHC_Hosp_a2.setSelection(0);
+                  secHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                  lineHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                  txtHC_Hosp_a2_Oth.setText("");
+                  secHC_Hosp_a3.setVisibility(View.GONE);
+                  lineHC_Hosp_a3.setVisibility(View.GONE);
+                  spnHC_Hosp_a3.setSelection(0);
+                  secHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                  lineHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                  txtHC_Hosp_a3_Oth.setText("");
+                  secHC_Hosp_a4.setVisibility(View.GONE);
+                  lineHC_Hosp_a4.setVisibility(View.GONE);
+                  spnHC_Hosp_a4.setSelection(0);
+                  secHC_Hosp_a4_Oth.setVisibility(View.GONE);
+                  lineHC_Hosp_a4_Oth.setVisibility(View.GONE);
+                  txtHC_Hosp_a4_Oth.setText("");
+                  secHC_Hosp_a5.setVisibility(View.GONE);
+                  lineHC_Hosp_a5.setVisibility(View.GONE);
+                  spnHC_Hosp_a5.setSelection(0);
+                  secHC_Hosp_a5_Oth.setVisibility(View.GONE);
+                  lineHC_Hosp_a5_Oth.setVisibility(View.GONE);
+                  txtHC_Hosp_a5_Oth.setText("");
+                  secHC_Hosp_bLabel.setVisibility(View.GONE);
+                  lineHC_Hosp_bLabel.setVisibility(View.GONE);
+                  secHC_Hosp_b.setVisibility(View.GONE);
+                  lineHC_Hosp_b.setVisibility(View.GONE);
+                  rdogrpHC_Hosp_b.clearCheck();
+                  secHC_Hosp_b_i.setVisibility(View.GONE);
+                  lineHC_Hosp_b_i.setVisibility(View.GONE);
+                  rdogrpHC_Hosp_b_i.clearCheck();
              }
              else if(rbData.equalsIgnoreCase("8"))
+              {
+                   secHC_HospLabel.setVisibility(View.GONE);
+                   lineHC_HospLabel.setVisibility(View.GONE);
+                   secHC_Hosp_a1.setVisibility(View.GONE);
+                   lineHC_Hosp_a1.setVisibility(View.GONE);
+                   spnHC_Hosp_a1.setSelection(0);
+                   secHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                   lineHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                   txtHC_Hosp_a1_Oth.setText("");
+                   secHC_Hosp_a2.setVisibility(View.GONE);
+                   lineHC_Hosp_a2.setVisibility(View.GONE);
+                   spnHC_Hosp_a2.setSelection(0);
+                   secHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                   lineHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                   txtHC_Hosp_a2_Oth.setText("");
+                   secHC_Hosp_a3.setVisibility(View.GONE);
+                   lineHC_Hosp_a3.setVisibility(View.GONE);
+                   spnHC_Hosp_a3.setSelection(0);
+                   secHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                   lineHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                   txtHC_Hosp_a3_Oth.setText("");
+                   secHC_Hosp_a4.setVisibility(View.GONE);
+                   lineHC_Hosp_a4.setVisibility(View.GONE);
+                   spnHC_Hosp_a4.setSelection(0);
+                   secHC_Hosp_a4_Oth.setVisibility(View.GONE);
+                   lineHC_Hosp_a4_Oth.setVisibility(View.GONE);
+                   txtHC_Hosp_a4_Oth.setText("");
+                   secHC_Hosp_a5.setVisibility(View.GONE);
+                   lineHC_Hosp_a5.setVisibility(View.GONE);
+                   spnHC_Hosp_a5.setSelection(0);
+                   secHC_Hosp_a5_Oth.setVisibility(View.GONE);
+                   lineHC_Hosp_a5_Oth.setVisibility(View.GONE);
+                   txtHC_Hosp_a5_Oth.setText("");
+                   secHC_Hosp_bLabel.setVisibility(View.GONE);
+                   lineHC_Hosp_bLabel.setVisibility(View.GONE);
+                   secHC_Hosp_b.setVisibility(View.GONE);
+                   lineHC_Hosp_b.setVisibility(View.GONE);
+                   rdogrpHC_Hosp_b.clearCheck();
+                   secHC_Hosp_b_i.setVisibility(View.GONE);
+                   lineHC_Hosp_b_i.setVisibility(View.GONE);
+                   rdogrpHC_Hosp_b_i.clearCheck();
+              }
+             else
              {
                     secHC_HospLabel.setVisibility(View.GONE);
                     lineHC_HospLabel.setVisibility(View.GONE);
@@ -1705,35 +1988,7 @@
                     lineHC_Hosp_b_i.setVisibility(View.GONE);
                     rdogrpHC_Hosp_b_i.clearCheck();
              }
-             else
-             {
-                    secHC_HospLabel.setVisibility(View.VISIBLE);
-                    lineHC_HospLabel.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a1.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a1.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a2.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a2.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a3.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a3.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a3_Oth.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a3_Oth.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a4.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a4.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a4_Oth.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a4_Oth.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a5.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a5.setVisibility(View.VISIBLE);
-                    secHC_Hosp_a5_Oth.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a5_Oth.setVisibility(View.VISIBLE);
-                    secHC_Hosp_bLabel.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_bLabel.setVisibility(View.VISIBLE);
-                    secHC_Hosp_b.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_b.setVisibility(View.VISIBLE);
-             }
+
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
              return;
@@ -1795,10 +2050,16 @@
                     lineHC_Hosp_a1_Oth.setVisibility(View.GONE);
                     txtHC_Hosp_a1_Oth.setText("");
                  }
+                 else if(spnData.equalsIgnoreCase("77"))
+                 {
+                      secHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
+                      lineHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
+                      txtHC_Hosp_a1_Oth.setText("");
+                 }
                  else
                  {
-                    secHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
+                    secHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                    lineHC_Hosp_a1_Oth.setVisibility(View.GONE);
                  }
              }
              @Override
@@ -1863,10 +2124,16 @@
                     lineHC_Hosp_a2_Oth.setVisibility(View.GONE);
                     txtHC_Hosp_a2_Oth.setText("");
                  }
+                 else if(spnData.equalsIgnoreCase("77"))
+                 {
+                      secHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
+                      lineHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
+                      txtHC_Hosp_a2_Oth.setText("");
+                 }
                  else
                  {
-                    secHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
+                      secHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                      lineHC_Hosp_a2_Oth.setVisibility(View.GONE);
                  }
              }
              @Override
@@ -1931,10 +2198,16 @@
                     lineHC_Hosp_a3_Oth.setVisibility(View.GONE);
                     txtHC_Hosp_a3_Oth.setText("");
                  }
+                 else if(spnData.equalsIgnoreCase("77"))
+                 {
+                      secHC_Hosp_a3_Oth.setVisibility(View.VISIBLE);
+                      lineHC_Hosp_a3_Oth.setVisibility(View.VISIBLE);
+                      txtHC_Hosp_a3_Oth.setText("");
+                 }
                  else
                  {
-                    secHC_Hosp_a3_Oth.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a3_Oth.setVisibility(View.VISIBLE);
+                      secHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                      lineHC_Hosp_a3_Oth.setVisibility(View.GONE);
                  }
              }
              @Override
@@ -1999,10 +2272,16 @@
                     lineHC_Hosp_a4_Oth.setVisibility(View.GONE);
                     txtHC_Hosp_a4_Oth.setText("");
                  }
+                 else if(spnData.equalsIgnoreCase("77"))
+                 {
+                      secHC_Hosp_a4_Oth.setVisibility(View.VISIBLE);
+                      lineHC_Hosp_a4_Oth.setVisibility(View.VISIBLE);
+                      txtHC_Hosp_a4_Oth.setText("");
+                 }
                  else
                  {
-                    secHC_Hosp_a4_Oth.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a4_Oth.setVisibility(View.VISIBLE);
+                      secHC_Hosp_a4_Oth.setVisibility(View.GONE);
+                      lineHC_Hosp_a4_Oth.setVisibility(View.GONE);
                  }
              }
              @Override
@@ -2077,12 +2356,16 @@
                     secHC_Hosp_bLabel.setVisibility(View.GONE);
                     lineHC_Hosp_bLabel.setVisibility(View.GONE);
                  }
+                 else if(spnData.equalsIgnoreCase("77"))
+                 {
+                      secHC_Hosp_a5_Oth.setVisibility(View.VISIBLE);
+                      lineHC_Hosp_a5_Oth.setVisibility(View.VISIBLE);
+                      txtHC_Hosp_a5_Oth.setText("");
+                 }
                  else
                  {
-                    secHC_Hosp_a5_Oth.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_a5_Oth.setVisibility(View.VISIBLE);
-                    secHC_Hosp_bLabel.setVisibility(View.VISIBLE);
-                    lineHC_Hosp_bLabel.setVisibility(View.VISIBLE);
+                      secHC_Hosp_a5_Oth.setVisibility(View.GONE);
+                      lineHC_Hosp_a5_Oth.setVisibility(View.GONE);
                  }
              }
              @Override
@@ -2120,10 +2403,15 @@
                     lineHC_Hosp_b_i.setVisibility(View.GONE);
                     rdogrpHC_Hosp_b_i.clearCheck();
              }
-             else
+             else if(rbData.equalsIgnoreCase("1"))
              {
                     secHC_Hosp_b_i.setVisibility(View.VISIBLE);
                     lineHC_Hosp_b_i.setVisibility(View.VISIBLE);
+             }
+             else{
+                  secHC_Hosp_b_i.setVisibility(View.GONE);
+                  lineHC_Hosp_b_i.setVisibility(View.GONE);
+//                  rdogrpHC_Hosp_b_i.clearCheck();
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
@@ -2220,10 +2508,17 @@
                     lineTHosNam_Oth.setVisibility(View.GONE);
                     txtTHosNam_Oth.setText("");
                  }
+                 else if(spnData.equalsIgnoreCase("7"))
+                 {
+                      secTHosNam_Oth.setVisibility(View.VISIBLE);
+                      lineTHosNam_Oth.setVisibility(View.VISIBLE);
+                      txtTHosNam_Oth.setText("");
+                 }
                  else
                  {
-                    secTHosNam_Oth.setVisibility(View.VISIBLE);
-                    lineTHosNam_Oth.setVisibility(View.VISIBLE);
+                      secTHosNam_Oth.setVisibility(View.GONE);
+                      lineTHosNam_Oth.setVisibility(View.GONE);
+
                  }
              }
              @Override
@@ -2242,13 +2537,13 @@
          rdoTHosNam21 = (RadioButton) findViewById(R.id.rdoTHosNam21);
          rdoTHosNam22 = (RadioButton) findViewById(R.id.rdoTHosNam22);
          rdoTHosNam23 = (RadioButton) findViewById(R.id.rdoTHosNam23);
-         rdoTHosNam24 = (RadioButton) findViewById(R.id.rdoTHosNam24);
+//         rdoTHosNam24 = (RadioButton) findViewById(R.id.rdoTHosNam24);
          rdogrpTHosNam2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
          @Override
          public void onCheckedChanged(RadioGroup radioGroup,int radioButtonID) {
              String rbData = "";
              RadioButton rb;
-             String[] d_rdogrpTHosNam2 = new String[] {"1","2","7",""};
+             String[] d_rdogrpTHosNam2 = new String[] {"1","2","7"};
              for (int i = 0; i < rdogrpTHosNam2.getChildCount(); i++)
              {
                rb = (RadioButton)rdogrpTHosNam2.getChildAt(i);
@@ -2267,10 +2562,16 @@
                     lineTHosNam2_Oth.setVisibility(View.GONE);
                     txtTHosNam2_Oth.setText("");
              }
-             else
+             else if(rbData.equalsIgnoreCase("7"))
              {
                     secTHosNam2_Oth.setVisibility(View.VISIBLE);
                     lineTHosNam2_Oth.setVisibility(View.VISIBLE);
+             }
+             else
+             {
+                  secTHosNam2_Oth.setVisibility(View.GONE);
+                  lineTHosNam2_Oth.setVisibility(View.GONE);
+                  txtTHosNam2_Oth.setText("");
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
@@ -2291,7 +2592,7 @@
          listTHosNam3.add("1-ঢাকা শিশু হাসপাতাল (Dhaka Shishu Hospital)");
          listTHosNam3.add("2-ডাঃ এম আর খান  শিশু হাসপাতাল (Dr. MR Khan Shishu Hospital)");
          listTHosNam3.add("7-অন্যান্য (Other)");
-         listTHosNam3.add("");
+
          ArrayAdapter<String> adptrTHosNam3= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listTHosNam3);
          spnTHosNam3.setAdapter(adptrTHosNam3);
 
@@ -2321,12 +2622,21 @@
                     lineTHosNamDK.setVisibility(View.GONE);
                     chkTHosNamDK.setChecked(false);
                  }
-                 else
+                 else if(spnData.equalsIgnoreCase("7"))
                  {
                     secTHosNam3_Oth.setVisibility(View.VISIBLE);
                     lineTHosNam3_Oth.setVisibility(View.VISIBLE);
                     secTHosNamDK.setVisibility(View.VISIBLE);
                     lineTHosNamDK.setVisibility(View.VISIBLE);
+                 }
+                 else
+                 {
+                      secTHosNam3_Oth.setVisibility(View.GONE);
+                      lineTHosNam3_Oth.setVisibility(View.GONE);
+                      txtTHosNam3_Oth.setText("");
+                      secTHosNamDK.setVisibility(View.GONE);
+                      lineTHosNamDK.setVisibility(View.GONE);
+                      chkTHosNamDK.setChecked(false);
                  }
              }
              @Override
@@ -2422,6 +2732,11 @@
                  }
                  else if(spnData.equalsIgnoreCase("8"))
                  {
+                      secTDisDrOth.setVisibility(View.VISIBLE);
+                      lineTDisDrOth.setVisibility(View.VISIBLE);
+                 }
+                 else if(spnData.equalsIgnoreCase("8"))
+                 {
                     secTDisDrOth.setVisibility(View.GONE);
                     lineTDisDrOth.setVisibility(View.GONE);
                     txtTDisDrOth.setText("");
@@ -2434,8 +2749,9 @@
                  }
                  else
                  {
-                    secTDisDrOth.setVisibility(View.VISIBLE);
-                    lineTDisDrOth.setVisibility(View.VISIBLE);
+                      secTDisDrOth.setVisibility(View.GONE);
+                      lineTDisDrOth.setVisibility(View.GONE);
+                      txtTDisDrOth.setText("");
                  }
              }
              @Override
@@ -2470,22 +2786,26 @@
              {
                     secTDurReco.setVisibility(View.GONE);
                     lineTDurReco.setVisibility(View.GONE);
-                    txtTDurReco.setText("");
-                    secTInRecoLabel.setVisibility(View.GONE);
-                    lineTInRecoLabel.setVisibility(View.GONE);
+
+
              }
              else if(rbData.equalsIgnoreCase("8"))
              {
                     secTDurReco.setVisibility(View.GONE);
                     lineTDurReco.setVisibility(View.GONE);
-                    txtTDurReco.setText("");
-                    secTInRecoLabel.setVisibility(View.GONE);
-                    lineTInRecoLabel.setVisibility(View.GONE);
+
+
              }
-             else
+             else if(rbData.equalsIgnoreCase("1"))
              {
                     secTDurReco.setVisibility(View.VISIBLE);
                     lineTDurReco.setVisibility(View.VISIBLE);
+             }
+             else{
+                  secTDurReco.setVisibility(View.GONE);
+                  lineTDurReco.setVisibility(View.GONE);
+                  txtTDurReco.setText("");
+
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
@@ -2531,10 +2851,16 @@
                     lineTInRecoOth.setVisibility(View.GONE);
                     txtTInRecoOth.setText("");
                  }
+                 else if(spnData.equalsIgnoreCase("3"))
+                 {
+                      secTInRecoOth.setVisibility(View.VISIBLE);
+                      lineTInRecoOth.setVisibility(View.VISIBLE);
+                 }
                  else
                  {
-                    secTInRecoOth.setVisibility(View.VISIBLE);
-                    lineTInRecoOth.setVisibility(View.VISIBLE);
+                      secTInRecoOth.setVisibility(View.GONE);
+                      lineTInRecoOth.setVisibility(View.GONE);
+                      txtTInRecoOth.setText("");
                  }
              }
              @Override
@@ -2578,10 +2904,16 @@
                     lineTInRecoOth2.setVisibility(View.GONE);
                     txtTInRecoOth2.setText("");
                  }
-                 else
+                 else if(spnData.equalsIgnoreCase("3"))
                  {
                     secTInRecoOth2.setVisibility(View.VISIBLE);
                     lineTInRecoOth2.setVisibility(View.VISIBLE);
+                 }
+                 else
+                 {
+                      secTInRecoOth2.setVisibility(View.GONE);
+                      lineTInRecoOth2.setVisibility(View.GONE);
+                      txtTInRecoOth2.setText("");
                  }
              }
              @Override
@@ -2662,7 +2994,7 @@
                     lineDaysOfHospDK.setVisibility(View.GONE);
                     chkDaysOfHospDK.setChecked(false);
              }
-             else
+             else if(rbData.equalsIgnoreCase("1"))
              {
                     secHospNameLabel.setVisibility(View.VISIBLE);
                     lineHospNameLabel.setVisibility(View.VISIBLE);
@@ -2678,6 +3010,31 @@
                     lineDaysOfHosp.setVisibility(View.VISIBLE);
                     secDaysOfHospDK.setVisibility(View.VISIBLE);
                     lineDaysOfHospDK.setVisibility(View.VISIBLE);
+             }
+             else
+             {
+                  secHospNameLabel.setVisibility(View.GONE);
+                  lineHospNameLabel.setVisibility(View.GONE);
+                  secHospName.setVisibility(View.GONE);
+                  lineHospName.setVisibility(View.GONE);
+                  spnHospName.setSelection(0);
+                  secHospName_Oth.setVisibility(View.GONE);
+                  lineHospName_Oth.setVisibility(View.GONE);
+                  txtHospName_Oth.setText("");
+                  secHaveRecordsLabel.setVisibility(View.GONE);
+                  lineHaveRecordsLabel.setVisibility(View.GONE);
+                  secHaveRecords.setVisibility(View.GONE);
+                  lineHaveRecords.setVisibility(View.GONE);
+                  rdogrpHaveRecords.clearCheck();
+                  secDidRecordMatch2.setVisibility(View.GONE);
+                  lineDidRecordMatch2.setVisibility(View.GONE);
+                  rdogrpDidRecordMatch2.clearCheck();
+                  secDaysOfHosp.setVisibility(View.GONE);
+                  lineDaysOfHosp.setVisibility(View.GONE);
+                  txtDaysOfHosp.setText("");
+                  secDaysOfHospDK.setVisibility(View.GONE);
+                  lineDaysOfHospDK.setVisibility(View.GONE);
+                  chkDaysOfHospDK.setChecked(false);
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
@@ -2841,6 +3198,10 @@
 
 
          //Hide all skip variables
+
+
+          secTsymptOthName.setVisibility(View.GONE);
+          lineTsymptOthName.setVisibility(View.GONE);
          secTsymptLabel.setVisibility(View.GONE);
          lineTsymptLabel.setVisibility(View.GONE);
          secAbdomPain.setVisibility(View.GONE);
@@ -2969,8 +3330,6 @@
          lineTReco.setVisibility(View.GONE);
          secTDurReco.setVisibility(View.GONE);
          lineTDurReco.setVisibility(View.GONE);
-         secTInRecoLabel.setVisibility(View.GONE);
-         lineTInRecoLabel.setVisibility(View.GONE);
          secTInReco.setVisibility(View.GONE);
          lineTInReco.setVisibility(View.GONE);
          secTInRecoOth.setVisibility(View.GONE);
@@ -3209,6 +3568,7 @@
          lineTHC_OthName.setVisibility(View.GONE);
          secHC_HospLabel.setVisibility(View.GONE);
          lineHC_HospLabel.setVisibility(View.GONE);
+
          secHC_Hosp_a1.setVisibility(View.GONE);
          lineHC_Hosp_a1.setVisibility(View.GONE);
          secHC_Hosp_a1_Oth.setVisibility(View.GONE);
