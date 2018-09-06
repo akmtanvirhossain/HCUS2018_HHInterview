@@ -47,6 +47,7 @@ public class Cluster_Structure_list extends Activity {
     private RecyclerView recyclerView;
     private DataAdapter mAdapter;
     static String TableName;
+    static String TableNam;
 
     TextView lblHeading;
     Button btnAdd;
