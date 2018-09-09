@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scrollbars="vertical">
+    <LinearLayout android:id="@+id/secListRow" android:paddingTop="8sp" android:paddingBottom="8sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+        <TextView android:id="@+id/UNCode" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/StructureNo" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/HouseholdSl" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/VisitNo" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/MemSl" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SAbd" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/OperNo" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SDtHos" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SHosM" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SIlBeHosAdm" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SurSympt" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SurSymptOth" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SurSympt2" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SurSymptOth2" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SurSympt3" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SurSymptOth3" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SurSympt4" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SurSymptOth4" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SurSympt5" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SurSymptOth5" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SurSympt6" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SurSymptOth6" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SurSympt7" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SurSymptOth7" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SDurFever" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SPHosNam" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SPHosOth" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SDisDr" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SDisDrOth" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SReco" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SDurReco" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SInReco" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SInRecoOth" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SInReco2" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SInRecoOth2" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/SAboIll" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+    </LinearLayout>
+ </LinearLayout>

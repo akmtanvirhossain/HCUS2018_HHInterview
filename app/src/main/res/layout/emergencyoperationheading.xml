@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scrollbars="vertical">
+    <LinearLayout android:id="@+id/secListRow" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal"  android:background="#C2E0EC" android:paddingTop="5px" android:paddingBottom="5px">
+        <TextView android:text="UNCode" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="StructureNo" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="HouseholdSl" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="VisitNo" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="MemSl" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SAbd" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="OperNo" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SDtHos" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SHosM" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SIlBeHosAdm" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SurSympt" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SurSymptOth" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SurSympt2" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SurSymptOth2" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SurSympt3" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SurSymptOth3" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SurSympt4" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SurSymptOth4" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SurSympt5" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SurSymptOth5" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SurSympt6" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SurSymptOth6" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SurSympt7" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SurSymptOth7" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SDurFever" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SPHosNam" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SPHosOth" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SDisDr" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SDisDrOth" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SReco" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SDurReco" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SInReco" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SInRecoOth" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SInReco2" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SInRecoOth2" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="SAboIll" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>
+    </LinearLayout>
+ </LinearLayout>
