@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity
                                                                 tableList.add("StructureID_Serial");
                                                                 tableList.add("StructureIDSlot");
                                                                 tableList.add("StructureListing");
-                                                                C.DataSync_UploadDownload(tableList, DEVICEID);
+//                                                                C.DataSync_UploadDownload(tableList, DEVICEID);
 
                                                                 C.Sync_Download("AreaDB", DEVICEID,"");
                                                                 C.Sync_Download("StructureDB", DEVICEID,"");
