@@ -17,60 +17,57 @@
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
-
-    <!--android:name="Common.MyApplication"-->
+    <!-- android:name="Common.MyApplication" -->
     <application
-
         android:allowBackup="true"
-
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/CustomTheme">
         <activity
-            android:name="org.hcus_hhinterview.SettingForm"
+            android:name=".SettingForm"
             android:label="Device Setting" />
         <activity
-            android:name="org.hcus_hhinterview.MainMenu"
+            android:name=".MainMenu"
             android:label="Main Menu" />
         <activity
             android:name="navigationDrawer.NavigationActivity"
             android:label="Nav" />
-
         //Android Manifest Code
-
-
-        <activity android:name="org.hcus_hhinterview.Splash_Screen" android:label="@string/app_name" android:theme="@style/CustomTheme">
+        <activity
+            android:name=".Splash_Screen"
+            android:label="@string/app_name"
+            android:theme="@style/CustomTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         //Activity
-        <activity android:name="org.hcus_hhinterview.LoginActivity" />
-        <activity android:name="org.hcus_hhinterview.RecycleActivity" />
-        <activity android:name="org.hcus_hhinterview.MainActivity" />
-        <activity android:name="org.hcus_hhinterview.StructureListing_list" />
-        <activity android:name="org.hcus_hhinterview.StructureListing" />
-        <activity android:name="org.hcus_hhinterview.Cluster_Structure_list" />
-        <activity android:name="org.hcus_hhinterview.Cluster_Structure" />
-        <activity android:name="org.hcus_hhinterview.Household_Visit" />
-        <activity android:name="org.hcus_hhinterview.Household_Visit_list" />
-        <activity android:name="org.hcus_hhinterview.Household_Interview" />
-        <activity android:name="org.hcus_hhinterview.Knowledge_DSH_SSF" />
-        <activity android:name="org.hcus_hhinterview.Member" />
-        <activity android:name="org.hcus_hhinterview.Member_list" />
-        <activity android:name="org.hcus_hhinterview.TyphoidCase" />
-        <activity android:name="org.hcus_hhinterview.MeningitisCase" />
-        <activity android:name="org.hcus_hhinterview.PneumoniaCase" />
-        <activity android:name="org.hcus_hhinterview.OtitisMediaCase" />
-        <activity android:name="org.hcus_hhinterview.DiarrhoeaCase" />
-        <activity android:name="org.hcus_hhinterview.EmergencyOperation" />
-
-
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RecycleActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".StructureListing_list" />
+        <activity android:name=".StructureListing" />
+        <activity android:name=".Cluster_Structure_list" />
+        <activity android:name=".Cluster_Structure" />
+        <activity android:name=".Household_Visit" />
+        <activity android:name=".Household_Visit_list" />
+        <activity android:name=".Household_Interview" />
+        <activity android:name=".Knowledge_DSH_SSF" />
+        <activity android:name=".Member" />
+        <activity android:name=".Member_list" />
+        <activity android:name=".TyphoidCase" />
+        <activity android:name=".MeningitisCase" />
+        <activity android:name=".PneumoniaCase" />
+        <activity android:name=".OtitisMediaCase" />
+        <activity android:name=".DiarrhoeaCase" />
+        <activity android:name=".EmergencyOperation" />
         //Service
-        <service android:name="org.hcus_hhinterview.DataSyncService" />
-        <service android:name="org.hcus_hhinterview.Sync_Service" />
+        <service android:name=".DataSyncService" />
+        <service android:name=".Sync_Service" />
 
+        <activity android:name=".ChildForm_Menu"></activity>
     </application>
+
 </manifest>

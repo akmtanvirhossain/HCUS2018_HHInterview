@@ -283,7 +283,8 @@ package org.hcus_hhinterview;
                                  IDbundle.putString("HouseholdSl", data.getHouseholdSl());
                                  IDbundle.putString("VisitNo", data.getVisitNo());
                                  IDbundle.putString("MemSl",""+data.getMemSl());
-                                 Intent f1 = new Intent(getApplicationContext(), EmergencyOperation.class);
+                                 IDbundle.putString("Age",""+data.getAge());
+                                 Intent f1 = new Intent(getApplicationContext(), ChildForm_Menu.class);
                                  f1.putExtras(IDbundle);
                                  startActivityForResult(f1,1);
                              }

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/form_background_color">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/theme_color">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal">
+            <ImageButton android:id="@+id/cmdBack" android:background="@color/pageHeadingBack" android:src="@drawable/back" android:layout_width="50sp" android:layout_height="match_parent"/>
+            <TextView android:id="@+id/lblHeading" android:text="Child Form Menu"  android:paddingLeft="10sp" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:textSize="20sp" android:textColor="@color/pageHeading"/>
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnImu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Immunization"
+            android:layout_margin="10sp"
+            android:background="@drawable/button_style_yellow"/>
+
+        <Button
+            android:id="@+id/btnTyphoid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Typhoid"
+            android:layout_margin="10sp"
+            android:background="@drawable/button_style_yellow"/>
+
+
+        <Button
+            android:id="@+id/btnMeningitis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Meningitis"
+            android:layout_margin="10sp"
+            android:background="@drawable/button_style_yellow"/>
+
+
+        <Button
+            android:id="@+id/btnPneumonia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pneumonia"
+            android:layout_margin="10sp"
+            android:background="@drawable/button_style_yellow"/>
+
+
+        <Button
+            android:id="@+id/btnDiarrhoea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Diarrhoea"
+            android:layout_margin="10sp"
+            android:background="@drawable/button_style_yellow"/>
+
+        <Button
+            android:id="@+id/btnOperation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Emergency Operation"
+            android:layout_margin="10sp"
+            android:background="@drawable/button_style_yellow"/>
+
+        <Button
+            android:id="@+id/btnOtitis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Suspected otitis media case"
+            android:background="@drawable/button_style_yellow"
+            android:layout_margin="10sp"/>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
