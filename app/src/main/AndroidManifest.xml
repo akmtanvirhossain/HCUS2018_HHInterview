@@ -62,6 +62,8 @@
         <activity android:name="org.hcus_hhinterview.Member_list" />
         <activity android:name="org.hcus_hhinterview.TyphoidCase" />
         <activity android:name="org.hcus_hhinterview.MeningitisCase" />
+        <activity android:name="org.hcus_hhinterview.PneumoniaCase" />
+        <activity android:name="org.hcus_hhinterview.OtitisMediaCase" />
 
 
         //Service
