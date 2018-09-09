@@ -283,10 +283,11 @@ package org.hcus_hhinterview;
                                  IDbundle.putString("HouseholdSl", data.getHouseholdSl());
                                  IDbundle.putString("VisitNo", data.getVisitNo());
                                  IDbundle.putString("MemSl",""+data.getMemSl());
-                                 Intent f1 = new Intent(getApplicationContext(), TyphoidCase.class);
+                                 Intent f1 = new Intent(getApplicationContext(), OtitisMediaCase.class);
                                  f1.putExtras(IDbundle);
                                  startActivityForResult(f1,1);
-                             } catch (Exception e) {
+                             }
+                             catch (Exception e) {
                              }
                              progDailog.dismiss();
                          }
