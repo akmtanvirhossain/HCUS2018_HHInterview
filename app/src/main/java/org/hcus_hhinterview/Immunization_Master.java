@@ -144,6 +144,7 @@
     static String MEMSL = "";
 
     LinearLayout secImmunization;
+    View linesecImmunization;
 
  public void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -191,6 +192,7 @@
              }});
 
          secImmunization=findViewById(R.id.secImmunization);
+         linesecImmunization=findViewById(R.id.linesecImmunization);
 
 
          secUNCode=(LinearLayout)findViewById(R.id.secUNCode);
@@ -241,12 +243,16 @@
                  if(rbData.equalsIgnoreCase("2"))
                  {
                      secImmunization.setVisibility(View.GONE);
+                     linesecImmunization.setVisibility(View.GONE);
+
                  }else if(rbData.equalsIgnoreCase("8"))
                  {
                      secImmunization.setVisibility(View.GONE);
+                     linesecImmunization.setVisibility(View.GONE);
                  }else
                  {
                      secImmunization.setVisibility(View.VISIBLE);
+                     linesecImmunization.setVisibility(View.VISIBLE);
                  }
              }
          });
