@@ -9,7 +9,7 @@
         android:background="@color/theme_color">
         <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal">
             <ImageButton android:id="@+id/cmdBack" android:background="@color/pageHeadingBack" android:src="@drawable/back" android:layout_width="50sp" android:layout_height="match_parent"/>
-            <TextView android:id="@+id/lblHeading" android:text="Child Information"  android:paddingLeft="10sp" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:textSize="20sp" android:textColor="@color/pageHeading"/>
+            <TextView android:id="@+id/lblHeading" android:text="Typhoid Case Information"  android:paddingLeft="10sp" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:textSize="20sp" android:textColor="@color/pageHeading"/>
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
     <ScrollView
@@ -503,11 +503,37 @@
         <CheckBox android:id="@+id/chkTDurIlBeHosDK" android:layout_width="50sp" android:inputType="text" android:layout_height="wrap_content" android:layout_marginRight="10sp" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/lineTDurIlBeHosDK" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
-    <LinearLayout android:id="@+id/secTDisDr" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
-        <TextView android:id="@+id/lblTDisDr" android:text="2.15" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblTDisDr" android:text="চিকিৎসকরা শিশুটির কি রোগ ছিল বলে আপনাদের বলেছিলেন?  What illness did the doctors tell you that your child had?" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <Spinner android:id="@+id/spnTDisDr" android:drawSelectorOnTop="true" android:layout_width="200sp" android:layout_height="wrap_content" android:layout_weight="0" android:prompt="@string/planet_prompt" android:textSize="20sp" />
-    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/secTDisDr"
+            style="@style/rowStyle0"
+            android:layout_width="fill_parent"
+            android:layout_height="123dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/lblTDisDr"
+                android:layout_width="40sp"
+                android:layout_height="wrap_content"
+                android:text="2.15"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/VlblTDisDr"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:text="চিকিৎসকরা শিশুটির কি রোগ ছিল বলে আপনাদের বলেছিলেন?  What illness did the doctors tell you that your child had?"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/spnTDisDr"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:drawSelectorOnTop="true"
+                android:prompt="@string/planet_prompt"
+                android:textSize="20sp" />
+        </LinearLayout>
     <View android:id="@+id/lineTDisDr" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secTDisDrOth" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblTDisDrOth" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />

@@ -25,6 +25,8 @@
  import android.location.LocationManager;
  import android.net.Uri;
  import android.provider.Settings;
+ import android.text.Editable;
+ import android.text.TextWatcher;
  import android.view.KeyEvent;
  import android.os.Bundle;
  import android.view.Menu;
@@ -279,8 +281,28 @@
          txtMemSl.setText(MEMSL);
 
 
+         dtpDOB.addTextChangedListener(new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-         chkDOBDk.setChecked(false);
+             }
+
+             @Override
+             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                 if(dtpDOB.getText().toString().length()>0){
+                     chkDOBDk.setChecked(false);
+                 }
+
+             }
+
+             @Override
+             public void afterTextChanged(Editable s) {
+
+             }
+         });
+
+
+
 
 
          chkDOBDk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -292,6 +314,7 @@
                      lineAge.setVisibility(View.VISIBLE);
                      secAgeU.setVisibility(View.VISIBLE);
                      lineAgeU.setVisibility(View.VISIBLE);
+                     dtpDOB.setText("");
                  }
                  else{
                      secAge.setVisibility(View.GONE);
@@ -558,6 +581,12 @@
      {
  
          String DV="";
+         String birthdate="";
+         String presentdate="";
+         Integer ageInDays=0;
+
+
+
 
          if(txtUNCode.getText().toString().length()==0 & secUNCode.isShown())
            {
@@ -611,12 +640,16 @@
          DV = Global.DateValidate(dtpDOB.getText().toString());
          if(DV.length()!=0 & secDOB.isShown())
            {
-             Connection.MessageBox(Member.this, DV);
-             dtpDOB.requestFocus(); 
-             return;	
+            if(!chkDOBDk.isChecked()){
+                Connection.MessageBox(Member.this, DV);
+                dtpDOB.requestFocus();
+                return;
+            }
+
            }
          else if(txtAge.getText().toString().length()==0 & secAge.isShown())
            {
+
              Connection.MessageBox(Member.this, "Required field: বয়স,যদি জন্ম তারিখ জানা না থাকে (Age) if DOB is unknown.");
              txtAge.requestFocus(); 
              return;	
@@ -689,7 +722,9 @@
              txtLiveInHouse.requestFocus(); 
              return;	
            }
- 
+
+
+
          String SQL = "";
          RadioButton rb;
 
@@ -710,7 +745,11 @@
 
          objSave.setDOB(dtpDOB.getText().toString().length() > 0 ? Global.DateConvertYMD(dtpDOB.getText().toString()) : dtpDOB.getText().toString());
          objSave.setDOBDk(Integer.valueOf(chkDOBDk.isChecked()?"1":(secDOBDk.isShown()?"2":"")));
-         objSave.setAge(Integer.valueOf(txtAge.getText().toString().length()==0?"0":txtAge.getText().toString()));
+         birthdate=dtpDOB.getText().toString();
+         presentdate=Global.DateNowDMY();
+         ageInDays=Global.DateDifferenceDays(presentdate,birthdate);
+         objSave.setAge( ageInDays);
+//         Integer.valueOf(txtAge.getText().toString().length()==0?"0":txtAge.getText().toString())
          objSave.setAgeU(Integer.valueOf(spnAgeU.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnAgeU.getSelectedItem().toString(), "-")));
          objSave.setRelation(Integer.valueOf(spnRelation.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnRelation.getSelectedItem().toString(), "-")));
          objSave.setOthRelation(txtOthRelation.getText().toString());

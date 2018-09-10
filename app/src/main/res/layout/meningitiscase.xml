@@ -9,7 +9,7 @@
         android:background="@color/theme_color">
         <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal">
             <ImageButton android:id="@+id/cmdBack" android:background="@color/pageHeadingBack" android:src="@drawable/back" android:layout_width="50sp" android:layout_height="match_parent"/>
-            <TextView android:id="@+id/lblHeading" android:text="Below 5 years children Information"  android:paddingLeft="10sp" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:textSize="20sp" android:textColor="@color/pageHeading"/>
+            <TextView android:id="@+id/lblHeading" android:text="Meningitis Case Information"  android:paddingLeft="10sp" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:textSize="20sp" android:textColor="@color/pageHeading"/>
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
     <ScrollView

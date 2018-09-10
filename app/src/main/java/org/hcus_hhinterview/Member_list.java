@@ -92,19 +92,19 @@ package org.hcus_hhinterview;
          TableName = "Member";
          lblHeading = (TextView)findViewById(R.id.lblHeading);
 
-         ImageButton cmdBack = (ImageButton) findViewById(R.id.cmdBack);
-         cmdBack.setOnClickListener(new View.OnClickListener() {
-             public void onClick(View v) {
-                 AlertDialog.Builder adb = new AlertDialog.Builder(Member_list.this);
-                 adb.setTitle("Close");
-                 adb.setMessage("Do you want to close this form[Yes/No]?");
-                 adb.setNegativeButton("No", null);
-                 adb.setPositiveButton("Yes", new AlertDialog.OnClickListener() {
-                     public void onClick(DialogInterface dialog, int which) {
-                         finish();
-                     }});
-                 adb.show();
-             }});
+//         ImageButton cmdBack = (ImageButton) findViewById(R.id.cmdBack);
+//         cmdBack.setOnClickListener(new View.OnClickListener() {
+//             public void onClick(View v) {
+//                 AlertDialog.Builder adb = new AlertDialog.Builder(Member_list.this);
+//                 adb.setTitle("Close");
+//                 adb.setMessage("Do you want to close this form[Yes/No]?");
+//                 adb.setNegativeButton("No", null);
+//                 adb.setPositiveButton("Yes", new AlertDialog.OnClickListener() {
+//                     public void onClick(DialogInterface dialog, int which) {
+//                         finish();
+//                     }});
+//                 adb.show();
+//             }});
 
          btnRefresh = (Button) findViewById(R.id.btnRefresh);
          btnRefresh.setOnClickListener(new View.OnClickListener() {
