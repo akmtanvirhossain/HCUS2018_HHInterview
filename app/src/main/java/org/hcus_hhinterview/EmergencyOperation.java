@@ -25,6 +25,8 @@
  import android.location.LocationManager;
  import android.net.Uri;
  import android.provider.Settings;
+ import android.text.Editable;
+ import android.text.TextWatcher;
  import android.view.KeyEvent;
  import android.os.Bundle;
  import android.view.Menu;
@@ -1630,25 +1632,51 @@
 
              if(rbData.equalsIgnoreCase("2"))
              {
-                    secSDurReco.setVisibility(View.GONE);
-                    lineSDurReco.setVisibility(View.GONE);
-                    txtSDurReco.setText("");
+                 secSDurReco.setVisibility(View.GONE);
+                 lineSDurReco.setVisibility(View.GONE);
+                 secSInRecoLabel.setVisibility(View.VISIBLE);
+                 lineSInRecoLabel.setVisibility(View.VISIBLE);
+                 secSInReco.setVisibility(View.VISIBLE);
+                 lineSInReco.setVisibility(View.VISIBLE);
+                 secSInReco2.setVisibility(View.VISIBLE);
+                 lineSInReco2.setVisibility(View.VISIBLE);
+
+
 
              }
              else if(rbData.equalsIgnoreCase("8"))
              {
-                    secSDurReco.setVisibility(View.GONE);
-                    lineSDurReco.setVisibility(View.GONE);
-                    txtSDurReco.setText("");
+
+                 secSDurReco.setVisibility(View.GONE);
+                 lineSDurReco.setVisibility(View.GONE);
+                 secSInRecoLabel.setVisibility(View.VISIBLE);
+                 lineSInRecoLabel.setVisibility(View.VISIBLE);
+                 secSInReco.setVisibility(View.VISIBLE);
+                 lineSInReco.setVisibility(View.VISIBLE);
+                 secSInReco2.setVisibility(View.VISIBLE);
+                 lineSInReco2.setVisibility(View.VISIBLE);
 
              }
              else if(rbData.equalsIgnoreCase("1"))
              {
                     secSDurReco.setVisibility(View.VISIBLE);
                     lineSDurReco.setVisibility(View.VISIBLE);
+                 secSInRecoLabel.setVisibility(View.VISIBLE);
+                 lineSInRecoLabel.setVisibility(View.VISIBLE);
+                 secSInReco.setVisibility(View.VISIBLE);
+                 lineSInReco.setVisibility(View.VISIBLE);
+                 secSInReco2.setVisibility(View.VISIBLE);
+                 lineSInReco2.setVisibility(View.VISIBLE);
              }
              else{
-
+                 secSDurReco.setVisibility(View.GONE);
+                 lineSDurReco.setVisibility(View.GONE);
+                 secSInRecoLabel.setVisibility(View.VISIBLE);
+                 lineSInRecoLabel.setVisibility(View.VISIBLE);
+                 secSInReco.setVisibility(View.VISIBLE);
+                 lineSInReco.setVisibility(View.VISIBLE);
+                 secSInReco2.setVisibility(View.VISIBLE);
+                 lineSInReco2.setVisibility(View.VISIBLE);
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
@@ -1692,10 +1720,39 @@
                     lineSInRecoOth.setVisibility(View.VISIBLE);
              }
             }
+
+
+
          public void onNothingSelected(AdapterView<?> adapterView) {
              return;
             } 
-         }); 
+         });
+
+         txtSDurReco.addTextChangedListener(new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+             }
+
+             @Override
+             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                 secSInRecoLabel.setVisibility(View.GONE);
+                 lineSInRecoLabel.setVisibility(View.GONE);
+                 secSInReco.setVisibility(View.GONE);
+                 lineSInReco.setVisibility(View.GONE);
+                 secSInReco2.setVisibility(View.GONE);
+                 lineSInReco2.setVisibility(View.GONE);
+                 secSInRecoOth.setVisibility(View.GONE);
+                 lineSInRecoOth.setVisibility(View.GONE);
+                 secSInRecoOth2.setVisibility(View.GONE);
+                 lineSInRecoOth2.setVisibility(View.GONE);
+             }
+
+             @Override
+             public void afterTextChanged(Editable editable) {
+
+             }
+         });
          secSInRecoOth=(LinearLayout)findViewById(R.id.secSInRecoOth);
          lineSInRecoOth=(View)findViewById(R.id.lineSInRecoOth);
          VlblSInRecoOth=(TextView) findViewById(R.id.VlblSInRecoOth);
@@ -1743,6 +1800,10 @@
          lineSAboIll=(View)findViewById(R.id.lineSAboIll);
          VlblSAboIll=(TextView) findViewById(R.id.VlblSAboIll);
          txtSAboIll=(EditText) findViewById(R.id.txtSAboIll);
+
+
+
+
 
 
          dtpSDtHos.setOnTouchListener(new View.OnTouchListener() {

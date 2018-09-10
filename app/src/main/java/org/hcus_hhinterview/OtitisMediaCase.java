@@ -25,6 +25,8 @@
  import android.location.LocationManager;
  import android.net.Uri;
  import android.provider.Settings;
+ import android.text.Editable;
+ import android.text.TextWatcher;
  import android.view.KeyEvent;
  import android.os.Bundle;
  import android.view.Menu;
@@ -338,7 +340,14 @@
          lineOMEDis=(View)findViewById(R.id.lineOMEDis);
          VlblOMEDis = (TextView) findViewById(R.id.VlblOMEDis);
          rdogrpOMEDis = (RadioGroup) findViewById(R.id.rdogrpOMEDis);
-         
+
+         txtUNCode.setText(UNCODE);
+         txtStructureNo.setText(""+STRUCTURENO);
+         txtHouseholdSl.setText(HOUSEHOLDSL);
+         txtVisitNo.setText(VISITNO);
+         txtMemSl.setText(MEMSL);
+
+
          rdoOMEDis1 = (RadioButton) findViewById(R.id.rdoOMEDis1);
          rdoOMEDis2 = (RadioButton) findViewById(R.id.rdoOMEDis2);
          rdoOMEDis3 = (RadioButton) findViewById(R.id.rdoOMEDis3);
@@ -834,33 +843,30 @@
 
              if(rbData.equalsIgnoreCase("2"))
              {
-                    secOMDurReco.setVisibility(View.GONE);
-                    lineOMDurReco.setVisibility(View.GONE);
-                    txtOMDurReco.setText("");
-                    secOMInRecoLabel.setVisibility(View.GONE);
-                    lineOMInRecoLabel.setVisibility(View.GONE);
+                 secOMDurReco.setVisibility(View.GONE);
+                 lineOMDurReco.setVisibility(View.GONE);
+
              }
              else if(rbData.equalsIgnoreCase("8"))
              {
-                    secOMDurReco.setVisibility(View.GONE);
-                    lineOMDurReco.setVisibility(View.GONE);
-                    txtOMDurReco.setText("");
-                    secOMInRecoLabel.setVisibility(View.GONE);
-                    lineOMInRecoLabel.setVisibility(View.GONE);
+
+                 secOMDurReco.setVisibility(View.GONE);
+                 lineOMDurReco.setVisibility(View.GONE);
              }
-             else if(rbData.equalsIgnoreCase("8"))
+             else if(rbData.equalsIgnoreCase("1"))
              {
                     secOMDurReco.setVisibility(View.VISIBLE);
                     lineOMDurReco.setVisibility(View.VISIBLE);
+                ;
              }
              else{
+
                  secOMDurReco.setVisibility(View.GONE);
                  lineOMDurReco.setVisibility(View.GONE);
-                 txtOMDurReco.setText("");
-                 secOMInRecoLabel.setVisibility(View.GONE);
-                 lineOMInRecoLabel.setVisibility(View.GONE);
              }
             }
+
+
          public void onNothingSelected(AdapterView<?> adapterView) {
              return;
             } 
@@ -955,7 +961,7 @@
                     lineOMInRecoOth2.setVisibility(View.GONE);
                     txtOMInRecoOth2.setText("");
                  }
-                 else if(spnData.equalsIgnoreCase("1"))
+                 else if(spnData.equalsIgnoreCase("7"))
                  {
                     secOMInRecoOth2.setVisibility(View.VISIBLE);
                     lineOMInRecoOth2.setVisibility(View.VISIBLE);
@@ -969,6 +975,38 @@
              public void onNothingSelected(AdapterView<?> parentView) {
              }
          });
+         txtOMDurReco.addTextChangedListener(new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+             }
+
+             @Override
+             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                 secOMInRecoLabel.setVisibility(View.GONE);
+                 lineOMInRecoLabel.setVisibility(View.GONE);
+                 secOMInReco.setVisibility(View.GONE);
+                 lineOMInReco.setVisibility(View.GONE);
+                 spnOMInReco.setSelection(0);
+                 secOMInRecoOth.setVisibility(View.GONE);
+                 lineOMInRecoOth.setVisibility(View.GONE);
+                 txtOMInRecoOth.setText("");
+                 secOMInReco2.setVisibility(View.GONE);
+                 lineOMInReco2.setVisibility(View.GONE);
+                 spnOMInReco2.setSelection(0);
+                 secOMInRecoOth2.setVisibility(View.GONE);
+                 lineOMInRecoOth2.setVisibility(View.GONE);
+                 txtOMInRecoOth2.setText("");
+
+             }
+
+             @Override
+             public void afterTextChanged(Editable editable) {
+
+             }
+         });
+
          secOMInRecoOth2=(LinearLayout)findViewById(R.id.secOMInRecoOth2);
          lineOMInRecoOth2=(View)findViewById(R.id.lineOMInRecoOth2);
          VlblOMInRecoOth2=(TextView) findViewById(R.id.VlblOMInRecoOth2);

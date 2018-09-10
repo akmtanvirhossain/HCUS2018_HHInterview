@@ -25,6 +25,8 @@
  import android.location.LocationManager;
  import android.net.Uri;
  import android.provider.Settings;
+ import android.text.Editable;
+ import android.text.TextWatcher;
  import android.view.KeyEvent;
  import android.os.Bundle;
  import android.view.Menu;
@@ -1272,22 +1274,30 @@
              {
                     secDDurReco.setVisibility(View.GONE);
                     lineDDurReco.setVisibility(View.GONE);
-                    txtDDurReco.setText("");
+                 secDInReco.setVisibility(View.VISIBLE);
+                 lineDInReco.setVisibility(View.VISIBLE);
+
              }
              else if(rbData.equalsIgnoreCase("8"))
              {
                     secDDurReco.setVisibility(View.GONE);
                     lineDDurReco.setVisibility(View.GONE);
-                    txtDDurReco.setText("");
+                 secDInReco.setVisibility(View.VISIBLE);
+                 lineDInReco.setVisibility(View.VISIBLE);
+
              }
              else if(rbData.equalsIgnoreCase("1"))
              {
                     secDDurReco.setVisibility(View.VISIBLE);
                     lineDDurReco.setVisibility(View.VISIBLE);
+                 secDInReco.setVisibility(View.VISIBLE);
+                 lineDInReco.setVisibility(View.VISIBLE);
              }
              else{
                  secDDurReco.setVisibility(View.GONE);
                  lineDDurReco.setVisibility(View.GONE);
+                 secDInReco.setVisibility(View.VISIBLE);
+                 lineDInReco.setVisibility(View.VISIBLE);
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
@@ -1342,7 +1352,23 @@
          VlblDAboIll=(TextView) findViewById(R.id.VlblDAboIll);
          txtDAboIll=(EditText) findViewById(R.id.txtDAboIll);
 
+txtDDurReco.addTextChangedListener(new TextWatcher() {
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+    }
+
+    @Override
+    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        secDInReco.setVisibility(View.GONE);
+        lineDInReco.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void afterTextChanged(Editable editable) {
+
+    }
+});
 
 
 
