@@ -1774,6 +1774,31 @@
          rdoTHC_Oth2 = (RadioButton) findViewById(R.id.rdoTHC_Oth2);
          rdoTHC_Oth3 = (RadioButton) findViewById(R.id.rdoTHC_Oth3);
 //         rdoTHC_Oth4 = (RadioButton) findViewById(R.id.rdoTHC_Oth4);
+
+
+
+
+
+
+
+
+
+//          rdogrpHC_PhyMBBS.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//               @Override
+//               public void onCheckedChanged(RadioGroup group, int checkedId) {
+//                    String rbData = "";
+//                    RadioButton rb;
+//                    String[] d_rdogrpHCPhyMBBS = new String[] {"1","2"};
+//                    for (int i = 0; i < rdogrpHC_PhyMBBS.getChildCount(); i++)
+//                    {
+//                         rb = (RadioButton)rdogrpHC_PhyMBBS.getChildAt(i);
+//                         if (rb.isChecked()) rbData = d_rdogrpHCPhyMBBS[i];
+//                         if(rbData.equalsIgnoreCase("1")){
+//
+//                         }
+//                    }
+//               }
+//          });
          rdogrpTHC_Oth.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
          @Override
          public void onCheckedChanged(RadioGroup radioGroup,int radioButtonID) {
@@ -2730,7 +2755,7 @@
                     lineTDisDrOth.setVisibility(View.GONE);
                     txtTDisDrOth.setText("");
                  }
-                 else if(spnData.equalsIgnoreCase("8"))
+                 else if(spnData.equalsIgnoreCase("7"))
                  {
                       secTDisDrOth.setVisibility(View.VISIBLE);
                       lineTDisDrOth.setVisibility(View.VISIBLE);
@@ -3000,8 +3025,7 @@
                     lineHospNameLabel.setVisibility(View.VISIBLE);
                     secHospName.setVisibility(View.VISIBLE);
                     lineHospName.setVisibility(View.VISIBLE);
-                    secHospName_Oth.setVisibility(View.VISIBLE);
-                    lineHospName_Oth.setVisibility(View.VISIBLE);
+
                     secHaveRecordsLabel.setVisibility(View.VISIBLE);
                     lineHaveRecordsLabel.setVisibility(View.VISIBLE);
                     secHaveRecords.setVisibility(View.VISIBLE);
@@ -3107,12 +3131,19 @@
                     secHaveRecordsLabel.setVisibility(View.GONE);
                     lineHaveRecordsLabel.setVisibility(View.GONE);
                  }
-                 else
+                 else if(spnData.equalsIgnoreCase("77"))
                  {
                     secHospName_Oth.setVisibility(View.VISIBLE);
                     lineHospName_Oth.setVisibility(View.VISIBLE);
                     secHaveRecordsLabel.setVisibility(View.VISIBLE);
                     lineHaveRecordsLabel.setVisibility(View.VISIBLE);
+                 }
+                 else{
+                      secHospName_Oth.setVisibility(View.GONE);
+                      lineHospName_Oth.setVisibility(View.GONE);
+                      txtHospName_Oth.setText("");
+                      secHaveRecordsLabel.setVisibility(View.GONE);
+                      lineHaveRecordsLabel.setVisibility(View.GONE);
                  }
              }
              @Override

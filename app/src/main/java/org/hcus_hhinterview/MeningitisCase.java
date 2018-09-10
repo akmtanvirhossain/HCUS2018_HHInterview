@@ -25,6 +25,8 @@
  import android.location.LocationManager;
  import android.net.Uri;
  import android.provider.Settings;
+ import android.text.Editable;
+ import android.text.TextWatcher;
  import android.view.KeyEvent;
  import android.os.Bundle;
  import android.view.Menu;
@@ -2562,6 +2564,48 @@
          lineMInReco2=(View)findViewById(R.id.lineMInReco2);
          VlblMInReco2=(TextView) findViewById(R.id.VlblMInReco2);
          spnMInReco2=(Spinner) findViewById(R.id.spnMInReco2);
+
+
+
+         txtMDurReco.addTextChangedListener(new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+             }
+
+             @Override
+             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                 secMInRecoLabel.setVisibility(View.GONE);
+                 lineMInRecoLabel.setVisibility(View.GONE);
+                 secMInReco.setVisibility(View.GONE);
+                 lineMInReco.setVisibility(View.GONE);
+                 spnMInReco.setSelection(0);
+                 secMInRecoOth.setVisibility(View.GONE);
+                 lineMInRecoOth.setVisibility(View.GONE);
+                 txtMInRecoOth.setText("");
+                 secMInReco2.setVisibility(View.GONE);
+                 lineMInReco2.setVisibility(View.GONE);
+                 spnMInReco2.setSelection(0);
+                 secMInRecoOth2.setVisibility(View.GONE);
+                 lineMInRecoOth2.setVisibility(View.GONE);
+                 txtMInRecoOth2.setText("");
+                 secMInReco3.setVisibility(View.GONE);
+                 lineMInReco3.setVisibility(View.GONE);
+                 spnMInReco3.setSelection(0);
+                 secMInRecoOth3.setVisibility(View.GONE);
+                 lineMInRecoOth3.setVisibility(View.GONE);
+                 txtMInRecoOth3.setText("");
+
+             }
+
+             @Override
+             public void afterTextChanged(Editable s) {
+
+             }
+         });
+
+
+
          List<String> listMInReco2 = new ArrayList<String>();
          
          listMInReco2.add("");
