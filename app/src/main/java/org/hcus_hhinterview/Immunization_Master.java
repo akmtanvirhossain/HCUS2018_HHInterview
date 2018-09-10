@@ -25,6 +25,9 @@
  import android.location.LocationManager;
  import android.net.Uri;
  import android.provider.Settings;
+ import android.support.v7.widget.DefaultItemAnimator;
+ import android.support.v7.widget.LinearLayoutManager;
+ import android.support.v7.widget.RecyclerView;
  import android.view.KeyEvent;
  import android.os.Bundle;
  import android.view.Menu;
@@ -56,9 +59,11 @@
  import android.view.WindowManager;
  import Utility.*;
  import Common.*;
+ import data_model.Immunization_History_DataModel;
  import data_model.Immunization_Master_DataModel;
+ import data_model.Member_DataModel;
 
- public class Immunization_Master extends Immunization_History_list {
+ public class Immunization_Master extends Immunization_List_list {
     boolean networkAvailable=false;
     Location currentLocation; 
     double currentLatitude,currentLongitude; 
@@ -83,8 +88,10 @@
     Connection C;
     Global g;
     SimpleAdapter dataAdapter;
-    ArrayList<HashMap<String, String>> dataList = new ArrayList<HashMap<String, String>>();
-         TextView lblHeading;
+    Immunization_History_list immunise=new Immunization_History_list();
+//    ArrayList<HashMap<String, String>> dataList = new ArrayList<HashMap<String, String>>();
+//public List<Immunization_History_DataModel> dataList = new ArrayList<>();
+     TextView lblHeading;
          LinearLayout secUNCode;
          View lineUNCode;
          TextView VlblUNCode;
@@ -146,6 +153,8 @@
     LinearLayout secImmunization;
     View linesecImmunization;
 
+     private RecyclerView recyclerView;
+
  public void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
    try
@@ -193,6 +202,7 @@
 
          secImmunization=findViewById(R.id.secImmunization);
          linesecImmunization=findViewById(R.id.linesecImmunization);
+
 
 
          secUNCode=(LinearLayout)findViewById(R.id.secUNCode);
@@ -268,12 +278,31 @@
          rdoHCard1 = (RadioButton) findViewById(R.id.rdoHCard1);
          rdoHCard2 = (RadioButton) findViewById(R.id.rdoHCard2);
 
+         btnRefresh = (Button) findViewById(R.id.btnRefresh);
+         btnRefresh.setOnClickListener(new View.OnClickListener() {
 
+             public void onClick(View view) {
+                 //write your code here
+                 DataSearch_Immunization("");
 
+             }});
 
-
-         //Hide all skip variables
-
+//         btnAdd   = (Button) findViewById(R.id.btnAdd);
+//         btnAdd.setOnClickListener(new View.OnClickListener() {
+//
+//             public void onClick(View view) {
+//                 Bundle IDbundle = new Bundle();
+//                 IDbundle.putString("UNCode", UNCODE);
+//                 IDbundle.putString("StructureNo", STRUCTURENO);
+//                 IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
+//                 IDbundle.putString("VisitNo", VISITNO);
+//                 IDbundle.putString("MemSl",""+MEMSL);
+//
+//                 Intent intent = new Intent(getApplicationContext(), Immunization_List.class);
+//                 intent.putExtras(IDbundle);
+//                 startActivityForResult(intent, 1);
+//
+//             }});
 
          txtUNCode.setText(UNCODE);
          txtStructureNo.setText(STRUCTURENO);
@@ -281,8 +310,28 @@
          txtVisitNo.setText(VISITNO);
          txtMemSl.setText(MEMSL);
 
+         recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+         mAdapter = new DataAdapter(dataList);
+         recyclerView.setItemViewCacheSize(20);
+         recyclerView.setDrawingCacheEnabled(true);
+         recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+         recyclerView.setHasFixedSize(true);
+         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+         recyclerView.setLayoutManager(mLayoutManager);
+         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+         recyclerView.setItemAnimator(new DefaultItemAnimator());
+         recyclerView.setAdapter(mAdapter);
+
+
+         //Hide all skip variables
+
+
+
          DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO,MEMSL);
-         DataSearch_Imu_History_List(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO,MEMSL,"");
+
+         DataSearch_Immunization("");
+
+
 
 
         Button cmdSave = (Button) findViewById(R.id.cmdSave);

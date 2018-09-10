@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scrollbars="vertical">
+    <LinearLayout android:id="@+id/secListRow" android:paddingTop="8sp" android:paddingBottom="8sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+        <!--<TextView android:id="@+id/Vacc_Id" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:layout_height="wrap_content"/>-->
+        <TextView android:id="@+id/Vacc_Name" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/Given" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/Source" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:layout_height="wrap_content"/>
+    </LinearLayout>
+ </LinearLayout>

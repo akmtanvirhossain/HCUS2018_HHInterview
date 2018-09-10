@@ -1,15 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scrollbars="vertical">
-    <LinearLayout android:id="@+id/secListRow" android:paddingTop="8sp" android:paddingBottom="8sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/secListRow"
+        android:layout_width="fill_parent"
+        android:layout_height="73dp"
+        android:orientation="horizontal"
+        android:paddingBottom="8sp"
+        android:paddingTop="8sp">
         <!--<TextView android:id="@+id/UNCode" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <!--<TextView android:id="@+id/StructureNo" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <!--<TextView android:id="@+id/HouseholdSl" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <!--<TextView android:id="@+id/VisitNo" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <!--<TextView android:id="@+id/MemSl" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
-        <TextView android:id="@+id/Vacc_Id" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:layout_height="wrap_content"/>
-        <TextView android:id="@+id/Given" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:layout_height="wrap_content"/>
-        <TextView android:id="@+id/Source" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:layout_height="wrap_content"/>
-        <TextView android:id="@+id/Vacc_Date" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:layout_height="wrap_content"/>
-        <TextView android:id="@+id/Date_Missing" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/Vacc_Id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/Given"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/Source"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/Vacc_Date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/Date_Missing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center" />
     </LinearLayout>
  </LinearLayout>

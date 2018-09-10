@@ -56,7 +56,38 @@ import android.content.Context;
         _modifyDate = newValue;
         }
 
-        String TableName = "Immunization_List";
+//        private String _history_status;
+
+
+//     public String getHistory_status() {
+//         return _history_status;
+//     }
+
+//     public void setHistory_status(String history_status) {
+//         this._history_status = history_status;
+//     }
+
+     private String _Given;
+
+     public String get_Given() {
+         return _Given;
+     }
+
+     public void set_Given(String _Given) {
+         this._Given = _Given;
+     }
+
+     private String _Source;
+
+     public String get_Source() {
+         return _Source;
+     }
+
+     public void set_Source(String _Source) {
+         this._Source = _Source;
+     }
+
+     String TableName = "Immunization_List";
 
         public String SaveUpdateData(Context context)
         {
@@ -128,6 +159,10 @@ import android.content.Context;
                 d = new Immunization_List_DataModel();
                 d._Vacc_Id = cur.getString(cur.getColumnIndex("Vacc_Id"));
                 d._Vacc_Name = cur.getString(cur.getColumnIndex("Vacc_Name"));
+//                d._history_status = cur.getString(cur.getColumnIndex("history_status"));
+                d._Given = cur.getString(cur.getColumnIndex("Given"));
+                d._Source = cur.getString(cur.getColumnIndex("Source"));
+
                 data.add(d);
 
                 cur.moveToNext();

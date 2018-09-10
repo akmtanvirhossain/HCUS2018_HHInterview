@@ -16,13 +16,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/btnImu"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60sp"
             android:text="Immunization"
             android:layout_margin="10sp"
             android:background="@drawable/button_style_yellow"/>
@@ -30,7 +30,7 @@
         <Button
             android:id="@+id/btnTyphoid"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60sp"
             android:text="Typhoid"
             android:layout_margin="10sp"
             android:background="@drawable/button_style_yellow"/>
@@ -39,7 +39,7 @@
         <Button
             android:id="@+id/btnMeningitis"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60sp"
             android:text="Meningitis"
             android:layout_margin="10sp"
             android:background="@drawable/button_style_yellow"/>
@@ -48,7 +48,7 @@
         <Button
             android:id="@+id/btnPneumonia"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60sp"
             android:text="Pneumonia"
             android:layout_margin="10sp"
             android:background="@drawable/button_style_yellow"/>
@@ -57,7 +57,7 @@
         <Button
             android:id="@+id/btnDiarrhoea"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60sp"
             android:text="Diarrhoea"
             android:layout_margin="10sp"
             android:background="@drawable/button_style_yellow"/>
@@ -65,7 +65,7 @@
         <Button
             android:id="@+id/btnOperation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60sp"
             android:text="Emergency Operation"
             android:layout_margin="10sp"
             android:background="@drawable/button_style_yellow"/>
@@ -73,7 +73,7 @@
         <Button
             android:id="@+id/btnOtitis"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60sp"
             android:text="Suspected otitis media case"
             android:background="@drawable/button_style_yellow"
             android:layout_margin="10sp"/>

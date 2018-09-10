@@ -51,6 +51,7 @@
         <TextView android:id="@+id/lblVacc_Id" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <TextView android:id="@+id/VlblVacc_Id" android:text="Vaccination ID" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <EditText android:id="@+id/txtVacc_Id" android:enabled="false" android:maxLength="2" android:layout_width="100sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblVacc_Name" android:text="" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/lineVacc_Id" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secGiven" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">

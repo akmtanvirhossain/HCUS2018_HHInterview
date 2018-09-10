@@ -4,60 +4,43 @@
 
  //Android Manifest Code
  //<activity android:name=".Immunization_History" android:label="Immunization_History" />
- import java.text.ParseException;
- import java.text.SimpleDateFormat;
- import java.util.ArrayList;
- import java.util.Calendar;
- import java.util.Date;
- import java.util.HashMap;
- import java.util.List;
- import android.app.*;
+
+ import android.app.Activity;
  import android.app.AlertDialog;
  import android.app.DatePickerDialog;
  import android.app.Dialog;
  import android.app.TimePickerDialog;
- import android.content.Context;
  import android.content.DialogInterface;
  import android.content.Intent;
- import android.database.Cursor;
  import android.location.Location;
- import android.location.LocationListener;
- import android.location.LocationManager;
- import android.net.Uri;
- import android.provider.Settings;
+ import android.os.Bundle;
  import android.text.Editable;
  import android.text.TextWatcher;
  import android.view.KeyEvent;
- import android.os.Bundle;
- import android.view.Menu;
- import android.view.MenuInflater;
- import android.view.MenuItem;
- import android.view.View;
  import android.view.MotionEvent;
- import android.view.View.OnFocusChangeListener;
- import android.view.ViewGroup;
- import android.view.LayoutInflater;
- import android.widget.AdapterView;
+ import android.view.View;
+ import android.view.WindowManager;
  import android.widget.Button;
  import android.widget.CheckBox;
+ import android.widget.CompoundButton;
  import android.widget.DatePicker;
  import android.widget.EditText;
  import android.widget.ImageButton;
  import android.widget.LinearLayout;
  import android.widget.RadioButton;
  import android.widget.RadioGroup;
- import android.widget.ListView;
  import android.widget.SimpleAdapter;
- import android.widget.BaseAdapter;
- import android.widget.Spinner;
  import android.widget.TextView;
  import android.widget.TimePicker;
- import android.widget.ArrayAdapter;
- import android.widget.CompoundButton;
- import android.graphics.Color;
- import android.view.WindowManager;
- import Utility.*;
- import Common.*;
+
+ import java.util.ArrayList;
+ import java.util.Calendar;
+ import java.util.HashMap;
+ import java.util.List;
+
+ import Common.Connection;
+ import Common.Global;
+ import Utility.MySharedPreferences;
  import data_model.Immunization_History_DataModel;
 
  public class Immunization_History extends Activity {
@@ -135,6 +118,8 @@
          TextView VlblDate_Missing;
          CheckBox chkDate_Missing;
 
+         TextView VlblVacc_Name;
+
     static String TableName;
 
     static String STARTTIME = "";
@@ -149,6 +134,7 @@
     static String VISITNO = "";
     static String MEMSL = "";
     static String VACC_ID = "";
+    static String VACC_Name = "";
 
  public void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -171,6 +157,7 @@
          VISITNO = IDbundle.getString("VisitNo");
          MEMSL = IDbundle.getString("MemSl");
          VACC_ID = IDbundle.getString("Vacc_Id");
+         VACC_Name = IDbundle.getString("Vacc_Name");
 
          TableName = "Immunization_History";
 
@@ -195,6 +182,8 @@
                      }});
                  adb.show();
              }});
+
+         VlblVacc_Name=findViewById(R.id.VlblVacc_Name);
 
 
          secUNCode=(LinearLayout)findViewById(R.id.secUNCode);
@@ -225,6 +214,25 @@
          lineGiven=(View)findViewById(R.id.lineGiven);
          VlblGiven = (TextView) findViewById(R.id.VlblGiven);
          rdogrpGiven = (RadioGroup) findViewById(R.id.rdogrpGiven);
+
+         rdogrpGiven.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+             @Override
+             public void onCheckedChanged(RadioGroup radioGroup, int radioButtonID) {
+                 String rbData = "";
+                 RadioButton rb;
+                 String[] d_rdogrpSeriIlOnset = new String[] {"1","2","3"};
+                 for (int i = 0; i < rdogrpGiven.getChildCount(); i++)
+                 {
+                     rb = (RadioButton)rdogrpGiven.getChildAt(i);
+                     if (rb.isChecked()) rbData = d_rdogrpSeriIlOnset[i];
+                 }
+
+                 if(rbData.equalsIgnoreCase("1"))
+                 {
+                     secSource.setVisibility(View.VISIBLE);
+                 }
+             }
+         });
          
          rdoGiven1 = (RadioButton) findViewById(R.id.rdoGiven1);
          rdoGiven2 = (RadioButton) findViewById(R.id.rdoGiven2);
@@ -249,10 +257,13 @@
                  if(rbData.equalsIgnoreCase("1"))
                  {
                      secVacc_Date.setVisibility(View.VISIBLE);
+                     secDate_Missing.setVisibility(View.VISIBLE);
                  }else
                  {
                      secVacc_Date.setVisibility(View.GONE);
                      dtpVacc_Date.setText("");
+                     secDate_Missing.setVisibility(View.GONE);
+                     chkDate_Missing.setChecked(false);
                  }
              }
          });
@@ -317,7 +328,9 @@
 
          //Hide all skip variables
          secVacc_Date.setVisibility(View.GONE);
-         dtpVacc_Date.setText("");
+         secSource.setVisibility(View.GONE);
+         secDate_Missing.setVisibility(View.GONE);
+
 
          txtUNCode.setText(UNCODE);
          txtStructureNo.setText(""+STRUCTURENO);
@@ -325,6 +338,7 @@
          txtVisitNo.setText(VISITNO);
          txtMemSl.setText(MEMSL);
          txtVacc_Id.setText(VACC_ID);
+         VlblVacc_Name.setText(VACC_Name);
 
          DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO,MEMSL,VACC_ID);
 
@@ -402,8 +416,10 @@
          DV = Global.DateValidate(dtpVacc_Date.getText().toString());
          if(DV.length()!=0 & secVacc_Date.isShown())
            {
-             Connection.MessageBox(Immunization_History.this, DV);
-             dtpVacc_Date.requestFocus(); 
+               if(!chkDate_Missing.isChecked()) {
+                   Connection.MessageBox(Immunization_History.this, DV);
+                   dtpVacc_Date.requestFocus();
+               }
              return;	
            }
  

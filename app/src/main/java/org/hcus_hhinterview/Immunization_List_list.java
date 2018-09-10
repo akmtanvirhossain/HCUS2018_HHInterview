@@ -1,38 +1,46 @@
 package org.hcus_hhinterview;
 //Android Manifest Code
- //<activity android:name=".Immunization_History_list" android:label="Immunization_History: List" />
- import java.util.ArrayList;
- import java.util.List;
- import android.app.*;
- import android.app.AlertDialog;
- import android.content.Context;
- import android.content.DialogInterface;
- import android.content.Intent;
- import android.location.Location;
- import android.view.KeyEvent;
- import android.os.Bundle;
- import android.view.View;
- import android.view.MotionEvent;
- import android.view.ViewGroup;
- import android.view.LayoutInflater;
- import android.widget.LinearLayout;
- import android.widget.TextView;
- import android.widget.Button;
- import android.widget.ImageButton;
- import Common.*;
- import data_model.Immunization_History_DataModel;
+ //<activity android:name=".Immunization_List_list" android:label="Immunization_List: List" />
 
- import android.support.v7.widget.RecyclerView;
- import android.support.v7.app.AppCompatActivity;
- import android.content.res.TypedArray;
- import android.graphics.Canvas;
- import android.graphics.Rect;
- import android.graphics.drawable.Drawable;
- import android.support.v7.widget.LinearLayoutManager;
- import android.view.GestureDetector;
- import android.support.v7.widget.DefaultItemAnimator;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.res.TypedArray;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.location.Location;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.GestureDetector;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
- public class Immunization_History_list extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+import Common.Connection;
+import Common.Global;
+import Common.Utility;
+import data_model.Immunization_History_DataModel;
+import data_model.Immunization_List_DataModel;
+import Utility.MySharedPreferences;
+
+ public class Immunization_List_list extends AppCompatActivity {
     boolean networkAvailable=false;
     Location currentLocation; 
     double currentLatitude,currentLongitude; 
@@ -54,33 +62,41 @@ package org.hcus_hhinterview;
 
     Connection C;
     Global g;
-    public List<Immunization_History_DataModel> dataList = new ArrayList<>();
-     private RecyclerView recyclerView;
-     public DataAdapter_imu mAdapter;
+    public List<Immunization_List_DataModel> dataList = new ArrayList<>();
+     public RecyclerView recyclerView;
+     public DataAdapter mAdapter;
     static String TableName;
 
     TextView lblHeading;
     Button btnAdd;
     Button btnRefresh;
 
-
-    Bundle IDbundle;
     static String STARTTIME = "";
-    static String UNCODE = "";
-    static String STRUCTURENO = "";
-    static String HOUSEHOLDSL = "";
-    static String VISITNO = "";
-    static String MEMSL = "";
+     static String DEVICEID  = "";
+     static String ENTRYUSER = "";
+     MySharedPreferences sp;
+
+
     static String VACC_ID = "";
+
+
+     Bundle IDbundle;
+     static String UNCODE = "";
+     static String STRUCTURENO = "";
+     static String HOUSEHOLDSL = "";
+     static String VISITNO = "";
+     static String MEMSL = "";
 
  public void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
    try
      {
-         setContentView(R.layout.immunization_history_list);
+         setContentView(R.layout.immunization_list_list);
          C = new Connection(this);
          g = Global.getInstance();
          STARTTIME = g.CurrentTime24();
+         DEVICEID  = sp.getValue(this, "deviceid");
+         ENTRYUSER = sp.getValue(this, "userid");
 
          IDbundle = getIntent().getExtras();
          UNCODE = IDbundle.getString("UNCode");
@@ -89,13 +105,13 @@ package org.hcus_hhinterview;
          VISITNO = IDbundle.getString("VisitNo");
          MEMSL = IDbundle.getString("MemSl");
 
-         TableName = "Immunization_History";
+         TableName = "Immunization_List";
          lblHeading = (TextView)findViewById(R.id.lblHeading);
 
          ImageButton cmdBack = (ImageButton) findViewById(R.id.cmdBack);
          cmdBack.setOnClickListener(new View.OnClickListener() {
              public void onClick(View v) {
-                 AlertDialog.Builder adb = new AlertDialog.Builder(Immunization_History_list.this);
+                 AlertDialog.Builder adb = new AlertDialog.Builder(Immunization_List_list.this);
                  adb.setTitle("Close");
                  adb.setMessage("Do you want to close this form[Yes/No]?");
                  adb.setNegativeButton("No", null);
@@ -106,35 +122,30 @@ package org.hcus_hhinterview;
                  adb.show();
              }});
 
-         btnRefresh = (Button) findViewById(R.id.btnRefresh);
-         btnRefresh.setOnClickListener(new View.OnClickListener() {
-
-             public void onClick(View view) {
-                   //write your code here
-                 DataSearch_Imu_History_List(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO, MEMSL);
-
-             }});
-
+//         btnRefresh = (Button) findViewById(R.id.btnRefresh);
+//         btnRefresh.setOnClickListener(new View.OnClickListener() {
+//
+//             public void onClick(View view) {
+//                   //write your code here
+//                   DataSearch(VACC_ID);
+//
+//             }});
+//
 //         btnAdd   = (Button) findViewById(R.id.btnAdd);
 //         btnAdd.setOnClickListener(new View.OnClickListener() {
 //
 //             public void onClick(View view) {
-//                 Bundle IDbundle = new Bundle();
-//                 IDbundle.putString("UNCode", UNCODE);
-//                 IDbundle.putString("StructureNo", STRUCTURENO);
-//                 IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
-//                 IDbundle.putString("VisitNo", VISITNO);
-//                 IDbundle.putString("MemSl",""+MEMSL);
-//
-//                 Intent intent = new Intent(getApplicationContext(), Immunization_List.class);
-//                 intent.putExtras(IDbundle);
-//                 startActivityForResult(intent, 1);
+//                         Bundle IDbundle = new Bundle();
+//                         IDbundle.putString("Vacc_Id", "");
+//                         Intent intent = new Intent(getApplicationContext(), Immunization_List.class);
+//                         intent.putExtras(IDbundle);
+//                         startActivityForResult(intent, 1);
 //
 //             }});
 
 
-        recyclerView = (RecyclerView)findViewById(R.id.recycler_view_imu);
-        mAdapter = new DataAdapter_imu(dataList);
+        recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        mAdapter = new DataAdapter(dataList);
         recyclerView.setItemViewCacheSize(20);
         recyclerView.setDrawingCacheEnabled(true);
         recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
@@ -146,13 +157,13 @@ package org.hcus_hhinterview;
         recyclerView.setAdapter(mAdapter);
 
 
-         DataSearch_Imu_History_List(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO, MEMSL);
+         DataSearch_Immunization("");
 
 
      }
      catch(Exception  e)
      {
-         Connection.MessageBox(Immunization_History_list.this, e.getMessage());
+         Connection.MessageBox(Immunization_List_list.this, e.getMessage());
          return;
      }
  }
@@ -163,99 +174,133 @@ package org.hcus_hhinterview;
      if (resultCode == Activity.RESULT_CANCELED) {
          //Write your code if there's no result
      } else {
-         DataSearch_Imu_History_List(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO, MEMSL);
+         DataSearch_Immunization(VACC_ID);
      }
  }
 
- public void DataSearch_Imu_History_List(String UNCode, String StructureNo, String HouseholdSl, String VisitNo, String MemSl)
+ public void DataSearch_Immunization(String Vacc_Id)
      {
        try
         {
      
-           Immunization_History_DataModel d = new Immunization_History_DataModel();
-             String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and MemSl='"+ MemSl  +"'";
-             List<Immunization_History_DataModel> data = d.SelectAll(this, SQL);
+           Immunization_List_DataModel d = new Immunization_List_DataModel();
+//             String SQL = "Select * from "+ TableName ;//+"  Where Vacc_Id='"+ Vacc_Id +"'";
+            String SQL = "Select IL.[Vacc_Id],IL.[Vacc_Name],ifnull(IH.Given,'') Given,ifnull(IH.Source,'') Source FROM [Immunization_List] IL left outer join Immunization_History IH on IL.Vacc_Id=IH.Vacc_Id ";
+             List<Immunization_List_DataModel> data = d.SelectAll(this, SQL);
              dataList.clear();
 
              dataList.addAll(data);
+             
+             //************* insert into immunization history **************
+
+            for (Immunization_List_DataModel item:dataList) {
+
+                if(C.Existence("Select * from Immunization_History Where UNCode='"+ UNCODE +"' and StructureNo='"+ STRUCTURENO +"' and HouseholdSl='"+ HOUSEHOLDSL +"' and VisitNo='"+ VISITNO +"' and MemSl='"+ MEMSL +"' and Vacc_Id='"+ item.getVacc_Id() +"' "))
+                {
+
+                }
+                else
+                {
+                    Immunization_History_DataModel objSave = new Immunization_History_DataModel();
+                    objSave.setUNCode(UNCODE);
+                    objSave.setStructureNo(STRUCTURENO);
+                    objSave.setHouseholdSl(HOUSEHOLDSL);
+                    objSave.setVisitNo(VISITNO);
+                    objSave.setMemSl(MEMSL);
+                    objSave.setVacc_Id(item.getVacc_Id());
+                    objSave.setGiven(0);
+                    objSave.setSource(0);
+                    objSave.setVacc_Date("");
+                    objSave.setDate_Missing(2);
+                    objSave.setEnDt(Global.DateTimeNowYMDHMS());
+                    objSave.setStartTime(STARTTIME);
+                    objSave.setEndTime(g.CurrentTime24());
+                    objSave.setDeviceID(DEVICEID);
+                    objSave.setEntryUser(ENTRYUSER); //from data entry user list
+                    objSave.setmodifyDate(Global.DateTimeNowYMDHMS());
+                    objSave.SaveUpdateData(this);
+                }
+            }
+             
              try {
                  mAdapter.notifyDataSetChanged();
              }catch ( Exception ex){
-                 Connection.MessageBox(Immunization_History_list.this,ex.getMessage());
+                 Connection.MessageBox(Immunization_List_list.this,ex.getMessage());
              }
         }
         catch(Exception  e)
         {
-            Connection.MessageBox(Immunization_History_list.this, e.getMessage());
+            Connection.MessageBox(Immunization_List_list.this, e.getMessage());
             return;
         }
      }
 
 
-     public class DataAdapter_imu extends RecyclerView.Adapter<DataAdapter_imu.MyViewHolder> {
-         public List<Immunization_History_DataModel> dataList;
+     public class DataAdapter extends RecyclerView.Adapter<DataAdapter.MyViewHolder> {
+         private List<Immunization_List_DataModel> dataList;
          public class MyViewHolder extends RecyclerView.ViewHolder {
          LinearLayout secListRow;
-//         TextView UNCode;
-//         TextView StructureNo;
-//         TextView HouseholdSl;
-//         TextView VisitNo;
-//         TextView MemSl;
-         TextView Vacc_Id;
+//         TextView Vacc_Id;
+         TextView Vacc_Name;
          TextView Given;
          TextView Source;
-         TextView Vacc_Date;
-         TextView Date_Missing;
          public MyViewHolder(View convertView) {
              super(convertView);
              secListRow = (LinearLayout)convertView.findViewById(R.id.secListRow);
-//             UNCode = (TextView)convertView.findViewById(R.id.UNCode);
-//             StructureNo = (TextView)convertView.findViewById(R.id.StructureNo);
-//             HouseholdSl = (TextView)convertView.findViewById(R.id.HouseholdSl);
-//             VisitNo = (TextView)convertView.findViewById(R.id.VisitNo);
-//             MemSl = (TextView)convertView.findViewById(R.id.MemSl);
-             Vacc_Id = (TextView)convertView.findViewById(R.id.Vacc_Id);
+//             Vacc_Id = (TextView)convertView.findViewById(R.id.Vacc_Id);
+             Vacc_Name = (TextView)convertView.findViewById(R.id.Vacc_Name);
              Given = (TextView)convertView.findViewById(R.id.Given);
              Source = (TextView)convertView.findViewById(R.id.Source);
-             Vacc_Date = (TextView)convertView.findViewById(R.id.Vacc_Date);
-             Date_Missing = (TextView)convertView.findViewById(R.id.Date_Missing);
              }
          }
-         public DataAdapter_imu(List<Immunization_History_DataModel> datalist) {
+         public DataAdapter(List<Immunization_List_DataModel> datalist) {
              this.dataList = datalist;
          }
          @Override
          public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
              View itemView = LayoutInflater.from(parent.getContext())
-                     .inflate(R.layout.immunization_history_row, parent, false);
+                     .inflate(R.layout.immunization_list_row, parent, false);
              return new MyViewHolder(itemView);
          }
          @Override
          public void onBindViewHolder(MyViewHolder holder, int position) {
-             final Immunization_History_DataModel data = dataList.get(position);
-//             holder.UNCode.setText(data.getUNCode());
-//             holder.StructureNo.setText(data.getStructureNo());
-//             holder.HouseholdSl.setText(data.getHouseholdSl());
-//             holder.VisitNo.setText(data.getVisitNo());
-//             holder.MemSl.setText(data.getMemSl());
-             holder.Vacc_Id.setText(data.getVacc_Id());
-             holder.Given.setText(""+data.getGiven());
-             holder.Source.setText(""+data.getSource());
-             holder.Vacc_Date.setText(data.getVacc_Date());
-             holder.Date_Missing.setText(""+data.getDate_Missing());
+             final Immunization_List_DataModel data = dataList.get(position);
+//             holder.Vacc_Id.setText(data.getVacc_Id());
+             holder.Vacc_Name.setText(data.getVacc_Name());
+
+             if(data.get_Given().equals("1")) {
+                 holder.Given.setText("Yes");
+             }
+
+             if(data.get_Source().equals("1"))
+             {
+                 holder.Source.setText("Card Verified");
+             }
+             else if(data.get_Source().equals("2"))
+             {
+                 holder.Source.setText("Verbal Report");
+             }
+
+
+             if(data.get_Given().equals("1"))
+             {
+                 holder.secListRow.setBackgroundColor(Color.GREEN);
+             }
+
              holder.secListRow.setOnClickListener(new View.OnClickListener() {
                  public void onClick(View v) {
-                     final ProgressDialog progDailog = ProgressDialog.show(Immunization_History_list.this, "", "Please Wait . . .", true);
+                     final ProgressDialog progDailog = ProgressDialog.show(Immunization_List_list.this, "", "Please Wait . . .", true);
                      new Thread() {
                          public void run() {
                              try {
-                                 Bundle IDbundle = new Bundle();
-                                 IDbundle.putString("UNCode", data.getUNCode());
-                                 IDbundle.putString("StructureNo", data.getStructureNo());
-                                 IDbundle.putString("HouseholdSl", data.getHouseholdSl());
-                                 IDbundle.putString("VisitNo", data.getVisitNo());
-                                 IDbundle.putString("MemSl", data.getMemSl());
-                                 IDbundle.putString("Vacc_Id", data.getVacc_Id());
+                                 IDbundle.putString("UNCode", UNCODE);
+                                 IDbundle.putString("StructureNo", STRUCTURENO);
+                                 IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
+                                 IDbundle.putString("VisitNo", VISITNO);
+                                 IDbundle.putString("MemSl",""+MEMSL);
+                                 IDbundle.putString("Vacc_Id",""+data.getVacc_Id());
+                                 IDbundle.putString("Vacc_Name",""+data.getVacc_Name());
+//                            IDbundle.putString("Age",""+AGE);
                                  Intent f1 = new Intent(getApplicationContext(), Immunization_History.class);
                                  f1.putExtras(IDbundle);
                                  startActivityForResult(f1,1);
