@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import Common.Connection;
+
 public class ChildForm_Menu extends AppCompatActivity {
 
     Bundle IDbundle;
@@ -54,11 +56,13 @@ public class ChildForm_Menu extends AppCompatActivity {
                             IDbundle.putString("VisitNo", VISITNO);
                             IDbundle.putString("MemSl",""+MEMSL);
 //                            IDbundle.putString("Age",""+AGE);
-                            Intent f1 = new Intent(getApplicationContext(), EmergencyOperation.class);
+                            Intent f1 = new Intent(getApplicationContext(), Immunization_Master.class);
                             f1.putExtras(IDbundle);
                             startActivityForResult(f1,1);
                         }
                         catch (Exception e) {
+                            Connection.MessageBox(ChildForm_Menu.this, e.getMessage());
+                            return;
                         }
                         progDailog.dismiss();
                     }
@@ -86,6 +90,8 @@ public class ChildForm_Menu extends AppCompatActivity {
                             startActivityForResult(f1,1);
                         }
                         catch (Exception e) {
+                            Connection.MessageBox(ChildForm_Menu.this, e.getMessage());
+                            return;
                         }
                         progDailog.dismiss();
                     }
@@ -113,6 +119,8 @@ public class ChildForm_Menu extends AppCompatActivity {
                             startActivityForResult(f1,1);
                         }
                         catch (Exception e) {
+                            Connection.MessageBox(ChildForm_Menu.this, e.getMessage());
+                            return;
                         }
                         progDailog.dismiss();
                     }
@@ -140,6 +148,8 @@ public class ChildForm_Menu extends AppCompatActivity {
                             startActivityForResult(f1,1);
                         }
                         catch (Exception e) {
+                            Connection.MessageBox(ChildForm_Menu.this, e.getMessage());
+                            return;
                         }
                         progDailog.dismiss();
                     }
@@ -167,6 +177,8 @@ public class ChildForm_Menu extends AppCompatActivity {
                             startActivityForResult(f1,1);
                         }
                         catch (Exception e) {
+                            Connection.MessageBox(ChildForm_Menu.this, e.getMessage());
+                            return;
                         }
                         progDailog.dismiss();
                     }
@@ -194,6 +206,8 @@ public class ChildForm_Menu extends AppCompatActivity {
                             startActivityForResult(f1,1);
                         }
                         catch (Exception e) {
+                            Connection.MessageBox(ChildForm_Menu.this, e.getMessage());
+                            return;
                         }
                         progDailog.dismiss();
                     }
@@ -221,6 +235,8 @@ public class ChildForm_Menu extends AppCompatActivity {
                             startActivityForResult(f1,1);
                         }
                         catch (Exception e) {
+                            Connection.MessageBox(ChildForm_Menu.this, e.getMessage());
+                            return;
                         }
                         progDailog.dismiss();
                     }

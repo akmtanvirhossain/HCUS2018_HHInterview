@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scrollbars="vertical">
+    <LinearLayout android:id="@+id/secListRow" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal"  android:background="#C2E0EC" android:paddingTop="5px" android:paddingBottom="5px">
+        <!--<TextView android:text="UNCode" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
+        <!--<TextView android:text="StructureNo" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
+        <!--<TextView android:text="HouseholdSl" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
+        <!--<TextView android:text="VisitNo" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
+        <!--<TextView android:text="MemSl" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
+        <TextView android:text="Vacc_Id" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="Given" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="Source" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="Vacc_Date" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="Date_Missing" android:layout_width="0dp" android:layout_weight="1" android:gravity="center" android:layout_height="wrap_content"/>
+    </LinearLayout>
+ </LinearLayout>
