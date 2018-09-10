@@ -632,6 +632,26 @@
          lineSurSympt=(View)findViewById(R.id.lineSurSympt);
          VlblSurSympt=(TextView) findViewById(R.id.VlblSurSympt);
          spnSurSympt=(Spinner) findViewById(R.id.spnSurSympt);
+
+
+         txtSHosM.addTextChangedListener(new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+             }
+
+             @Override
+             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+dtpSDtHos.setText("");
+             }
+
+             @Override
+             public void afterTextChanged(Editable editable) {
+
+             }
+         });
+
+
          List<String> listSurSympt = new ArrayList<String>();
          
          listSurSympt.add("");
@@ -1651,6 +1671,7 @@
                  lineSDurReco.setVisibility(View.GONE);
                  secSInRecoLabel.setVisibility(View.VISIBLE);
                  lineSInRecoLabel.setVisibility(View.VISIBLE);
+
                  secSInReco.setVisibility(View.VISIBLE);
                  lineSInReco.setVisibility(View.VISIBLE);
                  secSInReco2.setVisibility(View.VISIBLE);
@@ -1813,6 +1834,7 @@
                  if(event.getAction() == MotionEvent.ACTION_UP) {
                      if(event.getRawX() >= (dtpSDtHos.getRight() - dtpSDtHos.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
                          VariableID = "btnSDtHos"; showDialog(DATE_DIALOG);
+                         txtSHosM.setText("");
                       return true;
                      }
                  }
@@ -2195,9 +2217,12 @@
            }
          else if(txtSHosM.getText().toString().length()==0 & secSHosM.isShown())
            {
-             Connection.MessageBox(EmergencyOperation .this, "Required field: যদি ভর্তির তারিখ জানা না থাকে,  কত মাস আগে  (How much ago).");
-             txtSHosM.requestFocus(); 
-             return;	
+               if(dtpSDtHos.getText().toString().length()==0){
+                   Connection.MessageBox(EmergencyOperation .this, "Required field: যদি ভর্তির তারিখ জানা না থাকে,  কত মাস আগে  (How much ago).");
+                   txtSHosM.requestFocus();
+                   return;
+               }
+
            }
          else if(Integer.valueOf(txtSHosM.getText().toString().length()==0 ? "01" : txtSHosM.getText().toString()) < 01 || Integer.valueOf(txtSHosM.getText().toString().length()==0 ? "99" : txtSHosM.getText().toString()) > 99)
            {

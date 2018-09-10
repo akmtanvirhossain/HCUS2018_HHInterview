@@ -25,6 +25,8 @@
  import android.location.LocationManager;
  import android.net.Uri;
  import android.provider.Settings;
+ import android.text.Editable;
+ import android.text.TextWatcher;
  import android.view.KeyEvent;
  import android.os.Bundle;
  import android.view.Menu;
@@ -1246,7 +1248,7 @@
          listPUnDriBfeed.add("2-No");
          listPUnDriBfeed.add("8-Don’t know");
          listPUnDriBfeed.add("9-NA");
-         listPUnDriBfeed.add("");
+
          ArrayAdapter<String> adptrPUnDriBfeed= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listPUnDriBfeed);
          spnPUnDriBfeed.setAdapter(adptrPUnDriBfeed);
 
@@ -1734,7 +1736,7 @@
                     linePHC_OthName.setVisibility(View.GONE);
                     txtPHC_OthName.setText("");
              }
-             else if(rbData.equalsIgnoreCase("8"))
+             else if(rbData.equalsIgnoreCase("1"))
              {
                     secPHC_OthName.setVisibility(View.VISIBLE);
                     linePHC_OthName.setVisibility(View.VISIBLE);
@@ -1772,6 +1774,209 @@
          linePAdmHos=(View)findViewById(R.id.linePAdmHos);
          VlblPAdmHos = (TextView) findViewById(R.id.VlblPAdmHos);
          rdogrpPAdmHos = (RadioGroup) findViewById(R.id.rdogrpPAdmHos);
+
+
+         rdogrpPAdmHos.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+             @Override
+             public void onCheckedChanged(RadioGroup radioGroup, int radioButtonID) {
+                 String rbData = "";
+                 RadioButton rb;
+                 String[] d_rdogrpPAdmHos = new String[] {"1","2","8"};
+                 for (int i = 0; i < rdogrpPAdmHos.getChildCount(); i++)
+                 {
+                     rb = (RadioButton)rdogrpPAdmHos.getChildAt(i);
+                     if (rb.isChecked()) rbData = d_rdogrpPAdmHos[i];
+                 }
+
+                 if(rbData.equalsIgnoreCase("2"))
+                 {
+                     if(rdoPHC_PhyMBBS1.isChecked()){
+                         secPHosNamLabel.setVisibility(View.GONE);
+                         linePHosNamLabel.setVisibility(View.GONE);
+                         secPHosNam.setVisibility(View.GONE);
+                         linePHosNam.setVisibility(View.GONE);
+                         spnPHosNam.setSelection(0);
+                         secPHosNamOth.setVisibility(View.GONE);
+                         linePHosNamOth.setVisibility(View.GONE);
+                         txtPHosNamOth.setText("");
+                         secPHosNam2.setVisibility(View.GONE);
+                         linePHosNam2.setVisibility(View.GONE);
+                         spnPHosNam2.setSelection(0);
+                         secPHosNamOth2.setVisibility(View.GONE);
+                         linePHosNamOth2.setVisibility(View.GONE);
+                         txtPHosNamOth2.setText("");
+                         secPHosNam3.setVisibility(View.GONE);
+                         linePHosNam3.setVisibility(View.GONE);
+                         spnPHosNam3.setSelection(0);
+                         secPHosNamOth3.setVisibility(View.GONE);
+                         linePHosNamOth3.setVisibility(View.GONE);
+                         txtPHosNamOth3.setText("");
+                         secPDtAdmHos.setVisibility(View.GONE);
+                         linePDtAdmHos.setVisibility(View.GONE);
+                         dtpPDtAdmHos.setText("");
+                         secPAdmHosM.setVisibility(View.GONE);
+                         linePAdmHosM.setVisibility(View.GONE);
+                         txtPAdmHosM.setText("");
+                         secPDurIlBeHos.setVisibility(View.GONE);
+                         linePDurIlBeHos.setVisibility(View.GONE);
+                         txtPDurIlBeHos.setText("");
+                     }
+                     else{
+                         secPHosNamLabel.setVisibility(View.GONE);
+                         linePHosNamLabel.setVisibility(View.GONE);
+                         secPHosNam.setVisibility(View.GONE);
+                         linePHosNam.setVisibility(View.GONE);
+                         spnPHosNam.setSelection(0);
+                         secPHosNamOth.setVisibility(View.GONE);
+                         linePHosNamOth.setVisibility(View.GONE);
+                         txtPHosNamOth.setText("");
+                         secPHosNam2.setVisibility(View.GONE);
+                         linePHosNam2.setVisibility(View.GONE);
+                         spnPHosNam2.setSelection(0);
+                         secPHosNamOth2.setVisibility(View.GONE);
+                         linePHosNamOth2.setVisibility(View.GONE);
+                         txtPHosNamOth2.setText("");
+                         secPHosNam3.setVisibility(View.GONE);
+                         linePHosNam3.setVisibility(View.GONE);
+                         spnPHosNam3.setSelection(0);
+                         secPHosNamOth3.setVisibility(View.GONE);
+                         linePHosNamOth3.setVisibility(View.GONE);
+                         txtPHosNamOth3.setText("");
+                         secPDtAdmHos.setVisibility(View.GONE);
+                         linePDtAdmHos.setVisibility(View.GONE);
+                         dtpPDtAdmHos.setText("");
+                         secPAdmHosM.setVisibility(View.GONE);
+                         linePAdmHosM.setVisibility(View.GONE);
+                         txtPAdmHosM.setText("");
+                         secPDurIlBeHos.setVisibility(View.GONE);
+                         linePDurIlBeHos.setVisibility(View.GONE);
+                         txtPDurIlBeHos.setText("");
+                         secPDisDr.setVisibility(View.GONE);
+                         linePDisDr.setVisibility(View.GONE);
+                         spnPDisDr.setSelection(0);
+                         secPDisDrOth.setVisibility(View.GONE);
+                         linePDisDrOth.setVisibility(View.GONE);
+                         txtPDisDrOth.setText("");
+                     }
+
+                 }
+                 else if(rbData.equalsIgnoreCase("8"))
+                 {
+                     if(rdoPHC_PhyMBBS1.isChecked()){
+                         secPHosNamLabel.setVisibility(View.GONE);
+                         linePHosNamLabel.setVisibility(View.GONE);
+                         secPHosNam.setVisibility(View.GONE);
+                         linePHosNam.setVisibility(View.GONE);
+                         spnPHosNam.setSelection(0);
+                         secPHosNamOth.setVisibility(View.GONE);
+                         linePHosNamOth.setVisibility(View.GONE);
+                         txtPHosNamOth.setText("");
+                         secPHosNam2.setVisibility(View.GONE);
+                         linePHosNam2.setVisibility(View.GONE);
+                         spnPHosNam2.setSelection(0);
+                         secPHosNamOth2.setVisibility(View.GONE);
+                         linePHosNamOth2.setVisibility(View.GONE);
+                         txtPHosNamOth2.setText("");
+                         secPHosNam3.setVisibility(View.GONE);
+                         linePHosNam3.setVisibility(View.GONE);
+                         spnPHosNam3.setSelection(0);
+                         secPHosNamOth3.setVisibility(View.GONE);
+                         linePHosNamOth3.setVisibility(View.GONE);
+                         txtPHosNamOth3.setText("");
+                         secPDtAdmHos.setVisibility(View.GONE);
+                         linePDtAdmHos.setVisibility(View.GONE);
+                         dtpPDtAdmHos.setText("");
+                         secPAdmHosM.setVisibility(View.GONE);
+                         linePAdmHosM.setVisibility(View.GONE);
+                         txtPAdmHosM.setText("");
+                         secPDurIlBeHos.setVisibility(View.GONE);
+                         linePDurIlBeHos.setVisibility(View.GONE);
+                         txtPDurIlBeHos.setText("");
+                     }
+                     else{
+                         secPHosNamLabel.setVisibility(View.GONE);
+                         linePHosNamLabel.setVisibility(View.GONE);
+                         secPHosNam.setVisibility(View.GONE);
+                         linePHosNam.setVisibility(View.GONE);
+                         spnPHosNam.setSelection(0);
+                         secPHosNamOth.setVisibility(View.GONE);
+                         linePHosNamOth.setVisibility(View.GONE);
+                         txtPHosNamOth.setText("");
+                         secPHosNam2.setVisibility(View.GONE);
+                         linePHosNam2.setVisibility(View.GONE);
+                         spnPHosNam2.setSelection(0);
+                         secPHosNamOth2.setVisibility(View.GONE);
+                         linePHosNamOth2.setVisibility(View.GONE);
+                         txtPHosNamOth2.setText("");
+                         secPHosNam3.setVisibility(View.GONE);
+                         linePHosNam3.setVisibility(View.GONE);
+                         spnPHosNam3.setSelection(0);
+                         secPHosNamOth3.setVisibility(View.GONE);
+                         linePHosNamOth3.setVisibility(View.GONE);
+                         txtPHosNamOth3.setText("");
+                         secPDtAdmHos.setVisibility(View.GONE);
+                         linePDtAdmHos.setVisibility(View.GONE);
+                         dtpPDtAdmHos.setText("");
+                         secPAdmHosM.setVisibility(View.GONE);
+                         linePAdmHosM.setVisibility(View.GONE);
+                         txtPAdmHosM.setText("");
+                         secPDurIlBeHos.setVisibility(View.GONE);
+                         linePDurIlBeHos.setVisibility(View.GONE);
+                         txtPDurIlBeHos.setText("");
+                         secPDisDr.setVisibility(View.GONE);
+                         linePDisDr.setVisibility(View.GONE);
+                         spnPDisDr.setSelection(0);
+                         secPDisDrOth.setVisibility(View.GONE);
+                         linePDisDrOth.setVisibility(View.GONE);
+                         txtPDisDrOth.setText("");
+                     }
+
+                 }
+                 else if(rbData.equalsIgnoreCase("1"))
+                 {
+                     secPHosNamLabel.setVisibility(View.VISIBLE);
+                     linePHosNamLabel.setVisibility(View.VISIBLE);
+                     secPHosNam.setVisibility(View.VISIBLE);
+                     linePHosNam.setVisibility(View.VISIBLE);
+
+                     secPHosNam2.setVisibility(View.VISIBLE);
+                     linePHosNam2.setVisibility(View.VISIBLE);
+
+                     secPHosNam3.setVisibility(View.VISIBLE);
+                     linePHosNam3.setVisibility(View.VISIBLE);
+
+                     secPDtAdmHos.setVisibility(View.VISIBLE);
+                     linePDtAdmHos.setVisibility(View.VISIBLE);
+                     secPAdmHosM.setVisibility(View.VISIBLE);
+                     linePAdmHosM.setVisibility(View.VISIBLE);
+                     secPDurIlBeHos.setVisibility(View.VISIBLE);
+                     linePDurIlBeHos.setVisibility(View.VISIBLE);
+                     secPDisDr.setVisibility(View.VISIBLE);
+                     linePDisDr.setVisibility(View.VISIBLE);
+                 }
+                 else{
+                     secPHosNamLabel.setVisibility(View.VISIBLE);
+                     linePHosNamLabel.setVisibility(View.VISIBLE);
+                     secPHosNam.setVisibility(View.VISIBLE);
+                     linePHosNam.setVisibility(View.VISIBLE);
+
+                     secPHosNam2.setVisibility(View.VISIBLE);
+                     linePHosNam2.setVisibility(View.VISIBLE);
+
+                     secPHosNam3.setVisibility(View.VISIBLE);
+                     linePHosNam3.setVisibility(View.VISIBLE);
+
+                     secPDtAdmHos.setVisibility(View.VISIBLE);
+                     linePDtAdmHos.setVisibility(View.VISIBLE);
+                     secPAdmHosM.setVisibility(View.VISIBLE);
+                     linePAdmHosM.setVisibility(View.VISIBLE);
+                     secPDurIlBeHos.setVisibility(View.VISIBLE);
+                     linePDurIlBeHos.setVisibility(View.VISIBLE);
+                     secPDisDr.setVisibility(View.VISIBLE);
+                     linePDisDr.setVisibility(View.VISIBLE);
+                 }
+             }
+         });
          
          rdoPAdmHos1 = (RadioButton) findViewById(R.id.rdoPAdmHos1);
          rdoPAdmHos2 = (RadioButton) findViewById(R.id.rdoPAdmHos2);
@@ -1789,7 +1994,6 @@
          listPHosNam.add("2-ডাঃ এম আর খান  শিশু হাসপাতাল (Dr. MR Khan Shishu Hospital)");
          listPHosNam.add("7-অন্যান্য (Other)");
          listPHosNam.add("8-জানি না (Do not know)");
-         listPHosNam.add("");
          ArrayAdapter<String> adptrPHosNam= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listPHosNam);
          spnPHosNam.setAdapter(adptrPHosNam);
 
@@ -1848,7 +2052,6 @@
          listPHosNam2.add("2-ডাঃ এম আর খান  শিশু হাসপাতাল (Dr. MR Khan Shishu Hospital)");
          listPHosNam2.add("7-অন্যান্য (Other)");
          listPHosNam2.add("8-জানি না (Do not know)");
-         listPHosNam2.add("");
          ArrayAdapter<String> adptrPHosNam2= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listPHosNam2);
          spnPHosNam2.setAdapter(adptrPHosNam2);
 
@@ -1907,7 +2110,6 @@
          listPHosNam3.add("2-ডাঃ এম আর খান  শিশু হাসপাতাল (Dr. MR Khan Shishu Hospital)");
          listPHosNam3.add("7-অন্যান্য (Other)");
          listPHosNam3.add("8-জানি না (Do not know)");
-         listPHosNam3.add("");
          ArrayAdapter<String> adptrPHosNam3= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listPHosNam3);
          spnPHosNam3.setAdapter(adptrPHosNam3);
 
@@ -1971,6 +2173,27 @@
          linePDisDr=(View)findViewById(R.id.linePDisDr);
          VlblPDisDr=(TextView) findViewById(R.id.VlblPDisDr);
          spnPDisDr=(Spinner) findViewById(R.id.spnPDisDr);
+
+         txtPAdmHosM.addTextChangedListener(new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+             }
+
+             @Override
+             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                     dtpPDtAdmHos.setText("");
+
+
+             }
+
+             @Override
+             public void afterTextChanged(Editable editable) {
+
+             }
+         });
+
          List<String> listPDisDr = new ArrayList<String>();
          
          listPDisDr.add("");
@@ -2123,6 +2346,7 @@
                  if(event.getAction() == MotionEvent.ACTION_UP) {
                      if(event.getRawX() >= (dtpPDtAdmHos.getRight() - dtpPDtAdmHos.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
                          VariableID = "btnPDtAdmHos"; showDialog(DATE_DIALOG);
+                         txtPAdmHosM.setText("");
                       return true;
                      }
                  }
@@ -2873,15 +3097,21 @@
          DV = Global.DateValidate(dtpPDtAdmHos.getText().toString());
          if(DV.length()!=0 & secPDtAdmHos.isShown())
            {
-             Connection.MessageBox(PneumoniaCase.this, DV);
-             dtpPDtAdmHos.requestFocus(); 
-             return;	
+               if(txtPAdmHosM.getText().toString().length()==0){
+                   Connection.MessageBox(PneumoniaCase.this, DV);
+                   dtpPDtAdmHos.requestFocus();
+                   return;
+               }
+
            }
          else if(txtPAdmHosM.getText().toString().length()==0 & secPAdmHosM.isShown())
            {
-             Connection.MessageBox(PneumoniaCase.this, "Required field: যদি ভর্তির তারিখ জানা না থাকে,  কত মাস আগে (How month ago).");
-             txtPAdmHosM.requestFocus(); 
-             return;	
+               if(dtpPDtAdmHos.getText().toString().length()==0){
+                   Connection.MessageBox(PneumoniaCase.this, "Required field: যদি ভর্তির তারিখ জানা না থাকে,  কত মাস আগে (How month ago).");
+                   txtPAdmHosM.requestFocus();
+                   return;
+               }
+
            }
          else if(Integer.valueOf(txtPAdmHosM.getText().toString().length()==0 ? "01" : txtPAdmHosM.getText().toString()) < 01 || Integer.valueOf(txtPAdmHosM.getText().toString().length()==0 ? "98" : txtPAdmHosM.getText().toString()) > 98)
            {

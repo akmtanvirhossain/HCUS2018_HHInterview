@@ -2067,80 +2067,153 @@
 
              if(rbData.equalsIgnoreCase("2"))
              {
-                    secMHosNamLabel.setVisibility(View.GONE);
-                    lineMHosNamLabel.setVisibility(View.GONE);
-                    secMHC_Hosp_a1.setVisibility(View.GONE);
-                    lineMHC_Hosp_a1.setVisibility(View.GONE);
-                    spnMHC_Hosp_a1.setSelection(0);
-                    secMHC_Hosp_a1_Oth.setVisibility(View.GONE);
-                    lineMHC_Hosp_a1_Oth.setVisibility(View.GONE);
-                    txtMHC_Hosp_a1_Oth.setText("");
-                    secMHC_Hosp_a2.setVisibility(View.GONE);
-                    lineMHC_Hosp_a2.setVisibility(View.GONE);
-                    spnMHC_Hosp_a2.setSelection(0);
-                    secMHC_Hosp_a2_Oth.setVisibility(View.GONE);
-                    lineMHC_Hosp_a2_Oth.setVisibility(View.GONE);
-                    txtMHC_Hosp_a2_Oth.setText("");
-                    secMHC_Hosp_a3.setVisibility(View.GONE);
-                    lineMHC_Hosp_a3.setVisibility(View.GONE);
-                    spnMHC_Hosp_a3.setSelection(0);
-                    secMHC_Hosp_a3_Oth.setVisibility(View.GONE);
-                    lineMHC_Hosp_a3_Oth.setVisibility(View.GONE);
-                    txtMHC_Hosp_a3_Oth.setText("");
-                    secMDtHos.setVisibility(View.GONE);
-                    lineMDtHos.setVisibility(View.GONE);
-                    dtpMDtHos.setText("");
-                    secMHosM.setVisibility(View.GONE);
-                    lineMHosM.setVisibility(View.GONE);
-                    txtMHosM.setText("");
-                    secMDurIlBeHos.setVisibility(View.GONE);
-                    lineMDurIlBeHos.setVisibility(View.GONE);
-                    txtMDurIlBeHos.setText("");
+                 if(rdoMHC_Phy1.isChecked()){
+                     secMHosNamLabel.setVisibility(View.GONE);
+                     lineMHosNamLabel.setVisibility(View.GONE);
+                     secMHC_Hosp_a1.setVisibility(View.GONE);
+                     lineMHC_Hosp_a1.setVisibility(View.GONE);
+                     spnMHC_Hosp_a1.setSelection(0);
+                     secMHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a1_Oth.setText("");
+                     secMHC_Hosp_a2.setVisibility(View.GONE);
+                     lineMHC_Hosp_a2.setVisibility(View.GONE);
+                     spnMHC_Hosp_a2.setSelection(0);
+                     secMHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a2_Oth.setText("");
+                     secMHC_Hosp_a3.setVisibility(View.GONE);
+                     lineMHC_Hosp_a3.setVisibility(View.GONE);
+                     spnMHC_Hosp_a3.setSelection(0);
+                     secMHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a3_Oth.setText("");
+                     secMDtHos.setVisibility(View.GONE);
+                     lineMDtHos.setVisibility(View.GONE);
+                     dtpMDtHos.setText("");
+                     secMHosM.setVisibility(View.GONE);
+                     lineMHosM.setVisibility(View.GONE);
+                     txtMHosM.setText("");
+                     secMDurIlBeHos.setVisibility(View.GONE);
+                     lineMDurIlBeHos.setVisibility(View.GONE);
+                     txtMDurIlBeHos.setText("");
+                 }
+                 else{
+                     secMHosNamLabel.setVisibility(View.GONE);
+                     lineMHosNamLabel.setVisibility(View.GONE);
+                     secMHC_Hosp_a1.setVisibility(View.GONE);
+                     lineMHC_Hosp_a1.setVisibility(View.GONE);
+                     spnMHC_Hosp_a1.setSelection(0);
+                     secMHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a1_Oth.setText("");
+                     secMHC_Hosp_a2.setVisibility(View.GONE);
+                     lineMHC_Hosp_a2.setVisibility(View.GONE);
+                     spnMHC_Hosp_a2.setSelection(0);
+                     secMHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a2_Oth.setText("");
+                     secMHC_Hosp_a3.setVisibility(View.GONE);
+                     lineMHC_Hosp_a3.setVisibility(View.GONE);
+                     spnMHC_Hosp_a3.setSelection(0);
+                     secMHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a3_Oth.setText("");
+                     secMDtHos.setVisibility(View.GONE);
+                     lineMDtHos.setVisibility(View.GONE);
+                     dtpMDtHos.setText("");
+                     secMHosM.setVisibility(View.GONE);
+                     lineMHosM.setVisibility(View.GONE);
+                     txtMHosM.setText("");
+                     secMDurIlBeHos.setVisibility(View.GONE);
+                     lineMDurIlBeHos.setVisibility(View.GONE);
+                     txtMDurIlBeHos.setText("");
+                     secMChildIlDr.setVisibility(View.GONE);
+                     lineMChildIlDr.setVisibility(View.GONE);
+                     secMChildIlDrOth.setVisibility(View.GONE);
+                     lineMChildIlDrOth.setVisibility(View.GONE);
+                 }
+
              }
              else if(rbData.equalsIgnoreCase("8"))
              {
-                    secMHosNamLabel.setVisibility(View.GONE);
-                    lineMHosNamLabel.setVisibility(View.GONE);
-                    secMHC_Hosp_a1.setVisibility(View.GONE);
-                    lineMHC_Hosp_a1.setVisibility(View.GONE);
-                    spnMHC_Hosp_a1.setSelection(0);
-                    secMHC_Hosp_a1_Oth.setVisibility(View.GONE);
-                    lineMHC_Hosp_a1_Oth.setVisibility(View.GONE);
-                    txtMHC_Hosp_a1_Oth.setText("");
-                    secMHC_Hosp_a2.setVisibility(View.GONE);
-                    lineMHC_Hosp_a2.setVisibility(View.GONE);
-                    spnMHC_Hosp_a2.setSelection(0);
-                    secMHC_Hosp_a2_Oth.setVisibility(View.GONE);
-                    lineMHC_Hosp_a2_Oth.setVisibility(View.GONE);
-                    txtMHC_Hosp_a2_Oth.setText("");
-                    secMHC_Hosp_a3.setVisibility(View.GONE);
-                    lineMHC_Hosp_a3.setVisibility(View.GONE);
-                    spnMHC_Hosp_a3.setSelection(0);
-                    secMHC_Hosp_a3_Oth.setVisibility(View.GONE);
-                    lineMHC_Hosp_a3_Oth.setVisibility(View.GONE);
-                    txtMHC_Hosp_a3_Oth.setText("");
-                    secMDtHos.setVisibility(View.GONE);
-                    lineMDtHos.setVisibility(View.GONE);
-                    dtpMDtHos.setText("");
-                    secMHosM.setVisibility(View.GONE);
-                    lineMHosM.setVisibility(View.GONE);
-                    txtMHosM.setText("");
-                    secMDurIlBeHos.setVisibility(View.GONE);
-                    lineMDurIlBeHos.setVisibility(View.GONE);
-                    txtMDurIlBeHos.setText("");
+                 if(rdoMHC_Phy1.isChecked()){
+                     secMHosNamLabel.setVisibility(View.GONE);
+                     lineMHosNamLabel.setVisibility(View.GONE);
+                     secMHC_Hosp_a1.setVisibility(View.GONE);
+                     lineMHC_Hosp_a1.setVisibility(View.GONE);
+                     spnMHC_Hosp_a1.setSelection(0);
+                     secMHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a1_Oth.setText("");
+                     secMHC_Hosp_a2.setVisibility(View.GONE);
+                     lineMHC_Hosp_a2.setVisibility(View.GONE);
+                     spnMHC_Hosp_a2.setSelection(0);
+                     secMHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a2_Oth.setText("");
+                     secMHC_Hosp_a3.setVisibility(View.GONE);
+                     lineMHC_Hosp_a3.setVisibility(View.GONE);
+                     spnMHC_Hosp_a3.setSelection(0);
+                     secMHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a3_Oth.setText("");
+                     secMDtHos.setVisibility(View.GONE);
+                     lineMDtHos.setVisibility(View.GONE);
+                     dtpMDtHos.setText("");
+                     secMHosM.setVisibility(View.GONE);
+                     lineMHosM.setVisibility(View.GONE);
+                     txtMHosM.setText("");
+                     secMDurIlBeHos.setVisibility(View.GONE);
+                     lineMDurIlBeHos.setVisibility(View.GONE);
+                     txtMDurIlBeHos.setText("");
+                 }
+                 else{
+                     secMHosNamLabel.setVisibility(View.GONE);
+                     lineMHosNamLabel.setVisibility(View.GONE);
+                     secMHC_Hosp_a1.setVisibility(View.GONE);
+                     lineMHC_Hosp_a1.setVisibility(View.GONE);
+                     spnMHC_Hosp_a1.setSelection(0);
+                     secMHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a1_Oth.setText("");
+                     secMHC_Hosp_a2.setVisibility(View.GONE);
+                     lineMHC_Hosp_a2.setVisibility(View.GONE);
+                     spnMHC_Hosp_a2.setSelection(0);
+                     secMHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a2_Oth.setText("");
+                     secMHC_Hosp_a3.setVisibility(View.GONE);
+                     lineMHC_Hosp_a3.setVisibility(View.GONE);
+                     spnMHC_Hosp_a3.setSelection(0);
+                     secMHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a3_Oth.setText("");
+                     secMDtHos.setVisibility(View.GONE);
+                     lineMDtHos.setVisibility(View.GONE);
+                     dtpMDtHos.setText("");
+                     secMHosM.setVisibility(View.GONE);
+                     lineMHosM.setVisibility(View.GONE);
+                     txtMHosM.setText("");
+                     secMDurIlBeHos.setVisibility(View.GONE);
+                     lineMDurIlBeHos.setVisibility(View.GONE);
+                     txtMDurIlBeHos.setText("");
+                     secMChildIlDr.setVisibility(View.GONE);
+                     lineMChildIlDr.setVisibility(View.GONE);
+                     secMChildIlDrOth.setVisibility(View.GONE);
+                     lineMChildIlDrOth.setVisibility(View.GONE);
+                 }
              }
-             else
+             else if(rbData.equalsIgnoreCase("1"))
              {
                     secMHosNamLabel.setVisibility(View.VISIBLE);
                     lineMHosNamLabel.setVisibility(View.VISIBLE);
                     secMHC_Hosp_a1.setVisibility(View.VISIBLE);
                     lineMHC_Hosp_a1.setVisibility(View.VISIBLE);
-                    secMHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
-                    lineMHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
+
                     secMHC_Hosp_a2.setVisibility(View.VISIBLE);
                     lineMHC_Hosp_a2.setVisibility(View.VISIBLE);
-                    secMHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
-                    lineMHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
+
                     secMHC_Hosp_a3.setVisibility(View.VISIBLE);
                     lineMHC_Hosp_a3.setVisibility(View.VISIBLE);
                     secMDtHos.setVisibility(View.VISIBLE);
@@ -2149,6 +2222,8 @@
                     lineMHosM.setVisibility(View.VISIBLE);
                     secMDurIlBeHos.setVisibility(View.VISIBLE);
                     lineMDurIlBeHos.setVisibility(View.VISIBLE);
+                 secMChildIlDr.setVisibility(View.VISIBLE);
+                 lineMChildIlDr.setVisibility(View.VISIBLE);
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
@@ -2575,26 +2650,47 @@
 
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
-                 secMInRecoLabel.setVisibility(View.GONE);
-                 lineMInRecoLabel.setVisibility(View.GONE);
-                 secMInReco.setVisibility(View.GONE);
-                 lineMInReco.setVisibility(View.GONE);
+
+             if(txtMDurReco.getText().toString().length()>0)
+                 {
+                     secMInRecoLabel.setVisibility(View.GONE);
+                     lineMInRecoLabel.setVisibility(View.GONE);
+                     secMInReco.setVisibility(View.GONE);
+                     lineMInReco.setVisibility(View.GONE);
+                     spnMInReco.setSelection(0);
+                     secMInRecoOth.setVisibility(View.GONE);
+                     lineMInRecoOth.setVisibility(View.GONE);
+                     txtMInRecoOth.setText("");
+                     secMInReco2.setVisibility(View.GONE);
+                     lineMInReco2.setVisibility(View.GONE);
+                     spnMInReco2.setSelection(0);
+                     secMInRecoOth2.setVisibility(View.GONE);
+                     lineMInRecoOth2.setVisibility(View.GONE);
+                     txtMInRecoOth2.setText("");
+                     secMInReco3.setVisibility(View.GONE);
+                     lineMInReco3.setVisibility(View.GONE);
+                     spnMInReco3.setSelection(0);
+                     secMInRecoOth3.setVisibility(View.GONE);
+                     lineMInRecoOth3.setVisibility(View.GONE);
+                     txtMInRecoOth3.setText("");
+                 }
+                 else{
+                 secMInRecoLabel.setVisibility(View.VISIBLE);
+                 lineMInRecoLabel.setVisibility(View.VISIBLE);
+                 secMInReco.setVisibility(View.VISIBLE);
+                 lineMInReco.setVisibility(View.VISIBLE);
                  spnMInReco.setSelection(0);
-                 secMInRecoOth.setVisibility(View.GONE);
-                 lineMInRecoOth.setVisibility(View.GONE);
-                 txtMInRecoOth.setText("");
-                 secMInReco2.setVisibility(View.GONE);
-                 lineMInReco2.setVisibility(View.GONE);
+
+                 secMInReco2.setVisibility(View.VISIBLE);
+                 lineMInReco2.setVisibility(View.VISIBLE);
                  spnMInReco2.setSelection(0);
-                 secMInRecoOth2.setVisibility(View.GONE);
-                 lineMInRecoOth2.setVisibility(View.GONE);
-                 txtMInRecoOth2.setText("");
-                 secMInReco3.setVisibility(View.GONE);
-                 lineMInReco3.setVisibility(View.GONE);
+
+                 secMInReco3.setVisibility(View.VISIBLE);
+                 lineMInReco3.setVisibility(View.VISIBLE);
                  spnMInReco3.setSelection(0);
-                 secMInRecoOth3.setVisibility(View.GONE);
-                 lineMInRecoOth3.setVisibility(View.GONE);
-                 txtMInRecoOth3.setText("");
+
+                 }
+
 
              }
 
@@ -2759,6 +2855,7 @@
                  if(event.getAction() == MotionEvent.ACTION_UP) {
                      if(event.getRawX() >= (dtpMDtHos.getRight() - dtpMDtHos.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
                          VariableID = "btnMDtHos"; showDialog(DATE_DIALOG);
+                         txtMHosM.setText("");
                       return true;
                      }
                  }
@@ -2766,6 +2863,22 @@
              }
          });
 
+         txtMHosM.addTextChangedListener(new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+             }
+
+             @Override
+             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+dtpMDtHos.setText("");
+             }
+
+             @Override
+             public void afterTextChanged(Editable editable) {
+
+             }
+         });
 
 
          //Hide all skip variables
@@ -3262,826 +3375,620 @@
 
  private void DataSave()
  {
-   try
-     {
- 
-         String DV="";
+   try {
 
-         if(txtUNCode.getText().toString().length()==0 & secUNCode.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: Ward No.");
-             txtUNCode.requestFocus(); 
-             return;	
-           }
-         else if(txtStructureNo.getText().toString().length()==0 & secStructureNo.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: Structure No.");
-             txtStructureNo.requestFocus(); 
-             return;	
-           }
-         else if(txtHouseholdSl.getText().toString().length()==0 & secHouseholdSl.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: Household Sl.");
-             txtHouseholdSl.requestFocus(); 
-             return;	
-           }
-         else if(txtVisitNo.getText().toString().length()==0 & secVisitNo.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: Visit No.");
-             txtVisitNo.requestFocus(); 
-             return;	
-           }
-         else if(txtMemSl.getText().toString().length()==0 & secMemSl.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: Member Serial.");
-             txtMemSl.requestFocus(); 
-             return;	
-           }
-         
-         else if(!rdoSeriIlOnset1.isChecked() & !rdoSeriIlOnset2.isChecked() & !rdoSeriIlOnset3.isChecked() & !rdoSeriIlOnset4.isChecked() & secSeriIlOnset.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (গত ১২ মাসে এই শিশুটি কি এমন মারাত্মক অসুস্থ হয়েছিল যেখানে শিশুটির জ্বর এবং খিঁচুনি অথবা জ্বর এবং অজ্ঞান হয়ে যাওয়া অথবা জ্বর এবং ঝিমুনি/দ্বিধা/শিশুকে জাগাতে অনেক কষ্ট হয় এমন অবস্থা (স্বাভাবিক মানসিক অবস্থার পরিবর্তন) হয়েছিল? (Within the last 12 months did this child have a serious illness with new onset of fever and convulsions OR fever and unconsciousness OR fever and drowsiness/confusion/difficulty in keeping child awake (Altered mental status)?)).");
-              rdoSeriIlOnset1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoSameIllSec21.isChecked() & !rdoSameIllSec22.isChecked() & secSameIllSec2.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (এটি কি একই অসুস্থতা যা আপনি সেকশন ২ এর জন্য র্বণনা করছেনে  (Is it the same illness that you described for section-2)).");
-              rdoSameIllSec21.requestFocus();
-              return;
-           }
-         else if(txtEpiSeriIlOnset.getText().toString().length()==0 & secEpiSeriIlOnset.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: গত ১২ মাসে এই শিশুটির কতবার এই ধরনের মারাত্মক অসুস্থতার সাথে জ্বর ছিল এমন অবস্থা হয়েছিল? (যদি একের অধিক এই অসুস্থতা হয়ে থাকে, তবে সর্বশেষ অসুস্থতা সম্পর্কে নিচের প্রশ্নগুলো করুন (Within the last 12 months how many episodes of this kind of serious illness with fever did the child have?).");
-             txtEpiSeriIlOnset.requestFocus(); 
-             return;	
-           }
-         else if(Integer.valueOf(txtEpiSeriIlOnset.getText().toString().length()==0 ? "01" : txtEpiSeriIlOnset.getText().toString()) < 01 || Integer.valueOf(txtEpiSeriIlOnset.getText().toString().length()==0 ? "20" : txtEpiSeriIlOnset.getText().toString()) > 20)
-           {
-             Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 20(গত ১২ মাসে এই শিশুটির কতবার এই ধরনের মারাত্মক অসুস্থতার সাথে জ্বর ছিল এমন অবস্থা হয়েছিল? (যদি একের অধিক এই অসুস্থতা হয়ে থাকে, তবে সর্বশেষ অসুস্থতা সম্পর্কে নিচের প্রশ্নগুলো করুন (Within the last 12 months how many episodes of this kind of serious illness with fever did the child have?)).");
-             txtEpiSeriIlOnset.requestFocus(); 
-             return;	
-           }
-         else if(txtIlnessFev.getText().toString().length()==0 & secIlnessFev.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: শিশুটি কতদিন জ্বরে ভুগেছিল? (যদি জানা না থাকে 98 বসান) (How long did the child have fever?).");
-             txtIlnessFev.requestFocus(); 
-             return;	
-           }
-         else if(Integer.valueOf(txtIlnessFev.getText().toString().length()==0 ? "01" : txtIlnessFev.getText().toString()) < 01 || Integer.valueOf(txtIlnessFev.getText().toString().length()==0 ? "98" : txtIlnessFev.getText().toString()) > 98)
-           {
-             Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 98(শিশুটি কতদিন জ্বরে ভুগেছিল? (যদি জানা না থাকে 98 বসান) (How long did the child have fever?)).");
-             txtIlnessFev.requestFocus(); 
-             return;	
-           }
-         
-         else if(!rdoIlnessConv1.isChecked() & !rdoIlnessConv2.isChecked() & !rdoIlnessConv3.isChecked() & secIlnessConv.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (সর্বশেষ অসুস্থতার সময় এই শিশুটির কি খিঁচুনি হয়েছিল? (During the last episode of illness, did the child have convulsions?)).");
-              rdoIlnessConv1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoUpRolEye1.isChecked() & !rdoUpRolEye2.isChecked() & !rdoUpRolEye3.isChecked() & secUpRolEye.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (খিঁচুনির সময় কি চোখ উল্টে  গিয়েছিল? (Did the convulsions include  upward rolling of eyeball?)).");
-              rdoUpRolEye1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMRigJaw1.isChecked() & !rdoMRigJaw2.isChecked() & !rdoMRigJaw3.isChecked() & secMRigJaw.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (খিঁচুনির সময় কি চোয়ালের মাংসপেশি শক্ত হয়ে গিয়েছিল? (চোয়ালের মাংসপেশি শক্ত/ মুখ খুলতে/বন্ধ করতে না পারা) (Did the convulsions include rigid jaw muscles?(Stiffening/hardening of jaw muscles; cannot open /close his/her mouth)).");
-              rdoMRigJaw1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMRigLimbs1.isChecked() & !rdoMRigLimbs2.isChecked() & !rdoMRigLimbs3.isChecked() & secMRigLimbs.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (খিঁচুনির সময় কি হাত পা শক্ত হয়ে গিয়েছিল? , হাতের মুষ্টি খুলতে গেলে বা হাত পা সোজা করতে গেলে বাধা পাওয়া (Did the convulsions include rigid limbs?, There is resistance in trying to open the limbs or fist)).");
-              rdoMRigLimbs1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMDurConv1.isChecked() & !rdoMDurConv2.isChecked() & !rdoMDurConv3.isChecked() & !rdoMDurConv4.isChecked() & !rdoMDurConv5.isChecked() & secMDurConv.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (খিঁচুনি কতক্ষন ছিল? (What was the duration of convulsions?)).");
-              rdoMDurConv1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMDrowsin1.isChecked() & !rdoMDrowsin2.isChecked() & !rdoMDrowsin3.isChecked() & secMDrowsin.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (সর্বশেষ অসুস্থতার সময় এই শিশুটিকে ঘুম থেকে জাগানো বা জাগ্রত রাখা যাচ্ছে না (জাগালেও আবার ঘুমিয়ে যায় এমন) এমন অবস্থা হয়েছিল? (ঝিমুনি) (During the last episode of illness, was it difficult to awaken or keep awake (keep from going to sleep) the child? (Drowsiness) ).");
-              rdoMDrowsin1.requestFocus();
-              return;
-           }
-         else if(txtMDurDrowsin.getText().toString().length()==0 & secMDurDrowsin.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: যদি হ্যাঁ হয় তাহলে কতদিন? (যদি জানা না থাকে 98 বসান) (If yes, for how long?).");
-             txtMDurDrowsin.requestFocus(); 
-             return;	
-           }
-         else if(Integer.valueOf(txtMDurDrowsin.getText().toString().length()==0 ? "01" : txtMDurDrowsin.getText().toString()) < 01 || Integer.valueOf(txtMDurDrowsin.getText().toString().length()==0 ? "98" : txtMDurDrowsin.getText().toString()) > 98)
-           {
-             Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 98(যদি হ্যাঁ হয় তাহলে কতদিন? (যদি জানা না থাকে 98 বসান) (If yes, for how long?)).");
-             txtMDurDrowsin.requestFocus(); 
-             return;	
-           }
-         else if(spnMUntoFeed.getSelectedItemPosition()==0  & secMUntoFeed.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: ৬ মাসের কম বয়সী শিশুর ক্ষেত্রেঃ সর্বশেষ অসুস্থতার সময় এই শিশুটির কি পানি/বুকের দুধ পান করতে পারেনি এমন অবস্থা হয়েছিল? (For children <6 months of age at the time of illness: During the illness, did the child ever refuse or was unable to drink or breastfeed?).");
-             spnMUntoFeed.requestFocus(); 
-             return;	
-           }
-         else if(txtMDurUntoFeed.getText().toString().length()==0 & secMDurUntoFeed.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: যদি হ্যাঁ হয় তাহলে কতদিন?  (যদি জানা না থাকে 98 বসান) (If yes, for how long?).");
-             txtMDurUntoFeed.requestFocus(); 
-             return;	
-           }
-         else if(Integer.valueOf(txtMDurUntoFeed.getText().toString().length()==0 ? "01" : txtMDurUntoFeed.getText().toString()) < 01 || Integer.valueOf(txtMDurUntoFeed.getText().toString().length()==0 ? "98" : txtMDurUntoFeed.getText().toString()) > 98)
-           {
-             Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 98(যদি হ্যাঁ হয় তাহলে কতদিন?  (যদি জানা না থাকে 98 বসান) (If yes, for how long?)).");
-             txtMDurUntoFeed.requestFocus(); 
-             return;	
-           }
-         else if(spnMCalNoRes.getSelectedItemPosition()==0  & secMCalNoRes.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: যদি শিশুটির বয়স ১২ মাসের বেশি  হয়ঃ এই অসুস্থতার সময় (শিশুটির নাম) মায়ের ডাকে সাড়া দেয়নি এমন অবস্থা হয়েছিল কি? (If child is >12 months old:During the illness did (child’s name) ever not respond to mother’s call?).");
-             spnMCalNoRes.requestFocus(); 
-             return;	
-           }
-         else if(txtMDurCalNoRes.getText().toString().length()==0 & secMDurCalNoRes.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: যদি হ্যাঁ হয় তাহলে কতদিন? (যদি জানা না থাকে 98 বসান) (If yes, for how long?).");
-             txtMDurCalNoRes.requestFocus(); 
-             return;	
-           }
-         else if(Integer.valueOf(txtMDurCalNoRes.getText().toString().length()==0 ? "01" : txtMDurCalNoRes.getText().toString()) < 01 || Integer.valueOf(txtMDurCalNoRes.getText().toString().length()==0 ? "98" : txtMDurCalNoRes.getText().toString()) > 98)
-           {
-             Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 98(যদি হ্যাঁ হয় তাহলে কতদিন? (যদি জানা না থাকে 98 বসান) (If yes, for how long?)).");
-             txtMDurCalNoRes.requestFocus(); 
-             return;	
-           }
-         else if(spnMEverConf.getSelectedItemPosition()==0  & secMEverConf.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: *যদি শিশুটির বয়স এই অসুস্থতায় সময় ১৮ মাসের বেশি হয়ঃ শিশুটি কখনও  কি দ্বিধার মধ্যে পরেছিল (ব্যক্তি/স্থান/সময় সম্পর্কে অবগত না থাকা)? * শিশুটি কি তার মা/পরিবারের অন্য সদস্যদের চিনতে পারেনি এমন অবস্থা হয়েছিল? * শিশুটি কি দিন/রাতের মধ্যে তফাৎ করতে পারে নি এমন অবস্থা হয়েছিল? *শিশুটি  কোথায় আছে তা বলতে পারেনি এমন অবস্থা হয়েছিল? *Was he/she ever unable to recognize the mother/ other family members? *Was he/she ever unable to tell whether it was day/ night? *Was he/she ever unaware of where he/she was?.");
-             spnMEverConf.requestFocus(); 
-             return;	
-           }
-         else if(spnMDurEverConf.getSelectedItemPosition()==0  & secMDurEverConf.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: যদি হ্যাঁ হয় তাহলে কতক্ষন ছিল? (If yes for how long?).");
-             spnMDurEverConf.requestFocus(); 
-             return;	
-           }
-         
-         else if(!rdoMFlicker1.isChecked() & !rdoMFlicker2.isChecked() & !rdoMFlicker3.isChecked() & secMFlicker.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (এই অসুস্থতার সময় শিশুটি কখনও নড়াচড়া করে নি এমন অবস্থা হয়েছিল কিন্তু সামান্য নড়াচড়া করত যখনঃ *জোরে কথা বলা হত অথবা, *তাকে জাগানোর জন্য আঘাত দেয়া হত অথবা, *চিমটি দেয়া হত , *যদি হ্যাঁ হয় তাহলে কতক্ষন ছিল তা নিচের প্রশ্নে জিজ্ঞাসা করুন? (During the illness, was there ever a time when the child showed nothing but only a flicker of movement if you:*talked loudly to the child or, *physically shook the child to awaken him/her or, *pinched the child?(If the answer is “yes”, then ask for how long) ).");
-              rdoMFlicker1.requestFocus();
-              return;
-           }
-         else if(spnMDurFliker.getSelectedItemPosition()==0  & secMDurFliker.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: এমন অবস্থা কতক্ষন ছিল? (What was the duration?).");
-             spnMDurFliker.requestFocus(); 
-             return;	
-           }
-         
-         else if(!rdoMUnconsci1.isChecked() & !rdoMUnconsci2.isChecked() & !rdoMUnconsci3.isChecked() & secMUnconsci.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (সর্বশেষ অসুস্থতার সময় এই শিশুটি যে কোন সময়ের জন্য অজ্ঞান হয়েছিল? (During the illness, was the child unconscious for any length of time?)).");
-              rdoMUnconsci1.requestFocus();
-              return;
-           }
-         else if(spnMDurUnconsci.getSelectedItemPosition()==0  & secMDurUnconsci.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: কতক্ষন অজ্ঞান ছিল? (What was the duration of unconsciousness?).");
-             spnMDurUnconsci.requestFocus(); 
-             return;	
-           }
-         
-         else if(!rdoMIlCry1.isChecked() & !rdoMIlCry2.isChecked() & !rdoMIlCry3.isChecked() & secMIlCry.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (এই অসুস্থতার সময় শিশুটির কি আস্বাভাবিক কান্না/কান্না থামেইনা অথবা খুবই দুর্বল ভাবে কান্না করেছিল? (During the illness, did the child have a period of non-stop / inconsolable crying or making a very feeble cry?)).");
-              rdoMIlCry1.requestFocus();
-              return;
-           }
-         else if(spnMDurIlCry.getSelectedItemPosition()==0  & secMDurIlCry.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: কতক্ষন কান্না করেছিল? (What was the duration of this cry?).");
-             spnMDurIlCry.requestFocus(); 
-             return;	
-           }
-         else if(spnMUnCraWalk.getSelectedItemPosition()==0  & secMUnCraWalk.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: যে শিশুরা এই অসুস্থতার পূর্বে বসতে পারত, হামাগুড়ি দিতে পারত বা হাটতে পারতঃ এই অসুস্থতার জন্য বসতে /হামাগুড়ি/হাটতে পারেনি এমন অবস্থা হয়েছিল? (For children who were able to sit, crawl or walk before the illness: was the child ever unable to sit up/ crawl/ walk?).");
-             spnMUnCraWalk.requestFocus(); 
-             return;	
-           }
-         else if(spnMDurUnCraWalk.getSelectedItemPosition()==0  & secMDurUnCraWalk.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: (কতক্ষন বসতে /হামাগুড়ি/হাটতে পারেনি? (What was the duration of inability to sit up/ crawl/walk?).");
-             spnMDurUnCraWalk.requestFocus(); 
-             return;	
-           }
-         
-         else if(!rdoMDifBreath1.isChecked() & !rdoMDifBreath2.isChecked() & !rdoMDifBreath3.isChecked() & secMDifBreath.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (এই  অসুস্থতার সময় এই শিশুটির কি শ্বাসকষ্ট ছিল? (During this illness, did the child have difficulty breathing?)).");
-              rdoMDifBreath1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMCough1.isChecked() & !rdoMCough2.isChecked() & !rdoMCough3.isChecked() & secMCough.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (এই  অসুস্থতার সময় এই শিশুটির কি কাশি ছিল? (During this illness, did the child have cough?) ).");
-              rdoMCough1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMRash1.isChecked() & !rdoMRash2.isChecked() & !rdoMRash3.isChecked() & secMRash.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (এই  অসুস্থতার সময় এই শিশুটির শরীরে কি লাল দানা উঠেছিল? (During this illness, did the child have a rash?)).");
-              rdoMRash1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMVomit1.isChecked() & !rdoMVomit2.isChecked() & !rdoMVomit3.isChecked() & secMVomit.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (এই  অসুস্থতার সময় এই শিশুটির কি বমি হয়েছিল? (During this illness, did the child have vomiting?)).");
-              rdoMVomit1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMDiarrhoea1.isChecked() & !rdoMDiarrhoea2.isChecked() & !rdoMDiarrhoea3.isChecked() & secMDiarrhoea.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from ((এই  অসুস্থতার সময় এই শিশুটির কি পাতলা পায়খানা হয়েছিল? (During this illness, did the child have diarrhoea?)).");
-              rdoMDiarrhoea1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMHCar1.isChecked() & !rdoMHCar2.isChecked() & !rdoMHCar3.isChecked() & secMHCar.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (এই  অসুস্থতার সময়  এই শিশুটিকে কি কোন স্বাস্থ্যসেবা দানকারীর কাছে নিয়ে গিয়েছিলেন ? (During this episode of illness, did you bring your child to a health care provider?)).");
-              rdoMHCar1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMHC_Phy1.isChecked() & !rdoMHC_Phy2.isChecked() & !rdoMHC_Phy3.isChecked() & secMHC_Phy.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (1.MBBS বা এর উপর (MBBS and above) ).");
-              rdoMHC_Phy1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMHC_UnquaDoctor1.isChecked() & !rdoMHC_UnquaDoctor2.isChecked() & !rdoMHC_UnquaDoctor3.isChecked() & secMHC_UnquaDoctor.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (2.অদক্ষ ডাক্তার/ LMAF (Unqualified doctor/LMAF) ).");
-              rdoMHC_UnquaDoctor1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMHC_Para1.isChecked() & !rdoMHC_Para2.isChecked() & !rdoMHC_Para3.isChecked() & secMHC_Para.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (3.প্যারামেডিক (GoB/NGO) (Paramedics (GoB/NGO))  ).");
-              rdoMHC_Para1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMHC_Com1.isChecked() & !rdoMHC_Com2.isChecked() & !rdoMHC_Com3.isChecked() & secMHC_Com.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (4.কম্পাউণ্ডার (Compounder)  ).");
-              rdoMHC_Com1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMHC_Pha1.isChecked() & !rdoMHC_Pha2.isChecked() & !rdoMHC_Pha3.isChecked() & secMHC_Pha.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (5.ঔষধ বিক্রেতা/ফার্মেসি (Drug seller/Pharmacy)  ).");
-              rdoMHC_Pha1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMHC_Hompath1.isChecked() & !rdoMHC_Hompath2.isChecked() & !rdoMHC_Hompath3.isChecked() & secMHC_Hompath.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (6.হোমিওপ্যাঁথ (Homeopath)  ).");
-              rdoMHC_Hompath1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMHC_TrHeal1.isChecked() & !rdoMHC_TrHeal2.isChecked() & !rdoMHC_TrHeal3.isChecked() & secMHC_TrHeal.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (7.কবিরাজ (Traditional care provider)  ).");
-              rdoMHC_TrHeal1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMHC_SpiHeal1.isChecked() & !rdoMHC_SpiHeal2.isChecked() & !rdoMHC_SpiHeal3.isChecked() & secMHC_SpiHeal.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (8.আধ্যাত্মিক চিকিৎসক (Spiritual healer) ).");
-              rdoMHC_SpiHeal1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMHC_Oth1.isChecked() & !rdoMHC_Oth2.isChecked() & !rdoMHC_Oth3.isChecked() & secMHC_Oth.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (9.অন্যান্য  (Other)).");
-              rdoMHC_Oth1.requestFocus();
-              return;
-           }
-         else if(txtMHC_OthName.getText().toString().length()==0 & secMHC_OthName.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: 10.অন্যান্য উল্লেখ করুন (Others Specify).");
-             txtMHC_OthName.requestFocus(); 
-             return;	
-           }
-         
-         else if(!rdoMDSHOPD1.isChecked() & !rdoMDSHOPD2.isChecked() & !rdoMDSHOPD3.isChecked() & secMDSHOPD.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (শিশুটিকে কি ঢাকা শিশু হাসপাতালের বহির্বিভাগে (OPD) নেয়া হয়েছিল? (Was the child seen at outdoor patient department (OPD) of Dhaka Shishu Hospital?)).");
-              rdoMDSHOPD1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMSSFOPD1.isChecked() & !rdoMSSFOPD2.isChecked() & !rdoMSSFOPD3.isChecked() & secMSSFOPD.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (শিশুটিকে কি মিরপুর শিশুস্বাস্থ্য ফাউন্ন্ডেশন এর  বহির্বিভাগে (OPD) নেয়া হয়েছিল ? (Was the child seen at outdoor patient department (OPD) of Shishu Shastha Foundation-Mirpur?)).");
-              rdoMSSFOPD1.requestFocus();
-              return;
-           }
-         
-         else if(!rdoMHosAdm1.isChecked() & !rdoMHosAdm2.isChecked() & !rdoMHosAdm3.isChecked() & secMHosAdm.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (এই অসুস্থতার জন্য শিশুটিকে কি হাসপাতালে ভর্তি করা হয়েছিল? (During this episode of illness, was your child hospitalized?) ).");
-              rdoMHosAdm1.requestFocus();
-              return;
-           }
-         else if(spnMHC_Hosp_a1.getSelectedItemPosition()==0  & secMHC_Hosp_a1.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: 1..");
-             spnMHC_Hosp_a1.requestFocus(); 
-             return;	
-           }
-         else if(txtMHC_Hosp_a1_Oth.getText().toString().length()==0 & secMHC_Hosp_a1_Oth.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: Name of the hospital-1.");
-             txtMHC_Hosp_a1_Oth.requestFocus(); 
-             return;	
-           }
-         else if(spnMHC_Hosp_a2.getSelectedItemPosition()==0  & secMHC_Hosp_a2.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: 2..");
-             spnMHC_Hosp_a2.requestFocus(); 
-             return;	
-           }
-         else if(txtMHC_Hosp_a2_Oth.getText().toString().length()==0 & secMHC_Hosp_a2_Oth.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: Name of the hospital-2.");
-             txtMHC_Hosp_a2_Oth.requestFocus(); 
-             return;	
-           }
-         else if(spnMHC_Hosp_a3.getSelectedItemPosition()==0  & secMHC_Hosp_a3.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: 3..");
-             spnMHC_Hosp_a3.requestFocus(); 
-             return;	
-           }
-         else if(txtMHC_Hosp_a3_Oth.getText().toString().length()==0 & secMHC_Hosp_a3_Oth.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: Name of the hospital-3.");
-             txtMHC_Hosp_a3_Oth.requestFocus(); 
-             return;	
-           }
-         DV = Global.DateValidate(dtpMDtHos.getText().toString());
-         if(DV.length()!=0 & secMDtHos.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, DV);
-             dtpMDtHos.requestFocus(); 
-             return;	
-           }
-         else if(txtMHosM.getText().toString().length()==0 & secMHosM.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: যদি ভর্তির তারিখ জানা না থাকে,  কত মাস আগে  (How much ago).");
-             txtMHosM.requestFocus(); 
-             return;	
-           }
-         else if(Integer.valueOf(txtMHosM.getText().toString().length()==0 ? "01" : txtMHosM.getText().toString()) < 01 || Integer.valueOf(txtMHosM.getText().toString().length()==0 ? "18" : txtMHosM.getText().toString()) > 18)
-           {
-             Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 18(যদি ভর্তির তারিখ জানা না থাকে,  কত মাস আগে  (How much ago)).");
-             txtMHosM.requestFocus(); 
-             return;	
-           }
-         else if(txtMDurIlBeHos.getText().toString().length()==0 & secMDurIlBeHos.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: হাসপাতালে ভর্তির আগে শিশুটি কতদিন অসুস্থ ছিল? (যদি জানা না থাকে 98 বসান) (For how many days did the child appear ill before he/she was hospitalized?).");
-             txtMDurIlBeHos.requestFocus(); 
-             return;	
-           }
-         else if(Integer.valueOf(txtMDurIlBeHos.getText().toString().length()==0 ? "01" : txtMDurIlBeHos.getText().toString()) < 01 || Integer.valueOf(txtMDurIlBeHos.getText().toString().length()==0 ? "98" : txtMDurIlBeHos.getText().toString()) > 98)
-           {
-             Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 98(হাসপাতালে ভর্তির আগে শিশুটি কতদিন অসুস্থ ছিল? (যদি জানা না থাকে 98 বসান) (For how many days did the child appear ill before he/she was hospitalized?)).");
-             txtMDurIlBeHos.requestFocus(); 
-             return;	
-           }
-         else if(spnMChildIlDr.getSelectedItemPosition()==0  & secMChildIlDr.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field:  চিকিৎসকরা শিশুটির কি রোগ ছিল বলে আপনাদের বলেছিলেন?  (3.28 এর উত্তর “1” অথবা   3.31 এর উত্তর “1” হলে প্রযোজ্য) What illness did the doctors tell you that your child had?.");
-             spnMChildIlDr.requestFocus(); 
-             return;	
-           }
-         else if(txtMChildIlDrOth.getText().toString().length()==0 & secMChildIlDrOth.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
-             txtMChildIlDrOth.requestFocus(); 
-             return;	
-           }
-         
-         else if(!rdoMReco1.isChecked() & !rdoMReco2.isChecked() & !rdoMReco3.isChecked() & secMReco.isShown())
-           {
-              Connection.MessageBox(MeningitisCase.this, "Select anyone options from (আপনার শিশু কি সম্পূর্ণ সুস্থ হয়ে গিয়েছিল ? (Did the child recover completely?)).");
-              rdoMReco1.requestFocus();
-              return;
-           }
-         else if(txtMDurReco.getText().toString().length()==0 & secMDurReco.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: শিশুটি সুস্থ হতে কতদিন লেগেছিল? (যদি  জানা না থাকে 98) (How long did it take for the child to completely recover?).");
-             txtMDurReco.requestFocus(); 
-             return;	
-           }
-         else if(Integer.valueOf(txtMDurReco.getText().toString().length()==0 ? "01" : txtMDurReco.getText().toString()) < 01 || Integer.valueOf(txtMDurReco.getText().toString().length()==0 ? "98" : txtMDurReco.getText().toString()) > 98)
-           {
-             Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 98(শিশুটি সুস্থ হতে কতদিন লেগেছিল? (যদি  জানা না থাকে 98) (How long did it take for the child to completely recover?)).");
-             txtMDurReco.requestFocus(); 
-             return;	
-           }
-         else if(spnMInReco.getSelectedItemPosition()==0  & secMInReco.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: 1..");
-             spnMInReco.requestFocus(); 
-             return;	
-           }
-         else if(txtMInRecoOth.getText().toString().length()==0 & secMInRecoOth.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
-             txtMInRecoOth.requestFocus(); 
-             return;	
-           }
-         else if(spnMInReco2.getSelectedItemPosition()==0  & secMInReco2.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: 2..");
-             spnMInReco2.requestFocus(); 
-             return;	
-           }
-         else if(txtMInRecoOth2.getText().toString().length()==0 & secMInRecoOth2.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
-             txtMInRecoOth2.requestFocus(); 
-             return;	
-           }
-         else if(spnMInReco3.getSelectedItemPosition()==0  & secMInReco3.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: 3..");
-             spnMInReco3.requestFocus(); 
-             return;	
-           }
-         else if(txtMInRecoOth3.getText().toString().length()==0 & secMInRecoOth3.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
-             txtMInRecoOth3.requestFocus(); 
-             return;	
-           }
-         else if(txtAboSeriIlOnset.getText().toString().length()==0 & secAboSeriIlOnset.isShown())
-           {
-             Connection.MessageBox(MeningitisCase.this, "Required field: মন্তব্যঃ মেনিনজাইটিস  (Remarks: Meningitis).");
-             txtAboSeriIlOnset.requestFocus(); 
-             return;	
-           }
- 
-         String SQL = "";
-         RadioButton rb;
+       String DV = "";
 
-         MeningitisCase_DataModel objSave = new MeningitisCase_DataModel();
-         objSave.setUNCode(txtUNCode.getText().toString());
-         objSave.setStructureNo(txtStructureNo.getText().toString());
-         objSave.setHouseholdSl(txtHouseholdSl.getText().toString());
-         objSave.setVisitNo(txtVisitNo.getText().toString());
-         objSave.setMemSl(txtMemSl.getText().toString());
-         String[] d_rdogrpSeriIlOnset = new String[] {"1","2","8",""};
-         objSave.setSeriIlOnset(0);
-         for (int i = 0; i < rdogrpSeriIlOnset.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpSeriIlOnset.getChildAt(i);
-             if (rb.isChecked()) objSave.setSeriIlOnset(Integer.valueOf(d_rdogrpSeriIlOnset[i]));
-         }
+       if (txtUNCode.getText().toString().length() == 0 & secUNCode.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: Ward No.");
+           txtUNCode.requestFocus();
+           return;
+       } else if (txtStructureNo.getText().toString().length() == 0 & secStructureNo.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: Structure No.");
+           txtStructureNo.requestFocus();
+           return;
+       } else if (txtHouseholdSl.getText().toString().length() == 0 & secHouseholdSl.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: Household Sl.");
+           txtHouseholdSl.requestFocus();
+           return;
+       } else if (txtVisitNo.getText().toString().length() == 0 & secVisitNo.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: Visit No.");
+           txtVisitNo.requestFocus();
+           return;
+       } else if (txtMemSl.getText().toString().length() == 0 & secMemSl.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: Member Serial.");
+           txtMemSl.requestFocus();
+           return;
+       } else if (!rdoSeriIlOnset1.isChecked() & !rdoSeriIlOnset2.isChecked() & !rdoSeriIlOnset3.isChecked() & !rdoSeriIlOnset4.isChecked() & secSeriIlOnset.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (গত ১২ মাসে এই শিশুটি কি এমন মারাত্মক অসুস্থ হয়েছিল যেখানে শিশুটির জ্বর এবং খিঁচুনি অথবা জ্বর এবং অজ্ঞান হয়ে যাওয়া অথবা জ্বর এবং ঝিমুনি/দ্বিধা/শিশুকে জাগাতে অনেক কষ্ট হয় এমন অবস্থা (স্বাভাবিক মানসিক অবস্থার পরিবর্তন) হয়েছিল? (Within the last 12 months did this child have a serious illness with new onset of fever and convulsions OR fever and unconsciousness OR fever and drowsiness/confusion/difficulty in keeping child awake (Altered mental status)?)).");
+           rdoSeriIlOnset1.requestFocus();
+           return;
+       } else if (!rdoSameIllSec21.isChecked() & !rdoSameIllSec22.isChecked() & secSameIllSec2.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (এটি কি একই অসুস্থতা যা আপনি সেকশন ২ এর জন্য র্বণনা করছেনে  (Is it the same illness that you described for section-2)).");
+           rdoSameIllSec21.requestFocus();
+           return;
+       } else if (txtEpiSeriIlOnset.getText().toString().length() == 0 & secEpiSeriIlOnset.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: গত ১২ মাসে এই শিশুটির কতবার এই ধরনের মারাত্মক অসুস্থতার সাথে জ্বর ছিল এমন অবস্থা হয়েছিল? (যদি একের অধিক এই অসুস্থতা হয়ে থাকে, তবে সর্বশেষ অসুস্থতা সম্পর্কে নিচের প্রশ্নগুলো করুন (Within the last 12 months how many episodes of this kind of serious illness with fever did the child have?).");
+           txtEpiSeriIlOnset.requestFocus();
+           return;
+       } else if (Integer.valueOf(txtEpiSeriIlOnset.getText().toString().length() == 0 ? "01" : txtEpiSeriIlOnset.getText().toString()) < 01 || Integer.valueOf(txtEpiSeriIlOnset.getText().toString().length() == 0 ? "20" : txtEpiSeriIlOnset.getText().toString()) > 20) {
+           Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 20(গত ১২ মাসে এই শিশুটির কতবার এই ধরনের মারাত্মক অসুস্থতার সাথে জ্বর ছিল এমন অবস্থা হয়েছিল? (যদি একের অধিক এই অসুস্থতা হয়ে থাকে, তবে সর্বশেষ অসুস্থতা সম্পর্কে নিচের প্রশ্নগুলো করুন (Within the last 12 months how many episodes of this kind of serious illness with fever did the child have?)).");
+           txtEpiSeriIlOnset.requestFocus();
+           return;
+       } else if (txtIlnessFev.getText().toString().length() == 0 & secIlnessFev.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: শিশুটি কতদিন জ্বরে ভুগেছিল? (যদি জানা না থাকে 98 বসান) (How long did the child have fever?).");
+           txtIlnessFev.requestFocus();
+           return;
+       } else if (Integer.valueOf(txtIlnessFev.getText().toString().length() == 0 ? "01" : txtIlnessFev.getText().toString()) < 01 || Integer.valueOf(txtIlnessFev.getText().toString().length() == 0 ? "98" : txtIlnessFev.getText().toString()) > 98) {
+           Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 98(শিশুটি কতদিন জ্বরে ভুগেছিল? (যদি জানা না থাকে 98 বসান) (How long did the child have fever?)).");
+           txtIlnessFev.requestFocus();
+           return;
+       } else if (!rdoIlnessConv1.isChecked() & !rdoIlnessConv2.isChecked() & !rdoIlnessConv3.isChecked() & secIlnessConv.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (সর্বশেষ অসুস্থতার সময় এই শিশুটির কি খিঁচুনি হয়েছিল? (During the last episode of illness, did the child have convulsions?)).");
+           rdoIlnessConv1.requestFocus();
+           return;
+       } else if (!rdoUpRolEye1.isChecked() & !rdoUpRolEye2.isChecked() & !rdoUpRolEye3.isChecked() & secUpRolEye.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (খিঁচুনির সময় কি চোখ উল্টে  গিয়েছিল? (Did the convulsions include  upward rolling of eyeball?)).");
+           rdoUpRolEye1.requestFocus();
+           return;
+       } else if (!rdoMRigJaw1.isChecked() & !rdoMRigJaw2.isChecked() & !rdoMRigJaw3.isChecked() & secMRigJaw.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (খিঁচুনির সময় কি চোয়ালের মাংসপেশি শক্ত হয়ে গিয়েছিল? (চোয়ালের মাংসপেশি শক্ত/ মুখ খুলতে/বন্ধ করতে না পারা) (Did the convulsions include rigid jaw muscles?(Stiffening/hardening of jaw muscles; cannot open /close his/her mouth)).");
+           rdoMRigJaw1.requestFocus();
+           return;
+       } else if (!rdoMRigLimbs1.isChecked() & !rdoMRigLimbs2.isChecked() & !rdoMRigLimbs3.isChecked() & secMRigLimbs.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (খিঁচুনির সময় কি হাত পা শক্ত হয়ে গিয়েছিল? , হাতের মুষ্টি খুলতে গেলে বা হাত পা সোজা করতে গেলে বাধা পাওয়া (Did the convulsions include rigid limbs?, There is resistance in trying to open the limbs or fist)).");
+           rdoMRigLimbs1.requestFocus();
+           return;
+       } else if (!rdoMDurConv1.isChecked() & !rdoMDurConv2.isChecked() & !rdoMDurConv3.isChecked() & !rdoMDurConv4.isChecked() & !rdoMDurConv5.isChecked() & secMDurConv.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (খিঁচুনি কতক্ষন ছিল? (What was the duration of convulsions?)).");
+           rdoMDurConv1.requestFocus();
+           return;
+       } else if (!rdoMDrowsin1.isChecked() & !rdoMDrowsin2.isChecked() & !rdoMDrowsin3.isChecked() & secMDrowsin.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (সর্বশেষ অসুস্থতার সময় এই শিশুটিকে ঘুম থেকে জাগানো বা জাগ্রত রাখা যাচ্ছে না (জাগালেও আবার ঘুমিয়ে যায় এমন) এমন অবস্থা হয়েছিল? (ঝিমুনি) (During the last episode of illness, was it difficult to awaken or keep awake (keep from going to sleep) the child? (Drowsiness) ).");
+           rdoMDrowsin1.requestFocus();
+           return;
+       } else if (txtMDurDrowsin.getText().toString().length() == 0 & secMDurDrowsin.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: যদি হ্যাঁ হয় তাহলে কতদিন? (যদি জানা না থাকে 98 বসান) (If yes, for how long?).");
+           txtMDurDrowsin.requestFocus();
+           return;
+       } else if (Integer.valueOf(txtMDurDrowsin.getText().toString().length() == 0 ? "01" : txtMDurDrowsin.getText().toString()) < 01 || Integer.valueOf(txtMDurDrowsin.getText().toString().length() == 0 ? "98" : txtMDurDrowsin.getText().toString()) > 98) {
+           Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 98(যদি হ্যাঁ হয় তাহলে কতদিন? (যদি জানা না থাকে 98 বসান) (If yes, for how long?)).");
+           txtMDurDrowsin.requestFocus();
+           return;
+       } else if (spnMUntoFeed.getSelectedItemPosition() == 0 & secMUntoFeed.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: ৬ মাসের কম বয়সী শিশুর ক্ষেত্রেঃ সর্বশেষ অসুস্থতার সময় এই শিশুটির কি পানি/বুকের দুধ পান করতে পারেনি এমন অবস্থা হয়েছিল? (For children <6 months of age at the time of illness: During the illness, did the child ever refuse or was unable to drink or breastfeed?).");
+           spnMUntoFeed.requestFocus();
+           return;
+       } else if (txtMDurUntoFeed.getText().toString().length() == 0 & secMDurUntoFeed.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: যদি হ্যাঁ হয় তাহলে কতদিন?  (যদি জানা না থাকে 98 বসান) (If yes, for how long?).");
+           txtMDurUntoFeed.requestFocus();
+           return;
+       } else if (Integer.valueOf(txtMDurUntoFeed.getText().toString().length() == 0 ? "01" : txtMDurUntoFeed.getText().toString()) < 01 || Integer.valueOf(txtMDurUntoFeed.getText().toString().length() == 0 ? "98" : txtMDurUntoFeed.getText().toString()) > 98) {
+           Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 98(যদি হ্যাঁ হয় তাহলে কতদিন?  (যদি জানা না থাকে 98 বসান) (If yes, for how long?)).");
+           txtMDurUntoFeed.requestFocus();
+           return;
+       } else if (spnMCalNoRes.getSelectedItemPosition() == 0 & secMCalNoRes.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: যদি শিশুটির বয়স ১২ মাসের বেশি  হয়ঃ এই অসুস্থতার সময় (শিশুটির নাম) মায়ের ডাকে সাড়া দেয়নি এমন অবস্থা হয়েছিল কি? (If child is >12 months old:During the illness did (child’s name) ever not respond to mother’s call?).");
+           spnMCalNoRes.requestFocus();
+           return;
+       } else if (txtMDurCalNoRes.getText().toString().length() == 0 & secMDurCalNoRes.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: যদি হ্যাঁ হয় তাহলে কতদিন? (যদি জানা না থাকে 98 বসান) (If yes, for how long?).");
+           txtMDurCalNoRes.requestFocus();
+           return;
+       } else if (Integer.valueOf(txtMDurCalNoRes.getText().toString().length() == 0 ? "01" : txtMDurCalNoRes.getText().toString()) < 01 || Integer.valueOf(txtMDurCalNoRes.getText().toString().length() == 0 ? "98" : txtMDurCalNoRes.getText().toString()) > 98) {
+           Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 98(যদি হ্যাঁ হয় তাহলে কতদিন? (যদি জানা না থাকে 98 বসান) (If yes, for how long?)).");
+           txtMDurCalNoRes.requestFocus();
+           return;
+       } else if (spnMEverConf.getSelectedItemPosition() == 0 & secMEverConf.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: *যদি শিশুটির বয়স এই অসুস্থতায় সময় ১৮ মাসের বেশি হয়ঃ শিশুটি কখনও  কি দ্বিধার মধ্যে পরেছিল (ব্যক্তি/স্থান/সময় সম্পর্কে অবগত না থাকা)? * শিশুটি কি তার মা/পরিবারের অন্য সদস্যদের চিনতে পারেনি এমন অবস্থা হয়েছিল? * শিশুটি কি দিন/রাতের মধ্যে তফাৎ করতে পারে নি এমন অবস্থা হয়েছিল? *শিশুটি  কোথায় আছে তা বলতে পারেনি এমন অবস্থা হয়েছিল? *Was he/she ever unable to recognize the mother/ other family members? *Was he/she ever unable to tell whether it was day/ night? *Was he/she ever unaware of where he/she was?.");
+           spnMEverConf.requestFocus();
+           return;
+       } else if (spnMDurEverConf.getSelectedItemPosition() == 0 & secMDurEverConf.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: যদি হ্যাঁ হয় তাহলে কতক্ষন ছিল? (If yes for how long?).");
+           spnMDurEverConf.requestFocus();
+           return;
+       } else if (!rdoMFlicker1.isChecked() & !rdoMFlicker2.isChecked() & !rdoMFlicker3.isChecked() & secMFlicker.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (এই অসুস্থতার সময় শিশুটি কখনও নড়াচড়া করে নি এমন অবস্থা হয়েছিল কিন্তু সামান্য নড়াচড়া করত যখনঃ *জোরে কথা বলা হত অথবা, *তাকে জাগানোর জন্য আঘাত দেয়া হত অথবা, *চিমটি দেয়া হত , *যদি হ্যাঁ হয় তাহলে কতক্ষন ছিল তা নিচের প্রশ্নে জিজ্ঞাসা করুন? (During the illness, was there ever a time when the child showed nothing but only a flicker of movement if you:*talked loudly to the child or, *physically shook the child to awaken him/her or, *pinched the child?(If the answer is “yes”, then ask for how long) ).");
+           rdoMFlicker1.requestFocus();
+           return;
+       } else if (spnMDurFliker.getSelectedItemPosition() == 0 & secMDurFliker.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: এমন অবস্থা কতক্ষন ছিল? (What was the duration?).");
+           spnMDurFliker.requestFocus();
+           return;
+       } else if (!rdoMUnconsci1.isChecked() & !rdoMUnconsci2.isChecked() & !rdoMUnconsci3.isChecked() & secMUnconsci.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (সর্বশেষ অসুস্থতার সময় এই শিশুটি যে কোন সময়ের জন্য অজ্ঞান হয়েছিল? (During the illness, was the child unconscious for any length of time?)).");
+           rdoMUnconsci1.requestFocus();
+           return;
+       } else if (spnMDurUnconsci.getSelectedItemPosition() == 0 & secMDurUnconsci.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: কতক্ষন অজ্ঞান ছিল? (What was the duration of unconsciousness?).");
+           spnMDurUnconsci.requestFocus();
+           return;
+       } else if (!rdoMIlCry1.isChecked() & !rdoMIlCry2.isChecked() & !rdoMIlCry3.isChecked() & secMIlCry.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (এই অসুস্থতার সময় শিশুটির কি আস্বাভাবিক কান্না/কান্না থামেইনা অথবা খুবই দুর্বল ভাবে কান্না করেছিল? (During the illness, did the child have a period of non-stop / inconsolable crying or making a very feeble cry?)).");
+           rdoMIlCry1.requestFocus();
+           return;
+       } else if (spnMDurIlCry.getSelectedItemPosition() == 0 & secMDurIlCry.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: কতক্ষন কান্না করেছিল? (What was the duration of this cry?).");
+           spnMDurIlCry.requestFocus();
+           return;
+       } else if (spnMUnCraWalk.getSelectedItemPosition() == 0 & secMUnCraWalk.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: যে শিশুরা এই অসুস্থতার পূর্বে বসতে পারত, হামাগুড়ি দিতে পারত বা হাটতে পারতঃ এই অসুস্থতার জন্য বসতে /হামাগুড়ি/হাটতে পারেনি এমন অবস্থা হয়েছিল? (For children who were able to sit, crawl or walk before the illness: was the child ever unable to sit up/ crawl/ walk?).");
+           spnMUnCraWalk.requestFocus();
+           return;
+       } else if (spnMDurUnCraWalk.getSelectedItemPosition() == 0 & secMDurUnCraWalk.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: (কতক্ষন বসতে /হামাগুড়ি/হাটতে পারেনি? (What was the duration of inability to sit up/ crawl/walk?).");
+           spnMDurUnCraWalk.requestFocus();
+           return;
+       } else if (!rdoMDifBreath1.isChecked() & !rdoMDifBreath2.isChecked() & !rdoMDifBreath3.isChecked() & secMDifBreath.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (এই  অসুস্থতার সময় এই শিশুটির কি শ্বাসকষ্ট ছিল? (During this illness, did the child have difficulty breathing?)).");
+           rdoMDifBreath1.requestFocus();
+           return;
+       } else if (!rdoMCough1.isChecked() & !rdoMCough2.isChecked() & !rdoMCough3.isChecked() & secMCough.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (এই  অসুস্থতার সময় এই শিশুটির কি কাশি ছিল? (During this illness, did the child have cough?) ).");
+           rdoMCough1.requestFocus();
+           return;
+       } else if (!rdoMRash1.isChecked() & !rdoMRash2.isChecked() & !rdoMRash3.isChecked() & secMRash.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (এই  অসুস্থতার সময় এই শিশুটির শরীরে কি লাল দানা উঠেছিল? (During this illness, did the child have a rash?)).");
+           rdoMRash1.requestFocus();
+           return;
+       } else if (!rdoMVomit1.isChecked() & !rdoMVomit2.isChecked() & !rdoMVomit3.isChecked() & secMVomit.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (এই  অসুস্থতার সময় এই শিশুটির কি বমি হয়েছিল? (During this illness, did the child have vomiting?)).");
+           rdoMVomit1.requestFocus();
+           return;
+       } else if (!rdoMDiarrhoea1.isChecked() & !rdoMDiarrhoea2.isChecked() & !rdoMDiarrhoea3.isChecked() & secMDiarrhoea.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from ((এই  অসুস্থতার সময় এই শিশুটির কি পাতলা পায়খানা হয়েছিল? (During this illness, did the child have diarrhoea?)).");
+           rdoMDiarrhoea1.requestFocus();
+           return;
+       } else if (!rdoMHCar1.isChecked() & !rdoMHCar2.isChecked() & !rdoMHCar3.isChecked() & secMHCar.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (এই  অসুস্থতার সময়  এই শিশুটিকে কি কোন স্বাস্থ্যসেবা দানকারীর কাছে নিয়ে গিয়েছিলেন ? (During this episode of illness, did you bring your child to a health care provider?)).");
+           rdoMHCar1.requestFocus();
+           return;
+       } else if (!rdoMHC_Phy1.isChecked() & !rdoMHC_Phy2.isChecked() & !rdoMHC_Phy3.isChecked() & secMHC_Phy.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (1.MBBS বা এর উপর (MBBS and above) ).");
+           rdoMHC_Phy1.requestFocus();
+           return;
+       } else if (!rdoMHC_UnquaDoctor1.isChecked() & !rdoMHC_UnquaDoctor2.isChecked() & !rdoMHC_UnquaDoctor3.isChecked() & secMHC_UnquaDoctor.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (2.অদক্ষ ডাক্তার/ LMAF (Unqualified doctor/LMAF) ).");
+           rdoMHC_UnquaDoctor1.requestFocus();
+           return;
+       } else if (!rdoMHC_Para1.isChecked() & !rdoMHC_Para2.isChecked() & !rdoMHC_Para3.isChecked() & secMHC_Para.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (3.প্যারামেডিক (GoB/NGO) (Paramedics (GoB/NGO))  ).");
+           rdoMHC_Para1.requestFocus();
+           return;
+       } else if (!rdoMHC_Com1.isChecked() & !rdoMHC_Com2.isChecked() & !rdoMHC_Com3.isChecked() & secMHC_Com.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (4.কম্পাউণ্ডার (Compounder)  ).");
+           rdoMHC_Com1.requestFocus();
+           return;
+       } else if (!rdoMHC_Pha1.isChecked() & !rdoMHC_Pha2.isChecked() & !rdoMHC_Pha3.isChecked() & secMHC_Pha.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (5.ঔষধ বিক্রেতা/ফার্মেসি (Drug seller/Pharmacy)  ).");
+           rdoMHC_Pha1.requestFocus();
+           return;
+       } else if (!rdoMHC_Hompath1.isChecked() & !rdoMHC_Hompath2.isChecked() & !rdoMHC_Hompath3.isChecked() & secMHC_Hompath.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (6.হোমিওপ্যাঁথ (Homeopath)  ).");
+           rdoMHC_Hompath1.requestFocus();
+           return;
+       } else if (!rdoMHC_TrHeal1.isChecked() & !rdoMHC_TrHeal2.isChecked() & !rdoMHC_TrHeal3.isChecked() & secMHC_TrHeal.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (7.কবিরাজ (Traditional care provider)  ).");
+           rdoMHC_TrHeal1.requestFocus();
+           return;
+       } else if (!rdoMHC_SpiHeal1.isChecked() & !rdoMHC_SpiHeal2.isChecked() & !rdoMHC_SpiHeal3.isChecked() & secMHC_SpiHeal.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (8.আধ্যাত্মিক চিকিৎসক (Spiritual healer) ).");
+           rdoMHC_SpiHeal1.requestFocus();
+           return;
+       } else if (!rdoMHC_Oth1.isChecked() & !rdoMHC_Oth2.isChecked() & !rdoMHC_Oth3.isChecked() & secMHC_Oth.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (9.অন্যান্য  (Other)).");
+           rdoMHC_Oth1.requestFocus();
+           return;
+       } else if (txtMHC_OthName.getText().toString().length() == 0 & secMHC_OthName.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: 10.অন্যান্য উল্লেখ করুন (Others Specify).");
+           txtMHC_OthName.requestFocus();
+           return;
+       } else if (!rdoMDSHOPD1.isChecked() & !rdoMDSHOPD2.isChecked() & !rdoMDSHOPD3.isChecked() & secMDSHOPD.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (শিশুটিকে কি ঢাকা শিশু হাসপাতালের বহির্বিভাগে (OPD) নেয়া হয়েছিল? (Was the child seen at outdoor patient department (OPD) of Dhaka Shishu Hospital?)).");
+           rdoMDSHOPD1.requestFocus();
+           return;
+       } else if (!rdoMSSFOPD1.isChecked() & !rdoMSSFOPD2.isChecked() & !rdoMSSFOPD3.isChecked() & secMSSFOPD.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (শিশুটিকে কি মিরপুর শিশুস্বাস্থ্য ফাউন্ন্ডেশন এর  বহির্বিভাগে (OPD) নেয়া হয়েছিল ? (Was the child seen at outdoor patient department (OPD) of Shishu Shastha Foundation-Mirpur?)).");
+           rdoMSSFOPD1.requestFocus();
+           return;
+       } else if (!rdoMHosAdm1.isChecked() & !rdoMHosAdm2.isChecked() & !rdoMHosAdm3.isChecked() & secMHosAdm.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Select anyone options from (এই অসুস্থতার জন্য শিশুটিকে কি হাসপাতালে ভর্তি করা হয়েছিল? (During this episode of illness, was your child hospitalized?) ).");
+           rdoMHosAdm1.requestFocus();
+           return;
+       } else if (spnMHC_Hosp_a1.getSelectedItemPosition() == 0 & secMHC_Hosp_a1.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: 1..");
+           spnMHC_Hosp_a1.requestFocus();
+           return;
+       } else if (txtMHC_Hosp_a1_Oth.getText().toString().length() == 0 & secMHC_Hosp_a1_Oth.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: Name of the hospital-1.");
+           txtMHC_Hosp_a1_Oth.requestFocus();
+           return;
+       } else if (spnMHC_Hosp_a2.getSelectedItemPosition() == 0 & secMHC_Hosp_a2.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: 2..");
+           spnMHC_Hosp_a2.requestFocus();
+           return;
+       } else if (txtMHC_Hosp_a2_Oth.getText().toString().length() == 0 & secMHC_Hosp_a2_Oth.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: Name of the hospital-2.");
+           txtMHC_Hosp_a2_Oth.requestFocus();
+           return;
+       } else if (spnMHC_Hosp_a3.getSelectedItemPosition() == 0 & secMHC_Hosp_a3.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: 3..");
+           spnMHC_Hosp_a3.requestFocus();
+           return;
+       } else if (txtMHC_Hosp_a3_Oth.getText().toString().length() == 0 & secMHC_Hosp_a3_Oth.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: Name of the hospital-3.");
+           txtMHC_Hosp_a3_Oth.requestFocus();
+           return;
+       }
+       DV = Global.DateValidate(dtpMDtHos.getText().toString());
+       if (DV.length() != 0 & secMDtHos.isShown()) {
+           if (txtMHosM.getText().toString().length() == 0) {
+               Connection.MessageBox(MeningitisCase.this, DV);
+               dtpMDtHos.requestFocus();
+               return;
+           }
 
-         String[] d_rdogrpSameIllSec2 = new String[] {"1","2"};
-         objSave.setSameIllSec2(0);
-         for (int i = 0; i < rdogrpSameIllSec2.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpSameIllSec2.getChildAt(i);
-             if (rb.isChecked()) objSave.setSameIllSec2(Integer.valueOf(d_rdogrpSameIllSec2[i]));
-         }
+       } else if (txtMHosM.getText().toString().length() == 0 & secMHosM.isShown()) {
+           if (dtpMDtHos.getText().toString().length() == 0) {
 
-         objSave.setEpiSeriIlOnset(Integer.valueOf(txtEpiSeriIlOnset.getText().toString().length()==0?"0":txtEpiSeriIlOnset.getText().toString()));
-         objSave.setIlnessFev(Integer.valueOf(txtIlnessFev.getText().toString().length()==0?"0":txtIlnessFev.getText().toString()));
-         String[] d_rdogrpIlnessConv = new String[] {"1","2","8"};
-         objSave.setIlnessConv(0);
-         for (int i = 0; i < rdogrpIlnessConv.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpIlnessConv.getChildAt(i);
-             if (rb.isChecked()) objSave.setIlnessConv(Integer.valueOf(d_rdogrpIlnessConv[i]));
-         }
+               Connection.MessageBox(MeningitisCase.this, "Required field: যদি ভর্তির তারিখ জানা না থাকে,  কত মাস আগে  (How much ago).");
+               txtMHosM.requestFocus();
+               return;
+           } else if (Integer.valueOf(txtMHosM.getText().toString().length() == 0 ? "01" : txtMHosM.getText().toString()) < 01 || Integer.valueOf(txtMHosM.getText().toString().length() == 0 ? "18" : txtMHosM.getText().toString()) > 18) {
+               Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 18(যদি ভর্তির তারিখ জানা না থাকে,  কত মাস আগে  (How much ago)).");
+               txtMHosM.requestFocus();
+               return;
+           } else if (txtMDurIlBeHos.getText().toString().length() == 0 & secMDurIlBeHos.isShown()) {
+               Connection.MessageBox(MeningitisCase.this, "Required field: হাসপাতালে ভর্তির আগে শিশুটি কতদিন অসুস্থ ছিল? (যদি জানা না থাকে 98 বসান) (For how many days did the child appear ill before he/she was hospitalized?).");
+               txtMDurIlBeHos.requestFocus();
+               return;
+           } else if (Integer.valueOf(txtMDurIlBeHos.getText().toString().length() == 0 ? "01" : txtMDurIlBeHos.getText().toString()) < 01 || Integer.valueOf(txtMDurIlBeHos.getText().toString().length() == 0 ? "98" : txtMDurIlBeHos.getText().toString()) > 98) {
+               Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 98(হাসপাতালে ভর্তির আগে শিশুটি কতদিন অসুস্থ ছিল? (যদি জানা না থাকে 98 বসান) (For how many days did the child appear ill before he/she was hospitalized?)).");
+               txtMDurIlBeHos.requestFocus();
+               return;
+           } else if (spnMChildIlDr.getSelectedItemPosition() == 0 & secMChildIlDr.isShown()) {
+               Connection.MessageBox(MeningitisCase.this, "Required field:  চিকিৎসকরা শিশুটির কি রোগ ছিল বলে আপনাদের বলেছিলেন?  (3.28 এর উত্তর “1” অথবা   3.31 এর উত্তর “1” হলে প্রযোজ্য) What illness did the doctors tell you that your child had?.");
+               spnMChildIlDr.requestFocus();
+               return;
+           } else if (txtMChildIlDrOth.getText().toString().length() == 0 & secMChildIlDrOth.isShown()) {
+               Connection.MessageBox(MeningitisCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
+               txtMChildIlDrOth.requestFocus();
+               return;
+           } else if (!rdoMReco1.isChecked() & !rdoMReco2.isChecked() & !rdoMReco3.isChecked() & secMReco.isShown()) {
+               Connection.MessageBox(MeningitisCase.this, "Select anyone options from (আপনার শিশু কি সম্পূর্ণ সুস্থ হয়ে গিয়েছিল ? (Did the child recover completely?)).");
+               rdoMReco1.requestFocus();
+               return;
+           } else if (txtMDurReco.getText().toString().length() == 0 & secMDurReco.isShown()) {
 
-         String[] d_rdogrpUpRolEye = new String[] {"1","2","8"};
-         objSave.setUpRolEye(0);
-         for (int i = 0; i < rdogrpUpRolEye.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpUpRolEye.getChildAt(i);
-             if (rb.isChecked()) objSave.setUpRolEye(Integer.valueOf(d_rdogrpUpRolEye[i]));
-         }
+               Connection.MessageBox(MeningitisCase.this, "Required field: শিশুটি সুস্থ হতে কতদিন লেগেছিল? (যদি  জানা না থাকে 98) (How long did it take for the child to completely recover?).");
+               txtMDurReco.requestFocus();
+               return;
+           } else if (Integer.valueOf(txtMDurReco.getText().toString().length() == 0 ? "01" : txtMDurReco.getText().toString()) < 01 || Integer.valueOf(txtMDurReco.getText().toString().length() == 0 ? "98" : txtMDurReco.getText().toString()) > 98) {
+               Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 98(শিশুটি সুস্থ হতে কতদিন লেগেছিল? (যদি  জানা না থাকে 98) (How long did it take for the child to completely recover?)).");
+               txtMDurReco.requestFocus();
+               return;
+           } else if (spnMInReco.getSelectedItemPosition() == 0 & secMInReco.isShown()) {
+               Connection.MessageBox(MeningitisCase.this, "Required field: 1..");
+               spnMInReco.requestFocus();
+               return;
+           } else if (txtMInRecoOth.getText().toString().length() == 0 & secMInRecoOth.isShown()) {
+               Connection.MessageBox(MeningitisCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
+               txtMInRecoOth.requestFocus();
+               return;
+           } else if (spnMInReco2.getSelectedItemPosition() == 0 & secMInReco2.isShown()) {
+               Connection.MessageBox(MeningitisCase.this, "Required field: 2..");
+               spnMInReco2.requestFocus();
+               return;
+           } else if (txtMInRecoOth2.getText().toString().length() == 0 & secMInRecoOth2.isShown()) {
+               Connection.MessageBox(MeningitisCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
+               txtMInRecoOth2.requestFocus();
+               return;
+           } else if (spnMInReco3.getSelectedItemPosition() == 0 & secMInReco3.isShown()) {
+               Connection.MessageBox(MeningitisCase.this, "Required field: 3..");
+               spnMInReco3.requestFocus();
+               return;
+           } else if (txtMInRecoOth3.getText().toString().length() == 0 & secMInRecoOth3.isShown()) {
+               Connection.MessageBox(MeningitisCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
+               txtMInRecoOth3.requestFocus();
+               return;
+           } else if (txtAboSeriIlOnset.getText().toString().length() == 0 & secAboSeriIlOnset.isShown()) {
+               Connection.MessageBox(MeningitisCase.this, "Required field: মন্তব্যঃ মেনিনজাইটিস  (Remarks: Meningitis).");
+               txtAboSeriIlOnset.requestFocus();
+               return;
+           }
 
-         String[] d_rdogrpMRigJaw = new String[] {"1","2","8"};
-         objSave.setMRigJaw(0);
-         for (int i = 0; i < rdogrpMRigJaw.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMRigJaw.getChildAt(i);
-             if (rb.isChecked()) objSave.setMRigJaw(Integer.valueOf(d_rdogrpMRigJaw[i]));
-         }
+           String SQL = "";
+           RadioButton rb;
 
-         String[] d_rdogrpMRigLimbs = new String[] {"1","2","8"};
-         objSave.setMRigLimbs(0);
-         for (int i = 0; i < rdogrpMRigLimbs.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMRigLimbs.getChildAt(i);
-             if (rb.isChecked()) objSave.setMRigLimbs(Integer.valueOf(d_rdogrpMRigLimbs[i]));
-         }
+           MeningitisCase_DataModel objSave = new MeningitisCase_DataModel();
+           objSave.setUNCode(txtUNCode.getText().toString());
+           objSave.setStructureNo(txtStructureNo.getText().toString());
+           objSave.setHouseholdSl(txtHouseholdSl.getText().toString());
+           objSave.setVisitNo(txtVisitNo.getText().toString());
+           objSave.setMemSl(txtMemSl.getText().toString());
+           String[] d_rdogrpSeriIlOnset = new String[]{"1", "2", "8", ""};
+           objSave.setSeriIlOnset(0);
+           for (int i = 0; i < rdogrpSeriIlOnset.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpSeriIlOnset.getChildAt(i);
+               if (rb.isChecked()) objSave.setSeriIlOnset(Integer.valueOf(d_rdogrpSeriIlOnset[i]));
+           }
 
-         String[] d_rdogrpMDurConv = new String[] {"1","2","3","4","8"};
-         objSave.setMDurConv(0);
-         for (int i = 0; i < rdogrpMDurConv.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMDurConv.getChildAt(i);
-             if (rb.isChecked()) objSave.setMDurConv(Integer.valueOf(d_rdogrpMDurConv[i]));
-         }
+           String[] d_rdogrpSameIllSec2 = new String[]{"1", "2"};
+           objSave.setSameIllSec2(0);
+           for (int i = 0; i < rdogrpSameIllSec2.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpSameIllSec2.getChildAt(i);
+               if (rb.isChecked()) objSave.setSameIllSec2(Integer.valueOf(d_rdogrpSameIllSec2[i]));
+           }
 
-         String[] d_rdogrpMDrowsin = new String[] {"1","2","8"};
-         objSave.setMDrowsin(0);
-         for (int i = 0; i < rdogrpMDrowsin.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMDrowsin.getChildAt(i);
-             if (rb.isChecked()) objSave.setMDrowsin(Integer.valueOf(d_rdogrpMDrowsin[i]));
-         }
+           objSave.setEpiSeriIlOnset(Integer.valueOf(txtEpiSeriIlOnset.getText().toString().length() == 0 ? "0" : txtEpiSeriIlOnset.getText().toString()));
+           objSave.setIlnessFev(Integer.valueOf(txtIlnessFev.getText().toString().length() == 0 ? "0" : txtIlnessFev.getText().toString()));
+           String[] d_rdogrpIlnessConv = new String[]{"1", "2", "8"};
+           objSave.setIlnessConv(0);
+           for (int i = 0; i < rdogrpIlnessConv.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpIlnessConv.getChildAt(i);
+               if (rb.isChecked()) objSave.setIlnessConv(Integer.valueOf(d_rdogrpIlnessConv[i]));
+           }
 
-         objSave.setMDurDrowsin(Integer.valueOf(txtMDurDrowsin.getText().toString().length()==0?"0":txtMDurDrowsin.getText().toString()));
-         objSave.setMUntoFeed(Integer.valueOf(spnMUntoFeed.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMUntoFeed.getSelectedItem().toString(), "-")));
-         objSave.setMDurUntoFeed(Integer.valueOf(txtMDurUntoFeed.getText().toString().length()==0?"0":txtMDurUntoFeed.getText().toString()));
-         objSave.setMCalNoRes(Integer.valueOf(spnMCalNoRes.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMCalNoRes.getSelectedItem().toString(), "-")));
-         objSave.setMDurCalNoRes(Integer.valueOf(txtMDurCalNoRes.getText().toString().length()==0?"0":txtMDurCalNoRes.getText().toString()));
-         objSave.setMEverConf(Integer.valueOf(spnMEverConf.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMEverConf.getSelectedItem().toString(), "-")));
-         objSave.setMDurEverConf(Integer.valueOf(spnMDurEverConf.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMDurEverConf.getSelectedItem().toString(), "-")));
-         String[] d_rdogrpMFlicker = new String[] {"1","2","8"};
-         objSave.setMFlicker(0);
-         for (int i = 0; i < rdogrpMFlicker.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMFlicker.getChildAt(i);
-             if (rb.isChecked()) objSave.setMFlicker(Integer.valueOf(d_rdogrpMFlicker[i]));
-         }
+           String[] d_rdogrpUpRolEye = new String[]{"1", "2", "8"};
+           objSave.setUpRolEye(0);
+           for (int i = 0; i < rdogrpUpRolEye.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpUpRolEye.getChildAt(i);
+               if (rb.isChecked()) objSave.setUpRolEye(Integer.valueOf(d_rdogrpUpRolEye[i]));
+           }
 
-         objSave.setMDurFliker(Integer.valueOf(spnMDurFliker.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMDurFliker.getSelectedItem().toString(), "-")));
-         String[] d_rdogrpMUnconsci = new String[] {"1","2","8"};
-         objSave.setMUnconsci(0);
-         for (int i = 0; i < rdogrpMUnconsci.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMUnconsci.getChildAt(i);
-             if (rb.isChecked()) objSave.setMUnconsci(Integer.valueOf(d_rdogrpMUnconsci[i]));
-         }
+           String[] d_rdogrpMRigJaw = new String[]{"1", "2", "8"};
+           objSave.setMRigJaw(0);
+           for (int i = 0; i < rdogrpMRigJaw.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMRigJaw.getChildAt(i);
+               if (rb.isChecked()) objSave.setMRigJaw(Integer.valueOf(d_rdogrpMRigJaw[i]));
+           }
 
-         objSave.setMDurUnconsci(Integer.valueOf(spnMDurUnconsci.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMDurUnconsci.getSelectedItem().toString(), "-")));
-         String[] d_rdogrpMIlCry = new String[] {"1","2","8"};
-         objSave.setMIlCry(0);
-         for (int i = 0; i < rdogrpMIlCry.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMIlCry.getChildAt(i);
-             if (rb.isChecked()) objSave.setMIlCry(Integer.valueOf(d_rdogrpMIlCry[i]));
-         }
+           String[] d_rdogrpMRigLimbs = new String[]{"1", "2", "8"};
+           objSave.setMRigLimbs(0);
+           for (int i = 0; i < rdogrpMRigLimbs.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMRigLimbs.getChildAt(i);
+               if (rb.isChecked()) objSave.setMRigLimbs(Integer.valueOf(d_rdogrpMRigLimbs[i]));
+           }
 
-         objSave.setMDurIlCry(Integer.valueOf(spnMDurIlCry.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMDurIlCry.getSelectedItem().toString(), "-")));
-         objSave.setMUnCraWalk(Integer.valueOf(spnMUnCraWalk.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMUnCraWalk.getSelectedItem().toString(), "-")));
-         objSave.setMDurUnCraWalk(Integer.valueOf(spnMDurUnCraWalk.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMDurUnCraWalk.getSelectedItem().toString(), "-")));
-         String[] d_rdogrpMDifBreath = new String[] {"1","2","8"};
-         objSave.setMDifBreath(0);
-         for (int i = 0; i < rdogrpMDifBreath.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMDifBreath.getChildAt(i);
-             if (rb.isChecked()) objSave.setMDifBreath(Integer.valueOf(d_rdogrpMDifBreath[i]));
-         }
+           String[] d_rdogrpMDurConv = new String[]{"1", "2", "3", "4", "8"};
+           objSave.setMDurConv(0);
+           for (int i = 0; i < rdogrpMDurConv.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMDurConv.getChildAt(i);
+               if (rb.isChecked()) objSave.setMDurConv(Integer.valueOf(d_rdogrpMDurConv[i]));
+           }
 
-         String[] d_rdogrpMCough = new String[] {"1","2","8"};
-         objSave.setMCough(0);
-         for (int i = 0; i < rdogrpMCough.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMCough.getChildAt(i);
-             if (rb.isChecked()) objSave.setMCough(Integer.valueOf(d_rdogrpMCough[i]));
-         }
+           String[] d_rdogrpMDrowsin = new String[]{"1", "2", "8"};
+           objSave.setMDrowsin(0);
+           for (int i = 0; i < rdogrpMDrowsin.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMDrowsin.getChildAt(i);
+               if (rb.isChecked()) objSave.setMDrowsin(Integer.valueOf(d_rdogrpMDrowsin[i]));
+           }
 
-         String[] d_rdogrpMRash = new String[] {"1","2","8"};
-         objSave.setMRash(0);
-         for (int i = 0; i < rdogrpMRash.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMRash.getChildAt(i);
-             if (rb.isChecked()) objSave.setMRash(Integer.valueOf(d_rdogrpMRash[i]));
-         }
+           objSave.setMDurDrowsin(Integer.valueOf(txtMDurDrowsin.getText().toString().length() == 0 ? "0" : txtMDurDrowsin.getText().toString()));
+           objSave.setMUntoFeed(Integer.valueOf(spnMUntoFeed.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMUntoFeed.getSelectedItem().toString(), "-")));
+           objSave.setMDurUntoFeed(Integer.valueOf(txtMDurUntoFeed.getText().toString().length() == 0 ? "0" : txtMDurUntoFeed.getText().toString()));
+           objSave.setMCalNoRes(Integer.valueOf(spnMCalNoRes.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMCalNoRes.getSelectedItem().toString(), "-")));
+           objSave.setMDurCalNoRes(Integer.valueOf(txtMDurCalNoRes.getText().toString().length() == 0 ? "0" : txtMDurCalNoRes.getText().toString()));
+           objSave.setMEverConf(Integer.valueOf(spnMEverConf.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMEverConf.getSelectedItem().toString(), "-")));
+           objSave.setMDurEverConf(Integer.valueOf(spnMDurEverConf.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMDurEverConf.getSelectedItem().toString(), "-")));
+           String[] d_rdogrpMFlicker = new String[]{"1", "2", "8"};
+           objSave.setMFlicker(0);
+           for (int i = 0; i < rdogrpMFlicker.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMFlicker.getChildAt(i);
+               if (rb.isChecked()) objSave.setMFlicker(Integer.valueOf(d_rdogrpMFlicker[i]));
+           }
 
-         String[] d_rdogrpMVomit = new String[] {"1","2","8"};
-         objSave.setMVomit(0);
-         for (int i = 0; i < rdogrpMVomit.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMVomit.getChildAt(i);
-             if (rb.isChecked()) objSave.setMVomit(Integer.valueOf(d_rdogrpMVomit[i]));
-         }
+           objSave.setMDurFliker(Integer.valueOf(spnMDurFliker.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMDurFliker.getSelectedItem().toString(), "-")));
+           String[] d_rdogrpMUnconsci = new String[]{"1", "2", "8"};
+           objSave.setMUnconsci(0);
+           for (int i = 0; i < rdogrpMUnconsci.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMUnconsci.getChildAt(i);
+               if (rb.isChecked()) objSave.setMUnconsci(Integer.valueOf(d_rdogrpMUnconsci[i]));
+           }
 
-         String[] d_rdogrpMDiarrhoea = new String[] {"1","2","8"};
-         objSave.setMDiarrhoea(0);
-         for (int i = 0; i < rdogrpMDiarrhoea.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMDiarrhoea.getChildAt(i);
-             if (rb.isChecked()) objSave.setMDiarrhoea(Integer.valueOf(d_rdogrpMDiarrhoea[i]));
-         }
+           objSave.setMDurUnconsci(Integer.valueOf(spnMDurUnconsci.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMDurUnconsci.getSelectedItem().toString(), "-")));
+           String[] d_rdogrpMIlCry = new String[]{"1", "2", "8"};
+           objSave.setMIlCry(0);
+           for (int i = 0; i < rdogrpMIlCry.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMIlCry.getChildAt(i);
+               if (rb.isChecked()) objSave.setMIlCry(Integer.valueOf(d_rdogrpMIlCry[i]));
+           }
 
-         String[] d_rdogrpMHCar = new String[] {"1","2","8"};
-         objSave.setMHCar(0);
-         for (int i = 0; i < rdogrpMHCar.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMHCar.getChildAt(i);
-             if (rb.isChecked()) objSave.setMHCar(Integer.valueOf(d_rdogrpMHCar[i]));
-         }
+           objSave.setMDurIlCry(Integer.valueOf(spnMDurIlCry.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMDurIlCry.getSelectedItem().toString(), "-")));
+           objSave.setMUnCraWalk(Integer.valueOf(spnMUnCraWalk.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMUnCraWalk.getSelectedItem().toString(), "-")));
+           objSave.setMDurUnCraWalk(Integer.valueOf(spnMDurUnCraWalk.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMDurUnCraWalk.getSelectedItem().toString(), "-")));
+           String[] d_rdogrpMDifBreath = new String[]{"1", "2", "8"};
+           objSave.setMDifBreath(0);
+           for (int i = 0; i < rdogrpMDifBreath.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMDifBreath.getChildAt(i);
+               if (rb.isChecked()) objSave.setMDifBreath(Integer.valueOf(d_rdogrpMDifBreath[i]));
+           }
 
-         String[] d_rdogrpMHC_Phy = new String[] {"1","2","8"};
-         objSave.setMHC_Phy(0);
-         for (int i = 0; i < rdogrpMHC_Phy.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMHC_Phy.getChildAt(i);
-             if (rb.isChecked()) objSave.setMHC_Phy(Integer.valueOf(d_rdogrpMHC_Phy[i]));
-         }
+           String[] d_rdogrpMCough = new String[]{"1", "2", "8"};
+           objSave.setMCough(0);
+           for (int i = 0; i < rdogrpMCough.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMCough.getChildAt(i);
+               if (rb.isChecked()) objSave.setMCough(Integer.valueOf(d_rdogrpMCough[i]));
+           }
 
-         String[] d_rdogrpMHC_UnquaDoctor = new String[] {"1","2","8"};
-         objSave.setMHC_UnquaDoctor(0);
-         for (int i = 0; i < rdogrpMHC_UnquaDoctor.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMHC_UnquaDoctor.getChildAt(i);
-             if (rb.isChecked()) objSave.setMHC_UnquaDoctor(Integer.valueOf(d_rdogrpMHC_UnquaDoctor[i]));
-         }
+           String[] d_rdogrpMRash = new String[]{"1", "2", "8"};
+           objSave.setMRash(0);
+           for (int i = 0; i < rdogrpMRash.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMRash.getChildAt(i);
+               if (rb.isChecked()) objSave.setMRash(Integer.valueOf(d_rdogrpMRash[i]));
+           }
 
-         String[] d_rdogrpMHC_Para = new String[] {"1","2","8"};
-         objSave.setMHC_Para(0);
-         for (int i = 0; i < rdogrpMHC_Para.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMHC_Para.getChildAt(i);
-             if (rb.isChecked()) objSave.setMHC_Para(Integer.valueOf(d_rdogrpMHC_Para[i]));
-         }
+           String[] d_rdogrpMVomit = new String[]{"1", "2", "8"};
+           objSave.setMVomit(0);
+           for (int i = 0; i < rdogrpMVomit.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMVomit.getChildAt(i);
+               if (rb.isChecked()) objSave.setMVomit(Integer.valueOf(d_rdogrpMVomit[i]));
+           }
 
-         String[] d_rdogrpMHC_Com = new String[] {"1","2","8"};
-         objSave.setMHC_Com(0);
-         for (int i = 0; i < rdogrpMHC_Com.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMHC_Com.getChildAt(i);
-             if (rb.isChecked()) objSave.setMHC_Com(Integer.valueOf(d_rdogrpMHC_Com[i]));
-         }
+           String[] d_rdogrpMDiarrhoea = new String[]{"1", "2", "8"};
+           objSave.setMDiarrhoea(0);
+           for (int i = 0; i < rdogrpMDiarrhoea.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMDiarrhoea.getChildAt(i);
+               if (rb.isChecked()) objSave.setMDiarrhoea(Integer.valueOf(d_rdogrpMDiarrhoea[i]));
+           }
 
-         String[] d_rdogrpMHC_Pha = new String[] {"1","2","8"};
-         objSave.setMHC_Pha(0);
-         for (int i = 0; i < rdogrpMHC_Pha.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMHC_Pha.getChildAt(i);
-             if (rb.isChecked()) objSave.setMHC_Pha(Integer.valueOf(d_rdogrpMHC_Pha[i]));
-         }
+           String[] d_rdogrpMHCar = new String[]{"1", "2", "8"};
+           objSave.setMHCar(0);
+           for (int i = 0; i < rdogrpMHCar.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMHCar.getChildAt(i);
+               if (rb.isChecked()) objSave.setMHCar(Integer.valueOf(d_rdogrpMHCar[i]));
+           }
 
-         String[] d_rdogrpMHC_Hompath = new String[] {"1","2","8"};
-         objSave.setMHC_Hompath(0);
-         for (int i = 0; i < rdogrpMHC_Hompath.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMHC_Hompath.getChildAt(i);
-             if (rb.isChecked()) objSave.setMHC_Hompath(Integer.valueOf(d_rdogrpMHC_Hompath[i]));
-         }
+           String[] d_rdogrpMHC_Phy = new String[]{"1", "2", "8"};
+           objSave.setMHC_Phy(0);
+           for (int i = 0; i < rdogrpMHC_Phy.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMHC_Phy.getChildAt(i);
+               if (rb.isChecked()) objSave.setMHC_Phy(Integer.valueOf(d_rdogrpMHC_Phy[i]));
+           }
 
-         String[] d_rdogrpMHC_TrHeal = new String[] {"1","2","8"};
-         objSave.setMHC_TrHeal(0);
-         for (int i = 0; i < rdogrpMHC_TrHeal.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMHC_TrHeal.getChildAt(i);
-             if (rb.isChecked()) objSave.setMHC_TrHeal(Integer.valueOf(d_rdogrpMHC_TrHeal[i]));
-         }
+           String[] d_rdogrpMHC_UnquaDoctor = new String[]{"1", "2", "8"};
+           objSave.setMHC_UnquaDoctor(0);
+           for (int i = 0; i < rdogrpMHC_UnquaDoctor.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMHC_UnquaDoctor.getChildAt(i);
+               if (rb.isChecked())
+                   objSave.setMHC_UnquaDoctor(Integer.valueOf(d_rdogrpMHC_UnquaDoctor[i]));
+           }
 
-         String[] d_rdogrpMHC_SpiHeal = new String[] {"1","2","8"};
-         objSave.setMHC_SpiHeal(0);
-         for (int i = 0; i < rdogrpMHC_SpiHeal.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMHC_SpiHeal.getChildAt(i);
-             if (rb.isChecked()) objSave.setMHC_SpiHeal(Integer.valueOf(d_rdogrpMHC_SpiHeal[i]));
-         }
+           String[] d_rdogrpMHC_Para = new String[]{"1", "2", "8"};
+           objSave.setMHC_Para(0);
+           for (int i = 0; i < rdogrpMHC_Para.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMHC_Para.getChildAt(i);
+               if (rb.isChecked()) objSave.setMHC_Para(Integer.valueOf(d_rdogrpMHC_Para[i]));
+           }
 
-         String[] d_rdogrpMHC_Oth = new String[] {"1","2","8"};
-         objSave.setMHC_Oth(0);
-         for (int i = 0; i < rdogrpMHC_Oth.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMHC_Oth.getChildAt(i);
-             if (rb.isChecked()) objSave.setMHC_Oth(Integer.valueOf(d_rdogrpMHC_Oth[i]));
-         }
+           String[] d_rdogrpMHC_Com = new String[]{"1", "2", "8"};
+           objSave.setMHC_Com(0);
+           for (int i = 0; i < rdogrpMHC_Com.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMHC_Com.getChildAt(i);
+               if (rb.isChecked()) objSave.setMHC_Com(Integer.valueOf(d_rdogrpMHC_Com[i]));
+           }
 
-         objSave.setMHC_OthName(txtMHC_OthName.getText().toString());
-         String[] d_rdogrpMDSHOPD = new String[] {"1","2","8"};
-         objSave.setMDSHOPD(0);
-         for (int i = 0; i < rdogrpMDSHOPD.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMDSHOPD.getChildAt(i);
-             if (rb.isChecked()) objSave.setMDSHOPD(Integer.valueOf(d_rdogrpMDSHOPD[i]));
-         }
+           String[] d_rdogrpMHC_Pha = new String[]{"1", "2", "8"};
+           objSave.setMHC_Pha(0);
+           for (int i = 0; i < rdogrpMHC_Pha.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMHC_Pha.getChildAt(i);
+               if (rb.isChecked()) objSave.setMHC_Pha(Integer.valueOf(d_rdogrpMHC_Pha[i]));
+           }
 
-         String[] d_rdogrpMSSFOPD = new String[] {"1","2","8"};
-         objSave.setMSSFOPD(0);
-         for (int i = 0; i < rdogrpMSSFOPD.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMSSFOPD.getChildAt(i);
-             if (rb.isChecked()) objSave.setMSSFOPD(Integer.valueOf(d_rdogrpMSSFOPD[i]));
-         }
+           String[] d_rdogrpMHC_Hompath = new String[]{"1", "2", "8"};
+           objSave.setMHC_Hompath(0);
+           for (int i = 0; i < rdogrpMHC_Hompath.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMHC_Hompath.getChildAt(i);
+               if (rb.isChecked()) objSave.setMHC_Hompath(Integer.valueOf(d_rdogrpMHC_Hompath[i]));
+           }
 
-         String[] d_rdogrpMHosAdm = new String[] {"1","2","8"};
-         objSave.setMHosAdm(0);
-         for (int i = 0; i < rdogrpMHosAdm.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMHosAdm.getChildAt(i);
-             if (rb.isChecked()) objSave.setMHosAdm(Integer.valueOf(d_rdogrpMHosAdm[i]));
-         }
+           String[] d_rdogrpMHC_TrHeal = new String[]{"1", "2", "8"};
+           objSave.setMHC_TrHeal(0);
+           for (int i = 0; i < rdogrpMHC_TrHeal.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMHC_TrHeal.getChildAt(i);
+               if (rb.isChecked()) objSave.setMHC_TrHeal(Integer.valueOf(d_rdogrpMHC_TrHeal[i]));
+           }
 
-         objSave.setMHC_Hosp_a1(Integer.valueOf(spnMHC_Hosp_a1.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMHC_Hosp_a1.getSelectedItem().toString(), "-")));
-         objSave.setMHC_Hosp_a1_Oth(txtMHC_Hosp_a1_Oth.getText().toString());
-         objSave.setMHC_Hosp_a2(Integer.valueOf(spnMHC_Hosp_a2.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMHC_Hosp_a2.getSelectedItem().toString(), "-")));
-         objSave.setMHC_Hosp_a2_Oth(txtMHC_Hosp_a2_Oth.getText().toString());
-         objSave.setMHC_Hosp_a3(Integer.valueOf(spnMHC_Hosp_a3.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMHC_Hosp_a3.getSelectedItem().toString(), "-")));
-         objSave.setMHC_Hosp_a3_Oth(txtMHC_Hosp_a3_Oth.getText().toString());
-         objSave.setMDtHos(dtpMDtHos.getText().toString().length() > 0 ? Global.DateConvertYMD(dtpMDtHos.getText().toString()) : dtpMDtHos.getText().toString());
-         objSave.setMHosM(Integer.valueOf(txtMHosM.getText().toString().length()==0?"0":txtMHosM.getText().toString()));
-         objSave.setMDurIlBeHos(Integer.valueOf(txtMDurIlBeHos.getText().toString().length()==0?"0":txtMDurIlBeHos.getText().toString()));
-         objSave.setMChildIlDr(Integer.valueOf(spnMChildIlDr.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMChildIlDr.getSelectedItem().toString(), "-")));
-         objSave.setMChildIlDrOth(txtMChildIlDrOth.getText().toString());
-         String[] d_rdogrpMReco = new String[] {"1","2","8"};
-         objSave.setMReco(0);
-         for (int i = 0; i < rdogrpMReco.getChildCount(); i++)
-         {
-             rb = (RadioButton)rdogrpMReco.getChildAt(i);
-             if (rb.isChecked()) objSave.setMReco(Integer.valueOf(d_rdogrpMReco[i]));
-         }
+           String[] d_rdogrpMHC_SpiHeal = new String[]{"1", "2", "8"};
+           objSave.setMHC_SpiHeal(0);
+           for (int i = 0; i < rdogrpMHC_SpiHeal.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMHC_SpiHeal.getChildAt(i);
+               if (rb.isChecked()) objSave.setMHC_SpiHeal(Integer.valueOf(d_rdogrpMHC_SpiHeal[i]));
+           }
 
-         objSave.setMDurReco(Integer.valueOf(txtMDurReco.getText().toString().length()==0?"0":txtMDurReco.getText().toString()));
-         objSave.setMInReco(Integer.valueOf(spnMInReco.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMInReco.getSelectedItem().toString(), "-")));
-         objSave.setMInRecoOth(txtMInRecoOth.getText().toString());
-         objSave.setMInReco2(Integer.valueOf(spnMInReco2.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMInReco2.getSelectedItem().toString(), "-")));
-         objSave.setMInRecoOth2(txtMInRecoOth2.getText().toString());
-         objSave.setMInReco3(Integer.valueOf(spnMInReco3.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMInReco3.getSelectedItem().toString(), "-")));
-         objSave.setMInRecoOth3(txtMInRecoOth3.getText().toString());
-         objSave.setAboSeriIlOnset(txtAboSeriIlOnset.getText().toString());
-         objSave.setEnDt(Global.DateTimeNowYMDHMS());
-         objSave.setStartTime(STARTTIME);
-         objSave.setEndTime(g.CurrentTime24());
-         objSave.setDeviceID(DEVICEID);
-         objSave.setEntryUser(ENTRYUSER); //from data entry user list
-         objSave.setmodifyDate(Global.DateTimeNowYMDHMS());
-         //objSave.setLat(Double.toString(currentLatitude));
-         //objSave.setLon(Double.toString(currentLongitude));
+           String[] d_rdogrpMHC_Oth = new String[]{"1", "2", "8"};
+           objSave.setMHC_Oth(0);
+           for (int i = 0; i < rdogrpMHC_Oth.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMHC_Oth.getChildAt(i);
+               if (rb.isChecked()) objSave.setMHC_Oth(Integer.valueOf(d_rdogrpMHC_Oth[i]));
+           }
 
-         String status = objSave.SaveUpdateData(this);
-         if(status.length()==0) {
-             AlertDialog.Builder alert=new AlertDialog.Builder(this);
-             alert.setMessage("Saved Successfully");
-             alert.setTitle("Message");
-             alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                 @Override
-                 public void onClick(DialogInterface dialog, int which) {
-                     Intent intent = new Intent(getApplicationContext(), PneumoniaCase.class);
-                     intent.putExtras(IDbundle);
-                     startActivityForResult(intent, 1);
-                 }
-             });
-             alert.show();
+           objSave.setMHC_OthName(txtMHC_OthName.getText().toString());
+           String[] d_rdogrpMDSHOPD = new String[]{"1", "2", "8"};
+           objSave.setMDSHOPD(0);
+           for (int i = 0; i < rdogrpMDSHOPD.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMDSHOPD.getChildAt(i);
+               if (rb.isChecked()) objSave.setMDSHOPD(Integer.valueOf(d_rdogrpMDSHOPD[i]));
+           }
 
-             Bundle IDbundle = new Bundle();
-             IDbundle.putString("UNCode",UNCODE  );
-             IDbundle.putString("StructureNo",STRUCTURENO );
-             IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
-             IDbundle.putString("VisitNo", VISITNO);
-             IDbundle.putString("MemSl", MEMSL);
+           String[] d_rdogrpMSSFOPD = new String[]{"1", "2", "8"};
+           objSave.setMSSFOPD(0);
+           for (int i = 0; i < rdogrpMSSFOPD.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMSSFOPD.getChildAt(i);
+               if (rb.isChecked()) objSave.setMSSFOPD(Integer.valueOf(d_rdogrpMSSFOPD[i]));
+           }
 
-         }
-         else{
-             Connection.MessageBox(MeningitisCase.this, status);
-             return;
-         }
-     }
-     catch(Exception  e)
+           String[] d_rdogrpMHosAdm = new String[]{"1", "2", "8"};
+           objSave.setMHosAdm(0);
+           for (int i = 0; i < rdogrpMHosAdm.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMHosAdm.getChildAt(i);
+               if (rb.isChecked()) objSave.setMHosAdm(Integer.valueOf(d_rdogrpMHosAdm[i]));
+           }
+
+           objSave.setMHC_Hosp_a1(Integer.valueOf(spnMHC_Hosp_a1.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMHC_Hosp_a1.getSelectedItem().toString(), "-")));
+           objSave.setMHC_Hosp_a1_Oth(txtMHC_Hosp_a1_Oth.getText().toString());
+           objSave.setMHC_Hosp_a2(Integer.valueOf(spnMHC_Hosp_a2.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMHC_Hosp_a2.getSelectedItem().toString(), "-")));
+           objSave.setMHC_Hosp_a2_Oth(txtMHC_Hosp_a2_Oth.getText().toString());
+           objSave.setMHC_Hosp_a3(Integer.valueOf(spnMHC_Hosp_a3.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMHC_Hosp_a3.getSelectedItem().toString(), "-")));
+           objSave.setMHC_Hosp_a3_Oth(txtMHC_Hosp_a3_Oth.getText().toString());
+           objSave.setMDtHos(dtpMDtHos.getText().toString().length() > 0 ? Global.DateConvertYMD(dtpMDtHos.getText().toString()) : dtpMDtHos.getText().toString());
+           objSave.setMHosM(Integer.valueOf(txtMHosM.getText().toString().length() == 0 ? "0" : txtMHosM.getText().toString()));
+           objSave.setMDurIlBeHos(Integer.valueOf(txtMDurIlBeHos.getText().toString().length() == 0 ? "0" : txtMDurIlBeHos.getText().toString()));
+           objSave.setMChildIlDr(Integer.valueOf(spnMChildIlDr.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMChildIlDr.getSelectedItem().toString(), "-")));
+           objSave.setMChildIlDrOth(txtMChildIlDrOth.getText().toString());
+           String[] d_rdogrpMReco = new String[]{"1", "2", "8"};
+           objSave.setMReco(0);
+           for (int i = 0; i < rdogrpMReco.getChildCount(); i++) {
+               rb = (RadioButton) rdogrpMReco.getChildAt(i);
+               if (rb.isChecked()) objSave.setMReco(Integer.valueOf(d_rdogrpMReco[i]));
+           }
+
+           objSave.setMDurReco(Integer.valueOf(txtMDurReco.getText().toString().length() == 0 ? "0" : txtMDurReco.getText().toString()));
+           objSave.setMInReco(Integer.valueOf(spnMInReco.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMInReco.getSelectedItem().toString(), "-")));
+           objSave.setMInRecoOth(txtMInRecoOth.getText().toString());
+           objSave.setMInReco2(Integer.valueOf(spnMInReco2.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMInReco2.getSelectedItem().toString(), "-")));
+           objSave.setMInRecoOth2(txtMInRecoOth2.getText().toString());
+           objSave.setMInReco3(Integer.valueOf(spnMInReco3.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMInReco3.getSelectedItem().toString(), "-")));
+           objSave.setMInRecoOth3(txtMInRecoOth3.getText().toString());
+           objSave.setAboSeriIlOnset(txtAboSeriIlOnset.getText().toString());
+           objSave.setEnDt(Global.DateTimeNowYMDHMS());
+           objSave.setStartTime(STARTTIME);
+           objSave.setEndTime(g.CurrentTime24());
+           objSave.setDeviceID(DEVICEID);
+           objSave.setEntryUser(ENTRYUSER); //from data entry user list
+           objSave.setmodifyDate(Global.DateTimeNowYMDHMS());
+           //objSave.setLat(Double.toString(currentLatitude));
+           //objSave.setLon(Double.toString(currentLongitude));
+
+           String status = objSave.SaveUpdateData(this);
+           if (status.length() == 0) {
+               AlertDialog.Builder alert = new AlertDialog.Builder(this);
+               alert.setMessage("Saved Successfully");
+               alert.setTitle("Message");
+               alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                   @Override
+                   public void onClick(DialogInterface dialog, int which) {
+                       Intent intent = new Intent(getApplicationContext(), PneumoniaCase.class);
+                       intent.putExtras(IDbundle);
+                       startActivityForResult(intent, 1);
+                   }
+               });
+               alert.show();
+
+               Bundle IDbundle = new Bundle();
+               IDbundle.putString("UNCode", UNCODE);
+               IDbundle.putString("StructureNo", STRUCTURENO);
+               IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
+               IDbundle.putString("VisitNo", VISITNO);
+               IDbundle.putString("MemSl", MEMSL);
+
+           } else {
+               Connection.MessageBox(MeningitisCase.this, status);
+               return;
+           }
+       }
+   }
+     catch(Exception e)
      {
          Connection.MessageBox(MeningitisCase.this, e.getMessage());
          return;

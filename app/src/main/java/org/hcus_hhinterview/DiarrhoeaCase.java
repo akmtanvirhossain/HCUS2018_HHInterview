@@ -1360,8 +1360,14 @@ txtDDurReco.addTextChangedListener(new TextWatcher() {
 
     @Override
     public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-        secDInReco.setVisibility(View.GONE);
-        lineDInReco.setVisibility(View.GONE);
+        if(txtDDurReco.getText().toString().length()>0){
+            secDInReco.setVisibility(View.GONE);
+            lineDInReco.setVisibility(View.GONE);
+        }
+        else{
+            secDInReco.setVisibility(View.VISIBLE);
+            lineDInReco.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override

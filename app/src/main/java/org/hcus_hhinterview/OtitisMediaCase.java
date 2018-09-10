@@ -983,21 +983,36 @@
 
              @Override
              public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                 if(txtOMDurReco.getText().toString().length()>0)
+                 {
+                     secOMInRecoLabel.setVisibility(View.GONE);
+                     lineOMInRecoLabel.setVisibility(View.GONE);
+                     secOMInReco.setVisibility(View.GONE);
+                     lineOMInReco.setVisibility(View.GONE);
+                     spnOMInReco.setSelection(0);
+                     secOMInRecoOth.setVisibility(View.GONE);
+                     lineOMInRecoOth.setVisibility(View.GONE);
+                     txtOMInRecoOth.setText("");
+                     secOMInReco2.setVisibility(View.GONE);
+                     lineOMInReco2.setVisibility(View.GONE);
+                     spnOMInReco2.setSelection(0);
+                     secOMInRecoOth2.setVisibility(View.GONE);
+                     lineOMInRecoOth2.setVisibility(View.GONE);
+                     txtOMInRecoOth2.setText("");
+                 }else{
+                     secOMInRecoLabel.setVisibility(View.VISIBLE);
+                     lineOMInRecoLabel.setVisibility(View.VISIBLE);
+                     secOMInReco.setVisibility(View.VISIBLE);
+                     lineOMInReco.setVisibility(View.VISIBLE);
+                     spnOMInReco.setSelection(0);
 
-                 secOMInRecoLabel.setVisibility(View.GONE);
-                 lineOMInRecoLabel.setVisibility(View.GONE);
-                 secOMInReco.setVisibility(View.GONE);
-                 lineOMInReco.setVisibility(View.GONE);
-                 spnOMInReco.setSelection(0);
-                 secOMInRecoOth.setVisibility(View.GONE);
-                 lineOMInRecoOth.setVisibility(View.GONE);
-                 txtOMInRecoOth.setText("");
-                 secOMInReco2.setVisibility(View.GONE);
-                 lineOMInReco2.setVisibility(View.GONE);
-                 spnOMInReco2.setSelection(0);
-                 secOMInRecoOth2.setVisibility(View.GONE);
-                 lineOMInRecoOth2.setVisibility(View.GONE);
-                 txtOMInRecoOth2.setText("");
+                     secOMInReco2.setVisibility(View.VISIBLE);
+                     lineOMInReco2.setVisibility(View.VISIBLE);
+                     spnOMInReco2.setSelection(0);
+
+                 }
+
+
 
              }
 
