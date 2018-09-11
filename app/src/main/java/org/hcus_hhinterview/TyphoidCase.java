@@ -3106,7 +3106,6 @@
                  {
                       secTHosNam_Oth.setVisibility(View.GONE);
                       lineTHosNam_Oth.setVisibility(View.GONE);
-                      chkTHosNamDK.setChecked(false);
 
                  }
              }
@@ -3164,7 +3163,7 @@
                   secTHosNam2_Oth.setVisibility(View.GONE);
                   lineTHosNam2_Oth.setVisibility(View.GONE);
                   txtTHosNam2_Oth.setText("");
-                  chkTHosNamDK.setChecked(false);
+
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
@@ -3226,7 +3225,7 @@
                       lineTHosNam3_Oth.setVisibility(View.GONE);
                       txtTHosNam3_Oth.setText("");
 
-                      chkTHosNamDK.setChecked(false);
+
                  }
              }
              @Override
@@ -3266,9 +3265,12 @@
           chkTHosNamDK.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                @Override
                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                    spnTHosNam3.setSelection(0);
-                    spnTHosNam.setSelection(0);
-                    rdogrpTHosNam2.clearCheck();
+                    if (b){
+                         spnTHosNam3.setSelection(0);
+                         spnTHosNam.setSelection(0);
+                         rdogrpTHosNam2.clearCheck();
+                    }
+
                }
           });
 

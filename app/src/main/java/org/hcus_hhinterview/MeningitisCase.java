@@ -1987,7 +1987,65 @@
          lineMHC_Oth=(View)findViewById(R.id.lineMHC_Oth);
          VlblMHC_Oth = (TextView) findViewById(R.id.VlblMHC_Oth);
          rdogrpMHC_Oth = (RadioGroup) findViewById(R.id.rdogrpMHC_Oth);
-         
+
+
+         rdogrpMHC_Phy.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
+             @Override
+             public void onCheckedChanged(RadioGroup radioGroup,int radioButtonID) {
+                 String rbData = "";
+                 RadioButton rb;
+                 String[] d_rdogrpMHC_Phy = new String[]{"1", "2", "8"};
+                 for (int i = 0; i < rdogrpMHC_Phy.getChildCount(); i++) {
+                     rb = (RadioButton) rdogrpMHC_Phy.getChildAt(i);
+                     if (rb.isChecked()) rbData = d_rdogrpMHC_Phy[i];
+                 }
+                 if (rbData.equalsIgnoreCase("2")) {
+                     secMHosNamLabel.setVisibility(View.GONE);
+                     lineMHosNamLabel.setVisibility(View.GONE);
+                     secMHC_Hosp_a1.setVisibility(View.GONE);
+                     lineMHC_Hosp_a1.setVisibility(View.GONE);
+                     spnMHC_Hosp_a1.setSelection(0);
+                     secMHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a1_Oth.setText("");
+                     secMHC_Hosp_a2.setVisibility(View.GONE);
+                     lineMHC_Hosp_a2.setVisibility(View.GONE);
+                     spnMHC_Hosp_a2.setSelection(0);
+                     secMHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a2_Oth.setText("");
+                     secMHC_Hosp_a3.setVisibility(View.GONE);
+                     lineMHC_Hosp_a3.setVisibility(View.GONE);
+                     spnMHC_Hosp_a3.setSelection(0);
+                     secMHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a3_Oth.setText("");
+                     secMDtHos.setVisibility(View.GONE);
+                     lineMDtHos.setVisibility(View.GONE);
+                     dtpMDtHos.setText("");
+                     secMHosM.setVisibility(View.GONE);
+                     lineMHosM.setVisibility(View.GONE);
+                     txtMHosM.setText("");
+                     secMDurIlBeHos.setVisibility(View.GONE);
+                     lineMDurIlBeHos.setVisibility(View.GONE);
+                     txtMDurIlBeHos.setText("");
+
+                 } else if (rbData.equalsIgnoreCase("8")) {
+
+                 } else if (rbData.equalsIgnoreCase("1")) {
+
+                 } else {
+
+                 }
+             }
+             public void onNothingSelected(AdapterView<?> adapterView) {
+                 return;
+             }
+         });
+
+
+
+
          rdoMHC_Oth1 = (RadioButton) findViewById(R.id.rdoMHC_Oth1);
          rdoMHC_Oth2 = (RadioButton) findViewById(R.id.rdoMHC_Oth2);
          rdoMHC_Oth3 = (RadioButton) findViewById(R.id.rdoMHC_Oth3);
