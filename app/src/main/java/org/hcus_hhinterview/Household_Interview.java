@@ -716,7 +716,7 @@
          spnEduLevelMHead.setAdapter(adptrEduLevelMHead);
 
 
-         final String MSL = C.ReturnSingleValue("Select (ifnull(max(cast(MemSl as int)),0)+1) from Member where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'and HouseholdSl='"+ HOUSEHOLDSL +"'and VisitNo='"+ VISITNO +"'"); //where ParticipantID='"+ ParticipantID +"'");
+//         final String MSL = C.ReturnSingleValue("Select (ifnull(max(cast(MemSl as int)),0)+1) from Member where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'and HouseholdSl='"+ HOUSEHOLDSL +"'and VisitNo='"+ VISITNO +"'"); //where ParticipantID='"+ ParticipantID +"'");
 
 
           btnRefresh = (Button) findViewById(R.id.btnRefresh);
@@ -737,7 +737,7 @@
                          IDbundle.putString("StructureNo", STRUCTURENO);
                          IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
                          IDbundle.putString("VisitNo", VISITNO);
-                         IDbundle.putString("MemSl", MSL);
+                         IDbundle.putString("MemSl", "");
                          Intent intent = new Intent(getApplicationContext(), Member.class);
                          intent.putExtras(IDbundle);
                          startActivityForResult(intent, 1);

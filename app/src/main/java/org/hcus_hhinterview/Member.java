@@ -274,6 +274,11 @@
          VlblAgeU=(TextView) findViewById(R.id.VlblAgeU);
          spnAgeU=(Spinner) findViewById(R.id.spnAgeU);
 
+         if(MEMSL.length()==0){
+               MEMSL = C.ReturnSingleValue("Select (ifnull(max(cast(MemSl as int)),0)+1) from Member where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'and HouseholdSl='"+ HOUSEHOLDSL +"'and VisitNo='"+ VISITNO +"'"); //where ParticipantID='"+ ParticipantID +"'");
+
+         }
+//
          txtUNCode.setText(UNCODE);
          txtStructureNo.setText(""+STRUCTURENO);
          txtHouseholdSl.setText(HOUSEHOLDSL);
