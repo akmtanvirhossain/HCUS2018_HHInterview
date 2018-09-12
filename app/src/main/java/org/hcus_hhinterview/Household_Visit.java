@@ -210,11 +210,13 @@
 
          VISITNO = IDbundle.getString("VisitNo");
 
-//         if(HOUSEHOLDSL.length()==0){
-//             HOUSEHOLDSL = C.ReturnSingleValue("Select (ifnull(max(cast(VisitNo as int)),0)+1) from Household_Visit where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'"); //where ParticipantID='"+ ParticipantID +"'");
-//             VISITNO = C.ReturnSingleValue("Select (ifnull(max(cast(VisitNo as int)),0)+1) from Household_Visit where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'and HouseholdSl='"+ HOUSEHOLDSL +"'"); //where ParticipantID='"+ ParticipantID +"'");
-//
-//         }
+         if(HOUSEHOLDSL.length()==0){
+             HOUSEHOLDSL = C.ReturnSingleValue("Select (ifnull(max(cast(HouseholdSl as int)),0)+1) from Household_Visit where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'"); //where ParticipantID='"+ ParticipantID +"'");
+              }
+         if(VISITNO.length()==0){
+             VISITNO = C.ReturnSingleValue("Select (ifnull(max(cast(VisitNo as int)),0)+1) from Household_Visit where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'and HouseholdSl='"+ HOUSEHOLDSL +"'"); //where ParticipantID='"+ ParticipantID +"'");
+
+         }
 
 
 
@@ -254,7 +256,7 @@
                  IDbundle.putString("UNCode",UNCODE  );
                  IDbundle.putString("StructureNo",STRUCTURENO );
                  IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
-                 IDbundle.putString("VisitNo", VISITNO);
+                 IDbundle.putString("VisitNo", "");
 
                  Intent intent = new Intent(getApplicationContext(), Household_Visit.class);
                  intent.putExtras(IDbundle);

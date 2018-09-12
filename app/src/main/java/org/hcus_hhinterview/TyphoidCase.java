@@ -4614,35 +4614,35 @@
               return;
            }
          
-         else if(!rdoHC_PhyMBBS1.isChecked() & !rdoHC_PhyMBBS2.isChecked() & !rdoHC_PhyMBBS3.isChecked() & !rdoHC_PhyMBBS4.isChecked() & secHC_PhyMBBS.isShown())
+         else if(!rdoHC_PhyMBBS1.isChecked() & !rdoHC_PhyMBBS2.isChecked() & !rdoHC_PhyMBBS3.isChecked() & secHC_PhyMBBS.isShown())
            {
               Connection.MessageBox(TyphoidCase.this, "Select anyone options from (1.পাশ করা ডাক্তার যেমন MBBS বা এর উপর (MBBS and above) ).");
               rdoHC_PhyMBBS1.requestFocus();
               return;
            }
          
-         else if(!rdoHC_UnquaDoctor1.isChecked() & !rdoHC_UnquaDoctor2.isChecked() & !rdoHC_UnquaDoctor3.isChecked() & secHC_UnquaDoctor.isShown())
+         else if(!rdoHC_UnquaDoctor1.isChecked() & !rdoHC_UnquaDoctor2.isChecked() & secHC_UnquaDoctor.isShown())
            {
               Connection.MessageBox(TyphoidCase.this, "Select anyone options from (2.অদক্ষ ডাক্তার/ LMAF (Unqualified doctor/LMAF) ).");
               rdoHC_UnquaDoctor1.requestFocus();
               return;
            }
          
-         else if(!rdoHC_Para1.isChecked() & !rdoHC_Para2.isChecked() & !rdoHC_Para3.isChecked() & !rdoHC_Para4.isChecked() & secHC_Para.isShown())
+         else if(!rdoHC_Para1.isChecked() & !rdoHC_Para2.isChecked() & !rdoHC_Para3.isChecked() & secHC_Para.isShown())
            {
               Connection.MessageBox(TyphoidCase.this, "Select anyone options from (3.প্যারামেডিক (GoB/NGO) (Paramedics (GoB/NGO))  ).");
               rdoHC_Para1.requestFocus();
               return;
            }
          
-         else if(!rdoHC_Com1.isChecked() & !rdoHC_Com2.isChecked() & !rdoHC_Com3.isChecked() & !rdoHC_Com4.isChecked() & secHC_Com.isShown())
+         else if(!rdoHC_Com1.isChecked() & !rdoHC_Com2.isChecked() & !rdoHC_Com3.isChecked()  & secHC_Com.isShown())
            {
               Connection.MessageBox(TyphoidCase.this, "Select anyone options from (4.কম্পাউণ্ডার (Compounder)   ).");
               rdoHC_Com1.requestFocus();
               return;
            }
          
-         else if(!rdoHC_Pha1.isChecked() & !rdoHC_Pha2.isChecked() & !rdoHC_Pha3.isChecked() & !rdoHC_Pha4.isChecked() & secHC_Pha.isShown())
+         else if(!rdoHC_Pha1.isChecked() & !rdoHC_Pha2.isChecked() & !rdoHC_Pha3.isChecked() &  secHC_Pha.isShown())
            {
               Connection.MessageBox(TyphoidCase.this, "Select anyone options from (5.ঔষধ বিক্রেতা/ফার্মেসি (Drug seller/Pharmacy)  ).");
               rdoHC_Pha1.requestFocus();
@@ -4656,7 +4656,7 @@
               return;
            }
          
-         else if(!rdoHC_TrHeal1.isChecked() & !rdoHC_TrHeal2.isChecked() & !rdoHC_TrHeal3.isChecked() & !rdoHC_TrHeal4.isChecked() & secHC_TrHeal.isShown())
+         else if(!rdoHC_TrHeal1.isChecked() & !rdoHC_TrHeal2.isChecked() & !rdoHC_TrHeal3.isChecked() & secHC_TrHeal.isShown())
            {
               Connection.MessageBox(TyphoidCase.this, "Select anyone options from (7.কবিরাজ (Traditional care provider)  ).");
               rdoHC_TrHeal1.requestFocus();
@@ -4670,7 +4670,7 @@
               return;
            }
          
-         else if(!rdoTHC_Oth1.isChecked() & !rdoTHC_Oth2.isChecked() & !rdoTHC_Oth3.isChecked() & !rdoTHC_Oth4.isChecked() & secTHC_Oth.isShown())
+         else if(!rdoTHC_Oth1.isChecked() & !rdoTHC_Oth2.isChecked() & !rdoTHC_Oth3.isChecked() & secTHC_Oth.isShown())
            {
               Connection.MessageBox(TyphoidCase.this, "Select anyone options from (9.অন্যান্য  (Other)).");
               rdoTHC_Oth1.requestFocus();
@@ -4836,7 +4836,7 @@
              return;	
            }
          
-         else if(!rdoTHosNam21.isChecked() & !rdoTHosNam22.isChecked() & !rdoTHosNam23.isChecked() & !rdoTHosNam24.isChecked() & secTHosNam2.isShown())
+         else if(!rdoTHosNam21.isChecked() & !rdoTHosNam22.isChecked() & !rdoTHosNam23.isChecked() & secTHosNam2.isShown())
            {
               Connection.MessageBox(TyphoidCase.this, "Select anyone options from (2.).");
               rdoTHosNam21.requestFocus();
@@ -5117,7 +5117,7 @@
              if (rb.isChecked()) objSave.setTakenHCFacility(Integer.valueOf(d_rdogrpTakenHCFacility[i]));
          }
 
-         String[] d_rdogrpHC_PhyMBBS = new String[] {"1","2","8",""};
+         String[] d_rdogrpHC_PhyMBBS = new String[] {"1","2","8"};
          objSave.setHC_PhyMBBS(0);
          for (int i = 0; i < rdogrpHC_PhyMBBS.getChildCount(); i++)
          {
@@ -5133,7 +5133,7 @@
              if (rb.isChecked()) objSave.setHC_UnquaDoctor(Integer.valueOf(d_rdogrpHC_UnquaDoctor[i]));
          }
 
-         String[] d_rdogrpHC_Para = new String[] {"1","2","8",""};
+         String[] d_rdogrpHC_Para = new String[] {"1","2","8"};
          objSave.setHC_Para(0);
          for (int i = 0; i < rdogrpHC_Para.getChildCount(); i++)
          {
@@ -5141,7 +5141,7 @@
              if (rb.isChecked()) objSave.setHC_Para(Integer.valueOf(d_rdogrpHC_Para[i]));
          }
 
-         String[] d_rdogrpHC_Com = new String[] {"1","2","8",""};
+         String[] d_rdogrpHC_Com = new String[] {"1","2","8"};
          objSave.setHC_Com(0);
          for (int i = 0; i < rdogrpHC_Com.getChildCount(); i++)
          {
@@ -5149,7 +5149,7 @@
              if (rb.isChecked()) objSave.setHC_Com(Integer.valueOf(d_rdogrpHC_Com[i]));
          }
 
-         String[] d_rdogrpHC_Pha = new String[] {"1","2","8",""};
+         String[] d_rdogrpHC_Pha = new String[] {"1","2","8"};
          objSave.setHC_Pha(0);
          for (int i = 0; i < rdogrpHC_Pha.getChildCount(); i++)
          {
@@ -5165,7 +5165,7 @@
              if (rb.isChecked()) objSave.setHC_Hompath(Integer.valueOf(d_rdogrpHC_Hompath[i]));
          }
 
-         String[] d_rdogrpHC_TrHeal = new String[] {"1","2","8",""};
+         String[] d_rdogrpHC_TrHeal = new String[] {"1","2","8"};
          objSave.setHC_TrHeal(0);
          for (int i = 0; i < rdogrpHC_TrHeal.getChildCount(); i++)
          {
@@ -5181,7 +5181,7 @@
              if (rb.isChecked()) objSave.setHC_SpiHeal(Integer.valueOf(d_rdogrpHC_SpiHeal[i]));
          }
 
-         String[] d_rdogrpTHC_Oth = new String[] {"1","2","8",""};
+         String[] d_rdogrpTHC_Oth = new String[] {"1","2","8"};
          objSave.setTHC_Oth(0);
          for (int i = 0; i < rdogrpTHC_Oth.getChildCount(); i++)
          {
@@ -5256,7 +5256,7 @@
 
          objSave.setTHosNam(Integer.valueOf(spnTHosNam.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnTHosNam.getSelectedItem().toString(), "-")));
          objSave.setTHosNam_Oth(txtTHosNam_Oth.getText().toString());
-         String[] d_rdogrpTHosNam2 = new String[] {"1","2","7",""};
+         String[] d_rdogrpTHosNam2 = new String[] {"1","2","7"};
          objSave.setTHosNam2(0);
          for (int i = 0; i < rdogrpTHosNam2.getChildCount(); i++)
          {

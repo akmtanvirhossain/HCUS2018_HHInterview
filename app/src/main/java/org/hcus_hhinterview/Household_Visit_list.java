@@ -133,9 +133,9 @@ package org.hcus_hhinterview;
          txtStructureNo=(EditText) findViewById(R.id.txtStructureNo);
 
          btnRefresh = (Button) findViewById(R.id.btnRefresh);
-         final String SL = C.ReturnSingleValue("Select (ifnull(max(cast(HouseholdSl as int)),0)+1) from Household_Visit where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'"); //where ParticipantID='"+ ParticipantID +"'");
-
-         final String SLNO = C.ReturnSingleValue("Select (ifnull(max(cast(VisitNo as int)),0)+1) from Household_Visit where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'and HouseholdSl='"+ HOUSEHOLDSL +"'"); //where ParticipantID='"+ ParticipantID +"'");
+//         final String SL = C.ReturnSingleValue("Select (ifnull(max(cast(HouseholdSl as int)),0)+1) from Household_Visit where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'"); //where ParticipantID='"+ ParticipantID +"'");
+//
+//         final String SLNO = C.ReturnSingleValue("Select (ifnull(max(cast(VisitNo as int)),0)+1) from Household_Visit where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'and HouseholdSl='"+ HOUSEHOLDSL +"'"); //where ParticipantID='"+ ParticipantID +"'");
 
 
 
@@ -154,8 +154,8 @@ package org.hcus_hhinterview;
                          Bundle IDbundle = new Bundle();
                          IDbundle.putString("UNCode",UNCODE  );
                          IDbundle.putString("StructureNo",STRUCTURENO );
-                         IDbundle.putString("HouseholdSl", SL);
-                         IDbundle.putString("VisitNo", SLNO);
+                         IDbundle.putString("HouseholdSl", "");
+                         IDbundle.putString("VisitNo", "");
 
                          Intent intent = new Intent(getApplicationContext(), Household_Visit.class);
                          intent.putExtras(IDbundle);
