@@ -633,7 +633,7 @@ package org.hcus_hhinterview;
                    txtVisitOutcomeOth.setText(item.getVisitOutcomeOth());
                            txtVisitOutcomeOth.setEnabled(false);
                    spnReasonInVisit.setSelection(Global.SpinnerItemPositionAnyLength(spnReasonInVisit, String.valueOf(item.getReasonInVisit())));
-                           spnReasonInVisit.setEnabled(false);
+                           spnReasonInVisit.setClickable(false);
                    txtReasonInVisitOth.setText(item.getReasonInVisitOth());
                            txtReasonInVisitOth.setEnabled(false);
                    txtTotalHH.setText(item.getTotalHH());
