@@ -1999,7 +1999,7 @@
                      rb = (RadioButton) rdogrpMHC_Phy.getChildAt(i);
                      if (rb.isChecked()) rbData = d_rdogrpMHC_Phy[i];
                  }
-                 if (rbData.equalsIgnoreCase("2")) {
+                 if (rbData.equalsIgnoreCase("1")) {
                      secMHosNamLabel.setVisibility(View.GONE);
                      lineMHosNamLabel.setVisibility(View.GONE);
                      secMHC_Hosp_a1.setVisibility(View.GONE);
@@ -2030,11 +2030,112 @@
                      lineMDurIlBeHos.setVisibility(View.GONE);
                      txtMDurIlBeHos.setText("");
 
-                 } else if (rbData.equalsIgnoreCase("8")) {
+                 } else if (rbData.equalsIgnoreCase("2")) {
+                     secMHosNamLabel.setVisibility(View.GONE);
+                     lineMHosNamLabel.setVisibility(View.GONE);
+                     secMHC_Hosp_a1.setVisibility(View.GONE);
+                     lineMHC_Hosp_a1.setVisibility(View.GONE);
+                     spnMHC_Hosp_a1.setSelection(0);
+                     secMHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a1_Oth.setText("");
+                     secMHC_Hosp_a2.setVisibility(View.GONE);
+                     lineMHC_Hosp_a2.setVisibility(View.GONE);
+                     spnMHC_Hosp_a2.setSelection(0);
+                     secMHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a2_Oth.setText("");
+                     secMHC_Hosp_a3.setVisibility(View.GONE);
+                     lineMHC_Hosp_a3.setVisibility(View.GONE);
+                     spnMHC_Hosp_a3.setSelection(0);
+                     secMHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a3_Oth.setText("");
+                     secMDtHos.setVisibility(View.GONE);
+                     lineMDtHos.setVisibility(View.GONE);
+                     dtpMDtHos.setText("");
+                     secMHosM.setVisibility(View.GONE);
+                     lineMHosM.setVisibility(View.GONE);
+                     txtMHosM.setText("");
+                     secMDurIlBeHos.setVisibility(View.GONE);
+                     lineMDurIlBeHos.setVisibility(View.GONE);
+                     txtMDurIlBeHos.setText("");
+                     secMChildIlDr.setVisibility(View.GONE);
+                     lineMChildIlDr.setVisibility(View.GONE);
+                     secMChildIlDrOth.setVisibility(View.GONE);
+                     lineMChildIlDrOth.setVisibility(View.GONE);
 
-                 } else if (rbData.equalsIgnoreCase("1")) {
+                 } else if (rbData.equalsIgnoreCase("8")) {
+                     secMHosNamLabel.setVisibility(View.GONE);
+                     lineMHosNamLabel.setVisibility(View.GONE);
+                     secMHC_Hosp_a1.setVisibility(View.GONE);
+                     lineMHC_Hosp_a1.setVisibility(View.GONE);
+                     spnMHC_Hosp_a1.setSelection(0);
+                     secMHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a1_Oth.setText("");
+                     secMHC_Hosp_a2.setVisibility(View.GONE);
+                     lineMHC_Hosp_a2.setVisibility(View.GONE);
+                     spnMHC_Hosp_a2.setSelection(0);
+                     secMHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a2_Oth.setText("");
+                     secMHC_Hosp_a3.setVisibility(View.GONE);
+                     lineMHC_Hosp_a3.setVisibility(View.GONE);
+                     spnMHC_Hosp_a3.setSelection(0);
+                     secMHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                     lineMHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                     txtMHC_Hosp_a3_Oth.setText("");
+                     secMDtHos.setVisibility(View.GONE);
+                     lineMDtHos.setVisibility(View.GONE);
+                     dtpMDtHos.setText("");
+                     secMHosM.setVisibility(View.GONE);
+                     lineMHosM.setVisibility(View.GONE);
+                     txtMHosM.setText("");
+                     secMDurIlBeHos.setVisibility(View.GONE);
+                     lineMDurIlBeHos.setVisibility(View.GONE);
+                     txtMDurIlBeHos.setText("");
+                     secMChildIlDr.setVisibility(View.GONE);
+                     lineMChildIlDr.setVisibility(View.GONE);
+                     secMChildIlDrOth.setVisibility(View.GONE);
+                     lineMChildIlDrOth.setVisibility(View.GONE);
+
 
                  } else {
+                     secMHosNamLabel.setVisibility(View.VISIBLE);
+                     lineMHosNamLabel.setVisibility(View.VISIBLE);
+                     secMHC_Hosp_a1.setVisibility(View.VISIBLE);
+                     lineMHC_Hosp_a1.setVisibility(View.VISIBLE);
+                     spnMHC_Hosp_a1.setSelection(0);
+                     secMHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
+                     lineMHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
+                     txtMHC_Hosp_a1_Oth.setText("");
+                     secMHC_Hosp_a2.setVisibility(View.VISIBLE);
+                     lineMHC_Hosp_a2.setVisibility(View.VISIBLE);
+                     spnMHC_Hosp_a2.setSelection(0);
+                     secMHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
+                     lineMHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
+                     txtMHC_Hosp_a2_Oth.setText("");
+                     secMHC_Hosp_a3.setVisibility(View.VISIBLE);
+                     lineMHC_Hosp_a3.setVisibility(View.VISIBLE);
+                     spnMHC_Hosp_a3.setSelection(0);
+                     secMHC_Hosp_a3_Oth.setVisibility(View.VISIBLE);
+                     lineMHC_Hosp_a3_Oth.setVisibility(View.VISIBLE);
+                     txtMHC_Hosp_a3_Oth.setText("");
+                     secMDtHos.setVisibility(View.VISIBLE);
+                     lineMDtHos.setVisibility(View.VISIBLE);
+                     dtpMDtHos.setText("");
+                     secMHosM.setVisibility(View.VISIBLE);
+                     lineMHosM.setVisibility(View.VISIBLE);
+                     txtMHosM.setText("");
+                     secMDurIlBeHos.setVisibility(View.VISIBLE);
+                     lineMDurIlBeHos.setVisibility(View.VISIBLE);
+                     txtMDurIlBeHos.setText("");
+                     secMChildIlDr.setVisibility(View.VISIBLE);
+                     lineMChildIlDr.setVisibility(View.VISIBLE);
+                     secMChildIlDrOth.setVisibility(View.VISIBLE);
+                     lineMChildIlDrOth.setVisibility(View.VISIBLE);
+
 
                  }
              }

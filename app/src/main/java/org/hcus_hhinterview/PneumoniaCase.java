@@ -1708,7 +1708,155 @@
          linePHC_Oth=(View)findViewById(R.id.linePHC_Oth);
          VlblPHC_Oth = (TextView) findViewById(R.id.VlblPHC_Oth);
          rdogrpPHC_Oth = (RadioGroup) findViewById(R.id.rdogrpPHC_Oth);
-         
+
+
+         rdogrpPHC_PhyMBBS.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
+             @Override
+             public void onCheckedChanged(RadioGroup radioGroup,int radioButtonID) {
+                 String rbData = "";
+                 RadioButton rb;
+                 String[] d_rdogrpPHC_PhyMBBS = new String[] {"1","2","8"};
+                 for (int i = 0; i < rdogrpPHC_PhyMBBS.getChildCount(); i++)
+                 {
+                     rb = (RadioButton)rdogrpPHC_PhyMBBS.getChildAt(i);
+                     if (rb.isChecked()) rbData = d_rdogrpPHC_PhyMBBS[i];
+                 }
+
+                 if(rbData.equalsIgnoreCase("1")){
+                     secPHosNamLabel.setVisibility(View.GONE);
+                     linePHosNamLabel.setVisibility(View.GONE);
+                     secPHosNam.setVisibility(View.GONE);
+                     linePHosNam.setVisibility(View.GONE);
+                     spnPHosNam.setSelection(0);
+                     secPHosNamOth.setVisibility(View.GONE);
+                     linePHosNamOth.setVisibility(View.GONE);
+                     txtPHosNamOth.setText("");
+                     secPHosNam2.setVisibility(View.GONE);
+                     linePHosNam2.setVisibility(View.GONE);
+                     spnPHosNam2.setSelection(0);
+                     secPHosNamOth2.setVisibility(View.GONE);
+                     linePHosNamOth2.setVisibility(View.GONE);
+                     txtPHosNamOth2.setText("");
+                     secPHosNam3.setVisibility(View.GONE);
+                     linePHosNam3.setVisibility(View.GONE);
+                     spnPHosNam3.setSelection(0);
+                     secPHosNamOth3.setVisibility(View.GONE);
+                     linePHosNamOth3.setVisibility(View.GONE);
+                     txtPHosNamOth3.setText("");
+                     secPDtAdmHos.setVisibility(View.GONE);
+                     linePDtAdmHos.setVisibility(View.GONE);
+                     dtpPDtAdmHos.setText("");
+                     secPAdmHosM.setVisibility(View.GONE);
+                     linePAdmHosM.setVisibility(View.GONE);
+                     txtPAdmHosM.setText("");
+                     secPDurIlBeHos.setVisibility(View.GONE);
+                     linePDurIlBeHos.setVisibility(View.GONE);
+                     txtPDurIlBeHos.setText("");
+                 }
+                 else if(rbData.equalsIgnoreCase("2"))
+                 {
+                     secPHosNamLabel.setVisibility(View.GONE);
+                     linePHosNamLabel.setVisibility(View.GONE);
+                     secPHosNam.setVisibility(View.GONE);
+                     linePHosNam.setVisibility(View.GONE);
+                     spnPHosNam.setSelection(0);
+                     secPHosNamOth.setVisibility(View.GONE);
+                     linePHosNamOth.setVisibility(View.GONE);
+                     txtPHosNamOth.setText("");
+                     secPHosNam2.setVisibility(View.GONE);
+                     linePHosNam2.setVisibility(View.GONE);
+                     spnPHosNam2.setSelection(0);
+                     secPHosNamOth2.setVisibility(View.GONE);
+                     linePHosNamOth2.setVisibility(View.GONE);
+                     txtPHosNamOth2.setText("");
+                     secPHosNam3.setVisibility(View.GONE);
+                     linePHosNam3.setVisibility(View.GONE);
+                     spnPHosNam3.setSelection(0);
+                     secPHosNamOth3.setVisibility(View.GONE);
+                     linePHosNamOth3.setVisibility(View.GONE);
+                     txtPHosNamOth3.setText("");
+                     secPDtAdmHos.setVisibility(View.GONE);
+                     linePDtAdmHos.setVisibility(View.GONE);
+                     dtpPDtAdmHos.setText("");
+                     secPAdmHosM.setVisibility(View.GONE);
+                     linePAdmHosM.setVisibility(View.GONE);
+                     txtPAdmHosM.setText("");
+                     secPDurIlBeHos.setVisibility(View.GONE);
+                     linePDurIlBeHos.setVisibility(View.GONE);
+                     txtPDurIlBeHos.setText("");
+                     secPDisDr.setVisibility(View.GONE);
+                     linePDisDr.setVisibility(View.GONE);
+                 }
+
+                 else if(rbData.equalsIgnoreCase("8"))
+                 {
+                     secPHosNamLabel.setVisibility(View.GONE);
+                     linePHosNamLabel.setVisibility(View.GONE);
+                     secPHosNam.setVisibility(View.GONE);
+                     linePHosNam.setVisibility(View.GONE);
+                     spnPHosNam.setSelection(0);
+                     secPHosNamOth.setVisibility(View.GONE);
+                     linePHosNamOth.setVisibility(View.GONE);
+                     txtPHosNamOth.setText("");
+                     secPHosNam2.setVisibility(View.GONE);
+                     linePHosNam2.setVisibility(View.GONE);
+                     spnPHosNam2.setSelection(0);
+                     secPHosNamOth2.setVisibility(View.GONE);
+                     linePHosNamOth2.setVisibility(View.GONE);
+                     txtPHosNamOth2.setText("");
+                     secPHosNam3.setVisibility(View.GONE);
+                     linePHosNam3.setVisibility(View.GONE);
+                     spnPHosNam3.setSelection(0);
+                     secPHosNamOth3.setVisibility(View.GONE);
+                     linePHosNamOth3.setVisibility(View.GONE);
+                     txtPHosNamOth3.setText("");
+                     secPDtAdmHos.setVisibility(View.GONE);
+                     linePDtAdmHos.setVisibility(View.GONE);
+                     dtpPDtAdmHos.setText("");
+                     secPAdmHosM.setVisibility(View.GONE);
+                     linePAdmHosM.setVisibility(View.GONE);
+                     txtPAdmHosM.setText("");
+                     secPDurIlBeHos.setVisibility(View.GONE);
+                     linePDurIlBeHos.setVisibility(View.GONE);
+                     txtPDurIlBeHos.setText("");
+                     secPDisDr.setVisibility(View.GONE);
+                     linePDisDr.setVisibility(View.GONE);
+                 }
+                 else{
+                     secPHosNamLabel.setVisibility(View.VISIBLE);
+                     linePHosNamLabel.setVisibility(View.VISIBLE);
+                     secPHosNam.setVisibility(View.VISIBLE);
+                     linePHosNam.setVisibility(View.VISIBLE);
+                     spnPHosNam.setSelection(0);
+
+                     secPHosNam2.setVisibility(View.VISIBLE);
+                     linePHosNam2.setVisibility(View.VISIBLE);
+                     spnPHosNam2.setSelection(0);
+
+                     secPHosNam3.setVisibility(View.VISIBLE);
+                     linePHosNam3.setVisibility(View.VISIBLE);
+                     spnPHosNam3.setSelection(0);
+
+                     secPDtAdmHos.setVisibility(View.VISIBLE);
+                     linePDtAdmHos.setVisibility(View.VISIBLE);
+                     dtpPDtAdmHos.setText("");
+                     secPAdmHosM.setVisibility(View.VISIBLE);
+                     linePAdmHosM.setVisibility(View.VISIBLE);
+                     txtPAdmHosM.setText("");
+                     secPDurIlBeHos.setVisibility(View.VISIBLE);
+                     linePDurIlBeHos.setVisibility(View.VISIBLE);
+                     txtPDurIlBeHos.setText("");
+                     secPDisDr.setVisibility(View.VISIBLE);
+                     linePDisDr.setVisibility(View.VISIBLE);
+                 }
+
+
+             }
+             public void onNothingSelected(AdapterView<?> adapterView) {
+                 return;
+             }
+         });
+
          rdoPHC_Oth1 = (RadioButton) findViewById(R.id.rdoPHC_Oth1);
          rdoPHC_Oth2 = (RadioButton) findViewById(R.id.rdoPHC_Oth2);
          rdoPHC_Oth3 = (RadioButton) findViewById(R.id.rdoPHC_Oth3);
