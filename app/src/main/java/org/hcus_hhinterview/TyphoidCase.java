@@ -5268,12 +5268,12 @@
              txtDaysOfHosp.requestFocus(); 
              return;	
            }
-         else if(txtTAboIll.getText().toString().length()==0 & secTAboIll.isShown())
-           {
-             Connection.MessageBox(TyphoidCase.this, "Required field: মন্তব্যঃ টাইফয়েড (Remarks:Typhoid).");
-             txtTAboIll.requestFocus(); 
-             return;	
-           }
+//         else if(txtTAboIll.getText().toString().length()==0 & secTAboIll.isShown())
+//           {
+//             Connection.MessageBox(TyphoidCase.this, "Required field: মন্তব্যঃ টাইফয়েড (Remarks:Typhoid).");
+//             txtTAboIll.requestFocus();
+//             return;
+//           }
  
          String SQL = "";
          RadioButton rb;

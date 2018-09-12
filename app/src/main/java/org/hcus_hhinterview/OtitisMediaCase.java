@@ -1396,12 +1396,12 @@
              txtOMInRecoOth2.requestFocus(); 
              return;	
            }
-         else if(txtOMAboIll.getText().toString().length()==0 & secOMAboIll.isShown())
-           {
-             Connection.MessageBox(OtitisMediaCase .this, "Required field: মন্তব্যঃ কানে সংক্রমন  (Remarks:Otitis Media).");
-             txtOMAboIll.requestFocus(); 
-             return;	
-           }
+//         else if(txtOMAboIll.getText().toString().length()==0 & secOMAboIll.isShown())
+//           {
+//             Connection.MessageBox(OtitisMediaCase .this, "Required field: মন্তব্যঃ কানে সংক্রমন  (Remarks:Otitis Media).");
+//             txtOMAboIll.requestFocus();
+//             return;
+//           }
  
          String SQL = "";
          RadioButton rb;

@@ -3850,11 +3850,12 @@ dtpMDtHos.setText("");
                Connection.MessageBox(MeningitisCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
                txtMInRecoOth3.requestFocus();
                return;
-           } else if (txtAboSeriIlOnset.getText().toString().length() == 0 & secAboSeriIlOnset.isShown()) {
-               Connection.MessageBox(MeningitisCase.this, "Required field: মন্তব্যঃ মেনিনজাইটিস  (Remarks: Meningitis).");
-               txtAboSeriIlOnset.requestFocus();
-               return;
            }
+// else if (txtAboSeriIlOnset.getText().toString().length() == 0 & secAboSeriIlOnset.isShown()) {
+//               Connection.MessageBox(MeningitisCase.this, "Required field: মন্তব্যঃ মেনিনজাইটিস  (Remarks: Meningitis).");
+//               txtAboSeriIlOnset.requestFocus();
+//               return;
+//           }
 
            String SQL = "";
            RadioButton rb;

@@ -3310,12 +3310,12 @@
              txtPDurReco.requestFocus(); 
              return;	
            }
-         else if(txtPAboIll.getText().toString().length()==0 & secPAboIll.isShown())
-           {
-             Connection.MessageBox(PneumoniaCase.this, "Required field: মন্তব্যঃ নিউমোনিয়া (Remarks: Pneumonia).");
-             txtPAboIll.requestFocus(); 
-             return;	
-           }
+//         else if(txtPAboIll.getText().toString().length()==0 & secPAboIll.isShown())
+//           {
+//             Connection.MessageBox(PneumoniaCase.this, "Required field: মন্তব্যঃ নিউমোনিয়া (Remarks: Pneumonia).");
+//             txtPAboIll.requestFocus();
+//             return;
+//           }
  
          String SQL = "";
          RadioButton rb;

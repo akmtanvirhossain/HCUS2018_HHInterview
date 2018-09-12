@@ -2407,12 +2407,12 @@ dtpSDtHos.setText("");
              txtSInRecoOth2.requestFocus(); 
              return;	
            }
-         else if(txtSAboIll.getText().toString().length()==0 & secSAboIll.isShown())
-           {
-             Connection.MessageBox(EmergencyOperation .this, "Required field: মন্তব্যঃ ইমারজেন্সি অপারেশন  (Remarks: Emergency operation).");
-             txtSAboIll.requestFocus(); 
-             return;	
-           }
+//         else if(txtSAboIll.getText().toString().length()==0 & secSAboIll.isShown())
+//           {
+//             Connection.MessageBox(EmergencyOperation .this, "Required field: মন্তব্যঃ ইমারজেন্সি অপারেশন  (Remarks: Emergency operation).");
+//             txtSAboIll.requestFocus();
+//             return;
+//           }
  
          String SQL = "";
          RadioButton rb;

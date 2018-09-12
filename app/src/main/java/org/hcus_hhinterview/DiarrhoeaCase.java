@@ -1890,12 +1890,12 @@ txtDDurReco.addTextChangedListener(new TextWatcher() {
              txtDInRecoOth.requestFocus(); 
              return;	
            }
-         else if(txtDAboIll.getText().toString().length()==0 & secDAboIll.isShown())
-           {
-             Connection.MessageBox(DiarrhoeaCase .this, "Required field: মন্তব্যঃ ডায়রিয়া Remarks: Diarrhoea.");
-             txtDAboIll.requestFocus(); 
-             return;	
-           }
+//         else if(txtDAboIll.getText().toString().length()==0 & secDAboIll.isShown())
+//           {
+//             Connection.MessageBox(DiarrhoeaCase .this, "Required field: মন্তব্যঃ ডায়রিয়া Remarks: Diarrhoea.");
+//             txtDAboIll.requestFocus();
+//             return;
+//           }
  
          String SQL = "";
          RadioButton rb;

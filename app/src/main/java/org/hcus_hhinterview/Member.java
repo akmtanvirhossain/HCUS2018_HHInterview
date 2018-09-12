@@ -336,7 +336,7 @@
 
 
 
-
+         spnAgeU=(Spinner) findViewById(R.id.spnAgeU);
          List<String> listAgeU = new ArrayList<String>();
          
          listAgeU.add("");
@@ -345,6 +345,9 @@
          listAgeU.add("3-সন (Years)");
          ArrayAdapter<String> adptrAgeU= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listAgeU);
          spnAgeU.setAdapter(adptrAgeU);
+
+
+
 
          secRelation=(LinearLayout)findViewById(R.id.secRelation);
          lineRelation=(View)findViewById(R.id.lineRelation);
@@ -588,7 +591,7 @@
          String DV="";
          String birthdate="";
          String presentdate="";
-         Integer ageInDays=0;
+         Integer ageInDays;
 
 
 
@@ -750,12 +753,38 @@
 
          objSave.setDOB(dtpDOB.getText().toString().length() > 0 ? Global.DateConvertYMD(dtpDOB.getText().toString()) : dtpDOB.getText().toString());
          objSave.setDOBDk(Integer.valueOf(chkDOBDk.isChecked()?"1":(secDOBDk.isShown()?"2":"")));
+//      **************************************************
+
          birthdate=dtpDOB.getText().toString();
          presentdate=Global.DateNowDMY();
-         ageInDays=Global.DateDifferenceDays(presentdate,birthdate);
+         ageInDays=Global.DateDifferenceMonth(presentdate,birthdate);
          objSave.setAge( ageInDays);
-//         Integer.valueOf(txtAge.getText().toString().length()==0?"0":txtAge.getText().toString())
+
+//      *************************************************
+
+
+
+
+        if(spnAgeU.getSelectedItemPosition() == 1)
+        {
+
+            int age=Integer.valueOf(txtAge.getText().toString());
+            age=(int)(age/30.40);
+            objSave.setAge(age);
+        }
+         else if(spnAgeU.getSelectedItemPosition() == 2)
+         {
+             objSave.setAge(Integer.valueOf(txtAge.getText().toString()));
+         }
+        else if(spnAgeU.getSelectedItemPosition() == 3)
+        {
+            int age=Integer.valueOf(txtAge.getText().toString());
+            age=(int)(age*12);
+            objSave.setAge(age);
+        }
+
          objSave.setAgeU(Integer.valueOf(spnAgeU.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnAgeU.getSelectedItem().toString(), "-")));
+
          objSave.setRelation(Integer.valueOf(spnRelation.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnRelation.getSelectedItem().toString(), "-")));
          objSave.setOthRelation(txtOthRelation.getText().toString());
          String[] d_rdogrpPreStatus = new String[] {"1","2"};

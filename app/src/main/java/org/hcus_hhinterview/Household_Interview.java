@@ -30,6 +30,7 @@
  import android.view.KeyEvent;
  import android.os.Bundle;
  import android.view.View;
+ import android.widget.CompoundButton;
  import android.widget.LinearLayout;
  import android.view.ViewGroup;
  import android.view.LayoutInflater;
@@ -844,7 +845,7 @@ DataSearch_member(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
                  if(s.length()==0)
-                 txtliveHouseM.setText("0");
+                 txtliveHouseM.setText("");
 
              }
 
@@ -900,7 +901,7 @@ DataSearch_member(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
                  if(s.length()==0)
-                     txtLiveHH_Year.setText("0");
+                     txtLiveHH_Year.setText("");
 
              }
 
@@ -919,7 +920,7 @@ DataSearch_member(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
                  if(s.length()==0)
-                     txtLiveCity_Mon.setText("0");
+                     txtLiveHH_Mon.setText("");
 
              }
 
@@ -938,7 +939,7 @@ DataSearch_member(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
                  if(s.length()==0)
-                     txtLiveCity_Year.setText("0");
+                     txtLiveCity_Year.setText("");
 
              }
 
@@ -957,7 +958,7 @@ DataSearch_member(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
                  if(s.length()==0)
-                     txtLiveCity_Mon.setText("0");
+                     txtLiveCity_Mon.setText("");
 
              }
 
@@ -1630,6 +1631,32 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
          lineConsMatFloor=(View)findViewById(R.id.lineConsMatFloor);
          VlblConsMatFloor=(TextView) findViewById(R.id.VlblConsMatFloor);
          spnConsMatFloor=(Spinner) findViewById(R.id.spnConsMatFloor);
+
+
+         chkRentOfDwellDK.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+             @Override
+             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                 txtRentOfDwelling.setText("");
+             }
+         });
+         txtRentOfDwelling.addTextChangedListener(new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+             }
+
+             @Override
+             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    chkRentOfDwellDK.setChecked(false);
+             }
+
+             @Override
+             public void afterTextChanged(Editable s) {
+
+             }
+         });
+
+
          List<String> listConsMatFloor = new ArrayList<String>();
          
          listConsMatFloor.add("");
@@ -2339,6 +2366,37 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
          lineTreatMeth=(View)findViewById(R.id.lineTreatMeth);
          VlblTreatMeth=(TextView) findViewById(R.id.VlblTreatMeth);
          spnTreatMeth=(Spinner) findViewById(R.id.spnTreatMeth);
+
+         rdogrpTreatDKWater.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+             @Override
+             public void onCheckedChanged(RadioGroup group, int checkedId) {
+                 String rbData = "";
+                 RadioButton rb;
+                 String[] d_rdogrpTreatDKWater = new String[] {"1","2","7"};
+                 for (int i = 0; i < rdogrpTreatDKWater.getChildCount(); i++)
+                 {
+                     rb = (RadioButton)rdogrpTreatDKWater.getChildAt(i);
+                     if (rb.isChecked()) rbData = d_rdogrpTreatDKWater[i];
+                 }
+
+                 if(rbData.equalsIgnoreCase("2"))
+                 {
+                     secTreatMeth.setVisibility(View.GONE);
+                     lineTreatMeth.setVisibility(View.GONE);
+                 }
+                 else if(rbData.equalsIgnoreCase("1"))
+                 {
+                     secTreatMeth.setVisibility(View.VISIBLE);
+                     lineTreatMeth.setVisibility(View.VISIBLE);
+                 }
+                 else{
+                     secTreatMeth.setVisibility(View.GONE);
+                     lineTreatMeth.setVisibility(View.GONE);
+                 }
+             }
+         });
+
+
          List<String> listTreatMeth = new ArrayList<String>();
          
          listTreatMeth.add("");
@@ -2627,10 +2685,12 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
            }
          else if(txtliveHouseM.getText().toString().length()==0 & secliveHouseM.isShown())
            {
-
-             Connection.MessageBox(Household_Interview.this, "Required field: কতমাস যাবৎ আপনার খানা/পরিবার এই বাড়িতে বাস করছে ? (How long has your household/family been living in this house for?).");
-             txtliveHouseM.requestFocus();
-             return;
+               if(txtliveHouseY.getText().toString().length()==0)
+               {
+                   Connection.MessageBox(Household_Interview.this, "Required field: কতমাস যাবৎ আপনার খানা/পরিবার এই বাড়িতে বাস করছে ? (How long has your household/family been living in this house for?).");
+                   txtliveHouseM.requestFocus();
+                   return;
+               }
            }
          else if(Integer.valueOf(txtliveHouseM.getText().toString().length()==0 ? "00" : txtliveHouseM.getText().toString()) < 00 || Integer.valueOf(txtliveHouseM.getText().toString().length()==0 ? "11" : txtliveHouseM.getText().toString()) > 11)
            {
@@ -2640,10 +2700,12 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
            }
          else if(txtliveHouseY.getText().toString().length()==0 & secliveHouseY.isShown())
            {
-//
-             Connection.MessageBox(Household_Interview.this, "Required field: .");
-             txtliveHouseY.requestFocus();
-             return;
+               if(txtliveHouseM.getText().toString().length()==0)
+                {
+                    Connection.MessageBox(Household_Interview.this, "Required field: .");
+                    txtliveHouseY.requestFocus();
+                    return;
+                }
            }
          else if(Integer.valueOf(txtliveHouseY.getText().toString().length()==0 ? "02" : txtliveHouseY.getText().toString()) < 02 || Integer.valueOf(txtliveHouseY.getText().toString().length()==0 ? "99" : txtliveHouseY.getText().toString()) > 99)
            {
@@ -2653,10 +2715,12 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
            }
          else if(txtLiveHH_Mon.getText().toString().length()==0 & secLiveHH_Mon.isShown())
            {
-
-             Connection.MessageBox(Household_Interview.this, "Required field: এই খানায় আপনি (যে সবচেয়ে বেশি দিন যাবত আছেন) কতদিন যাবত বাস করছেন? (How many months/Years have you lived at this household?).");
-             txtLiveHH_Mon.requestFocus();
-             return;
+               if(txtLiveHH_Year.getText().toString().length()==0)
+               {
+                   Connection.MessageBox(Household_Interview.this, "Required field: এই খানায় আপনি (যে সবচেয়ে বেশি দিন যাবত আছেন) কতদিন যাবত বাস করছেন? (How many months/Years have you lived at this household?).");
+                   txtLiveHH_Mon.requestFocus();
+                   return;
+               }
            }
          else if(Integer.valueOf(txtLiveHH_Mon.getText().toString().length()==0 ? "00" : txtLiveHH_Mon.getText().toString()) < 00 || Integer.valueOf(txtLiveHH_Mon.getText().toString().length()==0 ? "11" : txtLiveHH_Mon.getText().toString()) > 11)
            {
@@ -2666,10 +2730,12 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
            }
          else if(txtLiveHH_Year.getText().toString().length()==0 & secLiveHH_Year.isShown())
            {
-
-             Connection.MessageBox(Household_Interview.this, "Required field: .");
-             txtLiveHH_Year.requestFocus();
-             return;
+               if(txtLiveHH_Mon.getText().toString().length()==0)
+               {
+                   Connection.MessageBox(Household_Interview.this, "Required field: .");
+                   txtLiveHH_Year.requestFocus();
+                   return;
+               }
            }
          else if(Integer.valueOf(txtLiveHH_Year.getText().toString().length()==0 ? "00" : txtLiveHH_Year.getText().toString()) < 00 || Integer.valueOf(txtLiveHH_Year.getText().toString().length()==0 ? "99" : txtLiveHH_Year.getText().toString()) > 99)
            {
@@ -2679,10 +2745,12 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
            }
          else if(txtLiveCity_Mon.getText().toString().length()==0 & secLiveCity_Mon.isShown())
            {
-
-             Connection.MessageBox(Household_Interview.this, "Required field: এই শহরে আপনি (যে সবচেয়ে বেশি দিন যাবত আছেন) কতদিন যাবত বাস করছেন? (How many months/Years have you lived in this city?).");
-             txtLiveCity_Mon.requestFocus();
-             return;
+               if(txtLiveCity_Year.getText().toString().length()==0)
+               {
+                   Connection.MessageBox(Household_Interview.this, "Required field: এই শহরে আপনি (যে সবচেয়ে বেশি দিন যাবত আছেন) কতদিন যাবত বাস করছেন? (How many months/Years have you lived in this city?).");
+                   txtLiveCity_Mon.requestFocus();
+                   return;
+               }
            }
          else if(Integer.valueOf(txtLiveCity_Mon.getText().toString().length()==0 ? "0" : txtLiveCity_Mon.getText().toString()) < 0 || Integer.valueOf(txtLiveCity_Mon.getText().toString().length()==0 ? "11" : txtLiveCity_Mon.getText().toString()) > 11)
            {
@@ -2692,10 +2760,13 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
            }
          else if(txtLiveCity_Year.getText().toString().length()==0 & secLiveCity_Year.isShown())
            {
+               if(txtLiveCity_Mon.getText().toString().length()==0)
+               {
+                   Connection.MessageBox(Household_Interview.this, "Required field: .");
+                   txtLiveCity_Year.requestFocus();
+                   return;
+               }
 
-             Connection.MessageBox(Household_Interview.this, "Required field: .");
-             txtLiveCity_Year.requestFocus();
-             return;
            }
          else if(Integer.valueOf(txtLiveCity_Year.getText().toString().length()==0 ? "0" : txtLiveCity_Year.getText().toString()) < 0 || Integer.valueOf(txtLiveCity_Year.getText().toString().length()==0 ? "99" : txtLiveCity_Year.getText().toString()) > 99)
            {
@@ -2885,9 +2956,13 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
            }
          else if(txtRentOfDwelling.getText().toString().length()==0 & secRentOfDwelling.isShown())
            {
-             Connection.MessageBox(Household_Interview.this, "Required field: আপনার এই বাসাটি আজ কেউ ভাড়া নিতে চাইলে তাকে মাসে কত টাকা ভাড়া দিতে হবে? If someone wanted to rent this dwelling today, how much money would they have to pay each month, considering just the part of the dwelling where your household is living?টাকা (amount in local currency)\nএই বাড়িটি তৈরিতে মূল কি কি উপাদান ব্যবহার করা হয়েছে (পরিদর্শন করে যাচাই করুন).");
-             txtRentOfDwelling.requestFocus(); 
-             return;	
+               if(!chkRentOfDwellDK.isChecked())
+               {
+                   Connection.MessageBox(Household_Interview.this, "Required field: আপনার এই বাসাটি আজ কেউ ভাড়া নিতে চাইলে তাকে মাসে কত টাকা ভাড়া দিতে হবে? If someone wanted to rent this dwelling today, how much money would they have to pay each month, considering just the part of the dwelling where your household is living?টাকা (amount in local currency)\nএই বাড়িটি তৈরিতে মূল কি কি উপাদান ব্যবহার করা হয়েছে (পরিদর্শন করে যাচাই করুন).");
+                   txtRentOfDwelling.requestFocus();
+                   return;
+               }
+
            }
          else if(Integer.valueOf(txtRentOfDwelling.getText().toString().length()==0 ? "1" : txtRentOfDwelling.getText().toString()) < 1 || Integer.valueOf(txtRentOfDwelling.getText().toString().length()==0 ? "99999" : txtRentOfDwelling.getText().toString()) > 99999)
            {

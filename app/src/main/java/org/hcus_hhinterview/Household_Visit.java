@@ -918,6 +918,10 @@
          dtpDataCollDate=(EditText) findViewById(R.id.dtpDataCollDate);
 
 
+
+
+         dtpDataCollDate.setText(Global.DateNowDMY());
+
          dtpDataCollDate.setOnTouchListener(new View.OnTouchListener() {
              @Override
              public boolean onTouch(View v, MotionEvent event) {
@@ -1189,12 +1193,12 @@
               rdoConsent1.requestFocus();
               return;
            }
-         else if(txtRemarks.getText().toString().length()==0 & secRemarks.isShown())
-           {
-             Connection.MessageBox(Household_Visit.this, "Required field: Remarks.");
-             txtRemarks.requestFocus(); 
-             return;	
-           }
+//         else if(txtRemarks.getText().toString().length()==0 & secRemarks.isShown())
+//           {
+////             Connection.MessageBox(Household_Visit.this, "Required field: Remarks.");
+//             txtRemarks.requestFocus();
+//             return;
+//           }
          DV = Global.DateValidate(dtpDataCollDate.getText().toString());
          if(DV.length()!=0 & secDataCollDate.isShown())
            {

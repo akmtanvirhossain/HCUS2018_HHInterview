@@ -367,13 +367,13 @@
          
          rdoSSF1 = (RadioButton) findViewById(R.id.rdoSSF1);
          rdoSSF2 = (RadioButton) findViewById(R.id.rdoSSF2);
-         rdoSSF3 = (RadioButton) findViewById(R.id.rdoSSF3);
+
          rdogrpSSF.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
          @Override
          public void onCheckedChanged(RadioGroup radioGroup,int radioButtonID) {
              String rbData = "";
              RadioButton rb;
-             String[] d_rdogrpSSF = new String[] {"1","2",""};
+             String[] d_rdogrpSSF = new String[] {"1","2"};
              for (int i = 0; i < rdogrpSSF.getChildCount(); i++)
              {
                rb = (RadioButton)rdogrpSSF.getChildAt(i);
@@ -392,7 +392,7 @@
                     lineReachSSF.setVisibility(View.GONE);
                     txtReachSSF.setText("");
              }
-             else
+             else if(rbData.equalsIgnoreCase("1"))
              {
                     secSSFway.setVisibility(View.VISIBLE);
                     lineSSFway.setVisibility(View.VISIBLE);
