@@ -3757,23 +3757,28 @@
                  {
                     secTInRecoOth.setVisibility(View.GONE);
                     lineTInRecoOth.setVisibility(View.GONE);
+                      spnTInReco2.setEnabled(true);
                     txtTInRecoOth.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("2"))
                  {
                     secTInRecoOth.setVisibility(View.GONE);
                     lineTInRecoOth.setVisibility(View.GONE);
+                      spnTInReco2.setEnabled(true);
                     txtTInRecoOth.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("3"))
                  {
                       secTInRecoOth.setVisibility(View.VISIBLE);
                       lineTInRecoOth.setVisibility(View.VISIBLE);
+                      spnTInReco2.setEnabled(false);
+                      spnTInReco2.setSelection(0);
                  }
                  else
                  {
                       secTInRecoOth.setVisibility(View.GONE);
                       lineTInRecoOth.setVisibility(View.GONE);
+                      spnTInReco2.setEnabled(true);
                       txtTInRecoOth.setText("");
                  }
              }
@@ -5594,26 +5599,11 @@
 
          String status = objSave.SaveUpdateData(this);
          if(status.length()==0) {
-              AlertDialog.Builder typhoidalert=new AlertDialog.Builder(this);
-              typhoidalert.setMessage("Saved Successfully");
-              typhoidalert.setTitle("Message");
-              typhoidalert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                   @Override
-                   public void onClick(DialogInterface dialog, int which) {
-                        Bundle IDbundle = new Bundle();
-                        IDbundle.putString("UNCode",UNCODE  );
-                        IDbundle.putString("StructureNo",STRUCTURENO );
-                        IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
-                        IDbundle.putString("VisitNo", VISITNO);
-                        IDbundle.putString("MemSl", MEMSL);
+              Intent returnIntent = new Intent();
+              returnIntent.putExtra("res", "");
+              setResult(Activity.RESULT_OK, returnIntent);
 
-                        Intent intent = new Intent(getApplicationContext(), ChildForm_Menu.class);
-                        intent.putExtras(IDbundle);
-                        startActivityForResult(intent, 1);
-                   }
-              });
-              typhoidalert.show();
-
+              Connection.MessageBox(TyphoidCase.this, "Saved Successfully");
 
 
          }

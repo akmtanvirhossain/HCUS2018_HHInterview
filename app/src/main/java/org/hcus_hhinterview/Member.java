@@ -534,6 +534,8 @@
                  if(event.getAction() == MotionEvent.ACTION_UP) {
                      if(event.getRawX() >= (dtpDtofDeath.getRight() - dtpDtofDeath.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
                          VariableID = "btnDtofDeath"; showDialog(DATE_DIALOG);
+                         txtDAge.setText("");
+                         spnDAgeU.setSelection(0);
                       return true;
                      }
                  }
@@ -541,7 +543,23 @@
              }
          });
 
+         txtDAge.addTextChangedListener(new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+             }
+
+             @Override
+             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                 if(txtDAge.getText().toString().length()>0)
+                    dtpDtofDeath.setText("");
+             }
+
+             @Override
+             public void afterTextChanged(Editable editable) {
+
+             }
+         });
 
          //Hide all skip variables
          secAge.setVisibility(View.GONE);

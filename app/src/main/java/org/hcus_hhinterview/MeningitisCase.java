@@ -4170,26 +4170,11 @@ dtpMDtHos.setText("");
 
            String status = objSave.SaveUpdateData(this);
            if (status.length() == 0) {
-               AlertDialog.Builder alert = new AlertDialog.Builder(this);
-               alert.setMessage("Saved Successfully");
-               alert.setTitle("Message");
-               alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                   @Override
-                   public void onClick(DialogInterface dialog, int which) {
+               Intent returnIntent = new Intent();
+               returnIntent.putExtra("res", "");
+               setResult(Activity.RESULT_OK, returnIntent);
 
-                       Bundle IDbundle = new Bundle();
-                       IDbundle.putString("UNCode", UNCODE);
-                       IDbundle.putString("StructureNo", STRUCTURENO);
-                       IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
-                       IDbundle.putString("VisitNo", VISITNO);
-                       IDbundle.putString("MemSl", MEMSL);
-
-                       Intent intent = new Intent(getApplicationContext(), ChildForm_Menu.class);
-                       intent.putExtras(IDbundle);
-                       startActivityForResult(intent, 1);
-                   }
-               });
-               alert.show();
+               Connection.MessageBox(MeningitisCase.this, "Saved Successfully");
 
 
 
