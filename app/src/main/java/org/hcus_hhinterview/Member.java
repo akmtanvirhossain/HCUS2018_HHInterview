@@ -757,7 +757,7 @@
 
          birthdate=dtpDOB.getText().toString();
          presentdate=Global.DateNowDMY();
-         ageInDays=Global.DateDifferenceMonth(presentdate,birthdate);
+         ageInDays=Global.DateDifferenceDays(presentdate,birthdate);
          objSave.setAge( ageInDays);
 
 //      *************************************************
@@ -767,19 +767,19 @@
 
         if(spnAgeU.getSelectedItemPosition() == 1)
         {
+            objSave.setAge(Integer.valueOf(txtAge.getText().toString()));
 
-            int age=Integer.valueOf(txtAge.getText().toString());
-            age=(int)(age/30.40);
-            objSave.setAge(age);
         }
          else if(spnAgeU.getSelectedItemPosition() == 2)
          {
-             objSave.setAge(Integer.valueOf(txtAge.getText().toString()));
+             int age=Integer.valueOf(txtAge.getText().toString());
+             age=(int)(age*30.40);
+             objSave.setAge(age);
          }
         else if(spnAgeU.getSelectedItemPosition() == 3)
         {
             int age=Integer.valueOf(txtAge.getText().toString());
-            age=(int)(age*12);
+            age=(int)(age*365.25);
             objSave.setAge(age);
         }
 

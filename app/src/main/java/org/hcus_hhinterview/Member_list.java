@@ -106,14 +106,14 @@ package org.hcus_hhinterview;
 //                 adb.show();
 //             }});
 
-         btnRefresh = (Button) findViewById(R.id.btnRefresh);
-         btnRefresh.setOnClickListener(new View.OnClickListener() {
-
-             public void onClick(View view) {
-                   //write your code here
-                   DataSearch_member(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO);
-
-             }});
+//         btnRefresh = (Button) findViewById(R.id.btnRefresh);
+//         btnRefresh.setOnClickListener(new View.OnClickListener() {
+//
+//             public void onClick(View view) {
+//                   //write your code here
+//                   DataSearch_member(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO);
+//
+//             }});
 
          btnAdd   = (Button) findViewById(R.id.btnAdd_member);
          btnAdd.setOnClickListener(new View.OnClickListener() {
@@ -269,6 +269,19 @@ package org.hcus_hhinterview;
 //             holder.DAge.setText(""+data.getDAge());
 //             holder.DAgeU.setText(""+data.getDAgeU());
 //             holder.LiveInHouse.setText(""+data.getLiveInHouse());
+
+
+
+            if(data.getAge()<6574)
+            {
+                holder.btnChildForm.setVisibility(View.VISIBLE);
+            }
+            else{
+                holder.btnChildForm.setVisibility(View.INVISIBLE);
+            }
+
+
+
 
              holder.btnChildForm.setOnClickListener(new View.OnClickListener() {
                  @Override

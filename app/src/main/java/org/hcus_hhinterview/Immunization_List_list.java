@@ -185,7 +185,7 @@ import Utility.MySharedPreferences;
      
            Immunization_List_DataModel d = new Immunization_List_DataModel();
 //             String SQL = "Select * from "+ TableName ;//+"  Where Vacc_Id='"+ Vacc_Id +"'";
-            String SQL = "Select IL.[Vacc_Id],IL.[Vacc_Name],ifnull(IH.Given,'') Given,ifnull(IH.Source,'') Source FROM [Immunization_List] IL left outer join Immunization_History IH on IL.Vacc_Id=IH.Vacc_Id ";
+            String SQL = "Select IL.[Vacc_Id],IL.[Vacc_Name],ifnull(IH.Given,'') Given,ifnull(IH.Source,'') Source FROM [Immunization_List] IL left outer join Immunization_History IH on IL.Vacc_Id=IH.Vacc_Id Where IH.Uncode='"+UNCODE+"' and IH.structureno='"+STRUCTURENO+"' and IH.householdsl='"+HOUSEHOLDSL+"' and IH.visitno='"+VISITNO+"' and IH.memsl='"+MEMSL+"'";
              List<Immunization_List_DataModel> data = d.SelectAll(this, SQL);
              dataList.clear();
 

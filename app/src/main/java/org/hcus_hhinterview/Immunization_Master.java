@@ -254,16 +254,32 @@
                  {
                      secImmunization.setVisibility(View.GONE);
                      linesecImmunization.setVisibility(View.GONE);
+                     secHCard.setVisibility(View.GONE);
+                     lineHCard.setVisibility(View.GONE);
+
 
                  }else if(rbData.equalsIgnoreCase("8"))
                  {
                      secImmunization.setVisibility(View.GONE);
                      linesecImmunization.setVisibility(View.GONE);
-                 }else
+                     secHCard.setVisibility(View.GONE);
+                     lineHCard.setVisibility(View.GONE);
+                 }
+                 else if(rbData.equalsIgnoreCase("1"))
                  {
                      secImmunization.setVisibility(View.VISIBLE);
                      linesecImmunization.setVisibility(View.VISIBLE);
+                     secHCard.setVisibility(View.VISIBLE);
+                     lineHCard.setVisibility(View.VISIBLE);
                  }
+                 else
+                 {
+                     secImmunization.setVisibility(View.GONE);
+                     linesecImmunization.setVisibility(View.GONE);
+                     secHCard.setVisibility(View.GONE);
+                     lineHCard.setVisibility(View.GONE);
+                 }
+
              }
          });
          
@@ -332,6 +348,9 @@
          DataSearch_Immunization("");
 
 
+
+         secHCard.setVisibility(View.GONE);
+         lineHCard.setVisibility(View.GONE);
 
 
         Button cmdSave = (Button) findViewById(R.id.cmdSave);

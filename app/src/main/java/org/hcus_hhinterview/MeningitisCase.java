@@ -2418,27 +2418,39 @@
                     secMHC_Hosp_a1_Oth.setVisibility(View.GONE);
                     lineMHC_Hosp_a1_Oth.setVisibility(View.GONE);
                     txtMHC_Hosp_a1_Oth.setText("");
+                     spnMHC_Hosp_a2.setEnabled(true);
+                     spnMHC_Hosp_a3.setEnabled(true);
                  }
                  else if(spnData.equalsIgnoreCase("2"))
                  {
                     secMHC_Hosp_a1_Oth.setVisibility(View.GONE);
                     lineMHC_Hosp_a1_Oth.setVisibility(View.GONE);
                     txtMHC_Hosp_a1_Oth.setText("");
+                     spnMHC_Hosp_a2.setEnabled(true);
+                     spnMHC_Hosp_a3.setEnabled(true);
                  }
                  else if(spnData.equalsIgnoreCase("8"))
                  {
                     secMHC_Hosp_a1_Oth.setVisibility(View.GONE);
                     lineMHC_Hosp_a1_Oth.setVisibility(View.GONE);
                     txtMHC_Hosp_a1_Oth.setText("");
+                     spnMHC_Hosp_a2.setEnabled(true);
+                     spnMHC_Hosp_a3.setEnabled(true);
                  }
                  else if(spnData.equalsIgnoreCase("7"))
                  {
                     secMHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
                     lineMHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
+                     spnMHC_Hosp_a2.setSelection(0);
+                     spnMHC_Hosp_a3.setSelection(0);
+                     spnMHC_Hosp_a2.setEnabled(false);
+                     spnMHC_Hosp_a3.setEnabled(false);
                  }
                  else{
                      secMHC_Hosp_a1_Oth.setVisibility(View.GONE);
                      lineMHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                     spnMHC_Hosp_a2.setEnabled(true);
+                     spnMHC_Hosp_a3.setEnabled(true);
                  }
              }
              @Override
@@ -2481,22 +2493,28 @@
                  {
                     secMHC_Hosp_a2_Oth.setVisibility(View.GONE);
                     lineMHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                     spnMHC_Hosp_a3.setEnabled(true);
                     txtMHC_Hosp_a2_Oth.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("8"))
                  {
                     secMHC_Hosp_a2_Oth.setVisibility(View.GONE);
                     lineMHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                     spnMHC_Hosp_a3.setEnabled(true);
                     txtMHC_Hosp_a2_Oth.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("7"))
                  {
                     secMHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
                     lineMHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
+                     spnMHC_Hosp_a3.setSelection(0);
+                     spnMHC_Hosp_a3.setEnabled(false);
+
                  }
                  else{
                      secMHC_Hosp_a2_Oth.setVisibility(View.GONE);
                      lineMHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                     spnMHC_Hosp_a3.setEnabled(true);
                  }
              }
              @Override
@@ -2729,11 +2747,11 @@
          List<String> listMInReco = new ArrayList<String>();
          
          listMInReco.add("");
-         listMInReco.add("1- কথা বলতে সমস্যা (Problems with speech)");
-         listMInReco.add("2- শ্রবণশক্তি হারানো (Hearing loss) ");
-         listMInReco.add("3- কোন কিছু নিয়ে চিন্তা করতে সমস্যা (Problems with thinking)");
-         listMInReco.add("4- বারবার খিঁচুনি (Recurrent seizures) ");
-         listMInReco.add("5- আচরনের পরিবর্তন (Personality change)");
+         listMInReco.add("1-কথা বলতে সমস্যা (Problems with speech)");
+         listMInReco.add("2-শ্রবণশক্তি হারানো (Hearing loss) ");
+         listMInReco.add("3-কোন কিছু নিয়ে চিন্তা করতে সমস্যা (Problems with thinking)");
+         listMInReco.add("4-বারবার খিঁচুনি (Recurrent seizures) ");
+         listMInReco.add("5-আচরনের পরিবর্তন (Personality change)");
          listMInReco.add("7-অন্যান্য (Other)");
          ArrayAdapter<String> adptrMInReco= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listMInReco);
          spnMInReco.setAdapter(adptrMInReco);
@@ -2751,39 +2769,57 @@
                     secMInRecoOth.setVisibility(View.GONE);
                     lineMInRecoOth.setVisibility(View.GONE);
                     txtMInRecoOth.setText("");
+                     spnMInReco3.setEnabled(true);
+                     spnMInReco2.setEnabled(true);
                  }
                  else if(spnData.equalsIgnoreCase("2"))
                  {
                     secMInRecoOth.setVisibility(View.GONE);
                     lineMInRecoOth.setVisibility(View.GONE);
+                    spnMInReco3.setEnabled(true);
+                     spnMInReco2.setEnabled(true);
+
                     txtMInRecoOth.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("3"))
                  {
                     secMInRecoOth.setVisibility(View.GONE);
                     lineMInRecoOth.setVisibility(View.GONE);
+                     spnMInReco3.setEnabled(true);
+                     spnMInReco2.setEnabled(true);
                     txtMInRecoOth.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("4"))
                  {
                     secMInRecoOth.setVisibility(View.GONE);
                     lineMInRecoOth.setVisibility(View.GONE);
+                    spnMInReco3.setEnabled(true);
+                     spnMInReco2.setEnabled(true);
+
                     txtMInRecoOth.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("5"))
                  {
                     secMInRecoOth.setVisibility(View.GONE);
                     lineMInRecoOth.setVisibility(View.GONE);
+                     spnMInReco3.setEnabled(true);
+                     spnMInReco2.setEnabled(true);
                     txtMInRecoOth.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("7"))
                  {
                     secMInRecoOth.setVisibility(View.VISIBLE);
                     lineMInRecoOth.setVisibility(View.VISIBLE);
+                    spnMInReco2.setSelection(0);
+                    spnMInReco3.setSelection(0);
+                    spnMInReco3.setEnabled(false);
+                    spnMInReco2.setEnabled(false);
                  }
                  else{
                      secMInRecoOth.setVisibility(View.GONE);
                      lineMInRecoOth.setVisibility(View.GONE);
+                     spnMInReco3.setEnabled(true);
+                     spnMInReco2.setEnabled(true);
                  }
              }
              @Override
@@ -2864,11 +2900,11 @@
          List<String> listMInReco2 = new ArrayList<String>();
          
          listMInReco2.add("");
-         listMInReco2.add("1- কথা বলতে সমস্যা (Problems with speech)");
-         listMInReco2.add("2- শ্রবণশক্তি হারানো (Hearing loss) ");
-         listMInReco2.add("3- কোন কিছু নিয়ে চিন্তা করতে সমস্যা (Problems with thinking)");
-         listMInReco2.add("4- বারবার খিঁচুনি (Recurrent seizures) ");
-         listMInReco2.add("5- আচরনের পরিবর্তন (Personality change)");
+         listMInReco2.add("1-কথা বলতে সমস্যা (Problems with speech)");
+         listMInReco2.add("2-শ্রবণশক্তি হারানো (Hearing loss) ");
+         listMInReco2.add("3-কোন কিছু নিয়ে চিন্তা করতে সমস্যা (Problems with thinking)");
+         listMInReco2.add("4-বারবার খিঁচুনি (Recurrent seizures) ");
+         listMInReco2.add("5-আচরনের পরিবর্তন (Personality change)");
          listMInReco2.add("7-অন্যান্য (Other)");
          ArrayAdapter<String> adptrMInReco2= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listMInReco2);
          spnMInReco2.setAdapter(adptrMInReco2);
@@ -2885,40 +2921,48 @@
                  {
                     secMInRecoOth2.setVisibility(View.GONE);
                     lineMInRecoOth2.setVisibility(View.GONE);
+                     spnMInReco3.setEnabled(true);
                     txtMInRecoOth2.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("2"))
                  {
                     secMInRecoOth2.setVisibility(View.GONE);
                     lineMInRecoOth2.setVisibility(View.GONE);
+                     spnMInReco3.setEnabled(true);
                     txtMInRecoOth2.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("3"))
                  {
                     secMInRecoOth2.setVisibility(View.GONE);
                     lineMInRecoOth2.setVisibility(View.GONE);
+                     spnMInReco3.setEnabled(true);
                     txtMInRecoOth2.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("4"))
                  {
                     secMInRecoOth2.setVisibility(View.GONE);
                     lineMInRecoOth2.setVisibility(View.GONE);
+                     spnMInReco3.setEnabled(true);
                     txtMInRecoOth2.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("5"))
                  {
                     secMInRecoOth2.setVisibility(View.GONE);
                     lineMInRecoOth2.setVisibility(View.GONE);
+                     spnMInReco3.setEnabled(true);
                     txtMInRecoOth2.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("7"))
                  {
                     secMInRecoOth2.setVisibility(View.VISIBLE);
                     lineMInRecoOth2.setVisibility(View.VISIBLE);
+                     spnMInReco3.setSelection(0);
+                     spnMInReco3.setEnabled(false);
                  }
                  else{
                      secMInRecoOth2.setVisibility(View.GONE);
                      lineMInRecoOth2.setVisibility(View.GONE);
+                     spnMInReco3.setEnabled(true);
                  }
              }
              @Override
@@ -2936,11 +2980,11 @@
          List<String> listMInReco3 = new ArrayList<String>();
          
          listMInReco3.add("");
-         listMInReco3.add("1- কথা বলতে সমস্যা (Problems with speech)");
-         listMInReco3.add("2- শ্রবণশক্তি হারানো (Hearing loss) ");
-         listMInReco3.add("3- কোন কিছু নিয়ে চিন্তা করতে সমস্যা (Problems with thinking)");
-         listMInReco3.add("4- বারবার খিঁচুনি (Recurrent seizures) ");
-         listMInReco3.add("5- আচরনের পরিবর্তন (Personality change)");
+         listMInReco3.add("1-কথা বলতে সমস্যা (Problems with speech)");
+         listMInReco3.add("2-শ্রবণশক্তি হারানো (Hearing loss) ");
+         listMInReco3.add("3-কোন কিছু নিয়ে চিন্তা করতে সমস্যা (Problems with thinking)");
+         listMInReco3.add("4-বারবার খিঁচুনি (Recurrent seizures) ");
+         listMInReco3.add("5-আচরনের পরিবর্তন (Personality change)");
          listMInReco3.add("7-অন্যান্য (Other) ");
          ArrayAdapter<String> adptrMInReco3= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listMInReco3);
          spnMInReco3.setAdapter(adptrMInReco3);
@@ -3518,6 +3562,8 @@ dtpMDtHos.setText("");
          secMInRecoOth3.setVisibility(View.GONE);
          lineMInRecoOth3.setVisibility(View.GONE);
 
+         DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO,MEMSL);
+
 
         Button cmdSave = (Button) findViewById(R.id.cmdSave);
         cmdSave.setOnClickListener(new View.OnClickListener() {
@@ -3558,7 +3604,7 @@ dtpMDtHos.setText("");
            Connection.MessageBox(MeningitisCase.this, "Required field: Member Serial.");
            txtMemSl.requestFocus();
            return;
-       } else if (!rdoSeriIlOnset1.isChecked() & !rdoSeriIlOnset2.isChecked() & !rdoSeriIlOnset3.isChecked() & !rdoSeriIlOnset4.isChecked() & secSeriIlOnset.isShown()) {
+       } else if (!rdoSeriIlOnset1.isChecked() & !rdoSeriIlOnset2.isChecked() & !rdoSeriIlOnset3.isChecked() & secSeriIlOnset.isShown()) {
            Connection.MessageBox(MeningitisCase.this, "Select anyone options from (গত ১২ মাসে এই শিশুটি কি এমন মারাত্মক অসুস্থ হয়েছিল যেখানে শিশুটির জ্বর এবং খিঁচুনি অথবা জ্বর এবং অজ্ঞান হয়ে যাওয়া অথবা জ্বর এবং ঝিমুনি/দ্বিধা/শিশুকে জাগাতে অনেক কষ্ট হয় এমন অবস্থা (স্বাভাবিক মানসিক অবস্থার পরিবর্তন) হয়েছিল? (Within the last 12 months did this child have a serious illness with new onset of fever and convulsions OR fever and unconsciousness OR fever and drowsiness/confusion/difficulty in keeping child awake (Altered mental status)?)).");
            rdoSeriIlOnset1.requestFocus();
            return;
@@ -3762,23 +3808,24 @@ dtpMDtHos.setText("");
            Connection.MessageBox(MeningitisCase.this, "Required field: Name of the hospital-1.");
            txtMHC_Hosp_a1_Oth.requestFocus();
            return;
-       } else if (spnMHC_Hosp_a2.getSelectedItemPosition() == 0 & secMHC_Hosp_a2.isShown()) {
-           Connection.MessageBox(MeningitisCase.this, "Required field: 2..");
-           spnMHC_Hosp_a2.requestFocus();
-           return;
-       } else if (txtMHC_Hosp_a2_Oth.getText().toString().length() == 0 & secMHC_Hosp_a2_Oth.isShown()) {
-           Connection.MessageBox(MeningitisCase.this, "Required field: Name of the hospital-2.");
-           txtMHC_Hosp_a2_Oth.requestFocus();
-           return;
-       } else if (spnMHC_Hosp_a3.getSelectedItemPosition() == 0 & secMHC_Hosp_a3.isShown()) {
-           Connection.MessageBox(MeningitisCase.this, "Required field: 3..");
-           spnMHC_Hosp_a3.requestFocus();
-           return;
-       } else if (txtMHC_Hosp_a3_Oth.getText().toString().length() == 0 & secMHC_Hosp_a3_Oth.isShown()) {
-           Connection.MessageBox(MeningitisCase.this, "Required field: Name of the hospital-3.");
-           txtMHC_Hosp_a3_Oth.requestFocus();
-           return;
        }
+//       else if (spnMHC_Hosp_a2.getSelectedItemPosition() == 0 & secMHC_Hosp_a2.isShown()) {
+//           Connection.MessageBox(MeningitisCase.this, "Required field: 2..");
+//           spnMHC_Hosp_a2.requestFocus();
+//           return;
+//       } else if (txtMHC_Hosp_a2_Oth.getText().toString().length() == 0 & secMHC_Hosp_a2_Oth.isShown()) {
+//           Connection.MessageBox(MeningitisCase.this, "Required field: Name of the hospital-2.");
+//           txtMHC_Hosp_a2_Oth.requestFocus();
+//           return;
+//       } else if (spnMHC_Hosp_a3.getSelectedItemPosition() == 0 & secMHC_Hosp_a3.isShown()) {
+//           Connection.MessageBox(MeningitisCase.this, "Required field: 3..");
+//           spnMHC_Hosp_a3.requestFocus();
+//           return;
+//       } else if (txtMHC_Hosp_a3_Oth.getText().toString().length() == 0 & secMHC_Hosp_a3_Oth.isShown()) {
+//           Connection.MessageBox(MeningitisCase.this, "Required field: Name of the hospital-3.");
+//           txtMHC_Hosp_a3_Oth.requestFocus();
+//           return;
+//       }
        DV = Global.DateValidate(dtpMDtHos.getText().toString());
        if (DV.length() != 0 & secMDtHos.isShown()) {
            if (txtMHosM.getText().toString().length() == 0) {
@@ -3789,10 +3836,10 @@ dtpMDtHos.setText("");
 
        } else if (txtMHosM.getText().toString().length() == 0 & secMHosM.isShown()) {
            if (dtpMDtHos.getText().toString().length() == 0) {
-
                Connection.MessageBox(MeningitisCase.this, "Required field: যদি ভর্তির তারিখ জানা না থাকে,  কত মাস আগে  (How much ago).");
                txtMHosM.requestFocus();
                return;
+                }
            } else if (Integer.valueOf(txtMHosM.getText().toString().length() == 0 ? "01" : txtMHosM.getText().toString()) < 01 || Integer.valueOf(txtMHosM.getText().toString().length() == 0 ? "18" : txtMHosM.getText().toString()) > 18) {
                Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 18(যদি ভর্তির তারিখ জানা না থাকে,  কত মাস আগে  (How much ago)).");
                txtMHosM.requestFocus();
@@ -3834,23 +3881,24 @@ dtpMDtHos.setText("");
                Connection.MessageBox(MeningitisCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
                txtMInRecoOth.requestFocus();
                return;
-           } else if (spnMInReco2.getSelectedItemPosition() == 0 & secMInReco2.isShown()) {
-               Connection.MessageBox(MeningitisCase.this, "Required field: 2..");
-               spnMInReco2.requestFocus();
-               return;
-           } else if (txtMInRecoOth2.getText().toString().length() == 0 & secMInRecoOth2.isShown()) {
-               Connection.MessageBox(MeningitisCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
-               txtMInRecoOth2.requestFocus();
-               return;
-           } else if (spnMInReco3.getSelectedItemPosition() == 0 & secMInReco3.isShown()) {
-               Connection.MessageBox(MeningitisCase.this, "Required field: 3..");
-               spnMInReco3.requestFocus();
-               return;
-           } else if (txtMInRecoOth3.getText().toString().length() == 0 & secMInRecoOth3.isShown()) {
-               Connection.MessageBox(MeningitisCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
-               txtMInRecoOth3.requestFocus();
-               return;
            }
+//           else if (spnMInReco2.getSelectedItemPosition() == 0 & secMInReco2.isShown()) {
+//               Connection.MessageBox(MeningitisCase.this, "Required field: 2..");
+//               spnMInReco2.requestFocus();
+//               return;
+//           } else if (txtMInRecoOth2.getText().toString().length() == 0 & secMInRecoOth2.isShown()) {
+//               Connection.MessageBox(MeningitisCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
+//               txtMInRecoOth2.requestFocus();
+//               return;
+//           } else if (spnMInReco3.getSelectedItemPosition() == 0 & secMInReco3.isShown()) {
+//               Connection.MessageBox(MeningitisCase.this, "Required field: 3..");
+//               spnMInReco3.requestFocus();
+//               return;
+//           } else if (txtMInRecoOth3.getText().toString().length() == 0 & secMInRecoOth3.isShown()) {
+//               Connection.MessageBox(MeningitisCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
+//               txtMInRecoOth3.requestFocus();
+//               return;
+//           }
 // else if (txtAboSeriIlOnset.getText().toString().length() == 0 & secAboSeriIlOnset.isShown()) {
 //               Connection.MessageBox(MeningitisCase.this, "Required field: মন্তব্যঃ মেনিনজাইটিস  (Remarks: Meningitis).");
 //               txtAboSeriIlOnset.requestFocus();
@@ -3866,7 +3914,7 @@ dtpMDtHos.setText("");
            objSave.setHouseholdSl(txtHouseholdSl.getText().toString());
            objSave.setVisitNo(txtVisitNo.getText().toString());
            objSave.setMemSl(txtMemSl.getText().toString());
-           String[] d_rdogrpSeriIlOnset = new String[]{"1", "2", "8", ""};
+           String[] d_rdogrpSeriIlOnset = new String[]{"1", "2", "8"};
            objSave.setSeriIlOnset(0);
            for (int i = 0; i < rdogrpSeriIlOnset.getChildCount(); i++) {
                rb = (RadioButton) rdogrpSeriIlOnset.getChildAt(i);
@@ -4128,26 +4176,29 @@ dtpMDtHos.setText("");
                alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                    @Override
                    public void onClick(DialogInterface dialog, int which) {
-                       Intent intent = new Intent(getApplicationContext(), PneumoniaCase.class);
+
+                       Bundle IDbundle = new Bundle();
+                       IDbundle.putString("UNCode", UNCODE);
+                       IDbundle.putString("StructureNo", STRUCTURENO);
+                       IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
+                       IDbundle.putString("VisitNo", VISITNO);
+                       IDbundle.putString("MemSl", MEMSL);
+
+                       Intent intent = new Intent(getApplicationContext(), ChildForm_Menu.class);
                        intent.putExtras(IDbundle);
                        startActivityForResult(intent, 1);
                    }
                });
                alert.show();
 
-               Bundle IDbundle = new Bundle();
-               IDbundle.putString("UNCode", UNCODE);
-               IDbundle.putString("StructureNo", STRUCTURENO);
-               IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
-               IDbundle.putString("VisitNo", VISITNO);
-               IDbundle.putString("MemSl", MEMSL);
+
 
            } else {
                Connection.MessageBox(MeningitisCase.this, status);
                return;
            }
        }
-   }
+
      catch(Exception e)
      {
          Connection.MessageBox(MeningitisCase.this, e.getMessage());
@@ -4170,7 +4221,7 @@ dtpMDtHos.setText("");
              txtHouseholdSl.setText(item.getHouseholdSl());
              txtVisitNo.setText(item.getVisitNo());
              txtMemSl.setText(item.getMemSl());
-             String[] d_rdogrpSeriIlOnset = new String[] {"1","2","8",""};
+             String[] d_rdogrpSeriIlOnset = new String[] {"1","2","8"};
              for (int i = 0; i < d_rdogrpSeriIlOnset.length; i++)
              {
                  if (String.valueOf(item.getSeriIlOnset()).equals(String.valueOf(d_rdogrpSeriIlOnset[i])))

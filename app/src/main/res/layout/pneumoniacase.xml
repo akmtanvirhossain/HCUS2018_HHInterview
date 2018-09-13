@@ -127,13 +127,13 @@
     <View android:id="@+id/linePTurnBlue" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPDurTurnBlue" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblPDurTurnBlue" android:text="4.10" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblPDurTurnBlue" android:text="যদি হ্যাঁ হয়, তবে কতদিন নীল হয়ে ছিল? (যদি জানা না থাকে 98 বসান) (If yes, for how long?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblPDurTurnBlue" android:text=" যদি হ্যাঁ হয়, তবে কতদিন নীল হয়ে ছিল? (যদি জানা না থাকে 98 বসান) (If yes, for how long?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
          <EditText android:id="@+id/txtPDurTurnBlue" android:maxLength="2" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/linePDurTurnBlue" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPBreatNois" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblPBreatNois" android:text="4.11" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblPBreatNois" android:text="সর্বশেষ অসুস্থতার সময় এই শিশুটির কি শ্বাস নেবার সময় ঘরঘর শব্দ হত ? (During the last episode of illness did the child breathe noisily?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblPBreatNois" android:text=" সর্বশেষ অসুস্থতার সময় এই শিশুটির কি শ্বাস নেবার সময় ঘরঘর শব্দ হত ? (During the last episode of illness did the child breathe noisily?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <RadioGroup android:id="@+id/rdogrpPBreatNois" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoPBreatNois1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoPBreatNois2" android:text="No" android:gravity="top|bottom" />
@@ -143,31 +143,31 @@
     <View android:id="@+id/linePBreatNois" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPDurBreatNois" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblPDurBreatNois" android:text="4.12" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblPDurBreatNois" android:text="যদি হ্যাঁ হয়, তবে কতদিন ঘরঘর শব্দ হয়েছিল? (যদি জানা না থাকে 98 বসান) (If yes, for how long?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblPDurBreatNois" android:text=" যদি হ্যাঁ হয়, তবে কতদিন ঘরঘর শব্দ হয়েছিল? (যদি জানা না থাকে 98 বসান) (If yes, for how long?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
          <EditText android:id="@+id/txtPDurBreatNois" android:maxLength="2" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/linePDurBreatNois" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPLethargy" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblPLethargy" android:text="4.13" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblPLethargy" android:text="সর্বশেষ অসুস্থতার সময় এই শিশুটিকে ঘুম থেকে জাগানো বা জাগ্রত রাখা যাচ্ছে না (জাগালেও আবার ঘুমিয়ে যায় এমন) এমন অবস্থা হয়েছিল (ঝিমুনি)? (During the last episode of illness was it difficult to awaken the child/ keep the child awake/ keep from going to sleep?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblPLethargy" android:text=" সর্বশেষ অসুস্থতার সময় এই শিশুটিকে ঘুম থেকে জাগানো বা জাগ্রত রাখা যাচ্ছে না (জাগালেও আবার ঘুমিয়ে যায় এমন) এমন অবস্থা হয়েছিল (ঝিমুনি)? (During the last episode of illness was it difficult to awaken the child/ keep the child awake/ keep from going to sleep?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <Spinner android:id="@+id/spnPLethargy" android:drawSelectorOnTop="true" android:layout_width="200sp" android:layout_height="wrap_content" android:layout_weight="0" android:prompt="@string/planet_prompt" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/linePLethargy" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPDurLethargy" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblPDurLethargy" android:text="4.14" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblPDurLethargy" android:text="যদি হ্যাঁ হয়, তবে কতদিন এমন অবস্থা হয়েছিল?(যদি জানা না থাকে 98 বসান) (If yes, for how long?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblPDurLethargy" android:text=" যদি হ্যাঁ হয়, তবে কতদিন এমন অবস্থা হয়েছিল?(যদি জানা না থাকে 98 বসান) (If yes, for how long?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
          <EditText android:id="@+id/txtPDurLethargy" android:maxLength="2" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/linePDurLethargy" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPUnDriBfeed" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblPUnDriBfeed" android:text="4.15" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblPUnDriBfeed" android:text="৬ মাসের কম বয়সী শিশুর ক্ষেত্রেঃ সর্বশেষ অসুস্থতার সময় এই শিশুটির কি পানি/বুকের দুধ পান করতে পারেনি এমন অবস্থা হয়েছিল  ?For children &lt;6 months of age: During the last episode of illness, was the child ever unable to drink/ breastfeed?" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblPUnDriBfeed" android:text=" ৬ মাসের কম বয়সী শিশুর ক্ষেত্রেঃ সর্বশেষ অসুস্থতার সময় এই শিশুটির কি পানি/বুকের দুধ পান করতে পারেনি এমন অবস্থা হয়েছিল  ?For children &lt;6 months of age: During the last episode of illness, was the child ever unable to drink/ breastfeed?" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <Spinner android:id="@+id/spnPUnDriBfeed" android:drawSelectorOnTop="true" android:layout_width="200sp" android:layout_height="wrap_content" android:layout_weight="0" android:prompt="@string/planet_prompt" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/linePUnDriBfeed" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPDurUnDriBfeed" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblPDurUnDriBfeed" android:text="4.16" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblPDurUnDriBfeed" android:text="যদি হ্যাঁ হয়, তবে কতদিন এমন অবস্থা হয়েছিল?(যদি জানা না থাকে 98 বসান) (If yes, for how long?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblPDurUnDriBfeed" android:text=" যদি হ্যাঁ হয়, তবে কতদিন এমন অবস্থা হয়েছিল?(যদি জানা না থাকে 98 বসান) (If yes, for how long?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
          <EditText android:id="@+id/txtPDurUnDriBfeed" android:maxLength="2" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/linePDurUnDriBfeed" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -183,7 +183,7 @@
     <View android:id="@+id/linePVomit" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPConv" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblPConv" android:text="4.18" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblPConv" android:text="সর্বশেষ অসুস্থতার সময় এই শিশুটির কি খিঁচুনি হয়েছিল  ? (During the last episode of illness did the child have convulsions?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblPConv" android:text=" সর্বশেষ অসুস্থতার সময় এই শিশুটির কি খিঁচুনি হয়েছিল  ? (During the last episode of illness did the child have convulsions?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <RadioGroup android:id="@+id/rdogrpPConv" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoPConv1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoPConv2" android:text="No" android:gravity="top|bottom" />
@@ -192,7 +192,13 @@
     </LinearLayout>
     <View android:id="@+id/linePConv" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPUpRolEye" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
-        <TextView android:id="@+id/lblPUpRolEye" android:text="4.18.1" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/lblPUpRolEye"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.18.1"
+            android:textSize="20sp" />
         <TextView android:id="@+id/VlblPUpRolEye" android:text=" খিঁচুনির সময় কি চোখ উল্টে  গিয়েছিল? (Did the convulsions include upward rolling of eyeball?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <RadioGroup android:id="@+id/rdogrpPUpRolEye" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoPUpRolEye1" android:text="Yes" android:gravity="top|bottom" />
@@ -202,7 +208,13 @@
     </LinearLayout>
     <View android:id="@+id/linePUpRolEye" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPRigJaw" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
-        <TextView android:id="@+id/lblPRigJaw" android:text="4.18.2" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/lblPRigJaw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.18.2"
+            android:textSize="20sp" />
         <TextView android:id="@+id/VlblPRigJaw" android:text=" খিঁচুনির সময় কি চোয়ালের মাংসপেশি শক্ত হয়ে গিয়েছিল?, চোয়ালের মাংসপেশি শক্ত/ মুখ খুলতে/ বন্ধ করতে না পারা( Did the convulsions include rigid jaw muscles?,Stiffening/hardening of jaw muscles; cannot open /close his/her mouth)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <RadioGroup android:id="@+id/rdogrpPRigJaw" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoPRigJaw1" android:text="Yes" android:gravity="top|bottom" />
@@ -212,8 +224,14 @@
     </LinearLayout>
     <View android:id="@+id/linePRigJaw" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPRigLim" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
-        <TextView android:id="@+id/lblPRigLim" android:text="4.18.3" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblPRigLim" android:text="খিঁচুনির সময় কি হাত পা শক্ত হয়ে গিয়েছিল?,  হাতের মুষ্টি খুলতে গেলে বা হাত পা সোজা করতে গেলে বাধা পাওয়া  (Did the convulsions include rigid limbs?, There is resistance on trying to open the limbs or fist)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/lblPRigLim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.18.3"
+            android:textSize="20sp" />
+        <TextView android:id="@+id/VlblPRigLim" android:text=" খিঁচুনির সময় কি হাত পা শক্ত হয়ে গিয়েছিল?,  হাতের মুষ্টি খুলতে গেলে বা হাত পা সোজা করতে গেলে বাধা পাওয়া  (Did the convulsions include rigid limbs?, There is resistance on trying to open the limbs or fist)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <RadioGroup android:id="@+id/rdogrpPRigLim" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoPRigLim1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoPRigLim2" android:text="No" android:gravity="top|bottom" />
@@ -222,7 +240,13 @@
     </LinearLayout>
     <View android:id="@+id/linePRigLim" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPDurConv" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
-        <TextView android:id="@+id/lblPDurConv" android:text="4.18.4" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/lblPDurConv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.18.4"
+            android:textSize="20sp" />
         <TextView android:id="@+id/VlblPDurConv" android:text=" খিঁচুনি কতক্ষন ছিল? (What was the duration of convulsions?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <Spinner android:id="@+id/spnPDurConv" android:drawSelectorOnTop="true" android:layout_width="200sp" android:layout_height="wrap_content" android:layout_weight="0" android:prompt="@string/planet_prompt" android:textSize="20sp" />
     </LinearLayout>
@@ -239,13 +263,13 @@
     <View android:id="@+id/linePUncons" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPDurUncons" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblPDurUncons" android:text="4.20" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblPDurUncons" android:text="কতক্ষন অজ্ঞান ছিল? (What was the duration of unconsciousness?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblPDurUncons" android:text=" কতক্ষন অজ্ঞান ছিল? (What was the duration of unconsciousness?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <Spinner android:id="@+id/spnPDurUncons" android:drawSelectorOnTop="true" android:layout_width="200sp" android:layout_height="wrap_content" android:layout_weight="0" android:prompt="@string/planet_prompt" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/linePDurUncons" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPIlHCar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblPIlHCar" android:text="4.21" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblPIlHCar" android:text="সর্বশেষ অসুস্থতার সময় এই শিশুটিকে কি কোন স্বাস্থ্যসেবা দানকারীর কাছে নিয়ে গিয়েছিলেন? (During the last episode of episode of illness, did you bring your child to a health care provider?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblPIlHCar" android:text=" সর্বশেষ অসুস্থতার সময় এই শিশুটিকে কি কোন স্বাস্থ্যসেবা দানকারীর কাছে নিয়ে গিয়েছিলেন? (During the last episode of episode of illness, did you bring your child to a health care provider?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <RadioGroup android:id="@+id/rdogrpPIlHCar" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoPIlHCar1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoPIlHCar2" android:text="No" android:gravity="top|bottom" />
@@ -355,7 +379,7 @@
     <View android:id="@+id/linePHC_OthName" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPDSHOPD" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblPDSHOPD" android:text="4.23" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblPDSHOPD" android:text="শিশুটিকে কি ঢাকা শিশু হাসপাতালের বহির্বিভাগে নেয়া হয়েছিল? ( Was the child seen at outdoor patient at Dhaka Shishu Hospital?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblPDSHOPD" android:text=" শিশুটিকে কি ঢাকা শিশু হাসপাতালের বহির্বিভাগে নেয়া হয়েছিল? ( Was the child seen at outdoor patient at Dhaka Shishu Hospital?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <RadioGroup android:id="@+id/rdogrpPDSHOPD" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoPDSHOPD1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoPDSHOPD2" android:text="No" android:gravity="top|bottom" />
@@ -365,7 +389,7 @@
     <View android:id="@+id/linePDSHOPD" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPSSFOPD" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblPSSFOPD" android:text="4.24" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblPSSFOPD" android:text="শিশুটিকে কি মিরপুর ডাঃ এম আর খান  শিশু হাসপাতাল  এর  বহির্বিভাগে নেয়া হয়েছিল ? (Was the child seen as an outdoor patient at Mirpur Dr. MR Khan Shishu Hospital?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblPSSFOPD" android:text=" শিশুটিকে কি মিরপুর ডাঃ এম আর খান  শিশু হাসপাতাল  এর  বহির্বিভাগে নেয়া হয়েছিল ? (Was the child seen as an outdoor patient at Mirpur Dr. MR Khan Shishu Hospital?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <RadioGroup android:id="@+id/rdogrpPSSFOPD" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoPSSFOPD1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoPSSFOPD2" android:text="No" android:gravity="top|bottom" />
@@ -375,7 +399,7 @@
     <View android:id="@+id/linePSSFOPD" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPAdmHos" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblPAdmHos" android:text="4.25" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblPAdmHos" android:text="এই অসুস্থতার জন্য শিশুটিকে কি হাসপাতালে ভর্তি করা হয়েছিল?  (During this episode of illness, was your child hospitalized?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblPAdmHos" android:text=" এই অসুস্থতার জন্য শিশুটিকে কি হাসপাতালে ভর্তি করা হয়েছিল?  (During this episode of illness, was your child hospitalized?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <RadioGroup android:id="@+id/rdogrpPAdmHos" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoPAdmHos1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoPAdmHos2" android:text="No" android:gravity="top|bottom" />
@@ -425,7 +449,7 @@
     <View android:id="@+id/linePHosNamOth3" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPDtAdmHos" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblPDtAdmHos" android:text="4.27" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblPDtAdmHos" android:text="হাসপাতালে ভর্তির তারিখ (Date of hospitalization)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblPDtAdmHos" android:text=" হাসপাতালে ভর্তির তারিখ (Date of hospitalization)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <EditText android:id="@+id/dtpPDtAdmHos" android:drawableRight="@drawable/calendersmall" android:layout_width="150sp" android:inputType="text" android:layout_height="wrap_content" android:focusable="false" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp"/>
     </LinearLayout>
     <View android:id="@+id/linePDtAdmHos" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -443,7 +467,7 @@
     <View android:id="@+id/linePDurIlBeHos" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPDisDr" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblPDisDr" android:text="4.29" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblPDisDr" android:text="চিকিৎসকরা শিশুটির কি রোগ ছিল বলে আপনাদের বলেছিলেন?  What illness did the doctors tell you that your child had?" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblPDisDr" android:text=" চিকিৎসকরা শিশুটির কি রোগ ছিল বলে আপনাদের বলেছিলেন?  What illness did the doctors tell you that your child had?" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <Spinner android:id="@+id/spnPDisDr" android:drawSelectorOnTop="true" android:layout_width="200sp" android:layout_height="wrap_content" android:layout_weight="0" android:prompt="@string/planet_prompt" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/linePDisDr" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -455,7 +479,7 @@
     <View android:id="@+id/linePDisDrOth" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPReco" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblPReco" android:text="4.30" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblPReco" android:text="শিশুটি কি সম্পূর্ণ সুস্থ হয়ে গিয়েছিল? (Did the child recover completely?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblPReco" android:text=" শিশুটি কি সম্পূর্ণ সুস্থ হয়ে গিয়েছিল? (Did the child recover completely?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <RadioGroup android:id="@+id/rdogrpPReco" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoPReco1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoPReco2" android:text="No" android:gravity="top|bottom" />
@@ -465,13 +489,13 @@
     <View android:id="@+id/linePReco" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPDurReco" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblPDurReco" android:text="4.31" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblPDurReco" android:text="শিশুটি সুস্থ হতে কতদিন লেগেছিল?(যদি জানা না থাকে 98 বসান) (How many days were required before the child recovered?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblPDurReco" android:text=" শিশুটি সুস্থ হতে কতদিন লেগেছিল?(যদি জানা না থাকে 98 বসান) (How many days were required before the child recovered?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
          <EditText android:id="@+id/txtPDurReco" android:maxLength="2" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/linePDurReco" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secPAboIll" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblPAboIll" android:text="4.32" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblPAboIll" android:text="মন্তব্যঃ নিউমোনিয়া (Remarks: Pneumonia)" android:layout_width="220sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblPAboIll" android:text=" মন্তব্যঃ নিউমোনিয়া (Remarks: Pneumonia)" android:layout_width="220sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <EditText android:id="@+id/txtPAboIll" android:maxLength="300" android:layout_width="250sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/linePAboIll" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />

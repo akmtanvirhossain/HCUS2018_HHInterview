@@ -682,6 +682,13 @@ dtpSDtHos.setText("");
                     lineSurSymptOth.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt2.setEnabled(true);
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
+
                     txtSurSymptOth.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("02"))
@@ -690,6 +697,12 @@ dtpSDtHos.setText("");
                     lineSurSymptOth.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt2.setEnabled(true);
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("03"))
@@ -698,6 +711,12 @@ dtpSDtHos.setText("");
                     lineSurSymptOth.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt2.setEnabled(true);
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("04"))
@@ -706,6 +725,12 @@ dtpSDtHos.setText("");
                     lineSurSymptOth.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt2.setEnabled(true);
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("05"))
@@ -714,6 +739,12 @@ dtpSDtHos.setText("");
                     lineSurSymptOth.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt2.setEnabled(true);
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("06"))
@@ -722,6 +753,12 @@ dtpSDtHos.setText("");
                     lineSurSymptOth.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt2.setEnabled(true);
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("07"))
@@ -730,6 +767,12 @@ dtpSDtHos.setText("");
                     lineSurSymptOth.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt2.setEnabled(true);
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
 
                     txtSurSymptOth.setText("");
                  }
@@ -739,6 +782,12 @@ dtpSDtHos.setText("");
                     lineSurSymptOth.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt2.setEnabled(true);
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("09"))
@@ -747,6 +796,12 @@ dtpSDtHos.setText("");
                     lineSurSymptOth.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.VISIBLE);
                      lineSDurFever.setVisibility(View.VISIBLE);
+                     spnSurSympt2.setEnabled(true);
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("77"))
@@ -755,12 +810,30 @@ dtpSDtHos.setText("");
                     lineSurSymptOth.setVisibility(View.VISIBLE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt2.setSelection(0);
+                     spnSurSympt2.setEnabled(false);
+                     spnSurSympt3.setSelection(0);
+                     spnSurSympt3.setEnabled(false);
+                     spnSurSympt4.setSelection(0);
+                     spnSurSympt4.setEnabled(false);
+                     spnSurSympt5.setSelection(0);
+                     spnSurSympt5.setEnabled(false);
+                     spnSurSympt6.setSelection(0);
+                     spnSurSympt6.setEnabled(false);
+                     spnSurSympt7.setSelection(0);
+                     spnSurSympt7.setEnabled(false);
                  }
                  else{
                      secSurSymptOth.setVisibility(View.GONE);
                      lineSurSymptOth.setVisibility(View.GONE);
                       secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt2.setEnabled(true);
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                  }
              }
              @Override
@@ -805,6 +878,12 @@ dtpSDtHos.setText("");
                     lineSurSymptOth2.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth2.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("02"))
@@ -813,6 +892,11 @@ dtpSDtHos.setText("");
                     lineSurSymptOth2.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth2.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("03"))
@@ -821,6 +905,11 @@ dtpSDtHos.setText("");
                     lineSurSymptOth2.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth2.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("04"))
@@ -829,6 +918,11 @@ dtpSDtHos.setText("");
                     lineSurSymptOth2.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth2.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("05"))
@@ -837,6 +931,11 @@ dtpSDtHos.setText("");
                     lineSurSymptOth2.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth2.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("06"))
@@ -845,6 +944,11 @@ dtpSDtHos.setText("");
                     lineSurSymptOth2.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth2.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("07"))
@@ -853,7 +957,11 @@ dtpSDtHos.setText("");
                     lineSurSymptOth2.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
-
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth2.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("08"))
@@ -862,6 +970,11 @@ dtpSDtHos.setText("");
                     lineSurSymptOth2.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth2.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("09"))
@@ -870,6 +983,11 @@ dtpSDtHos.setText("");
                     lineSurSymptOth2.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.VISIBLE);
                      lineSDurFever.setVisibility(View.VISIBLE);
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth2.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("77"))
@@ -878,12 +996,27 @@ dtpSDtHos.setText("");
                     lineSurSymptOth2.setVisibility(View.VISIBLE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt3.setEnabled(false);
+                     spnSurSympt4.setEnabled(false);
+                     spnSurSympt5.setEnabled(false);
+                     spnSurSympt6.setEnabled(false);
+                     spnSurSympt7.setEnabled(false);
+                     spnSurSympt3.setSelection(0);
+                     spnSurSympt4.setSelection(0);
+                     spnSurSympt5.setSelection(0);
+                     spnSurSympt6.setSelection(0);
+                     spnSurSympt7.setSelection(0);
                  }
                  else{
                      secSurSymptOth2.setVisibility(View.GONE);
                      lineSurSymptOth2.setVisibility(View.GONE);
                       secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt3.setEnabled(true);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                  }
              }
              @Override
@@ -928,6 +1061,10 @@ dtpSDtHos.setText("");
                     lineSurSymptOth3.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth3.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("02"))
@@ -936,6 +1073,10 @@ dtpSDtHos.setText("");
                     lineSurSymptOth3.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth3.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("03"))
@@ -944,7 +1085,10 @@ dtpSDtHos.setText("");
                     lineSurSymptOth3.setVisibility(View.GONE);
                     secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
-
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth3.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("04"))
@@ -953,6 +1097,10 @@ dtpSDtHos.setText("");
                     lineSurSymptOth3.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth3.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("05"))
@@ -961,6 +1109,10 @@ dtpSDtHos.setText("");
                     lineSurSymptOth3.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth3.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("06"))
@@ -969,13 +1121,22 @@ dtpSDtHos.setText("");
                     lineSurSymptOth3.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth3.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("07"))
                  {
                     secSurSymptOth3.setVisibility(View.GONE);
                     lineSurSymptOth3.setVisibility(View.GONE);
-
+                     secSDurFever.setVisibility(View.GONE);
+                     lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth3.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("08"))
@@ -984,6 +1145,10 @@ dtpSDtHos.setText("");
                     lineSurSymptOth3.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth3.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("09"))
@@ -992,6 +1157,10 @@ dtpSDtHos.setText("");
                     lineSurSymptOth3.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.VISIBLE);
                      lineSDurFever.setVisibility(View.VISIBLE);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth3.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("77"))
@@ -1000,12 +1169,24 @@ dtpSDtHos.setText("");
                     lineSurSymptOth3.setVisibility(View.VISIBLE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt4.setEnabled(false);
+                     spnSurSympt5.setEnabled(false);
+                     spnSurSympt6.setEnabled(false);
+                     spnSurSympt7.setEnabled(false);
+                     spnSurSympt4.setSelection(0);
+                     spnSurSympt5.setSelection(0);
+                     spnSurSympt6.setSelection(0);
+                     spnSurSympt7.setSelection(0);
                  }
                  else{
                      secSurSymptOth3.setVisibility(View.GONE);
                      lineSurSymptOth3.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt4.setEnabled(true);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                  }
              }
              @Override
@@ -1050,6 +1231,9 @@ dtpSDtHos.setText("");
                     lineSurSymptOth4.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth4.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("02"))
@@ -1058,6 +1242,9 @@ dtpSDtHos.setText("");
                     lineSurSymptOth4.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth4.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("03"))
@@ -1066,6 +1253,9 @@ dtpSDtHos.setText("");
                     lineSurSymptOth4.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth4.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("04"))
@@ -1074,6 +1264,9 @@ dtpSDtHos.setText("");
                     lineSurSymptOth4.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth4.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("05"))
@@ -1082,6 +1275,9 @@ dtpSDtHos.setText("");
                     lineSurSymptOth4.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth4.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("06"))
@@ -1090,6 +1286,9 @@ dtpSDtHos.setText("");
                     lineSurSymptOth4.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth4.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("07"))
@@ -1098,6 +1297,9 @@ dtpSDtHos.setText("");
                     lineSurSymptOth4.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth4.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("08"))
@@ -1106,6 +1308,9 @@ dtpSDtHos.setText("");
                     lineSurSymptOth4.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth4.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("09"))
@@ -1114,6 +1319,9 @@ dtpSDtHos.setText("");
                     lineSurSymptOth4.setVisibility(View.GONE);
                     secSDurFever.setVisibility(View.VISIBLE);
                      lineSDurFever.setVisibility(View.VISIBLE);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth4.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("77"))
@@ -1122,12 +1330,21 @@ dtpSDtHos.setText("");
                     lineSurSymptOth4.setVisibility(View.VISIBLE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt5.setEnabled(false);
+                     spnSurSympt6.setEnabled(false);
+                     spnSurSympt7.setEnabled(false);
+                     spnSurSympt5.setSelection(0);
+                     spnSurSympt6.setSelection(0);
+                     spnSurSympt7.setSelection(0);
                  }
                  else{
                      secSurSymptOth4.setVisibility(View.GONE);
                      lineSurSymptOth4.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt5.setEnabled(true);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                  }
              }
              @Override
@@ -1172,6 +1389,8 @@ dtpSDtHos.setText("");
                     lineSurSymptOth5.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth5.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("02"))
@@ -1180,6 +1399,8 @@ dtpSDtHos.setText("");
                     lineSurSymptOth5.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth5.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("03"))
@@ -1188,6 +1409,8 @@ dtpSDtHos.setText("");
                     lineSurSymptOth5.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth5.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("04"))
@@ -1196,6 +1419,8 @@ dtpSDtHos.setText("");
                     lineSurSymptOth5.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth5.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("05"))
@@ -1204,6 +1429,8 @@ dtpSDtHos.setText("");
                     lineSurSymptOth5.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth5.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("06"))
@@ -1212,6 +1439,8 @@ dtpSDtHos.setText("");
                     lineSurSymptOth5.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth5.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("07"))
@@ -1220,7 +1449,8 @@ dtpSDtHos.setText("");
                     lineSurSymptOth5.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
-
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth5.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("08"))
@@ -1229,6 +1459,8 @@ dtpSDtHos.setText("");
                     lineSurSymptOth5.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth5.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("09"))
@@ -1237,6 +1469,8 @@ dtpSDtHos.setText("");
                      lineSurSymptOth5.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.VISIBLE);
                      lineSDurFever.setVisibility(View.VISIBLE);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                      txtSurSymptOth5.setText("");
                  }
 
@@ -1246,12 +1480,18 @@ dtpSDtHos.setText("");
                     lineSurSymptOth5.setVisibility(View.VISIBLE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt6.setEnabled(false);
+                     spnSurSympt7.setEnabled(false);
+                     spnSurSympt6.setSelection(0);
+                     spnSurSympt7.setSelection(0);
                  }
                  else{
                      secSurSymptOth5.setVisibility(View.GONE);
                      lineSurSymptOth5.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt6.setEnabled(true);
+                     spnSurSympt7.setEnabled(true);
                  }
              }
              @Override
@@ -1296,6 +1536,7 @@ dtpSDtHos.setText("");
                     lineSurSymptOth6.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth6.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("02"))
@@ -1304,6 +1545,7 @@ dtpSDtHos.setText("");
                     lineSurSymptOth6.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth6.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("03"))
@@ -1312,6 +1554,7 @@ dtpSDtHos.setText("");
                     lineSurSymptOth6.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth6.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("04"))
@@ -1320,6 +1563,7 @@ dtpSDtHos.setText("");
                     lineSurSymptOth6.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth6.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("05"))
@@ -1328,6 +1572,7 @@ dtpSDtHos.setText("");
                     lineSurSymptOth6.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth6.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("06"))
@@ -1336,6 +1581,7 @@ dtpSDtHos.setText("");
                     lineSurSymptOth6.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth6.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("07"))
@@ -1344,6 +1590,7 @@ dtpSDtHos.setText("");
                     lineSurSymptOth6.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth6.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("08"))
@@ -1352,6 +1599,7 @@ dtpSDtHos.setText("");
                     lineSurSymptOth6.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth6.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("09"))
@@ -1360,6 +1608,7 @@ dtpSDtHos.setText("");
                     lineSurSymptOth6.setVisibility(View.GONE);
                     secSDurFever.setVisibility(View.VISIBLE);
                      lineSDurFever.setVisibility(View.VISIBLE);
+                     spnSurSympt7.setEnabled(true);
                     txtSurSymptOth6.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("77"))
@@ -1368,12 +1617,16 @@ dtpSDtHos.setText("");
                     lineSurSymptOth6.setVisibility(View.VISIBLE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt7.setEnabled(false);
+                     spnSurSympt7.setSelection(0);
+
                  }
                  else{
                      secSurSymptOth6.setVisibility(View.GONE);
                      lineSurSymptOth6.setVisibility(View.GONE);
                      secSDurFever.setVisibility(View.GONE);
                      lineSDurFever.setVisibility(View.GONE);
+                     spnSurSympt7.setEnabled(true);
                  }
              }
              @Override
@@ -2138,6 +2391,8 @@ dtpSDtHos.setText("");
          secSInRecoOth2.setVisibility(View.GONE);
          lineSInRecoOth2.setVisibility(View.GONE);
 
+
+         DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO,MEMSL);
 
         Button cmdSave = (Button) findViewById(R.id.cmdSave);
         cmdSave.setOnClickListener(new View.OnClickListener() {

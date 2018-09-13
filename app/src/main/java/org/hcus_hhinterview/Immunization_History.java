@@ -231,6 +231,18 @@
                  {
                      secSource.setVisibility(View.VISIBLE);
                  }
+                 else if(rbData.equalsIgnoreCase("2"))
+                 {
+                     secSource.setVisibility(View.GONE);
+                 }
+                 else if(rbData.equalsIgnoreCase("3"))
+                 {
+                     secSource.setVisibility(View.GONE);
+                 }
+                 else
+                 {
+                     secSource.setVisibility(View.GONE);
+                 }
              }
          });
          
@@ -419,8 +431,9 @@
                if(!chkDate_Missing.isChecked()) {
                    Connection.MessageBox(Immunization_History.this, DV);
                    dtpVacc_Date.requestFocus();
+                   return;
                }
-             return;	
+
            }
  
          String SQL = "";
@@ -450,7 +463,7 @@
          }
 
          objSave.setVacc_Date(dtpVacc_Date.getText().toString().length() > 0 ? Global.DateConvertYMD(dtpVacc_Date.getText().toString()) : dtpVacc_Date.getText().toString());
-         objSave.setDate_Missing(Integer.valueOf(chkDate_Missing.isChecked()?"1":(secDate_Missing.isShown()?"2":"")));
+         objSave.setDate_Missing(Integer.valueOf(chkDate_Missing.isChecked()?"1":(secDate_Missing.isShown()?"2":"0")));
          objSave.setEnDt(Global.DateTimeNowYMDHMS());
          objSave.setStartTime(STARTTIME);
          objSave.setEndTime(g.CurrentTime24());

@@ -720,14 +720,7 @@
 //         final String MSL = C.ReturnSingleValue("Select (ifnull(max(cast(MemSl as int)),0)+1) from Member where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'and HouseholdSl='"+ HOUSEHOLDSL +"'and VisitNo='"+ VISITNO +"'"); //where ParticipantID='"+ ParticipantID +"'");
 
 
-          btnRefresh = (Button) findViewById(R.id.btnRefresh);
-         btnRefresh.setOnClickListener(new View.OnClickListener() {
 
-             public void onClick(View view) {
-                   //write your code here
-
-
-             }});
 
          btnAdd   = (Button) findViewById(R.id.btnAdd_member);
          btnAdd.setOnClickListener(new View.OnClickListener() {

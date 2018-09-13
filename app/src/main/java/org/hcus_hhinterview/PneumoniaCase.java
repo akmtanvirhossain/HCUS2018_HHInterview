@@ -2157,6 +2157,8 @@
                  {
                     secPHosNamOth.setVisibility(View.GONE);
                     linePHosNamOth.setVisibility(View.GONE);
+                     spnPHosNam2.setEnabled(true);
+                     spnPHosNam3.setEnabled(true);
                     txtPHosNamOth.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("2"))
@@ -2164,21 +2166,32 @@
                     secPHosNamOth.setVisibility(View.GONE);
                     linePHosNamOth.setVisibility(View.GONE);
                     txtPHosNamOth.setText("");
+                     spnPHosNam2.setEnabled(true);
+                     spnPHosNam3.setEnabled(true);
                  }
                  else if(spnData.equalsIgnoreCase("8"))
                  {
                     secPHosNamOth.setVisibility(View.GONE);
                     linePHosNamOth.setVisibility(View.GONE);
+                     spnPHosNam2.setEnabled(true);
+                     spnPHosNam3.setEnabled(true);
                     txtPHosNamOth.setText("");
+
                  }
                  else if(spnData.equalsIgnoreCase("7"))
                  {
                     secPHosNamOth.setVisibility(View.VISIBLE);
                     linePHosNamOth.setVisibility(View.VISIBLE);
+                     spnPHosNam2.setSelection(0);
+                     spnPHosNam3.setSelection(0);
+                     spnPHosNam2.setEnabled(false);
+                     spnPHosNam3.setEnabled(false);
                  }
                  else{
                      secPHosNamOth.setVisibility(View.GONE);
                      linePHosNamOth.setVisibility(View.GONE);
+                     spnPHosNam2.setEnabled(true);
+                     spnPHosNam3.setEnabled(true);
                  }
              }
              @Override
@@ -2216,27 +2229,33 @@
                     secPHosNamOth2.setVisibility(View.GONE);
                     linePHosNamOth2.setVisibility(View.GONE);
                     txtPHosNamOth2.setText("");
+                     spnPHosNam3.setEnabled(true);
                  }
                  else if(spnData.equalsIgnoreCase("2"))
                  {
                     secPHosNamOth2.setVisibility(View.GONE);
                     linePHosNamOth2.setVisibility(View.GONE);
                     txtPHosNamOth2.setText("");
+                     spnPHosNam3.setEnabled(true);
                  }
                  else if(spnData.equalsIgnoreCase("8"))
                  {
                     secPHosNamOth2.setVisibility(View.GONE);
                     linePHosNamOth2.setVisibility(View.GONE);
                     txtPHosNamOth2.setText("");
+                     spnPHosNam3.setEnabled(true);
                  }
                  else if(spnData.equalsIgnoreCase("7"))
                  {
                     secPHosNamOth2.setVisibility(View.VISIBLE);
                     linePHosNamOth2.setVisibility(View.VISIBLE);
+                     spnPHosNam3.setSelection(0);
+                     spnPHosNam3.setEnabled(false);
                  }
                  else{
                      secPHosNamOth2.setVisibility(View.GONE);
                      linePHosNamOth2.setVisibility(View.GONE);
+                     spnPHosNam3.setEnabled(true);
                  }
              }
              @Override
@@ -2855,6 +2874,8 @@
          linePDurReco.setVisibility(View.GONE);
 
 
+         DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO,MEMSL);
+
         Button cmdSave = (Button) findViewById(R.id.cmdSave);
         cmdSave.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) { 
@@ -3212,18 +3233,18 @@
              spnPHosNam.requestFocus(); 
              return;	
            }
-         else if(txtPHosNamOth.getText().toString().length()==0 & secPHosNamOth.isShown())
-           {
-             Connection.MessageBox(PneumoniaCase.this, "Required field: Name of the other hospital-1.");
-             txtPHosNamOth.requestFocus(); 
-             return;	
-           }
-         else if(spnPHosNam2.getSelectedItemPosition()==0  & secPHosNam2.isShown())
-           {
-             Connection.MessageBox(PneumoniaCase.this, "Required field: 2..");
-             spnPHosNam2.requestFocus(); 
-             return;	
-           }
+//         else if(txtPHosNamOth.getText().toString().length()==0 & secPHosNamOth.isShown())
+//           {
+//             Connection.MessageBox(PneumoniaCase.this, "Required field: Name of the other hospital-1.");
+//             txtPHosNamOth.requestFocus();
+//             return;
+//           }
+//         else if(spnPHosNam2.getSelectedItemPosition()==0  & secPHosNam2.isShown())
+//           {
+//             Connection.MessageBox(PneumoniaCase.this, "Required field: 2..");
+//             spnPHosNam2.requestFocus();
+//             return;
+//           }
          else if(txtPHosNamOth2.getText().toString().length()==0 & secPHosNamOth2.isShown())
            {
              Connection.MessageBox(PneumoniaCase.this, "Required field: Name of the other hospital-2.");

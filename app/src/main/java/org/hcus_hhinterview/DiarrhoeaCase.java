@@ -1083,33 +1083,47 @@
                     secDHosNamOth.setVisibility(View.GONE);
                     lineDHosNamOth.setVisibility(View.GONE);
                     txtDHosNamOth.setText("");
+                     spnDHosNam2.setEnabled(true);
+                     spnDHosNam3.setEnabled(true);
                  }
                  else if(spnData.equalsIgnoreCase("2"))
                  {
                     secDHosNamOth.setVisibility(View.GONE);
                     lineDHosNamOth.setVisibility(View.GONE);
                     txtDHosNamOth.setText("");
+                     spnDHosNam2.setEnabled(true);
+                     spnDHosNam3.setEnabled(true);
                  }
                  else if(spnData.equalsIgnoreCase("3"))
                  {
                     secDHosNamOth.setVisibility(View.GONE);
                     lineDHosNamOth.setVisibility(View.GONE);
                     txtDHosNamOth.setText("");
+                     spnDHosNam2.setEnabled(true);
+                     spnDHosNam3.setEnabled(true);
                  }
                  else if(spnData.equalsIgnoreCase("8"))
                  {
                     secDHosNamOth.setVisibility(View.GONE);
                     lineDHosNamOth.setVisibility(View.GONE);
                     txtDHosNamOth.setText("");
+                     spnDHosNam2.setEnabled(true);
+                     spnDHosNam3.setEnabled(true);
                  }
                  else if(spnData.equalsIgnoreCase("7"))
                  {
                     secDHosNamOth.setVisibility(View.VISIBLE);
                     lineDHosNamOth.setVisibility(View.VISIBLE);
+                     spnDHosNam2.setSelection(0);
+                     spnDHosNam3.setSelection(0);
+                     spnDHosNam2.setEnabled(false);
+                     spnDHosNam3.setEnabled(false);
                  }
                  else{
                      secDHosNamOth.setVisibility(View.GONE);
                      lineDHosNamOth.setVisibility(View.GONE);
+                     spnDHosNam2.setEnabled(true);
+                     spnDHosNam3.setEnabled(true);
                  }
              }
              @Override
@@ -1148,33 +1162,40 @@
                     secDHosNamOth2.setVisibility(View.GONE);
                     lineDHosNamOth2.setVisibility(View.GONE);
                     txtDHosNamOth2.setText("");
+                     spnDHosNam3.setEnabled(true);
                  }
                  else if(spnData.equalsIgnoreCase("2"))
                  {
                     secDHosNamOth2.setVisibility(View.GONE);
                     lineDHosNamOth2.setVisibility(View.GONE);
                     txtDHosNamOth2.setText("");
+                     spnDHosNam3.setEnabled(true);
                  }
                  else if(spnData.equalsIgnoreCase("3"))
                  {
                     secDHosNamOth2.setVisibility(View.GONE);
                     lineDHosNamOth2.setVisibility(View.GONE);
                     txtDHosNamOth2.setText("");
+                     spnDHosNam3.setEnabled(true);
                  }
                  else if(spnData.equalsIgnoreCase("8"))
                  {
                     secDHosNamOth2.setVisibility(View.GONE);
                     lineDHosNamOth2.setVisibility(View.GONE);
                     txtDHosNamOth2.setText("");
+                     spnDHosNam3.setEnabled(true);
                  }
                  else if(spnData.equalsIgnoreCase("7"))
                  {
                     secDHosNamOth2.setVisibility(View.VISIBLE);
                     lineDHosNamOth2.setVisibility(View.VISIBLE);
+                     spnDHosNam3.setEnabled(false);
+                     spnDHosNam3.setEnabled(false);
                  }
                  else{
                      secDHosNamOth2.setVisibility(View.GONE);
                      lineDHosNamOth2.setVisibility(View.GONE);
+                     spnDHosNam3.setEnabled(true);
                  }
              }
              @Override
@@ -1622,6 +1643,8 @@ txtDDurReco.addTextChangedListener(new TextWatcher() {
          secDInRecoOth.setVisibility(View.GONE);
          lineDInRecoOth.setVisibility(View.GONE);
 
+         DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO,MEMSL);
+
 
         Button cmdSave = (Button) findViewById(R.id.cmdSave);
         cmdSave.setOnClickListener(new View.OnClickListener() {
@@ -1834,24 +1857,24 @@ txtDDurReco.addTextChangedListener(new TextWatcher() {
              txtDHosNamOth.requestFocus(); 
              return;	
            }
-         else if(spnDHosNam2.getSelectedItemPosition()==0  & secDHosNam2.isShown())
-           {
-             Connection.MessageBox(DiarrhoeaCase .this, "Required field: 2..");
-             spnDHosNam2.requestFocus(); 
-             return;	
-           }
-         else if(txtDHosNamOth2.getText().toString().length()==0 & secDHosNamOth2.isShown())
-           {
-             Connection.MessageBox(DiarrhoeaCase .this, "Required field: Name of the other hospital-2.");
-             txtDHosNamOth2.requestFocus(); 
-             return;	
-           }
-         else if(spnDHosNam3.getSelectedItemPosition()==0  & secDHosNam3.isShown())
-           {
-             Connection.MessageBox(DiarrhoeaCase .this, "Required field: 3..");
-             spnDHosNam3.requestFocus(); 
-             return;	
-           }
+//         else if(spnDHosNam2.getSelectedItemPosition()==0  & secDHosNam2.isShown())
+//           {
+//             Connection.MessageBox(DiarrhoeaCase .this, "Required field: 2..");
+//             spnDHosNam2.requestFocus();
+//             return;
+//           }
+//         else if(txtDHosNamOth2.getText().toString().length()==0 & secDHosNamOth2.isShown())
+//           {
+//             Connection.MessageBox(DiarrhoeaCase .this, "Required field: Name of the other hospital-2.");
+//             txtDHosNamOth2.requestFocus();
+//             return;
+//           }
+//         else if(spnDHosNam3.getSelectedItemPosition()==0  & secDHosNam3.isShown())
+//           {
+//             Connection.MessageBox(DiarrhoeaCase .this, "Required field: 3..");
+//             spnDHosNam3.requestFocus();
+//             return;
+//           }
          else if(txtDHosNamOth3.getText().toString().length()==0 & secDHosNamOth3.isShown())
            {
              Connection.MessageBox(DiarrhoeaCase .this, "Required field: Name of the other hospital-3.");

@@ -1194,6 +1194,9 @@
          lineOMInRecoOth2.setVisibility(View.GONE);
 
 
+         DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO,MEMSL);
+
+
         Button cmdSave = (Button) findViewById(R.id.cmdSave);
         cmdSave.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) { 

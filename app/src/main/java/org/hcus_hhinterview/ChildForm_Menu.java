@@ -42,6 +42,24 @@ public class ChildForm_Menu extends AppCompatActivity {
         btnOperation=findViewById(R.id.btnOperation);
         btnOtitis=findViewById(R.id.btnOtitis);
 
+        if(Integer.parseInt(AGE) < 60)
+        {
+            btnPneumonia.setEnabled(false);
+            btnPneumonia.setBackgroundResource(R.drawable.button_style_red);
+        }
+        else if(Integer.parseInt(AGE) >= 1826 & Integer.parseInt(AGE) < 6574)
+        {
+            btnImu.setEnabled(false);
+            btnImu.setBackgroundResource(R.drawable.button_style_red);
+            btnMeningitis.setEnabled(false);
+            btnMeningitis.setBackgroundResource(R.drawable.button_style_red);
+            btnPneumonia.setEnabled(false);
+            btnPneumonia.setBackgroundResource(R.drawable.button_style_red);
+            btnDiarrhoea.setEnabled(false);
+            btnDiarrhoea.setBackgroundResource(R.drawable.button_style_red);
+        }
+
+
         btnImu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

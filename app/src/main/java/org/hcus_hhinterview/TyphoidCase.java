@@ -4737,6 +4737,9 @@
          lineDidRecordMatch2.setVisibility(View.GONE);
 
 
+          DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO,MEMSL);
+
+
         Button cmdSave = (Button) findViewById(R.id.cmdSave);
         cmdSave.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) { 
@@ -5505,11 +5508,11 @@
          }
 
          objSave.setDaysOfSymp(Integer.valueOf(txtDaysOfSymp.getText().toString().length()==0?"0":txtDaysOfSymp.getText().toString()));
-         objSave.setDaysOfSympDK(Integer.valueOf(chkDaysOfSympDK.isChecked()?"1":(secDaysOfSympDK.isShown()?"2":"")));
+         objSave.setDaysOfSympDK(Integer.valueOf(chkDaysOfSympDK.isChecked()?"1":secDaysOfSympDK.isShown()?"2":"0"));
          objSave.setWorstHour(Integer.valueOf(txtWorstHour.getText().toString().length()==0?"0":txtWorstHour.getText().toString()));
-         objSave.setWorstHourDK(Integer.valueOf(chkWorstHourDK.isChecked()?"1":(secWorstHourDK.isShown()?"2":"")));
+         objSave.setWorstHourDK(Integer.valueOf(chkWorstHourDK.isChecked()?"1":(secWorstHourDK.isShown()?"2":"0")));
          objSave.setDaysOfUnable(Integer.valueOf(txtDaysOfUnable.getText().toString().length()==0?"0":txtDaysOfUnable.getText().toString()));
-         objSave.setDaysOfUnableDK(Integer.valueOf(chkDaysOfUnableDK.isChecked()?"1":(secDaysOfUnableDK.isShown()?"2":"")));
+         objSave.setDaysOfUnableDK(Integer.valueOf(chkDaysOfUnableDK.isChecked()?"1":(secDaysOfUnableDK.isShown()?"2":"0")));
          String[] d_rdogrpTAdmHos = new String[] {"1","2","8"};
          objSave.setTAdmHos(0);
          for (int i = 0; i < rdogrpTAdmHos.getChildCount(); i++)
@@ -5531,11 +5534,11 @@
          objSave.setTHosNam2_Oth(txtTHosNam2_Oth.getText().toString());
          objSave.setTHosNam3(Integer.valueOf(spnTHosNam3.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnTHosNam3.getSelectedItem().toString(), "-")));
          objSave.setTHosNam3_Oth(txtTHosNam3_Oth.getText().toString());
-         objSave.setTHosNamDK(Integer.valueOf(chkTHosNamDK.isChecked()?"1":(secTHosNamDK.isShown()?"2":"")));
+         objSave.setTHosNamDK(Integer.valueOf(chkTHosNamDK.isChecked()?"1":(secTHosNamDK.isShown()?"2":"0")));
          objSave.setTDtAdmHos(dtpTDtAdmHos.getText().toString().length() > 0 ? Global.DateConvertYMD(dtpTDtAdmHos.getText().toString()) : dtpTDtAdmHos.getText().toString());
          objSave.setTAdmHosD(Integer.valueOf(txtTAdmHosD.getText().toString().length()==0?"0":txtTAdmHosD.getText().toString()));
          objSave.setTDurIlBeHos(Integer.valueOf(txtTDurIlBeHos.getText().toString().length()==0?"0":txtTDurIlBeHos.getText().toString()));
-         objSave.setTDurIlBeHosDK(Integer.valueOf(chkTDurIlBeHosDK.isChecked()?"1":(secTDurIlBeHosDK.isShown()?"2":"")));
+         objSave.setTDurIlBeHosDK(Integer.valueOf(chkTDurIlBeHosDK.isChecked()?"1":(secTDurIlBeHosDK.isShown()?"2":"0")));
          objSave.setTDisDr(Integer.valueOf(spnTDisDr.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnTDisDr.getSelectedItem().toString(), "-")));
          objSave.setTDisDrOth(txtTDisDrOth.getText().toString());
          String[] d_rdogrpTReco = new String[] {"1","2","8"};
@@ -5578,7 +5581,7 @@
          }
 
          objSave.setDaysOfHosp(Integer.valueOf(txtDaysOfHosp.getText().toString().length()==0?"0":txtDaysOfHosp.getText().toString()));
-         objSave.setDaysOfHospDK(Integer.valueOf(chkDaysOfHospDK.isChecked()?"1":(secDaysOfHospDK.isShown()?"2":"")));
+         objSave.setDaysOfHospDK(Integer.valueOf(chkDaysOfHospDK.isChecked()?"1":(secDaysOfHospDK.isShown()?"2":"0")));
          objSave.setTAboIll(txtTAboIll.getText().toString());
          objSave.setEnDt(Global.DateTimeNowYMDHMS());
          objSave.setStartTime(STARTTIME);
@@ -5597,19 +5600,21 @@
               typhoidalert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                    @Override
                    public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(getApplicationContext(), PneumoniaCase.class);
+                        Bundle IDbundle = new Bundle();
+                        IDbundle.putString("UNCode",UNCODE  );
+                        IDbundle.putString("StructureNo",STRUCTURENO );
+                        IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
+                        IDbundle.putString("VisitNo", VISITNO);
+                        IDbundle.putString("MemSl", MEMSL);
+
+                        Intent intent = new Intent(getApplicationContext(), ChildForm_Menu.class);
                         intent.putExtras(IDbundle);
                         startActivityForResult(intent, 1);
                    }
               });
               typhoidalert.show();
 
-              Bundle IDbundle = new Bundle();
-              IDbundle.putString("UNCode",UNCODE  );
-              IDbundle.putString("StructureNo",STRUCTURENO );
-              IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
-              IDbundle.putString("VisitNo", VISITNO);
-              IDbundle.putString("MemSl", MEMSL);
+
 
          }
          else{

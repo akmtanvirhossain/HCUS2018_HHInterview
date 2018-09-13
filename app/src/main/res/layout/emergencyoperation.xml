@@ -79,7 +79,7 @@
     <View android:id="@+id/lineMemSl" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secSAbd" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblSAbd" android:text="6.1" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblSAbd" android:text="গত ২৪ মাসে আপনার শিশুর কি দুর্ঘটনা কবলিত ছাড়া জরুরী ভিত্তিতে পেটে অপারেশন করানো হয়েছিল? (Within the last 24 months did this child have an emergency non-traumatic abdominal surgery?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblSAbd" android:text=" গত ২৪ মাসে আপনার শিশুর কি দুর্ঘটনা কবলিত ছাড়া জরুরী ভিত্তিতে পেটে অপারেশন করানো হয়েছিল? (Within the last 24 months did this child have an emergency non-traumatic abdominal surgery?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <RadioGroup android:id="@+id/rdogrpSAbd" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoSAbd1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoSAbd2" android:text="No" android:gravity="top|bottom" />
@@ -89,13 +89,13 @@
     <View android:id="@+id/lineSAbd" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secOperNo" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblOperNo" android:text="6.2" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblOperNo" android:text="গত ২৪ মাসে আপনার শিশুর কয়টি অপারেশন করানো হয়েছিল? (যদি একের অধিক এই অপারেশন হয়ে থাকে তবে অতিসম্প্রতি হয়ে যাওয়া অপারেশন সম্পর্কে নিচের প্রশ্নগুলো করুন) (Within the last 24 months how many operation did this child have? If >1 operations performed, ask about the following questions on the most recent operation)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblOperNo" android:text=" গত ২৪ মাসে আপনার শিশুর কয়টি অপারেশন করানো হয়েছিল? (যদি একের অধিক এই অপারেশন হয়ে থাকে তবে অতিসম্প্রতি হয়ে যাওয়া অপারেশন সম্পর্কে নিচের প্রশ্নগুলো করুন) (Within the last 24 months how many operation did this child have? If >1 operations performed, ask about the following questions on the most recent operation)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
          <EditText android:id="@+id/txtOperNo" android:maxLength="2" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/lineOperNo" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secSDtHos" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblSDtHos" android:text="6.3" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblSDtHos" android:text="হাসপাতালে ভর্তির তারিখ (Date of hospitalization)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblSDtHos" android:text=" হাসপাতালে ভর্তির তারিখ (Date of hospitalization)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <EditText android:id="@+id/dtpSDtHos" android:drawableRight="@drawable/calendersmall" android:layout_width="150sp" android:inputType="text" android:layout_height="wrap_content" android:focusable="false" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp"/>
     </LinearLayout>
     <View android:id="@+id/lineSDtHos" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -107,7 +107,7 @@
     <View android:id="@+id/lineSHosM" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secSIlBeHosAdm" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblSIlBeHosAdm" android:text="6.4" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblSIlBeHosAdm" android:text="হাসপাতালে ভর্তির আগে শিশুটি কতদিন অসুস্থ ছিল? (যদি জানা না থাকে 98 বসান) (For how many days did the child appear ill before he/she was hospitalized?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblSIlBeHosAdm" android:text=" হাসপাতালে ভর্তির আগে শিশুটি কতদিন অসুস্থ ছিল? (যদি জানা না থাকে 98 বসান) (For how many days did the child appear ill before he/she was hospitalized?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
          <EditText android:id="@+id/txtSIlBeHosAdm" android:maxLength="2" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/lineSIlBeHosAdm" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -201,7 +201,7 @@
     <View android:id="@+id/lineSurSymptOth7" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secSDurFever" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblSDurFever" android:text="6.6" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblSDurFever" android:text="যদি শিশুটির জ্বর থেকে থাকে তবে তা কতদিনের ধরে ছিল?(যদি জানা না থাকে 98 বসান) (If the child had fever, what was the total duration of fever?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblSDurFever" android:text=" যদি শিশুটির জ্বর থেকে থাকে তবে তা কতদিনের ধরে ছিল?(যদি জানা না থাকে 98 বসান) (If the child had fever, what was the total duration of fever?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
          <EditText android:id="@+id/txtSDurFever" android:maxLength="2" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/lineSDurFever" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -224,7 +224,7 @@
                 android:id="@+id/VlblSPHosNam"
                 android:layout_width="300sp"
                 android:layout_height="wrap_content"
-                android:text="অপারেশন কোথায় করা হয়েছিল? (was the surgery performed?)"
+                android:text=" অপারেশন কোথায় করা হয়েছিল? (was the surgery performed?)"
                 android:textSize="20sp" />
 
             <Spinner
@@ -245,7 +245,7 @@
     <View android:id="@+id/lineSPHosOth" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secSDisDr" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblSDisDr" android:text="6.8" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblSDisDr" android:text="চিকিৎসকরা শিশুটির কি রোগ ছিল বলে আপনাদের বলেছিলেন?  (What illness did the doctors tell you that your child had?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblSDisDr" android:text=" চিকিৎসকরা শিশুটির কি রোগ ছিল বলে আপনাদের বলেছিলেন?  (What illness did the doctors tell you that your child had?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <Spinner android:id="@+id/spnSDisDr" android:drawSelectorOnTop="true" android:layout_width="200sp" android:layout_height="wrap_content" android:layout_weight="0" android:prompt="@string/planet_prompt" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/lineSDisDr" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -257,7 +257,7 @@
     <View android:id="@+id/lineSDisDrOth" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secSReco" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblSReco" android:text="6.9" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblSReco" android:text="শিশুটি কি সম্পূর্ণ সুস্থ হয়ে গিয়েছিল ? (Did the child recover completely?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblSReco" android:text=" শিশুটি কি সম্পূর্ণ সুস্থ হয়ে গিয়েছিল ? (Did the child recover completely?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <RadioGroup android:id="@+id/rdogrpSReco" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoSReco1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoSReco2" android:text="No" android:gravity="top|bottom" />
@@ -267,7 +267,7 @@
     <View android:id="@+id/lineSReco" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secSDurReco" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblSDurReco" android:text="6.10" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblSDurReco" android:text="শিশুটি সুস্থ হতে কতদিন লেগেছিল? (যদি জানা না থাকে 98 বসান) (How many days were required before the child recovered?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblSDurReco" android:text=" শিশুটি সুস্থ হতে কতদিন লেগেছিল? (যদি জানা না থাকে 98 বসান) (How many days were required before the child recovered?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
          <EditText android:id="@+id/txtSDurReco" android:maxLength="2" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/lineSDurReco" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
