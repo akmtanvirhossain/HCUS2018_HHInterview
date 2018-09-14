@@ -186,41 +186,41 @@ import Utility.MySharedPreferences;
            Immunization_List_DataModel d = new Immunization_List_DataModel();
 //             String SQL = "Select * from "+ TableName ;//+"  Where Vacc_Id='"+ Vacc_Id +"'";
             String SQL = "Select IL.[Vacc_Id],IL.[Vacc_Name],ifnull(IH.Given,'') Given,ifnull(IH.Source,'') Source FROM [Immunization_List] IL left outer join Immunization_History IH on IL.Vacc_Id=IH.Vacc_Id Where IH.Uncode='"+UNCODE+"' and IH.structureno='"+STRUCTURENO+"' and IH.householdsl='"+HOUSEHOLDSL+"' and IH.visitno='"+VISITNO+"' and IH.memsl='"+MEMSL+"'";
-             List<Immunization_List_DataModel> data = d.SelectAll(this, SQL);
+             List<Immunization_List_DataModel> data = d.SelectAll_WithHistory(this, SQL);
              dataList.clear();
 
              dataList.addAll(data);
              
              //************* insert into immunization history **************
 
-            for (Immunization_List_DataModel item:dataList) {
-
-                if(C.Existence("Select * from Immunization_History Where UNCode='"+ UNCODE +"' and StructureNo='"+ STRUCTURENO +"' and HouseholdSl='"+ HOUSEHOLDSL +"' and VisitNo='"+ VISITNO +"' and MemSl='"+ MEMSL +"' and Vacc_Id='"+ item.getVacc_Id() +"' "))
-                {
-
-                }
-                else
-                {
-                    Immunization_History_DataModel objSave = new Immunization_History_DataModel();
-                    objSave.setUNCode(UNCODE);
-                    objSave.setStructureNo(STRUCTURENO);
-                    objSave.setHouseholdSl(HOUSEHOLDSL);
-                    objSave.setVisitNo(VISITNO);
-                    objSave.setMemSl(MEMSL);
-                    objSave.setVacc_Id(item.getVacc_Id());
-                    objSave.setGiven(0);
-                    objSave.setSource(0);
-                    objSave.setVacc_Date("");
-                    objSave.setDate_Missing(2);
-                    objSave.setEnDt(Global.DateTimeNowYMDHMS());
-                    objSave.setStartTime(STARTTIME);
-                    objSave.setEndTime(g.CurrentTime24());
-                    objSave.setDeviceID(DEVICEID);
-                    objSave.setEntryUser(ENTRYUSER); //from data entry user list
-                    objSave.setmodifyDate(Global.DateTimeNowYMDHMS());
-                    objSave.SaveUpdateData(this);
-                }
-            }
+//            for (Immunization_List_DataModel item:dataList) {
+//
+//                if(C.Existence("Select * from Immunization_History Where UNCode='"+ UNCODE +"' and StructureNo='"+ STRUCTURENO +"' and HouseholdSl='"+ HOUSEHOLDSL +"' and VisitNo='"+ VISITNO +"' and MemSl='"+ MEMSL +"' and Vacc_Id='"+ item.getVacc_Id() +"' "))
+//                {
+//
+//                }
+//                else
+//                {
+//                    Immunization_History_DataModel objSave = new Immunization_History_DataModel();
+//                    objSave.setUNCode(UNCODE);
+//                    objSave.setStructureNo(STRUCTURENO);
+//                    objSave.setHouseholdSl(HOUSEHOLDSL);
+//                    objSave.setVisitNo(VISITNO);
+//                    objSave.setMemSl(MEMSL);
+//                    objSave.setVacc_Id(item.getVacc_Id());
+//                    objSave.setGiven(0);
+//                    objSave.setSource(0);
+//                    objSave.setVacc_Date("");
+//                    objSave.setDate_Missing(2);
+//                    objSave.setEnDt(Global.DateTimeNowYMDHMS());
+//                    objSave.setStartTime(STARTTIME);
+//                    objSave.setEndTime(g.CurrentTime24());
+//                    objSave.setDeviceID(DEVICEID);
+//                    objSave.setEntryUser(ENTRYUSER); //from data entry user list
+//                    objSave.setmodifyDate(Global.DateTimeNowYMDHMS());
+//                    objSave.SaveUpdateData(this);
+//                }
+//            }
              
              try {
                  mAdapter.notifyDataSetChanged();

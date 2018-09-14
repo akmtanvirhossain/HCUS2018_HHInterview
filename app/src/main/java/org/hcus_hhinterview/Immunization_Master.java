@@ -4,6 +4,11 @@
 
  //Android Manifest Code
  //<activity android:name=".Immunization_Master" android:label="Immunization_Master" />
+ import java.io.File;
+ import java.io.FileNotFoundException;
+ import java.io.FileOutputStream;
+ import java.io.IOException;
+ import java.io.OutputStream;
  import java.text.ParseException;
  import java.text.SimpleDateFormat;
  import java.util.ArrayList;
@@ -20,14 +25,21 @@
  import android.content.DialogInterface;
  import android.content.Intent;
  import android.database.Cursor;
+ import android.graphics.Bitmap;
+ import android.graphics.BitmapFactory;
+ import android.graphics.drawable.BitmapDrawable;
+ import android.graphics.drawable.Drawable;
  import android.location.Location;
  import android.location.LocationListener;
  import android.location.LocationManager;
  import android.net.Uri;
+ import android.os.Environment;
+ import android.provider.MediaStore;
  import android.provider.Settings;
  import android.support.v7.widget.DefaultItemAnimator;
  import android.support.v7.widget.LinearLayoutManager;
  import android.support.v7.widget.RecyclerView;
+ import android.util.Log;
  import android.view.KeyEvent;
  import android.os.Bundle;
  import android.view.Menu;
@@ -44,6 +56,7 @@
  import android.widget.DatePicker;
  import android.widget.EditText;
  import android.widget.ImageButton;
+ import android.widget.ImageView;
  import android.widget.LinearLayout;
  import android.widget.RadioButton;
  import android.widget.RadioGroup;
@@ -60,6 +73,7 @@
  import Utility.*;
  import Common.*;
  import data_model.Immunization_History_DataModel;
+ import data_model.Immunization_List_DataModel;
  import data_model.Immunization_Master_DataModel;
  import data_model.Member_DataModel;
 
@@ -155,6 +169,15 @@
 
      private RecyclerView recyclerView;
 
+     LinearLayout secImage;
+     View lineImage;
+     Button btnPhoto;
+     ImageView imgCard;
+     static final int REQUEST_IMAGE_CAPTURE = 1;
+     static final String FOLDER_NAME ="Vaccination_Card";
+     static String name; //image file name
+
+
  public void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
    try
@@ -175,6 +198,8 @@
          HOUSEHOLDSL = IDbundle.getString("HouseholdSl");
          VISITNO = IDbundle.getString("VisitNo");
          MEMSL = IDbundle.getString("MemSl");
+
+         name=UNCODE+STRUCTURENO+HOUSEHOLDSL+VISITNO+MEMSL;
 
          TableName = "Immunization_Master";
 
@@ -203,7 +228,10 @@
          secImmunization=findViewById(R.id.secImmunization);
          linesecImmunization=findViewById(R.id.linesecImmunization);
 
-
+         secImage=findViewById(R.id.secImage);
+         lineImage=findViewById(R.id.lineImage);
+         btnPhoto=findViewById(R.id.btnPhoto);
+         imgCard=findViewById(R.id.imgCard);
 
          secUNCode=(LinearLayout)findViewById(R.id.secUNCode);
          lineUNCode=(View)findViewById(R.id.lineUNCode);
@@ -294,6 +322,42 @@
          rdoHCard1 = (RadioButton) findViewById(R.id.rdoHCard1);
          rdoHCard2 = (RadioButton) findViewById(R.id.rdoHCard2);
 
+         rdogrpHCard.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+             @Override
+             public void onCheckedChanged(RadioGroup radioGroup, int radioButtonId) {
+                 String rbData = "";
+                 RadioButton rb;
+                 String[] d_rdogrpSeriIlOnset = new String[] {"1","2"};
+                 for (int i = 0; i < rdogrpHCard.getChildCount(); i++)
+                 {
+                     rb = (RadioButton)rdogrpHCard.getChildAt(i);
+                     if (rb.isChecked()) rbData = d_rdogrpSeriIlOnset[i];
+                 }
+
+                 if(rbData.equalsIgnoreCase("1"))
+                 {
+                     secImage.setVisibility(View.VISIBLE);
+                     lineImage.setVisibility(View.VISIBLE);
+                 }else
+                 {
+                     secImage.setVisibility(View.GONE);
+                     lineImage.setVisibility(View.GONE);
+                 }
+
+             }
+         });
+
+
+         btnPhoto.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                 if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                     startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+                 }
+             }
+         });
+
          btnRefresh = (Button) findViewById(R.id.btnRefresh);
          btnRefresh.setOnClickListener(new View.OnClickListener() {
 
@@ -320,6 +384,26 @@
 //
 //             }});
 
+         imgCard.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 ImageView imageView=new ImageView(Immunization_Master.this);
+                 imageView.setImageDrawable(imgCard.getDrawable());
+                 AlertDialog.Builder builder =
+                         new AlertDialog.Builder(Immunization_Master.this).
+                                 setMessage("Vaccination Card").
+                                 setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                     @Override
+                                     public void onClick(DialogInterface dialog, int which) {
+                                         dialog.dismiss();
+                                     }
+                                 }).
+                                 setView(imageView);
+
+                 builder.create().show();
+             }
+         });
+
          txtUNCode.setText(UNCODE);
          txtStructureNo.setText(STRUCTURENO);
          txtHouseholdSl.setText(HOUSEHOLDSL);
@@ -339,7 +423,47 @@
          recyclerView.setAdapter(mAdapter);
 
 
+
+
          //Hide all skip variables
+
+         //************* insert into immunization history **************
+         Immunization_List_DataModel d = new Immunization_List_DataModel();
+//             String SQL = "Select * from "+ TableName ;//+"  Where Vacc_Id='"+ Vacc_Id +"'";
+         String SQL = "Select * FROM Immunization_List ";
+         List<Immunization_List_DataModel> immunizationList = d.SelectAll(this, SQL);
+
+         for (Immunization_List_DataModel item:immunizationList) {
+
+             if(C.Existence("Select * from Immunization_History Where UNCode='"+ UNCODE +"' and StructureNo='"+ STRUCTURENO +"' and HouseholdSl='"+ HOUSEHOLDSL +"' and VisitNo='"+ VISITNO +"' and MemSl='"+ MEMSL +"' and Vacc_Id='"+ item.getVacc_Id() +"' "))
+             {
+
+             }
+             else
+             {
+                 Immunization_History_DataModel objSave = new Immunization_History_DataModel();
+                 objSave.setUNCode(UNCODE);
+                 objSave.setStructureNo(STRUCTURENO);
+                 objSave.setHouseholdSl(HOUSEHOLDSL);
+                 objSave.setVisitNo(VISITNO);
+                 objSave.setMemSl(MEMSL);
+                 objSave.setVacc_Id(item.getVacc_Id());
+                 objSave.setGiven(0);
+                 objSave.setSource(0);
+                 objSave.setVacc_Date("");
+                 objSave.setDate_Missing(2);
+                 objSave.setEnDt(Global.DateTimeNowYMDHMS());
+                 objSave.setStartTime(STARTTIME);
+                 objSave.setEndTime(g.CurrentTime24());
+                 objSave.setDeviceID(DEVICEID);
+                 objSave.setEntryUser(ENTRYUSER); //from data entry user list
+                 objSave.setmodifyDate(Global.DateTimeNowYMDHMS());
+                 objSave.SaveUpdateData(this);
+             }
+         }
+
+         //************* insert into immunization history **************
+
 
 
 
@@ -365,6 +489,49 @@
          return;
      }
  }
+     @Override
+     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+             Bundle extras = data.getExtras();
+             Bitmap imageBitmap = (Bitmap) extras.get("data");
+             imgCard.setImageBitmap(imageBitmap);
+
+             File dir = new File(Environment.getExternalStorageDirectory() + File.separator + Global.DatabaseFolder+File.separator + FOLDER_NAME);
+             if(!dir.exists()) {
+                 dir.mkdirs();
+             }
+
+
+             String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + Global.DatabaseFolder+File.separator + FOLDER_NAME;
+             OutputStream fOut = null;
+             File file = new File(path, name+".jpg"); // the File to save , append increasing numeric counter to prevent files from getting overwritten.
+             try {
+                 fOut = new FileOutputStream(file);
+             } catch (FileNotFoundException e) {
+                 e.printStackTrace();
+             }
+
+//             Bitmap pictureBitmap = ((BitmapDrawable) imgCard.getDrawable()).getBitmap();
+//             Bitmap pictureBitmap = BitmapFactory.decodeResource(getResources(), R.id.imgCard);
+             imageBitmap.compress(Bitmap.CompressFormat.JPEG, 85, fOut); // saving the Bitmap to a file compressed as a JPEG with 85% compression rate
+             try {
+                 fOut.flush(); // Not really required
+             } catch (IOException e) {
+                 e.printStackTrace();
+             }
+             try {
+                 fOut.close(); // do not forget to close the stream
+             } catch (IOException e) {
+                 e.printStackTrace();
+             }
+
+             try {
+                 MediaStore.Images.Media.insertImage(getContentResolver(),file.getAbsolutePath(),file.getName(),file.getName());
+             } catch (FileNotFoundException e) {
+                 e.printStackTrace();
+             }
+         }
+     }
 
  private void DataSave()
  {
@@ -456,6 +623,7 @@
          {
              rb = (RadioButton)rdogrpHCard.getChildAt(i);
              if (rb.isChecked()) objSave.setHCard(Integer.valueOf(d_rdogrpHCard[i]));
+
          }
 
          objSave.setEnDt(Global.DateTimeNowYMDHMS());
@@ -527,6 +695,23 @@
                  {
                      rb = (RadioButton)rdogrpHCard.getChildAt(i);
                      rb.setChecked(true);
+
+                     if(d_rdogrpHCard[i].equals("1"))
+                     {
+                         secImage.setVisibility(View.VISIBLE);
+                         lineImage.setVisibility(View.VISIBLE);
+                         Drawable drawable=Drawable.createFromPath(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + Global.DatabaseFolder + File.separator +FOLDER_NAME + File.separator + name+".jpg");
+//                         imgCard.setImageDrawable(drawable);
+                         if (drawable != null) {
+                             imgCard.setImageDrawable(drawable);
+                         }
+
+
+                     }else
+                     {
+                         secImage.setVisibility(View.GONE);
+                         lineImage.setVisibility(View.GONE);
+                     }
                  }
              }
            }

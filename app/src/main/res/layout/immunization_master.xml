@@ -77,6 +77,12 @@
     </LinearLayout>
     <View android:id="@+id/lineHCard" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
 
+        <LinearLayout android:id="@+id/secImage" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+            <Button android:id="@+id/btnPhoto" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Take Photo" />
+            <ImageView android:id="@+id/imgCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="5sp" />
+        </LinearLayout>
+        <View android:id="@+id/lineImage" android:visibility="gone" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+
         <LinearLayout
             android:id="@+id/secImmunization"
             android:layout_width="match_parent"

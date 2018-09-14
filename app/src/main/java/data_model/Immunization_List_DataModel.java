@@ -146,7 +146,7 @@ import android.content.Context;
         }
 
 
-        public List<Immunization_List_DataModel> SelectAll(Context context, String SQL)
+        public List<Immunization_List_DataModel> SelectAll_WithHistory(Context context, String SQL)
         {
             Connection C = new Connection(context);
             List<Immunization_List_DataModel> data = new ArrayList<Immunization_List_DataModel>();
@@ -170,4 +170,29 @@ import android.content.Context;
             cur.close();
           return data;
         }
+
+     public List<Immunization_List_DataModel> SelectAll(Context context, String SQL)
+     {
+         Connection C = new Connection(context);
+         List<Immunization_List_DataModel> data = new ArrayList<Immunization_List_DataModel>();
+         Immunization_List_DataModel d = new Immunization_List_DataModel();
+         Cursor cur = C.ReadData(SQL);
+
+         cur.moveToFirst();
+         while(!cur.isAfterLast())
+         {
+             d = new Immunization_List_DataModel();
+             d._Vacc_Id = cur.getString(cur.getColumnIndex("Vacc_Id"));
+             d._Vacc_Name = cur.getString(cur.getColumnIndex("Vacc_Name"));
+//                d._history_status = cur.getString(cur.getColumnIndex("history_status"));
+//             d._Given = cur.getString(cur.getColumnIndex("Given"));
+//             d._Source = cur.getString(cur.getColumnIndex("Source"));
+
+             data.add(d);
+
+             cur.moveToNext();
+         }
+         cur.close();
+         return data;
+     }
  }
