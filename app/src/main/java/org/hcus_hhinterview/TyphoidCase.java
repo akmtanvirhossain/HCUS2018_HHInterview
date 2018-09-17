@@ -5108,48 +5108,45 @@
              return;	
            }
          
-         else if(!rdoTHosNam21.isChecked() & !rdoTHosNam22.isChecked() & !rdoTHosNam23.isChecked() & secTHosNam2.isShown())
+//         else if(!rdoTHosNam21.isChecked() & !rdoTHosNam22.isChecked() & !rdoTHosNam23.isChecked() & secTHosNam2.isShown())
+//           {
+//              Connection.MessageBox(TyphoidCase.this, "Select anyone options from (2.).");
+//              rdoTHosNam21.requestFocus();
+//              return;
+//           }
+//         else if(txtTHosNam2_Oth.getText().toString().length()==0 & secTHosNam2_Oth.isShown())
+//           {
+//             Connection.MessageBox(TyphoidCase.this, "Required field: Name of the other hospital-2.");
+//             txtTHosNam2_Oth.requestFocus();
+//             return;
+//           }
+//         else if(spnTHosNam3.getSelectedItemPosition()==0  & secTHosNam3.isShown())
+//           {
+//             Connection.MessageBox(TyphoidCase.this, "Required field: 3..");
+//             spnTHosNam3.requestFocus();
+//             return;
+//           }
+//         else if(txtTHosNam3_Oth.getText().toString().length()==0 & secTHosNam3_Oth.isShown())
+//           {
+//             Connection.MessageBox(TyphoidCase.this, "Required field: Name of the other hospital-3.");
+//             txtTHosNam3_Oth.requestFocus();
+//             return;
+//           }
+//         DV = Global.DateValidate(dtpTDtAdmHos.getText().toString());
+//         if(DV.length()!=0 & secTDtAdmHos.isShown())
+//           {
+//                if(txtTAdmHosD.getText().toString().length()==0){
+//                     Connection.MessageBox(TyphoidCase.this, DV);
+//                     dtpTDtAdmHos.requestFocus();
+//                     return;
+//                }
+//
+//           }
+         else if(txtTAdmHosD.getText().toString().length()==0 & dtpTDtAdmHos.getText().toString().length() == 0 & secTAdmHosD.isShown())
            {
-              Connection.MessageBox(TyphoidCase.this, "Select anyone options from (2.).");
-              rdoTHosNam21.requestFocus();
-              return;
-           }
-         else if(txtTHosNam2_Oth.getText().toString().length()==0 & secTHosNam2_Oth.isShown())
-           {
-             Connection.MessageBox(TyphoidCase.this, "Required field: Name of the other hospital-2.");
-             txtTHosNam2_Oth.requestFocus(); 
-             return;	
-           }
-         else if(spnTHosNam3.getSelectedItemPosition()==0  & secTHosNam3.isShown())
-           {
-             Connection.MessageBox(TyphoidCase.this, "Required field: 3..");
-             spnTHosNam3.requestFocus(); 
-             return;	
-           }
-         else if(txtTHosNam3_Oth.getText().toString().length()==0 & secTHosNam3_Oth.isShown())
-           {
-             Connection.MessageBox(TyphoidCase.this, "Required field: Name of the other hospital-3.");
-             txtTHosNam3_Oth.requestFocus(); 
-             return;	
-           }
-         DV = Global.DateValidate(dtpTDtAdmHos.getText().toString());
-         if(DV.length()!=0 & secTDtAdmHos.isShown())
-           {
-                if(txtTAdmHosD.getText().toString().length()==0){
-                     Connection.MessageBox(TyphoidCase.this, DV);
-                     dtpTDtAdmHos.requestFocus();
-                     return;
-                }
-
-           }
-         else if(txtTAdmHosD.getText().toString().length()==0 & secTAdmHosD.isShown())
-           {
-                if (dtpTDtAdmHos.getText().toString().length() == 0) {
-
                      Connection.MessageBox(TyphoidCase.this, "Required field: যদি ভর্তির তারিখ জানা না থাকে,  কত দিন আগে (How day ago).");
                      txtTAdmHosD.requestFocus();
                      return;
-                }
 
            }
          else if(Integer.valueOf(txtTAdmHosD.getText().toString().length()==0 ? "1" : txtTAdmHosD.getText().toString()) < 1 || Integer.valueOf(txtTAdmHosD.getText().toString().length()==0 ? "99" : txtTAdmHosD.getText().toString()) > 99)
@@ -5216,18 +5213,18 @@
              txtTInRecoOth.requestFocus(); 
              return;	
            }
-         else if(spnTInReco2.getSelectedItemPosition()==0  & secTInReco2.isShown())
-           {
-             Connection.MessageBox(TyphoidCase.this, "Required field: 2..");
-             spnTInReco2.requestFocus(); 
-             return;	
-           }
-         else if(txtTInRecoOth2.getText().toString().length()==0 & secTInRecoOth2.isShown())
-           {
-             Connection.MessageBox(TyphoidCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
-             txtTInRecoOth2.requestFocus(); 
-             return;	
-           }
+//         else if(spnTInReco2.getSelectedItemPosition()==0  & secTInReco2.isShown())
+//           {
+//             Connection.MessageBox(TyphoidCase.this, "Required field: 2..");
+//             spnTInReco2.requestFocus();
+//             return;
+//           }
+//         else if(txtTInRecoOth2.getText().toString().length()==0 & secTInRecoOth2.isShown())
+//           {
+//             Connection.MessageBox(TyphoidCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
+//             txtTInRecoOth2.requestFocus();
+//             return;
+//           }
          
          else if(!rdoHaveHosp1.isChecked() & !rdoHaveHosp2.isChecked() & !rdoHaveHosp3.isChecked() & secHaveHosp.isShown())
            {
@@ -5604,7 +5601,6 @@
               setResult(Activity.RESULT_OK, returnIntent);
 
               Connection.MessageBox(TyphoidCase.this, "Saved Successfully");
-
 
          }
          else{

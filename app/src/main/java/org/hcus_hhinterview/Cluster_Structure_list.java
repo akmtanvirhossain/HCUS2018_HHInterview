@@ -381,13 +381,13 @@ public class Cluster_Structure_list extends Activity {
                 holder.btnHHInterview.setVisibility(View.GONE);
 
             }
-            else if(data.get_Visit_Status().equals("5"))
-            {
-                holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_blue);
-                holder.btnVisit.setTextColor(Color.WHITE);
-                holder.btnHHInterview.setVisibility(View.GONE);
-
-            }
+//            else if(data.get_Visit_Status().equals("5"))
+//            {
+//                holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_blue);
+//                holder.btnVisit.setTextColor(Color.WHITE);
+//                holder.btnHHInterview.setVisibility(View.GONE);
+//
+//            }
             else if(data.get_Visit_Status().equals("6"))
             {
                 holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_deepblue);
@@ -399,28 +399,31 @@ public class Cluster_Structure_list extends Activity {
             {
                 holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_yellow);
                 holder.btnVisit.setTextColor(Color.WHITE);
-                holder.btnHHInterview.setVisibility(View.GONE);
-
+                holder.btnHHInterview.setBackgroundResource(R.drawable.button_style_circle_line );
+                holder.btnHHInterview.setTextColor(Color.BLUE);
+                holder.btnHHInterview.setVisibility(View.VISIBLE);
             }
-            else if(data.get_Visit_Status().equals("8"))
-            {
-                holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_purple);
-                holder.btnVisit.setTextColor(Color.WHITE);
-                holder.btnHHInterview.setVisibility(View.GONE);
-
-            }
-            else if(data.get_Visit_Status().equals("9"))
-            {
-                holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_pink);
-                holder.btnVisit.setTextColor(Color.WHITE);
-                holder.btnHHInterview.setVisibility(View.GONE);
-
-            }
+//            else if(data.get_Visit_Status().equals("8"))
+//            {
+//                holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_purple);
+//                holder.btnVisit.setTextColor(Color.WHITE);
+//                holder.btnHHInterview.setVisibility(View.GONE);
+//
+//            }
+//            else if(data.get_Visit_Status().equals("9"))
+//            {
+//                holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_pink);
+//                holder.btnVisit.setTextColor(Color.WHITE);
+//                holder.btnHHInterview.setVisibility(View.GONE);
+//
+//            }
             else if(data.get_Visit_Status().equals("10"))
             {
                 holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_cyanaid);
                 holder.btnVisit.setTextColor(Color.WHITE);
-                holder.btnHHInterview.setVisibility(View.GONE);
+                holder.btnHHInterview.setBackgroundResource(R.drawable.button_style_circle_line );
+                holder.btnHHInterview.setTextColor(Color.BLUE);
+                holder.btnHHInterview.setVisibility(View.VISIBLE);
 
             }
             else if(data.get_Visit_Status().equals("77"))

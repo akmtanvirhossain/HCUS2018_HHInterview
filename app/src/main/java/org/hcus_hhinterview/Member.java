@@ -770,7 +770,7 @@
          }
 
          objSave.setDOB(dtpDOB.getText().toString().length() > 0 ? Global.DateConvertYMD(dtpDOB.getText().toString()) : dtpDOB.getText().toString());
-         objSave.setDOBDk(Integer.valueOf(chkDOBDk.isChecked()?"1":(secDOBDk.isShown()?"2":"")));
+         objSave.setDOBDk(Integer.valueOf(chkDOBDk.isChecked()?"1":(secDOBDk.isShown()?"2":"0")));
 //      **************************************************
 
          birthdate=dtpDOB.getText().toString();

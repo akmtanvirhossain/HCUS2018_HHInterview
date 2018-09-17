@@ -1387,18 +1387,18 @@
              txtOMInRecoOth.requestFocus(); 
              return;	
            }
-         else if(spnOMInReco2.getSelectedItemPosition()==0  & secOMInReco2.isShown())
-           {
-             Connection.MessageBox(OtitisMediaCase .this, "Required field: 2..");
-             spnOMInReco2.requestFocus(); 
-             return;	
-           }
-         else if(txtOMInRecoOth2.getText().toString().length()==0 & secOMInRecoOth2.isShown())
-           {
-             Connection.MessageBox(OtitisMediaCase .this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
-             txtOMInRecoOth2.requestFocus(); 
-             return;	
-           }
+//         else if(spnOMInReco2.getSelectedItemPosition()==0  & secOMInReco2.isShown())
+//           {
+//             Connection.MessageBox(OtitisMediaCase .this, "Required field: 2..");
+//             spnOMInReco2.requestFocus();
+//             return;
+//           }
+//         else if(txtOMInRecoOth2.getText().toString().length()==0 & secOMInRecoOth2.isShown())
+//           {
+//             Connection.MessageBox(OtitisMediaCase .this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
+//             txtOMInRecoOth2.requestFocus();
+//             return;
+//           }
 //         else if(txtOMAboIll.getText().toString().length()==0 & secOMAboIll.isShown())
 //           {
 //             Connection.MessageBox(OtitisMediaCase .this, "Required field: মন্তব্যঃ কানে সংক্রমন  (Remarks:Otitis Media).");

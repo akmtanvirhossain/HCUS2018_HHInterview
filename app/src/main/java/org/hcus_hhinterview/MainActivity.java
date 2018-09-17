@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity
 //                        intent.putExtras(IDbundle);
                         startActivity(intent);
                     }
-                    else if(position==3)
+                    else if(position==1)
                     {
                         if (Connection.haveNetworkConnection(MainActivity.this)) {
                             netwoekAvailable=true;
@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity
 
                     //Exit from the system
                     //*******************************************************************************
-                    else if(position==4)
+                    else if(position==2)
                     {
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -325,8 +325,8 @@ public class MainActivity extends AppCompatActivity
 
         private String[] desc={
                 "New",
-                "Monitoring",
-                "Data Search",
+//                "Monitoring",
+//                "Data Search",
                 "Data Sync",
                 "Exit"};
 
@@ -334,8 +334,8 @@ public class MainActivity extends AppCompatActivity
         //references to our images
         private Integer[] mThumbIds = {
                 R.drawable.ic_action_new,
-                R.drawable.planning,
-                R.drawable.ic_action_search,
+//                R.drawable.planning,
+//                R.drawable.ic_action_search,
                 R.drawable.sync,
                 R.drawable.exit1
         };

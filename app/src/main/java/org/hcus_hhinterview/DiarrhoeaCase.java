@@ -1875,12 +1875,12 @@ txtDDurReco.addTextChangedListener(new TextWatcher() {
 //             spnDHosNam3.requestFocus();
 //             return;
 //           }
-         else if(txtDHosNamOth3.getText().toString().length()==0 & secDHosNamOth3.isShown())
-           {
-             Connection.MessageBox(DiarrhoeaCase .this, "Required field: Name of the other hospital-3.");
-             txtDHosNamOth3.requestFocus(); 
-             return;	
-           }
+//         else if(txtDHosNamOth3.getText().toString().length()==0 & secDHosNamOth3.isShown())
+//           {
+//             Connection.MessageBox(DiarrhoeaCase .this, "Required field: Name of the other hospital-3.");
+//             txtDHosNamOth3.requestFocus();
+//             return;
+//           }
          
          else if(!rdoDReco1.isChecked() & !rdoDReco2.isChecked() & !rdoDReco3.isChecked() & secDReco.isShown())
            {

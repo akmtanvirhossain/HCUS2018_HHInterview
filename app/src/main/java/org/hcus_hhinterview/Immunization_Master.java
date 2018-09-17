@@ -475,6 +475,9 @@
 
          secHCard.setVisibility(View.GONE);
          lineHCard.setVisibility(View.GONE);
+         secImmunization.setVisibility(View.GONE);
+         linesecImmunization.setVisibility(View.GONE);
+
 
 
         Button cmdSave = (Button) findViewById(R.id.cmdSave);

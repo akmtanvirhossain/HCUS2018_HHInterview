@@ -2893,8 +2893,10 @@
  {
    try
      {
- 
+
+
          String DV="";
+         DV = Global.DateValidate(dtpPDtAdmHos.getText().toString());
 
          if(txtUNCode.getText().toString().length()==0 & secUNCode.isShown())
            {
@@ -3233,53 +3235,50 @@
              spnPHosNam.requestFocus(); 
              return;	
            }
-//         else if(txtPHosNamOth.getText().toString().length()==0 & secPHosNamOth.isShown())
-//           {
-//             Connection.MessageBox(PneumoniaCase.this, "Required field: Name of the other hospital-1.");
-//             txtPHosNamOth.requestFocus();
-//             return;
-//           }
+         else if(txtPHosNamOth.getText().toString().length()==0 & secPHosNamOth.isShown())
+           {
+             Connection.MessageBox(PneumoniaCase.this, "Required field: Name of the other hospital-1.");
+             txtPHosNamOth.requestFocus();
+             return;
+           }
 //         else if(spnPHosNam2.getSelectedItemPosition()==0  & secPHosNam2.isShown())
 //           {
 //             Connection.MessageBox(PneumoniaCase.this, "Required field: 2..");
 //             spnPHosNam2.requestFocus();
 //             return;
 //           }
-         else if(txtPHosNamOth2.getText().toString().length()==0 & secPHosNamOth2.isShown())
-           {
-             Connection.MessageBox(PneumoniaCase.this, "Required field: Name of the other hospital-2.");
-             txtPHosNamOth2.requestFocus(); 
-             return;	
-           }
-         else if(spnPHosNam3.getSelectedItemPosition()==0  & secPHosNam3.isShown())
-           {
-             Connection.MessageBox(PneumoniaCase.this, "Required field: 3..");
-             spnPHosNam3.requestFocus(); 
-             return;	
-           }
-         else if(txtPHosNamOth3.getText().toString().length()==0 & secPHosNamOth3.isShown())
-           {
-             Connection.MessageBox(PneumoniaCase.this, "Required field: Name of the other hospital-3.");
-             txtPHosNamOth3.requestFocus(); 
-             return;	
-           }
-         DV = Global.DateValidate(dtpPDtAdmHos.getText().toString());
-         if(DV.length()!=0 & secPDtAdmHos.isShown())
-           {
-               if(txtPAdmHosM.getText().toString().length()==0){
-                   Connection.MessageBox(PneumoniaCase.this, DV);
-                   dtpPDtAdmHos.requestFocus();
-                   return;
-               }
+//         else if(txtPHosNamOth2.getText().toString().length()==0 & secPHosNamOth2.isShown())
+//           {
+//             Connection.MessageBox(PneumoniaCase.this, "Required field: Name of the other hospital-2.");
+//             txtPHosNamOth2.requestFocus();
+//             return;
+//           }
+//         else if(spnPHosNam3.getSelectedItemPosition()==0  & secPHosNam3.isShown())
+//           {
+//             Connection.MessageBox(PneumoniaCase.this, "Required field: 3..");
+//             spnPHosNam3.requestFocus();
+//             return;
+//           }
+//         else if(txtPHosNamOth3.getText().toString().length()==0 & secPHosNamOth3.isShown())
+//           {
+//             Connection.MessageBox(PneumoniaCase.this, "Required field: Name of the other hospital-3.");
+//             txtPHosNamOth3.requestFocus();
+//             return;
+//           }
 
-           }
-         else if(txtPAdmHosM.getText().toString().length()==0 & secPAdmHosM.isShown())
+//         else if(DV.length()!=0 & txtPAdmHosM.getText().toString().length()==0 & secPDtAdmHos.isShown())
+//           {
+//                   Connection.MessageBox(PneumoniaCase.this, DV);
+//                   dtpPDtAdmHos.requestFocus();
+//                   return;
+//           }
+         else if(txtPAdmHosM.getText().toString().length()==0 & dtpPDtAdmHos.getText().toString().length()==0 & secPAdmHosM.isShown())
            {
-               if(dtpPDtAdmHos.getText().toString().length()==0){
+//               if(dtpPDtAdmHos.getText().toString().length()==0){
                    Connection.MessageBox(PneumoniaCase.this, "Required field: যদি ভর্তির তারিখ জানা না থাকে,  কত মাস আগে (How month ago).");
                    txtPAdmHosM.requestFocus();
                    return;
-               }
+//               }
 
            }
          else if(Integer.valueOf(txtPAdmHosM.getText().toString().length()==0 ? "01" : txtPAdmHosM.getText().toString()) < 01 || Integer.valueOf(txtPAdmHosM.getText().toString().length()==0 ? "98" : txtPAdmHosM.getText().toString()) > 98)

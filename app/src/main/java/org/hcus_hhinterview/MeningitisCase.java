@@ -3826,20 +3826,21 @@ dtpMDtHos.setText("");
 //           txtMHC_Hosp_a3_Oth.requestFocus();
 //           return;
 //       }
-       DV = Global.DateValidate(dtpMDtHos.getText().toString());
-       if (DV.length() != 0 & secMDtHos.isShown()) {
-           if (txtMHosM.getText().toString().length() == 0) {
-               Connection.MessageBox(MeningitisCase.this, DV);
-               dtpMDtHos.requestFocus();
-               return;
-           }
+//       DV = Global.DateValidate(dtpMDtHos.getText().toString());
+//       if (DV.length() != 0 & secMDtHos.isShown()) {
+//           if (txtMHosM.getText().toString().length() == 0) {
+//               Connection.MessageBox(MeningitisCase.this, DV);
+//               dtpMDtHos.requestFocus();
+//               return;
+//           }
 
-       } else if (txtMHosM.getText().toString().length() == 0 & secMHosM.isShown()) {
-           if (dtpMDtHos.getText().toString().length() == 0) {
+//       }
+       else if (txtMHosM.getText().toString().length() == 0 & dtpMDtHos.getText().toString().length() == 0 & secMHosM.isShown())
+       {
                Connection.MessageBox(MeningitisCase.this, "Required field: যদি ভর্তির তারিখ জানা না থাকে,  কত মাস আগে  (How much ago).");
                txtMHosM.requestFocus();
                return;
-                }
+
            } else if (Integer.valueOf(txtMHosM.getText().toString().length() == 0 ? "01" : txtMHosM.getText().toString()) < 01 || Integer.valueOf(txtMHosM.getText().toString().length() == 0 ? "18" : txtMHosM.getText().toString()) > 18) {
                Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 18(যদি ভর্তির তারিখ জানা না থাকে,  কত মাস আগে  (How much ago)).");
                txtMHosM.requestFocus();

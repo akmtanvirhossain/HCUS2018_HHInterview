@@ -258,9 +258,9 @@ package org.hcus_hhinterview;
              holder.MemSl.setText(""+data.getMemSl());
              holder.Name.setText(data.getName());
              holder.Sex.setText(""+data.getSex());
-             holder.DOB.setText(data.getDOB());
+             holder.DOB.setText(Global.DateConvertDMY(data.getDOB()));
 //             holder.DOBDk.setText(""+data.getDOBDk());
-             holder.Age.setText(""+data.getAge());
+//             holder.Age.setText(""+data.getAge());
 //             holder.AgeU.setText(""+data.getAgeU());
 //             holder.Relation.setText(""+data.getRelation());
 //             holder.OthRelation.setText(data.getOthRelation());
@@ -270,15 +270,26 @@ package org.hcus_hhinterview;
 //             holder.DAgeU.setText(""+data.getDAgeU());
 //             holder.LiveInHouse.setText(""+data.getLiveInHouse());
 
+             if(data.getAge()<60)
+             {
+                 holder.Age.setText(""+data.getAge()+ "days");
+                 holder.btnChildForm.setVisibility(View.INVISIBLE);
+             }
+             else if(data.getAge()>=61 & data.getAge()<=1793 )
+             {
+                 int age=(int) (data.getAge()/30.4);
+                 holder.Age.setText(""+data.getAge()+ "months");
+                 holder.btnChildForm.setVisibility(View.INVISIBLE);
+             }
+             else if(data.getAge()>=1826 & data.getAge()<6574 )
+             {
+                 int age=(int) (data.getAge()/365.25);
+                 holder.Age.setText(""+data.getAge()+ "years");
+                 holder.btnChildForm.setVisibility(View.VISIBLE);
+             }
 
 
-            if(data.getAge()<6574)
-            {
-                holder.btnChildForm.setVisibility(View.VISIBLE);
-            }
-            else{
-                holder.btnChildForm.setVisibility(View.INVISIBLE);
-            }
+
 
 
 

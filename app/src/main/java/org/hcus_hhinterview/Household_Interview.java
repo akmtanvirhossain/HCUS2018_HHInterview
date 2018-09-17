@@ -810,6 +810,8 @@ DataSearch_member(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
          VlblDistHome=(TextView) findViewById(R.id.VlblDistHome);
          spnDistHome=(Spinner) findViewById(R.id.spnDistHome);
 
+
+
          txtliveHouseM.addTextChangedListener(new TextWatcher() {
              @Override
              public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -818,37 +820,18 @@ DataSearch_member(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
 
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
-                 if(s.length()==0)
-                 txtliveHouseY.setText("0");
-
+                 if(txtliveHouseY.getText().toString().length()>0)
+                     txtliveHouseY.setText("");
              }
 
              @Override
              public void afterTextChanged(Editable s) {
-
-             }
-         });
-
-         txtliveHouseY.addTextChangedListener(new TextWatcher() {
-             @Override
-             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-             }
-
-             @Override
-             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                 if(s.length()==0)
-                 txtliveHouseM.setText("");
-
-             }
-
-             @Override
-             public void afterTextChanged(Editable s) {
-                 if(s.length()!=0) {
-                     int year = Integer.parseInt(txtliveHouseY.getText().toString());
-                     if (year == 96) {
+                 if(txtliveHouseM.getText().toString().length()>0)
+                 {
+                     int year = Integer.parseInt(txtliveHouseM.getText().toString());
+                     if(year==96)
+                     {
                          secLiveCity_Mon.setVisibility(View.GONE);
-
                          secLiveCity_Year.setVisibility(View.GONE);
                          secLiveHH_Mon.setVisibility(View.GONE);
                          secLiveHH_Year.setVisibility(View.GONE);
@@ -861,12 +844,26 @@ DataSearch_member(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
                          lineHlive12m.setVisibility(View.GONE);
                          lineChangedHouse.setVisibility(View.GONE);
                          lineDistHome.setVisibility(View.GONE);
-
+//
+                     }
+                     else{
+                         secLiveCity_Mon.setVisibility(View.VISIBLE);
+                         secLiveCity_Year.setVisibility(View.VISIBLE);
+                         secLiveHH_Mon.setVisibility(View.VISIBLE);
+                         secLiveHH_Year.setVisibility(View.VISIBLE);
+                         secHlive12m.setVisibility(View.VISIBLE);
+                         secChangedHouse.setVisibility(View.VISIBLE);
+                         secDistHome.setVisibility(View.VISIBLE);
+                         lineLiveCity_Year.setVisibility(View.VISIBLE);
+                         lineLiveHH_Mon.setVisibility(View.VISIBLE);
+                         lineLiveHH_Year.setVisibility(View.VISIBLE);
+                         lineHlive12m.setVisibility(View.VISIBLE);
+                         lineChangedHouse.setVisibility(View.VISIBLE);
+                         lineDistHome.setVisibility(View.VISIBLE);
                      }
                  }
                  else{
                      secLiveCity_Mon.setVisibility(View.VISIBLE);
-
                      secLiveCity_Year.setVisibility(View.VISIBLE);
                      secLiveHH_Mon.setVisibility(View.VISIBLE);
                      secLiveHH_Year.setVisibility(View.VISIBLE);
@@ -879,11 +876,80 @@ DataSearch_member(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
                      lineHlive12m.setVisibility(View.VISIBLE);
                      lineChangedHouse.setVisibility(View.VISIBLE);
                      lineDistHome.setVisibility(View.VISIBLE);
-
                  }
-
              }
          });
+
+
+
+txtliveHouseY.addTextChangedListener(new TextWatcher() {
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+        if(txtliveHouseM.getText().toString().length()>0)
+            txtliveHouseM.setText("");
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
+        if(txtliveHouseY.getText().toString().length()>0)
+        {
+            int year = Integer.parseInt(txtliveHouseY.getText().toString());
+            if(year==96)
+            {
+                         secLiveCity_Mon.setVisibility(View.GONE);
+                         secLiveCity_Year.setVisibility(View.GONE);
+                         secLiveHH_Mon.setVisibility(View.GONE);
+                         secLiveHH_Year.setVisibility(View.GONE);
+                         secHlive12m.setVisibility(View.GONE);
+                         secChangedHouse.setVisibility(View.GONE);
+                         secDistHome.setVisibility(View.GONE);
+                         lineLiveCity_Year.setVisibility(View.GONE);
+                         lineLiveHH_Mon.setVisibility(View.GONE);
+                         lineLiveHH_Year.setVisibility(View.GONE);
+                         lineHlive12m.setVisibility(View.GONE);
+                         lineChangedHouse.setVisibility(View.GONE);
+                         lineDistHome.setVisibility(View.GONE);
+//
+            }
+            else{
+                     secLiveCity_Mon.setVisibility(View.VISIBLE);
+                     secLiveCity_Year.setVisibility(View.VISIBLE);
+                     secLiveHH_Mon.setVisibility(View.VISIBLE);
+                     secLiveHH_Year.setVisibility(View.VISIBLE);
+                     secHlive12m.setVisibility(View.VISIBLE);
+                     secChangedHouse.setVisibility(View.VISIBLE);
+                     secDistHome.setVisibility(View.VISIBLE);
+                     lineLiveCity_Year.setVisibility(View.VISIBLE);
+                     lineLiveHH_Mon.setVisibility(View.VISIBLE);
+                     lineLiveHH_Year.setVisibility(View.VISIBLE);
+                     lineHlive12m.setVisibility(View.VISIBLE);
+                     lineChangedHouse.setVisibility(View.VISIBLE);
+                     lineDistHome.setVisibility(View.VISIBLE);
+            }
+        }
+        else{
+            secLiveCity_Mon.setVisibility(View.VISIBLE);
+            secLiveCity_Year.setVisibility(View.VISIBLE);
+            secLiveHH_Mon.setVisibility(View.VISIBLE);
+            secLiveHH_Year.setVisibility(View.VISIBLE);
+            secHlive12m.setVisibility(View.VISIBLE);
+            secChangedHouse.setVisibility(View.VISIBLE);
+            secDistHome.setVisibility(View.VISIBLE);
+            lineLiveCity_Year.setVisibility(View.VISIBLE);
+            lineLiveHH_Mon.setVisibility(View.VISIBLE);
+            lineLiveHH_Year.setVisibility(View.VISIBLE);
+            lineHlive12m.setVisibility(View.VISIBLE);
+            lineChangedHouse.setVisibility(View.VISIBLE);
+            lineDistHome.setVisibility(View.VISIBLE);
+        }
+    }
+});
 
          txtLiveHH_Mon.addTextChangedListener(new TextWatcher() {
              @Override
@@ -893,8 +959,10 @@ DataSearch_member(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
 
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
-                 if(s.length()==0)
+                 if(txtLiveHH_Year.getText().toString().length()>0)
+                 {
                      txtLiveHH_Year.setText("");
+                 }
 
              }
 
@@ -912,8 +980,10 @@ DataSearch_member(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
 
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
-                 if(s.length()==0)
+                 if(txtLiveHH_Mon.getText().toString().length()>0)
+                 {
                      txtLiveHH_Mon.setText("");
+                 }
 
              }
 
@@ -926,13 +996,14 @@ DataSearch_member(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
          txtLiveCity_Mon.addTextChangedListener(new TextWatcher() {
              @Override
              public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+                 if(txtLiveCity_Year.getText().toString().length()>0)
+                 {
+                     txtLiveCity_Year.setText("");
+                 }
              }
 
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
-                 if(s.length()==0)
-                     txtLiveCity_Year.setText("");
 
              }
 
@@ -945,13 +1016,14 @@ DataSearch_member(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
          txtLiveCity_Year.addTextChangedListener(new TextWatcher() {
              @Override
              public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+                 if(txtLiveCity_Mon.getText().toString().length()>0)
+                 {
+                     txtLiveCity_Mon.setText("");
+                 }
              }
 
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
-                 if(s.length()==0)
-                     txtLiveCity_Mon.setText("");
 
              }
 
@@ -1630,6 +1702,7 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
              @Override
              public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                  txtRentOfDwelling.setText("");
+
              }
          });
          txtRentOfDwelling.addTextChangedListener(new TextWatcher() {
@@ -1640,7 +1713,11 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
 
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    chkRentOfDwellDK.setChecked(false);
+                 if(txtRentOfDwelling.getText().toString().length()>0)
+                 {
+                     chkRentOfDwellDK.setChecked(false);
+                 }
+
              }
 
              @Override
@@ -2685,7 +2762,7 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
                    return;
                }
            }
-         else if(Integer.valueOf(txtliveHouseM.getText().toString().length()==0 ? "00" : txtliveHouseM.getText().toString()) < 00 || Integer.valueOf(txtliveHouseM.getText().toString().length()==0 ? "11" : txtliveHouseM.getText().toString()) > 11)
+         else if(Integer.valueOf(txtliveHouseM.getText().toString().length()==0 ? "00" : txtliveHouseM.getText().toString()) < 00 || Integer.valueOf(txtliveHouseM.getText().toString().length()==0 ? "11" : txtliveHouseM.getText().toString()) > 11 && Integer.valueOf(txtliveHouseM.getText().toString())!=96)
            {
              Connection.MessageBox(Household_Interview.this, "Value should be between 00 and 11(কতমাস যাবৎ আপনার খানা/পরিবার এই বাড়িতে বাস করছে ? (How long has your household/family been living in this house for?)).");
              txtliveHouseM.requestFocus(); 
@@ -3242,7 +3319,7 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
          }
 
          objSave.setRentOfDwelling(Integer.valueOf(txtRentOfDwelling.getText().toString().length()==0?"0":txtRentOfDwelling.getText().toString()));
-         objSave.setRentOfDwellDK(Integer.valueOf(chkRentOfDwellDK.isChecked()?"1":(secRentOfDwellDK.isShown()?"2":"")));
+         objSave.setRentOfDwellDK(Integer.valueOf(chkRentOfDwellDK.isChecked()?"1":(secRentOfDwellDK.isShown()?"2":"0")));
          objSave.setConsMatFloor(Integer.valueOf(spnConsMatFloor.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnConsMatFloor.getSelectedItem().toString(), "-")));
          objSave.setConsMatFloorOth(txtConsMatFloorOth.getText().toString());
          objSave.setConsMatWall(Integer.valueOf(spnConsMatWall.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnConsMatWall.getSelectedItem().toString(), "-")));
@@ -3493,6 +3570,7 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
                  }
              }
              txtRentOfDwelling.setText(String.valueOf(item.getRentOfDwelling()));
+
              if(String.valueOf(item.getRentOfDwellDK()).equals("1"))
              {
                 chkRentOfDwellDK.setChecked(true);

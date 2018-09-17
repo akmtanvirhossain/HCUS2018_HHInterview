@@ -1,11 +1,14 @@
 package org.hcus_hhinterview;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import Common.Connection;
 
@@ -33,6 +36,22 @@ public class ChildForm_Menu extends AppCompatActivity {
         VISITNO = IDbundle.getString("VisitNo");
         MEMSL = IDbundle.getString("MemSl");
         AGE = IDbundle.getString("Age");
+
+
+        ImageButton cmdBack = (ImageButton) findViewById(R.id.cmdBack);
+        cmdBack.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                AlertDialog.Builder adb = new AlertDialog.Builder(ChildForm_Menu.this);
+                adb.setTitle("Close");
+                adb.setMessage("Do you want to close this form[Yes/No]?");
+                adb.setNegativeButton("No", null);
+                adb.setPositiveButton("Yes", new AlertDialog.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }});
+                adb.show();
+            }});
+
 
         btnImu=findViewById(R.id.btnImu);
         btnTyphoid=findViewById(R.id.btnTyphoid);

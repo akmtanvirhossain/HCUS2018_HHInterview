@@ -132,14 +132,14 @@
             android:text="কতমাস যাবৎ আপনার খানা/পরিবার এই বাড়িতে বাস করছে ? (How long has your household/family been living in this house for?)"
             android:textSize="20sp" />
         <EditText android:id="@+id/txtliveHouseM" android:maxLength="2" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="&lt; 12 months"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="months"/>
     </LinearLayout>
     <View android:id="@+id/lineliveHouseM" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secliveHouseY" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblliveHouseY" android:text="" android:layout_width="46sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <TextView android:id="@+id/VlblliveHouseY" android:text="(Write 96 if the answer is since birth)" android:layout_width="370sp" android:layout_height="wrap_content" android:textSize="20sp" />
          <EditText android:id="@+id/txtliveHouseY" android:maxLength="2" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="&gt; 12 months"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="years"/>
     </LinearLayout>
     <View android:id="@+id/lineliveHouseY" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secLiveHH_Mon" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
@@ -152,7 +152,7 @@
             android:text="এই খানায় আপনি (যে সবচেয়ে বেশি দিন যাবত আছেন) কতদিন যাবত বাস করছেন? (How many months/Years have you lived at this household?)"
             android:textSize="20sp" />
         <EditText android:id="@+id/txtLiveHH_Mon" android:maxLength="2" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="&lt; 12 months"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="months"/>
 
     </LinearLayout>
     <View android:id="@+id/lineLiveHH_Mon" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -160,7 +160,7 @@
         <TextView android:id="@+id/lblLiveHH_Year" android:text="" android:layout_width="46sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <TextView android:id="@+id/VlblLiveHH_Year" android:text="" android:layout_width="370sp" android:layout_height="wrap_content" android:textSize="20sp" />
          <EditText android:id="@+id/txtLiveHH_Year" android:maxLength="2" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="&gt; 12 months"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="years"/>
 
     </LinearLayout>
     <View android:id="@+id/lineLiveHH_Year" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -174,7 +174,7 @@
             android:text="এই শহরে আপনি (যে সবচেয়ে বেশি দিন যাবত আছেন) কতদিন যাবত বাস করছেন? (How many months/Years have you lived in this city?)"
             android:textSize="20sp" />
          <EditText android:id="@+id/txtLiveCity_Mon" android:maxLength="2" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="&lt; 12 months"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="months"/>
 
     </LinearLayout>
     <View android:id="@+id/lineLiveCity_Mon" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -182,7 +182,7 @@
         <TextView android:id="@+id/lblLiveCity_Year" android:text="" android:layout_width="46sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <TextView android:id="@+id/VlblLiveCity_Year" android:text="" android:layout_width="370sp" android:layout_height="wrap_content" android:textSize="20sp" />
          <EditText android:id="@+id/txtLiveCity_Year" android:maxLength="2" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="&gt; 12 months"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="years"/>
 
     </LinearLayout>
     <View android:id="@+id/lineLiveCity_Year" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
