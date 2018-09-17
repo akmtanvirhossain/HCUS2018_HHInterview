@@ -269,23 +269,39 @@
          View lineWatch;
          TextView VlblWatch;
          RadioGroup rdogrpWatch;
+         RadioGroup rdogrpMobilePhone;
+         RadioGroup rdogrpBicycle;
+         RadioGroup rdogrpMotorcycleScooter;
+
          
          RadioButton rdoWatch1;
          RadioButton rdoWatch2;
          RadioButton rdoWatch3;
          RadioButton rdoWatch4;
+         RadioButton rdoMobilePhone1;
+         RadioButton rdoMobilePhone2;
+         RadioButton rdoMobilePhone3;
+         RadioButton rdoMobilePhone4;
+         RadioButton rdoBicycle1;
+         RadioButton rdoBicycle2;
+         RadioButton rdoBicycle3;
+         RadioButton rdoBicycle4;
+         RadioButton rdoMotorcycleScooter1;
+         RadioButton rdoMotorcycleScooter2;
+         RadioButton rdoMotorcycleScooter3;
+         RadioButton rdoMotorcycleScooter4;
          LinearLayout secMobilePhone;
          View lineMobilePhone;
          TextView VlblMobilePhone;
-         Spinner spnMobilePhone;
+//         Spinner spnMobilePhone;
          LinearLayout secBicycle;
          View lineBicycle;
          TextView VlblBicycle;
-         Spinner spnBicycle;
+//         Spinner spnBicycle;
          LinearLayout secMotorcycleScooter;
          View lineMotorcycleScooter;
          TextView VlblMotorcycleScooter;
-         Spinner spnMotorcycleScooter;
+//         Spinner spnMotorcycleScooter;
          LinearLayout secAnimalDrawnCart;
          View lineAnimalDrawnCart;
          TextView VlblAnimalDrawnCart;
@@ -1602,52 +1618,74 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
          lineWatch=(View)findViewById(R.id.lineWatch);
          VlblWatch = (TextView) findViewById(R.id.VlblWatch);
          rdogrpWatch = (RadioGroup) findViewById(R.id.rdogrpWatch);
-         
+         rdogrpMobilePhone = (RadioGroup) findViewById(R.id.rdogrpMobilePhone);
+         rdogrpBicycle = (RadioGroup) findViewById(R.id.rdogrpBicycle);
+         rdogrpMotorcycleScooter = (RadioGroup) findViewById(R.id.rdogrpMotorcycleScooter);
+
          rdoWatch1 = (RadioButton) findViewById(R.id.rdoWatch1);
          rdoWatch2 = (RadioButton) findViewById(R.id.rdoWatch2);
          rdoWatch3 = (RadioButton) findViewById(R.id.rdoWatch3);
          rdoWatch4 = (RadioButton) findViewById(R.id.rdoWatch4);
+
+         rdoMobilePhone1 = (RadioButton) findViewById(R.id.rdoMobilePhone1);
+         rdoMobilePhone2 = (RadioButton) findViewById(R.id.rdoMobilePhone2);
+         rdoMobilePhone3 = (RadioButton) findViewById(R.id.rdoMobilePhone3);
+         rdoMobilePhone4 = (RadioButton) findViewById(R.id.rdoMobilePhone4);
          secMobilePhone=(LinearLayout)findViewById(R.id.secMobilePhone);
          lineMobilePhone=(View)findViewById(R.id.lineMobilePhone);
          VlblMobilePhone=(TextView) findViewById(R.id.VlblMobilePhone);
-         spnMobilePhone=(Spinner) findViewById(R.id.spnMobilePhone);
-         List<String> listMobilePhone = new ArrayList<String>();
-         
-         listMobilePhone.add("");
-         listMobilePhone.add("1-Yes");
-         listMobilePhone.add("2-No");
-         listMobilePhone.add("3-Not Sure");
-         listMobilePhone.add("4-Reduse to answer");
-         ArrayAdapter<String> adptrMobilePhone= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listMobilePhone);
-         spnMobilePhone.setAdapter(adptrMobilePhone);
+//         spnMobilePhone=(Spinner) findViewById(R.id.spnMobilePhone);
+//         List<String> listMobilePhone = new ArrayList<String>();
+//
+//         listMobilePhone.add("");
+//         listMobilePhone.add("1-Yes");
+//         listMobilePhone.add("2-No");
+//         listMobilePhone.add("3-Not Sure");
+//         listMobilePhone.add("4-Reduse to answer");
+//         ArrayAdapter<String> adptrMobilePhone= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listMobilePhone);
+//         spnMobilePhone.setAdapter(adptrMobilePhone);
 
          secBicycle=(LinearLayout)findViewById(R.id.secBicycle);
          lineBicycle=(View)findViewById(R.id.lineBicycle);
          VlblBicycle=(TextView) findViewById(R.id.VlblBicycle);
-         spnBicycle=(Spinner) findViewById(R.id.spnBicycle);
-         List<String> listBicycle = new ArrayList<String>();
-         
-         listBicycle.add("");
-         listBicycle.add("1-Yes");
-         listBicycle.add("2-No");
-         listBicycle.add("3-Not Sure");
-         listBicycle.add("4-Reduse to answer");
-         ArrayAdapter<String> adptrBicycle= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listBicycle);
-         spnBicycle.setAdapter(adptrBicycle);
 
+         rdoBicycle1 = (RadioButton) findViewById(R.id.rdoBicycle1);
+         rdoBicycle2 = (RadioButton) findViewById(R.id.rdoBicycle2);
+         rdoBicycle3 = (RadioButton) findViewById(R.id.rdoBicycle3);
+         rdoBicycle4 = (RadioButton) findViewById(R.id.rdoBicycle4);
+
+         rdoMotorcycleScooter1 = (RadioButton) findViewById(R.id.rdoMotorcycleScooter1);
+         rdoMotorcycleScooter2 = (RadioButton) findViewById(R.id.rdoMotorcycleScooter2);
+         rdoMotorcycleScooter3 = (RadioButton) findViewById(R.id.rdoMotorcycleScooter3);
+         rdoMotorcycleScooter4 = (RadioButton) findViewById(R.id.rdoMotorcycleScooter4);
          secMotorcycleScooter=(LinearLayout)findViewById(R.id.secMotorcycleScooter);
          lineMotorcycleScooter=(View)findViewById(R.id.lineMotorcycleScooter);
          VlblMotorcycleScooter=(TextView) findViewById(R.id.VlblMotorcycleScooter);
-         spnMotorcycleScooter=(Spinner) findViewById(R.id.spnMotorcycleScooter);
-         List<String> listMotorcycleScooter = new ArrayList<String>();
-         
-         listMotorcycleScooter.add("");
-         listMotorcycleScooter.add("1-Yes");
-         listMotorcycleScooter.add("2-No");
-         listMotorcycleScooter.add("3-Not Sure");
-         listMotorcycleScooter.add("4-Reduse to answer");
-         ArrayAdapter<String> adptrMotorcycleScooter= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listMotorcycleScooter);
-         spnMotorcycleScooter.setAdapter(adptrMotorcycleScooter);
+
+
+
+//         spnBicycle=(Spinner) findViewById(R.id.spnBicycle);
+//         List<String> listBicycle = new ArrayList<String>();
+//
+//         listBicycle.add("");
+//         listBicycle.add("1-Yes");
+//         listBicycle.add("2-No");
+//         listBicycle.add("3-Not Sure");
+//         listBicycle.add("4-Reduse to answer");
+//         ArrayAdapter<String> adptrBicycle= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listBicycle);
+//         spnBicycle.setAdapter(adptrBicycle);
+
+
+//         spnMotorcycleScooter=(Spinner) findViewById(R.id.spnMotorcycleScooter);
+//         List<String> listMotorcycleScooter = new ArrayList<String>();
+//
+//         listMotorcycleScooter.add("");
+//         listMotorcycleScooter.add("1-Yes");
+//         listMotorcycleScooter.add("2-No");
+//         listMotorcycleScooter.add("3-Not Sure");
+//         listMotorcycleScooter.add("4-Reduse to answer");
+//         ArrayAdapter<String> adptrMotorcycleScooter= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listMotorcycleScooter);
+//         spnMotorcycleScooter.setAdapter(adptrMotorcycleScooter);
 
          secAnimalDrawnCart=(LinearLayout)findViewById(R.id.secAnimalDrawnCart);
          lineAnimalDrawnCart=(View)findViewById(R.id.lineAnimalDrawnCart);
@@ -2978,24 +3016,44 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
               rdoWatch1.requestFocus();
               return;
            }
-         else if(spnMobilePhone.getSelectedItemPosition()==0  & secMobilePhone.isShown())
-           {
-             Connection.MessageBox(Household_Interview.this, "Required field: 2) মোবাইল ফোন (Mobile phone)	.");
-             spnMobilePhone.requestFocus(); 
-             return;	
-           }
-         else if(spnBicycle.getSelectedItemPosition()==0  & secBicycle.isShown())
-           {
+//         else if(spnMobilePhone.getSelectedItemPosition()==0  & secMobilePhone.isShown())
+//           {
+//             Connection.MessageBox(Household_Interview.this, "Required field: 2) মোবাইল ফোন (Mobile phone)	.");
+//             spnMobilePhone.requestFocus();
+//             return;
+//           }
+         else if(!rdoMobilePhone1.isChecked() & !rdoMobilePhone2.isChecked() & !rdoMobilePhone3.isChecked() & !rdoMobilePhone4.isChecked() & secMobilePhone.isShown())
+         {
+             Connection.MessageBox(Household_Interview.this, "Required field: 2) মোবাইল ফোন (Mobile phone)\t.");
+             rdoMobilePhone1.requestFocus();
+             return;
+         }
+
+         else if(!rdoBicycle1.isChecked() & !rdoBicycle2.isChecked() & !rdoBicycle3.isChecked() & !rdoBicycle4.isChecked() & secBicycle.isShown())
+         {
              Connection.MessageBox(Household_Interview.this, "Required field: 3) বাই সাইকেল (Bicycle).");
-             spnBicycle.requestFocus(); 
-             return;	
-           }
-         else if(spnMotorcycleScooter.getSelectedItemPosition()==0  & secMotorcycleScooter.isShown())
-           {
+             rdoBicycle1.requestFocus();
+             return;
+         }
+         else if(!rdoMotorcycleScooter1.isChecked() & !rdoMotorcycleScooter2.isChecked() & !rdoMotorcycleScooter3.isChecked() & !rdoMotorcycleScooter4.isChecked() & secMotorcycleScooter.isShown())
+         {
              Connection.MessageBox(Household_Interview.this, "Required field: 4) মোটর সাইকেল/স্কুটার (Motorcycle or motor scooter).");
-             spnMotorcycleScooter.requestFocus(); 
-             return;	
-           }
+             rdoMotorcycleScooter1.requestFocus();
+             return;
+         }
+
+//         else if(spnBicycle.getSelectedItemPosition()==0  & secBicycle.isShown())
+//           {
+//             Connection.MessageBox(Household_Interview.this, "Required field: 3) বাই সাইকেল (Bicycle).");
+//             spnBicycle.requestFocus();
+//             return;
+//           }
+//         else if(spnMotorcycleScooter.getSelectedItemPosition()==0  & secMotorcycleScooter.isShown())
+//           {
+//             Connection.MessageBox(Household_Interview.this, "Required field: 4) মোটর সাইকেল/স্কুটার (Motorcycle or motor scooter).");
+//             spnMotorcycleScooter.requestFocus();
+//             return;
+//           }
          
          else if(!rdoAnimalDrawnCart1.isChecked() & !rdoAnimalDrawnCart2.isChecked() & !rdoAnimalDrawnCart3.isChecked() & !rdoAnimalDrawnCart4.isChecked() & secAnimalDrawnCart.isShown())
            {
@@ -3283,9 +3341,33 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
              if (rb.isChecked()) objSave.setWatch(Integer.valueOf(d_rdogrpWatch[i]));
          }
 
-         objSave.setMobilePhone(Integer.valueOf(spnMobilePhone.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMobilePhone.getSelectedItem().toString(), "-")));
-         objSave.setBicycle(Integer.valueOf(spnBicycle.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnBicycle.getSelectedItem().toString(), "-")));
-         objSave.setMotorcycleScooter(Integer.valueOf(spnMotorcycleScooter.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMotorcycleScooter.getSelectedItem().toString(), "-")));
+         String[] d_rdogrpMobilePhone = new String[] {"1","2","3","4"};
+         objSave.setMobilePhone(0);
+         for (int i = 0; i < rdogrpMobilePhone.getChildCount(); i++)
+         {
+             rb = (RadioButton)rdogrpMobilePhone.getChildAt(i);
+             if (rb.isChecked()) objSave.setMobilePhone(Integer.valueOf(d_rdogrpMobilePhone[i]));
+         }
+
+         String[] d_rdogrpBicycle = new String[] {"1","2","3","4"};
+         objSave.setBicycle(0);
+         for (int i = 0; i < rdogrpBicycle.getChildCount(); i++)
+         {
+             rb = (RadioButton)rdogrpBicycle.getChildAt(i);
+             if (rb.isChecked()) objSave.setBicycle(Integer.valueOf(d_rdogrpBicycle[i]));
+         }
+
+         String[] d_rdogrpMotorcycleScooter = new String[] {"1","2","3","4"};
+         objSave.setMotorcycleScooter(0);
+         for (int i = 0; i < rdogrpMotorcycleScooter.getChildCount(); i++)
+         {
+             rb = (RadioButton)rdogrpMotorcycleScooter.getChildAt(i);
+             if (rb.isChecked()) objSave.setMotorcycleScooter(Integer.valueOf(d_rdogrpMotorcycleScooter[i]));
+         }
+
+//         objSave.setMobilePhone(Integer.valueOf(spnMobilePhone.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMobilePhone.getSelectedItem().toString(), "-")));
+//         objSave.setBicycle(Integer.valueOf(spnBicycle.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnBicycle.getSelectedItem().toString(), "-")));
+//         objSave.setMotorcycleScooter(Integer.valueOf(spnMotorcycleScooter.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnMotorcycleScooter.getSelectedItem().toString(), "-")));
          String[] d_rdogrpAnimalDrawnCart = new String[] {"1","2","3","4"};
          objSave.setAnimalDrawnCart(0);
          for (int i = 0; i < rdogrpAnimalDrawnCart.getChildCount(); i++)
@@ -3530,9 +3612,41 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
                      rb.setChecked(true);
                  }
              }
-             spnMobilePhone.setSelection(Global.SpinnerItemPositionAnyLength(spnMobilePhone, String.valueOf(item.getMobilePhone())));
-             spnBicycle.setSelection(Global.SpinnerItemPositionAnyLength(spnBicycle, String.valueOf(item.getBicycle())));
-             spnMotorcycleScooter.setSelection(Global.SpinnerItemPositionAnyLength(spnMotorcycleScooter, String.valueOf(item.getMotorcycleScooter())));
+
+               String[] d_rdogrpMobilePhone = new String[] {"1","2","3","4"};
+               for (int i = 0; i < d_rdogrpMobilePhone.length; i++)
+               {
+                   if (String.valueOf(item.getMobilePhone()).equals(String.valueOf(d_rdogrpMobilePhone[i])))
+                   {
+                       rb = (RadioButton)rdogrpMobilePhone.getChildAt(i);
+                       rb.setChecked(true);
+                   }
+               }
+
+               String[] d_rdogrpBicycle = new String[] {"1","2","3","4"};
+               for (int i = 0; i < d_rdogrpBicycle.length; i++)
+               {
+                   if (String.valueOf(item.getBicycle()).equals(String.valueOf(d_rdogrpBicycle[i])))
+                   {
+                       rb = (RadioButton)rdogrpBicycle.getChildAt(i);
+                       rb.setChecked(true);
+                   }
+               }
+
+                String[] d_rdogrpMotorcycleScooter = new String[] {"1","2","3","4"};
+               for (int i = 0; i < d_rdogrpMotorcycleScooter.length; i++)
+               {
+                   if (String.valueOf(item.getMotorcycleScooter()).equals(String.valueOf(d_rdogrpMotorcycleScooter[i])))
+                   {
+                       rb = (RadioButton)rdogrpMotorcycleScooter.getChildAt(i);
+                       rb.setChecked(true);
+                   }
+               }
+
+
+//             spnMobilePhone.setSelection(Global.SpinnerItemPositionAnyLength(spnMobilePhone, String.valueOf(item.getMobilePhone())));
+//             spnBicycle.setSelection(Global.SpinnerItemPositionAnyLength(spnBicycle, String.valueOf(item.getBicycle())));
+//             spnMotorcycleScooter.setSelection(Global.SpinnerItemPositionAnyLength(spnMotorcycleScooter, String.valueOf(item.getMotorcycleScooter())));
              String[] d_rdogrpAnimalDrawnCart = new String[] {"1","2","3","4"};
              for (int i = 0; i < d_rdogrpAnimalDrawnCart.length; i++)
              {

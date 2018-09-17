@@ -270,22 +270,27 @@ package org.hcus_hhinterview;
 //             holder.DAgeU.setText(""+data.getDAgeU());
 //             holder.LiveInHouse.setText(""+data.getLiveInHouse());
 
-             if(data.getAge()<60)
+             if(data.getAge()<=60)
              {
-                 holder.Age.setText(""+data.getAge()+ "days");
-                 holder.btnChildForm.setVisibility(View.INVISIBLE);
+                 holder.Age.setText(""+data.getAge()+" days");
+                 holder.btnChildForm.setVisibility(View.VISIBLE);
              }
-             else if(data.getAge()>=61 & data.getAge()<=1793 )
+             else if(data.getAge()>=61 & data.getAge()<1826 )
              {
                  int age=(int) (data.getAge()/30.4);
-                 holder.Age.setText(""+data.getAge()+ "months");
-                 holder.btnChildForm.setVisibility(View.INVISIBLE);
+                 holder.Age.setText(""+age+" months");
+                 holder.btnChildForm.setVisibility(View.VISIBLE);
              }
              else if(data.getAge()>=1826 & data.getAge()<6574 )
              {
                  int age=(int) (data.getAge()/365.25);
-                 holder.Age.setText(""+data.getAge()+ "years");
+                 holder.Age.setText(""+age+" years");
                  holder.btnChildForm.setVisibility(View.VISIBLE);
+             }
+             else{
+                 int age=(int) (data.getAge()/365.25);
+                 holder.Age.setText(""+age+" years");
+                 holder.btnChildForm.setVisibility(View.INVISIBLE);
              }
 
 

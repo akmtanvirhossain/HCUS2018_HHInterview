@@ -112,7 +112,7 @@
             android:id="@+id/secAgeU"
             style="@style/rowStyle0"
             android:layout_width="fill_parent"
-            android:layout_height="54dp"
+            android:layout_height="78dp"
             android:orientation="horizontal">
 
             <TextView

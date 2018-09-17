@@ -432,13 +432,27 @@
     <LinearLayout android:id="@+id/secMobilePhone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblMobilePhone" android:text="" android:layout_width="46sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <TextView android:id="@+id/VlblMobilePhone" android:text="2) মোবাইল ফোন (Mobile phone)	" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <Spinner android:id="@+id/spnMobilePhone" android:drawSelectorOnTop="true" android:layout_width="200sp" android:layout_height="wrap_content" android:layout_weight="0" android:prompt="@string/planet_prompt" android:textSize="20sp" />
+
+        <RadioGroup android:id="@+id/rdogrpMobilePhone" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">
+            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoMobilePhone1" android:text="Yes" android:gravity="top|bottom" />
+            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoMobilePhone2" android:text="No" android:gravity="top|bottom" />
+            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoMobilePhone3" android:text="Not Sure" android:gravity="top|bottom" />
+            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoMobilePhone4" android:text="Reduse to answer" android:gravity="top|bottom"/>
+        </RadioGroup>
+
     </LinearLayout>
     <View android:id="@+id/lineMobilePhone" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secBicycle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblBicycle" android:text="" android:layout_width="46sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <TextView android:id="@+id/VlblBicycle" android:text="3) বাই সাইকেল (Bicycle)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <Spinner android:id="@+id/spnBicycle" android:drawSelectorOnTop="true" android:layout_width="200sp" android:layout_height="wrap_content" android:layout_weight="0" android:prompt="@string/planet_prompt" android:textSize="20sp" />
+
+        <RadioGroup android:id="@+id/rdogrpBicycle" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">
+            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoBicycle1" android:text="Yes" android:gravity="top|bottom" />
+            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoBicycle2" android:text="No" android:gravity="top|bottom" />
+            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoBicycle3" android:text="Not Sure" android:gravity="top|bottom" />
+            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoBicycle4" android:text="Reduse to answer" android:gravity="top|bottom"/>
+        </RadioGroup>
+
     </LinearLayout>
     <View android:id="@+id/lineBicycle" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secMotorcycleScooter" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
@@ -450,7 +464,14 @@
             android:layout_height="59dp"
             android:text="4) মোটর সাইকেল/স্কুটার (Motorcycle or motor scooter)"
             android:textSize="20sp" />
-        <Spinner android:id="@+id/spnMotorcycleScooter" android:drawSelectorOnTop="true" android:layout_width="200sp" android:layout_height="wrap_content" android:layout_weight="0" android:prompt="@string/planet_prompt" android:textSize="20sp" />
+
+         <RadioGroup android:id="@+id/rdogrpMotorcycleScooter" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">
+            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoMotorcycleScooter1" android:text="Yes" android:gravity="top|bottom" />
+            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoMotorcycleScooter2" android:text="No" android:gravity="top|bottom" />
+            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoMotorcycleScooter3" android:text="Not Sure" android:gravity="top|bottom" />
+            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoMotorcycleScooter4" android:text="Reduse to answer" android:gravity="top|bottom"/>
+        </RadioGroup>
+
     </LinearLayout>
     <View android:id="@+id/lineMotorcycleScooter" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secAnimalDrawnCart" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">

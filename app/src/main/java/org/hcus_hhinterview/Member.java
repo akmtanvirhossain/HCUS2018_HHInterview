@@ -165,7 +165,9 @@
          View lineLiveInHouse;
          TextView VlblLiveInHouse;
          EditText txtLiveInHouse;
-
+     String birthdate="";
+     String presentdate="";
+     Integer ageInDays;
     static String TableName;
 
     static String STARTTIME = "";
@@ -296,13 +298,26 @@
              public void onTextChanged(CharSequence s, int start, int before, int count) {
                  if(dtpDOB.getText().toString().length()>0){
                      chkDOBDk.setChecked(false);
+
                  }
 
              }
 
              @Override
              public void afterTextChanged(Editable s) {
+                 birthdate=dtpDOB.getText().toString();
+                 presentdate=Global.DateNowDMY();
+                 ageInDays=Global.DateDifferenceDays(presentdate,birthdate);
 
+                 if(ageInDays<364)
+                 {
+                     secLiveInHouse.setVisibility(View.VISIBLE);
+                     lineLiveInHouse.setVisibility(View.VISIBLE);
+                 }
+                 else{
+                     secLiveInHouse.setVisibility(View.GONE);
+                     lineLiveInHouse.setVisibility(View.GONE);
+                 }
              }
          });
 
@@ -346,7 +361,49 @@
          ArrayAdapter<String> adptrAgeU= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listAgeU);
          spnAgeU.setAdapter(adptrAgeU);
 
+spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        String spnData = "";
+        if (spnAgeU.getSelectedItem().toString().length() != 0)
+        {
+            spnData = Connection.SelectedSpinnerValue(spnAgeU.getSelectedItem().toString(), "-");
+        }
+        if(spnData.equalsIgnoreCase("1") )
+        {
+            secLiveInHouse.setVisibility(View.VISIBLE);
+            lineLiveInHouse.setVisibility(View.VISIBLE);
+        }
+        else if(spnData.equalsIgnoreCase("2") )
+        {
+            if(Integer.valueOf(txtAge.getText().toString())>=12)
+            {
+                secLiveInHouse.setVisibility(View.GONE);
+                lineLiveInHouse.setVisibility(View.GONE);
+            }
+            else{
+                secLiveInHouse.setVisibility(View.VISIBLE);
+                lineLiveInHouse.setVisibility(View.VISIBLE);
+            }
 
+        }
+        else  if(spnData.equalsIgnoreCase("3") )
+        {
+            secLiveInHouse.setVisibility(View.GONE);
+            lineLiveInHouse.setVisibility(View.GONE);
+        }
+        else{
+            secLiveInHouse.setVisibility(View.GONE);
+            lineLiveInHouse.setVisibility(View.GONE);
+        }
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+});
 
 
          secRelation=(LinearLayout)findViewById(R.id.secRelation);
@@ -514,6 +571,7 @@
          txtLiveInHouse=(EditText) findViewById(R.id.txtLiveInHouse);
 
 
+
          dtpDOB.setOnTouchListener(new View.OnTouchListener() {
              @Override
              public boolean onTouch(View v, MotionEvent event) {
@@ -586,6 +644,8 @@
          lineOthRelation.setVisibility(View.GONE);
          secOthRelation.setVisibility(View.GONE);
          lineOthRelation.setVisibility(View.GONE);
+         secLiveInHouse.setVisibility(View.GONE);
+         lineLiveInHouse.setVisibility(View.GONE);
 
          DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO,MEMSL);
         Button cmdSave = (Button) findViewById(R.id.cmdSave);
@@ -663,16 +723,15 @@
               rdoSex1.requestFocus();
               return;
            }
-         DV = Global.DateValidate(dtpDOB.getText().toString());
-         if(DV.length()!=0 & secDOB.isShown())
-           {
-            if(!chkDOBDk.isChecked()){
-                Connection.MessageBox(Member.this, DV);
-                dtpDOB.requestFocus();
-                return;
-            }
 
-           }
+           else if(dtpDOB.getText().toString().length()==0 & !chkDOBDk.isChecked() & secDOB.isShown()) {
+
+                 DV = Global.DateValidate(dtpDOB.getText().toString());
+                 Connection.MessageBox(Member.this, DV);
+                 dtpDOB.requestFocus();
+                 return;
+         }
+
          else if(txtAge.getText().toString().length()==0 & secAge.isShown())
            {
 
@@ -791,7 +850,7 @@
          else if(spnAgeU.getSelectedItemPosition() == 2)
          {
              int age=Integer.valueOf(txtAge.getText().toString());
-             age=(int)(age*30.40);
+             age=(int)(age*30.4);
              objSave.setAge(age);
          }
         else if(spnAgeU.getSelectedItemPosition() == 3)
@@ -880,7 +939,23 @@
              {
                 chkDOBDk.setChecked(false);
              }
-             txtAge.setText(String.valueOf(item.getAge()));
+
+             if(String.valueOf(item.getAgeU()).equals("2"))
+             {
+                 int age=(int)(item.getAge()/30.4);
+                 txtAge.setText(""+age);
+             }
+             else if(String.valueOf(item.getAgeU()).equals("3"))
+             {
+                 int age=(int)(item.getAge()/365.25);
+                 txtAge.setText(""+age);
+             }
+             else{
+                 txtAge.setText(String.valueOf(item.getAge()));
+             }
+
+
+//             txtAge.setText(String.valueOf(item.getAge()));
              spnAgeU.setSelection(Global.SpinnerItemPositionAnyLength(spnAgeU, String.valueOf(item.getAgeU())));
              spnRelation.setSelection(Global.SpinnerItemPositionAnyLength(spnRelation, String.valueOf(item.getRelation())));
              txtOthRelation.setText(item.getOthRelation());
