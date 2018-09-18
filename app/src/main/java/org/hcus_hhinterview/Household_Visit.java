@@ -402,8 +402,8 @@
                      secU18Alive.setVisibility(View.GONE);
                      lineU18Alive.setVisibility(View.GONE);
 //                     txtU18Alive.setText("");
-                     secU18YrsDie.setVisibility(View.GONE);
-                     lineU18YrsDie.setVisibility(View.GONE);
+                     secU18YrsDie.setVisibility(View.VISIBLE);
+                     lineU18YrsDie.setVisibility(View.VISIBLE);
 //                     rdogrpU18YrsDie.clearCheck();
                      secU18Death.setVisibility(View.GONE);
                      lineU18Death.setVisibility(View.GONE);

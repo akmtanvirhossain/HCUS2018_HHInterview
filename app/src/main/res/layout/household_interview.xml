@@ -355,7 +355,7 @@
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoElectricity1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoElectricity2" android:text="No" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoElectricity3" android:text="Not Sure" android:gravity="top|bottom" />
-           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoElectricity4" android:text="Reduse to answer" android:gravity="top|bottom"/>
+           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoElectricity4" android:text="Refuse to answer" android:gravity="top|bottom"/>
         </RadioGroup>
     </LinearLayout>
     <View android:id="@+id/lineElectricity" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -366,7 +366,7 @@
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoRadio1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoRadio2" android:text="No" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoRadio3" android:text="Not Sure" android:gravity="top|bottom" />
-           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoRadio4" android:text="Reduse to answer" android:gravity="top|bottom"/>
+           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoRadio4" android:text="Refuse to answer" android:gravity="top|bottom"/>
         </RadioGroup>
     </LinearLayout>
     <View android:id="@+id/lineRadio" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -377,7 +377,7 @@
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoTelevision1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoTelevision2" android:text="No" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoTelevision3" android:text="Not Sure" android:gravity="top|bottom" />
-           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoTelevision4" android:text="Reduse to answer" android:gravity="top|bottom"/>
+           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoTelevision4" android:text="Refuse to answer" android:gravity="top|bottom"/>
         </RadioGroup>
     </LinearLayout>
     <View android:id="@+id/lineTelevision" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -388,7 +388,7 @@
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoNonMobileTele1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoNonMobileTele2" android:text="No" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoNonMobileTele3" android:text="Not Sure" android:gravity="top|bottom" />
-           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoNonMobileTele4" android:text="Reduse to answer" android:gravity="top|bottom"/>
+           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoNonMobileTele4" android:text="Refuse to answer" android:gravity="top|bottom"/>
         </RadioGroup>
     </LinearLayout>
     <View android:id="@+id/lineNonMobileTele" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -399,7 +399,7 @@
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoComputer1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoComputer2" android:text="No" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoComputer3" android:text="Not Sure" android:gravity="top|bottom" />
-           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoComputer4" android:text="Reduse to answer" android:gravity="top|bottom"/>
+           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoComputer4" android:text="Refuse to answer" android:gravity="top|bottom"/>
         </RadioGroup>
     </LinearLayout>
     <View android:id="@+id/lineComputer" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -410,7 +410,7 @@
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoRefrigerator1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoRefrigerator2" android:text="No" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoRefrigerator3" android:text="Not Sure" android:gravity="top|bottom" />
-           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoRefrigerator4" android:text="Reduse to answer" android:gravity="top|bottom"/>
+           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoRefrigerator4" android:text="Refuse to answer" android:gravity="top|bottom"/>
         </RadioGroup>
     </LinearLayout>
     <View android:id="@+id/lineRefrigerator" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -425,7 +425,7 @@
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoWatch1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoWatch2" android:text="No" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoWatch3" android:text="Not Sure" android:gravity="top|bottom" />
-           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoWatch4" android:text="Reduse to answer" android:gravity="top|bottom"/>
+           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoWatch4" android:text="Refuse to answer" android:gravity="top|bottom"/>
         </RadioGroup>
     </LinearLayout>
     <View android:id="@+id/lineWatch" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -437,7 +437,7 @@
             <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoMobilePhone1" android:text="Yes" android:gravity="top|bottom" />
             <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoMobilePhone2" android:text="No" android:gravity="top|bottom" />
             <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoMobilePhone3" android:text="Not Sure" android:gravity="top|bottom" />
-            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoMobilePhone4" android:text="Reduse to answer" android:gravity="top|bottom"/>
+            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoMobilePhone4" android:text="Refuse to answer" android:gravity="top|bottom"/>
         </RadioGroup>
 
     </LinearLayout>
@@ -450,7 +450,7 @@
             <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoBicycle1" android:text="Yes" android:gravity="top|bottom" />
             <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoBicycle2" android:text="No" android:gravity="top|bottom" />
             <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoBicycle3" android:text="Not Sure" android:gravity="top|bottom" />
-            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoBicycle4" android:text="Reduse to answer" android:gravity="top|bottom"/>
+            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoBicycle4" android:text="Refuse to answer" android:gravity="top|bottom"/>
         </RadioGroup>
 
     </LinearLayout>
@@ -469,7 +469,7 @@
             <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoMotorcycleScooter1" android:text="Yes" android:gravity="top|bottom" />
             <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoMotorcycleScooter2" android:text="No" android:gravity="top|bottom" />
             <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoMotorcycleScooter3" android:text="Not Sure" android:gravity="top|bottom" />
-            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoMotorcycleScooter4" android:text="Reduse to answer" android:gravity="top|bottom"/>
+            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoMotorcycleScooter4" android:text="Refuse to answer" android:gravity="top|bottom"/>
         </RadioGroup>
 
     </LinearLayout>
@@ -481,7 +481,7 @@
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoAnimalDrawnCart1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoAnimalDrawnCart2" android:text="No" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoAnimalDrawnCart3" android:text="Not Sure" android:gravity="top|bottom" />
-           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoAnimalDrawnCart4" android:text="Reduse to answer" android:gravity="top|bottom"/>
+           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoAnimalDrawnCart4" android:text="Refuse to answer" android:gravity="top|bottom"/>
         </RadioGroup>
     </LinearLayout>
     <View android:id="@+id/lineAnimalDrawnCart" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -492,7 +492,7 @@
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoCarOrTruck1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoCarOrTruck2" android:text="No" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoCarOrTruck3" android:text="Not Sure" android:gravity="top|bottom" />
-           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoCarOrTruck4" android:text="Reduse to answer" android:gravity="top|bottom"/>
+           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoCarOrTruck4" android:text="Refuse to answer" android:gravity="top|bottom"/>
         </RadioGroup>
     </LinearLayout>
     <View android:id="@+id/lineCarOrTruck" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -503,7 +503,7 @@
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoBankAccount1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoBankAccount2" android:text="No" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoBankAccount3" android:text="Not Sure" android:gravity="top|bottom" />
-           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoBankAccount4" android:text="Reduse to answer" android:gravity="top|bottom"/>
+           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoBankAccount4" android:text="Refuse to answer" android:gravity="top|bottom"/>
         </RadioGroup>
     </LinearLayout>
     <View android:id="@+id/lineBankAccount" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -524,7 +524,7 @@
             android:id="@+id/VlblRentOfDwelling"
             android:layout_width="370sp"
             android:layout_height="275dp"
-            android:text="আপনার এই বাসাটি আজ কেউ ভাড়া নিতে চাইলে তাকে মাসে কত টাকা ভাড়া দিতে হবে? If someone wanted to rent this dwelling today, how much money would they have to pay each month, considering just the part of the dwelling where your household is living?টাকা (amount in local currency)\nএই বাড়িটি তৈরিতে মূল কি কি উপাদান ব্যবহার করা হয়েছে (পরিদর্শন করে যাচাই করুন)"
+            android:text="আপনার এই বাসাটি আজ কেউ ভাড়া নিতে চাইলে তাকে মাসে কত টাকা ভাড়া দিতে হবে? If someone wanted to rent this dwelling today, how much money would they have to pay each month, considering just the part of the dwelling where your household is living?টাকা (amount in local currency)\n"
             android:textSize="20sp" />
          <EditText android:id="@+id/txtRentOfDwelling" android:maxLength="5" android:layout_width="120sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
     </LinearLayout>
@@ -535,7 +535,13 @@
         <CheckBox android:id="@+id/chkRentOfDwellDK" android:layout_width="50sp" android:inputType="text" android:layout_height="wrap_content" android:layout_marginRight="10sp" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/lineRentOfDwellDK" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
-    <LinearLayout android:id="@+id/secConsMatFloor" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+
+        <LinearLayout android:id="@+id/secHouseholdAccInterview" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <TextView android:id="@+id/lblHouseholdAccInterview" android:text=" এই বাড়িটি তৈরিতে মূল কি কি উপাদান ব্যবহার করা হয়েছে (পরিদর্শন করে যাচাই করুন)" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="20sp" style="@style/rowHeading"/>
+        </LinearLayout>
+        <View android:id="@+id/lineHouseholdAccInterview" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+
+        <LinearLayout android:id="@+id/secConsMatFloor" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblConsMatFloor" android:text="2.9." android:layout_width="46sp" android:layout_height="wrap_content" android:textSize="20sp" />
 
         <TextView
@@ -676,13 +682,13 @@
             android:layout_height="wrap_content"
             android:text="পানি সংগ্রহের জন্য কত সময় হাটতে হয়? How long would you have to walk to collect water? (In Minutes)"
             android:textSize="20sp" />
-        <EditText android:id="@+id/txtTimeToWalkInMin" android:maxLength="2" android:layout_width="100sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+        <EditText android:id="@+id/txtTimeToWalkInMin" android:maxLength="2" android:layout_width="100sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/lineTimeToWalkInMin" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secTimeToWalkInHours" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblTimeToWalkInHours" android:text="" android:layout_width="46sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <TextView android:id="@+id/VlblTimeToWalkInHours" android:text="ঘণ্টা (Hours)" android:layout_width="370sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <EditText android:id="@+id/txtTimeToWalkInHours" android:maxLength="2" android:layout_width="100sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+        <EditText android:id="@+id/txtTimeToWalkInHours" android:maxLength="2" android:layout_width="100sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/lineTimeToWalkInHours" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secWeeklyWSupplyInHour" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">

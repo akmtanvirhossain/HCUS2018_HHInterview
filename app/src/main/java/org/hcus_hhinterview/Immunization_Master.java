@@ -477,6 +477,8 @@
          lineHCard.setVisibility(View.GONE);
          secImmunization.setVisibility(View.GONE);
          linesecImmunization.setVisibility(View.GONE);
+         secImage.setVisibility(View.GONE);
+         lineImage.setVisibility(View.GONE);
 
 
 

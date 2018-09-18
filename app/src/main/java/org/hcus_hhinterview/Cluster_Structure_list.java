@@ -22,6 +22,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -55,6 +56,7 @@ public class Cluster_Structure_list extends Activity {
 
     TextView tvUpazila,tvUnion,tvMoholla,tvCluster;
     Spinner spnUpazila,spnUnion,spnMoholla,spnCluster;
+    Spinner spnStatus;
 
     TextView txtTotal,txtSearch;
 
@@ -95,6 +97,7 @@ public class Cluster_Structure_list extends Activity {
             spnUnion= (Spinner) findViewById(R.id.spnUnion);
             spnMoholla= (Spinner) findViewById(R.id.spnMoholla);
             spnCluster= (Spinner) findViewById(R.id.spnCluster);
+            spnStatus=(Spinner) findViewById(R.id.spnStatus);
 
             spnUpazila.setAdapter((C.getArrayAdapter("Select '' Union Select distinct Upazila ||'-'|| UpName from AreaDB")));
 
@@ -185,16 +188,46 @@ public class Cluster_Structure_list extends Activity {
                     adb.show();
                 }});
 
-            btnRefresh = (Button) findViewById(R.id.btnRefresh);
-            btnRefresh.setOnClickListener(new View.OnClickListener() {
+//            btnRefresh = (Button) findViewById(R.id.btnRefresh);
+//            btnRefresh.setOnClickListener(new View.OnClickListener() {
+//
+//                public void onClick(View view) {
+//                    //write your code here
+//                    DataSearch(UPAZILA, UNCODE,CLUSTER);
+//                    txtTotal.setText("Total No: "+dataList.size());
+//
+//
+//                }});
 
-                public void onClick(View view) {
-                    //write your code here
-                    DataSearch(UPAZILA, UNCODE,CLUSTER);
-                    txtTotal.setText("Total No: "+dataList.size());
+            spnStatus=(Spinner) findViewById(R.id.spnStatus);
 
+            List<String> listStatus=new ArrayList<String>();
 
-                }});
+            listStatus.add("");
+            listStatus.add("1-Complete");
+            listStatus.add("2-Incomplete");
+            listStatus.add("3-Complete Refusal");
+            listStatus.add("4-Vacant");
+            listStatus.add("6-Under construction");
+            listStatus.add("7-Partial refusal");
+            listStatus.add("10-Ongoing");
+            listStatus.add("77-Other ");
+
+            ArrayAdapter<String> adprStatus=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,listStatus);
+            spnStatus.setAdapter(adprStatus);
+
+            spnStatus.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                   DataSearch(UPAZILA,UNCODE,CLUSTER);
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
 
             txtSearch.addTextChangedListener(new TextWatcher() {
                 @Override
@@ -291,6 +324,14 @@ public class Cluster_Structure_list extends Activity {
                 SQL += " sd.StructureNo like('"+ txtSearch.getText().toString() +"%')";
                 SQL += " )";
             }
+            else if(spnStatus.getSelectedItem().toString().length()>0)
+            {
+                String spndata="";
+                spndata=Connection.SelectedSpinnerValue(spnStatus.getSelectedItem().toString(),"-");
+                SQL += " and (";
+                SQL += " sd.Visit_Status =('"+ spndata +"')";
+                SQL += " )";
+            }
 
             List<StructureListing_DataModel> data = d.SelectAll(this, SQL);
             dataList.clear();
@@ -319,6 +360,7 @@ public class Cluster_Structure_list extends Activity {
             TextView SlNo;
             TextView StructureNo;
             Button btnVisit,btnHHInterview;
+            TextView LVisitNo;
 
             public MyViewHolder(View convertView) {
                 super(convertView);
@@ -326,6 +368,7 @@ public class Cluster_Structure_list extends Activity {
 
                 StructureNo = (TextView)convertView.findViewById(R.id.StructureNo);
                 SlNo = (TextView)convertView.findViewById(R.id.SlNo);
+                LVisitNo = (TextView)convertView.findViewById(R.id.LastVisitNo);
 
                 btnVisit=convertView.findViewById(R.id.btnVisit);
                 btnHHInterview=convertView.findViewById(R.id.btnHHInterview);
@@ -348,6 +391,15 @@ public class Cluster_Structure_list extends Activity {
 
             holder.StructureNo.setText(data.getStructureNo());
             holder.SlNo.setText(""+(position+1)+".");
+            if(data.get_Visit_No().length()==0)
+            {
+                holder.LVisitNo.setText("");
+            }
+            else{
+                holder.LVisitNo.setText(data.get_Visit_No());
+            }
+
+
 
 
 
@@ -364,21 +416,21 @@ public class Cluster_Structure_list extends Activity {
             {
                 holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_red);
                 holder.btnVisit.setTextColor(Color.WHITE);
-                holder.btnHHInterview.setVisibility(View.GONE);
+                holder.btnHHInterview.setVisibility(View.INVISIBLE);
 
             }
             else if(data.get_Visit_Status().equals("3"))
             {
                 holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_orange);
                 holder.btnVisit.setTextColor(Color.WHITE);
-                holder.btnHHInterview.setVisibility(View.GONE);
+                holder.btnHHInterview.setVisibility(View.INVISIBLE);
 
             }
             else if(data.get_Visit_Status().equals("4"))
             {
                 holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_gray);
                 holder.btnVisit.setTextColor(Color.WHITE);
-                holder.btnHHInterview.setVisibility(View.GONE);
+                holder.btnHHInterview.setVisibility(View.INVISIBLE);
 
             }
 //            else if(data.get_Visit_Status().equals("5"))
@@ -392,7 +444,7 @@ public class Cluster_Structure_list extends Activity {
             {
                 holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_deepblue);
                 holder.btnVisit.setTextColor(Color.WHITE);
-                holder.btnHHInterview.setVisibility(View.GONE);
+                holder.btnHHInterview.setVisibility(View.INVISIBLE);
 
             }
             else if(data.get_Visit_Status().equals("7"))
@@ -430,12 +482,12 @@ public class Cluster_Structure_list extends Activity {
             {
                 holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_brown);
                 holder.btnVisit.setTextColor(Color.WHITE);
-                holder.btnHHInterview.setVisibility(View.GONE);
+                holder.btnHHInterview.setVisibility(View.INVISIBLE);
 
             }
             else
             {
-                holder.btnHHInterview.setVisibility(View.GONE);
+                holder.btnHHInterview.setVisibility(View.INVISIBLE);
 
             }
 

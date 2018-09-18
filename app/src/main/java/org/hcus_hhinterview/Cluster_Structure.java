@@ -286,7 +286,7 @@ package org.hcus_hhinterview;
                  {
                      secReasonInVisit.setVisibility(View.VISIBLE);
                      lineReasonInVisit.setVisibility(View.VISIBLE);
-                     spnReasonInVisit.setSelection(0);
+//                     spnReasonInVisit.setSelection(0);
                      secTotalHH.setVisibility(View.GONE);
                      lineTotalHH.setVisibility(View.GONE);
                      txtTotalHH.setText("");
@@ -309,7 +309,7 @@ package org.hcus_hhinterview;
                     txtVisitOutcomeOth.setText("");
                     secReasonInVisit.setVisibility(View.GONE);
                     lineReasonInVisit.setVisibility(View.GONE);
-                    spnReasonInVisit.setSelection(0);
+//                    spnReasonInVisit.setSelection(0);
                     secReasonInVisitOth.setVisibility(View.GONE);
                     lineReasonInVisitOth.setVisibility(View.GONE);
                     txtReasonInVisitOth.setText("");
@@ -404,7 +404,8 @@ package org.hcus_hhinterview;
                  {
                      secReasonInVisitOth.setVisibility(View.VISIBLE);
                      lineReasonInVisitOth.setVisibility(View.VISIBLE);
-                 }else
+                 }
+                 else
                  {
                      secReasonInVisitOth.setVisibility(View.GONE);
                      lineReasonInVisitOth.setVisibility(View.GONE);
@@ -615,6 +616,7 @@ package org.hcus_hhinterview;
                txtCluster.setText(Cluster);
                txtStructureNo.setText(StructureNo);
                txtVisitNo.setText(""+PREV);
+               spnVisitOutcome.setClickable(true);
                spnVisitOutcome.setSelection(0);
                txtVisitOutcomeOth.setText("");
                spnReasonInVisit.setSelection(0);
@@ -638,7 +640,7 @@ package org.hcus_hhinterview;
                    txtReasonInVisitOth.setText(item.getReasonInVisitOth());
                            txtReasonInVisitOth.setEnabled(false);
                    txtTotalHH.setText(item.getTotalHH());
-                           txtTotalHH.setEnabled(false);
+//                           txtTotalHH.setEnabled(false);
                }
            }
         }

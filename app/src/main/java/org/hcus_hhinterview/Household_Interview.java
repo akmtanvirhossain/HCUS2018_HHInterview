@@ -711,8 +711,8 @@
          listEduLevelFHead.add("1-প্রাথমিক (Primary)");
          listEduLevelFHead.add("2-মাধ্যমিক (Secondary)");
          listEduLevelFHead.add("3-মাধ্যমিক পরবর্তী (Post-Secondary)");
-         listEduLevelFHead.add("77-অন্যান্য (ভোকেশনাল, ধর্মীয়) (Other (Vocational Training, Religious))");
-         listEduLevelFHead.add("99-প্রযোজ্য নয়");
+         listEduLevelFHead.add("5-অন্যান্য (ভোকেশনাল, ধর্মীয়) (Other (Vocational Training, Religious))");
+         listEduLevelFHead.add("7-প্রযোজ্য নয়");
          ArrayAdapter<String> adptrEduLevelFHead= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listEduLevelFHead);
          spnEduLevelFHead.setAdapter(adptrEduLevelFHead);
 
@@ -727,8 +727,8 @@
          listEduLevelMHead.add("1-প্রাথমিক (Primary)");
          listEduLevelMHead.add("2-মাধ্যমিক (Secondary)");
          listEduLevelMHead.add("3-মাধ্যমিক পরবর্তী (Post-Secondary)");
-         listEduLevelMHead.add("77-অন্যান্য (ভোকেশনাল, ধর্মীয়) (Other (Vocational Training, Religious))");
-         listEduLevelMHead.add("99-প্রযোজ্য নয়");
+         listEduLevelMHead.add("5-অন্যান্য (ভোকেশনাল, ধর্মীয়) (Other (Vocational Training, Religious))");
+         listEduLevelMHead.add("7-প্রযোজ্য নয়");
          ArrayAdapter<String> adptrEduLevelMHead= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listEduLevelMHead);
          spnEduLevelMHead.setAdapter(adptrEduLevelMHead);
 
@@ -3182,12 +3182,20 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
              spnSOfDrinkingWater.requestFocus(); 
              return;	
            }
-         else if(txtTimeToWalkInMin.getText().toString().length()==0 & secTimeToWalkInMin.isShown())
+         else if(txtTimeToWalkInMin.getText().toString().length()==0  & secTimeToWalkInMin.isShown())
            {
              Connection.MessageBox(Household_Interview.this, "Required field: পানি সংগ্রহের জন্য কত সময় হাটতে হয়? How long would you have to walk to collect water?.");
              txtTimeToWalkInMin.requestFocus(); 
              return;	
            }
+
+         else if(Integer.valueOf(txtTimeToWalkInMin.getText().toString())>59  & secTimeToWalkInMin.isShown())
+         {
+             Connection.MessageBox(Household_Interview.this, "Required field: Value should be 0 to 59");
+             txtTimeToWalkInMin.requestFocus();
+             return;
+         }
+
          else if(txtTimeToWalkInHours.getText().toString().length()==0 & secTimeToWalkInHours.isShown())
            {
              Connection.MessageBox(Household_Interview.this, "Required field: ঘণ্টা (Hours).");
@@ -3200,6 +3208,14 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
              txtWeeklyWSupplyInHour.requestFocus(); 
              return;	
            }
+
+         else if(Integer.valueOf(txtWeeklyWSupplyInHour.getText().toString())>168 & secWeeklyWSupplyInHour.isShown())
+         {
+             Connection.MessageBox(Household_Interview.this, "Required field: Value should be 0 to 168.");
+             txtWeeklyWSupplyInHour.requestFocus();
+             return;
+         }
+
          else if(txtWeeklyWSuppHouse.getText().toString().length()==0 & secWeeklyWSuppHouse.isShown())
            {
              Connection.MessageBox(Household_Interview.this, "Required field: গত মাসে প্রতি সপ্তাহে গড়ে কত ঘণ্টা আপনার বাসায় পানি ছিল? On the average in last month how many hours per week does water run in your house?.");

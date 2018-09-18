@@ -609,7 +609,7 @@
              return;	
            }
          
-         else if(!rdoSSF1.isChecked() & !rdoSSF2.isChecked() & !rdoSSF3.isChecked() & secSSF.isShown())
+         else if(!rdoSSF1.isChecked() & !rdoSSF2.isChecked() & secSSF.isShown())
            {
               Connection.MessageBox(Knowledge_DSH_SSF.this, "Select anyone options from (আপনি কি শিশু স্বাস্থ্য ফাউন্ডেশন (মিরপুর শিশু) হাসপাতাল কোথায় সে সম্পর্কে বলতে পারবেন?  (Do you know ).");
               rdoSSF1.requestFocus();
@@ -653,7 +653,7 @@
          objSave.setDSHway(Integer.valueOf(spnDSHway.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnDSHway.getSelectedItem().toString(), "-")));
          objSave.setDSHwayOth(txtDSHwayOth.getText().toString());
          objSave.setReachDSH(txtReachDSH.getText().toString());
-         String[] d_rdogrpSSF = new String[] {"1","2",""};
+         String[] d_rdogrpSSF = new String[] {"1","2"};
          objSave.setSSF(0);
          for (int i = 0; i < rdogrpSSF.getChildCount(); i++)
          {

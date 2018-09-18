@@ -795,18 +795,18 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
              spnDAgeU.requestFocus(); 
              return;	
            }
-         else if(txtLiveInHouse.getText().toString().length()==0 & secLiveInHouse.isShown())
-           {
-             Connection.MessageBox(Member.this, "Required field:  কত মাস ধরে এই পরিবারে বাস করছে (যদি < ১২ মাস হয় ) How many months have you been living  ( if <12 months).");
-             txtLiveInHouse.requestFocus(); 
-             return;	
-           }
-         else if(Integer.valueOf(txtLiveInHouse.getText().toString().length()==0 ? "0" : txtLiveInHouse.getText().toString()) < 0 || Integer.valueOf(txtLiveInHouse.getText().toString().length()==0 ? "99" : txtLiveInHouse.getText().toString()) > 99)
-           {
-             Connection.MessageBox(Member.this, "Value should be between 0 and 99( কত মাস ধরে এই পরিবারে বাস করছে (যদি < ১২ মাস হয় ) How many months have you been living  ( if <12 months)).");
-             txtLiveInHouse.requestFocus(); 
-             return;	
-           }
+//         else if(txtLiveInHouse.getText().toString().length()==0 & secLiveInHouse.isShown())
+//           {
+//             Connection.MessageBox(Member.this, "Required field:  কত মাস ধরে এই পরিবারে বাস করছে (যদি < ১২ মাস হয় ) How many months have you been living  ( if <12 months).");
+//             txtLiveInHouse.requestFocus();
+//             return;
+//           }
+//         else if(Integer.valueOf(txtLiveInHouse.getText().toString().length()==0 ? "0" : txtLiveInHouse.getText().toString()) < 0 || Integer.valueOf(txtLiveInHouse.getText().toString().length()==0 ? "99" : txtLiveInHouse.getText().toString()) > 99)
+//           {
+//             Connection.MessageBox(Member.this, "Value should be between 0 and 99( কত মাস ধরে এই পরিবারে বাস করছে (যদি < ১২ মাস হয় ) How many months have you been living  ( if <12 months)).");
+//             txtLiveInHouse.requestFocus();
+//             return;
+//           }
 
 
 
