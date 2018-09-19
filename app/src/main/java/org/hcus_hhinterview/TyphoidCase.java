@@ -3078,19 +3078,26 @@
           chkDaysOfSympDK.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                @Override
                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                    txtDaysOfSymp.setText("");
+                    if(b) {
+                         txtDaysOfSymp.setText("");
+                    }
                }
           });
           chkWorstHourDK.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                @Override
                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                    txtWorstHour.setText("");
+                   if(b) {
+                       txtWorstHour.setText("");
+                   }
                }
           });
           chkDaysOfUnableDK.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                @Override
                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                    txtDaysOfUnable.setText("");
+                   if(b) {
+                       txtDaysOfUnable.setText("");
+                   }
+
                }
           });
 
@@ -3550,7 +3557,10 @@
 
                @Override
                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                    dtpTDtAdmHos.setText("");
+                   if(txtTAdmHosD.getText().toString().length()>0)
+                   {
+                       dtpTDtAdmHos.setText("");
+                   }
                }
 
                @Override
@@ -4156,7 +4166,9 @@
           chkDaysOfHospDK.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                @Override
                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                    txtDaysOfHosp.setText("");
+                   if(b) {
+                       txtDaysOfHosp.setText("");
+                   }
                }
           });
 
@@ -5021,48 +5033,48 @@
              txtHC_Hosp_a1_Oth.requestFocus(); 
              return;	
            }
-         else if(spnHC_Hosp_a2.getSelectedItemPosition()==0  & secHC_Hosp_a2.isShown())
-           {
-             Connection.MessageBox(TyphoidCase.this, "Required field: 2..");
-             spnHC_Hosp_a2.requestFocus(); 
-             return;	
-           }
+//         else if(spnHC_Hosp_a2.getSelectedItemPosition()==0  & secHC_Hosp_a2.isShown())
+//           {
+//             Connection.MessageBox(TyphoidCase.this, "Required field: 2..");
+//             spnHC_Hosp_a2.requestFocus();
+//             return;
+//           }
          else if(txtHC_Hosp_a2_Oth.getText().toString().length()==0 & secHC_Hosp_a2_Oth.isShown())
            {
              Connection.MessageBox(TyphoidCase.this, "Required field: Name of the other hospital-2.");
              txtHC_Hosp_a2_Oth.requestFocus(); 
              return;	
            }
-         else if(spnHC_Hosp_a3.getSelectedItemPosition()==0  & secHC_Hosp_a3.isShown())
-           {
-             Connection.MessageBox(TyphoidCase.this, "Required field: 3..");
-             spnHC_Hosp_a3.requestFocus(); 
-             return;	
-           }
+//         else if(spnHC_Hosp_a3.getSelectedItemPosition()==0  & secHC_Hosp_a3.isShown())
+//           {
+//             Connection.MessageBox(TyphoidCase.this, "Required field: 3..");
+//             spnHC_Hosp_a3.requestFocus();
+//             return;
+//           }
          else if(txtHC_Hosp_a3_Oth.getText().toString().length()==0 & secHC_Hosp_a3_Oth.isShown())
            {
              Connection.MessageBox(TyphoidCase.this, "Required field: Name of the other hospial-3.");
              txtHC_Hosp_a3_Oth.requestFocus(); 
              return;	
            }
-         else if(spnHC_Hosp_a4.getSelectedItemPosition()==0  & secHC_Hosp_a4.isShown())
-           {
-             Connection.MessageBox(TyphoidCase.this, "Required field: 4..");
-             spnHC_Hosp_a4.requestFocus(); 
-             return;	
-           }
+//         else if(spnHC_Hosp_a4.getSelectedItemPosition()==0  & secHC_Hosp_a4.isShown())
+//           {
+//             Connection.MessageBox(TyphoidCase.this, "Required field: 4..");
+//             spnHC_Hosp_a4.requestFocus();
+//             return;
+//           }
          else if(txtHC_Hosp_a4_Oth.getText().toString().length()==0 & secHC_Hosp_a4_Oth.isShown())
            {
              Connection.MessageBox(TyphoidCase.this, "Required field: Name of the other hospital-4.");
              txtHC_Hosp_a4_Oth.requestFocus(); 
              return;	
            }
-         else if(spnHC_Hosp_a5.getSelectedItemPosition()==0  & secHC_Hosp_a5.isShown())
-           {
-             Connection.MessageBox(TyphoidCase.this, "Required field: 5..");
-             spnHC_Hosp_a5.requestFocus(); 
-             return;	
-           }
+//         else if(spnHC_Hosp_a5.getSelectedItemPosition()==0  & secHC_Hosp_a5.isShown())
+//           {
+//             Connection.MessageBox(TyphoidCase.this, "Required field: 5..");
+//             spnHC_Hosp_a5.requestFocus();
+//             return;
+//           }
          else if(txtHC_Hosp_a5_Oth.getText().toString().length()==0 & secHC_Hosp_a5_Oth.isShown())
            {
              Connection.MessageBox(TyphoidCase.this, "Required field: Name of the other hospital-5.");

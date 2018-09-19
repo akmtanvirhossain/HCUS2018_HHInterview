@@ -438,6 +438,16 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     secOthRelation.setVisibility(View.GONE);
                     lineOthRelation.setVisibility(View.GONE);
                     txtOthRelation.setText("");
+
+                    //*********** check for another HH Head
+                     boolean flag=C.Existence("select Relation from Member where UNCode='"+UNCODE+"' and StructureNo='"+STRUCTURENO+"' and HouseholdSl='"+HOUSEHOLDSL+"' and Relation='1'");
+                     if(flag)
+                     {
+                         Connection.MessageBox(Member.this,"এই খানায় ইতিমধ্যে একজন খানা প্রধান বিদ্যমান.");
+                         return;
+                     }
+
+                    //*********** check for another HH Head
                  }
                  else if(spnData.equalsIgnoreCase("2"))
                  {
