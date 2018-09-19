@@ -580,7 +580,6 @@ package org.hcus_hhinterview;
 
 
 
-
          if(status.length()==0) {
              Intent returnIntent = new Intent();
              returnIntent.putExtra("res", "");

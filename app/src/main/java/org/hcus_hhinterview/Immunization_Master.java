@@ -173,7 +173,7 @@
      View lineImage;
      Button btnPhoto;
      ImageView imgCard;
-     static final int REQUEST_IMAGE_CAPTURE = 1;
+     static final int REQUEST_IMAGE_CAPTURE = 99;
      static final String FOLDER_NAME ="Vaccination_Card";
      static String name; //image file name
 
@@ -283,6 +283,7 @@
                      secImmunization.setVisibility(View.GONE);
                      linesecImmunization.setVisibility(View.GONE);
                      secHCard.setVisibility(View.GONE);
+                     rdogrpHCard.clearCheck();
                      lineHCard.setVisibility(View.GONE);
 
 
@@ -291,6 +292,7 @@
                      secImmunization.setVisibility(View.GONE);
                      linesecImmunization.setVisibility(View.GONE);
                      secHCard.setVisibility(View.GONE);
+                     rdogrpHCard.clearCheck();
                      lineHCard.setVisibility(View.GONE);
                  }
                  else if(rbData.equalsIgnoreCase("1"))
@@ -464,7 +466,12 @@
 
          //************* insert into immunization history **************
 
-
+         secHCard.setVisibility(View.GONE);
+         lineHCard.setVisibility(View.GONE);
+         secImmunization.setVisibility(View.GONE);
+         linesecImmunization.setVisibility(View.GONE);
+         secImage.setVisibility(View.GONE);
+         lineImage.setVisibility(View.GONE);
 
 
          DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO,MEMSL);
@@ -473,12 +480,7 @@
 
 
 
-         secHCard.setVisibility(View.GONE);
-         lineHCard.setVisibility(View.GONE);
-         secImmunization.setVisibility(View.GONE);
-         linesecImmunization.setVisibility(View.GONE);
-         secImage.setVisibility(View.GONE);
-         lineImage.setVisibility(View.GONE);
+
 
 
 

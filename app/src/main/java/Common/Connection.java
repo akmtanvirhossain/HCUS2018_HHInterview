@@ -1974,7 +1974,7 @@ public class Connection extends SQLiteOpenHelper {
             //Sync_Upload
             // Parameter 1: table list
             //--------------------------------------------------------------------------------------
-            //C.Sync_Upload(ProjectSetting.TableList_Upload());
+            C.Sync_Upload(ProjectSetting.TableList_Upload());
 
             //Database File Upload
             //C.DatabaseUploadZip(UniqueID);
