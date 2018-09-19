@@ -1148,6 +1148,12 @@
              txtU18Alive.requestFocus(); 
              return;	
            }
+         else if(Integer.valueOf(txtU18Alive.getText().toString())>Integer.valueOf(txtHHMember.getText().toString()))
+         {
+             Connection.MessageBox(Household_Visit.this, "Value should not be greater than total household member");
+             txtU18Alive.requestFocus();
+             return;
+         }
          
          else if(!rdoU18YrsDie1.isChecked() & !rdoU18YrsDie2.isChecked() & secU18YrsDie.isShown())
            {
