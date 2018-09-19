@@ -361,6 +361,11 @@ public class Cluster_Structure_list extends Activity {
             TextView StructureNo;
             Button btnVisit,btnHHInterview;
             TextView LVisitNo;
+            TextView HoldingNo;
+            TextView RoadNo;
+            TextView Address;
+            TextView OwnName;
+
 
             public MyViewHolder(View convertView) {
                 super(convertView);
@@ -369,6 +374,11 @@ public class Cluster_Structure_list extends Activity {
                 StructureNo = (TextView)convertView.findViewById(R.id.StructureNo);
                 SlNo = (TextView)convertView.findViewById(R.id.SlNo);
                 LVisitNo = (TextView)convertView.findViewById(R.id.LastVisitNo);
+                HoldingNo = (TextView)convertView.findViewById(R.id.txtHolding);
+                RoadNo = (TextView)convertView.findViewById(R.id.txtRoad);
+                OwnName = (TextView)convertView.findViewById(R.id.txtOwnerName);
+                Address = (TextView)convertView.findViewById(R.id.txtAddress);
+
 
                 btnVisit=convertView.findViewById(R.id.btnVisit);
                 btnHHInterview=convertView.findViewById(R.id.btnHHInterview);
@@ -391,6 +401,10 @@ public class Cluster_Structure_list extends Activity {
 
             holder.StructureNo.setText(data.getStructureNo());
             holder.SlNo.setText(""+(position+1)+".");
+//            holder.HoldingNo.setText(data.getHolding()+", ");
+//            holder.RoadNo.setText(data.getRoad()+", ");
+            holder.Address.setText(data.getHolding()+", "+data.getRoad()+", "+data.getAddress());
+            holder.OwnName.setText(data.getOwnerName());
             if(data.get_Visit_No().length()==0)
             {
                 holder.LVisitNo.setText("");
@@ -398,7 +412,6 @@ public class Cluster_Structure_list extends Activity {
             else{
                 holder.LVisitNo.setText(data.get_Visit_No());
             }
-
 
 
 
@@ -487,6 +500,8 @@ public class Cluster_Structure_list extends Activity {
             }
             else
             {
+                holder.btnVisit.setBackgroundResource(R.drawable.button_style_circle_line);
+                holder.btnVisit.setTextColor(getResources().getColor(R.color.theme_color));
                 holder.btnHHInterview.setVisibility(View.INVISIBLE);
 
             }

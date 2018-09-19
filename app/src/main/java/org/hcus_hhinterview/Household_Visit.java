@@ -677,8 +677,8 @@
              {
                     secU18Alive.setVisibility(View.VISIBLE);
                     lineU18Alive.setVisibility(View.VISIBLE);
-                    secU18YrsDie.setVisibility(View.GONE);
-                    lineU18YrsDie.setVisibility(View.GONE);
+                 secU18YrsDie.setVisibility(View.VISIBLE);
+                 lineU18YrsDie.setVisibility(View.VISIBLE);
                  secU18Death.setVisibility(View.GONE);
                  lineU18Death.setVisibility(View.GONE);
 //                 txtU18Death.setText("");
@@ -748,6 +748,7 @@
 //                 rdogrpOfferedStudy.clearCheck();
                  secNotOffered.setVisibility(View.GONE);
                  lineNotOffered.setVisibility(View.GONE);
+
 
 
 
@@ -1150,7 +1151,7 @@
            }
          else if(Integer.valueOf(txtU18Alive.getText().toString())>Integer.valueOf(txtHHMember.getText().toString()))
          {
-             Connection.MessageBox(Household_Visit.this, "Value should not be greater than total household member");
+             Connection.MessageBox(Household_Visit.this, "Number of under 18 years old alive should not be greater than total household member");
              txtU18Alive.requestFocus();
              return;
          }
