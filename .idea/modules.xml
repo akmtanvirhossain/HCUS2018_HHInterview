@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HCUS2018_HHInterview.iml" filepath="$PROJECT_DIR$/HCUS2018_HHInterview.iml" />
-      <module fileurl="file://F:\AndroidProjects\HCUS2018_HHInterview\.idea\HCUS2018_HHInterview.iml" filepath="F:\AndroidProjects\HCUS2018_HHInterview\.idea\HCUS2018_HHInterview.iml" />
+      <module fileurl="file://F:/AndroidProjects/HCUS2018_HHInterview/.idea/HCUS2018_HHInterview.iml" filepath="F:/AndroidProjects/HCUS2018_HHInterview/.idea/HCUS2018_HHInterview.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
