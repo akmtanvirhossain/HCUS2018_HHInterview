@@ -2349,9 +2349,10 @@
 
              @Override
              public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+                 if(!txtPAdmHosM.getText().toString().equals("0") & txtPAdmHosM.getText().toString().length()>0)
+                 {
                      dtpPDtAdmHos.setText("");
-
+                 }
 
              }
 

@@ -853,7 +853,7 @@
                     lineHospNameLabel.setVisibility(View.GONE);
                     secHospName.setVisibility(View.GONE);
                     lineHospName.setVisibility(View.GONE);
-                    spnHospName.setSelection(0);
+//                    spnHospName.setSelection(0);
                     secHospName_Oth.setVisibility(View.GONE);
                     lineHospName_Oth.setVisibility(View.GONE);
                     txtHospName_Oth.setText("");
@@ -1085,7 +1085,7 @@
                     lineHospNameLabel.setVisibility(View.GONE);
                     secHospName.setVisibility(View.GONE);
                     lineHospName.setVisibility(View.GONE);
-                    spnHospName.setSelection(0);
+//                    spnHospName.setSelection(0);
                     secHospName_Oth.setVisibility(View.GONE);
                     lineHospName_Oth.setVisibility(View.GONE);
                     txtHospName_Oth.setText("");
@@ -1414,7 +1414,7 @@
                   lineHospNameLabel.setVisibility(View.GONE);
                   secHospName.setVisibility(View.GONE);
                   lineHospName.setVisibility(View.GONE);
-                  spnHospName.setSelection(0);
+//                  spnHospName.setSelection(0);
                   secHospName_Oth.setVisibility(View.GONE);
                   lineHospName_Oth.setVisibility(View.GONE);
                   txtHospName_Oth.setText("");
@@ -3572,7 +3572,7 @@
 
                @Override
                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                   if(txtTAdmHosD.getText().toString().length()>0)
+                   if(!txtTAdmHosD.getText().toString().equals("0") & txtTAdmHosD.getText().toString().length()>0)
                    {
                        dtpTDtAdmHos.setText("");
                    }
@@ -3930,7 +3930,7 @@
                     lineHospNameLabel.setVisibility(View.GONE);
                     secHospName.setVisibility(View.GONE);
                     lineHospName.setVisibility(View.GONE);
-                    spnHospName.setSelection(0);
+//                    spnHospName.setSelection(0);
                     secHospName_Oth.setVisibility(View.GONE);
                     lineHospName_Oth.setVisibility(View.GONE);
                     txtHospName_Oth.setText("");
@@ -3955,7 +3955,7 @@
                     lineHospNameLabel.setVisibility(View.GONE);
                     secHospName.setVisibility(View.GONE);
                     lineHospName.setVisibility(View.GONE);
-                    spnHospName.setSelection(0);
+//                    spnHospName.setSelection(0);
                     secHospName_Oth.setVisibility(View.GONE);
                     lineHospName_Oth.setVisibility(View.GONE);
                     txtHospName_Oth.setText("");
@@ -3996,7 +3996,7 @@
                   lineHospNameLabel.setVisibility(View.GONE);
                   secHospName.setVisibility(View.GONE);
                   lineHospName.setVisibility(View.GONE);
-                  spnHospName.setSelection(0);
+//                  spnHospName.setSelection(0);
                   secHospName_Oth.setVisibility(View.GONE);
                   lineHospName_Oth.setVisibility(View.GONE);
                   txtHospName_Oth.setText("");
@@ -4051,54 +4051,54 @@
                     secHospName_Oth.setVisibility(View.GONE);
                     lineHospName_Oth.setVisibility(View.GONE);
                     txtHospName_Oth.setText("");
-                    secHaveRecordsLabel.setVisibility(View.GONE);
-                    lineHaveRecordsLabel.setVisibility(View.GONE);
+//                    secHaveRecordsLabel.setVisibility(View.GONE);
+//                    lineHaveRecordsLabel.setVisibility(View.GONE);
                  }
                  else if(spnData.equalsIgnoreCase("02"))
                  {
                     secHospName_Oth.setVisibility(View.GONE);
                     lineHospName_Oth.setVisibility(View.GONE);
                     txtHospName_Oth.setText("");
-                    secHaveRecordsLabel.setVisibility(View.GONE);
-                    lineHaveRecordsLabel.setVisibility(View.GONE);
+//                    secHaveRecordsLabel.setVisibility(View.GONE);
+//                    lineHaveRecordsLabel.setVisibility(View.GONE);
                  }
                  else if(spnData.equalsIgnoreCase("03"))
                  {
                     secHospName_Oth.setVisibility(View.GONE);
                     lineHospName_Oth.setVisibility(View.GONE);
                     txtHospName_Oth.setText("");
-                    secHaveRecordsLabel.setVisibility(View.GONE);
-                    lineHaveRecordsLabel.setVisibility(View.GONE);
+//                    secHaveRecordsLabel.setVisibility(View.GONE);
+//                    lineHaveRecordsLabel.setVisibility(View.GONE);
                  }
                  else if(spnData.equalsIgnoreCase("04"))
                  {
                     secHospName_Oth.setVisibility(View.GONE);
                     lineHospName_Oth.setVisibility(View.GONE);
                     txtHospName_Oth.setText("");
-                    secHaveRecordsLabel.setVisibility(View.GONE);
-                    lineHaveRecordsLabel.setVisibility(View.GONE);
+//                    secHaveRecordsLabel.setVisibility(View.GONE);
+//                    lineHaveRecordsLabel.setVisibility(View.GONE);
                  }
                  else if(spnData.equalsIgnoreCase("05"))
                  {
                     secHospName_Oth.setVisibility(View.GONE);
                     lineHospName_Oth.setVisibility(View.GONE);
                     txtHospName_Oth.setText("");
-                    secHaveRecordsLabel.setVisibility(View.GONE);
-                    lineHaveRecordsLabel.setVisibility(View.GONE);
+//                    secHaveRecordsLabel.setVisibility(View.GONE);
+//                    lineHaveRecordsLabel.setVisibility(View.GONE);
                  }
                  else if(spnData.equalsIgnoreCase("77"))
                  {
                     secHospName_Oth.setVisibility(View.VISIBLE);
                     lineHospName_Oth.setVisibility(View.VISIBLE);
-                    secHaveRecordsLabel.setVisibility(View.VISIBLE);
-                    lineHaveRecordsLabel.setVisibility(View.VISIBLE);
+//                    secHaveRecordsLabel.setVisibility(View.VISIBLE);
+//                    lineHaveRecordsLabel.setVisibility(View.VISIBLE);
                  }
                  else{
                       secHospName_Oth.setVisibility(View.GONE);
                       lineHospName_Oth.setVisibility(View.GONE);
                       txtHospName_Oth.setText("");
-                      secHaveRecordsLabel.setVisibility(View.GONE);
-                      lineHaveRecordsLabel.setVisibility(View.GONE);
+//                      secHaveRecordsLabel.setVisibility(View.GONE);
+//                      lineHaveRecordsLabel.setVisibility(View.GONE);
                  }
              }
              @Override
@@ -4438,6 +4438,7 @@
          lineWorstHour.setVisibility(View.GONE);
          secWorstHourDK.setVisibility(View.GONE);
          lineWorstHourDK.setVisibility(View.GONE);
+
          secDaysOfUnable.setVisibility(View.GONE);
          lineDaysOfUnable.setVisibility(View.GONE);
          secDaysOfUnableDK.setVisibility(View.GONE);
@@ -4906,7 +4907,7 @@
                      return;
 
            }
-         else if(Integer.valueOf(txtDaysOfSymp.getText().toString().length()==0 ? "1" : txtDaysOfSymp.getText().toString()) < 1 || Integer.valueOf(txtDaysOfSymp.getText().toString().length()==0 ? "99" : txtDaysOfSymp.getText().toString()) > 99)
+         else if(secDaysOfSymp.isShown()&Integer.valueOf(txtDaysOfSymp.getText().toString().length()==0 ? "1" : txtDaysOfSymp.getText().toString()) < 1 || Integer.valueOf(txtDaysOfSymp.getText().toString().length()==0 ? "99" : txtDaysOfSymp.getText().toString()) > 99)
            {
              Connection.MessageBox(TyphoidCase.this, "Value should be between 1 and 99(শিশুটি কত দিন জ্বরে ভুগেছিল? (How many days did the person have symptoms of fever?)).");
              txtDaysOfSymp.requestFocus(); 
@@ -4918,7 +4919,7 @@
              txtWorstHour.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtWorstHour.getText().toString().length()==0 ? "1" : txtWorstHour.getText().toString()) < 1 || Integer.valueOf(txtWorstHour.getText().toString().length()==0 ? "99" : txtWorstHour.getText().toString()) > 99)
+         else if(secWorstHour.isShown()&Integer.valueOf(txtWorstHour.getText().toString().length()==0 ? "1" : txtWorstHour.getText().toString()) < 1 || Integer.valueOf(txtWorstHour.getText().toString().length()==0 ? "99" : txtWorstHour.getText().toString()) > 99)
            {
              Connection.MessageBox(TyphoidCase.this, "Value should be between 1 and 99(যেদিন সবচেয়ে বেশি জর ছিল সেদিন কত ঘণ্টা শিশুটি বিছানা থেকে উঠতে পারেনি? (During the worst day of fever, how many hours did the person with fever spend in bed?)).");
              txtWorstHour.requestFocus(); 
@@ -4930,7 +4931,7 @@
              txtDaysOfUnable.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtDaysOfUnable.getText().toString().length()==0 ? "1" : txtDaysOfUnable.getText().toString()) < 1 || Integer.valueOf(txtDaysOfUnable.getText().toString().length()==0 ? "99" : txtDaysOfUnable.getText().toString()) > 99)
+         else if(secDaysOfUnable.isShown()&Integer.valueOf(txtDaysOfUnable.getText().toString().length()==0 ? "1" : txtDaysOfUnable.getText().toString()) < 1 || Integer.valueOf(txtDaysOfUnable.getText().toString().length()==0 ? "99" : txtDaysOfUnable.getText().toString()) > 99)
            {
              Connection.MessageBox(TyphoidCase.this, "Value should be between 1 and 99(এই অসুস্থতার সময় শিশুটি কত দিন স্বাভাবিক কাজকর্ম করতে পারেনি? (During this febrile illness, for how many days was the person unable to conduct their usual activities?)).");
              txtDaysOfUnable.requestFocus(); 
@@ -4997,20 +4998,20 @@
                      return;
 
            }
-         else if(Integer.valueOf(txtTAdmHosD.getText().toString().length()==0 ? "1" : txtTAdmHosD.getText().toString()) < 1 || Integer.valueOf(txtTAdmHosD.getText().toString().length()==0 ? "99" : txtTAdmHosD.getText().toString()) > 99)
+         else if( secTAdmHosD.isShown()&Integer.valueOf(txtTAdmHosD.getText().toString().length()==0 ? "1" : txtTAdmHosD.getText().toString()) < 1 || Integer.valueOf(txtTAdmHosD.getText().toString().length()==0 ? "99" : txtTAdmHosD.getText().toString()) > 99)
            {
              Connection.MessageBox(TyphoidCase.this, "Value should be between 1 and 99(যদি ভর্তির তারিখ জানা না থাকে,  কত দিন আগে (How day ago)).");
              txtTAdmHosD.requestFocus(); 
              return;	
            }
-         else if(txtTDurIlBeHos.getText().toString().length()==0 & secTDurIlBeHos.isShown())
+         else if(txtTDurIlBeHos.getText().toString().length()==0 & !chkTDurIlBeHosDK.isChecked() & secTDurIlBeHos.isShown())
            {
                      Connection.MessageBox(TyphoidCase.this, "Required field:  হাসপাতালে ভর্তির আগে শিশুটি কতদিন অসুস্থ ছিল? (যদি জানা না থাকে 98 বসান) (For how many days did the child appear ill before he/she was hospitalized?).");
                      txtTDurIlBeHos.requestFocus();
                      return;
 
            }
-         else if(Integer.valueOf(txtTDurIlBeHos.getText().toString().length()==0 ? "1" : txtTDurIlBeHos.getText().toString()) < 1 || Integer.valueOf(txtTDurIlBeHos.getText().toString().length()==0 ? "98" : txtTDurIlBeHos.getText().toString()) > 98)
+         else if(secTDurIlBeHos.isShown()& Integer.valueOf(txtTDurIlBeHos.getText().toString().length()==0 ? "1" : txtTDurIlBeHos.getText().toString()) < 1 || Integer.valueOf(txtTDurIlBeHos.getText().toString().length()==0 ? "98" : txtTDurIlBeHos.getText().toString()) > 98)
            {
              Connection.MessageBox(TyphoidCase.this, "Value should be between 1 and 98( হাসপাতালে ভর্তির আগে শিশুটি কতদিন অসুস্থ ছিল? (যদি জানা না থাকে 98 বসান) (For how many days did the child appear ill before he/she was hospitalized?)).");
              txtTDurIlBeHos.requestFocus(); 
@@ -5041,7 +5042,7 @@
              txtTDurReco.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtTDurReco.getText().toString().length()==0 ? "1" : txtTDurReco.getText().toString()) < 1 || Integer.valueOf(txtTDurReco.getText().toString().length()==0 ? "98" : txtTDurReco.getText().toString()) > 98)
+         else if(secTDurReco.isShown() & Integer.valueOf(txtTDurReco.getText().toString().length()==0 ? "1" : txtTDurReco.getText().toString()) < 1 || Integer.valueOf(txtTDurReco.getText().toString().length()==0 ? "98" : txtTDurReco.getText().toString()) > 98)
            {
              Connection.MessageBox(TyphoidCase.this, "Value should be between 1 and 98(শিশুটি সুস্থ হতে কতদিন লেগেছিল? (যদি জানা না থাকে 98 বসান) (How many days were required before the child recovered?)).");
              txtTDurReco.requestFocus(); 
@@ -5113,7 +5114,7 @@
                 }
 
            }
-         else if(Integer.valueOf(txtDaysOfHosp.getText().toString().length()==0 ? "1" : txtDaysOfHosp.getText().toString()) < 1 || Integer.valueOf(txtDaysOfHosp.getText().toString().length()==0 ? "99" : txtDaysOfHosp.getText().toString()) > 99)
+         else if(secDaysOfHosp.isShown() & Integer.valueOf(txtDaysOfHosp.getText().toString().length()==0 ? "1" : txtDaysOfHosp.getText().toString()) < 1 || Integer.valueOf(txtDaysOfHosp.getText().toString().length()==0 ? "99" : txtDaysOfHosp.getText().toString()) > 99)
            {
              Connection.MessageBox(TyphoidCase.this, "Value should be between 1 and 99(শিশুটি কত দিন হাসপাতালে ভর্তি ছিল? (How many days was he/she hospitalized?)).");
              txtDaysOfHosp.requestFocus(); 

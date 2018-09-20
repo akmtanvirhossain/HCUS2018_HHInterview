@@ -3074,7 +3074,11 @@
 
              @Override
              public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-dtpMDtHos.setText("");
+if(!txtMHosM.getText().toString().equals("0") & txtMHosM.getText().toString().length()>0)
+{
+    dtpMDtHos.setText("");
+}
+
              }
 
              @Override
