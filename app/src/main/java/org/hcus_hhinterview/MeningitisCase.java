@@ -1875,8 +1875,8 @@
                     lineMHC_TrHeal.setVisibility(View.VISIBLE);
                     secMHC_SpiHeal.setVisibility(View.VISIBLE);
                     lineMHC_SpiHeal.setVisibility(View.VISIBLE);
-                    secMHC_Oth.setVisibility(View.VISIBLE);
-                    lineMHC_Oth.setVisibility(View.VISIBLE);
+//                    secMHC_Oth.setVisibility(View.VISIBLE);
+//                    lineMHC_Oth.setVisibility(View.VISIBLE);
              }
              else{
                  secMHCarTypLabel.setVisibility(View.GONE);
@@ -2107,21 +2107,21 @@
                      secMHC_Hosp_a1.setVisibility(View.VISIBLE);
                      lineMHC_Hosp_a1.setVisibility(View.VISIBLE);
                      spnMHC_Hosp_a1.setSelection(0);
-                     secMHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
-                     lineMHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
-                     txtMHC_Hosp_a1_Oth.setText("");
+//                     secMHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
+//                     lineMHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
+//                     txtMHC_Hosp_a1_Oth.setText("");
                      secMHC_Hosp_a2.setVisibility(View.VISIBLE);
                      lineMHC_Hosp_a2.setVisibility(View.VISIBLE);
                      spnMHC_Hosp_a2.setSelection(0);
-                     secMHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
-                     lineMHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
-                     txtMHC_Hosp_a2_Oth.setText("");
+//                     secMHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
+//                     lineMHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
+//                     txtMHC_Hosp_a2_Oth.setText("");
                      secMHC_Hosp_a3.setVisibility(View.VISIBLE);
                      lineMHC_Hosp_a3.setVisibility(View.VISIBLE);
                      spnMHC_Hosp_a3.setSelection(0);
-                     secMHC_Hosp_a3_Oth.setVisibility(View.VISIBLE);
-                     lineMHC_Hosp_a3_Oth.setVisibility(View.VISIBLE);
-                     txtMHC_Hosp_a3_Oth.setText("");
+//                     secMHC_Hosp_a3_Oth.setVisibility(View.VISIBLE);
+//                     lineMHC_Hosp_a3_Oth.setVisibility(View.VISIBLE);
+//                     txtMHC_Hosp_a3_Oth.setText("");
                      secMDtHos.setVisibility(View.VISIBLE);
                      lineMDtHos.setVisibility(View.VISIBLE);
                      dtpMDtHos.setText("");
@@ -2133,8 +2133,8 @@
                      txtMDurIlBeHos.setText("");
                      secMChildIlDr.setVisibility(View.VISIBLE);
                      lineMChildIlDr.setVisibility(View.VISIBLE);
-                     secMChildIlDrOth.setVisibility(View.VISIBLE);
-                     lineMChildIlDrOth.setVisibility(View.VISIBLE);
+//                     secMChildIlDrOth.setVisibility(View.VISIBLE);
+//                     lineMChildIlDrOth.setVisibility(View.VISIBLE);
 
 
                  }
@@ -3813,19 +3813,22 @@ dtpMDtHos.setText("");
 //           Connection.MessageBox(MeningitisCase.this, "Required field: 2..");
 //           spnMHC_Hosp_a2.requestFocus();
 //           return;
-//       } else if (txtMHC_Hosp_a2_Oth.getText().toString().length() == 0 & secMHC_Hosp_a2_Oth.isShown()) {
-//           Connection.MessageBox(MeningitisCase.this, "Required field: Name of the hospital-2.");
-//           txtMHC_Hosp_a2_Oth.requestFocus();
-//           return;
-//       } else if (spnMHC_Hosp_a3.getSelectedItemPosition() == 0 & secMHC_Hosp_a3.isShown()) {
+//       }
+ else if (txtMHC_Hosp_a2_Oth.getText().toString().length() == 0 & secMHC_Hosp_a2_Oth.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: Name of the hospital-2.");
+           txtMHC_Hosp_a2_Oth.requestFocus();
+           return;
+       }
+// else if (spnMHC_Hosp_a3.getSelectedItemPosition() == 0 & secMHC_Hosp_a3.isShown()) {
 //           Connection.MessageBox(MeningitisCase.this, "Required field: 3..");
 //           spnMHC_Hosp_a3.requestFocus();
 //           return;
-//       } else if (txtMHC_Hosp_a3_Oth.getText().toString().length() == 0 & secMHC_Hosp_a3_Oth.isShown()) {
-//           Connection.MessageBox(MeningitisCase.this, "Required field: Name of the hospital-3.");
-//           txtMHC_Hosp_a3_Oth.requestFocus();
-//           return;
 //       }
+ else if (txtMHC_Hosp_a3_Oth.getText().toString().length() == 0 & secMHC_Hosp_a3_Oth.isShown()) {
+           Connection.MessageBox(MeningitisCase.this, "Required field: Name of the hospital-3.");
+           txtMHC_Hosp_a3_Oth.requestFocus();
+           return;
+       }
 //       DV = Global.DateValidate(dtpMDtHos.getText().toString());
 //       if (DV.length() != 0 & secMDtHos.isShown()) {
 //           if (txtMHosM.getText().toString().length() == 0) {
@@ -3841,11 +3844,13 @@ dtpMDtHos.setText("");
                txtMHosM.requestFocus();
                return;
 
-           } else if (Integer.valueOf(txtMHosM.getText().toString().length() == 0 ? "01" : txtMHosM.getText().toString()) < 01 || Integer.valueOf(txtMHosM.getText().toString().length() == 0 ? "18" : txtMHosM.getText().toString()) > 18) {
+           }
+           else if (Integer.valueOf(txtMHosM.getText().toString().length() == 0 ? "01" : txtMHosM.getText().toString()) < 01 || Integer.valueOf(txtMHosM.getText().toString().length() == 0 ? "18" : txtMHosM.getText().toString()) > 18) {
                Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 18(যদি ভর্তির তারিখ জানা না থাকে,  কত মাস আগে  (How much ago)).");
                txtMHosM.requestFocus();
                return;
-           } else if (txtMDurIlBeHos.getText().toString().length() == 0 & secMDurIlBeHos.isShown()) {
+           }
+           else if (txtMDurIlBeHos.getText().toString().length() == 0 & secMDurIlBeHos.isShown()) {
                Connection.MessageBox(MeningitisCase.this, "Required field: হাসপাতালে ভর্তির আগে শিশুটি কতদিন অসুস্থ ছিল? (যদি জানা না থাকে 98 বসান) (For how many days did the child appear ill before he/she was hospitalized?).");
                txtMDurIlBeHos.requestFocus();
                return;
@@ -3887,19 +3892,22 @@ dtpMDtHos.setText("");
 //               Connection.MessageBox(MeningitisCase.this, "Required field: 2..");
 //               spnMInReco2.requestFocus();
 //               return;
-//           } else if (txtMInRecoOth2.getText().toString().length() == 0 & secMInRecoOth2.isShown()) {
-//               Connection.MessageBox(MeningitisCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
-//               txtMInRecoOth2.requestFocus();
-//               return;
-//           } else if (spnMInReco3.getSelectedItemPosition() == 0 & secMInReco3.isShown()) {
+//           }
+ else if (txtMInRecoOth2.getText().toString().length() == 0 & secMInRecoOth2.isShown()) {
+               Connection.MessageBox(MeningitisCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
+               txtMInRecoOth2.requestFocus();
+               return;
+           }
+// else if (spnMInReco3.getSelectedItemPosition() == 0 & secMInReco3.isShown()) {
 //               Connection.MessageBox(MeningitisCase.this, "Required field: 3..");
 //               spnMInReco3.requestFocus();
 //               return;
-//           } else if (txtMInRecoOth3.getText().toString().length() == 0 & secMInRecoOth3.isShown()) {
-//               Connection.MessageBox(MeningitisCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
-//               txtMInRecoOth3.requestFocus();
-//               return;
 //           }
+ else if (txtMInRecoOth3.getText().toString().length() == 0 & secMInRecoOth3.isShown()) {
+               Connection.MessageBox(MeningitisCase.this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
+               txtMInRecoOth3.requestFocus();
+               return;
+           }
 // else if (txtAboSeriIlOnset.getText().toString().length() == 0 & secAboSeriIlOnset.isShown()) {
 //               Connection.MessageBox(MeningitisCase.this, "Required field: মন্তব্যঃ মেনিনজাইটিস  (Remarks: Meningitis).");
 //               txtAboSeriIlOnset.requestFocus();

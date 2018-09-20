@@ -3247,24 +3247,24 @@
 //             spnPHosNam2.requestFocus();
 //             return;
 //           }
-//         else if(txtPHosNamOth2.getText().toString().length()==0 & secPHosNamOth2.isShown())
-//           {
-//             Connection.MessageBox(PneumoniaCase.this, "Required field: Name of the other hospital-2.");
-//             txtPHosNamOth2.requestFocus();
-//             return;
-//           }
+         else if(txtPHosNamOth2.getText().toString().length()==0 & secPHosNamOth2.isShown())
+           {
+             Connection.MessageBox(PneumoniaCase.this, "Required field: Name of the other hospital-2.");
+             txtPHosNamOth2.requestFocus();
+             return;
+           }
 //         else if(spnPHosNam3.getSelectedItemPosition()==0  & secPHosNam3.isShown())
 //           {
 //             Connection.MessageBox(PneumoniaCase.this, "Required field: 3..");
 //             spnPHosNam3.requestFocus();
 //             return;
 //           }
-//         else if(txtPHosNamOth3.getText().toString().length()==0 & secPHosNamOth3.isShown())
-//           {
-//             Connection.MessageBox(PneumoniaCase.this, "Required field: Name of the other hospital-3.");
-//             txtPHosNamOth3.requestFocus();
-//             return;
-//           }
+         else if(txtPHosNamOth3.getText().toString().length()==0 & secPHosNamOth3.isShown())
+           {
+             Connection.MessageBox(PneumoniaCase.this, "Required field: Name of the other hospital-3.");
+             txtPHosNamOth3.requestFocus();
+             return;
+           }
 
 //         else if(DV.length()!=0 & txtPAdmHosM.getText().toString().length()==0 & secPDtAdmHos.isShown())
 //           {
