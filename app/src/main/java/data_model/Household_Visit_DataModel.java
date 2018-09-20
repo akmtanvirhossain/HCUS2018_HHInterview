@@ -5,8 +5,8 @@ import android.content.Context;
  import Common.Connection;
  import java.util.ArrayList;
  import java.util.List;
-
-public class  Household_Visit_DataModel{
+ import java.util.Date;
+ public class Household_Visit_DataModel{
 
         private String _UNCode = "";
         public String getUNCode(){
@@ -58,7 +58,9 @@ public class  Household_Visit_DataModel{
               _OutcomeOth = newValue;
          }
         private int _HHMember = 0;
-        public int getHHMember(){ return _HHMember; }
+        public int getHHMember(){
+              return _HHMember;
+         }
         public void setHHMember(int newValue){
               _HHMember = newValue;
          }
@@ -89,6 +91,34 @@ public class  Household_Visit_DataModel{
          }
         public void setU18Death(int newValue){
               _U18Death = newValue;
+         }
+        private int _U5Yrs = 0;
+        public int getU5Yrs(){
+              return _U5Yrs;
+         }
+        public void setU5Yrs(int newValue){
+              _U5Yrs = newValue;
+         }
+        private int _U5YrsAlive = 0;
+        public int getU5YrsAlive(){
+              return _U5YrsAlive;
+         }
+        public void setU5YrsAlive(int newValue){
+              _U5YrsAlive = newValue;
+         }
+        private int _U5YrsDie = 0;
+        public int getU5YrsDie(){
+              return _U5YrsDie;
+         }
+        public void setU5YrsDie(int newValue){
+              _U5YrsDie = newValue;
+         }
+        private int _U5YrsDeath = 0;
+        public int getU5YrsDeath(){
+              return _U5YrsDeath;
+         }
+        public void setU5YrsDeath(int newValue){
+              _U5YrsDeath = newValue;
          }
         private int _OfferedStudy = 0;
         public int getOfferedStudy(){
@@ -195,7 +225,7 @@ public class  Household_Visit_DataModel{
             String SQL = "";
             try
               {
-                 SQL = "Insert into "+ TableName +" (UNCode,StructureNo,HouseholdSl,VisitNo,HHVisited,Outcome,OutcomeOth,HHMember,U18Yrs,U18Alive,U18YrsDie,U18Death,OfferedStudy,NotOffered,NotOfferedOth,Consent,Remarks,DataCollDate,StartTime,EndTime,DeviceID,EntryUser,Lat,Lon,EnDt,Upload,modifyDate)Values('"+ _UNCode +"', '"+ _StructureNo +"', '"+ _HouseholdSl +"', '"+ _VisitNo +"', '"+ _HHVisited +"', '"+ _Outcome +"', '"+ _OutcomeOth +"', '"+ _HHMember +"', '"+ _U18Yrs +"', '"+ _U18Alive +"', '"+ _U18YrsDie +"', '"+ _U18Death +"', '"+ _OfferedStudy +"', '"+ _NotOffered +"', '"+ _NotOfferedOth +"', '"+ _Consent +"', '"+ _Remarks +"', '"+ _DataCollDate +"', '"+ _StartTime +"', '"+ _EndTime +"', '"+ _DeviceID +"', '"+ _EntryUser +"', '"+ _Lat +"', '"+ _Lon +"', '"+ _EnDt +"', '"+ _Upload +"', '"+ _modifyDate +"')";
+                 SQL = "Insert into "+ TableName +" (UNCode,StructureNo,HouseholdSl,VisitNo,HHVisited,Outcome,OutcomeOth,HHMember,U18Yrs,U18Alive,U18YrsDie,U18Death,U5Yrs,U5YrsAlive,U5YrsDie,U5YrsDeath,OfferedStudy,NotOffered,NotOfferedOth,Consent,Remarks,DataCollDate,StartTime,EndTime,DeviceID,EntryUser,Lat,Lon,EnDt,Upload,modifyDate)Values('"+ _UNCode +"', '"+ _StructureNo +"', '"+ _HouseholdSl +"', '"+ _VisitNo +"', '"+ _HHVisited +"', '"+ _Outcome +"', '"+ _OutcomeOth +"', '"+ _HHMember +"', '"+ _U18Yrs +"', '"+ _U18Alive +"', '"+ _U18YrsDie +"', '"+ _U18Death +"', '"+ _U5Yrs +"', '"+ _U5YrsAlive +"', '"+ _U5YrsDie +"', '"+ _U5YrsDeath +"', '"+ _OfferedStudy +"', '"+ _NotOffered +"', '"+ _NotOfferedOth +"', '"+ _Consent +"', '"+ _Remarks +"', '"+ _DataCollDate +"', '"+ _StartTime +"', '"+ _EndTime +"', '"+ _DeviceID +"', '"+ _EntryUser +"', '"+ _Lat +"', '"+ _Lon +"', '"+ _EnDt +"', '"+ _Upload +"', '"+ _modifyDate +"')";
                  response = C.SaveData(SQL);
                  C.close();
               }
@@ -213,7 +243,7 @@ public class  Household_Visit_DataModel{
             String SQL = "";
             try
               {
-                 SQL = "Update "+ TableName +" Set Upload='2',modifyDate='" + _modifyDate + "' ,UNCode = '"+ _UNCode +"',StructureNo = '"+ _StructureNo +"',HouseholdSl = '"+ _HouseholdSl +"',VisitNo = '"+ _VisitNo +"',HHVisited = '"+ _HHVisited +"',Outcome = '"+ _Outcome +"',OutcomeOth = '"+ _OutcomeOth +"',HHMember = '"+ _HHMember +"',U18Yrs = '"+ _U18Yrs +"',U18Alive = '"+ _U18Alive +"',U18YrsDie = '"+ _U18YrsDie +"',U18Death = '"+ _U18Death +"',OfferedStudy = '"+ _OfferedStudy +"',NotOffered = '"+ _NotOffered +"',NotOfferedOth = '"+ _NotOfferedOth +"',Consent = '"+ _Consent +"',Remarks = '"+ _Remarks +"',DataCollDate = '"+ _DataCollDate +"'  Where UNCode='"+ _UNCode +"' and StructureNo='"+ _StructureNo +"' and HouseholdSl='"+ _HouseholdSl +"' and VisitNo='"+ _VisitNo +"'";
+                 SQL = "Update "+ TableName +" Set Upload='2',modifyDate='" + _modifyDate + "' ,UNCode = '"+ _UNCode +"',StructureNo = '"+ _StructureNo +"',HouseholdSl = '"+ _HouseholdSl +"',VisitNo = '"+ _VisitNo +"',HHVisited = '"+ _HHVisited +"',Outcome = '"+ _Outcome +"',OutcomeOth = '"+ _OutcomeOth +"',HHMember = '"+ _HHMember +"',U18Yrs = '"+ _U18Yrs +"',U18Alive = '"+ _U18Alive +"',U18YrsDie = '"+ _U18YrsDie +"',U18Death = '"+ _U18Death +"',U5Yrs = '"+ _U5Yrs +"',U5YrsAlive = '"+ _U5YrsAlive +"',U5YrsDie = '"+ _U5YrsDie +"',U5YrsDeath = '"+ _U5YrsDeath +"',OfferedStudy = '"+ _OfferedStudy +"',NotOffered = '"+ _NotOffered +"',NotOfferedOth = '"+ _NotOfferedOth +"',Consent = '"+ _Consent +"',Remarks = '"+ _Remarks +"',DataCollDate = '"+ _DataCollDate +"'  Where UNCode='"+ _UNCode +"' and StructureNo='"+ _StructureNo +"' and HouseholdSl='"+ _HouseholdSl +"' and VisitNo='"+ _VisitNo +"'";
                  response = C.SaveData(SQL);
                  C.close();
               }
@@ -248,6 +278,10 @@ public class  Household_Visit_DataModel{
                 d._U18Alive = Integer.valueOf(cur.getString(cur.getColumnIndex("U18Alive")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("U18Alive")));
                 d._U18YrsDie = Integer.valueOf(cur.getString(cur.getColumnIndex("U18YrsDie")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("U18YrsDie")));
                 d._U18Death = Integer.valueOf(cur.getString(cur.getColumnIndex("U18Death")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("U18Death")));
+                d._U5Yrs = Integer.valueOf(cur.getString(cur.getColumnIndex("U5Yrs")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("U5Yrs")));
+                d._U5YrsAlive = Integer.valueOf(cur.getString(cur.getColumnIndex("U5YrsAlive")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("U5YrsAlive")));
+                d._U5YrsDie = Integer.valueOf(cur.getString(cur.getColumnIndex("U5YrsDie")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("U5YrsDie")));
+                d._U5YrsDeath = Integer.valueOf(cur.getString(cur.getColumnIndex("U5YrsDeath")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("U5YrsDeath")));
                 d._OfferedStudy = Integer.valueOf(cur.getString(cur.getColumnIndex("OfferedStudy")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("OfferedStudy")));
                 d._NotOffered = Integer.valueOf(cur.getString(cur.getColumnIndex("NotOffered")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("NotOffered")));
                 d._NotOfferedOth = cur.getString(cur.getColumnIndex("NotOfferedOth"));

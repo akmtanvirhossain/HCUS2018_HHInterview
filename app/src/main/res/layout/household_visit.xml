@@ -125,6 +125,40 @@
          <EditText android:id="@+id/txtU18Death" android:maxLength="1" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/lineU18Death" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+
+        <!--************************************************************* -->
+        <LinearLayout android:id="@+id/secU5Yrs" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+            <TextView android:id="@+id/lblU5Yrs" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+            <TextView android:id="@+id/VlblU5Yrs" android:text="Does this household has any member under 5 Years" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+            <RadioGroup android:id="@+id/rdogrpU5Yrs" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">
+                <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoU5Yrs1" android:text="Yes" android:gravity="top|bottom" />
+                <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoU5Yrs2" android:text="No" android:gravity="top|bottom"/>
+            </RadioGroup>
+        </LinearLayout>
+        <View android:id="@+id/lineU5Yrs" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+        <LinearLayout android:id="@+id/secU5YrsAlive" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+            <TextView android:id="@+id/lblU5YrsAlive" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+            <TextView android:id="@+id/VlblU5YrsAlive" android:text="Number of under 5 years old alive" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+            <EditText android:id="@+id/txtU5YrsAlive" android:maxLength="2" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+        </LinearLayout>
+        <View android:id="@+id/lineU5YrsAlive" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+        <LinearLayout android:id="@+id/secU5YrsDie" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+            <TextView android:id="@+id/lblU5YrsDie" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+            <TextView android:id="@+id/VlblU5YrsDie" android:text="Did any under 5 years old household member die in this household" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+            <RadioGroup android:id="@+id/rdogrpU5YrsDie" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">
+                <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoU5YrsDie1" android:text="Yes" android:gravity="top|bottom" />
+                <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoU5YrsDie2" android:text="No" android:gravity="top|bottom"/>
+            </RadioGroup>
+        </LinearLayout>
+        <View android:id="@+id/lineU5YrsDie" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+        <LinearLayout android:id="@+id/secU5YrsDeath" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+            <TextView android:id="@+id/lblU5YrsDeath" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+            <TextView android:id="@+id/VlblU5YrsDeath" android:text="Number of 5 years deaths in last 12 months" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+            <EditText android:id="@+id/txtU5YrsDeath" android:maxLength="2" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+        </LinearLayout>
+        <View android:id="@+id/lineU5YrsDeath" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+        <!-- ******************************************************************-->
+
     <LinearLayout android:id="@+id/secOfferedStudy" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblOfferedStudy" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <TextView android:id="@+id/VlblOfferedStudy" android:text="12. Offered Study" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />

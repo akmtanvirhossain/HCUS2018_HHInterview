@@ -175,6 +175,31 @@
      Button btnAddVisit;
      Button cmdSave;
 
+     //**********************************************
+     LinearLayout secU5Yrs;
+     View lineU5Yrs;
+     TextView VlblU5Yrs;
+     RadioGroup rdogrpU5Yrs;
+
+     RadioButton rdoU5Yrs1;
+     RadioButton rdoU5Yrs2;
+     LinearLayout secU5YrsAlive;
+     View lineU5YrsAlive;
+     TextView VlblU5YrsAlive;
+     EditText txtU5YrsAlive;
+     LinearLayout secU5YrsDie;
+     View lineU5YrsDie;
+     TextView VlblU5YrsDie;
+     RadioGroup rdogrpU5YrsDie;
+
+     RadioButton rdoU5YrsDie1;
+     RadioButton rdoU5YrsDie2;
+     LinearLayout secU5YrsDeath;
+     View lineU5YrsDeath;
+     TextView VlblU5YrsDeath;
+     EditText txtU5YrsDeath;
+     //**********************************************
+
     static String TableName;
 
     static String STARTTIME = "";
@@ -938,6 +963,70 @@
          });
 
 
+         //*************************************
+         secU5Yrs=(LinearLayout)findViewById(R.id.secU5Yrs);
+         lineU5Yrs=(View)findViewById(R.id.lineU5Yrs);
+         VlblU5Yrs = (TextView) findViewById(R.id.VlblU5Yrs);
+         rdogrpU5Yrs = (RadioGroup) findViewById(R.id.rdogrpU5Yrs);
+
+         rdoU5Yrs1 = (RadioButton) findViewById(R.id.rdoU5Yrs1);
+         rdoU5Yrs2 = (RadioButton) findViewById(R.id.rdoU5Yrs2);
+         rdogrpU5Yrs.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
+             @Override
+             public void onCheckedChanged(RadioGroup radioGroup,int radioButtonID) {
+                 String rbData = "";
+                 RadioButton rb;
+                 String[] d_rdogrpU5Yrs = new String[] {"1","2"};
+                 for (int i = 0; i < rdogrpU5Yrs.getChildCount(); i++)
+                 {
+                     rb = (RadioButton)rdogrpU5Yrs.getChildAt(i);
+                     if (rb.isChecked()) rbData = d_rdogrpU5Yrs[i];
+                 }
+
+                 if(rbData.equalsIgnoreCase("2"))
+                 {
+                     secU5YrsAlive.setVisibility(View.GONE);
+                     lineU5YrsAlive.setVisibility(View.GONE);
+                     txtU5YrsAlive.setText("");
+                     secU5YrsDie.setVisibility(View.GONE);
+                     lineU5YrsDie.setVisibility(View.GONE);
+                     rdogrpU5YrsDie.clearCheck();
+                     secU5YrsDeath.setVisibility(View.GONE);
+                     lineU5YrsDeath.setVisibility(View.GONE);
+                     txtU5YrsDeath.setText("");
+                 }
+                 else
+                 {
+                     secU5YrsAlive.setVisibility(View.VISIBLE);
+                     lineU5YrsAlive.setVisibility(View.VISIBLE);
+                     secU5YrsDie.setVisibility(View.VISIBLE);
+                     lineU5YrsDie.setVisibility(View.VISIBLE);
+                     secU5YrsDeath.setVisibility(View.VISIBLE);
+                     lineU5YrsDeath.setVisibility(View.VISIBLE);
+                 }
+             }
+             public void onNothingSelected(AdapterView<?> adapterView) {
+                 return;
+             }
+         });
+         secU5YrsAlive=(LinearLayout)findViewById(R.id.secU5YrsAlive);
+         lineU5YrsAlive=(View)findViewById(R.id.lineU5YrsAlive);
+         VlblU5YrsAlive=(TextView) findViewById(R.id.VlblU5YrsAlive);
+         txtU5YrsAlive=(EditText) findViewById(R.id.txtU5YrsAlive);
+         secU5YrsDie=(LinearLayout)findViewById(R.id.secU5YrsDie);
+         lineU5YrsDie=(View)findViewById(R.id.lineU5YrsDie);
+         VlblU5YrsDie = (TextView) findViewById(R.id.VlblU5YrsDie);
+         rdogrpU5YrsDie = (RadioGroup) findViewById(R.id.rdogrpU5YrsDie);
+
+         rdoU5YrsDie1 = (RadioButton) findViewById(R.id.rdoU5YrsDie1);
+         rdoU5YrsDie2 = (RadioButton) findViewById(R.id.rdoU5YrsDie2);
+         secU5YrsDeath=(LinearLayout)findViewById(R.id.secU5YrsDeath);
+         lineU5YrsDeath=(View)findViewById(R.id.lineU5YrsDeath);
+         VlblU5YrsDeath=(TextView) findViewById(R.id.VlblU5YrsDeath);
+         txtU5YrsDeath=(EditText) findViewById(R.id.txtU5YrsDeath);
+         //*************************************
+
+
 
          //Hide all skip variables
          secOutcomeOth.setVisibility(View.GONE);
@@ -1041,6 +1130,9 @@
 //         sec.setVisibility(View.GONE);
 //         line.setVisibility(View.GONE);
          btnAddVisit.setVisibility(View.GONE);
+
+
+
 
          DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
 
@@ -1174,7 +1266,47 @@
              txtU18Death.requestFocus(); 
              return;	
            }
-         
+
+           //**********************************************
+         else if(!rdoU5Yrs1.isChecked() & !rdoU5Yrs2.isChecked() & secU5Yrs.isShown())
+         {
+             Connection.MessageBox(Household_Visit.this, "Select anyone options from (Does this household has any member under 5 Years ).");
+             rdoU5Yrs1.requestFocus();
+             return;
+         }
+         else if(txtU5YrsAlive.getText().toString().length()==0 & secU5YrsAlive.isShown())
+         {
+             Connection.MessageBox(Household_Visit.this, "Required field: Number of under 5 years old alive.");
+             txtU5YrsAlive.requestFocus();
+             return;
+         }
+         else if(Integer.valueOf(txtU5YrsAlive.getText().toString().length()==0 ? "1" : txtU5YrsAlive.getText().toString()) < 1 || Integer.valueOf(txtU5YrsAlive.getText().toString().length()==0 ? "99" : txtU5YrsAlive.getText().toString()) > 99)
+         {
+             Connection.MessageBox(Household_Visit.this, "Value should be between 1 and 99(Number of under 5 years old alive).");
+             txtU5YrsAlive.requestFocus();
+             return;
+         }
+
+         else if(!rdoU5YrsDie1.isChecked() & !rdoU5YrsDie2.isChecked() & secU5YrsDie.isShown())
+         {
+             Connection.MessageBox(Household_Visit.this, "Select anyone options from (Did any under 5 years old household member die in this household).");
+             rdoU5YrsDie1.requestFocus();
+             return;
+         }
+         else if(txtU5YrsDeath.getText().toString().length()==0 & secU5YrsDeath.isShown())
+         {
+             Connection.MessageBox(Household_Visit.this, "Required field: Number of 5 years deaths in last 12 months.");
+             txtU5YrsDeath.requestFocus();
+             return;
+         }
+         else if(Integer.valueOf(txtU5YrsDeath.getText().toString().length()==0 ? "1" : txtU5YrsDeath.getText().toString()) < 1 || Integer.valueOf(txtU5YrsDeath.getText().toString().length()==0 ? "99" : txtU5YrsDeath.getText().toString()) > 99)
+         {
+             Connection.MessageBox(Household_Visit.this, "Value should be between 1 and 99(Number of 5 years deaths in last 12 months).");
+             txtU5YrsDeath.requestFocus();
+             return;
+         }
+           //**********************************************
+
          else if(!rdoOfferedStudy1.isChecked() & !rdoOfferedStudy2.isChecked() & secOfferedStudy.isShown())
            {
               Connection.MessageBox(Household_Visit.this, "Select anyone options from (Offered Study).");
@@ -1251,6 +1383,28 @@
          }
 
          objSave.setU18Death(Integer.valueOf(txtU18Death.getText().toString().length()==0?"0":txtU18Death.getText().toString()));
+
+         //*************************************
+         String[] d_rdogrpU5Yrs = new String[] {"1","2"};
+         objSave.setU5Yrs(0);
+         for (int i = 0; i < rdogrpU5Yrs.getChildCount(); i++)
+         {
+             rb = (RadioButton)rdogrpU5Yrs.getChildAt(i);
+             if (rb.isChecked()) objSave.setU5Yrs(Integer.valueOf(d_rdogrpU5Yrs[i]));
+         }
+
+         objSave.setU5YrsAlive(Integer.valueOf(txtU5YrsAlive.getText().toString().length()==0?"0":txtU5YrsAlive.getText().toString()));
+         String[] d_rdogrpU5YrsDie = new String[] {"1","2"};
+         objSave.setU5YrsDie(0);
+         for (int i = 0; i < rdogrpU5YrsDie.getChildCount(); i++)
+         {
+             rb = (RadioButton)rdogrpU5YrsDie.getChildAt(i);
+             if (rb.isChecked()) objSave.setU5YrsDie(Integer.valueOf(d_rdogrpU5YrsDie[i]));
+         }
+
+         objSave.setU5YrsDeath(Integer.valueOf(txtU5YrsDeath.getText().toString().length()==0?"0":txtU5YrsDeath.getText().toString()));
+         //*************************************
+
          String[] d_rdogrpOfferedStudy = new String[] {"1","2"};
          objSave.setOfferedStudy(0);
          for (int i = 0; i < rdogrpOfferedStudy.getChildCount(); i++)
@@ -1397,6 +1551,30 @@
                  }
              }
              txtU18Death.setText(String.valueOf(item.getU18Death()));
+
+             //*************************************
+               String[] d_rdogrpU5Yrs = new String[] {"1","2"};
+               for (int i = 0; i < d_rdogrpU5Yrs.length; i++)
+               {
+                   if (String.valueOf(item.getU5Yrs()).equals(String.valueOf(d_rdogrpU5Yrs[i])))
+                   {
+                       rb = (RadioButton)rdogrpU5Yrs.getChildAt(i);
+                       rb.setChecked(true);
+                   }
+               }
+               txtU5YrsAlive.setText(String.valueOf(item.getU5YrsAlive()));
+               String[] d_rdogrpU5YrsDie = new String[] {"1","2"};
+               for (int i = 0; i < d_rdogrpU5YrsDie.length; i++)
+               {
+                   if (String.valueOf(item.getU5YrsDie()).equals(String.valueOf(d_rdogrpU5YrsDie[i])))
+                   {
+                       rb = (RadioButton)rdogrpU5YrsDie.getChildAt(i);
+                       rb.setChecked(true);
+                   }
+               }
+               txtU5YrsDeath.setText(String.valueOf(item.getU5YrsDeath()));
+             //*************************************
+
              String[] d_rdogrpOfferedStudy = new String[] {"1","2"};
              for (int i = 0; i < d_rdogrpOfferedStudy.length; i++)
              {
