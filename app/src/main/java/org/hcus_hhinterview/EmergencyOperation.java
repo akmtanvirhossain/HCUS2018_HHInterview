@@ -642,7 +642,9 @@
 
              @Override
              public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-dtpSDtHos.setText("");
+                 if(!txtSHosM.getText().toString().equals("0") & txtSHosM.getText().toString().length()>0) {
+                     dtpSDtHos.setText("");
+                 }
              }
 
              @Override
@@ -1984,14 +1986,18 @@ dtpSDtHos.setText("");
 
              if(rbData.equalsIgnoreCase("1"))
              {
-                    secSInRecoOth.setVisibility(View.GONE);
-                    lineSInRecoOth.setVisibility(View.GONE);
-                    txtSInRecoOth.setText("");
+                 secSInRecoOth.setVisibility(View.GONE);
+                 lineSInRecoOth.setVisibility(View.GONE);
+                 txtSInRecoOth.setText("");
+                 secSInReco.setVisibility(View.GONE);
+                 lineSInReco.setVisibility(View.GONE);
              }
              else
              {
                     secSInRecoOth.setVisibility(View.VISIBLE);
                     lineSInRecoOth.setVisibility(View.VISIBLE);
+                 secSInReco.setVisibility(View.VISIBLE);
+                 lineSInReco.setVisibility(View.VISIBLE);
              }
             }
 
@@ -2478,13 +2484,13 @@ dtpSDtHos.setText("");
 //         }
 
 
-         else if(txtSHosM.getText().toString().length()==0 & dtpSDtHos.getText().toString().length()==0 & secSHosM.isShown())
-           {
-                   Connection.MessageBox(EmergencyOperation .this, "Required field: যদি ভর্তির তারিখ জানা না থাকে,  কত মাস আগে  (How much ago).");
-                   txtSHosM.requestFocus();
-                   return;
-
-           }
+//         else if(txtSHosM.getText().toString().length()==0 & dtpSDtHos.getText().toString().length()==0 & secSHosM.isShown())
+//           {
+//                   Connection.MessageBox(EmergencyOperation .this, "Required field: যদি ভর্তির তারিখ জানা না থাকে,  কত মাস আগে  (How much ago).");
+//                   txtSHosM.requestFocus();
+//                   return;
+//
+//           }
          else if(Integer.valueOf(txtSHosM.getText().toString().length()==0 ? "01" : txtSHosM.getText().toString()) < 01 || Integer.valueOf(txtSHosM.getText().toString().length()==0 ? "99" : txtSHosM.getText().toString()) > 99)
            {
              Connection.MessageBox(EmergencyOperation .this, "Value should be between 01 and 99(যদি ভর্তির তারিখ জানা না থাকে,  কত মাস আগে  (How much ago)).");
@@ -2521,79 +2527,79 @@ dtpSDtHos.setText("");
 //             spnSurSympt2.requestFocus();
 //             return;
 //           }
-//         else if(txtSurSymptOth2.getText().toString().length()==0 & secSurSymptOth2.isShown())
-//           {
-//             Connection.MessageBox(EmergencyOperation .this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
-//             txtSurSymptOth2.requestFocus();
-//             return;
-//           }
+         else if(txtSurSymptOth2.getText().toString().length()==0 & secSurSymptOth2.isShown())
+           {
+             Connection.MessageBox(EmergencyOperation .this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
+             txtSurSymptOth2.requestFocus();
+             return;
+           }
 //         else if(spnSurSympt3.getSelectedItemPosition()==0  & secSurSympt3.isShown())
 //           {
 //             Connection.MessageBox(EmergencyOperation .this, "Required field: 3..");
 //             spnSurSympt3.requestFocus();
 //             return;
 //           }
-//         else if(txtSurSymptOth3.getText().toString().length()==0 & secSurSymptOth3.isShown())
-//           {
-//             Connection.MessageBox(EmergencyOperation .this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
-//             txtSurSymptOth3.requestFocus();
-//             return;
-//           }
+         else if(txtSurSymptOth3.getText().toString().length()==0 & secSurSymptOth3.isShown())
+           {
+             Connection.MessageBox(EmergencyOperation .this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
+             txtSurSymptOth3.requestFocus();
+             return;
+           }
 //         else if(spnSurSympt4.getSelectedItemPosition()==0  & secSurSympt4.isShown())
 //           {
 //             Connection.MessageBox(EmergencyOperation .this, "Required field: 4..");
 //             spnSurSympt4.requestFocus();
 //             return;
 //           }
-//         else if(txtSurSymptOth4.getText().toString().length()==0 & secSurSymptOth4.isShown())
-//           {
-//             Connection.MessageBox(EmergencyOperation .this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
-//             txtSurSymptOth4.requestFocus();
-//             return;
-//           }
+         else if(txtSurSymptOth4.getText().toString().length()==0 & secSurSymptOth4.isShown())
+           {
+             Connection.MessageBox(EmergencyOperation .this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
+             txtSurSymptOth4.requestFocus();
+             return;
+           }
 //         else if(spnSurSympt5.getSelectedItemPosition()==0  & secSurSympt5.isShown())
 //           {
 //             Connection.MessageBox(EmergencyOperation .this, "Required field: 5..");
 //             spnSurSympt5.requestFocus();
 //             return;
 //           }
-//         else if(txtSurSymptOth5.getText().toString().length()==0 & secSurSymptOth5.isShown())
-//           {
-//             Connection.MessageBox(EmergencyOperation .this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
-//             txtSurSymptOth5.requestFocus();
-//             return;
-//           }
+         else if(txtSurSymptOth5.getText().toString().length()==0 & secSurSymptOth5.isShown())
+           {
+             Connection.MessageBox(EmergencyOperation .this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
+             txtSurSymptOth5.requestFocus();
+             return;
+           }
 //         else if(spnSurSympt6.getSelectedItemPosition()==0  & secSurSympt6.isShown())
 //           {
 //             Connection.MessageBox(EmergencyOperation .this, "Required field: 6..");
 //             spnSurSympt6.requestFocus();
 //             return;
 //           }
-//         else if(txtSurSymptOth6.getText().toString().length()==0 & secSurSymptOth6.isShown())
-//           {
-//             Connection.MessageBox(EmergencyOperation .this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
-//             txtSurSymptOth6.requestFocus();
-//             return;
-//           }
+         else if(txtSurSymptOth6.getText().toString().length()==0 & secSurSymptOth6.isShown())
+           {
+             Connection.MessageBox(EmergencyOperation .this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
+             txtSurSymptOth6.requestFocus();
+             return;
+           }
 //         else if(spnSurSympt7.getSelectedItemPosition()==0  & secSurSympt7.isShown())
 //           {
 //             Connection.MessageBox(EmergencyOperation .this, "Required field: 7..");
 //             spnSurSympt7.requestFocus();
 //             return;
 //           }
-//         else if(txtSurSymptOth7.getText().toString().length()==0 & secSurSymptOth7.isShown())
-//           {
-//             Connection.MessageBox(EmergencyOperation .this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
-//             txtSurSymptOth7.requestFocus();
-//             return;
-//           }
+         else if(txtSurSymptOth7.getText().toString().length()==0 & secSurSymptOth7.isShown())
+           {
+             Connection.MessageBox(EmergencyOperation .this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");
+             txtSurSymptOth7.requestFocus();
+             return;
+           }
          else if(txtSDurFever.getText().toString().length()==0 & secSDurFever.isShown())
            {
              Connection.MessageBox(EmergencyOperation .this, "Required field: যদি শিশুটির জ্বর থেকে থাকে তবে তা কতদিনের ধরে ছিল?(যদি জানা না থাকে 98 বসান) (If the child had fever, what was the total duration of fever?).");
              txtSDurFever.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtSDurFever.getText().toString().length()==0 ? "01" : txtSDurFever.getText().toString()) < 01 || Integer.valueOf(txtSDurFever.getText().toString().length()==0 ? "98" : txtSDurFever.getText().toString()) > 98)
+         else if(secSDurFever.isShown()&(Integer.valueOf(txtSDurFever.getText().toString().length()==0 ? "01" : txtSDurFever.getText().toString()) < 01 || Integer.valueOf(txtSDurFever.getText().toString().length()==0 ? "98" : txtSDurFever.getText().toString()) > 98))
            {
              Connection.MessageBox(EmergencyOperation .this, "Value should be between 01 and 98(যদি শিশুটির জ্বর থেকে থাকে তবে তা কতদিনের ধরে ছিল?(যদি জানা না থাকে 98 বসান) (If the child had fever, what was the total duration of fever?)).");
              txtSDurFever.requestFocus(); 
@@ -2636,7 +2642,7 @@ dtpSDtHos.setText("");
              txtSDurReco.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtSDurReco.getText().toString().length()==0 ? "01" : txtSDurReco.getText().toString()) < 01 || Integer.valueOf(txtSDurReco.getText().toString().length()==0 ? "98" : txtSDurReco.getText().toString()) > 98)
+         else if(secSDurReco.isShown()&(Integer.valueOf(txtSDurReco.getText().toString().length()==0 ? "01" : txtSDurReco.getText().toString()) < 01 || Integer.valueOf(txtSDurReco.getText().toString().length()==0 ? "98" : txtSDurReco.getText().toString()) > 98))
            {
              Connection.MessageBox(EmergencyOperation .this, "Value should be between 01 and 98(শিশুটি সুস্থ হতে কতদিন লেগেছিল? (যদি জানা না থাকে 98 বসান) (How many days were required before the child recovered?)).");
              txtSDurReco.requestFocus(); 
@@ -2656,12 +2662,12 @@ dtpSDtHos.setText("");
              return;	
            }
          
-         else if(!rdoSInReco21.isChecked() & !rdoSInReco22.isChecked() & secSInReco2.isShown())
-           {
-              Connection.MessageBox(EmergencyOperation .this, "Select anyone options from (2.).");
-              rdoSInReco21.requestFocus();
-              return;
-           }
+//         else if(!rdoSInReco21.isChecked() & !rdoSInReco22.isChecked() & secSInReco2.isShown())
+//           {
+//              Connection.MessageBox(EmergencyOperation .this, "Select anyone options from (2.).");
+//              rdoSInReco21.requestFocus();
+//              return;
+//           }
          else if(txtSInRecoOth2.getText().toString().length()==0 & secSInRecoOth2.isShown())
            {
              Connection.MessageBox(EmergencyOperation .this, "Required field: অন্যান্য উল্লেখ করুন (Others Specify).");

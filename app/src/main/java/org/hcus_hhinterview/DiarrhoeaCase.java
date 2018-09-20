@@ -1833,13 +1833,13 @@ txtDDurReco.addTextChangedListener(new TextWatcher() {
               rdoDAdmHos1.requestFocus();
               return;
            }
-         else if(txtDIlBeHosAdm.getText().toString().length()==0 & secDIlBeHosAdm.isShown())
-           {
-             Connection.MessageBox(DiarrhoeaCase .this, "Required field: হাসপাতালে ভর্তির আগে শিশুটি কতদিন অসুস্থ ছিল? (যদি জানা না থাকে 98 বসান) (For how many days did the child appear ill before he/she was hospitalized?).");
-             txtDIlBeHosAdm.requestFocus(); 
-             return;	
-           }
-         else if(Integer.valueOf(txtDIlBeHosAdm.getText().toString().length()==0 ? "1" : txtDIlBeHosAdm.getText().toString()) < 1 || Integer.valueOf(txtDIlBeHosAdm.getText().toString().length()==0 ? "98" : txtDIlBeHosAdm.getText().toString()) > 98)
+//         else if(txtDIlBeHosAdm.getText().toString().length()==0 & secDIlBeHosAdm.isShown())
+//           {
+//             Connection.MessageBox(DiarrhoeaCase .this, "Required field: হাসপাতালে ভর্তির আগে শিশুটি কতদিন অসুস্থ ছিল? (যদি জানা না থাকে 98 বসান) (For how many days did the child appear ill before he/she was hospitalized?).");
+//             txtDIlBeHosAdm.requestFocus();
+//             return;
+//           }
+         else if(Integer.valueOf(txtDIlBeHosAdm.getText().toString().length()==0 ? "1" : txtDIlBeHosAdm.getText().toString()) < 0 || Integer.valueOf(txtDIlBeHosAdm.getText().toString().length()==0 ? "98" : txtDIlBeHosAdm.getText().toString()) > 98)
            {
              Connection.MessageBox(DiarrhoeaCase .this, "Value should be between 1 and 98(হাসপাতালে ভর্তির আগে শিশুটি কতদিন অসুস্থ ছিল? (যদি জানা না থাকে 98 বসান) (For how many days did the child appear ill before he/she was hospitalized?)).");
              txtDIlBeHosAdm.requestFocus(); 

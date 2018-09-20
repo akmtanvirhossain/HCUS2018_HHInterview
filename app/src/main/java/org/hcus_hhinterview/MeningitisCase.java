@@ -2124,7 +2124,7 @@
 //                     txtMHC_Hosp_a3_Oth.setText("");
                      secMDtHos.setVisibility(View.VISIBLE);
                      lineMDtHos.setVisibility(View.VISIBLE);
-                     dtpMDtHos.setText("");
+//                     dtpMDtHos.setText("");
                      secMHosM.setVisibility(View.VISIBLE);
                      lineMHosM.setVisibility(View.VISIBLE);
                      txtMHosM.setText("");

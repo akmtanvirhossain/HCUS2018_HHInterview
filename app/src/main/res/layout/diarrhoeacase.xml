@@ -75,7 +75,7 @@
     <View android:id="@+id/lineStoolBlood" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secFeedORS" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblFeedORS" android:text="5.4" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblFeedORS" android:text="এই অসুস্থতার সময় শিশুটি কি ওরস্যালাইন খেয়েছিল? Did the child receive ORS (saline) during the episode?" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblFeedORS" android:text="এই অসুস্থতার সময় শিশুটি কি খাবার স্যালাইন খেয়েছিল? Did the child receive ORS (saline) during the episode?" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <RadioGroup android:id="@+id/rdogrpFeedORS" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoFeedORS1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoFeedORS2" android:text="No" android:gravity="top|bottom" />
@@ -95,7 +95,7 @@
     <View android:id="@+id/lineDHCar" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secORSBefHCar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
         <TextView android:id="@+id/lblORSBefHCar" android:text="5.6" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblORSBefHCar" android:text=" এই অসুস্থতার সময় স্বাস্থ্যসেবা দানকারীর কাছে নিয়ে যাওয়ার আগে শিশুটি কি ওরস্যালাইন খেয়েছিল? (During the episode, did the child receive ORS before the child was seen by health care practitioners if any?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblORSBefHCar" android:text=" এই অসুস্থতার সময় স্বাস্থ্যসেবা দানকারীর কাছে নিয়ে যাওয়ার আগে শিশুটি কি খাবার স্যালাইন খেয়েছিল? (During the episode, did the child receive ORS before the child was seen by health care practitioners if any?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
         <RadioGroup android:id="@+id/rdogrpORSBefHCar" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoORSBefHCar1" android:text="Yes" android:gravity="top|bottom" />
            <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoORSBefHCar2" android:text="No" android:gravity="top|bottom" />
