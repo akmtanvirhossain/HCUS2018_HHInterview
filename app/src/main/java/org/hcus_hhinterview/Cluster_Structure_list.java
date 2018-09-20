@@ -400,7 +400,7 @@ public class Cluster_Structure_list extends Activity {
             final StructureListing_DataModel data = dataList.get(position);
 
             holder.StructureNo.setText(data.getStructureNo());
-            holder.SlNo.setText(""+(position+1)+".");
+//            holder.SlNo.setText(""+(position+1)+".");
 //            holder.HoldingNo.setText(data.getHolding()+", ");
 //            holder.RoadNo.setText(data.getRoad()+", ");
             holder.Address.setText(data.getHolding()+", "+data.getRoad()+", "+data.getAddress());
@@ -410,7 +410,7 @@ public class Cluster_Structure_list extends Activity {
                 holder.LVisitNo.setText("");
             }
             else{
-                holder.LVisitNo.setText(data.get_Visit_No());
+                holder.LVisitNo.setText("("+data.get_Visit_No()+")");
             }
 
 
