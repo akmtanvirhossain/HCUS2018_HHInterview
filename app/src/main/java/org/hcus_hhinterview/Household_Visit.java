@@ -446,6 +446,11 @@
                      lineConsent.setVisibility(View.GONE);
 //                     rdogrpConsent.clearCheck();
 
+                     secU5Yrs.setVisibility(View.VISIBLE);
+                     lineU5Yrs.setVisibility(View.VISIBLE);
+                     secU5YrsDie.setVisibility(View.VISIBLE);
+                     lineU5YrsDie.setVisibility(View.VISIBLE);
+
 
 
 
@@ -482,6 +487,7 @@
                     secConsent.setVisibility(View.GONE);
                     lineConsent.setVisibility(View.GONE);
 //                    rdogrpConsent.clearCheck();
+
                  }
                  else if(spnData.equalsIgnoreCase("3"))
                  {
@@ -988,21 +994,16 @@
                      secU5YrsAlive.setVisibility(View.GONE);
                      lineU5YrsAlive.setVisibility(View.GONE);
                      txtU5YrsAlive.setText("");
-                     secU5YrsDie.setVisibility(View.GONE);
-                     lineU5YrsDie.setVisibility(View.GONE);
-                     rdogrpU5YrsDie.clearCheck();
-                     secU5YrsDeath.setVisibility(View.GONE);
-                     lineU5YrsDeath.setVisibility(View.GONE);
-                     txtU5YrsDeath.setText("");
+                     secOfferedStudy.setVisibility(View.GONE);
+                     lineOfferedStudy.setVisibility(View.GONE);
+
                  }
                  else
                  {
                      secU5YrsAlive.setVisibility(View.VISIBLE);
                      lineU5YrsAlive.setVisibility(View.VISIBLE);
-                     secU5YrsDie.setVisibility(View.VISIBLE);
-                     lineU5YrsDie.setVisibility(View.VISIBLE);
-                     secU5YrsDeath.setVisibility(View.VISIBLE);
-                     lineU5YrsDeath.setVisibility(View.VISIBLE);
+                     secOfferedStudy.setVisibility(View.VISIBLE);
+                     lineOfferedStudy.setVisibility(View.VISIBLE);
                  }
              }
              public void onNothingSelected(AdapterView<?> adapterView) {
@@ -1017,6 +1018,33 @@
          lineU5YrsDie=(View)findViewById(R.id.lineU5YrsDie);
          VlblU5YrsDie = (TextView) findViewById(R.id.VlblU5YrsDie);
          rdogrpU5YrsDie = (RadioGroup) findViewById(R.id.rdogrpU5YrsDie);
+
+         rdogrpU5YrsDie.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+             @Override
+             public void onCheckedChanged(RadioGroup radioGroup, int RadioButtonId) {
+                 String rbData = "";
+                 RadioButton rb;
+                 String[] d_rdogrpU5YrsDie = new String[] {"1","2"};
+                 for (int i = 0; i < rdogrpU5YrsDie.getChildCount(); i++)
+                 {
+                     rb = (RadioButton)rdogrpU5YrsDie.getChildAt(i);
+                     if (rb.isChecked()) rbData = d_rdogrpU5YrsDie[i];
+                 }
+                 if(rbData.equalsIgnoreCase("1"))
+                 {
+                     secU5YrsDeath.setVisibility(View.VISIBLE);
+                     lineU5YrsDeath.setVisibility(View.VISIBLE);
+                     secOfferedStudy.setVisibility(View.VISIBLE);
+                     lineOfferedStudy.setVisibility(View.VISIBLE);
+                 }else
+                 {
+                     secU5YrsDeath.setVisibility(View.GONE);
+                     lineU5YrsDeath.setVisibility(View.GONE);
+                     secOfferedStudy.setVisibility(View.GONE);
+                     lineOfferedStudy.setVisibility(View.GONE);
+                 }
+             }
+         });
 
          rdoU5YrsDie1 = (RadioButton) findViewById(R.id.rdoU5YrsDie1);
          rdoU5YrsDie2 = (RadioButton) findViewById(R.id.rdoU5YrsDie2);
@@ -1130,6 +1158,20 @@
 //         sec.setVisibility(View.GONE);
 //         line.setVisibility(View.GONE);
          btnAddVisit.setVisibility(View.GONE);
+
+         //***************************************
+         secU5Yrs.setVisibility(View.GONE);
+         lineU5Yrs.setVisibility(View.GONE);
+         secU5YrsAlive.setVisibility(View.GONE);
+         lineU5YrsAlive.setVisibility(View.GONE);
+         secU5YrsDie.setVisibility(View.GONE);
+         lineU5YrsDie.setVisibility(View.GONE);
+         secU5YrsDeath.setVisibility(View.GONE);
+         lineU5YrsDeath.setVisibility(View.GONE);
+
+         //***************************************
+
+
 
 
 
