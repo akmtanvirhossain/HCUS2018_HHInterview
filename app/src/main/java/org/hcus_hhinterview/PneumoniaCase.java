@@ -2942,7 +2942,7 @@
              txtPEpiIlness.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtPEpiIlness.getText().toString().length()==0 ? "01" : txtPEpiIlness.getText().toString()) < 01 || Integer.valueOf(txtPEpiIlness.getText().toString().length()==0 ? "20" : txtPEpiIlness.getText().toString()) > 20)
+         else if(Integer.valueOf(txtPEpiIlness.getText().toString().length()==0 ? "01" : txtPEpiIlness.getText().toString()) < 01 || Integer.valueOf(txtPEpiIlness.getText().toString().length()==0 ? "20" : txtPEpiIlness.getText().toString()) > 20 & secPEpiIlness.isShown())
            {
              Connection.MessageBox(PneumoniaCase.this, "Value should be between 01 and 20(গত ১২ মাসে এই শিশুর কতবার এই ধরনের অসুস্থতা হয়েছিল? (যদি একের অধিক এই অসুস্থতা হয়ে থাকে তবে অতিসম্প্রতি অসুস্থতা সম্পর্কে নিচের প্রশ্নগুলো করুন (Within the last 12 months how many episodes of such an illness did this child have? If >1 episodes, ask about the following questions on the most recent episode)).");
              txtPEpiIlness.requestFocus(); 
@@ -2961,7 +2961,7 @@
              txtPDurFever.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtPDurFever.getText().toString().length()==0 ? "02" : txtPDurFever.getText().toString()) < 02 || Integer.valueOf(txtPDurFever.getText().toString().length()==0 ? "98" : txtPDurFever.getText().toString()) > 98)
+         else if(Integer.valueOf(txtPDurFever.getText().toString().length()==0 ? "02" : txtPDurFever.getText().toString()) < 02 || Integer.valueOf(txtPDurFever.getText().toString().length()==0 ? "98" : txtPDurFever.getText().toString()) > 98& secPDurFever.isShown())
            {
              Connection.MessageBox(PneumoniaCase.this, "Value should be between 02 and 98(যদি হ্যাঁ হয়, শিশুটি কতদিন জ্বরে ভুগেছিল? (যদি জানা না থাকে 98 বসান) (If yes, how long did the child have fever?)).");
              txtPDurFever.requestFocus(); 
@@ -2980,7 +2980,7 @@
              txtPDurCough.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtPDurCough.getText().toString().length()==0 ? "01" : txtPDurCough.getText().toString()) < 01 || Integer.valueOf(txtPDurCough.getText().toString().length()==0 ? "98" : txtPDurCough.getText().toString()) > 98)
+         else if(Integer.valueOf(txtPDurCough.getText().toString().length()==0 ? "01" : txtPDurCough.getText().toString()) < 01 || Integer.valueOf(txtPDurCough.getText().toString().length()==0 ? "98" : txtPDurCough.getText().toString()) > 98& secPDurCough.isShown())
            {
              Connection.MessageBox(PneumoniaCase.this, "Value should be between 01 and 98(যদি হ্যাঁ হয়, তবে কতদিন কাশি ছিল? (যদি জানা না থাকে 98 বসান) (If yes, for how long?)).");
              txtPDurCough.requestFocus(); 
@@ -2999,7 +2999,7 @@
              txtPDurDifBrea.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtPDurDifBrea.getText().toString().length()==0 ? "01" : txtPDurDifBrea.getText().toString()) < 01 || Integer.valueOf(txtPDurDifBrea.getText().toString().length()==0 ? "98" : txtPDurDifBrea.getText().toString()) > 98)
+         else if(Integer.valueOf(txtPDurDifBrea.getText().toString().length()==0 ? "01" : txtPDurDifBrea.getText().toString()) < 01 || Integer.valueOf(txtPDurDifBrea.getText().toString().length()==0 ? "98" : txtPDurDifBrea.getText().toString()) > 98& secPDurDifBrea.isShown())
            {
              Connection.MessageBox(PneumoniaCase.this, "Value should be between 01 and 98(যদি হ্যাঁ হয়, তবে কতদিন শ্বাসকষ্ট ছিল?(যদি জানা না থাকে 98 বসান) (If yes, for how long?)).");
              txtPDurDifBrea.requestFocus(); 
@@ -3018,7 +3018,7 @@
              txtPDurTurnBlue.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtPDurTurnBlue.getText().toString().length()==0 ? "01" : txtPDurTurnBlue.getText().toString()) < 01 || Integer.valueOf(txtPDurTurnBlue.getText().toString().length()==0 ? "98" : txtPDurTurnBlue.getText().toString()) > 98)
+         else if(Integer.valueOf(txtPDurTurnBlue.getText().toString().length()==0 ? "01" : txtPDurTurnBlue.getText().toString()) < 01 || Integer.valueOf(txtPDurTurnBlue.getText().toString().length()==0 ? "98" : txtPDurTurnBlue.getText().toString()) > 98 & secPDurTurnBlue.isShown())
            {
              Connection.MessageBox(PneumoniaCase.this, "Value should be between 01 and 98(যদি হ্যাঁ হয়, তবে কতদিন নীল হয়ে ছিল? (যদি জানা না থাকে 98 বসান) (If yes, for how long?)).");
              txtPDurTurnBlue.requestFocus(); 
@@ -3037,7 +3037,7 @@
              txtPDurBreatNois.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtPDurBreatNois.getText().toString().length()==0 ? "01" : txtPDurBreatNois.getText().toString()) < 01 || Integer.valueOf(txtPDurBreatNois.getText().toString().length()==0 ? "98" : txtPDurBreatNois.getText().toString()) > 98)
+         else if(Integer.valueOf(txtPDurBreatNois.getText().toString().length()==0 ? "01" : txtPDurBreatNois.getText().toString()) < 01 || Integer.valueOf(txtPDurBreatNois.getText().toString().length()==0 ? "98" : txtPDurBreatNois.getText().toString()) > 98& secPDurBreatNois.isShown())
            {
              Connection.MessageBox(PneumoniaCase.this, "Value should be between 01 and 98(যদি হ্যাঁ হয়, তবে কতদিন ঘরঘর শব্দ হয়েছিল? (যদি জানা না থাকে 98 বসান) (If yes, for how long?)).");
              txtPDurBreatNois.requestFocus(); 
@@ -3055,7 +3055,7 @@
              txtPDurLethargy.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtPDurLethargy.getText().toString().length()==0 ? "01" : txtPDurLethargy.getText().toString()) < 01 || Integer.valueOf(txtPDurLethargy.getText().toString().length()==0 ? "98" : txtPDurLethargy.getText().toString()) > 98)
+         else if(Integer.valueOf(txtPDurLethargy.getText().toString().length()==0 ? "01" : txtPDurLethargy.getText().toString()) < 01 || Integer.valueOf(txtPDurLethargy.getText().toString().length()==0 ? "98" : txtPDurLethargy.getText().toString()) > 98  & secPDurLethargy.isShown())
            {
              Connection.MessageBox(PneumoniaCase.this, "Value should be between 01 and 98(যদি হ্যাঁ হয়, তবে কতদিন এমন অবস্থা হয়েছিল?(যদি জানা না থাকে 98 বসান) (If yes, for how long?)).");
              txtPDurLethargy.requestFocus(); 
@@ -3073,7 +3073,7 @@
              txtPDurUnDriBfeed.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtPDurUnDriBfeed.getText().toString().length()==0 ? "01" : txtPDurUnDriBfeed.getText().toString()) < 01 || Integer.valueOf(txtPDurUnDriBfeed.getText().toString().length()==0 ? "98" : txtPDurUnDriBfeed.getText().toString()) > 98)
+         else if(Integer.valueOf(txtPDurUnDriBfeed.getText().toString().length()==0 ? "01" : txtPDurUnDriBfeed.getText().toString()) < 01 || Integer.valueOf(txtPDurUnDriBfeed.getText().toString().length()==0 ? "98" : txtPDurUnDriBfeed.getText().toString()) > 98& secPDurUnDriBfeed.isShown())
            {
              Connection.MessageBox(PneumoniaCase.this, "Value should be between 01 and 98(যদি হ্যাঁ হয়, তবে কতদিন এমন অবস্থা হয়েছিল?(যদি জানা না থাকে 98 বসান) (If yes, for how long?)).");
              txtPDurUnDriBfeed.requestFocus(); 
@@ -3282,7 +3282,7 @@
 //               }
 
            }
-         else if(Integer.valueOf(txtPAdmHosM.getText().toString().length()==0 ? "01" : txtPAdmHosM.getText().toString()) < 01 || Integer.valueOf(txtPAdmHosM.getText().toString().length()==0 ? "98" : txtPAdmHosM.getText().toString()) > 98)
+         else if(Integer.valueOf(txtPAdmHosM.getText().toString().length()==0 ? "01" : txtPAdmHosM.getText().toString()) < 01 || Integer.valueOf(txtPAdmHosM.getText().toString().length()==0 ? "98" : txtPAdmHosM.getText().toString()) > 98& secPAdmHosM.isShown())
            {
              Connection.MessageBox(PneumoniaCase.this, "Value should be between 01 and 98(যদি ভর্তির তারিখ জানা না থাকে,  কত মাস আগে (How month ago)).");
              txtPAdmHosM.requestFocus(); 
@@ -3294,7 +3294,7 @@
              txtPDurIlBeHos.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtPDurIlBeHos.getText().toString().length()==0 ? "01" : txtPDurIlBeHos.getText().toString()) < 01 || Integer.valueOf(txtPDurIlBeHos.getText().toString().length()==0 ? "98" : txtPDurIlBeHos.getText().toString()) > 98)
+         else if(Integer.valueOf(txtPDurIlBeHos.getText().toString().length()==0 ? "01" : txtPDurIlBeHos.getText().toString()) < 01 || Integer.valueOf(txtPDurIlBeHos.getText().toString().length()==0 ? "98" : txtPDurIlBeHos.getText().toString()) > 98& secPDurIlBeHos.isShown())
            {
              Connection.MessageBox(PneumoniaCase.this, "Value should be between 01 and 98( হাসপাতালে ভর্তির আগে শিশুটি কতদিন অসুস্থ ছিল?(যদি জানা না থাকে 98 বসান) (For how many days did the child appear ill before he/she was hospitalized?)).");
              txtPDurIlBeHos.requestFocus(); 
@@ -3325,7 +3325,7 @@
              txtPDurReco.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtPDurReco.getText().toString().length()==0 ? "01" : txtPDurReco.getText().toString()) < 01 || Integer.valueOf(txtPDurReco.getText().toString().length()==0 ? "98" : txtPDurReco.getText().toString()) > 98)
+         else if(Integer.valueOf(txtPDurReco.getText().toString().length()==0 ? "01" : txtPDurReco.getText().toString()) < 01 || Integer.valueOf(txtPDurReco.getText().toString().length()==0 ? "98" : txtPDurReco.getText().toString()) > 98& secPDurReco.isShown())
            {
              Connection.MessageBox(PneumoniaCase.this, "Value should be between 01 and 98(শিশুটি সুস্থ হতে কতদিন লেগেছিল?(যদি জানা না থাকে 98 বসান) (How many days were required before the child recovered?)).");
              txtPDurReco.requestFocus(); 
@@ -3870,7 +3870,7 @@
              spnPHosNam3.setSelection(Global.SpinnerItemPositionAnyLength(spnPHosNam3, String.valueOf(item.getPHosNam3())));
              txtPHosNamOth3.setText(item.getPHosNamOth3());
              dtpPDtAdmHos.setText(item.getPDtAdmHos().toString().length()==0 ? "" : Global.DateConvertDMY(item.getPDtAdmHos()));
-             txtPAdmHosM.setText(String.valueOf(item.getPAdmHosM()));
+             txtPAdmHosM.setText(item.getPAdmHosM()==0?"":String.valueOf(item.getPAdmHosM()));
              txtPDurIlBeHos.setText(String.valueOf(item.getPDurIlBeHos()));
              spnPDisDr.setSelection(Global.SpinnerItemPositionAnyLength(spnPDisDr, String.valueOf(item.getPDisDr())));
              txtPDisDrOth.setText(item.getPDisDrOth());

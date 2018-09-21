@@ -4502,7 +4502,7 @@ if(!txtMHosM.getText().toString().equals("0") & txtMHosM.getText().toString().le
              spnMHC_Hosp_a3.setSelection(Global.SpinnerItemPositionAnyLength(spnMHC_Hosp_a3, String.valueOf(item.getMHC_Hosp_a3())));
              txtMHC_Hosp_a3_Oth.setText(item.getMHC_Hosp_a3_Oth());
              dtpMDtHos.setText(item.getMDtHos().toString().length()==0 ? "" : Global.DateConvertDMY(item.getMDtHos()));
-             txtMHosM.setText(String.valueOf(item.getMHosM()));
+             txtMHosM.setText(item.getMHosM()==0?"" : String.valueOf(item.getMHosM()));
              txtMDurIlBeHos.setText(String.valueOf(item.getMDurIlBeHos()));
              spnMChildIlDr.setSelection(Global.SpinnerItemPositionAnyLength(spnMChildIlDr, String.valueOf(item.getMChildIlDr())));
              txtMChildIlDrOth.setText(item.getMChildIlDrOth());

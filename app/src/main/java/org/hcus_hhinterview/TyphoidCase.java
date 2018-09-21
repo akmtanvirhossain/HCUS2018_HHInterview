@@ -2462,11 +2462,11 @@
          List<String> listHC_Hosp_a1 = new ArrayList<String>();
          
          listHC_Hosp_a1.add("");
-         listHC_Hosp_a1.add("01-Dhaka Shishu Hospital");
-         listHC_Hosp_a1.add("02-Dr. M. R. Khan Hospital");
-         listHC_Hosp_a1.add("03-Popular Diagnostic Center Dhanmondi");
-         listHC_Hosp_a1.add("04-Popular Diagnostic Center Mirpur");
-         listHC_Hosp_a1.add("05-Popular Diagnostic Center Shyamoli");
+         listHC_Hosp_a1.add("1-Dhaka Shishu Hospital");
+         listHC_Hosp_a1.add("2-Dr. M. R. Khan Hospital");
+         listHC_Hosp_a1.add("3-Popular Diagnostic Center Dhanmondi");
+         listHC_Hosp_a1.add("4-Popular Diagnostic Center Mirpur");
+         listHC_Hosp_a1.add("5-Popular Diagnostic Center Shyamoli");
          listHC_Hosp_a1.add("77-Other");
          ArrayAdapter<String> adptrHC_Hosp_a1= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listHC_Hosp_a1);
          spnHC_Hosp_a1.setAdapter(adptrHC_Hosp_a1);
@@ -2536,11 +2536,11 @@
          List<String> listHC_Hosp_a2 = new ArrayList<String>();
          
          listHC_Hosp_a2.add("");
-         listHC_Hosp_a2.add("01-Dhaka Shishu Hospital");
-         listHC_Hosp_a2.add("02-Dr. M. R. Khan Hospital");
-         listHC_Hosp_a2.add("03-Popular Diagnostic Center Dhanmondi");
-         listHC_Hosp_a2.add("04-Popular Diagnostic Center Mirpur");
-         listHC_Hosp_a2.add("05-Popular Diagnostic Center Shyamoli");
+         listHC_Hosp_a2.add("1-Dhaka Shishu Hospital");
+         listHC_Hosp_a2.add("2-Dr. M. R. Khan Hospital");
+         listHC_Hosp_a2.add("3-Popular Diagnostic Center Dhanmondi");
+         listHC_Hosp_a2.add("4-Popular Diagnostic Center Mirpur");
+         listHC_Hosp_a2.add("5-Popular Diagnostic Center Shyamoli");
          listHC_Hosp_a2.add("77-Other");
          ArrayAdapter<String> adptrHC_Hosp_a2= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listHC_Hosp_a2);
          spnHC_Hosp_a2.setAdapter(adptrHC_Hosp_a2);
@@ -2610,11 +2610,11 @@
          List<String> listHC_Hosp_a3 = new ArrayList<String>();
          
          listHC_Hosp_a3.add("");
-         listHC_Hosp_a3.add("01-Dhaka Shishu Hospital");
-         listHC_Hosp_a3.add("02-Dr. M. R. Khan Hospital");
-         listHC_Hosp_a3.add("03-Popular Diagnostic Center-Dhanmondi");
-         listHC_Hosp_a3.add("04-Popular Diagnostic Center-Mirpur");
-         listHC_Hosp_a3.add("05-Popular Diagnostic Center-Shyamoli");
+         listHC_Hosp_a3.add("1-Dhaka Shishu Hospital");
+         listHC_Hosp_a3.add("2-Dr. M. R. Khan Hospital");
+         listHC_Hosp_a3.add("3-Popular Diagnostic Center-Dhanmondi");
+         listHC_Hosp_a3.add("4-Popular Diagnostic Center-Mirpur");
+         listHC_Hosp_a3.add("5-Popular Diagnostic Center-Shyamoli");
          listHC_Hosp_a3.add("77-Other");
          ArrayAdapter<String> adptrHC_Hosp_a3= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listHC_Hosp_a3);
          spnHC_Hosp_a3.setAdapter(adptrHC_Hosp_a3);
@@ -2684,11 +2684,11 @@
          List<String> listHC_Hosp_a4 = new ArrayList<String>();
          
          listHC_Hosp_a4.add("");
-         listHC_Hosp_a4.add("01-Dhaka Shishu Hospital");
-         listHC_Hosp_a4.add("02-Dr. M. R. Khan Hospital");
-         listHC_Hosp_a4.add("03-Popular Diagnostic Center-Dhanmondi");
-         listHC_Hosp_a4.add("04-Popular Diagnostic Center-Mirpur");
-         listHC_Hosp_a4.add("05-Popular Diagnostic Center-Shyamoli");
+         listHC_Hosp_a4.add("1-Dhaka Shishu Hospital");
+         listHC_Hosp_a4.add("2-Dr. M. R. Khan Hospital");
+         listHC_Hosp_a4.add("3-Popular Diagnostic Center-Dhanmondi");
+         listHC_Hosp_a4.add("4-Popular Diagnostic Center-Mirpur");
+         listHC_Hosp_a4.add("5-Popular Diagnostic Center-Shyamoli");
          listHC_Hosp_a4.add("77-Other");
          ArrayAdapter<String> adptrHC_Hosp_a4= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listHC_Hosp_a4);
          spnHC_Hosp_a4.setAdapter(adptrHC_Hosp_a4);
@@ -2758,11 +2758,11 @@
          List<String> listHC_Hosp_a5 = new ArrayList<String>();
          
          listHC_Hosp_a5.add("");
-         listHC_Hosp_a5.add("01-Dhaka Shishu Hospital");
-         listHC_Hosp_a5.add("02-Dr. M. R. Khan Hospital");
-         listHC_Hosp_a5.add("03-Popular Diagnostic Center-Dhanmondi");
-         listHC_Hosp_a5.add("04-Popular Diagnostic Center-Mirpur");
-         listHC_Hosp_a5.add("05-Popular Diagnostic Center-Shyamoli");
+         listHC_Hosp_a5.add("1-Dhaka Shishu Hospital");
+         listHC_Hosp_a5.add("2-Dr. M. R. Khan Hospital");
+         listHC_Hosp_a5.add("3-Popular Diagnostic Center-Dhanmondi");
+         listHC_Hosp_a5.add("4-Popular Diagnostic Center-Mirpur");
+         listHC_Hosp_a5.add("5-Popular Diagnostic Center-Shyamoli");
          listHC_Hosp_a5.add("77-Other");
          ArrayAdapter<String> adptrHC_Hosp_a5= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listHC_Hosp_a5);
          spnHC_Hosp_a5.setAdapter(adptrHC_Hosp_a5);
@@ -4029,11 +4029,11 @@
          List<String> listHospName = new ArrayList<String>();
          
          listHospName.add("");
-         listHospName.add("01-Dhaka Shishu Hospital");
-         listHospName.add("02-Dr. M. R. Khan Hospital");
-         listHospName.add("03-Popular Diagnostic Center Dhanmondi");
-         listHospName.add("04-Popular Diagnostic Center Mirpur");
-         listHospName.add("05-Popular Diagnostic Center Shyamoli");
+         listHospName.add("1-Dhaka Shishu Hospital");
+         listHospName.add("2-Dr. M. R. Khan Hospital");
+         listHospName.add("3-Popular Diagnostic Center Dhanmondi");
+         listHospName.add("4-Popular Diagnostic Center Mirpur");
+         listHospName.add("5-Popular Diagnostic Center Shyamoli");
          listHospName.add("77-Other");
          ArrayAdapter<String> adptrHospName= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listHospName);
          spnHospName.setAdapter(adptrHospName);
@@ -4042,7 +4042,7 @@
              @Override
              public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
              String spnData = "";
-             if (spnHospName.getSelectedItem().toString().length() != 0)
+             if (spnHospName.getSelectedItem().toString().length()!= 0)
              {
                  spnData = Connection.SelectedSpinnerValue(spnHospName.getSelectedItem().toString(), "-");
              }
@@ -4998,7 +4998,7 @@
                      return;
 
            }
-         else if( secTAdmHosD.isShown()&Integer.valueOf(txtTAdmHosD.getText().toString().length()==0 ? "1" : txtTAdmHosD.getText().toString()) < 1 || Integer.valueOf(txtTAdmHosD.getText().toString().length()==0 ? "99" : txtTAdmHosD.getText().toString()) > 99)
+         else if( secTAdmHosD.isShown()& Integer.valueOf(txtTAdmHosD.getText().toString().length()==0 ? "1" : txtTAdmHosD.getText().toString()) < 1 || Integer.valueOf(txtTAdmHosD.getText().toString().length()==0 ? "99" : txtTAdmHosD.getText().toString()) > 99)
            {
              Connection.MessageBox(TyphoidCase.this, "Value should be between 1 and 99(যদি ভর্তির তারিখ জানা না থাকে,  কত দিন আগে (How day ago)).");
              txtTAdmHosD.requestFocus(); 
@@ -5388,7 +5388,7 @@
          objSave.setTHosNam3_Oth(txtTHosNam3_Oth.getText().toString());
          objSave.setTHosNamDK(Integer.valueOf(chkTHosNamDK.isChecked()?"1":(secTHosNamDK.isShown()?"2":"0")));
          objSave.setTDtAdmHos(dtpTDtAdmHos.getText().toString().length() > 0 ? Global.DateConvertYMD(dtpTDtAdmHos.getText().toString()) : dtpTDtAdmHos.getText().toString());
-         objSave.setTAdmHosD(Integer.valueOf(txtTAdmHosD.getText().toString().length()==0?"0":txtTAdmHosD.getText().toString()));
+         objSave.setTAdmHosD(Integer.valueOf(txtTAdmHosD.getText().toString().length()==0?"0":txtTAdmHosD.getText().toString())  );
          objSave.setTDurIlBeHos(Integer.valueOf(txtTDurIlBeHos.getText().toString().length()==0?"0":txtTDurIlBeHos.getText().toString()));
          objSave.setTDurIlBeHosDK(Integer.valueOf(chkTDurIlBeHosDK.isChecked()?"1":(secTDurIlBeHosDK.isShown()?"2":"0")));
          objSave.setTDisDr(Integer.valueOf(spnTDisDr.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnTDisDr.getSelectedItem().toString(), "-")));
@@ -5786,7 +5786,7 @@
                 chkTHosNamDK.setChecked(false);
              }
              dtpTDtAdmHos.setText(item.getTDtAdmHos().toString().length()==0 ? "" : Global.DateConvertDMY(item.getTDtAdmHos()));
-             txtTAdmHosD.setText(String.valueOf(item.getTAdmHosD()));
+             txtTAdmHosD.setText(item.getTAdmHosD()==0 ? "":String.valueOf(item.getTAdmHosD()));
              txtTDurIlBeHos.setText(String.valueOf(item.getTDurIlBeHos()));
              if(String.valueOf(item.getTDurIlBeHosDK()).equals("1"))
              {
