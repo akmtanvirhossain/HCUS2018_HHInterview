@@ -667,15 +667,15 @@
          List<String> listSurSympt = new ArrayList<String>();
          
          listSurSympt.add("");
-         listSurSympt.add("01-পেট ব্যাথা (Abdominal pain) ");
-         listSurSympt.add("02- কোস্ট কাঠিন্য (Constipation)");
-         listSurSympt.add("03-মাথা ব্যাথা (Headache) ");
-         listSurSympt.add("04-শরীরে দানা (Rash) ");
-         listSurSympt.add("05-পাতলা পায়খানা (Diarrhoea)");
-         listSurSympt.add("06- পায়খানার সাথে রক্ত (Blood with stool)");
-         listSurSympt.add("07- পেট ফুলে যাওয়া (Abdominal distension)");
-         listSurSympt.add("08- জিহ্বায় সাদা আবরণ (Coated tongue)");
-         listSurSympt.add("09-জ্বর (Fever) ");
+         listSurSympt.add("1-পেট ব্যাথা (Abdominal pain) ");
+         listSurSympt.add("2- কোস্ট কাঠিন্য (Constipation)");
+         listSurSympt.add("3-মাথা ব্যাথা (Headache) ");
+         listSurSympt.add("4-শরীরে দানা (Rash) ");
+         listSurSympt.add("5-পাতলা পায়খানা (Diarrhoea)");
+         listSurSympt.add("6- পায়খানার সাথে রক্ত (Blood with stool)");
+         listSurSympt.add("7- পেট ফুলে যাওয়া (Abdominal distension)");
+         listSurSympt.add("8- জিহ্বায় সাদা আবরণ (Coated tongue)");
+         listSurSympt.add("9-জ্বর (Fever) ");
          listSurSympt.add("77-অন্যান্য (Other)  ");
          ArrayAdapter<String> adptrSurSympt= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listSurSympt);
          spnSurSympt.setAdapter(adptrSurSympt);

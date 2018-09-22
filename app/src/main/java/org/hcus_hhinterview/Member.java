@@ -781,25 +781,25 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
               return;
            }
          DV = Global.DateValidate(dtpDtofDeath.getText().toString());
-         if(DV.length()!=0 & secDtofDeath.isShown())
+         if(DV.length()!=0 & secDtofDeath.isShown()& txtDAge.getText().toString().length()==0)
            {
              Connection.MessageBox(Member.this, DV);
              dtpDtofDeath.requestFocus(); 
              return;	
            }
-         else if(txtDAge.getText().toString().length()==0 & secDAge.isShown())
+         else if(txtDAge.getText().toString().length()==0 & secDAge.isShown()& dtpDtofDeath.getText().toString().length()==0)
            {
              Connection.MessageBox(Member.this, "Required field: মৃত্যুর সময় বয়স, যদি জন্ম/মৃত্যুর তারিখ জানা না থাকে (Age at death, if date of birth/death is unknown).");
              txtDAge.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtDAge.getText().toString().length()==0 ? "00" : txtDAge.getText().toString()) < 00 || Integer.valueOf(txtDAge.getText().toString().length()==0 ? "99" : txtDAge.getText().toString()) > 99)
+         else if(dtpDtofDeath.getText().toString().length()==0 &(Integer.valueOf(txtDAge.getText().toString().length()==0 ? "00" : txtDAge.getText().toString()) < 00 || Integer.valueOf(txtDAge.getText().toString().length()==0 ? "99" : txtDAge.getText().toString()) > 99))
            {
              Connection.MessageBox(Member.this, "Value should be between 00 and 99(মৃত্যুর সময় বয়স, যদি জন্ম/মৃত্যুর তারিখ জানা না থাকে (Age at death, if date of birth/death is unknown)).");
              txtDAge.requestFocus(); 
              return;	
            }
-         else if(spnDAgeU.getSelectedItemPosition()==0  & secDAgeU.isShown())
+         else if(spnDAgeU.getSelectedItemPosition()==0  & secDAgeU.isShown()&dtpDtofDeath.getText().toString().length()>0)
            {
              Connection.MessageBox(Member.this, "Required field: দিন/মাস/সন (Days/Months/Years).");
              spnDAgeU.requestFocus(); 

@@ -3087,8 +3087,11 @@
                         lineTDisDr.setVisibility(View.VISIBLE);
                         spnTDisDr.setSelection(0);
 
+                        rdogrpHaveHosp.check(R.id.rdoHaveHosp1);
+
                    }
                    else if(rbData.equalsIgnoreCase("2")) {
+                        rdogrpHaveHosp.clearCheck();
                        if(rdoHC_PhyMBBS1.isChecked())
                        {
                            secTHosNamLabel.setVisibility(View.GONE);
@@ -3177,6 +3180,7 @@
 
                    }
                    else if(rbData.equalsIgnoreCase("7")) {
+                        rdogrpHaveHosp.clearCheck();
                        if(rdoHC_PhyMBBS1.isChecked())
                        {
                            secTHosNamLabel.setVisibility(View.GONE);
@@ -4930,7 +4934,7 @@
              txtWorstHour.requestFocus(); 
              return;	
            }
-         else if(secWorstHour.isShown()&Integer.valueOf(txtWorstHour.getText().toString().length()==0 ? "1" : txtWorstHour.getText().toString()) < 1 || Integer.valueOf(txtWorstHour.getText().toString().length()==0 ? "99" : txtWorstHour.getText().toString()) > 99)
+         else if(secWorstHour.isShown()&Integer.valueOf(txtWorstHour.getText().toString().length()==0 ? "1" : txtWorstHour.getText().toString()) < 0 || Integer.valueOf(txtWorstHour.getText().toString().length()==0 ? "99" : txtWorstHour.getText().toString()) > 99)
            {
              Connection.MessageBox(TyphoidCase.this, "Value should be between 1 and 99(যেদিন সবচেয়ে বেশি জর ছিল সেদিন কত ঘণ্টা শিশুটি বিছানা থেকে উঠতে পারেনি? (During the worst day of fever, how many hours did the person with fever spend in bed?)).");
              txtWorstHour.requestFocus(); 
@@ -4942,7 +4946,7 @@
              txtDaysOfUnable.requestFocus(); 
              return;	
            }
-         else if(secDaysOfUnable.isShown()&Integer.valueOf(txtDaysOfUnable.getText().toString().length()==0 ? "1" : txtDaysOfUnable.getText().toString()) < 1 || Integer.valueOf(txtDaysOfUnable.getText().toString().length()==0 ? "99" : txtDaysOfUnable.getText().toString()) > 99)
+         else if(secDaysOfUnable.isShown()&Integer.valueOf(txtDaysOfUnable.getText().toString().length()==0 ? "1" : txtDaysOfUnable.getText().toString()) < 0 || Integer.valueOf(txtDaysOfUnable.getText().toString().length()==0 ? "99" : txtDaysOfUnable.getText().toString()) > 99)
            {
              Connection.MessageBox(TyphoidCase.this, "Value should be between 1 and 99(এই অসুস্থতার সময় শিশুটি কত দিন স্বাভাবিক কাজকর্ম করতে পারেনি? (During this febrile illness, for how many days was the person unable to conduct their usual activities?)).");
              txtDaysOfUnable.requestFocus(); 
@@ -5022,7 +5026,7 @@
                      return;
 
            }
-         else if(secTDurIlBeHos.isShown()& Integer.valueOf(txtTDurIlBeHos.getText().toString().length()==0 ? "1" : txtTDurIlBeHos.getText().toString()) < 1 || Integer.valueOf(txtTDurIlBeHos.getText().toString().length()==0 ? "98" : txtTDurIlBeHos.getText().toString()) > 98)
+         else if(secTDurIlBeHos.isShown()& Integer.valueOf(txtTDurIlBeHos.getText().toString().length()==0 ? "1" : txtTDurIlBeHos.getText().toString()) < 0 || Integer.valueOf(txtTDurIlBeHos.getText().toString().length()==0 ? "98" : txtTDurIlBeHos.getText().toString()) > 98)
            {
              Connection.MessageBox(TyphoidCase.this, "Value should be between 1 and 98( হাসপাতালে ভর্তির আগে শিশুটি কতদিন অসুস্থ ছিল? (যদি জানা না থাকে 98 বসান) (For how many days did the child appear ill before he/she was hospitalized?)).");
              txtTDurIlBeHos.requestFocus(); 

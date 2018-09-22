@@ -1322,7 +1322,7 @@
              txtU5YrsAlive.requestFocus();
              return;
          }
-         else if(Integer.valueOf(txtU5YrsAlive.getText().toString().length()==0 ? "1" : txtU5YrsAlive.getText().toString()) < 1 || Integer.valueOf(txtU5YrsAlive.getText().toString().length()==0 ? "99" : txtU5YrsAlive.getText().toString()) > 99)
+         else if(secU5YrsAlive.isShown() &(Integer.valueOf(txtU5YrsAlive.getText().toString().length()==0 ? "1" : txtU5YrsAlive.getText().toString()) < 1 || Integer.valueOf(txtU5YrsAlive.getText().toString().length()==0 ? "99" : txtU5YrsAlive.getText().toString()) > 99))
          {
              Connection.MessageBox(Household_Visit.this, "Value should be between 1 and 99(Number of under 5 years old alive).");
              txtU5YrsAlive.requestFocus();
@@ -1341,7 +1341,7 @@
              txtU5YrsDeath.requestFocus();
              return;
          }
-         else if(Integer.valueOf(txtU5YrsDeath.getText().toString().length()==0 ? "1" : txtU5YrsDeath.getText().toString()) < 1 || Integer.valueOf(txtU5YrsDeath.getText().toString().length()==0 ? "99" : txtU5YrsDeath.getText().toString()) > 99)
+         else if(secU5YrsDeath.isShown()&(Integer.valueOf(txtU5YrsDeath.getText().toString().length()==0 ? "1" : txtU5YrsDeath.getText().toString()) < 1 || Integer.valueOf(txtU5YrsDeath.getText().toString().length()==0 ? "99" : txtU5YrsDeath.getText().toString()) > 99))
          {
              Connection.MessageBox(Household_Visit.this, "Value should be between 1 and 99(Number of 5 years deaths in last 12 months).");
              txtU5YrsDeath.requestFocus();

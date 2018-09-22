@@ -78,6 +78,14 @@
             android:background="@drawable/button_style_yellow"
             android:layout_margin="10sp"/>
 
+        <Button
+            android:id="@+id/btnAddMissionRefusal"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:text="Admission refusal"
+            android:background="@drawable/button_style_yellow"
+            android:layout_margin="10sp"/>
+
     </LinearLayout>
 
 

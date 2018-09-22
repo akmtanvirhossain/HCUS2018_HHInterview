@@ -9,7 +9,7 @@
         android:background="@color/theme_color">
         <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal">
             <ImageButton android:id="@+id/cmdBack" android:background="@color/pageHeadingBack" android:src="@drawable/back" android:layout_width="50sp" android:layout_height="match_parent"/>
-            <TextView android:id="@+id/lblHeading" android:text="Immunization Master"  android:paddingLeft="10sp" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:textSize="20sp" android:textColor="@color/pageHeading"/>
+            <TextView android:id="@+id/lblHeading" android:text="Addmission Refusal"  android:paddingLeft="10sp" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:textSize="20sp" android:textColor="@color/pageHeading"/>
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
     <ScrollView
@@ -51,57 +51,36 @@
         <LinearLayout android:id="@+id/secMemName" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
             <TextView android:id="@+id/lblMemName" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
             <TextView android:id="@+id/VlblMemName" android:text="Member Name" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
-            <EditText android:id="@+id/txtMemName" android:enabled="false" android:layout_width="100sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+            <EditText android:id="@+id/txtMemName" android:enabled="false"  android:layout_width="100sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
         </LinearLayout>
         <View android:id="@+id/lineMemName" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
 
-        <LinearLayout android:id="@+id/secRecVitA" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
-        <TextView android:id="@+id/lblRecVitA" android:text="1.1" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblRecVitA" android:text="শিশুটি (নাম) গত ৬ মাসে ভিটামিন A ক্যাপসুল খেয়েছিল?  (Did (NAME) receive a Vitamin A dose like this during the last 6 months? SHOW CAPSULE)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <RadioGroup android:id="@+id/rdogrpRecVitA" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
-           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoRecVitA1" android:text="Yes" android:gravity="top|bottom" />
-           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoRecVitA2" android:text="No" android:gravity="top|bottom" />
-           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoRecVitA3" android:text="DK" android:gravity="top|bottom"/>
+    <LinearLayout android:id="@+id/secAdmRefDSH" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+        <TextView android:id="@+id/lblAdmRefDSH" android:text="8.1" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblAdmRefDSH" android:text="গত ১২ মাসে এমন কি হয়েছিল যে, আপনার শিশুকে ঢাকা শিশু হাসপাতালে ভর্তি করানোর দরকার ছিল কিন্তু ভর্তি করাতে পারেননি বা ভর্তি করাননি?(In the last 12 months, did your child need admission at DSH but was not admitted?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <RadioGroup android:id="@+id/rdogrpAdmRefDSH" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
+           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoAdmRefDSH1" android:text="Yes" android:gravity="top|bottom" />
+           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoAdmRefDSH2" android:text="No" android:gravity="top|bottom" />
+           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoAdmRefDSH3" android:text="Don’t know" android:gravity="top|bottom"/>
         </RadioGroup>
     </LinearLayout>
-    <View android:id="@+id/lineRecVitA" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
-    <LinearLayout android:id="@+id/secReceive_Vacc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
-        <TextView android:id="@+id/lblReceive_Vacc" android:text="1.2" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblReceive_Vacc" android:text="শিশুটি (নাম) কি রোগ প্রতিরোধের জন্য কোন টিকা গ্রহন করেছে? (Did (NAME) ever receive any vaccinations to prevent him/her from getting disease?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <RadioGroup android:id="@+id/rdogrpReceive_Vacc" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
-           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoReceive_Vacc1" android:text="Yes" android:gravity="top|bottom" />
-           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoReceive_Vacc2" android:text="No" android:gravity="top|bottom" />
-           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoReceive_Vacc3" android:text="DK" android:gravity="top|bottom"/>
+    <View android:id="@+id/lineAdmRefDSH" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+    <LinearLayout android:id="@+id/secAdmRefWhyDSH" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+        <TextView android:id="@+id/lblAdmRefWhyDSH" android:text="8.2" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblAdmRefWhyDSH" android:text="আপনার শিশুকে কেন ঢাকা শিশু হাসপাতালে নিয়ে গিয়েছিলেন? (Why did you seek care at DSH?)" android:layout_width="220sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <EditText android:id="@+id/txtAdmRefWhyDSH" android:maxLength="200" android:layout_width="250sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+    </LinearLayout>
+    <View android:id="@+id/lineAdmRefWhyDSH" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+    <LinearLayout android:id="@+id/secNotGetAdm" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+        <TextView android:id="@+id/lblNotGetAdm" android:text="8.3" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <TextView android:id="@+id/VlblNotGetAdm" android:text="আপনার শিশুকে কেন ভর্তি করাতে পারেন নি ?(Why did the child not get admitted?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+        <RadioGroup android:id="@+id/rdogrpNotGetAdm" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">         
+           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoNotGetAdm1" android:text="ডাক্তার বলেছিলেন কোন বিছানা ফাঁকা নেই ( Doctor said that there were no beds)" android:gravity="top|bottom" />
+           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoNotGetAdm2" android:text=" ভর্তি করানোর জন্য টাকা ছিলনা (You did not have money for admission)" android:gravity="top|bottom" />
+           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoNotGetAdm3" android:text=" আপনি ঢাকা শিশু হাসপাতালে ভর্তি করাতে চাননি (You did not want to admit your child at DSH)" android:gravity="top|bottom"/>
         </RadioGroup>
     </LinearLayout>
-    <View android:id="@+id/lineReceive_Vacc" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
-    <LinearLayout android:id="@+id/secHCard" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
-        <TextView android:id="@+id/lblHCard" android:text="1.3" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <TextView android:id="@+id/VlblHCard" android:text="আপনার কাছে কি এই শিশুর টিকার কার্ড আছে? যদি হ্যাঁ হয়, আমি কি দেখতে পারি? (Do you have a card where (NAME’S) vaccinations are written down? IF YES, May I see it please?)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
-        <RadioGroup android:id="@+id/rdogrpHCard" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">
-           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoHCard1" android:text="Yes, Seen" android:gravity="top|bottom" />
-           <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoHCard2" android:text="No, Not seen" android:gravity="top|bottom"/>
-        </RadioGroup>
-    </LinearLayout>
-    <View android:id="@+id/lineHCard" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
-
-        <LinearLayout android:id="@+id/secImage" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
-            <Button android:id="@+id/btnPhoto" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Take Photo" />
-            <ImageView android:id="@+id/imgCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="5sp" />
-        </LinearLayout>
-        <View android:id="@+id/lineImage" android:visibility="gone" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
-
-        <LinearLayout
-            android:id="@+id/secImmunization"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <include layout="@layout/immunization_list_list"></include>
-
-        </LinearLayout>
-        <View android:id="@+id/linesecImmunization" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
-
+    <View android:id="@+id/lineNotGetAdm" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
        <LinearLayout android:layout_width="fill_parent" android:paddingTop="20sp" android:layout_height="wrap_content" android:orientation="horizontal">
        	<Button android:id="@+id/cmdSave" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/button_style_green"
        			android:textSize="20sp" android:text=" Save -> Continue " android:textColor="#FFFFFF" android:layout_marginBottom="20sp" android:layout_marginLeft="20sp" android:layout_marginRight="20sp"/>

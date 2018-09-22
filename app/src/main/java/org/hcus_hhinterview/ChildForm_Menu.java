@@ -23,7 +23,7 @@ public class ChildForm_Menu extends AppCompatActivity {
     static String AGE = "";
     static String NAME = "";
 
-    Button btnImu,btnTyphoid,btnMeningitis,btnPneumonia,btnDiarrhoea,btnOperation,btnOtitis;
+    Button btnImu,btnTyphoid,btnMeningitis,btnPneumonia,btnDiarrhoea,btnOperation,btnOtitis,btnAddMissionRefusal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +62,7 @@ public class ChildForm_Menu extends AppCompatActivity {
         btnDiarrhoea=findViewById(R.id.btnDiarrhoea);
         btnOperation=findViewById(R.id.btnOperation);
         btnOtitis=findViewById(R.id.btnOtitis);
+        btnAddMissionRefusal=findViewById(R.id.btnAddMissionRefusal);
 
         if(Integer.parseInt(AGE) < 60)
         {
@@ -288,6 +289,35 @@ public class ChildForm_Menu extends AppCompatActivity {
                     }
                 }.start();
 
+            }
+        });
+
+        btnAddMissionRefusal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final ProgressDialog progDailog = ProgressDialog.show(ChildForm_Menu.this, "", "Please Wait . . .", true);
+                new Thread() {
+                    public void run() {
+                        try {
+                            Bundle IDbundle = new Bundle();
+                            IDbundle.putString("UNCode", UNCODE);
+                            IDbundle.putString("StructureNo", STRUCTURENO);
+                            IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
+                            IDbundle.putString("VisitNo", VISITNO);
+                            IDbundle.putString("MemSl",""+MEMSL);
+                            IDbundle.putString("Name",""+NAME);
+//                            IDbundle.putString("Age",""+AGE);
+                            Intent f1 = new Intent(getApplicationContext(), Admission_Refusal.class);
+                            f1.putExtras(IDbundle);
+                            startActivityForResult(f1,1);
+                        }
+                        catch (Exception e) {
+                            Connection.MessageBox(ChildForm_Menu.this, e.getMessage());
+                            return;
+                        }
+                        progDailog.dismiss();
+                    }
+                }.start();
             }
         });
 
