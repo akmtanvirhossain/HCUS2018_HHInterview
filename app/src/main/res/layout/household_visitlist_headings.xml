@@ -6,25 +6,29 @@
         <!--<TextView android:text="VCode" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <!--<TextView android:text="Cluster" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <TextView
-            android:layout_width="90dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Ward No" />
 
         <TextView
-            android:layout_width="204dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Structure No" />
 
         <TextView
-            android:layout_width="149dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Household Sl" />
 
         <TextView
-            android:layout_width="126dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Visit No" />

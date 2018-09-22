@@ -126,6 +126,10 @@
          View lineMemSl;
          TextView VlblMemSl;
          EditText txtMemSl;
+         LinearLayout secMemName;
+         View lineMemName;
+         TextView VlblMemName;
+         EditText txtMemName;
          LinearLayout secRecVitA;
          View lineRecVitA;
          TextView VlblRecVitA;
@@ -163,6 +167,7 @@
     static String HOUSEHOLDSL = "";
     static String VISITNO = "";
     static String MEMSL = "";
+    static String MEMNAME = "";
 
     LinearLayout secImmunization;
     View linesecImmunization;
@@ -198,6 +203,7 @@
          HOUSEHOLDSL = IDbundle.getString("HouseholdSl");
          VISITNO = IDbundle.getString("VisitNo");
          MEMSL = IDbundle.getString("MemSl");
+         MEMNAME = IDbundle.getString("Name");
 
          name=UNCODE+STRUCTURENO+HOUSEHOLDSL+VISITNO+MEMSL;
 
@@ -253,6 +259,10 @@
          lineMemSl=(View)findViewById(R.id.lineMemSl);
          VlblMemSl=(TextView) findViewById(R.id.VlblMemSl);
          txtMemSl=(EditText) findViewById(R.id.txtMemSl);
+         secMemName=(LinearLayout)findViewById(R.id.secMemName);
+         lineMemName=(View)findViewById(R.id.lineMemName);
+         VlblMemName=(TextView) findViewById(R.id.VlblMemName);
+         txtMemName=(EditText) findViewById(R.id.txtMemName);
          secRecVitA=(LinearLayout)findViewById(R.id.secRecVitA);
          lineRecVitA=(View)findViewById(R.id.lineRecVitA);
          VlblRecVitA = (TextView) findViewById(R.id.VlblRecVitA);
@@ -411,6 +421,7 @@
          txtHouseholdSl.setText(HOUSEHOLDSL);
          txtVisitNo.setText(VISITNO);
          txtMemSl.setText(MEMSL);
+         txtMemName.setText(MEMNAME);
 
          recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
          mAdapter = new DataAdapter(dataList);

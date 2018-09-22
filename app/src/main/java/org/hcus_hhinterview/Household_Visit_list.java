@@ -257,22 +257,22 @@ package org.hcus_hhinterview;
          public MyViewHolder(View convertView) {
              super(convertView);
              secListRow = (LinearLayout)convertView.findViewById(R.id.secListRow);
-             UNCode = (TextView)convertView.findViewById(R.id.UNCode);
-             StructureNo = (TextView)convertView.findViewById(R.id.StructureNo);
+//             UNCode = (TextView)convertView.findViewById(R.id.UNCode);
+//             StructureNo = (TextView)convertView.findViewById(R.id.StructureNo);
              HouseholdSl = (TextView)convertView.findViewById(R.id.HouseholdSl);
              VisitNo = (TextView)convertView.findViewById(R.id.VisitNo);
 //             HHVisited = (TextView)convertView.findViewById(R.id.HHVisited);
-//             Outcome = (TextView)convertView.findViewById(R.id.Outcome);
+             Outcome = (TextView)convertView.findViewById(R.id.Outcome);
 //             OutcomeOth = (TextView)convertView.findViewById(R.id.OutcomeOth);
 //             HHMember = (TextView)convertView.findViewById(R.id.HHMember);
 //             U18Yrs = (TextView)convertView.findViewById(R.id.U18Yrs);
-//             U18Alive = (TextView)convertView.findViewById(R.id.U18Alive);
+             U18Alive = (TextView)convertView.findViewById(R.id.U18Alive);
 //             U18YrsDie = (TextView)convertView.findViewById(R.id.U18YrsDie);
-//             U18Death = (TextView)convertView.findViewById(R.id.U18Death);
-//             OfferedStudy = (TextView)convertView.findViewById(R.id.OfferedStudy);
+             U18Death = (TextView)convertView.findViewById(R.id.U18Death);
+             OfferedStudy = (TextView)convertView.findViewById(R.id.OfferedStudy);
 //             NotOffered = (TextView)convertView.findViewById(R.id.NotOffered);
 //             NotOfferedOth = (TextView)convertView.findViewById(R.id.NotOfferedOth);
-//             Consent = (TextView)convertView.findViewById(R.id.Consent);
+             Consent = (TextView)convertView.findViewById(R.id.Consent);
 //             Remarks = (TextView)convertView.findViewById(R.id.Remarks);
 //             DataCollDate = (TextView)convertView.findViewById(R.id.DataCollDate);
              }
@@ -289,22 +289,71 @@ package org.hcus_hhinterview;
          @Override
          public void onBindViewHolder(MyViewHolder holder, int position) {
              final Household_Visit_DataModel data = dataList.get(position);
-             holder.UNCode.setText(data.getUNCode());
-             holder.StructureNo.setText(data.getStructureNo());
+//             holder.UNCode.setText(data.getUNCode());
+//             holder.StructureNo.setText(data.getStructureNo());
              holder.HouseholdSl.setText(""+data.getHouseholdSl());
              holder.VisitNo.setText(data.getVisitNo());
 //             holder.HHVisited.setText(data.getHHVisited());
-//             holder.Outcome.setText(data.getOutcome());
+             holder.Outcome.setText(""+data.getOutcome());
 //             holder.OutcomeOth.setText(data.getOutcomeOth());
 //             holder.HHMember.setText(data.getHHMember());
 //             holder.U18Yrs.setText(data.getU18Yrs());
-//             holder.U18Alive.setText(data.getU18Alive());
+
+             if(data.getU18Yrs()==2)
+             {
+                 holder.U18Alive.setText("N");
+             }
+             else if(data.getU18Yrs()==1)
+             {
+                 holder.U18Alive.setText("Y");
+             }
+             else{
+                 holder.U18Alive.setText("");
+             }
+
+             if(data.getU18YrsDie()==2)
+             {
+                 holder.U18Death.setText("N");
+             }
+             else if(data.getU18YrsDie()==1)
+             {
+                 holder.U18Death.setText("Y");
+             }
+             else{
+                 holder.U18Death.setText("");
+             }
+
+             if(data.getOfferedStudy()==2)
+             {
+                 holder.OfferedStudy.setText("N");
+             }
+             else if(data.getOfferedStudy()==1)
+             {
+                 holder.OfferedStudy.setText("Y");
+             }
+             else{
+                 holder.OfferedStudy.setText("");
+             }
+
+             if(data.getConsent()==2)
+             {
+                 holder.Consent.setText("N");
+             }
+             else if(data.getConsent()==1)
+             {
+                 holder.Consent.setText("Y");
+             }
+             else{
+                 holder.Consent.setText("");
+             }
+
+
 //             holder.U18YrsDie.setText(data.getU18YrsDie());
-//             holder.U18Death.setText(data.getU18Death());
-//             holder.OfferedStudy.setText(data.getOfferedStudy());
+
+//             holder.OfferedStudy.setText(""+data.getOfferedStudy());
 //             holder.NotOffered.setText(data.getNotOffered());
 //             holder.NotOfferedOth.setText(data.getNotOfferedOth());
-//             holder.Consent.setText(data.getConsent());
+//             holder.Consent.setText(""+data.getConsent());
 //             holder.Remarks.setText(data.getRemarks());
 //             holder.DataCollDate.setText(data.getDataCollDate());
              holder.secListRow.setOnClickListener(new View.OnClickListener() {

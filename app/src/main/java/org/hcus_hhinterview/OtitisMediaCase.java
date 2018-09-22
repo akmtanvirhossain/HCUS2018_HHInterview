@@ -107,6 +107,10 @@
          View lineMemSl;
          TextView VlblMemSl;
          EditText txtMemSl;
+     LinearLayout secMemName;
+     View lineMemName;
+     TextView VlblMemName;
+     EditText txtMemName;
          LinearLayout secOMEDis;
          View lineOMEDis;
          TextView VlblOMEDis;
@@ -269,6 +273,7 @@
     static String HOUSEHOLDSL = "";
     static String VISITNO = "";
     static String MEMSL = "";
+     static String MEMNAME = "";
 
  public void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -290,6 +295,7 @@
          HOUSEHOLDSL = IDbundle.getString("HouseholdSl");
          VISITNO = IDbundle.getString("VisitNo");
          MEMSL = IDbundle.getString("MemSl");
+         MEMNAME = IDbundle.getString("Name");
 
          TableName = "OtitisMediaCase ";
 
@@ -336,6 +342,10 @@
          lineMemSl=(View)findViewById(R.id.lineMemSl);
          VlblMemSl=(TextView) findViewById(R.id.VlblMemSl);
          txtMemSl=(EditText) findViewById(R.id.txtMemSl);
+         secMemName=(LinearLayout)findViewById(R.id.secMemName);
+         lineMemName=(View)findViewById(R.id.lineMemName);
+         VlblMemName=(TextView) findViewById(R.id.VlblMemName);
+         txtMemName=(EditText) findViewById(R.id.txtMemName);
          secOMEDis=(LinearLayout)findViewById(R.id.secOMEDis);
          lineOMEDis=(View)findViewById(R.id.lineOMEDis);
          VlblOMEDis = (TextView) findViewById(R.id.VlblOMEDis);
@@ -346,6 +356,7 @@
          txtHouseholdSl.setText(HOUSEHOLDSL);
          txtVisitNo.setText(VISITNO);
          txtMemSl.setText(MEMSL);
+         txtMemName.setText(MEMNAME);
 
 
          rdoOMEDis1 = (RadioButton) findViewById(R.id.rdoOMEDis1);

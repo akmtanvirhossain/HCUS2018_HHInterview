@@ -107,6 +107,10 @@
          View lineMemSl;
          TextView VlblMemSl;
          EditText txtMemSl;
+     LinearLayout secMemName;
+     View lineMemName;
+     TextView VlblMemName;
+     EditText txtMemName;
          LinearLayout secMeningitisCaseLabel;
          View lineMeningitisCaseLabel;
          LinearLayout secSeriIlOnset;
@@ -507,6 +511,7 @@
     static String HOUSEHOLDSL = "";
     static String VISITNO = "";
     static String MEMSL = "";
+     static String MEMNAME = "";
 
  public void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -528,6 +533,7 @@
          HOUSEHOLDSL = IDbundle.getString("HouseholdSl");
          VISITNO = IDbundle.getString("VisitNo");
          MEMSL = IDbundle.getString("MemSl");
+         MEMNAME = IDbundle.getString("Name");
 
          TableName = "MeningitisCase";
 
@@ -574,6 +580,10 @@
          lineMemSl=(View)findViewById(R.id.lineMemSl);
          VlblMemSl=(TextView) findViewById(R.id.VlblMemSl);
          txtMemSl=(EditText) findViewById(R.id.txtMemSl);
+         secMemName=(LinearLayout)findViewById(R.id.secMemName);
+         lineMemName=(View)findViewById(R.id.lineMemName);
+         VlblMemName=(TextView) findViewById(R.id.VlblMemName);
+         txtMemName=(EditText) findViewById(R.id.txtMemName);
          secMeningitisCaseLabel=(LinearLayout)findViewById(R.id.secMeningitisCaseLabel);
          lineMeningitisCaseLabel=(View)findViewById(R.id.lineMeningitisCaseLabel);
          secSeriIlOnset=(LinearLayout)findViewById(R.id.secSeriIlOnset);
@@ -586,7 +596,7 @@
          txtHouseholdSl.setText(HOUSEHOLDSL);
          txtVisitNo.setText(VISITNO);
          txtMemSl.setText(MEMSL);
-
+         txtMemName.setText(MEMNAME);
 
          rdoSeriIlOnset1 = (RadioButton) findViewById(R.id.rdoSeriIlOnset1);
          rdoSeriIlOnset2 = (RadioButton) findViewById(R.id.rdoSeriIlOnset2);

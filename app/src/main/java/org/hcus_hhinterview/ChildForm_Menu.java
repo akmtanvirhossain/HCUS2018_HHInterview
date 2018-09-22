@@ -21,6 +21,7 @@ public class ChildForm_Menu extends AppCompatActivity {
     static String VISITNO = "";
     static String MEMSL = "";
     static String AGE = "";
+    static String NAME = "";
 
     Button btnImu,btnTyphoid,btnMeningitis,btnPneumonia,btnDiarrhoea,btnOperation,btnOtitis;
 
@@ -36,6 +37,7 @@ public class ChildForm_Menu extends AppCompatActivity {
         VISITNO = IDbundle.getString("VisitNo");
         MEMSL = IDbundle.getString("MemSl");
         AGE = IDbundle.getString("Age");
+        NAME = IDbundle.getString("Name");
 
 
         ImageButton cmdBack = (ImageButton) findViewById(R.id.cmdBack);
@@ -92,6 +94,7 @@ public class ChildForm_Menu extends AppCompatActivity {
                             IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
                             IDbundle.putString("VisitNo", VISITNO);
                             IDbundle.putString("MemSl",""+MEMSL);
+                            IDbundle.putString("Name",""+NAME);
 //                            IDbundle.putString("Age",""+AGE);
                             Intent f1 = new Intent(getApplicationContext(), Immunization_Master.class);
                             f1.putExtras(IDbundle);
@@ -121,6 +124,7 @@ public class ChildForm_Menu extends AppCompatActivity {
                             IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
                             IDbundle.putString("VisitNo", VISITNO);
                             IDbundle.putString("MemSl",""+MEMSL);
+                            IDbundle.putString("Name",""+NAME);
 //                            IDbundle.putString("Age",""+AGE);
                             Intent f1 = new Intent(getApplicationContext(), TyphoidCase.class);
                             f1.putExtras(IDbundle);
@@ -150,6 +154,7 @@ public class ChildForm_Menu extends AppCompatActivity {
                             IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
                             IDbundle.putString("VisitNo", VISITNO);
                             IDbundle.putString("MemSl",""+MEMSL);
+                            IDbundle.putString("Name",""+NAME);
 //                            IDbundle.putString("Age",""+AGE);
                             Intent f1 = new Intent(getApplicationContext(), MeningitisCase.class);
                             f1.putExtras(IDbundle);
@@ -179,6 +184,7 @@ public class ChildForm_Menu extends AppCompatActivity {
                             IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
                             IDbundle.putString("VisitNo", VISITNO);
                             IDbundle.putString("MemSl",""+MEMSL);
+                            IDbundle.putString("Name",""+NAME);
 //                            IDbundle.putString("Age",""+AGE);
                             Intent f1 = new Intent(getApplicationContext(), PneumoniaCase.class);
                             f1.putExtras(IDbundle);
@@ -208,6 +214,7 @@ public class ChildForm_Menu extends AppCompatActivity {
                             IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
                             IDbundle.putString("VisitNo", VISITNO);
                             IDbundle.putString("MemSl",""+MEMSL);
+                            IDbundle.putString("Name",""+NAME);
 //                            IDbundle.putString("Age",""+AGE);
                             Intent f1 = new Intent(getApplicationContext(), DiarrhoeaCase.class);
                             f1.putExtras(IDbundle);
@@ -237,6 +244,7 @@ public class ChildForm_Menu extends AppCompatActivity {
                             IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
                             IDbundle.putString("VisitNo", VISITNO);
                             IDbundle.putString("MemSl",""+MEMSL);
+                            IDbundle.putString("Name",""+NAME);
 //                            IDbundle.putString("Age",""+AGE);
                             Intent f1 = new Intent(getApplicationContext(), EmergencyOperation.class);
                             f1.putExtras(IDbundle);
@@ -266,6 +274,7 @@ public class ChildForm_Menu extends AppCompatActivity {
                             IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
                             IDbundle.putString("VisitNo", VISITNO);
                             IDbundle.putString("MemSl",""+MEMSL);
+                            IDbundle.putString("Name",""+NAME);
 //                            IDbundle.putString("Age",""+AGE);
                             Intent f1 = new Intent(getApplicationContext(), OtitisMediaCase.class);
                             f1.putExtras(IDbundle);

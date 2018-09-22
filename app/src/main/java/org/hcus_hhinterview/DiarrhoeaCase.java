@@ -107,6 +107,10 @@
          View lineMemSl;
          TextView VlblMemSl;
          EditText txtMemSl;
+     LinearLayout secMemName;
+     View lineMemName;
+     TextView VlblMemName;
+     EditText txtMemName;
          LinearLayout secDWatStool;
          View lineDWatStool;
          TextView VlblDWatStool;
@@ -324,6 +328,7 @@
     static String HOUSEHOLDSL = "";
     static String VISITNO = "";
     static String MEMSL = "";
+     static String MEMNAME = "";
 
  public void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -345,6 +350,7 @@
          HOUSEHOLDSL = IDbundle.getString("HouseholdSl");
          VISITNO = IDbundle.getString("VisitNo");
          MEMSL = IDbundle.getString("MemSl");
+         MEMNAME = IDbundle.getString("Name");
 
          TableName = "DiarrhoeaCase ";
 
@@ -391,6 +397,10 @@
          lineMemSl=(View)findViewById(R.id.lineMemSl);
          VlblMemSl=(TextView) findViewById(R.id.VlblMemSl);
          txtMemSl=(EditText) findViewById(R.id.txtMemSl);
+         secMemName=(LinearLayout)findViewById(R.id.secMemName);
+         lineMemName=(View)findViewById(R.id.lineMemName);
+         VlblMemName=(TextView) findViewById(R.id.VlblMemName);
+         txtMemName=(EditText) findViewById(R.id.txtMemName);
          secDWatStool=(LinearLayout)findViewById(R.id.secDWatStool);
          lineDWatStool=(View)findViewById(R.id.lineDWatStool);
          VlblDWatStool = (TextView) findViewById(R.id.VlblDWatStool);
@@ -401,7 +411,7 @@
          txtHouseholdSl.setText(HOUSEHOLDSL);
          txtVisitNo.setText(VISITNO);
          txtMemSl.setText(MEMSL);
-
+         txtMemName.setText(MEMNAME);
 
          rdoDWatStool1 = (RadioButton) findViewById(R.id.rdoDWatStool1);
          rdoDWatStool2 = (RadioButton) findViewById(R.id.rdoDWatStool2);

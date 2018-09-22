@@ -313,6 +313,7 @@ package org.hcus_hhinterview;
                                  IDbundle.putString("VisitNo", data.getVisitNo());
                                  IDbundle.putString("MemSl",""+data.getMemSl());
                                  IDbundle.putString("Age",""+data.getAge());
+                                 IDbundle.putString("Name",""+data.getName());
                                  Intent f1 = new Intent(getApplicationContext(), ChildForm_Menu.class);
                                  f1.putExtras(IDbundle);
                                  startActivityForResult(f1,1);

@@ -108,6 +108,10 @@
          View lineMemSl;
          TextView VlblMemSl;
          EditText txtMemSl;
+      LinearLayout secMemName;
+      View lineMemName;
+      TextView VlblMemName;
+      EditText txtMemName;
          LinearLayout secHaveFever;
          View lineHaveFever;
          TextView VlblHaveFever;
@@ -548,6 +552,7 @@
     static String HOUSEHOLDSL = "";
     static String VISITNO = "";
     static String MEMSL = "";
+    static String MEMNAME = "";
 
  public void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -569,6 +574,7 @@
          HOUSEHOLDSL = IDbundle.getString("HouseholdSl");
          VISITNO = IDbundle.getString("VisitNo");
          MEMSL = IDbundle.getString("MemSl");
+         MEMNAME = IDbundle.getString("Name");
 
          TableName = "TyphoidCase";
 
@@ -615,6 +621,10 @@
          lineMemSl=(View)findViewById(R.id.lineMemSl);
          VlblMemSl=(TextView) findViewById(R.id.VlblMemSl);
          txtMemSl=(EditText) findViewById(R.id.txtMemSl);
+          secMemName=(LinearLayout)findViewById(R.id.secMemName);
+          lineMemName=(View)findViewById(R.id.lineMemName);
+          VlblMemName=(TextView) findViewById(R.id.VlblMemName);
+          txtMemName=(EditText) findViewById(R.id.txtMemName);
          secHaveFever=(LinearLayout)findViewById(R.id.secHaveFever);
          lineHaveFever=(View)findViewById(R.id.lineHaveFever);
          VlblHaveFever = (TextView) findViewById(R.id.VlblHaveFever);
@@ -626,6 +636,7 @@
           txtHouseholdSl.setText(HOUSEHOLDSL);
           txtVisitNo.setText(VISITNO);
           txtMemSl.setText(MEMSL);
+          txtMemName.setText(MEMNAME);
 
 
          
