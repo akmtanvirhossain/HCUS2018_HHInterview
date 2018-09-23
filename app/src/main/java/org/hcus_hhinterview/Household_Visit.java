@@ -486,6 +486,11 @@
 //                    txtNotOfferedOth.setText("");
                     secConsent.setVisibility(View.GONE);
                     lineConsent.setVisibility(View.GONE);
+
+                     secU5Yrs.setVisibility(View.GONE);
+                     lineU5Yrs.setVisibility(View.GONE);
+                     secU5YrsDie.setVisibility(View.GONE);
+                     lineU5YrsDie.setVisibility(View.GONE);
 //                    rdogrpConsent.clearCheck();
 
                  }
@@ -521,6 +526,10 @@
                     secConsent.setVisibility(View.GONE);
                     lineConsent.setVisibility(View.GONE);
 //                    rdogrpConsent.clearCheck();
+                     secU5Yrs.setVisibility(View.GONE);
+                     lineU5Yrs.setVisibility(View.GONE);
+                     secU5YrsDie.setVisibility(View.GONE);
+                     lineU5YrsDie.setVisibility(View.GONE);
                  }
                  else if(spnData.equalsIgnoreCase("4"))
                  {
@@ -554,6 +563,10 @@
                     secConsent.setVisibility(View.GONE);
                     lineConsent.setVisibility(View.GONE);
 //                    rdogrpConsent.clearCheck();
+                     secU5Yrs.setVisibility(View.GONE);
+                     lineU5Yrs.setVisibility(View.GONE);
+                     secU5YrsDie.setVisibility(View.GONE);
+                     lineU5YrsDie.setVisibility(View.GONE);
                  }
                  else if(spnData.equalsIgnoreCase("5"))
                  {
@@ -587,6 +600,11 @@
                     secConsent.setVisibility(View.GONE);
                     lineConsent.setVisibility(View.GONE);
 //                    rdogrpConsent.clearCheck();
+
+                     secU5Yrs.setVisibility(View.GONE);
+                     lineU5Yrs.setVisibility(View.GONE);
+                     secU5YrsDie.setVisibility(View.GONE);
+                     lineU5YrsDie.setVisibility(View.GONE);
                  }
 
                  else if(spnData.equalsIgnoreCase("7"))
@@ -620,6 +638,11 @@
 //                     txtNotOfferedOth.setText("");
                      secConsent.setVisibility(View.GONE);
                      lineConsent.setVisibility(View.GONE);
+
+                     secU5Yrs.setVisibility(View.GONE);
+                     lineU5Yrs.setVisibility(View.GONE);
+                     secU5YrsDie.setVisibility(View.GONE);
+                     lineU5YrsDie.setVisibility(View.GONE);
 //                     rdogrpConsent.clearCheck();
                  }
                  else
@@ -644,6 +667,10 @@
                     lineNotOfferedOth.setVisibility(View.GONE);
                     secConsent.setVisibility(View.GONE);
                     lineConsent.setVisibility(View.GONE);
+                     secU5Yrs.setVisibility(View.GONE);
+                     lineU5Yrs.setVisibility(View.GONE);
+                     secU5YrsDie.setVisibility(View.GONE);
+                     lineU5YrsDie.setVisibility(View.GONE);
                  }
              }
              @Override
@@ -1283,7 +1310,7 @@
              txtU18Alive.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtU18Alive.getText().toString())>Integer.valueOf(txtHHMember.getText().toString()))
+         else if(txtU18Alive.getText().toString().length()>0& txtHHMember.getText().toString().length() >0&(Integer.valueOf(txtU18Alive.getText().toString())>Integer.valueOf(txtHHMember.getText().toString())))
          {
              Connection.MessageBox(Household_Visit.this, "Number of under 18 years old alive should not be greater than total household member");
              txtU18Alive.requestFocus();
@@ -1488,12 +1515,23 @@
                  @Override
                  public void onClick(DialogInterface dialog, int which) {
 
-                     String spnData = "";
-                     if (spnOutcome.getSelectedItem().toString().length() != 0)
+//                     String spnData = "";
+//                     if (spnOutcome.getSelectedItem().toString().length() != 0)
+//                     {
+//                         spnData = Connection.SelectedSpinnerValue(spnOutcome.getSelectedItem().toString(), "-");
+//                     }
+
+
+                     String rbData = "";
+                     RadioButton rb;
+                     String[] d_rdogrpConsent = new String[] {"1","2"};
+                     for (int i = 0; i < rdogrpConsent.getChildCount(); i++)
                      {
-                         spnData = Connection.SelectedSpinnerValue(spnOutcome.getSelectedItem().toString(), "-");
+                         rb = (RadioButton)rdogrpConsent.getChildAt(i);
+                         if (rb.isChecked()) rbData = d_rdogrpConsent[i];
                      }
-                     if(spnData.equalsIgnoreCase("1"))
+
+                     if(rbData.equalsIgnoreCase("1"))
                      {
                          Bundle IDbundle = new Bundle();
                          IDbundle.putString("UNCode",UNCODE  );
@@ -1504,7 +1542,25 @@
                          Intent intent = new Intent(getApplicationContext(), Household_Interview.class);
                          intent.putExtras(IDbundle);
                          startActivityForResult(intent, 1);
+                     }else
+                     {
+                         Connection.MessageBox(Household_Visit.this,"এই খানার ইন্টারভিউ এখানেই শেষ. ধন্যবাদ ");
+                         Intent returnIntent = new Intent();
+                         returnIntent.putExtra("res", "");
+                         setResult(Activity.RESULT_OK, returnIntent);
                      }
+//                     if(spnData.equalsIgnoreCase("1"))
+//                     {
+//                         Bundle IDbundle = new Bundle();
+//                         IDbundle.putString("UNCode",UNCODE  );
+//                         IDbundle.putString("StructureNo",STRUCTURENO );
+//                         IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
+//                         IDbundle.putString("VisitNo", VISITNO);
+//
+//                         Intent intent = new Intent(getApplicationContext(), Household_Interview.class);
+//                         intent.putExtras(IDbundle);
+//                         startActivityForResult(intent, 1);
+//                     }
 
 
 
