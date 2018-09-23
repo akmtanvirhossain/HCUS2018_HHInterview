@@ -1960,6 +1960,7 @@ public class Connection extends SQLiteOpenHelper {
 //            C.Sync_Download("module_variable", UniqueID, "");
             C.Sync_Download("StructureListing", UniqueID, "");
             C.Sync_Download("AreaDB", UniqueID, "");
+            C.Sync_Download("Cluster", UniqueID, "");
             C.Sync_Download("StructureDB", UniqueID, "");
             C.Sync_Download("StructureIDSlot", UniqueID, "");
             C.Sync_Download("StructureID_Serial", UniqueID, "");

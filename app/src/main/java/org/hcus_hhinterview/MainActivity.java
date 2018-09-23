@@ -141,6 +141,7 @@ public class MainActivity extends AppCompatActivity
 //                                                                C.DataSync_UploadDownload(tableList, DEVICEID);
 
                                                                 C.Sync_Download("AreaDB", DEVICEID,"");
+                                                                C.Sync_Download("Cluster", DEVICEID,"");
                                                                 C.Sync_Download("StructureDB", DEVICEID,"");
 
 
@@ -333,11 +334,11 @@ public class MainActivity extends AppCompatActivity
 
         //references to our images
         private Integer[] mThumbIds = {
-                R.drawable.ic_action_new,
+                R.drawable.new_entry,
 //                R.drawable.planning,
 //                R.drawable.ic_action_search,
-                R.drawable.sync,
-                R.drawable.exit1
+                R.drawable.data_sync,
+                R.drawable.exit
         };
     }
 

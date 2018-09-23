@@ -17,7 +17,7 @@ public class ProjectSetting {
     public static String zipDatabaseName= ProjectName.toUpperCase() +"Database.zip";
     public static String Organization   = "ICDDR,B";
 
-    public static String VersionDate    = "16072018"; //Format: DDMMYYYY
+    public static String VersionDate    = "31082018"; //Format: DDMMYYYY
 
 
     //Data Sync: Background Service
@@ -41,7 +41,8 @@ public class ProjectSetting {
         return tableList_Upload;
     }
 
-    /*public static List<String> TableList_Download(){
+    /*
+    public static List<String> TableList_Download(){
         List<String> tableList_Download   = new ArrayList<String>();
         tableList_Download.add("");
         return tableList_Download;
