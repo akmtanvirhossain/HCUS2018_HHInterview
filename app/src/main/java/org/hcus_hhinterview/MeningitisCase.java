@@ -3869,7 +3869,7 @@ if(!txtMHosM.getText().toString().equals("0") & txtMHosM.getText().toString().le
                txtMDurIlBeHos.requestFocus();
                return;
            }
-           else if (secMDurIlBeHos.isShown()&Integer.valueOf(txtMDurIlBeHos.getText().toString().length() == 0 ? "01" : txtMDurIlBeHos.getText().toString()) < 01 || Integer.valueOf(txtMDurIlBeHos.getText().toString().length() == 0 ? "98" : txtMDurIlBeHos.getText().toString()) > 98) {
+           else if (secMDurIlBeHos.isShown()&Integer.valueOf(txtMDurIlBeHos.getText().toString().length() == 0 ? "01" : txtMDurIlBeHos.getText().toString()) < 00 || Integer.valueOf(txtMDurIlBeHos.getText().toString().length() == 0 ? "98" : txtMDurIlBeHos.getText().toString()) > 98) {
                Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 98(হাসপাতালে ভর্তির আগে শিশুটি কতদিন অসুস্থ ছিল? (যদি জানা না থাকে 98 বসান) (For how many days did the child appear ill before he/she was hospitalized?)).");
                txtMDurIlBeHos.requestFocus();
                return;

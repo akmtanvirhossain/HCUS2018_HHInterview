@@ -836,7 +836,7 @@ DataSearch_member(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
 
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
-                 if(txtliveHouseY.getText().toString().length()>0)
+                 if(txtliveHouseM.getText().toString().length()>0)
                      txtliveHouseY.setText("");
              }
 
@@ -906,64 +906,84 @@ txtliveHouseY.addTextChangedListener(new TextWatcher() {
 
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
-        if(txtliveHouseM.getText().toString().length()>0)
+        if(txtliveHouseY.getText().toString().length()>0) {
             txtliveHouseM.setText("");
+
+            //**********************************************************
+            int year = Integer.parseInt(txtliveHouseY.getText().toString());
+            if(year==96)
+            {
+                secHlive12m.setVisibility(View.GONE);
+                lineHlive12m.setVisibility(View.GONE);
+                rdogrpHlive12m.clearCheck();
+
+                secChangedHouse.setVisibility(View.GONE);
+                lineChangedHouse.setVisibility(View.GONE);
+                txtChangedHouse.setText("");
+
+                secDistHome.setVisibility(View.GONE);
+                lineDistHome.setVisibility(View.GONE);
+                spnDistHome.setSelection(0);
+            }else if(year>=5 & year<=95)
+            {
+                secHlive12m.setVisibility(View.GONE);
+                lineHlive12m.setVisibility(View.GONE);
+                rdogrpHlive12m.clearCheck();
+
+                secChangedHouse.setVisibility(View.GONE);
+                lineChangedHouse.setVisibility(View.GONE);
+                txtChangedHouse.setText("");
+            }
+            else{
+                secHlive12m.setVisibility(View.VISIBLE);
+                lineHlive12m.setVisibility(View.VISIBLE);
+
+                secChangedHouse.setVisibility(View.VISIBLE);
+                lineChangedHouse.setVisibility(View.VISIBLE);
+
+                secDistHome.setVisibility(View.VISIBLE);
+                lineDistHome.setVisibility(View.VISIBLE);
+
+//                     secLiveCity_Mon.setVisibility(View.VISIBLE);
+//                     secLiveCity_Year.setVisibility(View.VISIBLE);
+//                     secLiveHH_Mon.setVisibility(View.VISIBLE);
+//                     secLiveHH_Year.setVisibility(View.VISIBLE);
+//                     secHlive12m.setVisibility(View.VISIBLE);
+//                     secChangedHouse.setVisibility(View.VISIBLE);
+//                     secDistHome.setVisibility(View.VISIBLE);
+//                     lineLiveCity_Year.setVisibility(View.VISIBLE);
+//                     lineLiveHH_Mon.setVisibility(View.VISIBLE);
+//                     lineLiveHH_Year.setVisibility(View.VISIBLE);
+//                     lineHlive12m.setVisibility(View.VISIBLE);
+//                     lineChangedHouse.setVisibility(View.VISIBLE);
+//                     lineDistHome.setVisibility(View.VISIBLE);
+            }
+        }
     }
 
     @Override
     public void afterTextChanged(Editable s) {
 
-        if(txtliveHouseY.getText().toString().length()>0)
-        {
-            int year = Integer.parseInt(txtliveHouseY.getText().toString());
-            if(year==96)
-            {
-                         secLiveCity_Mon.setVisibility(View.GONE);
-                         secLiveCity_Year.setVisibility(View.GONE);
-                         secLiveHH_Mon.setVisibility(View.GONE);
-                         secLiveHH_Year.setVisibility(View.GONE);
-                         secHlive12m.setVisibility(View.GONE);
-                         secChangedHouse.setVisibility(View.GONE);
-                         secDistHome.setVisibility(View.GONE);
-                         lineLiveCity_Year.setVisibility(View.GONE);
-                         lineLiveHH_Mon.setVisibility(View.GONE);
-                         lineLiveHH_Year.setVisibility(View.GONE);
-                         lineHlive12m.setVisibility(View.GONE);
-                         lineChangedHouse.setVisibility(View.GONE);
-                         lineDistHome.setVisibility(View.GONE);
+//        if(txtliveHouseY.getText().toString().length()>0)
+//        {
+//            int year = Integer.parseInt(txtliveHouseY.getText().toString());
 //
-            }
-            else{
-                     secLiveCity_Mon.setVisibility(View.VISIBLE);
-                     secLiveCity_Year.setVisibility(View.VISIBLE);
-                     secLiveHH_Mon.setVisibility(View.VISIBLE);
-                     secLiveHH_Year.setVisibility(View.VISIBLE);
-                     secHlive12m.setVisibility(View.VISIBLE);
-                     secChangedHouse.setVisibility(View.VISIBLE);
-                     secDistHome.setVisibility(View.VISIBLE);
-                     lineLiveCity_Year.setVisibility(View.VISIBLE);
-                     lineLiveHH_Mon.setVisibility(View.VISIBLE);
-                     lineLiveHH_Year.setVisibility(View.VISIBLE);
-                     lineHlive12m.setVisibility(View.VISIBLE);
-                     lineChangedHouse.setVisibility(View.VISIBLE);
-                     lineDistHome.setVisibility(View.VISIBLE);
-            }
-        }
-        else{
-            secLiveCity_Mon.setVisibility(View.VISIBLE);
-            secLiveCity_Year.setVisibility(View.VISIBLE);
-            secLiveHH_Mon.setVisibility(View.VISIBLE);
-            secLiveHH_Year.setVisibility(View.VISIBLE);
-            secHlive12m.setVisibility(View.VISIBLE);
-            secChangedHouse.setVisibility(View.VISIBLE);
-            secDistHome.setVisibility(View.VISIBLE);
-            lineLiveCity_Year.setVisibility(View.VISIBLE);
-            lineLiveHH_Mon.setVisibility(View.VISIBLE);
-            lineLiveHH_Year.setVisibility(View.VISIBLE);
-            lineHlive12m.setVisibility(View.VISIBLE);
-            lineChangedHouse.setVisibility(View.VISIBLE);
-            lineDistHome.setVisibility(View.VISIBLE);
-        }
+//        }
+//        else{
+//            secLiveCity_Mon.setVisibility(View.VISIBLE);
+//            secLiveCity_Year.setVisibility(View.VISIBLE);
+//            secLiveHH_Mon.setVisibility(View.VISIBLE);
+//            secLiveHH_Year.setVisibility(View.VISIBLE);
+//            secHlive12m.setVisibility(View.VISIBLE);
+//            secChangedHouse.setVisibility(View.VISIBLE);
+//            secDistHome.setVisibility(View.VISIBLE);
+//            lineLiveCity_Year.setVisibility(View.VISIBLE);
+//            lineLiveHH_Mon.setVisibility(View.VISIBLE);
+//            lineLiveHH_Year.setVisibility(View.VISIBLE);
+//            lineHlive12m.setVisibility(View.VISIBLE);
+//            lineChangedHouse.setVisibility(View.VISIBLE);
+//            lineDistHome.setVisibility(View.VISIBLE);
+//        }
     }
 });
 
@@ -3183,26 +3203,26 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
              spnSOfDrinkingWater.requestFocus(); 
              return;	
            }
-         else if(txtTimeToWalkInMin.getText().toString().length()==0  & secTimeToWalkInMin.isShown())
-           {
-             Connection.MessageBox(Household_Interview.this, "Required field: পানি সংগ্রহের জন্য কত সময় হাটতে হয়? How long would you have to walk to collect water?.");
-             txtTimeToWalkInMin.requestFocus(); 
-             return;	
-           }
+//         else if(txtTimeToWalkInMin.getText().toString().length()==0  & secTimeToWalkInMin.isShown())
+//           {
+//             Connection.MessageBox(Household_Interview.this, "Required field: পানি সংগ্রহের জন্য কত সময় হাটতে হয়? How long would you have to walk to collect water?.");
+//             txtTimeToWalkInMin.requestFocus();
+//             return;
+//           }
+//
+//         else if(Integer.valueOf(txtTimeToWalkInMin.getText().toString())>59  & secTimeToWalkInMin.isShown())
+//         {
+//             Connection.MessageBox(Household_Interview.this, "Required field: Value should be 0 to 59");
+//             txtTimeToWalkInMin.requestFocus();
+//             return;
+//         }
 
-         else if(Integer.valueOf(txtTimeToWalkInMin.getText().toString())>59  & secTimeToWalkInMin.isShown())
-         {
-             Connection.MessageBox(Household_Interview.this, "Required field: Value should be 0 to 59");
-             txtTimeToWalkInMin.requestFocus();
-             return;
-         }
-
-         else if(txtTimeToWalkInHours.getText().toString().length()==0 & secTimeToWalkInHours.isShown())
-           {
-             Connection.MessageBox(Household_Interview.this, "Required field: ঘণ্টা (Hours).");
-             txtTimeToWalkInHours.requestFocus(); 
-             return;	
-           }
+//         else if(txtTimeToWalkInHours.getText().toString().length()==0 & secTimeToWalkInHours.isShown())
+//           {
+//             Connection.MessageBox(Household_Interview.this, "Required field: ঘণ্টা (Hours).");
+//             txtTimeToWalkInHours.requestFocus();
+//             return;
+//           }
          else if(txtWeeklyWSupplyInHour.getText().toString().length()==0 & secWeeklyWSupplyInHour.isShown())
            {
              Connection.MessageBox(Household_Interview.this, "Required field: সপ্তাহে গড়ে কত ঘণ্টা আপনার এলাকায় পানি থাকে? How many hours per week on average does water run in your community?.");

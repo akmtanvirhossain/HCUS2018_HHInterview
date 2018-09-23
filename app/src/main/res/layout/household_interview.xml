@@ -719,7 +719,7 @@
             android:layout_height="111dp"
             android:text="সপ্তাহে গড়ে কত ঘণ্টা আপনার এলাকায় পানি থাকে? How many hours per week on average does water run in your community?"
             android:textSize="20sp" />
-        <EditText android:id="@+id/txtWeeklyWSupplyInHour" android:maxLength="3" android:layout_width="100sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+        <EditText android:id="@+id/txtWeeklyWSupplyInHour" android:maxLength="3" android:layout_width="100sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/lineWeeklyWSupplyInHour" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secWeeklyWSuppHouse" android:layout_width="fill_parent" android:layout_height="155sp" android:orientation="horizontal" style="@style/rowStyle0">
@@ -731,7 +731,7 @@
             android:layout_height="155sp"
             android:text="গত মাসে প্রতি সপ্তাহে গড়ে কত ঘণ্টা আপনার বাসায় পানি ছিল? On the average in last month how many hours per week does water run in your house?"
             android:textSize="20sp" />
-        <EditText android:id="@+id/txtWeeklyWSuppHouse" android:maxLength="3" android:layout_width="100sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+        <EditText android:id="@+id/txtWeeklyWSuppHouse" android:maxLength="3" android:layout_width="100sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
     </LinearLayout>
     <View android:id="@+id/lineWeeklyWSuppHouse" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
     <LinearLayout android:id="@+id/secTreatDKWater" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">

@@ -549,6 +549,9 @@
                  e.printStackTrace();
              }
          }
+         if (requestCode != REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
+             DataSearch_Immunization("");
+         }
      }
 
  private void DataSave()

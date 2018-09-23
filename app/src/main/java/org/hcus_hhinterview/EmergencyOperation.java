@@ -368,252 +368,154 @@
                if (rb.isChecked()) rbData = d_rdogrpSAbd[i];
              }
 
-             if(rbData.equalsIgnoreCase("2"))
+             if(rbData.equalsIgnoreCase("1"))
              {
-                    secOperNo.setVisibility(View.GONE);
-                    lineOperNo.setVisibility(View.GONE);
-                    txtOperNo.setText("");
-                    secSDtHos.setVisibility(View.GONE);
-                    lineSDtHos.setVisibility(View.GONE);
-                    dtpSDtHos.setText("");
-                    secSHosM.setVisibility(View.GONE);
-                    lineSHosM.setVisibility(View.GONE);
-                    txtSHosM.setText("");
-                    secSIlBeHosAdm.setVisibility(View.GONE);
-                    lineSIlBeHosAdm.setVisibility(View.GONE);
-                    txtSIlBeHosAdm.setText("");
-                    secSurSymptLabel.setVisibility(View.GONE);
-                    lineSurSymptLabel.setVisibility(View.GONE);
-                    secSurSympt.setVisibility(View.GONE);
-                    lineSurSympt.setVisibility(View.GONE);
-                    spnSurSympt.setSelection(0);
-                    secSurSymptOth.setVisibility(View.GONE);
-                    lineSurSymptOth.setVisibility(View.GONE);
-                    txtSurSymptOth.setText("");
-                    secSurSympt2.setVisibility(View.GONE);
-                    lineSurSympt2.setVisibility(View.GONE);
-                    spnSurSympt2.setSelection(0);
-                    secSurSymptOth2.setVisibility(View.GONE);
-                    lineSurSymptOth2.setVisibility(View.GONE);
-                    txtSurSymptOth2.setText("");
-                    secSurSympt3.setVisibility(View.GONE);
-                    lineSurSympt3.setVisibility(View.GONE);
-                    spnSurSympt3.setSelection(0);
-                    secSurSymptOth3.setVisibility(View.GONE);
-                    lineSurSymptOth3.setVisibility(View.GONE);
-                    txtSurSymptOth3.setText("");
-                    secSurSympt4.setVisibility(View.GONE);
-                    lineSurSympt4.setVisibility(View.GONE);
-                    spnSurSympt4.setSelection(0);
-                    secSurSymptOth4.setVisibility(View.GONE);
-                    lineSurSymptOth4.setVisibility(View.GONE);
-                    txtSurSymptOth4.setText("");
-                    secSurSympt5.setVisibility(View.GONE);
-                    lineSurSympt5.setVisibility(View.GONE);
-                    spnSurSympt5.setSelection(0);
-                    secSurSymptOth5.setVisibility(View.GONE);
-                    lineSurSymptOth5.setVisibility(View.GONE);
-                    txtSurSymptOth5.setText("");
-                    secSurSympt6.setVisibility(View.GONE);
-                    lineSurSympt6.setVisibility(View.GONE);
-                    spnSurSympt6.setSelection(0);
-                    secSurSymptOth6.setVisibility(View.GONE);
-                    lineSurSymptOth6.setVisibility(View.GONE);
-                    txtSurSymptOth6.setText("");
-                    secSurSympt7.setVisibility(View.GONE);
-                    lineSurSympt7.setVisibility(View.GONE);
-                    spnSurSympt7.setSelection(0);
-                    secSurSymptOth7.setVisibility(View.GONE);
-                    lineSurSymptOth7.setVisibility(View.GONE);
-                    txtSurSymptOth7.setText("");
-                    secSDurFever.setVisibility(View.GONE);
-                    lineSDurFever.setVisibility(View.GONE);
-                    txtSDurFever.setText("");
-                    secSPHosNam.setVisibility(View.GONE);
-                    lineSPHosNam.setVisibility(View.GONE);
-                    spnSPHosNam.setSelection(0);
-                    secSPHosOth.setVisibility(View.GONE);
-                    lineSPHosOth.setVisibility(View.GONE);
-                    txtSPHosOth.setText("");
-                    secSDisDr.setVisibility(View.GONE);
-                    lineSDisDr.setVisibility(View.GONE);
-                    spnSDisDr.setSelection(0);
-                    secSDisDrOth.setVisibility(View.GONE);
-                    lineSDisDrOth.setVisibility(View.GONE);
-                    txtSDisDrOth.setText("");
-                    secSReco.setVisibility(View.GONE);
-                    lineSReco.setVisibility(View.GONE);
-                    rdogrpSReco.clearCheck();
-                    secSDurReco.setVisibility(View.GONE);
-                    lineSDurReco.setVisibility(View.GONE);
-                    txtSDurReco.setText("");
-                    secSInRecoLabel.setVisibility(View.GONE);
-                    lineSInRecoLabel.setVisibility(View.GONE);
-                    secSInReco.setVisibility(View.GONE);
-                    lineSInReco.setVisibility(View.GONE);
-                    rdogrpSInReco.clearCheck();
-                    secSInRecoOth.setVisibility(View.GONE);
-                    lineSInRecoOth.setVisibility(View.GONE);
-                    txtSInRecoOth.setText("");
-                    secSInReco2.setVisibility(View.GONE);
-                    lineSInReco2.setVisibility(View.GONE);
-                    rdogrpSInReco2.clearCheck();
-                    secSInRecoOth2.setVisibility(View.GONE);
-                    lineSInRecoOth2.setVisibility(View.GONE);
-                    txtSInRecoOth2.setText("");
-                    secSAboIll.setVisibility(View.GONE);
-                    lineSAboIll.setVisibility(View.GONE);
-                    txtSAboIll.setText("");
-             }
-             else if(rbData.equalsIgnoreCase("8"))
-             {
-                    secOperNo.setVisibility(View.GONE);
-                    lineOperNo.setVisibility(View.GONE);
-                    txtOperNo.setText("");
-                    secSDtHos.setVisibility(View.GONE);
-                    lineSDtHos.setVisibility(View.GONE);
-                    dtpSDtHos.setText("");
-                    secSHosM.setVisibility(View.GONE);
-                    lineSHosM.setVisibility(View.GONE);
-                    txtSHosM.setText("");
-                    secSIlBeHosAdm.setVisibility(View.GONE);
-                    lineSIlBeHosAdm.setVisibility(View.GONE);
-                    txtSIlBeHosAdm.setText("");
-                    secSurSymptLabel.setVisibility(View.GONE);
-                    lineSurSymptLabel.setVisibility(View.GONE);
-                    secSurSympt.setVisibility(View.GONE);
-                    lineSurSympt.setVisibility(View.GONE);
-                    spnSurSympt.setSelection(0);
-                    secSurSymptOth.setVisibility(View.GONE);
-                    lineSurSymptOth.setVisibility(View.GONE);
-                    txtSurSymptOth.setText("");
-                    secSurSympt2.setVisibility(View.GONE);
-                    lineSurSympt2.setVisibility(View.GONE);
-                    spnSurSympt2.setSelection(0);
-                    secSurSymptOth2.setVisibility(View.GONE);
-                    lineSurSymptOth2.setVisibility(View.GONE);
-                    txtSurSymptOth2.setText("");
-                    secSurSympt3.setVisibility(View.GONE);
-                    lineSurSympt3.setVisibility(View.GONE);
-                    spnSurSympt3.setSelection(0);
-                    secSurSymptOth3.setVisibility(View.GONE);
-                    lineSurSymptOth3.setVisibility(View.GONE);
-                    txtSurSymptOth3.setText("");
-                    secSurSympt4.setVisibility(View.GONE);
-                    lineSurSympt4.setVisibility(View.GONE);
-                    spnSurSympt4.setSelection(0);
-                    secSurSymptOth4.setVisibility(View.GONE);
-                    lineSurSymptOth4.setVisibility(View.GONE);
-                    txtSurSymptOth4.setText("");
-                    secSurSympt5.setVisibility(View.GONE);
-                    lineSurSympt5.setVisibility(View.GONE);
-                    spnSurSympt5.setSelection(0);
-                    secSurSymptOth5.setVisibility(View.GONE);
-                    lineSurSymptOth5.setVisibility(View.GONE);
-                    txtSurSymptOth5.setText("");
-                    secSurSympt6.setVisibility(View.GONE);
-                    lineSurSympt6.setVisibility(View.GONE);
-                    spnSurSympt6.setSelection(0);
-                    secSurSymptOth6.setVisibility(View.GONE);
-                    lineSurSymptOth6.setVisibility(View.GONE);
-                    txtSurSymptOth6.setText("");
-                    secSurSympt7.setVisibility(View.GONE);
-                    lineSurSympt7.setVisibility(View.GONE);
-                    spnSurSympt7.setSelection(0);
-                    secSurSymptOth7.setVisibility(View.GONE);
-                    lineSurSymptOth7.setVisibility(View.GONE);
-                    txtSurSymptOth7.setText("");
-                    secSDurFever.setVisibility(View.GONE);
-                    lineSDurFever.setVisibility(View.GONE);
-                    txtSDurFever.setText("");
-                    secSPHosNam.setVisibility(View.GONE);
-                    lineSPHosNam.setVisibility(View.GONE);
-                    spnSPHosNam.setSelection(0);
-                    secSPHosOth.setVisibility(View.GONE);
-                    lineSPHosOth.setVisibility(View.GONE);
-                    txtSPHosOth.setText("");
-                    secSDisDr.setVisibility(View.GONE);
-                    lineSDisDr.setVisibility(View.GONE);
-                    spnSDisDr.setSelection(0);
-                    secSDisDrOth.setVisibility(View.GONE);
-                    lineSDisDrOth.setVisibility(View.GONE);
-                    txtSDisDrOth.setText("");
-                    secSReco.setVisibility(View.GONE);
-                    lineSReco.setVisibility(View.GONE);
-                    rdogrpSReco.clearCheck();
-                    secSDurReco.setVisibility(View.GONE);
-                    lineSDurReco.setVisibility(View.GONE);
-                    txtSDurReco.setText("");
-                    secSInRecoLabel.setVisibility(View.GONE);
-                    lineSInRecoLabel.setVisibility(View.GONE);
-                    secSInReco.setVisibility(View.GONE);
-                    lineSInReco.setVisibility(View.GONE);
-                    rdogrpSInReco.clearCheck();
-                    secSInRecoOth.setVisibility(View.GONE);
-                    lineSInRecoOth.setVisibility(View.GONE);
-                    txtSInRecoOth.setText("");
-                    secSInReco2.setVisibility(View.GONE);
-                    lineSInReco2.setVisibility(View.GONE);
-                    rdogrpSInReco2.clearCheck();
-                    secSInRecoOth2.setVisibility(View.GONE);
-                    lineSInRecoOth2.setVisibility(View.GONE);
-                    txtSInRecoOth2.setText("");
-                    secSAboIll.setVisibility(View.GONE);
-                    lineSAboIll.setVisibility(View.GONE);
-                    txtSAboIll.setText("");
-             }
-             else
-             {
-                    secOperNo.setVisibility(View.VISIBLE);
-                    lineOperNo.setVisibility(View.VISIBLE);
-                    secSDtHos.setVisibility(View.VISIBLE);
-                    lineSDtHos.setVisibility(View.VISIBLE);
-                    secSHosM.setVisibility(View.VISIBLE);
-                    lineSHosM.setVisibility(View.VISIBLE);
-                    secSIlBeHosAdm.setVisibility(View.VISIBLE);
-                    lineSIlBeHosAdm.setVisibility(View.VISIBLE);
-                    secSurSymptLabel.setVisibility(View.VISIBLE);
-                    lineSurSymptLabel.setVisibility(View.VISIBLE);
-                    secSurSympt.setVisibility(View.VISIBLE);
-                    lineSurSympt.setVisibility(View.VISIBLE);
+                 secOperNo.setVisibility(View.VISIBLE);
+                 lineOperNo.setVisibility(View.VISIBLE);
+                 secSDtHos.setVisibility(View.VISIBLE);
+                 lineSDtHos.setVisibility(View.VISIBLE);
+                 secSHosM.setVisibility(View.VISIBLE);
+                 lineSHosM.setVisibility(View.VISIBLE);
+                 secSIlBeHosAdm.setVisibility(View.VISIBLE);
+                 lineSIlBeHosAdm.setVisibility(View.VISIBLE);
+                 secSurSymptLabel.setVisibility(View.VISIBLE);
+                 lineSurSymptLabel.setVisibility(View.VISIBLE);
+                 secSurSympt.setVisibility(View.VISIBLE);
+                 lineSurSympt.setVisibility(View.VISIBLE);
 
-                    secSurSympt2.setVisibility(View.VISIBLE);
-                    lineSurSympt2.setVisibility(View.VISIBLE);
+                 secSurSympt2.setVisibility(View.VISIBLE);
+                 lineSurSympt2.setVisibility(View.VISIBLE);
 
-                    secSurSympt3.setVisibility(View.VISIBLE);
-                    lineSurSympt3.setVisibility(View.VISIBLE);
+                 secSurSympt3.setVisibility(View.VISIBLE);
+                 lineSurSympt3.setVisibility(View.VISIBLE);
 
-                    secSurSympt4.setVisibility(View.VISIBLE);
-                    lineSurSympt4.setVisibility(View.VISIBLE);
+                 secSurSympt4.setVisibility(View.VISIBLE);
+                 lineSurSympt4.setVisibility(View.VISIBLE);
 
-                    secSurSympt5.setVisibility(View.VISIBLE);
-                    lineSurSympt5.setVisibility(View.VISIBLE);
+                 secSurSympt5.setVisibility(View.VISIBLE);
+                 lineSurSympt5.setVisibility(View.VISIBLE);
 
-                    secSurSympt6.setVisibility(View.VISIBLE);
-                    lineSurSympt6.setVisibility(View.VISIBLE);
+                 secSurSympt6.setVisibility(View.VISIBLE);
+                 lineSurSympt6.setVisibility(View.VISIBLE);
 
-                    secSurSympt7.setVisibility(View.VISIBLE);
-                    lineSurSympt7.setVisibility(View.VISIBLE);
+                 secSurSympt7.setVisibility(View.VISIBLE);
+                 lineSurSympt7.setVisibility(View.VISIBLE);
 
 
-                    secSPHosNam.setVisibility(View.VISIBLE);
-                    lineSPHosNam.setVisibility(View.VISIBLE);
+                 secSPHosNam.setVisibility(View.VISIBLE);
+                 lineSPHosNam.setVisibility(View.VISIBLE);
 
                  secSDisDr.setVisibility(View.VISIBLE);
                  lineSDisDr.setVisibility(View.VISIBLE);
 
-                    secSReco.setVisibility(View.VISIBLE);
-                    lineSReco.setVisibility(View.VISIBLE);
+                 secSReco.setVisibility(View.VISIBLE);
+                 lineSReco.setVisibility(View.VISIBLE);
 
-                    secSInRecoLabel.setVisibility(View.VISIBLE);
-                    lineSInRecoLabel.setVisibility(View.VISIBLE);
-                    secSInReco.setVisibility(View.VISIBLE);
-                    lineSInReco.setVisibility(View.VISIBLE);
+                 secSInRecoLabel.setVisibility(View.VISIBLE);
+                 lineSInRecoLabel.setVisibility(View.VISIBLE);
+                 secSInReco.setVisibility(View.VISIBLE);
+                 lineSInReco.setVisibility(View.VISIBLE);
 
-                    secSInReco2.setVisibility(View.VISIBLE);
-                    lineSInReco2.setVisibility(View.VISIBLE);
-                    secSAboIll.setVisibility(View.VISIBLE);
-                    lineSAboIll.setVisibility(View.VISIBLE);
+                 secSInReco2.setVisibility(View.VISIBLE);
+                 lineSInReco2.setVisibility(View.VISIBLE);
+                 secSAboIll.setVisibility(View.VISIBLE);
+                 lineSAboIll.setVisibility(View.VISIBLE);
+             }else
+             {
+                 secOperNo.setVisibility(View.GONE);
+                 lineOperNo.setVisibility(View.GONE);
+                 txtOperNo.setText("");
+                 secSDtHos.setVisibility(View.GONE);
+                 lineSDtHos.setVisibility(View.GONE);
+                 dtpSDtHos.setText("");
+                 secSHosM.setVisibility(View.GONE);
+                 lineSHosM.setVisibility(View.GONE);
+                 txtSHosM.setText("");
+                 secSIlBeHosAdm.setVisibility(View.GONE);
+                 lineSIlBeHosAdm.setVisibility(View.GONE);
+                 txtSIlBeHosAdm.setText("");
+                 secSurSymptLabel.setVisibility(View.GONE);
+                 lineSurSymptLabel.setVisibility(View.GONE);
+                 secSurSympt.setVisibility(View.GONE);
+                 lineSurSympt.setVisibility(View.GONE);
+                 spnSurSympt.setSelection(0);
+                 secSurSymptOth.setVisibility(View.GONE);
+                 lineSurSymptOth.setVisibility(View.GONE);
+                 txtSurSymptOth.setText("");
+                 secSurSympt2.setVisibility(View.GONE);
+                 lineSurSympt2.setVisibility(View.GONE);
+                 spnSurSympt2.setSelection(0);
+                 secSurSymptOth2.setVisibility(View.GONE);
+                 lineSurSymptOth2.setVisibility(View.GONE);
+                 txtSurSymptOth2.setText("");
+                 secSurSympt3.setVisibility(View.GONE);
+                 lineSurSympt3.setVisibility(View.GONE);
+                 spnSurSympt3.setSelection(0);
+                 secSurSymptOth3.setVisibility(View.GONE);
+                 lineSurSymptOth3.setVisibility(View.GONE);
+                 txtSurSymptOth3.setText("");
+                 secSurSympt4.setVisibility(View.GONE);
+                 lineSurSympt4.setVisibility(View.GONE);
+                 spnSurSympt4.setSelection(0);
+                 secSurSymptOth4.setVisibility(View.GONE);
+                 lineSurSymptOth4.setVisibility(View.GONE);
+                 txtSurSymptOth4.setText("");
+                 secSurSympt5.setVisibility(View.GONE);
+                 lineSurSympt5.setVisibility(View.GONE);
+                 spnSurSympt5.setSelection(0);
+                 secSurSymptOth5.setVisibility(View.GONE);
+                 lineSurSymptOth5.setVisibility(View.GONE);
+                 txtSurSymptOth5.setText("");
+                 secSurSympt6.setVisibility(View.GONE);
+                 lineSurSympt6.setVisibility(View.GONE);
+                 spnSurSympt6.setSelection(0);
+                 secSurSymptOth6.setVisibility(View.GONE);
+                 lineSurSymptOth6.setVisibility(View.GONE);
+                 txtSurSymptOth6.setText("");
+                 secSurSympt7.setVisibility(View.GONE);
+                 lineSurSympt7.setVisibility(View.GONE);
+                 spnSurSympt7.setSelection(0);
+                 secSurSymptOth7.setVisibility(View.GONE);
+                 lineSurSymptOth7.setVisibility(View.GONE);
+                 txtSurSymptOth7.setText("");
+                 secSDurFever.setVisibility(View.GONE);
+                 lineSDurFever.setVisibility(View.GONE);
+                 txtSDurFever.setText("");
+                 secSPHosNam.setVisibility(View.GONE);
+                 lineSPHosNam.setVisibility(View.GONE);
+                 spnSPHosNam.setSelection(0);
+                 secSPHosOth.setVisibility(View.GONE);
+                 lineSPHosOth.setVisibility(View.GONE);
+                 txtSPHosOth.setText("");
+                 secSDisDr.setVisibility(View.GONE);
+                 lineSDisDr.setVisibility(View.GONE);
+                 spnSDisDr.setSelection(0);
+                 secSDisDrOth.setVisibility(View.GONE);
+                 lineSDisDrOth.setVisibility(View.GONE);
+                 txtSDisDrOth.setText("");
+                 secSReco.setVisibility(View.GONE);
+                 lineSReco.setVisibility(View.GONE);
+                 rdogrpSReco.clearCheck();
+                 secSDurReco.setVisibility(View.GONE);
+                 lineSDurReco.setVisibility(View.GONE);
+                 txtSDurReco.setText("");
+                 secSInRecoLabel.setVisibility(View.GONE);
+                 lineSInRecoLabel.setVisibility(View.GONE);
+                 secSInReco.setVisibility(View.GONE);
+                 lineSInReco.setVisibility(View.GONE);
+                 rdogrpSInReco.clearCheck();
+                 secSInRecoOth.setVisibility(View.GONE);
+                 lineSInRecoOth.setVisibility(View.GONE);
+                 txtSInRecoOth.setText("");
+                 secSInReco2.setVisibility(View.GONE);
+                 lineSInReco2.setVisibility(View.GONE);
+                 rdogrpSInReco2.clearCheck();
+                 secSInRecoOth2.setVisibility(View.GONE);
+                 lineSInRecoOth2.setVisibility(View.GONE);
+                 txtSInRecoOth2.setText("");
+                 secSAboIll.setVisibility(View.GONE);
+                 lineSAboIll.setVisibility(View.GONE);
+                 txtSAboIll.setText("");
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
@@ -2000,15 +1902,16 @@
                  secSInRecoOth.setVisibility(View.GONE);
                  lineSInRecoOth.setVisibility(View.GONE);
                  txtSInRecoOth.setText("");
-                 secSInReco.setVisibility(View.GONE);
-                 lineSInReco.setVisibility(View.GONE);
+                 secSInReco2.setVisibility(View.GONE);
+                 lineSInReco2.setVisibility(View.GONE);
+
              }
              else
              {
                     secSInRecoOth.setVisibility(View.VISIBLE);
                     lineSInRecoOth.setVisibility(View.VISIBLE);
-                 secSInReco.setVisibility(View.VISIBLE);
-                 lineSInReco.setVisibility(View.VISIBLE);
+                 secSInReco2.setVisibility(View.VISIBLE);
+                 lineSInReco2.setVisibility(View.VISIBLE);
              }
             }
 
@@ -2027,16 +1930,20 @@
 
              @Override
              public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                 secSInRecoLabel.setVisibility(View.GONE);
-                 lineSInRecoLabel.setVisibility(View.GONE);
-                 secSInReco.setVisibility(View.GONE);
-                 lineSInReco.setVisibility(View.GONE);
-                 secSInReco2.setVisibility(View.GONE);
-                 lineSInReco2.setVisibility(View.GONE);
-                 secSInRecoOth.setVisibility(View.GONE);
-                 lineSInRecoOth.setVisibility(View.GONE);
-                 secSInRecoOth2.setVisibility(View.GONE);
-                 lineSInRecoOth2.setVisibility(View.GONE);
+                 if(txtSDurReco.getText().toString().length()>0)
+                 {
+                     secSInRecoLabel.setVisibility(View.GONE);
+                     lineSInRecoLabel.setVisibility(View.GONE);
+                     secSInReco.setVisibility(View.GONE);
+                     lineSInReco.setVisibility(View.GONE);
+                     secSInReco2.setVisibility(View.GONE);
+                     lineSInReco2.setVisibility(View.GONE);
+                     secSInRecoOth.setVisibility(View.GONE);
+                     lineSInRecoOth.setVisibility(View.GONE);
+                     secSInRecoOth2.setVisibility(View.GONE);
+                     lineSInRecoOth2.setVisibility(View.GONE);
+                 }
+
              }
 
              @Override

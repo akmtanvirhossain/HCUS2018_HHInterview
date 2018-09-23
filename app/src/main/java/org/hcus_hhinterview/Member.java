@@ -548,6 +548,7 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                      lineDAge.setVisibility(View.GONE);
                      secDAgeU.setVisibility(View.GONE);
                      lineDAgeU.setVisibility(View.GONE);
+                     spnDAgeU.setSelection(0);
                  }
                  else if(rbData.equalsIgnoreCase("2"))
                  {
@@ -555,8 +556,8 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                      lineDtofDeath.setVisibility(View.VISIBLE);
                      secDAge.setVisibility(View.VISIBLE);
                      lineDAge.setVisibility(View.VISIBLE);
-                     secDAgeU.setVisibility(View.VISIBLE);
-                     lineDAgeU.setVisibility(View.VISIBLE);
+//                     secDAgeU.setVisibility(View.VISIBLE);
+//                     lineDAgeU.setVisibility(View.VISIBLE);
                  }
                  else{
                      secDtofDeath.setVisibility(View.GONE);
@@ -565,6 +566,7 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                      lineDAge.setVisibility(View.GONE);
                      secDAgeU.setVisibility(View.GONE);
                      lineDAgeU.setVisibility(View.GONE);
+                     spnDAgeU.setSelection(0);
                  }
              }
              public void onNothingSelected(AdapterView<?> adapterView) {
@@ -630,7 +632,7 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
              @Override
              public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                 if(txtDAge.getText().toString().length()>0)
+                 if(txtDAge.getText().toString().length()>0 )
                  {
                      dtpDtofDeath.setText("");
                      secDAgeU.setVisibility(View.VISIBLE);
@@ -813,7 +815,7 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
              txtDAge.requestFocus(); 
              return;	
            }
-         else if(spnDAgeU.getSelectedItemPosition()==0  & secDAgeU.isShown()&dtpDtofDeath.getText().toString().length()>0)
+         else if(spnDAgeU.getSelectedItemPosition()==0  & secDAgeU.isShown()&txtDAge.getText().toString().length()>0)
            {
              Connection.MessageBox(Member.this, "Required field: দিন/মাস/সন (Days/Months/Years).");
              spnDAgeU.requestFocus(); 
@@ -993,7 +995,13 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                  }
              }
              dtpDtofDeath.setText(item.getDtofDeath().toString().length()==0 ? "" : Global.DateConvertDMY(item.getDtofDeath()));
-             txtDAge.setText(String.valueOf(item.getDAge()));
+
+             if(String.valueOf(item.getDAge()).equals("0")) {
+                 txtDAge.setText("");
+             }else
+             {
+                 txtDAge.setText(String.valueOf(item.getDAge()));
+             }
              spnDAgeU.setSelection(Global.SpinnerItemPositionAnyLength(spnDAgeU, String.valueOf(item.getDAgeU())));
              txtLiveInHouse.setText(String.valueOf(item.getLiveInHouse()));
            }

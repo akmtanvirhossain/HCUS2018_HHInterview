@@ -31,7 +31,7 @@
             android:id="@+id/btnTyphoid"
             android:layout_width="match_parent"
             android:layout_height="60sp"
-            android:text="Typhoid"
+            android:text="3 Days Fever"
             android:layout_margin="10sp"
             android:background="@drawable/button_style_yellow"/>
 
