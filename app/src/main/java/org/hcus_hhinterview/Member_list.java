@@ -176,7 +176,7 @@ package org.hcus_hhinterview;
              String SQL = "Select m.*,ifnull(cfs.status,'') status from member m\n" +
                      "left outer join Child_Final_Status cfs on m.uncode=cfs .uncode and m.StructureNo=cfs .StructureNo and m.HouseholdSl=cfs .HouseholdSl and m.HouseholdSl=cfs .HouseholdSl and m.VisitNo=cfs .VisitNo and m.MemSl=cfs .MemSl\n" +
                      "where m.uncode='"+UNCode+"' and m.StructureNo='"+STRUCTURENO+"' and m.HouseholdSl='"+HOUSEHOLDSL+"' and m.VisitNo='"+VISITNO+"'";
-             List<Member_DataModel> data = d.SelectAll(this, SQL);
+             List<Member_DataModel> data = d.SelectAll_List(this, SQL);
              dataList.clear();
 
              dataList.addAll(data);

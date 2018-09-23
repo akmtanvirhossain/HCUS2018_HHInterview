@@ -24,13 +24,15 @@ public class ProjectSetting {
     //----------------------------------------------------------------------------------------------
     public static List<String> TableList_Upload(){
         List<String> tableList_Upload   = new ArrayList<String>();
+        tableList_Upload.add("Admission_Refusal");
+        tableList_Upload.add("Child_Final_Status");
         tableList_Upload.add("Cluster_Structure");
         tableList_Upload.add("DiarrhoeaCase");
         tableList_Upload.add("EmergencyOperation");
         tableList_Upload.add("Household_Interview");
         tableList_Upload.add("Household_Visit");
         tableList_Upload.add("Immunization_History");
-        tableList_Upload.add("Immunization_List");
+//        tableList_Upload.add("Immunization_List");
         tableList_Upload.add("Immunization_Master");
         tableList_Upload.add("Knowledge_DSH_SSF");
         tableList_Upload.add("Member");

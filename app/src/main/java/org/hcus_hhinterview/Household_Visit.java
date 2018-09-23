@@ -458,34 +458,37 @@
                      txtOutcomeOth.setText("");
                      secHHMember.setVisibility(View.VISIBLE);
                      lineHHMember.setVisibility(View.VISIBLE);
-                     txtHHMember.setText("");
+
                      secU18Yrs.setVisibility(View.VISIBLE);
                      lineU18Yrs.setVisibility(View.VISIBLE);
-                     rdogrpU18Yrs.clearCheck();
 
-//                     secOfferedStudy.setVisibility(View.VISIBLE);
-//                     lineOfferedStudy.setVisibility(View.VISIBLE);
-//                     rdogrpOfferedStudy.clearCheck();
                      secNotOffered.setVisibility(View.GONE);
                      lineNotOffered.setVisibility(View.GONE);
+
                      secU18Alive.setVisibility(View.GONE);
                      lineU18Alive.setVisibility(View.GONE);
                      txtU18Alive.setText("");
+
                      secU18YrsDie.setVisibility(View.VISIBLE);
                      lineU18YrsDie.setVisibility(View.VISIBLE);
-                     rdogrpU18YrsDie.clearCheck();
+
+
                      secU18Death.setVisibility(View.GONE);
                      lineU18Death.setVisibility(View.GONE);
                      txtU18Death.setText("");
+
                      secOfferedStudy.setVisibility(View.GONE);
                      lineOfferedStudy.setVisibility(View.GONE);
                      rdogrpOfferedStudy.clearCheck();
+
                      secNotOffered.setVisibility(View.GONE);
                      lineNotOffered.setVisibility(View.GONE);
                      spnNotOffered.setSelection(0);
+
                      secNotOfferedOth.setVisibility(View.GONE);
                      lineNotOfferedOth.setVisibility(View.GONE);
                      txtNotOfferedOth.setText("");
+
                      secConsent.setVisibility(View.GONE);
                      lineConsent.setVisibility(View.GONE);
                      rdogrpConsent.clearCheck();
@@ -498,8 +501,6 @@
 
                      secU5YrsDie.setVisibility(View.VISIBLE);
                      lineU5YrsDie.setVisibility(View.VISIBLE);
-                     rdogrpU5YrsDie.clearCheck();
-                     rdogrpU5Yrs.clearCheck();
 
 
                  }
@@ -722,12 +723,16 @@
                     lineOutcomeOth.setVisibility(View.GONE);
                     secHHMember.setVisibility(View.GONE);
                     lineHHMember.setVisibility(View.GONE);
+                    txtHHMember.setText("");
                     secU18Yrs.setVisibility(View.GONE);
                     lineU18Yrs.setVisibility(View.GONE);
+                    rdogrpU18Yrs.clearCheck();
                     secU18Alive.setVisibility(View.GONE);
                     lineU18Alive.setVisibility(View.GONE);
+
                     secU18YrsDie.setVisibility(View.GONE);
                     lineU18YrsDie.setVisibility(View.GONE);
+                    rdogrpU18YrsDie.clearCheck();
                     secU18Death.setVisibility(View.GONE);
                     lineU18Death.setVisibility(View.GONE);
                     secOfferedStudy.setVisibility(View.GONE);
@@ -787,24 +792,10 @@
                     secU18Alive.setVisibility(View.GONE);
                     lineU18Alive.setVisibility(View.GONE);
                     txtU18Alive.setText("");
-//                    secU18YrsDie.setVisibility(View.VISIBLE);
-//                    lineU18YrsDie.setVisibility(View.VISIBLE);
-//                    rdogrpU18YrsDie.clearCheck();
-//                 secU18Death.setVisibility(View.GONE);
-//                 lineU18Death.setVisibility(View.GONE);
-//                 txtU18Death.setText("");
+
                  secOfferedStudy.setVisibility(View.GONE);
                  lineOfferedStudy.setVisibility(View.GONE);
                  rdogrpOfferedStudy.clearCheck();
-//                 secNotOffered.setVisibility(View.GONE);
-//                 lineNotOffered.setVisibility(View.GONE);
-//                 spnNotOffered.setSelection(0);
-//                 secNotOfferedOth.setVisibility(View.GONE);
-//                 lineNotOfferedOth.setVisibility(View.GONE);
-//                 txtNotOfferedOth.setText("");
-//                 secConsent.setVisibility(View.GONE);
-//                 lineConsent.setVisibility(View.GONE);
-//                 rdogrpConsent.clearCheck();
 
              }
              else if(rbData.equalsIgnoreCase("1"))
@@ -819,32 +810,12 @@
                  secU18Alive.setVisibility(View.GONE);
                  lineU18Alive.setVisibility(View.GONE);
                  txtU18Alive.setText("");
-//                    secU18YrsDie.setVisibility(View.VISIBLE);
-//                    lineU18YrsDie.setVisibility(View.VISIBLE);
-//                    rdogrpU18YrsDie.clearCheck();
-//                 secU18Death.setVisibility(View.GONE);
-//                 lineU18Death.setVisibility(View.GONE);
-//                 txtU18Death.setText("");
+
                  secOfferedStudy.setVisibility(View.GONE);
                  lineOfferedStudy.setVisibility(View.GONE);
                  rdogrpOfferedStudy.clearCheck();
 
-// secU18Alive.setVisibility(View.VISIBLE);
-//                    lineU18Alive.setVisibility(View.VISIBLE);
-//                 secU18YrsDie.setVisibility(View.VISIBLE);
-//                 lineU18YrsDie.setVisibility(View.VISIBLE);
-//                 secU18Death.setVisibility(View.GONE);
-//                 lineU18Death.setVisibility(View.GONE);
-//                 txtU18Death.setText("");
-//                 secOfferedStudy.setVisibility(View.VISIBLE);
-//                 lineOfferedStudy.setVisibility(View.VISIBLE);
-////                 rdogrpOfferedStudy.clearCheck();
-//                 secNotOffered.setVisibility(View.GONE);
-//                 lineNotOffered.setVisibility(View.GONE);
-//                 spnNotOffered.setSelection(0);
-//                 secNotOfferedOth.setVisibility(View.GONE);
-//                 lineNotOfferedOth.setVisibility(View.GONE);
-////                 txtNotOfferedOth.setText("");
+
              }
              yesCheck();
             }
@@ -1149,9 +1120,6 @@
                      lineU5YrsAlive.setVisibility(View.VISIBLE);
                      secOfferedStudy.setVisibility(View.VISIBLE);
                      lineOfferedStudy.setVisibility(View.VISIBLE);
-
-
-
                  }
                  else
                  {
@@ -1330,9 +1298,6 @@
          lineU5YrsDeath.setVisibility(View.GONE);
 
          //***************************************
-
-
-
 
 
 

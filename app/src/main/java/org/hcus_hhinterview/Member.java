@@ -697,9 +697,6 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
          String presentdate="";
          Integer ageInDays;
 
-
-
-
          if(txtUNCode.getText().toString().length()==0 & secUNCode.isShown())
            {
              Connection.MessageBox(Member.this, "Required field: Ward No.");

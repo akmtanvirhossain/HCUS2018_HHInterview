@@ -266,7 +266,7 @@ public class Member_DataModel{
                 d._DAge = Integer.valueOf(cur.getString(cur.getColumnIndex("DAge")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("DAge")));
                 d._DAgeU = Integer.valueOf(cur.getString(cur.getColumnIndex("DAgeU")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("DAgeU")));
                 d._LiveInHouse = Integer.valueOf(cur.getString(cur.getColumnIndex("LiveInHouse")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("LiveInHouse")));
-                d._FinalStatus = cur.getString(cur.getColumnIndex("status"));
+//                d._FinalStatus = cur.getString(cur.getColumnIndex("status"));
                 data.add(d);
 
                 cur.moveToNext();
@@ -274,4 +274,43 @@ public class Member_DataModel{
             cur.close();
           return data;
         }
+
+
+    public List<Member_DataModel> SelectAll_List(Context context, String SQL)
+    {
+        Connection C = new Connection(context);
+        List<Member_DataModel> data = new ArrayList<Member_DataModel>();
+        Member_DataModel d = new Member_DataModel();
+        Cursor cur = C.ReadData(SQL);
+
+        cur.moveToFirst();
+        while(!cur.isAfterLast())
+        {
+            d = new Member_DataModel();
+            d._UNCode = cur.getString(cur.getColumnIndex("UNCode"));
+            d._StructureNo = cur.getString(cur.getColumnIndex("StructureNo"));
+            d._HouseholdSl = cur.getString(cur.getColumnIndex("HouseholdSl"));
+            d._VisitNo = cur.getString(cur.getColumnIndex("VisitNo"));
+            d._MemSl = Integer.valueOf(cur.getString(cur.getColumnIndex("MemSl")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("MemSl")));
+            d._Name = cur.getString(cur.getColumnIndex("Name"));
+            d._Sex = Integer.valueOf(cur.getString(cur.getColumnIndex("Sex")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("Sex")));
+            d._DOB = cur.getString(cur.getColumnIndex("DOB"));
+            d._DOBDk = Integer.valueOf(cur.getString(cur.getColumnIndex("DOBDk")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("DOBDk")));
+            d._Age = Integer.valueOf(cur.getString(cur.getColumnIndex("Age")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("Age")));
+            d._AgeU = Integer.valueOf(cur.getString(cur.getColumnIndex("AgeU")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("AgeU")));
+            d._Relation = Integer.valueOf(cur.getString(cur.getColumnIndex("Relation")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("Relation")));
+            d._OthRelation = cur.getString(cur.getColumnIndex("OthRelation"));
+            d._PreStatus = Integer.valueOf(cur.getString(cur.getColumnIndex("PreStatus")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("PreStatus")));
+            d._DtofDeath = cur.getString(cur.getColumnIndex("DtofDeath"));
+            d._DAge = Integer.valueOf(cur.getString(cur.getColumnIndex("DAge")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("DAge")));
+            d._DAgeU = Integer.valueOf(cur.getString(cur.getColumnIndex("DAgeU")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("DAgeU")));
+            d._LiveInHouse = Integer.valueOf(cur.getString(cur.getColumnIndex("LiveInHouse")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("LiveInHouse")));
+            d._FinalStatus = cur.getString(cur.getColumnIndex("status"));
+            data.add(d);
+
+            cur.moveToNext();
+        }
+        cur.close();
+        return data;
+    }
  }
