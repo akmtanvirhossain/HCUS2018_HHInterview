@@ -549,7 +549,7 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                      secDAgeU.setVisibility(View.GONE);
                      lineDAgeU.setVisibility(View.GONE);
                  }
-                 else
+                 else if(rbData.equalsIgnoreCase("2"))
                  {
                      secDtofDeath.setVisibility(View.VISIBLE);
                      lineDtofDeath.setVisibility(View.VISIBLE);
@@ -557,6 +557,14 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                      lineDAge.setVisibility(View.VISIBLE);
                      secDAgeU.setVisibility(View.VISIBLE);
                      lineDAgeU.setVisibility(View.VISIBLE);
+                 }
+                 else{
+                     secDtofDeath.setVisibility(View.GONE);
+                     lineDtofDeath.setVisibility(View.GONE);
+                     secDAge.setVisibility(View.GONE);
+                     lineDAge.setVisibility(View.GONE);
+                     secDAgeU.setVisibility(View.GONE);
+                     lineDAgeU.setVisibility(View.GONE);
                  }
              }
              public void onNothingSelected(AdapterView<?> adapterView) {
@@ -604,6 +612,8 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                      if(event.getRawX() >= (dtpDtofDeath.getRight() - dtpDtofDeath.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
                          VariableID = "btnDtofDeath"; showDialog(DATE_DIALOG);
                          txtDAge.setText("");
+                         secDAgeU.setVisibility(View.GONE);
+                         lineDAgeU.setVisibility(View.GONE);
                          spnDAgeU.setSelection(0);
                       return true;
                      }
@@ -621,7 +631,12 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
              @Override
              public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                  if(txtDAge.getText().toString().length()>0)
-                    dtpDtofDeath.setText("");
+                 {
+                     dtpDtofDeath.setText("");
+                     secDAgeU.setVisibility(View.VISIBLE);
+                     lineDAgeU.setVisibility(View.VISIBLE);
+                 }
+
              }
 
              @Override

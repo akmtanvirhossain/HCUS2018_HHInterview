@@ -2814,7 +2814,11 @@
              }
              txtOperNo.setText(String.valueOf(item.getOperNo()));
              dtpSDtHos.setText(item.getSDtHos().toString().length()==0 ? "" : Global.DateConvertDMY(item.getSDtHos()));
-             txtSHosM.setText(String.valueOf(item.getSHosM()));
+             if(item.getSHosM()==0)
+             {
+                 txtSHosM.setText("");
+             }
+
              txtSIlBeHosAdm.setText(String.valueOf(item.getSIlBeHosAdm()));
              spnSurSympt.setSelection(Global.SpinnerItemPositionAnyLength(spnSurSympt, String.valueOf(item.getSurSympt())));
              txtSurSymptOth.setText(item.getSurSymptOth());
