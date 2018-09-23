@@ -70,6 +70,7 @@
         <activity android:name=".Immunization_History_list" />
         <activity android:name=".Immunization_List_list" />
         <activity android:name=".Admission_Refusal" />
+        <activity android:name=".Child_Final_Status" />
         //Service
         <service android:name=".DataSyncService" />
         <service android:name=".Sync_Service" />

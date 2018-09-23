@@ -172,7 +172,10 @@ package org.hcus_hhinterview;
         {
      
            Member_DataModel d = new Member_DataModel();
-             String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"'";
+//             String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"'";
+             String SQL = "Select m.*,ifnull(cfs.status,'') status from member m\n" +
+                     "left outer join Child_Final_Status cfs on m.uncode=cfs .uncode and m.StructureNo=cfs .StructureNo and m.HouseholdSl=cfs .HouseholdSl and m.HouseholdSl=cfs .HouseholdSl and m.VisitNo=cfs .VisitNo and m.MemSl=cfs .MemSl\n" +
+                     "where m.uncode='"+UNCode+"' and m.StructureNo='"+STRUCTURENO+"' and m.HouseholdSl='"+HOUSEHOLDSL+"' and m.VisitNo='"+VISITNO+"'";
              List<Member_DataModel> data = d.SelectAll(this, SQL);
              dataList.clear();
 
@@ -293,11 +296,16 @@ package org.hcus_hhinterview;
                  holder.btnChildForm.setVisibility(View.INVISIBLE);
              }
 
-
-
-
-
-
+             if(data.get_FinalStatus().equals("1"))
+             {
+                 holder.btnChildForm.setBackgroundResource(R.drawable.button_style_circle_green);
+             }else if(data.get_FinalStatus().equals("2"))
+             {
+                 holder.btnChildForm.setBackgroundResource(R.drawable.button_style_circle_yellow);
+             }else
+             {
+                 holder.btnChildForm.setBackgroundResource(R.drawable.button_style_circle_red);
+             }
 
              holder.btnChildForm.setOnClickListener(new View.OnClickListener() {
                  @Override

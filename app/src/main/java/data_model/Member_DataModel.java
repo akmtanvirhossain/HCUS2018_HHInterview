@@ -168,7 +168,17 @@ public class Member_DataModel{
         _modifyDate = newValue;
         }
 
-        String TableName = "Member";
+        private String  _FinalStatus;
+
+    public String get_FinalStatus() {
+        return _FinalStatus;
+    }
+
+    public void set_FinalStatus(String _FinalStatus) {
+        this._FinalStatus = _FinalStatus;
+    }
+
+    String TableName = "Member";
 
         public String SaveUpdateData(Context context)
         {
@@ -256,6 +266,7 @@ public class Member_DataModel{
                 d._DAge = Integer.valueOf(cur.getString(cur.getColumnIndex("DAge")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("DAge")));
                 d._DAgeU = Integer.valueOf(cur.getString(cur.getColumnIndex("DAgeU")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("DAgeU")));
                 d._LiveInHouse = Integer.valueOf(cur.getString(cur.getColumnIndex("LiveInHouse")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("LiveInHouse")));
+                d._FinalStatus = cur.getString(cur.getColumnIndex("status"));
                 data.add(d);
 
                 cur.moveToNext();
