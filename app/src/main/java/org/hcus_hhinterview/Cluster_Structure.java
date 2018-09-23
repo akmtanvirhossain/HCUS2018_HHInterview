@@ -286,7 +286,7 @@ package org.hcus_hhinterview;
                  {
                      secReasonInVisit.setVisibility(View.VISIBLE);
                      lineReasonInVisit.setVisibility(View.VISIBLE);
-//                     spnReasonInVisit.setSelection(0);
+                     spnReasonInVisit.setSelection(0);
                      secTotalHH.setVisibility(View.GONE);
                      lineTotalHH.setVisibility(View.GONE);
                      txtTotalHH.setText("");
@@ -309,7 +309,7 @@ package org.hcus_hhinterview;
                     txtVisitOutcomeOth.setText("");
                     secReasonInVisit.setVisibility(View.GONE);
                     lineReasonInVisit.setVisibility(View.GONE);
-//                    spnReasonInVisit.setSelection(0);
+                    spnReasonInVisit.setSelection(0);
                     secReasonInVisitOth.setVisibility(View.GONE);
                     lineReasonInVisitOth.setVisibility(View.GONE);
                     txtReasonInVisitOth.setText("");
@@ -619,6 +619,7 @@ package org.hcus_hhinterview;
                spnVisitOutcome.setSelection(0);
                txtVisitOutcomeOth.setText("");
                spnReasonInVisit.setSelection(0);
+               spnReasonInVisit.setClickable(true);
                txtReasonInVisitOth.setText("");
                txtTotalHH.setText("");
            }
