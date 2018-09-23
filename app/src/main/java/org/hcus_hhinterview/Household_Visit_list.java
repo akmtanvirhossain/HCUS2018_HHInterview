@@ -294,7 +294,7 @@ package org.hcus_hhinterview;
              holder.HouseholdSl.setText(""+data.getHouseholdSl());
              holder.VisitNo.setText(data.getVisitNo());
 //             holder.HHVisited.setText(data.getHHVisited());
-             holder.Outcome.setText(""+data.getOutcome());
+//             holder.Outcome.setText(""+data.getOutcome());
 //             holder.OutcomeOth.setText(data.getOutcomeOth());
 //             holder.HHMember.setText(data.getHHMember());
 //             holder.U18Yrs.setText(data.getU18Yrs());
@@ -347,6 +347,34 @@ package org.hcus_hhinterview;
                  holder.Consent.setText("");
              }
 
+             if(data.getOutcome()==1)
+             {
+                 holder.Outcome.setText("Present");
+             }
+             else if(data.getOutcome()==2)
+             {
+                 holder.Outcome.setText("Absent");
+             }
+             else if(data.getOutcome()==3)
+             {
+                 holder.Outcome.setText("Vacant");
+             }
+             else if(data.getOutcome()==4)
+             {
+                 holder.Outcome.setText("Refusal");
+             }
+             else if(data.getOutcome()==5)
+             {
+                 holder.Outcome.setText("Lack of time");
+             }
+             else if(data.getOutcome()==7)
+             {
+                 holder.Outcome.setText("Other");
+             }
+             else
+             {
+                 holder.Outcome.setText("");
+             }
 
 //             holder.U18YrsDie.setText(data.getU18YrsDie());
 

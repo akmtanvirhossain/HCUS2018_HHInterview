@@ -444,6 +444,7 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                      if(flag)
                      {
                          Connection.MessageBox(Member.this,"এই খানায় ইতিমধ্যে একজন খানা প্রধান বিদ্যমান.");
+                         spnRelation.setSelection(0);
                          return;
                      }
 
@@ -764,7 +765,8 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
          else if(spnRelation.getSelectedItemPosition()==0  & secRelation.isShown())
            {
              Connection.MessageBox(Member.this, "Required field: খানা প্রধানের সাথে সম্পর্ক (Relation with Household head).");
-             spnRelation.requestFocus(); 
+
+               spnRelation.requestFocus();
              return;	
            }
          else if(txtOthRelation.getText().toString().length()==0 & secOthRelation.isShown())
