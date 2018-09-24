@@ -549,7 +549,7 @@
          rdoFHeadAvail2 = (RadioButton) findViewById(R.id.rdoFHeadAvail2);
 
          txtUNCode.setText(UNCODE);
-         txtStructureNo.setText(""+STRUCTURENO);
+         txtStructureNo.setText(STRUCTURENO);
          txtHouseholdSl.setText(HOUSEHOLDSL);
          txtVisitNo.setText(VISITNO);
 
