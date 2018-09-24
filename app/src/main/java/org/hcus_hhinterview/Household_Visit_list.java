@@ -8,6 +8,7 @@ package org.hcus_hhinterview;
  import android.content.Context;
  import android.content.DialogInterface;
  import android.content.Intent;
+ import android.graphics.Color;
  import android.location.Location;
  import android.view.KeyEvent;
  import android.os.Bundle;
@@ -253,6 +254,7 @@ package org.hcus_hhinterview;
          TextView Consent;
          TextView Remarks;
          TextView DataCollDate;
+         TextView Status;
          Button btnEdit;
          public MyViewHolder(View convertView) {
              super(convertView);
@@ -273,6 +275,7 @@ package org.hcus_hhinterview;
 //             NotOffered = (TextView)convertView.findViewById(R.id.NotOffered);
 //             NotOfferedOth = (TextView)convertView.findViewById(R.id.NotOfferedOth);
              Consent = (TextView)convertView.findViewById(R.id.Consent);
+             Status = (TextView)convertView.findViewById(R.id.Status);
 //             Remarks = (TextView)convertView.findViewById(R.id.Remarks);
 //             DataCollDate = (TextView)convertView.findViewById(R.id.DataCollDate);
              }
@@ -375,6 +378,39 @@ package org.hcus_hhinterview;
              {
                  holder.Outcome.setText("");
              }
+
+             //******************** status ********************
+             String sql="Select count(m.memsl) under18 from member m\n" +
+                     "where m.uncode='"+UNCODE+"' and m.StructureNo='"+STRUCTURENO+"' and m.HouseholdSl='"+data.getHouseholdSl()+"' and (age/365.25)<18";
+             String under18=C.ReturnSingleValue(sql);
+
+             sql="select count(m.memsl) totalStatus from Child_Final_Status m\n" +
+                     "where m.uncode='"+UNCODE+"' and m.StructureNo='"+STRUCTURENO+"' and m.HouseholdSl='"+data.getHouseholdSl()+"'";
+
+             String totalStatus=C.ReturnSingleValue(sql);
+
+             int member=Integer.parseInt(under18);
+             int status=Integer.parseInt(totalStatus);
+
+             if(member>0)
+             {
+                 if(status==member)
+                 {
+                    holder.Status.setBackgroundColor(Color.GREEN);
+                    holder.Status.setText("Complete");
+                 }else if(status>0 & status<member)
+                 {
+                     holder.Status.setBackgroundColor(Color.YELLOW);
+                     holder.Status.setText("Partially Complete");
+                 }else {
+                     holder.Status.setBackgroundColor(Color.RED);
+                     holder.Status.setText("Incomplete");
+                 }
+             }
+
+
+
+             //******************** status ********************
 
 //             holder.U18YrsDie.setText(data.getU18YrsDie());
 
