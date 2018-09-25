@@ -420,8 +420,8 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
          listRelation.add("3-খানা প্রধানের ছেলে/মেয়ে (Son/Daughter of Houshold Head)");
          listRelation.add("4-খানা প্রধানের ভাই/বোন/দেবর/ ননদ/শালা/ শালী (Brother/Sister/Brother in law/Sister in law of Household Head)	");
          listRelation.add("5-খানা প্রধানের ছেলের বউ/মেয়ের স্বামী (Daughter in law/ Son in law of Household Head)");
-         listRelation.add("6- খানা প্রধানের নাতী/নাতনী (Grand son/daughter of Household Head)");
-         listRelation.add("Father/Mother of Household Head)");
+         listRelation.add("6-খানা প্রধানের নাতী/নাতনী (Grand son/daughter of Household Head)");
+         listRelation.add("9-খানা প্রধানের বাবা/মা (Father/Mother of Household Head)");
          listRelation.add("7- ভাগ্নে/ভাগ্নী/ভাইস্তা/ভাইস্তি (Niece of Household Head)");
          listRelation.add("8- অন্যান্য (Others) ");
          ArrayAdapter<String> adptrRelation= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listRelation);

@@ -748,6 +748,7 @@
                          IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
                          IDbundle.putString("VisitNo", VISITNO);
                          IDbundle.putString("MemSl", "");
+                         IDbundle.putString("DataMode", "1");
                          Intent intent = new Intent(getApplicationContext(), Member.class);
                          intent.putExtras(IDbundle);
                          startActivityForResult(intent, 1);
