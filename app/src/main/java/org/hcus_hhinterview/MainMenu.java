@@ -71,7 +71,23 @@ public class MainMenu extends Activity {
 //                                        tableList.add("StructureID_Serial");
 //                                        tableList.add("StructureIDSlot");
                                         tableList.add("StructureListing");
+                                        tableList.add("Admission_Refusal");
+                                        tableList.add("Child_Final_Status");
+                                        tableList.add("Cluster_Structure");
+                                        tableList.add("DiarrhoeaCase");
+                                        tableList.add("EmergencyOperation");
+                                        tableList.add("Household_Interview");
+                                        tableList.add("Household_Visit");
+                                        tableList.add("Immunization_History");
+                                        tableList.add("Immunization_Master");
+                                        tableList.add("Knowledge_DSH_SSF");
+                                        tableList.add("Member");
+                                        tableList.add("MeningitisCase");
+                                        tableList.add("OtitisMediaCase");
+                                        tableList.add("PneumoniaCase");
+                                        tableList.add("TyphoidCase");
                                         C.DataSync_UploadDownload(tableList, DEVICEID);
+
 
                                     } catch (Exception e) {
 

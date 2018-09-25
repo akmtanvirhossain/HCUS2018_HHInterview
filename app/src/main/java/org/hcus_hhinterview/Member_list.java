@@ -125,6 +125,8 @@ package org.hcus_hhinterview;
                          IDbundle.putString("HouseholdSl", "");
                          IDbundle.putString("VisitNo", "");
                          IDbundle.putString("MemSl", "");
+                         IDbundle.putString("DataMode", "1"); // new form
+
                          Intent intent = new Intent(getApplicationContext(), Member.class);
                          intent.putExtras(IDbundle);
                          startActivityForResult(intent, 1);
@@ -346,6 +348,7 @@ package org.hcus_hhinterview;
                                  IDbundle.putString("HouseholdSl", data.getHouseholdSl());
                                  IDbundle.putString("VisitNo", data.getVisitNo());
                                  IDbundle.putString("MemSl",""+data.getMemSl());
+                                 IDbundle.putString("DataMode", "2"); // edit form
                                  Intent f1 = new Intent(getApplicationContext(), Member.class);
                                  f1.putExtras(IDbundle);
                                  startActivityForResult(f1,1);

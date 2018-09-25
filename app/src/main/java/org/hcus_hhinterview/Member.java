@@ -181,6 +181,7 @@
     static String HOUSEHOLDSL = "";
     static String VISITNO = "";
     static String MEMSL = "";
+    static String DataMode = ""; // 1=New and 2= Edit
 
  public void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -202,6 +203,7 @@
          HOUSEHOLDSL = IDbundle.getString("HouseholdSl");
          VISITNO = IDbundle.getString("VisitNo");
          MEMSL = IDbundle.getString("MemSl");
+         DataMode = IDbundle.getString("DataMode"); // 1=New and 2= Edit
 
          TableName = "Member";
 
@@ -439,16 +441,21 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     lineOthRelation.setVisibility(View.GONE);
                     txtOthRelation.setText("");
 
-                    //*********** check for another HH Head
-                     boolean flag=C.Existence("select Relation from Member where UNCode='"+UNCODE+"' and StructureNo='"+STRUCTURENO+"' and HouseholdSl='"+HOUSEHOLDSL+"' and Relation='1'");
-                     if(flag)
+                     //*********** check for another HH Head
+                     if(DataMode.equals("1"))
                      {
-                         Connection.MessageBox(Member.this,"এই খানায় ইতিমধ্যে একজন খানা প্রধান বিদ্যমান.");
-                         spnRelation.setSelection(0);
-                         return;
+                         boolean flag=C.Existence("select Relation from Member where UNCode='"+UNCODE+"' and StructureNo='"+STRUCTURENO+"' and HouseholdSl='"+HOUSEHOLDSL+"' and Relation='1'");
+                         if(flag )
+                         {
+                             Connection.MessageBox(Member.this,"এই খানায় ইতিমধ্যে একজন খানা প্রধান বিদ্যমান.");
+                             spnRelation.setSelection(0);
+                             return;
+                         }
                      }
 
-                    //*********** check for another HH Head
+                     //*********** check for another HH Head
+
+
                  }
                  else if(spnData.equalsIgnoreCase("2"))
                  {
@@ -910,6 +917,8 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
          objSave.setmodifyDate(Global.DateTimeNowYMDHMS());
          //objSave.setLat(Double.toString(currentLatitude));
          //objSave.setLon(Double.toString(currentLongitude));
+
+
 
          String status = objSave.SaveUpdateData(this);
          if(status.length()==0) {
