@@ -394,7 +394,7 @@ package org.hcus_hhinterview;
 
              if(member>0)
              {
-                 if(status==member)
+                 if(status==member | data.getOutcome()==4 )
                  {
                     holder.Status.setBackgroundColor(Color.GREEN);
                     holder.Status.setText("Complete");
