@@ -1268,8 +1268,6 @@
 
          String status = objSave.SaveUpdateData(this);
          if(status.length()==0) {
-//             Intent returnIntent = new Intent();
-
 
              AlertDialog.Builder alert=new AlertDialog.Builder(this);
              alert.setMessage("Saved Successfully");
@@ -1277,14 +1275,6 @@
              alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                  @Override
                  public void onClick(DialogInterface dialog, int which) {
-
-//                     String spnData = "";
-//                     if (spnOutcome.getSelectedItem().toString().length() != 0)
-//                     {
-//                         spnData = Connection.SelectedSpinnerValue(spnOutcome.getSelectedItem().toString(), "-");
-//                     }
-
-
                      String rbData = "";
                      RadioButton rb;
                      String[] d_rdogrpConsent = new String[] {"1","2"};
@@ -1307,11 +1297,15 @@
                          startActivityForResult(intent, 1);
                      }else
                      {
-                         Intent returnIntent = new Intent();
-                         returnIntent.putExtra("res", "");
-                         setResult(Activity.RESULT_OK, returnIntent);
+//                         Intent returnIntent = new Intent();
+//                         returnIntent.putExtra("res", "");
+//                         setResult(Activity.RESULT_OK, returnIntent);
 
                          Connection.MessageBox(Household_Visit.this,"এই খানার ইন্টারভিউ এখানেই শেষ. ধন্যবাদ ");
+
+                         finish();
+
+
                      }
 //                     if(spnData.equalsIgnoreCase("1"))
 //                     {

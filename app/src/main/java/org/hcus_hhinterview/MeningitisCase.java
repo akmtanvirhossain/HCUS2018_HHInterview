@@ -808,9 +808,8 @@
                     secMInRecoOth3.setVisibility(View.GONE);
                     lineMInRecoOth3.setVisibility(View.GONE);
                     txtMInRecoOth3.setText("");
-                    secAboSeriIlOnset.setVisibility(View.GONE);
-                    lineAboSeriIlOnset.setVisibility(View.GONE);
-                    txtAboSeriIlOnset.setText("");
+                 secAboSeriIlOnset.setVisibility(View.VISIBLE);
+                 lineAboSeriIlOnset.setVisibility(View.VISIBLE);
              }
              else if(rbData.equalsIgnoreCase("8"))
              {
@@ -1006,9 +1005,8 @@
                     secMInRecoOth3.setVisibility(View.GONE);
                     lineMInRecoOth3.setVisibility(View.GONE);
                     txtMInRecoOth3.setText("");
-                    secAboSeriIlOnset.setVisibility(View.GONE);
-                    lineAboSeriIlOnset.setVisibility(View.GONE);
-                    txtAboSeriIlOnset.setText("");
+                 secAboSeriIlOnset.setVisibility(View.VISIBLE);
+                 lineAboSeriIlOnset.setVisibility(View.VISIBLE);
              }
              else
              {

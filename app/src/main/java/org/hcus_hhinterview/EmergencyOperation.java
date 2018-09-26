@@ -1837,6 +1837,7 @@
 
                  secSDurReco.setVisibility(View.GONE);
                  lineSDurReco.setVisibility(View.GONE);
+                 txtSDurReco.setText("");
                  secSInRecoLabel.setVisibility(View.VISIBLE);
                  lineSInRecoLabel.setVisibility(View.VISIBLE);
 
@@ -1860,6 +1861,7 @@
              else{
                  secSDurReco.setVisibility(View.GONE);
                  lineSDurReco.setVisibility(View.GONE);
+                 txtSDurReco.setText("");
                  secSInRecoLabel.setVisibility(View.VISIBLE);
                  lineSInRecoLabel.setVisibility(View.VISIBLE);
                  secSInReco.setVisibility(View.VISIBLE);
@@ -1904,6 +1906,7 @@
                  txtSInRecoOth.setText("");
                  secSInReco2.setVisibility(View.GONE);
                  lineSInReco2.setVisibility(View.GONE);
+                 txtSInRecoOth2.setText("");
 
              }
              else
@@ -1930,18 +1933,22 @@
 
              @Override
              public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                 if(txtSDurReco.getText().toString().length()>0)
+                 if(txtSDurReco.getText().toString().length()>0 & !txtSDurReco.getText().toString().equals("0"))
                  {
                      secSInRecoLabel.setVisibility(View.GONE);
                      lineSInRecoLabel.setVisibility(View.GONE);
                      secSInReco.setVisibility(View.GONE);
                      lineSInReco.setVisibility(View.GONE);
+                     rdogrpSInReco.clearCheck();
                      secSInReco2.setVisibility(View.GONE);
                      lineSInReco2.setVisibility(View.GONE);
+                     rdogrpSInReco2.clearCheck();
                      secSInRecoOth.setVisibility(View.GONE);
                      lineSInRecoOth.setVisibility(View.GONE);
+                     txtSInRecoOth.setText("");
                      secSInRecoOth2.setVisibility(View.GONE);
                      lineSInRecoOth2.setVisibility(View.GONE);
+                     txtSInRecoOth2.setText("");
                  }
 
              }
