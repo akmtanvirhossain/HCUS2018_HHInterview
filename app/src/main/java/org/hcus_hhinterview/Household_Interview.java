@@ -907,7 +907,7 @@ txtliveHouseY.addTextChangedListener(new TextWatcher() {
 
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
-        if(txtliveHouseY.getText().toString().length()>0) {
+        if(txtliveHouseY.getText().toString().length()>0 & !txtliveHouseY.getText().toString().equals("0")) {
             txtliveHouseM.setText("");
 
             //**********************************************************
@@ -996,7 +996,7 @@ txtliveHouseY.addTextChangedListener(new TextWatcher() {
 
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
-                 if(txtLiveHH_Year.getText().toString().length()>0)
+                 if(txtLiveHH_Mon.getText().toString().length()>0 & !txtLiveHH_Mon.getText().toString().equals("0"))
                  {
                      txtLiveHH_Year.setText("");
                  }
@@ -1017,7 +1017,7 @@ txtliveHouseY.addTextChangedListener(new TextWatcher() {
 
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
-                 if(txtLiveHH_Mon.getText().toString().length()>0)
+                 if(txtLiveHH_Year.getText().toString().length()>0 & !txtLiveHH_Year.getText().toString().equals("0"))
                  {
                      txtLiveHH_Mon.setText("");
                  }
