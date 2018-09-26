@@ -927,13 +927,17 @@ txtliveHouseY.addTextChangedListener(new TextWatcher() {
                 spnDistHome.setSelection(0);
             }else if(year>=5 & year<=95)
             {
-                secHlive12m.setVisibility(View.GONE);
-                lineHlive12m.setVisibility(View.GONE);
-                rdogrpHlive12m.clearCheck();
+//                secHlive12m.setVisibility(View.GONE);
+//                lineHlive12m.setVisibility(View.GONE);
+//                rdogrpHlive12m.clearCheck();
 
                 secChangedHouse.setVisibility(View.GONE);
                 lineChangedHouse.setVisibility(View.GONE);
                 txtChangedHouse.setText("");
+
+                secDistHome.setVisibility(View.GONE);
+                lineDistHome.setVisibility(View.GONE);
+                spnDistHome.setSelection(0);
             }
             else{
                 secHlive12m.setVisibility(View.VISIBLE);
@@ -1033,14 +1037,15 @@ txtliveHouseY.addTextChangedListener(new TextWatcher() {
          txtLiveCity_Mon.addTextChangedListener(new TextWatcher() {
              @Override
              public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                 if(txtLiveCity_Year.getText().toString().length()>0)
-                 {
-                     txtLiveCity_Year.setText("");
-                 }
+
              }
 
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
+                 if(txtLiveCity_Mon.getText().toString().length()>0 & !txtLiveCity_Mon.getText().toString().equals("0"))
+                 {
+                     txtLiveCity_Year.setText("");
+                 }
 
              }
 
@@ -1053,15 +1058,15 @@ txtliveHouseY.addTextChangedListener(new TextWatcher() {
          txtLiveCity_Year.addTextChangedListener(new TextWatcher() {
              @Override
              public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                 if(txtLiveCity_Mon.getText().toString().length()>0)
-                 {
-                     txtLiveCity_Mon.setText("");
-                 }
+
              }
 
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                 if(txtLiveCity_Year.getText().toString().length()>0 & !txtLiveCity_Year.getText().toString().equals("0"))
+                 {
+                     txtLiveCity_Mon.setText("");
+                 }
              }
 
              @Override
@@ -2835,7 +2840,7 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
                     return;
 
            }
-         else if(Integer.valueOf(txtliveHouseY.getText().toString().length()==0 ? "02" : txtliveHouseY.getText().toString()) < 02 || Integer.valueOf(txtliveHouseY.getText().toString().length()==0 ? "99" : txtliveHouseY.getText().toString()) > 99)
+         else if(Integer.valueOf(txtliveHouseY.getText().toString().length()==0 ? "00" : txtliveHouseY.getText().toString()) < 00 || Integer.valueOf(txtliveHouseY.getText().toString().length()==0 ? "99" : txtliveHouseY.getText().toString()) > 99)
            {
              Connection.MessageBox(Household_Interview.this, "Value should be between 02 and 99().");
              txtliveHouseY.requestFocus(); 
@@ -2941,7 +2946,7 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
              txtMotherEdu.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtMotherEdu.getText().toString().length()==0 ? "1" : txtMotherEdu.getText().toString()) < 1 || Integer.valueOf(txtMotherEdu.getText().toString().length()==0 ? "14" : txtMotherEdu.getText().toString()) > 14)
+         else if((!txtMotherEdu.getText().toString().equals("98") & !txtMotherEdu.getText().toString().equals("88")) & (Integer.valueOf(txtMotherEdu.getText().toString().length()==0 ? "1" : txtMotherEdu.getText().toString()) < 1 || Integer.valueOf(txtMotherEdu.getText().toString().length()==0 ? "17" : txtMotherEdu.getText().toString()) > 17))
            {
              Connection.MessageBox(Household_Interview.this, "Value should be between 1 and 14(এই পরিবারের সবচেয়ে ছোট সন্তানরে মা কতক্লাস পর্যন্ত  পড়াশোনা শেষ করেছে? (How many educational years has the Mother of the youngest child of this family completed?)).");
              txtMotherEdu.requestFocus(); 

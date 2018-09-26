@@ -21,6 +21,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -77,6 +78,7 @@ public class Cluster_Structure_list extends Activity {
         try
         {
             setContentView(R.layout.structurelisting_list);
+            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
             C = new Connection(this);
             g = Global.getInstance();
             STARTTIME = g.CurrentTime24();
