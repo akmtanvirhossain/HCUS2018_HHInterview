@@ -394,7 +394,7 @@ package org.hcus_hhinterview;
 
              if(member>0)
              {
-                 if(status==member | data.getOutcome()==4 )
+                 if(status==member)
                  {
                     holder.Status.setBackgroundColor(Color.GREEN);
                     holder.Status.setText("Complete");
@@ -406,6 +406,15 @@ package org.hcus_hhinterview;
                      holder.Status.setBackgroundColor(Color.RED);
                      holder.Status.setText("Incomplete");
                  }
+             }
+
+             if(data.getOutcome()==4)
+             {
+                 holder.Status.setBackgroundColor(Color.GREEN);
+                 holder.Status.setText("Complete");
+             }else {
+                 holder.Status.setBackgroundColor(Color.RED);
+                 holder.Status.setText("Incomplete");
              }
 
 
