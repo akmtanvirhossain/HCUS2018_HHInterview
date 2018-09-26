@@ -1380,7 +1380,7 @@
              txtOMDurReco.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtOMDurReco.getText().toString().length()==0 ? "01" : txtOMDurReco.getText().toString()) < 01 || Integer.valueOf(txtOMDurReco.getText().toString().length()==0 ? "98" : txtOMDurReco.getText().toString()) > 98)
+         else if( secOMDurReco.isShown() & (Integer.valueOf(txtOMDurReco.getText().toString().length()==0 ? "01" : txtOMDurReco.getText().toString()) < 01 || Integer.valueOf(txtOMDurReco.getText().toString().length()==0 ? "98" : txtOMDurReco.getText().toString()) > 98))
            {
              Connection.MessageBox(OtitisMediaCase .this, "Value should be between 01 and 98(শিশুটি সুস্থ হতে কতদিন লেগেছিল? (যদি  জানা না থাকে 98) (How long did it take for the child to completely recover?)).");
              txtOMDurReco.requestFocus(); 

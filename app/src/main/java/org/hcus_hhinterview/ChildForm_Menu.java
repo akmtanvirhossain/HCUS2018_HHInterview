@@ -371,17 +371,18 @@ public class ChildForm_Menu extends AppCompatActivity {
 
     private void changeButtonColor()
     {
-        String member,typhoid = null,meningitis = null,diarrhoea = null,operation = null,otitis = null,immunization = null,admission=null,finalstatus=null;
+        String member,typhoid = null,meningitis = null,diarrhoea = null,operation = null,otitis = null,immunization = null,admission=null,finalstatus=null,pneumonia=null;
 
-        String sql="select ifnull(m.memsl,'') member,ifnull(tc.memsl,'') typhoid,ifnull(mc.memsl,'') meningitis,ifnull(d.memsl,'') diarrhoea,ifnull(ie.memsl,'') operation,ifnull(oc.memsl,'') otitis, ifnull(im.memsl,'') immunization,ifnull(ad.memsl,'') admission,ifnull(cfs.memsl,'') finalstatus from member m\n" +
-                "left outer join TyphoidCase tc on m.uncode=tc.uncode and m.StructureNo=tc.StructureNo and m.HouseholdSl=tc.HouseholdSl and m.HouseholdSl=tc.HouseholdSl and m.VisitNo=tc.VisitNo and m.MemSl=tc.MemSl\n" +
-                "left outer join MeningitisCase mc on m.uncode=mc.uncode and m.StructureNo=mc.StructureNo and m.HouseholdSl=mc.HouseholdSl and m.HouseholdSl=mc.HouseholdSl and m.VisitNo=mc.VisitNo and m.MemSl=mc.MemSl\n" +
-                "left outer join DiarrhoeaCase d on m.uncode=d.uncode and m.StructureNo=d.StructureNo and m.HouseholdSl=d.HouseholdSl and m.HouseholdSl=d.HouseholdSl and m.VisitNo=d.VisitNo and m.MemSl=d.MemSl\n" +
-                "left outer join EmergencyOperation ie on m.uncode=ie.uncode and m.StructureNo=ie.StructureNo and m.HouseholdSl=ie.HouseholdSl and m.HouseholdSl=ie.HouseholdSl and m.VisitNo=ie.VisitNo and m.MemSl=ie.MemSl\n" +
-                "left outer join OtitisMediaCase oc on m.uncode=oc.uncode and m.StructureNo=oc.StructureNo and m.HouseholdSl=oc.HouseholdSl and m.HouseholdSl=oc.HouseholdSl and m.VisitNo=oc.VisitNo and m.MemSl=oc.MemSl\n" +
-                "left outer join Immunization_Master im on m.uncode=im .uncode and m.StructureNo=im .StructureNo and m.HouseholdSl=im .HouseholdSl and m.HouseholdSl=im .HouseholdSl and m.VisitNo=im .VisitNo and m.MemSl=im .MemSl\n" +
-                "left outer join Admission_Refusal ad on m.uncode=ad .uncode and m.StructureNo=ad .StructureNo and m.HouseholdSl=ad .HouseholdSl and m.HouseholdSl=ad .HouseholdSl and m.VisitNo=ad .VisitNo and m.MemSl=ad .MemSl\n" +
-                "left outer join Child_Final_Status cfs on m.uncode=cfs .uncode and m.StructureNo=cfs .StructureNo and m.HouseholdSl=cfs .HouseholdSl and m.HouseholdSl=cfs .HouseholdSl and m.VisitNo=cfs .VisitNo and m.MemSl=cfs .MemSl\n" +
+        String sql="select ifnull(m.memsl,'') member,ifnull(tc.memsl,'') typhoid,ifnull(pc.memsl,'') pneumonia,ifnull(mc.memsl,'') meningitis,ifnull(d.memsl,'') diarrhoea,ifnull(ie.memsl,'') operation,ifnull(oc.memsl,'') otitis, ifnull(im.memsl,'') immunization,ifnull(ad.memsl,'') admission,ifnull(cfs.memsl,'') finalstatus from member m\n" +
+                "left outer join TyphoidCase tc on m.uncode=tc.uncode and m.StructureNo=tc.StructureNo and m.HouseholdSl=tc.HouseholdSl and m.VisitNo=tc.VisitNo and m.MemSl=tc.MemSl\n" +
+                "left outer join MeningitisCase mc on m.uncode=mc.uncode and m.StructureNo=mc.StructureNo and m.HouseholdSl=mc.HouseholdSl and m.VisitNo=mc.VisitNo and m.MemSl=mc.MemSl\n" +
+                "left outer join DiarrhoeaCase d on m.uncode=d.uncode and m.StructureNo=d.StructureNo and m.HouseholdSl=d.HouseholdSl and m.VisitNo=d.VisitNo and m.MemSl=d.MemSl\n" +
+                "left outer join EmergencyOperation ie on m.uncode=ie.uncode and m.StructureNo=ie.StructureNo and m.HouseholdSl=ie.HouseholdSl and m.VisitNo=ie.VisitNo and m.MemSl=ie.MemSl\n" +
+                "left outer join OtitisMediaCase oc on m.uncode=oc.uncode and m.StructureNo=oc.StructureNo and m.HouseholdSl=oc.HouseholdSl and m.VisitNo=oc.VisitNo and m.MemSl=oc.MemSl\n" +
+                "left outer join Immunization_Master im on m.uncode=im .uncode and m.StructureNo=im .StructureNo and m.HouseholdSl=im .HouseholdSl and m.VisitNo=im .VisitNo and m.MemSl=im .MemSl\n" +
+                "left outer join Admission_Refusal ad on m.uncode=ad .uncode and m.StructureNo=ad .StructureNo and m.HouseholdSl=ad .HouseholdSl and m.VisitNo=ad .VisitNo and m.MemSl=ad .MemSl\n" +
+                "left outer join PneumoniaCase pc on m.uncode=pc .uncode and m.StructureNo=pc .StructureNo and m.HouseholdSl=pc .HouseholdSl and m.VisitNo=pc .VisitNo and m.MemSl=pc .MemSl\n" +
+                "left outer join Child_Final_Status cfs on m.uncode=cfs .uncode and m.StructureNo=cfs .StructureNo and m.HouseholdSl=cfs .HouseholdSl and m.VisitNo=cfs .VisitNo and m.MemSl=cfs .MemSl\n" +
                 "where m.uncode='"+UNCODE+"' and m.StructureNo='"+STRUCTURENO+"' and m.HouseholdSl='"+HOUSEHOLDSL+"' and m.VisitNo='"+VISITNO+"' and m.MemSl='"+MEMSL+"'";
         Connection c=new Connection(ChildForm_Menu.this);
         Cursor cur=c.ReadData(sql);
@@ -397,6 +398,7 @@ public class ChildForm_Menu extends AppCompatActivity {
             immunization = cur.getString(cur.getColumnIndex("immunization"));
             admission = cur.getString(cur.getColumnIndex("admission"));
             finalstatus = cur.getString(cur.getColumnIndex("finalstatus"));
+            pneumonia = cur.getString(cur.getColumnIndex("pneumonia"));
             cur.moveToNext();
         }
         cur.close();
@@ -415,6 +417,14 @@ public class ChildForm_Menu extends AppCompatActivity {
         }else
         {
             btnTyphoid.setBackgroundResource(R.drawable.button_style_yellow);
+        }
+
+        if(!pneumonia.equals(""))
+        {
+            btnPneumonia.setBackgroundResource(R.drawable.button_style_green);
+        }else
+        {
+            btnPneumonia.setBackgroundResource(R.drawable.button_style_yellow);
         }
 
         if(!meningitis.equals(""))
