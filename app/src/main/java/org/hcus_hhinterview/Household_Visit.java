@@ -1307,10 +1307,11 @@
                          startActivityForResult(intent, 1);
                      }else
                      {
-                         Connection.MessageBox(Household_Visit.this,"এই খানার ইন্টারভিউ এখানেই শেষ. ধন্যবাদ ");
                          Intent returnIntent = new Intent();
                          returnIntent.putExtra("res", "");
                          setResult(Activity.RESULT_OK, returnIntent);
+
+                         Connection.MessageBox(Household_Visit.this,"এই খানার ইন্টারভিউ এখানেই শেষ. ধন্যবাদ ");
                      }
 //                     if(spnData.equalsIgnoreCase("1"))
 //                     {
