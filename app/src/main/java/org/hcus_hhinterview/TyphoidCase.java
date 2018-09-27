@@ -4922,9 +4922,9 @@
                      return;
 
            }
-         else if(secDaysOfSymp.isShown()&Integer.valueOf(txtDaysOfSymp.getText().toString().length()==0 ? "1" : txtDaysOfSymp.getText().toString()) < 1 || Integer.valueOf(txtDaysOfSymp.getText().toString().length()==0 ? "99" : txtDaysOfSymp.getText().toString()) > 99)
+         else if(secDaysOfSymp.isShown()&Integer.valueOf(txtDaysOfSymp.getText().toString().length()==0 ? "3" : txtDaysOfSymp.getText().toString()) < 3 || Integer.valueOf(txtDaysOfSymp.getText().toString().length()==0 ? "99" : txtDaysOfSymp.getText().toString()) > 99)
            {
-             Connection.MessageBox(TyphoidCase.this, "Value should be between 1 and 99(শিশুটি কত দিন জ্বরে ভুগেছিল? (How many days did the person have symptoms of fever?)).");
+             Connection.MessageBox(TyphoidCase.this, "Value should be between 3 and 99(শিশুটি কত দিন জ্বরে ভুগেছিল? (How many days did the person have symptoms of fever?)).");
              txtDaysOfSymp.requestFocus(); 
              return;	
            }

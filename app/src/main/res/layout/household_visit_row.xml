@@ -18,6 +18,7 @@
         <!--android:layout_height="wrap_content"-->
         <!--android:gravity="center"-->
         <!--android:text="0872" />-->
+        <TextView android:id="@+id/deviceID" android:layout_width="130dp"  android:gravity="center" android:layout_height="wrap_content" android:text="333" />
 
         <TextView
             android:id="@+id/HouseholdSl"

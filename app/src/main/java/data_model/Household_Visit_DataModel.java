@@ -178,7 +178,12 @@ import android.content.Context;
         public void setEntryUser(String newValue){
               _EntryUser = newValue;
          }
-        private String _Lat = "";
+
+     public String get_DeviceID() {
+         return _DeviceID;
+     }
+
+     private String _Lat = "";
         public void setLat(String newValue){
               _Lat = newValue;
          }
@@ -288,6 +293,7 @@ import android.content.Context;
                 d._Consent = Integer.valueOf(cur.getString(cur.getColumnIndex("Consent")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("Consent")));
                 d._Remarks = cur.getString(cur.getColumnIndex("Remarks"));
                 d._DataCollDate = cur.getString(cur.getColumnIndex("DataCollDate"));
+                d._DeviceID = cur.getString(cur.getColumnIndex("DeviceID"));
                 data.add(d);
 
                 cur.moveToNext();

@@ -3628,7 +3628,7 @@ if(!txtMHosM.getText().toString().equals("0") & txtMHosM.getText().toString().le
            Connection.MessageBox(MeningitisCase.this, "Required field: গত ১২ মাসে এই শিশুটির কতবার এই ধরনের মারাত্মক অসুস্থতার সাথে জ্বর ছিল এমন অবস্থা হয়েছিল? (যদি একের অধিক এই অসুস্থতা হয়ে থাকে, তবে সর্বশেষ অসুস্থতা সম্পর্কে নিচের প্রশ্নগুলো করুন (Within the last 12 months how many episodes of this kind of serious illness with fever did the child have?).");
            txtEpiSeriIlOnset.requestFocus();
            return;
-       } else if (Integer.valueOf(txtEpiSeriIlOnset.getText().toString().length() == 0 ? "01" : txtEpiSeriIlOnset.getText().toString()) < 01 || Integer.valueOf(txtEpiSeriIlOnset.getText().toString().length() == 0 ? "20" : txtEpiSeriIlOnset.getText().toString()) > 20) {
+       } else if (secEpiSeriIlOnset.isShown()&(Integer.valueOf(txtEpiSeriIlOnset.getText().toString().length() == 0 ? "01" : txtEpiSeriIlOnset.getText().toString()) < 01 || Integer.valueOf(txtEpiSeriIlOnset.getText().toString().length() == 0 ? "20" : txtEpiSeriIlOnset.getText().toString()) > 20)) {
            Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 20(গত ১২ মাসে এই শিশুটির কতবার এই ধরনের মারাত্মক অসুস্থতার সাথে জ্বর ছিল এমন অবস্থা হয়েছিল? (যদি একের অধিক এই অসুস্থতা হয়ে থাকে, তবে সর্বশেষ অসুস্থতা সম্পর্কে নিচের প্রশ্নগুলো করুন (Within the last 12 months how many episodes of this kind of serious illness with fever did the child have?)).");
            txtEpiSeriIlOnset.requestFocus();
            return;

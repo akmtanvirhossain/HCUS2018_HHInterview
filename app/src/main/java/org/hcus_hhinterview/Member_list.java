@@ -288,13 +288,14 @@ package org.hcus_hhinterview;
              }
              else if(data.getAge()>=1826 & data.getAge()<6574 )
              {
-                 int age=(int) (data.getAge()/365.25);
-                 holder.Age.setText(""+age+" years");
+                 double age=(double) (data.getAge()/365.25);
+
+                 holder.Age.setText(""+Math.ceil(age)+" years");
                  holder.btnChildForm.setVisibility(View.VISIBLE);
              }
              else{
-                 int age=(int) (data.getAge()/365.25);
-                 holder.Age.setText(""+age+" years");
+                 double age=(double) (data.getAge()/365.25);
+                 holder.Age.setText(""+Math.ceil(age)+" years");
                  holder.btnChildForm.setVisibility(View.INVISIBLE);
              }
 

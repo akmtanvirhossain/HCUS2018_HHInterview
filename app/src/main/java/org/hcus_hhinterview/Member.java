@@ -341,8 +341,10 @@
                  else{
                      secAge.setVisibility(View.GONE);
                      lineAge.setVisibility(View.GONE);
+                     txtAge.setText("");
                      secAgeU.setVisibility(View.GONE);
                      lineAgeU.setVisibility(View.GONE);
+                     spnAgeU.setSelection(0);
                  }
              }
          });
@@ -704,7 +706,7 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
          String DV="";
          String birthdate="";
          String presentdate="";
-         Integer ageInDays;
+         double ageInDays;
 
          if(txtUNCode.getText().toString().length()==0 & secUNCode.isShown())
            {
@@ -771,7 +773,7 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
              txtAge.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtAge.getText().toString().length()==0 ? "00" : txtAge.getText().toString()) < 00 || Integer.valueOf(txtAge.getText().toString().length()==0 ? "99" : txtAge.getText().toString()) > 99)
+         else if(secAge.isShown() & (Double.valueOf(txtAge.getText().toString().length()==0 ? "00" : txtAge.getText().toString()) < 00 || Double.valueOf(txtAge.getText().toString().length()==0 ? "99" : txtAge.getText().toString()) > 99))
            {
              Connection.MessageBox(Member.this, "Value should be between 00 and 99(বয়স,যদি জন্ম তারিখ জানা না থাকে (Age) if DOB is unknown).");
              txtAge.requestFocus(); 
@@ -867,7 +869,7 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
          birthdate=dtpDOB.getText().toString();
          presentdate=Global.DateNowDMY();
-         ageInDays=Global.DateDifferenceDays(presentdate,birthdate);
+         ageInDays=Global.DateDifferenceDays_Double(presentdate,birthdate);
          objSave.setAge( ageInDays);
 
 //      *************************************************
@@ -877,19 +879,19 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
         if(spnAgeU.getSelectedItemPosition() == 1)
         {
-            objSave.setAge(Integer.valueOf(txtAge.getText().toString()));
+            objSave.setAge(Double.valueOf(txtAge.getText().toString()));
 
         }
          else if(spnAgeU.getSelectedItemPosition() == 2)
          {
-             int age=Integer.valueOf(txtAge.getText().toString());
-             age=(int)(age*30.4);
+             double age=Double.valueOf(txtAge.getText().toString());
+             age=(double)(age*30.4);
              objSave.setAge(age);
          }
         else if(spnAgeU.getSelectedItemPosition() == 3)
         {
-            int age=Integer.valueOf(txtAge.getText().toString());
-            age=(int)(age*365.25);
+            double age=Double.valueOf(txtAge.getText().toString());
+            age=(double)(age*365.25);
             objSave.setAge(age);
         }
 
@@ -986,7 +988,7 @@ spnAgeU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                  txtAge.setText(""+age);
              }
              else{
-                 txtAge.setText(String.valueOf(item.getAge()));
+                 txtAge.setText(String.valueOf((int)item.getAge()));
              }
 
 

@@ -513,9 +513,9 @@
                  secSInRecoOth2.setVisibility(View.GONE);
                  lineSInRecoOth2.setVisibility(View.GONE);
                  txtSInRecoOth2.setText("");
-                 secSAboIll.setVisibility(View.GONE);
-                 lineSAboIll.setVisibility(View.GONE);
-                 txtSAboIll.setText("");
+//                 secSAboIll.setVisibility(View.VISIBLE);
+//                 lineSAboIll.setVisibility(View.GONE);
+//                 txtSAboIll.setText("");
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
@@ -2091,8 +2091,8 @@
          lineSInReco2.setVisibility(View.GONE);
          secSInRecoOth2.setVisibility(View.GONE);
          lineSInRecoOth2.setVisibility(View.GONE);
-         secSAboIll.setVisibility(View.GONE);
-         lineSAboIll.setVisibility(View.GONE);
+//         secSAboIll.setVisibility(View.GONE);
+//         lineSAboIll.setVisibility(View.GONE);
          secOperNo.setVisibility(View.GONE);
          lineOperNo.setVisibility(View.GONE);
          secSDtHos.setVisibility(View.GONE);
@@ -2155,8 +2155,8 @@
          lineSInReco2.setVisibility(View.GONE);
          secSInRecoOth2.setVisibility(View.GONE);
          lineSInRecoOth2.setVisibility(View.GONE);
-         secSAboIll.setVisibility(View.GONE);
-         lineSAboIll.setVisibility(View.GONE);
+//         secSAboIll.setVisibility(View.GONE);
+//         lineSAboIll.setVisibility(View.GONE);
          secSurSymptOth.setVisibility(View.GONE);
          lineSurSymptOth.setVisibility(View.GONE);
          secSurSymptOth.setVisibility(View.GONE);
@@ -2388,7 +2388,7 @@
              txtOperNo.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtOperNo.getText().toString().length()==0 ? "1" : txtOperNo.getText().toString()) < 1 || Integer.valueOf(txtOperNo.getText().toString().length()==0 ? "12" : txtOperNo.getText().toString()) > 12)
+         else if(secOperNo.isShown()&(Integer.valueOf(txtOperNo.getText().toString().length()==0 ? "1" : txtOperNo.getText().toString()) < 1 || Integer.valueOf(txtOperNo.getText().toString().length()==0 ? "12" : txtOperNo.getText().toString()) > 12))
            {
              Connection.MessageBox(EmergencyOperation .this, "Value should be between 1 and 12(গত ২৪ মাসে আপনার শিশুর কয়টি অপারেশন করানো হয়েছিল? (যদি একের অধিক এই অপারেশন হয়ে থাকে তবে অতিসম্প্রতি হয়ে যাওয়া অপারেশন সম্পর্কে নিচের প্রশ্নগুলো করুন) (Within the last 24 months how many operation did this child have? If >1 operations performed, ask about the following questions on the most recent operation)).");
              txtOperNo.requestFocus(); 
@@ -2428,7 +2428,7 @@
              txtSIlBeHosAdm.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtSIlBeHosAdm.getText().toString().length()==0 ? "01" : txtSIlBeHosAdm.getText().toString()) < 01 || Integer.valueOf(txtSIlBeHosAdm.getText().toString().length()==0 ? "98" : txtSIlBeHosAdm.getText().toString()) > 98)
+         else if(secSIlBeHosAdm.isShown()&(Integer.valueOf(txtSIlBeHosAdm.getText().toString().length()==0 ? "01" : txtSIlBeHosAdm.getText().toString()) < 01 || Integer.valueOf(txtSIlBeHosAdm.getText().toString().length()==0 ? "98" : txtSIlBeHosAdm.getText().toString()) > 98))
            {
              Connection.MessageBox(EmergencyOperation .this, "Value should be between 01 and 98(হাসপাতালে ভর্তির আগে শিশুটি কতদিন অসুস্থ ছিল? (যদি জানা না থাকে 98 বসান) (For how many days did the child appear ill before he/she was hospitalized?)).");
              txtSIlBeHosAdm.requestFocus(); 

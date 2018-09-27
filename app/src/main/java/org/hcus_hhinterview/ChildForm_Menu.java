@@ -67,12 +67,12 @@ public class ChildForm_Menu extends AppCompatActivity {
         btnAddMissionRefusal=findViewById(R.id.btnAddMissionRefusal);
         btnStatus=findViewById(R.id.btnStatus);
 
-        if(Integer.parseInt(AGE) < 60)
+        if(Double.parseDouble(AGE) < 60)
         {
             btnPneumonia.setVisibility(View.GONE);
 //            btnPneumonia.setBackgroundResource(R.drawable.button_style_red);
         }
-        else if(Integer.parseInt(AGE) >= 1826 & Integer.parseInt(AGE) < 6574)
+        else if(Double.parseDouble(AGE) >= 1826 & Double.parseDouble(AGE) < 6574)
         {
             btnImu.setVisibility(View.GONE);
 //            btnImu.setBackgroundResource(R.drawable.button_style_red);

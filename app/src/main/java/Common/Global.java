@@ -290,6 +290,24 @@ public class Global {
 		return diffInDays;
 	}
 
+	public static double DateDifferenceDays_Double(String EndDateDDMMYYYY,String StartDateDDMMYYYY)
+	{
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		int age = 0;
+		double diffInDays = 0;
+		Date VD;
+		Date BD;
+		try {
+			VD = sdf.parse(Global.DateConvertYMD(EndDateDDMMYYYY));
+			BD = sdf.parse(Global.DateConvertYMD(StartDateDDMMYYYY));
+			diffInDays =  ((VD.getTime() - BD.getTime())/ (1000 * 60 * 60 * 24));
+			//age = (int)(diffInDays/365.25);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return diffInDays;
+	}
+
 	public static int DateDifferenceMonth(String EndDateDDMMYYYY,String StartDateDDMMYYYY)
 	{
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");

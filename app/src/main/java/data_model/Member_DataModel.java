@@ -71,11 +71,11 @@ public class Member_DataModel{
         public void setDOBDk(int newValue){
               _DOBDk = newValue;
          }
-        private int _Age = 0;
-        public int getAge(){
+        private double _Age = 0;
+        public double getAge(){
               return _Age;
          }
-        public void setAge(int newValue){
+        public void setAge(Double newValue){
               _Age = newValue;
          }
         private int _AgeU = 0;
@@ -257,7 +257,7 @@ public class Member_DataModel{
                 d._Sex = Integer.valueOf(cur.getString(cur.getColumnIndex("Sex")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("Sex")));
                 d._DOB = cur.getString(cur.getColumnIndex("DOB"));
                 d._DOBDk = Integer.valueOf(cur.getString(cur.getColumnIndex("DOBDk")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("DOBDk")));
-                d._Age = Integer.valueOf(cur.getString(cur.getColumnIndex("Age")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("Age")));
+                d._Age = Double.valueOf(cur.getString(cur.getColumnIndex("Age")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("Age")));
                 d._AgeU = Integer.valueOf(cur.getString(cur.getColumnIndex("AgeU")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("AgeU")));
                 d._Relation = Integer.valueOf(cur.getString(cur.getColumnIndex("Relation")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("Relation")));
                 d._OthRelation = cur.getString(cur.getColumnIndex("OthRelation"));
@@ -296,7 +296,7 @@ public class Member_DataModel{
             d._Sex = Integer.valueOf(cur.getString(cur.getColumnIndex("Sex")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("Sex")));
             d._DOB = cur.getString(cur.getColumnIndex("DOB"));
             d._DOBDk = Integer.valueOf(cur.getString(cur.getColumnIndex("DOBDk")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("DOBDk")));
-            d._Age = Integer.valueOf(cur.getString(cur.getColumnIndex("Age")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("Age")));
+            d._Age = Double.valueOf(cur.getString(cur.getColumnIndex("Age")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("Age")));
             d._AgeU = Integer.valueOf(cur.getString(cur.getColumnIndex("AgeU")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("AgeU")));
             d._Relation = Integer.valueOf(cur.getString(cur.getColumnIndex("Relation")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("Relation")));
             d._OthRelation = cur.getString(cur.getColumnIndex("OthRelation"));

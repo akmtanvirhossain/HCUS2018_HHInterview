@@ -255,6 +255,7 @@ package org.hcus_hhinterview;
          TextView Remarks;
          TextView DataCollDate;
          TextView Status;
+         TextView deviceID;
          Button btnEdit;
          public MyViewHolder(View convertView) {
              super(convertView);
@@ -276,6 +277,7 @@ package org.hcus_hhinterview;
 //             NotOfferedOth = (TextView)convertView.findViewById(R.id.NotOfferedOth);
              Consent = (TextView)convertView.findViewById(R.id.Consent);
              Status = (TextView)convertView.findViewById(R.id.Status);
+             deviceID = (TextView)convertView.findViewById(R.id.deviceID);
 //             Remarks = (TextView)convertView.findViewById(R.id.Remarks);
 //             DataCollDate = (TextView)convertView.findViewById(R.id.DataCollDate);
              }
@@ -294,6 +296,7 @@ package org.hcus_hhinterview;
              final Household_Visit_DataModel data = dataList.get(position);
 //             holder.UNCode.setText(data.getUNCode());
 //             holder.StructureNo.setText(data.getStructureNo());
+             holder.deviceID.setText(""+data.get_DeviceID());
              holder.HouseholdSl.setText(""+data.getHouseholdSl());
              holder.VisitNo.setText(data.getVisitNo());
 //             holder.HHVisited.setText(data.getHHVisited());
