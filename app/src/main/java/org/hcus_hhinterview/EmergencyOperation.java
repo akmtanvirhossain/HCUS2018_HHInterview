@@ -1949,6 +1949,14 @@
                      secSInRecoOth2.setVisibility(View.GONE);
                      lineSInRecoOth2.setVisibility(View.GONE);
                      txtSInRecoOth2.setText("");
+                 }else
+                 {
+                     secSInRecoLabel.setVisibility(View.VISIBLE);
+                     lineSInRecoLabel.setVisibility(View.VISIBLE);
+                     secSInReco.setVisibility(View.VISIBLE);
+                     lineSInReco.setVisibility(View.VISIBLE);
+                     secSInReco2.setVisibility(View.VISIBLE);
+                     lineSInReco2.setVisibility(View.VISIBLE);
                  }
 
              }

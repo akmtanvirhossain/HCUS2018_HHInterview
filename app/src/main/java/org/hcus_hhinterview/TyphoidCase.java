@@ -3945,7 +3945,7 @@
                     lineHospNameLabel.setVisibility(View.GONE);
                     secHospName.setVisibility(View.GONE);
                     lineHospName.setVisibility(View.GONE);
-//                    spnHospName.setSelection(0);
+                    spnHospName.setSelection(0);
                     secHospName_Oth.setVisibility(View.GONE);
                     lineHospName_Oth.setVisibility(View.GONE);
                     txtHospName_Oth.setText("");

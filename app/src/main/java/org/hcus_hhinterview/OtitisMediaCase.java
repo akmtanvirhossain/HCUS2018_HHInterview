@@ -856,6 +856,7 @@
              {
                  secOMDurReco.setVisibility(View.GONE);
                  lineOMDurReco.setVisibility(View.GONE);
+                 txtOMDurReco.setText("");
 
              }
              else if(rbData.equalsIgnoreCase("8"))
@@ -1271,7 +1272,7 @@
              txtOMEDisEpi.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtOMEDisEpi.getText().toString().length()==0 ? "1" : txtOMEDisEpi.getText().toString()) < 1 || Integer.valueOf(txtOMEDisEpi.getText().toString().length()==0 ? "88" : txtOMEDisEpi.getText().toString()) > 88)
+         else if(secOMEDisEpi.isShown()&(Integer.valueOf(txtOMEDisEpi.getText().toString().length()==0 ? "1" : txtOMEDisEpi.getText().toString()) < 1 || Integer.valueOf(txtOMEDisEpi.getText().toString().length()==0 ? "88" : txtOMEDisEpi.getText().toString()) > 88))
            {
              Connection.MessageBox(OtitisMediaCase .this, "Value should be between 1 and 88(গত ১২ মাসে এই শিশুর কতবার এই ধরনের অসুস্থতা হয়েছিল? (যদি একের অধিক এই অসুস্থতা হয়ে থাকে তবে অতিসম্প্রতি অসুস্থতা সম্পর্কে নিচের প্রশ্নগুলো করুন) (Within the last 12 months how many episodes of such an illness did this child have?)).");
              txtOMEDisEpi.requestFocus(); 

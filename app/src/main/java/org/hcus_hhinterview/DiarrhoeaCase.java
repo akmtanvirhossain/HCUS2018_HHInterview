@@ -1305,6 +1305,7 @@
              {
                     secDDurReco.setVisibility(View.GONE);
                     lineDDurReco.setVisibility(View.GONE);
+                    txtDDurReco.setText("");
                  secDInReco.setVisibility(View.VISIBLE);
                  lineDInReco.setVisibility(View.VISIBLE);
 
@@ -1394,6 +1395,7 @@ txtDDurReco.addTextChangedListener(new TextWatcher() {
         if(txtDDurReco.getText().toString().length()>0){
             secDInReco.setVisibility(View.GONE);
             lineDInReco.setVisibility(View.GONE);
+            rdogrpDInReco.clearCheck();
         }
         else{
             secDInReco.setVisibility(View.VISIBLE);
@@ -1719,7 +1721,7 @@ txtDDurReco.addTextChangedListener(new TextWatcher() {
              txtDDisEpi.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtDDisEpi.getText().toString().length()==0 ? "1" : txtDDisEpi.getText().toString()) < 1 || Integer.valueOf(txtDDisEpi.getText().toString().length()==0 ? "20" : txtDDisEpi.getText().toString()) > 20)
+         else if(secDDisEpi.isShown()&(Integer.valueOf(txtDDisEpi.getText().toString().length()==0 ? "1" : txtDDisEpi.getText().toString()) < 1 || Integer.valueOf(txtDDisEpi.getText().toString().length()==0 ? "20" : txtDDisEpi.getText().toString()) > 20))
            {
              Connection.MessageBox(DiarrhoeaCase .this, "Value should be between 1 and 20(গত ২ সপ্তাহে এই শিশুর কতবার এই ধরনের অসুস্থতা হয়েছিল? (যদি একের অধিক এই অসুস্থতা হয়ে থাকে তবে অতিসম্প্রতি অসুস্থতা সম্পর্কে নিচের প্রশ্নগুলো করুন) (Within the last 2 weeks how many episodes of such an illness did this child have?)).");
              txtDDisEpi.requestFocus(); 
@@ -1904,7 +1906,7 @@ txtDDurReco.addTextChangedListener(new TextWatcher() {
              txtDDurReco.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtDDurReco.getText().toString().length()==0 ? "1" : txtDDurReco.getText().toString()) < 1 || Integer.valueOf(txtDDurReco.getText().toString().length()==0 ? "98" : txtDDurReco.getText().toString()) > 98)
+         else if(secDDurReco.isShown()&(Integer.valueOf(txtDDurReco.getText().toString().length()==0 ? "1" : txtDDurReco.getText().toString()) < 1 || Integer.valueOf(txtDDurReco.getText().toString().length()==0 ? "98" : txtDDurReco.getText().toString()) > 98))
            {
              Connection.MessageBox(DiarrhoeaCase .this, "Value should be between 1 and 98(শিশুটি সুস্থ হতে কতদিন লেগেছিল? (যদি  জানা না থাকে 98) (How long did it take for the child to completely recover?)).");
              txtDDurReco.requestFocus(); 
