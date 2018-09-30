@@ -3636,7 +3636,7 @@ if(!txtMHosM.getText().toString().equals("0") & txtMHosM.getText().toString().le
            Connection.MessageBox(MeningitisCase.this, "Required field: শিশুটি কতদিন জ্বরে ভুগেছিল? (যদি জানা না থাকে 98 বসান) (How long did the child have fever?).");
            txtIlnessFev.requestFocus();
            return;
-       } else if (Integer.valueOf(txtIlnessFev.getText().toString().length() == 0 ? "01" : txtIlnessFev.getText().toString()) < 01 || Integer.valueOf(txtIlnessFev.getText().toString().length() == 0 ? "98" : txtIlnessFev.getText().toString()) > 98) {
+       } else if (secIlnessFev.isShown()&(Integer.valueOf(txtIlnessFev.getText().toString().length() == 0 ? "01" : txtIlnessFev.getText().toString()) < 01 || Integer.valueOf(txtIlnessFev.getText().toString().length() == 0 ? "98" : txtIlnessFev.getText().toString()) > 98)) {
            Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 98(শিশুটি কতদিন জ্বরে ভুগেছিল? (যদি জানা না থাকে 98 বসান) (How long did the child have fever?)).");
            txtIlnessFev.requestFocus();
            return;
@@ -3668,7 +3668,7 @@ if(!txtMHosM.getText().toString().equals("0") & txtMHosM.getText().toString().le
            Connection.MessageBox(MeningitisCase.this, "Required field: যদি হ্যাঁ হয় তাহলে কতদিন? (যদি জানা না থাকে 98 বসান) (If yes, for how long?).");
            txtMDurDrowsin.requestFocus();
            return;
-       } else if (Integer.valueOf(txtMDurDrowsin.getText().toString().length() == 0 ? "01" : txtMDurDrowsin.getText().toString()) < 01 || Integer.valueOf(txtMDurDrowsin.getText().toString().length() == 0 ? "98" : txtMDurDrowsin.getText().toString()) > 98) {
+       } else if (secMDurDrowsin.isShown()&(Integer.valueOf(txtMDurDrowsin.getText().toString().length() == 0 ? "01" : txtMDurDrowsin.getText().toString()) < 01 || Integer.valueOf(txtMDurDrowsin.getText().toString().length() == 0 ? "98" : txtMDurDrowsin.getText().toString()) > 98)){
            Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 98(যদি হ্যাঁ হয় তাহলে কতদিন? (যদি জানা না থাকে 98 বসান) (If yes, for how long?)).");
            txtMDurDrowsin.requestFocus();
            return;
@@ -3888,7 +3888,7 @@ if(!txtMHosM.getText().toString().equals("0") & txtMHosM.getText().toString().le
                Connection.MessageBox(MeningitisCase.this, "Required field: শিশুটি সুস্থ হতে কতদিন লেগেছিল? (যদি  জানা না থাকে 98) (How long did it take for the child to completely recover?).");
                txtMDurReco.requestFocus();
                return;
-           } else if (Integer.valueOf(txtMDurReco.getText().toString().length() == 0 ? "01" : txtMDurReco.getText().toString()) < 01 || Integer.valueOf(txtMDurReco.getText().toString().length() == 0 ? "98" : txtMDurReco.getText().toString()) > 98) {
+           } else if (secMDurReco.isShown()&(Integer.valueOf(txtMDurReco.getText().toString().length() == 0 ? "01" : txtMDurReco.getText().toString()) < 01 || Integer.valueOf(txtMDurReco.getText().toString().length() == 0 ? "98" : txtMDurReco.getText().toString()) > 98)) {
                Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 98(শিশুটি সুস্থ হতে কতদিন লেগেছিল? (যদি  জানা না থাকে 98) (How long did it take for the child to completely recover?)).");
                txtMDurReco.requestFocus();
                return;

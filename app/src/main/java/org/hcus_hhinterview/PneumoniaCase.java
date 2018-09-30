@@ -2952,7 +2952,7 @@
              txtPEpiIlness.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtPEpiIlness.getText().toString().length()==0 ? "01" : txtPEpiIlness.getText().toString()) < 01 || Integer.valueOf(txtPEpiIlness.getText().toString().length()==0 ? "20" : txtPEpiIlness.getText().toString()) > 20 & secPEpiIlness.isShown())
+         else if(secPEpiIlness.isShown()&(Integer.valueOf(txtPEpiIlness.getText().toString().length()==0 ? "01" : txtPEpiIlness.getText().toString()) < 01 || Integer.valueOf(txtPEpiIlness.getText().toString().length()==0 ? "20" : txtPEpiIlness.getText().toString()) > 20 & secPEpiIlness.isShown()))
            {
              Connection.MessageBox(PneumoniaCase.this, "Value should be between 01 and 20(গত ১২ মাসে এই শিশুর কতবার এই ধরনের অসুস্থতা হয়েছিল? (যদি একের অধিক এই অসুস্থতা হয়ে থাকে তবে অতিসম্প্রতি অসুস্থতা সম্পর্কে নিচের প্রশ্নগুলো করুন (Within the last 12 months how many episodes of such an illness did this child have? If >1 episodes, ask about the following questions on the most recent episode)).");
              txtPEpiIlness.requestFocus(); 
