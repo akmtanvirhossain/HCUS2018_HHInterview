@@ -286,10 +286,13 @@ package org.hcus_hhinterview;
                  {
                      secReasonInVisit.setVisibility(View.VISIBLE);
                      lineReasonInVisit.setVisibility(View.VISIBLE);
-                     spnReasonInVisit.setSelection(0);
+//                     spnReasonInVisit.setSelection(0);
                      secTotalHH.setVisibility(View.GONE);
                      lineTotalHH.setVisibility(View.GONE);
                      txtTotalHH.setText("");
+                     secVisitOutcomeOth.setVisibility(View.GONE);
+                     lineVisitOutcomeOth.setVisibility(View.GONE);
+                     txtVisitOutcomeOth.setText("");
 
                  }
 
@@ -300,7 +303,12 @@ package org.hcus_hhinterview;
                      secTotalHH.setVisibility(View.GONE);
                      lineTotalHH.setVisibility(View.GONE);
                      txtTotalHH.setText("");
-
+                     secReasonInVisit.setVisibility(View.GONE);
+                     lineReasonInVisit.setVisibility(View.GONE);
+                     spnReasonInVisit.setSelection(0);
+                     secReasonInVisitOth.setVisibility(View.GONE);
+                     lineReasonInVisitOth.setVisibility(View.GONE);
+                     txtReasonInVisitOth.setText("");
                  }
                  else if(spnData.equalsIgnoreCase("1") | spnData.equalsIgnoreCase("7") | spnData.equalsIgnoreCase("10"))
                  {
@@ -315,19 +323,18 @@ package org.hcus_hhinterview;
                     txtReasonInVisitOth.setText("");
                     secTotalHH.setVisibility(View.VISIBLE);
                     lineTotalHH.setVisibility(View.VISIBLE);
-
-
                  }
-
-
                  else
                  {
                     secVisitOutcomeOth.setVisibility(View.GONE);
                     lineVisitOutcomeOth.setVisibility(View.GONE);
+                     txtVisitOutcomeOth.setText("");
                     secReasonInVisit.setVisibility(View.GONE);
                     lineReasonInVisit.setVisibility(View.GONE);
+                     spnReasonInVisit.setSelection(0);
                     secReasonInVisitOth.setVisibility(View.GONE);
                     lineReasonInVisitOth.setVisibility(View.GONE);
+                     txtReasonInVisitOth.setText("");
                     secTotalHH.setVisibility(View.GONE);
                     lineTotalHH.setVisibility(View.GONE);
                     txtTotalHH.setText("");
@@ -409,6 +416,7 @@ package org.hcus_hhinterview;
                  {
                      secReasonInVisitOth.setVisibility(View.GONE);
                      lineReasonInVisitOth.setVisibility(View.GONE);
+                     txtReasonInVisitOth.setText("");
                  }
              }
 
@@ -631,16 +639,42 @@ package org.hcus_hhinterview;
                    txtCluster.setText(Cluster);
                    txtStructureNo.setText(StructureNo);
                    txtVisitNo.setText(""+PREV);
-                   spnVisitOutcome.setSelection(Global.SpinnerItemPositionAnyLength(spnVisitOutcome, String.valueOf(item.getVisitOutcome())));
-                          spnVisitOutcome.setClickable(false);
-                   txtVisitOutcomeOth.setText(item.getVisitOutcomeOth());
-                           txtVisitOutcomeOth.setEnabled(false);
-                   spnReasonInVisit.setSelection(Global.SpinnerItemPositionAnyLength(spnReasonInVisit, String.valueOf(item.getReasonInVisit())));
-                           spnReasonInVisit.setClickable(false);
-                   txtReasonInVisitOth.setText(item.getReasonInVisitOth());
-                           txtReasonInVisitOth.setEnabled(false);
-                   txtTotalHH.setText(item.getTotalHH());
-//                           txtTotalHH.setEnabled(false);
+                   if(item.getVisitOutcome()==10)
+                   {
+                       spnVisitOutcome.setSelection(Global.SpinnerItemPositionAnyLength(spnVisitOutcome, String.valueOf(item.getVisitOutcome())));
+                       spnVisitOutcome.setClickable(true);
+                       txtVisitOutcomeOth.setText(item.getVisitOutcomeOth());
+                       txtVisitOutcomeOth.setEnabled(true);
+                       spnReasonInVisit.setSelection(Global.SpinnerItemPositionAnyLength(spnReasonInVisit, String.valueOf(item.getReasonInVisit())));
+                       spnReasonInVisit.setClickable(true);
+                       txtReasonInVisitOth.setText(item.getReasonInVisitOth());
+                       txtReasonInVisitOth.setEnabled(true);
+                       txtTotalHH.setText(item.getTotalHH());
+                   }
+                   else if(PREV==3 & !(item.getVisitOutcome()==1))
+                   {
+                       spnVisitOutcome.setSelection(Global.SpinnerItemPositionAnyLength(spnVisitOutcome, String.valueOf(item.getVisitOutcome())));
+                       spnVisitOutcome.setClickable(true);
+                       txtVisitOutcomeOth.setText(item.getVisitOutcomeOth());
+                       txtVisitOutcomeOth.setEnabled(true);
+                       spnReasonInVisit.setSelection(Global.SpinnerItemPositionAnyLength(spnReasonInVisit, String.valueOf(item.getReasonInVisit())));
+                       spnReasonInVisit.setClickable(true);
+                       txtReasonInVisitOth.setText(item.getReasonInVisitOth());
+                       txtReasonInVisitOth.setEnabled(true);
+                       txtTotalHH.setText(item.getTotalHH());
+                   }
+                   else{
+                       spnVisitOutcome.setSelection(Global.SpinnerItemPositionAnyLength(spnVisitOutcome, String.valueOf(item.getVisitOutcome())));
+                       spnVisitOutcome.setClickable(false);
+                       txtVisitOutcomeOth.setText(item.getVisitOutcomeOth());
+                       txtVisitOutcomeOth.setEnabled(false);
+                       spnReasonInVisit.setSelection(Global.SpinnerItemPositionAnyLength(spnReasonInVisit, String.valueOf(item.getReasonInVisit())));
+                       spnReasonInVisit.setClickable(false);
+                       txtReasonInVisitOth.setText(item.getReasonInVisitOth());
+                       txtReasonInVisitOth.setEnabled(false);
+                       txtTotalHH.setText(item.getTotalHH());
+                   }
+
                }
            }
         }

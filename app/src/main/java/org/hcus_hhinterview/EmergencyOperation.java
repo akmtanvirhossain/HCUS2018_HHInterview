@@ -1822,12 +1822,12 @@
                  secSDurReco.setVisibility(View.GONE);
                  lineSDurReco.setVisibility(View.GONE);
                  txtSDurReco.setText("");
-                 secSInRecoLabel.setVisibility(View.VISIBLE);
-                 lineSInRecoLabel.setVisibility(View.VISIBLE);
-                 secSInReco.setVisibility(View.VISIBLE);
-                 lineSInReco.setVisibility(View.VISIBLE);
-                 secSInReco2.setVisibility(View.VISIBLE);
-                 lineSInReco2.setVisibility(View.VISIBLE);
+//                 secSInRecoLabel.setVisibility(View.VISIBLE);
+//                 lineSInRecoLabel.setVisibility(View.VISIBLE);
+//                 secSInReco.setVisibility(View.VISIBLE);
+//                 lineSInReco.setVisibility(View.VISIBLE);
+//                 secSInReco2.setVisibility(View.VISIBLE);
+//                 lineSInReco2.setVisibility(View.VISIBLE);
 
 
 
@@ -1838,36 +1838,36 @@
                  secSDurReco.setVisibility(View.GONE);
                  lineSDurReco.setVisibility(View.GONE);
                  txtSDurReco.setText("");
-                 secSInRecoLabel.setVisibility(View.VISIBLE);
-                 lineSInRecoLabel.setVisibility(View.VISIBLE);
-
-                 secSInReco.setVisibility(View.VISIBLE);
-                 lineSInReco.setVisibility(View.VISIBLE);
-                 secSInReco2.setVisibility(View.VISIBLE);
-                 lineSInReco2.setVisibility(View.VISIBLE);
+//                 secSInRecoLabel.setVisibility(View.VISIBLE);
+//                 lineSInRecoLabel.setVisibility(View.VISIBLE);
+//
+//                 secSInReco.setVisibility(View.VISIBLE);
+//                 lineSInReco.setVisibility(View.VISIBLE);
+//                 secSInReco2.setVisibility(View.VISIBLE);
+//                 lineSInReco2.setVisibility(View.VISIBLE);
 
              }
              else if(rbData.equalsIgnoreCase("1"))
              {
                     secSDurReco.setVisibility(View.VISIBLE);
                     lineSDurReco.setVisibility(View.VISIBLE);
-                 secSInRecoLabel.setVisibility(View.VISIBLE);
-                 lineSInRecoLabel.setVisibility(View.VISIBLE);
-                 secSInReco.setVisibility(View.VISIBLE);
-                 lineSInReco.setVisibility(View.VISIBLE);
-                 secSInReco2.setVisibility(View.VISIBLE);
-                 lineSInReco2.setVisibility(View.VISIBLE);
+//                 secSInRecoLabel.setVisibility(View.VISIBLE);
+//                 lineSInRecoLabel.setVisibility(View.VISIBLE);
+//                 secSInReco.setVisibility(View.VISIBLE);
+//                 lineSInReco.setVisibility(View.VISIBLE);
+//                 secSInReco2.setVisibility(View.VISIBLE);
+//                 lineSInReco2.setVisibility(View.VISIBLE);
              }
              else{
                  secSDurReco.setVisibility(View.GONE);
                  lineSDurReco.setVisibility(View.GONE);
                  txtSDurReco.setText("");
-                 secSInRecoLabel.setVisibility(View.VISIBLE);
-                 lineSInRecoLabel.setVisibility(View.VISIBLE);
-                 secSInReco.setVisibility(View.VISIBLE);
-                 lineSInReco.setVisibility(View.VISIBLE);
-                 secSInReco2.setVisibility(View.VISIBLE);
-                 lineSInReco2.setVisibility(View.VISIBLE);
+//                 secSInRecoLabel.setVisibility(View.VISIBLE);
+//                 lineSInRecoLabel.setVisibility(View.VISIBLE);
+//                 secSInReco.setVisibility(View.VISIBLE);
+//                 lineSInReco.setVisibility(View.VISIBLE);
+//                 secSInReco2.setVisibility(View.VISIBLE);
+//                 lineSInReco2.setVisibility(View.VISIBLE);
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
@@ -1933,6 +1933,11 @@
 
              @Override
              public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+             }
+
+             @Override
+             public void afterTextChanged(Editable editable) {
                  if(txtSDurReco.getText().toString().length()>0 & !txtSDurReco.getText().toString().equals("0"))
                  {
                      secSInRecoLabel.setVisibility(View.GONE);
@@ -1949,7 +1954,8 @@
                      secSInRecoOth2.setVisibility(View.GONE);
                      lineSInRecoOth2.setVisibility(View.GONE);
                      txtSInRecoOth2.setText("");
-                 }else
+                 }
+                 else if(txtSDurReco.getText().toString().length()==0)
                  {
                      secSInRecoLabel.setVisibility(View.VISIBLE);
                      lineSInRecoLabel.setVisibility(View.VISIBLE);
@@ -1958,11 +1964,6 @@
                      secSInReco2.setVisibility(View.VISIBLE);
                      lineSInReco2.setVisibility(View.VISIBLE);
                  }
-
-             }
-
-             @Override
-             public void afterTextChanged(Editable editable) {
 
              }
          });

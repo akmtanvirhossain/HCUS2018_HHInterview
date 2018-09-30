@@ -184,10 +184,10 @@
         android:background="@drawable/button_style_circle_line"
         android:paddingLeft="5sp"
         android:paddingRight="5sp"
-        android:text="Visit"
+        android:text="Structure Visit"
         android:textAllCaps="false"
         android:textColor="@color/theme_color"
-        android:textSize="18sp" />
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/btnHHInterview"
@@ -201,7 +201,7 @@
         android:background="@drawable/button_style_circle_red"
         android:paddingLeft="5sp"
         android:paddingRight="5sp"
-        android:text="HH Interview"
+        android:text="HH Visit"
         android:textAllCaps="false"
         android:textColor="@color/color_white"
         android:textSize="14sp" />

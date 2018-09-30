@@ -512,7 +512,7 @@ public class Cluster_Structure_list extends Activity {
                 @Override
                 public void onClick(View view) {
 
-                    if(data.get_Visit_Status().equals("1"))
+                    if(data.get_Visit_Status().equals("1") | data.get_Visit_Status().equals("10"))
                         {
                             Bundle IDbundle = new Bundle();
                             IDbundle.putString("Upazila", data.getUpazila());
@@ -546,26 +546,58 @@ public class Cluster_Structure_list extends Activity {
                         startActivityForResult(f1,1);
                         }
 
+//                        else if(data.get_Visit_Status().equals("10"))
+//                    {
+//                        Bundle IDbundle = new Bundle();
+//                        IDbundle.putString("Upazila", data.getUpazila());
+//                        IDbundle.putString("UNCode", data.getUNCode());
+//                        IDbundle.putString("Cluster", data.getCluster());
+//                        IDbundle.putString("StructureNo", data.getStructureNo());
+//                        IDbundle.putString("VisitNo", data.get_Visit_No());
+//                        IDbundle.putString("Upazila_Name", UPAZILA_NAME);
+//                        IDbundle.putString("Union_Name", UNION_NAME);
+//                        Intent f1 = new Intent(getApplicationContext(), Cluster_Structure.class);
+//                        f1.putExtras(IDbundle);
+//                        startActivityForResult(f1,1);
+//                    }
+
                     else
                     {
+                        if(Integer.valueOf(data.get_Visit_No())<3)
+                        {
+                            MAIN=Integer.parseInt(data.get_Visit_No());
+                            MAIN=MAIN+1;
+                            Bundle IDbundle = new Bundle();
+                            IDbundle.putString("Upazila", data.getUpazila());
+                            IDbundle.putString("UNCode", data.getUNCode());
+                            //                    IDbundle.putString("Moholla", MOHOLLA);
+                            IDbundle.putString("Cluster", data.getCluster());
+                            IDbundle.putString("StructureNo", data.getStructureNo());
 
-                        MAIN=Integer.parseInt(data.get_Visit_No());
-                        MAIN=MAIN+1;
-                        Bundle IDbundle = new Bundle();
-                        IDbundle.putString("Upazila", data.getUpazila());
-                        IDbundle.putString("UNCode", data.getUNCode());
-                        //                    IDbundle.putString("Moholla", MOHOLLA);
-                        IDbundle.putString("Cluster", data.getCluster());
-                        IDbundle.putString("StructureNo", data.getStructureNo());
+                            IDbundle.putString("VisitNo", ""+MAIN);
+                            IDbundle.putString("Upazila_Name", UPAZILA_NAME);
+                            IDbundle.putString("Union_Name", UNION_NAME);
+                            //                    IDbundle.putString("Moholla_Name", MOHOLLA_NAME);
+                            //                    IDbundle.putString("Mode", "Edit");
+                            Intent f1 = new Intent(getApplicationContext(), Cluster_Structure.class);
+                            f1.putExtras(IDbundle);
+                            startActivityForResult(f1,1);
+                        }
+                        else
+                        {
+                            Bundle IDbundle = new Bundle();
+                            IDbundle.putString("Upazila", data.getUpazila());
+                            IDbundle.putString("UNCode", data.getUNCode());
+                            IDbundle.putString("Cluster", data.getCluster());
+                            IDbundle.putString("StructureNo", data.getStructureNo());
+                            IDbundle.putString("VisitNo", data.get_Visit_No());
+                            IDbundle.putString("Upazila_Name", UPAZILA_NAME);
+                            IDbundle.putString("Union_Name", UNION_NAME);
+                            Intent f1 = new Intent(getApplicationContext(), Cluster_Structure.class);
+                            f1.putExtras(IDbundle);
+                            startActivityForResult(f1,1);
+                        }
 
-                        IDbundle.putString("VisitNo", ""+MAIN);
-                        IDbundle.putString("Upazila_Name", UPAZILA_NAME);
-                        IDbundle.putString("Union_Name", UNION_NAME);
-                        //                    IDbundle.putString("Moholla_Name", MOHOLLA_NAME);
-                        //                    IDbundle.putString("Mode", "Edit");
-                        Intent f1 = new Intent(getApplicationContext(), Cluster_Structure.class);
-                        f1.putExtras(IDbundle);
-                        startActivityForResult(f1,1);
                     }
 
 

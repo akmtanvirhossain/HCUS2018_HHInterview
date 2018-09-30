@@ -1359,16 +1359,17 @@
                if (rb.isChecked()) rbData = d_rdogrpDInReco[i];
              }
 
-             if(rbData.equalsIgnoreCase("1"))
+             if(rbData.equalsIgnoreCase("2"))
              {
-                    secDInRecoOth.setVisibility(View.GONE);
-                    lineDInRecoOth.setVisibility(View.GONE);
-                    txtDInRecoOth.setText("");
+
+                 secDInRecoOth.setVisibility(View.VISIBLE);
+                 lineDInRecoOth.setVisibility(View.VISIBLE);
              }
              else
              {
-                    secDInRecoOth.setVisibility(View.VISIBLE);
-                    lineDInRecoOth.setVisibility(View.VISIBLE);
+                 secDInRecoOth.setVisibility(View.GONE);
+                 lineDInRecoOth.setVisibility(View.GONE);
+                 txtDInRecoOth.setText("");
              }
             }
          public void onNothingSelected(AdapterView<?> adapterView) {

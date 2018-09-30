@@ -415,10 +415,11 @@ package org.hcus_hhinterview;
              {
                  holder.Status.setBackgroundColor(Color.GREEN);
                  holder.Status.setText("Complete");
-             }else {
-                 holder.Status.setBackgroundColor(Color.RED);
-                 holder.Status.setText("Incomplete");
              }
+//             else {
+//                 holder.Status.setBackgroundColor(Color.RED);
+//                 holder.Status.setText("Incomplete");
+//             }
 
 
 

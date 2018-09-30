@@ -3083,7 +3083,7 @@
              txtPDurUnDriBfeed.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtPDurUnDriBfeed.getText().toString().length()==0 ? "01" : txtPDurUnDriBfeed.getText().toString()) < 01 || Integer.valueOf(txtPDurUnDriBfeed.getText().toString().length()==0 ? "98" : txtPDurUnDriBfeed.getText().toString()) > 98& secPDurUnDriBfeed.isShown())
+         else if(secPDurUnDriBfeed.isShown()&(Integer.valueOf(txtPDurUnDriBfeed.getText().toString().length()==0 ? "01" : txtPDurUnDriBfeed.getText().toString()) < 01 || Integer.valueOf(txtPDurUnDriBfeed.getText().toString().length()==0 ? "98" : txtPDurUnDriBfeed.getText().toString()) > 98))
            {
              Connection.MessageBox(PneumoniaCase.this, "Value should be between 01 and 98(যদি হ্যাঁ হয়, তবে কতদিন এমন অবস্থা হয়েছিল?(যদি জানা না থাকে 98 বসান) (If yes, for how long?)).");
              txtPDurUnDriBfeed.requestFocus(); 

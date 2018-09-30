@@ -3680,7 +3680,7 @@ if(!txtMHosM.getText().toString().equals("0") & txtMHosM.getText().toString().le
            Connection.MessageBox(MeningitisCase.this, "Required field: যদি হ্যাঁ হয় তাহলে কতদিন?  (যদি জানা না থাকে 98 বসান) (If yes, for how long?).");
            txtMDurUntoFeed.requestFocus();
            return;
-       } else if (Integer.valueOf(txtMDurUntoFeed.getText().toString().length() == 0 ? "01" : txtMDurUntoFeed.getText().toString()) < 01 || Integer.valueOf(txtMDurUntoFeed.getText().toString().length() == 0 ? "98" : txtMDurUntoFeed.getText().toString()) > 98) {
+       } else if (secMDurUntoFeed.isShown()&(Integer.valueOf(txtMDurUntoFeed.getText().toString().length() == 0 ? "01" : txtMDurUntoFeed.getText().toString()) < 01 || Integer.valueOf(txtMDurUntoFeed.getText().toString().length() == 0 ? "98" : txtMDurUntoFeed.getText().toString()) > 98)) {
            Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 98(যদি হ্যাঁ হয় তাহলে কতদিন?  (যদি জানা না থাকে 98 বসান) (If yes, for how long?)).");
            txtMDurUntoFeed.requestFocus();
            return;
@@ -3692,7 +3692,8 @@ if(!txtMHosM.getText().toString().equals("0") & txtMHosM.getText().toString().le
            Connection.MessageBox(MeningitisCase.this, "Required field: যদি হ্যাঁ হয় তাহলে কতদিন? (যদি জানা না থাকে 98 বসান) (If yes, for how long?).");
            txtMDurCalNoRes.requestFocus();
            return;
-       } else if (Integer.valueOf(txtMDurCalNoRes.getText().toString().length() == 0 ? "01" : txtMDurCalNoRes.getText().toString()) < 01 || Integer.valueOf(txtMDurCalNoRes.getText().toString().length() == 0 ? "98" : txtMDurCalNoRes.getText().toString()) > 98) {
+       } else if (secMDurCalNoRes.isShown()&(Integer.valueOf(txtMDurCalNoRes.getText().toString().length() == 0 ? "01" : txtMDurCalNoRes.getText().toString()) < 01 || Integer.valueOf(txtMDurCalNoRes.getText().toString().length() == 0 ? "98" : txtMDurCalNoRes.getText().toString()) > 98))
+       {
            Connection.MessageBox(MeningitisCase.this, "Value should be between 01 and 98(যদি হ্যাঁ হয় তাহলে কতদিন? (যদি জানা না থাকে 98 বসান) (If yes, for how long?)).");
            txtMDurCalNoRes.requestFocus();
            return;

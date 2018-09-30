@@ -5,6 +5,8 @@
         <!--<TextView android:text="UNCode" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <!--<TextView android:text="StructureNo" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <TextView android:text="DeviceID" android:layout_width="130dp"  android:gravity="center" android:layout_height="wrap_content"/>
+        <TextView android:text="All child form complete status" android:layout_width="150dp" android:gravity="center" android:layout_height="wrap_content"/>
+
         <TextView android:text="HouseholdSl" android:layout_width="130dp"  android:gravity="center" android:layout_height="wrap_content"/>
         <TextView android:text="VisitNo" android:layout_width="130dp"  android:gravity="center" android:layout_height="wrap_content"/>
         <!--<TextView android:text="HHVisited" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
@@ -20,7 +22,6 @@
         <!--<TextView android:text="NotOffered" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <!--<TextView android:text="NotOfferedOth" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <TextView android:text="Consent(Y/N)" android:layout_width="130dp"  android:gravity="center" android:layout_height="wrap_content"/>
-        <TextView android:text="All child form complete status" android:layout_width="150dp" android:gravity="center" android:layout_height="wrap_content"/>
 
         <!--<TextView android:text="Remarks" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
         <!--<TextView android:text="DataCollDate" android:layout_width="50dp" android:gravity="center" android:layout_height="wrap_content"/>-->
