@@ -1355,22 +1355,21 @@
              txtStructureNo.setText(item.getStructureNo());
              txtHouseholdSl.setText(String.valueOf(item.getHouseholdSl()));
              txtVisitNo.setText(item.getVisitNo());
-             String[] d_rdogrpHHVisited = new String[] {"1","2"};
-             for (int i = 0; i < d_rdogrpHHVisited.length; i++)
-             {
-                 if (String.valueOf(item.getHHVisited()).equals(String.valueOf(d_rdogrpHHVisited[i])))
-                 {
-                     if(i==0)
-                     {
-                         btnAddVisit.setVisibility(View.VISIBLE);
-                     }
-                     rb = (RadioButton)rdogrpHHVisited.getChildAt(i);
-                     rb.setChecked(true);
-                 }
-             }
 
-
-             spnOutcome.setSelection(Global.SpinnerItemPositionAnyLength(spnOutcome, String.valueOf(item.getOutcome())));
+               String[] d_rdogrpHHVisited = new String[] {"1","2"};
+                for (int i = 0; i < d_rdogrpHHVisited.length; i++)
+               {
+                   if (String.valueOf(item.getHHVisited()).equals(String.valueOf(d_rdogrpHHVisited[i])))
+                   {
+                       if(i==0)
+                       {
+                           btnAddVisit.setVisibility(View.VISIBLE);
+                       }
+                       rb = (RadioButton)rdogrpHHVisited.getChildAt(i);
+                       rb.setChecked(true);
+                   }
+               }
+               spnOutcome.setSelection(Global.SpinnerItemPositionAnyLength(spnOutcome, String.valueOf(item.getOutcome())));
 
                String spnData = "";
                if (spnOutcome.getSelectedItem().toString().length() != 0)
@@ -1384,6 +1383,14 @@
                else{
                    btnAddVisit.setVisibility(View.VISIBLE);
                }
+
+               VISITNO = C.ReturnSingleValue("Select (ifnull(max(cast(VisitNo as int)),0)+1) from Household_Visit where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'and HouseholdSl='"+ HOUSEHOLDSL +"'"); //where ParticipantID='"+ ParticipantID +"'");
+
+               if(Integer.valueOf(VISITNO)>3)
+               {
+                   btnAddVisit.setVisibility(View.GONE);
+               }
+
 
              txtOutcomeOth.setText(item.getOutcomeOth());
              txtHHMember.setText(String.valueOf(item.getHHMember()));

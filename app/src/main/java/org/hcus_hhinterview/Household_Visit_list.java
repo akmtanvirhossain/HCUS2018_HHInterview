@@ -413,14 +413,24 @@ package org.hcus_hhinterview;
 
              if(data.getOutcome()==4)
              {
-                 holder.Status.setBackgroundColor(Color.GREEN);
-                 holder.Status.setText("Complete");
-             }
-//             else {
-//                 holder.Status.setBackgroundColor(Color.RED);
-//                 holder.Status.setText("Incomplete");
-//             }
+                 holder.Outcome.setBackgroundColor(Color.GREEN);
 
+             }
+             else if(data.getOutcome()==1)
+             {
+                 if(data.getOfferedStudy()==1)
+                 {
+                     holder.Outcome.setBackgroundColor(Color.GREEN);
+                 }
+                 else
+                 {
+                     holder.Outcome.setBackgroundColor(Color.RED);
+                 }
+             }
+             else
+             {
+                 holder.Outcome.setBackgroundColor(Color.RED);
+             }
 
 
              //******************** status ********************
