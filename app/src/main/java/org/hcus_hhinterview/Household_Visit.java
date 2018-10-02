@@ -1384,9 +1384,9 @@
                    btnAddVisit.setVisibility(View.VISIBLE);
                }
 
-               VISITNO = C.ReturnSingleValue("Select (ifnull(max(cast(VisitNo as int)),0)+1) from Household_Visit where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'and HouseholdSl='"+ HOUSEHOLDSL +"'"); //where ParticipantID='"+ ParticipantID +"'");
+               String check = C.ReturnSingleValue("Select (ifnull(max(cast(VisitNo as int)),0)+1) from Household_Visit where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'and HouseholdSl='"+ HOUSEHOLDSL +"'"); //where ParticipantID='"+ ParticipantID +"'");
 
-               if(Integer.valueOf(VISITNO)>3)
+               if(Integer.valueOf(check)>3)
                {
                    btnAddVisit.setVisibility(View.GONE);
                }
