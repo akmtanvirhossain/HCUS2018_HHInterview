@@ -1582,7 +1582,7 @@ public class Connection extends SQLiteOpenHelper {
         }
     }
 
-    private void Sync_Upload_Process(String TableName) {
+    public void Sync_Upload_Process(String TableName) {
         String VariableList = "";
         String UniqueField = "";
         String SQLStr = "";
@@ -1976,10 +1976,40 @@ public class Connection extends SQLiteOpenHelper {
             //Sync_Upload
             // Parameter 1: table list
             //--------------------------------------------------------------------------------------
-            C.Sync_Upload(ProjectSetting.TableList_Upload());
+            //C.Sync_Upload(ProjectSetting.TableList_Upload());
 
             //Database File Upload
             //C.DatabaseUploadZip(UniqueID);
+
+            String UniqueID_Column = "";
+            String[] UniqueID_List;
+            try {
+                C.Sync_Download("DeleteID_List",UniqueID,"");
+
+                Cursor cur_H = C.ReadData("Select TableName,ID from DeleteID_List Where DeleteStatus='N' limit 50");
+                cur_H.moveToFirst();
+                while (!cur_H.isAfterLast()) {
+                    UniqueID_Column = "";
+                    UniqueID = C.ReturnSingleValue("select UniqueID from DatabaseTab where TableName='" + cur_H.getString(cur_H.getColumnIndex("TableName")) + "'");
+                    UniqueID_List = UniqueID.split(",");
+                    for (int i = 0; i < UniqueID_List.length; i++) {
+                        UniqueID_Column += UniqueID_Column.length() == 0 ? "Cast(" + UniqueID_List[i] + " as varchar(50))" : "||Cast(" + UniqueID_List[i] + " as varchar(50))";
+                    }
+
+                    try {
+                        C.Save("Delete from " + cur_H.getString(cur_H.getColumnIndex("TableName")) + " where " + UniqueID_Column + "='" + cur_H.getString(cur_H.getColumnIndex("ID")) + "'");
+                        C.Save("Update DeleteID_List set DeleteStatus='Y' where ID='" + cur_H.getString(cur_H.getColumnIndex("ID")) + "'");
+                    } catch (Exception ex) {
+
+                    }
+                    cur_H.moveToNext();
+                }
+                cur_H.close();
+
+            }catch (Exception ex){
+
+            }
+
         }
         catch(Exception ex)
         {

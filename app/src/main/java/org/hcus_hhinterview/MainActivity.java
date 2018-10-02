@@ -5,6 +5,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
@@ -30,6 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Common.Connection;
+import Common.ProjectSetting;
 import Utility.MySharedPreferences;
 
 public class MainActivity extends AppCompatActivity
@@ -100,11 +103,15 @@ public class MainActivity extends AppCompatActivity
                     {
                         if (Connection.haveNetworkConnection(MainActivity.this)) {
                             netwoekAvailable=true;
+                            new DataSyncTask().executeOnExecutor(AsyncTask.SERIAL_EXECUTOR,DEVICEID);
 
                         } else {
                             netwoekAvailable=false;
                         }
-                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+
+
+                        /*AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                         builder
                                 .setTitle("Message")
                                 .setMessage("আপনি কি তথ্য ডাটা বেজ সার্ভারে আপলোড/ডাউনলোড করতে চান[হ্যাঁ/না]?")
@@ -120,7 +127,9 @@ public class MainActivity extends AppCompatActivity
                                                     return;
                                                 }
 
-                                                try
+                                                //new DataSyncTask().executeOnExecutor(AsyncTask.SERIAL_EXECUTOR,DEVICEID);
+
+                                                *//*try
                                                 {
                                                     String ResponseString="Status:";
 
@@ -145,6 +154,35 @@ public class MainActivity extends AppCompatActivity
                                                                 C.Sync_Download("StructureDB", DEVICEID,"");
 
 
+                                                                C.Sync_Upload(ProjectSetting.TableList_Upload());
+
+
+                                                                tableList = ProjectSetting.TableList_Upload();
+                                                                int progressCount = 50/tableList.size();
+                                                                int count = 0;
+                                                                for (int i = 0; i < tableList.size(); i++) {
+                                                                    try {
+                                                                        C.Sync_Upload_Process(tableList.get(i).toString());
+                                                                        count +=progressCount;
+                                                                        onProgressUpdate(tableList.get(i).toString()+","+String.valueOf(count));
+                                                                    }catch(Exception ex){
+
+                                                                    }
+                                                                }
+
+                                                                //Download
+                                                                progressCount = 50/tableList.size();
+                                                                for (int i = 0; i < tableList.size(); i++) {
+                                                                    try {
+                                                                        C.Sync_Download(tableList.get(i).toString(), DEVICEID,"CountryCode='"+ COUNTRYCODE +"' and FaciCode='"+ FACICODE +"'");
+                                                                        count +=progressCount;
+                                                                        onProgressUpdate(tableList.get(i).toString()+","+String.valueOf(count));
+                                                                    }catch(Exception ex){
+
+                                                                    }
+                                                                }
+
+
                                                                 Connection.MessageBox(MainActivity.this, "তথ্য ডাটাবেজ সার্ভারে সম্পূর্ণ ভাবে আপলোড হয়েছে। ");
 
                                                             } catch (Exception e) {
@@ -159,7 +197,7 @@ public class MainActivity extends AppCompatActivity
                                                 catch(Exception ex)
                                                 {
                                                     Connection.MessageBox(MainActivity.this, ex.getMessage());
-                                                }
+                                                }*//*
 
                                                 break;
 
@@ -170,7 +208,7 @@ public class MainActivity extends AppCompatActivity
                                     }
                                 })
                                 .setNegativeButton("No", null)	//Do nothing on no
-                                .show();
+                                .show();*/
                     }
 
                     //Exit from the system
@@ -326,8 +364,6 @@ public class MainActivity extends AppCompatActivity
 
         private String[] desc={
                 "New",
-//                "Monitoring",
-//                "Data Search",
                 "Data Sync",
                 "Exit"};
 
@@ -335,11 +371,114 @@ public class MainActivity extends AppCompatActivity
         //references to our images
         private Integer[] mThumbIds = {
                 R.drawable.new_entry,
-//                R.drawable.planning,
-//                R.drawable.ic_action_search,
                 R.drawable.data_sync,
                 R.drawable.exit
         };
     }
 
+
+
+    private class DataSyncTask extends AsyncTask<String, Void, Void> {
+        ProgressDialog dialog;
+        private Context context;
+        String resp = "";
+        public void setContext(Context contextf){
+            context = contextf;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            dialog = new ProgressDialog(MainActivity.this);
+            dialog.setTitle("Data Sync");
+            dialog.setMessage("Data Sync in Progress, Please wait ...");
+            dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            dialog.setCancelable(false);
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+            dialog.show();
+        }
+
+        //@Override
+        protected void onProgressUpdate(String... values) {
+            //super.onProgressUpdate(values);
+
+            //dialog.setMessage("Syncing Table "+ values[0].toString().split(",")[0] +" ...");
+            dialog.setProgress(Integer.parseInt(values[0].toString().split(",")[1]));
+        }
+
+        @Override
+        protected Void doInBackground(String... params) {
+            //final String[] ID = params[0].toString().split("-");
+            final String DEVICEID    = params[0].toString();
+
+            try {
+
+                new Thread() {
+                    public void run() {
+                        try {
+
+                            //Upload
+                            List<String> tableList = ProjectSetting.TableList_Upload();
+
+
+                            int progressCount = 50/tableList.size();
+                            int count = 0;
+                            for (int i = 0; i < tableList.size(); i++) {
+                                try {
+                                    C.Sync_Upload_Process(tableList.get(i).toString());
+                                    count +=progressCount;
+                                    onProgressUpdate(tableList.get(i).toString()+","+String.valueOf(count));
+                                }catch(Exception ex){
+
+                                }
+                            }
+
+                            tableList.add("StructureDB");
+                            tableList.add("StructureID_Serial");
+                            tableList.add("StructureIDSlot");
+                            tableList.add("StructureListing");
+
+                            tableList.add("AreaDB");
+                            tableList.add("Cluster");
+                            tableList.add("Immunization_List");
+
+                            //Download
+                            progressCount = 50/tableList.size();
+                            for (int i = 0; i < tableList.size(); i++) {
+                                try {
+                                    C.Sync_Download(tableList.get(i).toString(), DEVICEID,"");
+                                    count +=progressCount;
+                                    onProgressUpdate(tableList.get(i).toString()+","+String.valueOf(count));
+                                }catch(Exception ex){
+
+                                }
+                            }
+
+                            dialog.dismiss();
+
+                        } catch (Exception e) {
+                            resp = e.getMessage();
+                            dialog.dismiss();
+                        }
+                        finally {
+                            dialog.dismiss();
+                        }
+                    }
+                }.start();
+
+            } catch (Exception e) {
+
+            }
+            // do stuff!
+            return null;
+        }
+
+        //@Override
+        protected void onPostExecute(String result) {
+            if(result.length()!=0) {
+                Connection.MessageBox(MainActivity.this, "Data Sync successfully completed.");
+                dialog.dismiss();
+            }
+        }
+    }
 }
