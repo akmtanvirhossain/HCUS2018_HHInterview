@@ -121,7 +121,7 @@ import android.content.Context;
             String SQL = "";
             try
             {
-                 if(C.Existence("Select * from "+ TableName +"  Where UNCode='"+ _UNCode +"' and StructureNo='"+ _StructureNo +"' and HouseholdSl='"+ _HouseholdSl +"' and VisitNo='"+ _VisitNo +"' and MemSl='"+ _MemSl +"' and Vacc_Id='"+ _Vacc_Id +"' "))
+                 if(C.Existence("Select * from "+ TableName +"  Where UNCode='"+ _UNCode +"' and StructureNo='"+ _StructureNo +"' and HouseholdSl='"+ _HouseholdSl +"' and VisitNo='"+ _VisitNo +"' and MemSl='"+ _MemSl +"' and Vacc_Id='"+ _Vacc_Id +"' and DeviceID='"+_DeviceID+"'"))
                     response = UpdateData(context);
                  else
                     response = SaveData(context);
@@ -159,7 +159,7 @@ import android.content.Context;
             String SQL = "";
             try
               {
-                 SQL = "Update "+ TableName +" Set Upload='2',modifyDate='" + _modifyDate + "' ,UNCode = '"+ _UNCode +"',StructureNo = '"+ _StructureNo +"',HouseholdSl = '"+ _HouseholdSl +"',VisitNo = '"+ _VisitNo +"',MemSl = '"+ _MemSl +"',Vacc_Id = '"+ _Vacc_Id +"',Given = '"+ _Given +"',Source = '"+ _Source +"',Vacc_Date = '"+ _Vacc_Date +"',Date_Missing = '"+ _Date_Missing +"'  Where UNCode='"+ _UNCode +"' and StructureNo='"+ _StructureNo +"' and HouseholdSl='"+ _HouseholdSl +"' and VisitNo='"+ _VisitNo +"' and MemSl='"+ _MemSl +"' and Vacc_Id='"+ _Vacc_Id +"'";
+                 SQL = "Update "+ TableName +" Set Upload='2',modifyDate='" + _modifyDate + "' ,UNCode = '"+ _UNCode +"',StructureNo = '"+ _StructureNo +"',HouseholdSl = '"+ _HouseholdSl +"',VisitNo = '"+ _VisitNo +"',MemSl = '"+ _MemSl +"',Vacc_Id = '"+ _Vacc_Id +"',Given = '"+ _Given +"',Source = '"+ _Source +"',Vacc_Date = '"+ _Vacc_Date +"',Date_Missing = '"+ _Date_Missing +"'  Where UNCode='"+ _UNCode +"' and StructureNo='"+ _StructureNo +"' and HouseholdSl='"+ _HouseholdSl +"' and VisitNo='"+ _VisitNo +"' and MemSl='"+ _MemSl +"' and Vacc_Id='"+ _Vacc_Id +"' and DeviceID='"+_DeviceID+"'";
                  response = C.SaveData(SQL);
                  C.close();
               }

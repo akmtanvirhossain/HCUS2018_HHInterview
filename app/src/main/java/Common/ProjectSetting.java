@@ -39,6 +39,7 @@ public class ProjectSetting {
         tableList_Upload.add("OtitisMediaCase");
         tableList_Upload.add("PneumoniaCase");
         tableList_Upload.add("TyphoidCase");
+        tableList_Upload.add("StructureListing");
         return tableList_Upload;
     }
 

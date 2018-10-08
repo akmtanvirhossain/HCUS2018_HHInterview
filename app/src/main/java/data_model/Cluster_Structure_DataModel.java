@@ -121,7 +121,7 @@ import android.content.Context;
             String SQL = "";
             try
             {
-                 if(C.Existence("Select * from "+ TableName +"  Where Upazila='"+ _Upazila +"' and UNCode='"+ _UNCode +"' and Cluster='"+ _Cluster +"' and StructureNo='"+ _StructureNo +"' and VisitNo='"+ _VisitNo +"' "))
+                 if(C.Existence("Select * from "+ TableName +"  Where Upazila='"+ _Upazila +"' and UNCode='"+ _UNCode +"' and Cluster='"+ _Cluster +"' and StructureNo='"+ _StructureNo +"' and VisitNo='"+ _VisitNo +"' and DeviceID='"+_DeviceID+"'"))
                     response = UpdateData(context);
                  else
                     response = SaveData(context);
@@ -159,7 +159,7 @@ import android.content.Context;
             String SQL = "";
             try
               {
-                 SQL = "Update "+ TableName +" Set Upload='2',modifyDate='" + _modifyDate + "' ,Upazila = '"+ _Upazila +"',UNCode = '"+ _UNCode +"',Cluster = '"+ _Cluster +"',StructureNo = '"+ _StructureNo +"',VisitNo = '"+ _VisitNo +"',VisitOutcome = '"+ _VisitOutcome +"',VisitOutcomeOth = '"+ _VisitOutcomeOth +"',ReasonInVisit = '"+ _ReasonInVisit +"',ReasonInVisitOth = '"+ _ReasonInVisitOth +"',TotalHH = '"+ _TotalHH +"'  Where Upazila='"+ _Upazila +"' and UNCode='"+ _UNCode +"' and Cluster='"+ _Cluster +"' and StructureNo='"+ _StructureNo +"' and VisitNo='"+ _VisitNo +"'";
+                 SQL = "Update "+ TableName +" Set Upload='2',modifyDate='" + _modifyDate + "' ,Upazila = '"+ _Upazila +"',UNCode = '"+ _UNCode +"',Cluster = '"+ _Cluster +"',StructureNo = '"+ _StructureNo +"',VisitNo = '"+ _VisitNo +"',VisitOutcome = '"+ _VisitOutcome +"',VisitOutcomeOth = '"+ _VisitOutcomeOth +"',ReasonInVisit = '"+ _ReasonInVisit +"',ReasonInVisitOth = '"+ _ReasonInVisitOth +"',TotalHH = '"+ _TotalHH +"'  Where Upazila='"+ _Upazila +"' and UNCode='"+ _UNCode +"' and Cluster='"+ _Cluster +"' and StructureNo='"+ _StructureNo +"' and VisitNo='"+ _VisitNo +"' and VisitNo='"+ _VisitNo +"' and DeviceID='"+_DeviceID+"'";
                  response = C.SaveData(SQL);
                  C.close();
               }

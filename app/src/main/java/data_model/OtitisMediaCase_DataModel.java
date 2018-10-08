@@ -239,7 +239,7 @@ package data_model;
             String SQL = "";
             try
             {
-                 if(C.Existence("Select * from "+ TableName +"  Where UNCode='"+ _UNCode +"' and StructureNo='"+ _StructureNo +"' and HouseholdSl='"+ _HouseholdSl +"' and VisitNo='"+ _VisitNo +"' and MemSl='"+ _MemSl +"' "))
+                 if(C.Existence("Select * from "+ TableName +"  Where UNCode='"+ _UNCode +"' and StructureNo='"+ _StructureNo +"' and HouseholdSl='"+ _HouseholdSl +"' and VisitNo='"+ _VisitNo +"' and MemSl='"+ _MemSl +"' and DeviceID='"+_DeviceID+"'"))
                     response = UpdateData(context);
                  else
                     response = SaveData(context);
@@ -277,7 +277,7 @@ package data_model;
             String SQL = "";
             try
               {
-                 SQL = "Update "+ TableName +" Set Upload='2',modifyDate='" + _modifyDate + "' ,UNCode = '"+ _UNCode +"',StructureNo = '"+ _StructureNo +"',HouseholdSl = '"+ _HouseholdSl +"',VisitNo = '"+ _VisitNo +"',MemSl = '"+ _MemSl +"',OMEDis = '"+ _OMEDis +"',OMEDisEpi = '"+ _OMEDisEpi +"',OMHCar = '"+ _OMHCar +"',OMHC_PhyMBBS = '"+ _OMHC_PhyMBBS +"',OMHC_UnquaDoctor = '"+ _OMHC_UnquaDoctor +"',OMHC_Para = '"+ _OMHC_Para +"',OMHC_Com = '"+ _OMHC_Com +"',OMHC_Pha = '"+ _OMHC_Pha +"',OMHC_Hompath = '"+ _OMHC_Hompath +"',OMHC_TrHeal = '"+ _OMHC_TrHeal +"',OMHC_SpiHeal = '"+ _OMHC_SpiHeal +"',OMHC_Oth = '"+ _OMHC_Oth +"',OMHC_OthName = '"+ _OMHC_OthName +"',OMDSHOPD = '"+ _OMDSHOPD +"',OMSSFOPD = '"+ _OMSSFOPD +"',OMReco = '"+ _OMReco +"',OMDurReco = '"+ _OMDurReco +"',OMInReco = '"+ _OMInReco +"',OMInRecoOth = '"+ _OMInRecoOth +"',OMInReco2 = '"+ _OMInReco2 +"',OMInRecoOth2 = '"+ _OMInRecoOth2 +"',OMAboIll = '"+ _OMAboIll +"'  Where UNCode='"+ _UNCode +"' and StructureNo='"+ _StructureNo +"' and HouseholdSl='"+ _HouseholdSl +"' and VisitNo='"+ _VisitNo +"' and MemSl='"+ _MemSl +"'";
+                 SQL = "Update "+ TableName +" Set Upload='2',modifyDate='" + _modifyDate + "' ,UNCode = '"+ _UNCode +"',StructureNo = '"+ _StructureNo +"',HouseholdSl = '"+ _HouseholdSl +"',VisitNo = '"+ _VisitNo +"',MemSl = '"+ _MemSl +"',OMEDis = '"+ _OMEDis +"',OMEDisEpi = '"+ _OMEDisEpi +"',OMHCar = '"+ _OMHCar +"',OMHC_PhyMBBS = '"+ _OMHC_PhyMBBS +"',OMHC_UnquaDoctor = '"+ _OMHC_UnquaDoctor +"',OMHC_Para = '"+ _OMHC_Para +"',OMHC_Com = '"+ _OMHC_Com +"',OMHC_Pha = '"+ _OMHC_Pha +"',OMHC_Hompath = '"+ _OMHC_Hompath +"',OMHC_TrHeal = '"+ _OMHC_TrHeal +"',OMHC_SpiHeal = '"+ _OMHC_SpiHeal +"',OMHC_Oth = '"+ _OMHC_Oth +"',OMHC_OthName = '"+ _OMHC_OthName +"',OMDSHOPD = '"+ _OMDSHOPD +"',OMSSFOPD = '"+ _OMSSFOPD +"',OMReco = '"+ _OMReco +"',OMDurReco = '"+ _OMDurReco +"',OMInReco = '"+ _OMInReco +"',OMInRecoOth = '"+ _OMInRecoOth +"',OMInReco2 = '"+ _OMInReco2 +"',OMInRecoOth2 = '"+ _OMInRecoOth2 +"',OMAboIll = '"+ _OMAboIll +"'  Where UNCode='"+ _UNCode +"' and StructureNo='"+ _StructureNo +"' and HouseholdSl='"+ _HouseholdSl +"' and VisitNo='"+ _VisitNo +"' and MemSl='"+ _MemSl +"' and DeviceID='"+_DeviceID+"'";
                  response = C.SaveData(SQL);
                  C.close();
               }

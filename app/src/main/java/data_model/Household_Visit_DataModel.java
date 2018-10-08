@@ -210,7 +210,7 @@ import android.content.Context;
             String SQL = "";
             try
             {
-                 if(C.Existence("Select * from "+ TableName +"  Where UNCode='"+ _UNCode +"' and StructureNo='"+ _StructureNo +"' and HouseholdSl='"+ _HouseholdSl +"' and VisitNo='"+ _VisitNo +"' "))
+                 if(C.Existence("Select * from "+ TableName +"  Where UNCode='"+ _UNCode +"' and StructureNo='"+ _StructureNo +"' and HouseholdSl='"+ _HouseholdSl +"' and VisitNo='"+ _VisitNo +"' and DeviceID='"+_DeviceID+"'"))
                     response = UpdateData(context);
                  else
                     response = SaveData(context);
@@ -248,7 +248,7 @@ import android.content.Context;
             String SQL = "";
             try
               {
-                 SQL = "Update "+ TableName +" Set Upload='2',modifyDate='" + _modifyDate + "' ,UNCode = '"+ _UNCode +"',StructureNo = '"+ _StructureNo +"',HouseholdSl = '"+ _HouseholdSl +"',VisitNo = '"+ _VisitNo +"',HHVisited = '"+ _HHVisited +"',Outcome = '"+ _Outcome +"',OutcomeOth = '"+ _OutcomeOth +"',HHMember = '"+ _HHMember +"',U18Yrs = '"+ _U18Yrs +"',U18Alive = '"+ _U18Alive +"',U18YrsDie = '"+ _U18YrsDie +"',U18Death = '"+ _U18Death +"',U5Yrs = '"+ _U5Yrs +"',U5YrsAlive = '"+ _U5YrsAlive +"',U5YrsDie = '"+ _U5YrsDie +"',U5YrsDeath = '"+ _U5YrsDeath +"',OfferedStudy = '"+ _OfferedStudy +"',NotOffered = '"+ _NotOffered +"',NotOfferedOth = '"+ _NotOfferedOth +"',Consent = '"+ _Consent +"',Remarks = '"+ _Remarks +"',DataCollDate = '"+ _DataCollDate +"'  Where UNCode='"+ _UNCode +"' and StructureNo='"+ _StructureNo +"' and HouseholdSl='"+ _HouseholdSl +"' and VisitNo='"+ _VisitNo +"'";
+                 SQL = "Update "+ TableName +" Set Upload='2',modifyDate='" + _modifyDate + "' ,UNCode = '"+ _UNCode +"',StructureNo = '"+ _StructureNo +"',HouseholdSl = '"+ _HouseholdSl +"',VisitNo = '"+ _VisitNo +"',HHVisited = '"+ _HHVisited +"',Outcome = '"+ _Outcome +"',OutcomeOth = '"+ _OutcomeOth +"',HHMember = '"+ _HHMember +"',U18Yrs = '"+ _U18Yrs +"',U18Alive = '"+ _U18Alive +"',U18YrsDie = '"+ _U18YrsDie +"',U18Death = '"+ _U18Death +"',U5Yrs = '"+ _U5Yrs +"',U5YrsAlive = '"+ _U5YrsAlive +"',U5YrsDie = '"+ _U5YrsDie +"',U5YrsDeath = '"+ _U5YrsDeath +"',OfferedStudy = '"+ _OfferedStudy +"',NotOffered = '"+ _NotOffered +"',NotOfferedOth = '"+ _NotOfferedOth +"',Consent = '"+ _Consent +"',Remarks = '"+ _Remarks +"',DataCollDate = '"+ _DataCollDate +"'  Where UNCode='"+ _UNCode +"' and StructureNo='"+ _StructureNo +"' and HouseholdSl='"+ _HouseholdSl +"' and VisitNo='"+ _VisitNo +"' and DeviceID='"+_DeviceID+"'";
                  response = C.SaveData(SQL);
                  C.close();
               }
