@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -88,28 +89,42 @@ public class MainActivity extends AppCompatActivity
                 {
                     if(position==0)
                     {
-//                        IDbundle.putString("moduleid", "1");
-//                        IDbundle.putString("dataid", "1235");
-//                        IDbundle.putString("name", "Sakib");
-//                        IDbundle.putString("age", "5 month");
-//                        IDbundle.putString("id", "#123");
-//                        IDbundle.putString("moduleName", "test form");
-
                         Intent intent = new Intent(getApplicationContext(), Cluster_Structure_list.class);
-//                        intent.putExtras(IDbundle);
                         startActivity(intent);
                     }
                     else if(position==1)
                     {
                         if (Connection.haveNetworkConnection(MainActivity.this)) {
+                            //10 Oct 2018
+                            //======================================================================
+                            try {
+                                C.CreateTable("process_tab", "Create table process_tab(process_id int)");
+                                if (!C.Existence("Select * from process_tab where process_id=1")) {
+                                    String resp = "";
+                                    C.ExecuteCommandOnServer("Delete from Sync_Management where UserId='"+ DEVICEID +"' and TableName='DatabaseTab'");
+
+                                    C.Sync_Download("DatabaseTab", DEVICEID, "");
+                                    List<String> listItem = C.GetDataList("Select TableName||'^'||TableScript from DatabaseTab");
+
+                                    for (int i = 0; i < listItem.size(); i++) {
+                                        String VarData[] = C.split(listItem.get(i), '^');
+                                        resp = C.SaveData("alter table " + VarData[0] + " rename to " + VarData[0] + "1");
+                                        C.CreateTable(VarData[0], VarData[1]);
+                                        resp = C.SaveData("Insert into " + VarData[0] + " Select * from " + VarData[0] + "1");
+                                    }
+                                    if (resp.length() == 0) C.Save("Insert into process_tab(process_id)values(1)");
+                                }
+                            }catch (Exception ex){
+
+                            }
+
+                            //======================================================================
                             netwoekAvailable=true;
                             new DataSyncTask().executeOnExecutor(AsyncTask.SERIAL_EXECUTOR,DEVICEID);
 
                         } else {
                             netwoekAvailable=false;
                         }
-
-
 
                         /*AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                         builder

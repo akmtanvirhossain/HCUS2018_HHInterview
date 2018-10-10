@@ -1841,6 +1841,20 @@ public class Connection extends SQLiteOpenHelper {
         return columnNames;
     }
 
+    public List<String> GetDataList(String SQL)
+    {
+        Cursor cur_H = ReadData(SQL);
+        List<String> listItem = new ArrayList<String>();
+        cur_H.moveToFirst();
+        while (!cur_H.isAfterLast()) {
+            listItem.add(cur_H.getString(0));
+            cur_H.moveToNext();
+        }
+        cur_H.close();
+
+        return listItem;
+    }
+
     public boolean InsertData(String TableName, ContentValues content_value) {
         SQLiteDatabase db = getWritableDatabase();
         db.insert(TableName, null, content_value);
