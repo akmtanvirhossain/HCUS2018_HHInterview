@@ -95,7 +95,8 @@ public class MainActivity extends AppCompatActivity
                     else if(position==1)
                     {
                         if (Connection.haveNetworkConnection(MainActivity.this)) {
-                            //10 Oct 2018
+
+                            //10 Oct 2018, Tanvir
                             //======================================================================
                             try {
                                 C.CreateTable("process_tab", "Create table process_tab(process_id int)");
