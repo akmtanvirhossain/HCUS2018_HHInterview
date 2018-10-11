@@ -17,7 +17,7 @@ public class ProjectSetting {
     public static String zipDatabaseName= ProjectName.toUpperCase() +"Database.zip";
     public static String Organization   = "ICDDR,B";
 
-    public static String VersionDate    = "03102018"; //Format: DDMMYYYY
+    public static String VersionDate    = "11102018"; //Format: DDMMYYYY
 
 
     //Data Sync: Background Service

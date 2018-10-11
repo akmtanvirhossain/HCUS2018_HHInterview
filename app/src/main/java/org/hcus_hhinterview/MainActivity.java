@@ -120,6 +120,13 @@ public class MainActivity extends AppCompatActivity
                             }
 
                             //======================================================================
+
+                            //*********************************** Sakib 11-10-2018 *******************************
+                            C.SaveData("Update StructureListing set Upload='2' where Visit_Status !='' or Visit_No !=''");
+                            //*********************************** Sakib 11-10-2018 *******************************
+
+
+
                             netwoekAvailable=true;
                             new DataSyncTask().executeOnExecutor(AsyncTask.SERIAL_EXECUTOR,DEVICEID);
 

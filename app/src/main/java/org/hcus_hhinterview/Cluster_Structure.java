@@ -583,7 +583,7 @@ package org.hcus_hhinterview;
 
          int visit=Integer.valueOf(spnVisitOutcome.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnVisitOutcome.getSelectedItem().toString(), "-"));
 
-         String response=C.SaveData("Update StructureListing set Visit_Status='"+visit+"' , Visit_No='"+txtVisitNo.getText().toString()+"' where Upazila='"+txtUpazila.getText().toString()+"'" +
+         String response=C.SaveData("Update StructureListing set Upload='2' , Visit_Status='"+visit+"' , Visit_No='"+txtVisitNo.getText().toString()+"' where Upazila='"+txtUpazila.getText().toString()+"'" +
                  " and UNCode='"+txtUNCode.getText().toString()+"' and Cluster='"+txtCluster.getText().toString()+"' and StructureNo='"+txtStructureNo.getText().toString()+"'");
 
 
