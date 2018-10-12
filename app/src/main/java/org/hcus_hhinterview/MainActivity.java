@@ -444,7 +444,7 @@ public class MainActivity extends AppCompatActivity
                             List<String> tableList = ProjectSetting.TableList_Upload();
 
 
-                            int progressCount = 50/tableList.size();
+                            int progressCount = 100/tableList.size();
                             int count = 0;
                             for (int i = 0; i < tableList.size(); i++) {
                                 try {
@@ -466,7 +466,8 @@ public class MainActivity extends AppCompatActivity
                             tableList.add("Immunization_List");
 
                             //Download
-                            progressCount = 50/tableList.size();
+                            //Stop download based on request : 12 Oct 2018
+                            /*progressCount = 50/tableList.size();
                             for (int i = 0; i < tableList.size(); i++) {
                                 try {
                                     C.Sync_Download(tableList.get(i).toString(), DEVICEID,"");
@@ -475,7 +476,7 @@ public class MainActivity extends AppCompatActivity
                                 }catch(Exception ex){
 
                                 }
-                            }
+                            }*/
 
                             dialog.dismiss();
 
