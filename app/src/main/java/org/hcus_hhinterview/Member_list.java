@@ -147,7 +147,7 @@ package org.hcus_hhinterview;
         recyclerView.setAdapter(mAdapter);
 
 
-        DataSearch_member(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO);
+        DataSearch_member(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO,"");
 
 
      }
@@ -164,11 +164,11 @@ package org.hcus_hhinterview;
      if (resultCode == Activity.RESULT_CANCELED) {
          //Write your code if there's no result
      } else {
-         DataSearch_member(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO);
+         DataSearch_member(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO,"");
      }
  }
 
- public void DataSearch_member(String UNCode, String StructureNo, String HouseholdSl, String VisitNo)
+ public void DataSearch_member(String UNCode, String StructureNo, String HouseholdSl, String VisitNo,String DeviceID)
      {
        try
         {
@@ -177,7 +177,7 @@ package org.hcus_hhinterview;
 //             String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"'";
              String SQL = "Select m.*,ifnull(cfs.status,'') status from member m\n" +
                      "left outer join Child_Final_Status cfs on m.uncode=cfs .uncode and m.StructureNo=cfs .StructureNo and m.HouseholdSl=cfs .HouseholdSl and m.HouseholdSl=cfs .HouseholdSl and m.VisitNo=cfs .VisitNo and m.MemSl=cfs .MemSl\n" +
-                     "where m.uncode='"+UNCode+"' and m.StructureNo='"+STRUCTURENO+"' and m.HouseholdSl='"+HOUSEHOLDSL+"' and m.VisitNo='"+VISITNO+"'";
+                     "where m.uncode='"+UNCode+"' and m.StructureNo='"+STRUCTURENO+"' and m.HouseholdSl='"+HOUSEHOLDSL+"' and m.VisitNo='"+VISITNO+"' and m.DeviceID='"+DeviceID+"'";
              List<Member_DataModel> data = d.SelectAll_List(this, SQL);
              dataList.clear();
 
@@ -325,6 +325,7 @@ package org.hcus_hhinterview;
                                  IDbundle.putString("MemSl",""+data.getMemSl());
                                  IDbundle.putString("Age",""+data.getAge());
                                  IDbundle.putString("Name",""+data.getName());
+                                 IDbundle.putString("DeviceId",data.get_DeviceID() );
                                  Intent f1 = new Intent(getApplicationContext(), ChildForm_Menu.class);
                                  f1.putExtras(IDbundle);
                                  startActivityForResult(f1,1);
@@ -350,6 +351,7 @@ package org.hcus_hhinterview;
                                  IDbundle.putString("VisitNo", data.getVisitNo());
                                  IDbundle.putString("MemSl",""+data.getMemSl());
                                  IDbundle.putString("DataMode", "2"); // edit form
+                                 IDbundle.putString("DeviceId", data.get_DeviceID());
                                  Intent f1 = new Intent(getApplicationContext(), Member.class);
                                  f1.putExtras(IDbundle);
                                  startActivityForResult(f1,1);

@@ -286,7 +286,7 @@
          g = Global.getInstance();
 
          STARTTIME = g.CurrentTime24();
-         DEVICEID  = sp.getValue(this, "deviceid");
+//         DEVICEID  = sp.getValue(this, "deviceid");
          ENTRYUSER = sp.getValue(this, "userid");
 
          IDbundle = getIntent().getExtras();
@@ -296,6 +296,13 @@
          VISITNO = IDbundle.getString("VisitNo");
          MEMSL = IDbundle.getString("MemSl");
          MEMNAME = IDbundle.getString("Name");
+
+         DEVICEID = IDbundle.getString("DeviceId");
+
+         if(DEVICEID.length()==0)
+         {
+             DEVICEID  = sp.getValue(this, "deviceid");
+         }
 
          TableName = "OtitisMediaCase ";
 
@@ -1583,7 +1590,7 @@
      
            RadioButton rb;
            OtitisMediaCase_DataModel d = new OtitisMediaCase_DataModel();
-           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and MemSl='"+ MemSl +"'";
+           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and MemSl='"+ MemSl +"' and DeviceID='"+DEVICEID+"'";
            List<OtitisMediaCase_DataModel> data = d.SelectAll(this, SQL);
            for(OtitisMediaCase_DataModel item : data){
              txtUNCode.setText(item.getUNCode());

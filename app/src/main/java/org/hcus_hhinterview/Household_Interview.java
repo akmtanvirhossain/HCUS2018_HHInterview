@@ -486,7 +486,7 @@
          g = Global.getInstance();
 
          STARTTIME = g.CurrentTime24();
-         DEVICEID  = sp.getValue(this, "deviceid");
+//         DEVICEID  = sp.getValue(this, "deviceid");
          ENTRYUSER = sp.getValue(this, "userid");
 
          IDbundle = getIntent().getExtras();
@@ -494,6 +494,7 @@
          STRUCTURENO = IDbundle.getString("StructureNo");
          HOUSEHOLDSL = IDbundle.getString("HouseholdSl");
          VISITNO = IDbundle.getString("VisitNo");
+         DEVICEID = IDbundle.getString("DeviceId");
 //         MEMSL = IDbundle.getString("MemSl");
 
          TableName = "Household_Interview";
@@ -749,6 +750,7 @@
                          IDbundle.putString("VisitNo", VISITNO);
                          IDbundle.putString("MemSl", "");
                          IDbundle.putString("DataMode", "1");
+                         IDbundle.putString("DeviceId", "");
                          Intent intent = new Intent(getApplicationContext(), Member.class);
                          intent.putExtras(IDbundle);
                          startActivityForResult(intent, 1);
@@ -781,7 +783,7 @@
 //         recyclerView.setAdapter(mAdapter);
 //
 
-DataSearch_member(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
+DataSearch_member(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO,DEVICEID);
 
          seclblh1=(LinearLayout)findViewById(R.id.seclblh1);
          linelblh1=(View)findViewById(R.id.linelblh1);
@@ -3289,7 +3291,8 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
 
          Household_Interview_DataModel objSave = new Household_Interview_DataModel();
          objSave.setUNCode(txtUNCode.getText().toString());
-         objSave.setStructureNo(Integer.valueOf(txtStructureNo.getText().toString().length()==0?"0":txtStructureNo.getText().toString()));
+         objSave.setStructureNo(txtStructureNo.getText().toString());
+//         objSave.setStructureNo(Integer.valueOf(txtStructureNo.getText().toString().length()==0?"0":txtStructureNo.getText().toString()));
          objSave.setHouseholdSl(txtHouseholdSl.getText().toString());
          objSave.setVisitNo(txtVisitNo.getText().toString());
          String[] d_rdogrpFHeadAvail = new String[] {"1","2"};
@@ -3547,11 +3550,13 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
      
            RadioButton rb;
            Household_Interview_DataModel d = new Household_Interview_DataModel();
-           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"'";
+           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ Integer.parseInt(StructureNo) +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and DeviceID='"+DEVICEID+"'";
+//           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and DeviceID='"+DEVICEID+"'";
            List<Household_Interview_DataModel> data = d.SelectAll(this, SQL);
            for(Household_Interview_DataModel item : data){
              txtUNCode.setText(item.getUNCode());
-             txtStructureNo.setText(String.valueOf(item.getStructureNo()));
+             txtStructureNo.setText(item.getStructureNo());
+//             txtStructureNo.setText(String.valueOf(item.getStructureNo()));
              txtHouseholdSl.setText(item.getHouseholdSl());
              txtVisitNo.setText(item.getVisitNo());
              String[] d_rdogrpFHeadAvail = new String[] {"1","2"};

@@ -147,7 +147,7 @@
          g = Global.getInstance();
 
          STARTTIME = g.CurrentTime24();
-         DEVICEID  = sp.getValue(this, "deviceid");
+//         DEVICEID  = sp.getValue(this, "deviceid");
          ENTRYUSER = sp.getValue(this, "userid");
 
          IDbundle = getIntent().getExtras();
@@ -158,6 +158,13 @@
          MEMSL = IDbundle.getString("MemSl");
          VACC_ID = IDbundle.getString("Vacc_Id");
          VACC_Name = IDbundle.getString("Vacc_Name");
+
+         DEVICEID = IDbundle.getString("DeviceId");
+
+         if(DEVICEID.length()==0)
+         {
+             DEVICEID  = sp.getValue(this, "deviceid");
+         }
 
          TableName = "Immunization_History";
 
@@ -502,7 +509,7 @@
      
            RadioButton rb;
            Immunization_History_DataModel d = new Immunization_History_DataModel();
-           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and MemSl='"+ MemSl +"' and Vacc_Id='"+ Vacc_Id +"'";
+           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and MemSl='"+ MemSl +"' and Vacc_Id='"+ Vacc_Id +"'  and DeviceID='"+DEVICEID+"'";
            List<Immunization_History_DataModel> data = d.SelectAll(this, SQL);
            for(Immunization_History_DataModel item : data){
              txtUNCode.setText(item.getUNCode());

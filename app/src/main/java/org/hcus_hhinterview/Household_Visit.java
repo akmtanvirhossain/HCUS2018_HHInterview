@@ -226,13 +226,14 @@
          g = Global.getInstance();
 
          STARTTIME = g.CurrentTime24();
-         DEVICEID  = sp.getValue(this, "deviceid");
+
          ENTRYUSER = sp.getValue(this, "userid");
 
          IDbundle = getIntent().getExtras();
          UNCODE = IDbundle.getString("UNCode");
          STRUCTURENO = IDbundle.getString("StructureNo");
          HOUSEHOLDSL = IDbundle.getString("HouseholdSl");
+         DEVICEID = IDbundle.getString("DeviceId");
 
          VISITNO = IDbundle.getString("VisitNo");
 
@@ -242,6 +243,11 @@
          if(VISITNO.length()==0){
              VISITNO = C.ReturnSingleValue("Select (ifnull(max(cast(VisitNo as int)),0)+1) from Household_Visit where UNCode='"+UNCODE+"'and StructureNo='"+ STRUCTURENO +"'and HouseholdSl='"+ HOUSEHOLDSL +"'"); //where ParticipantID='"+ ParticipantID +"'");
 
+         }
+
+         if(DEVICEID.length()==0)
+         {
+             DEVICEID  = sp.getValue(this, "deviceid");
          }
 
 
@@ -275,14 +281,13 @@
          btnAddVisit   = (Button) findViewById(R.id.btnAddVisit);
          btnAddVisit.setOnClickListener(new View.OnClickListener() {
 
-
-
              public void onClick(View view) {
                  Bundle IDbundle = new Bundle();
                  IDbundle.putString("UNCode",UNCODE  );
                  IDbundle.putString("StructureNo",STRUCTURENO );
                  IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
                  IDbundle.putString("VisitNo", "");
+                 IDbundle.putString("DeviceId", "");
 
                  Intent intent = new Intent(getApplicationContext(), Household_Visit.class);
                  intent.putExtras(IDbundle);
@@ -1291,6 +1296,7 @@
                          IDbundle.putString("StructureNo",STRUCTURENO );
                          IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
                          IDbundle.putString("VisitNo", VISITNO);
+                         IDbundle.putString("DeviceId", DEVICEID);
 
                          Intent intent = new Intent(getApplicationContext(), Household_Interview.class);
                          intent.putExtras(IDbundle);
@@ -1348,7 +1354,7 @@
      
            RadioButton rb;
            Household_Visit_DataModel d = new Household_Visit_DataModel();
-           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"'";
+           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and DeviceID='"+DEVICEID+"'";
            List<Household_Visit_DataModel> data = d.SelectAll(this, SQL);
            for(Household_Visit_DataModel item : data){
              txtUNCode.setText(item.getUNCode());

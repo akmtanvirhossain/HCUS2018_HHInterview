@@ -143,7 +143,12 @@ public class Member_DataModel{
               _EndTime = newValue;
          }
         private String _DeviceID = "";
-        public void setDeviceID(String newValue){
+
+    public String get_DeviceID() {
+        return _DeviceID;
+    }
+
+    public void setDeviceID(String newValue){
               _DeviceID = newValue;
          }
         private String _EntryUser = "";
@@ -266,6 +271,7 @@ public class Member_DataModel{
                 d._DAge = Integer.valueOf(cur.getString(cur.getColumnIndex("DAge")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("DAge")));
                 d._DAgeU = Integer.valueOf(cur.getString(cur.getColumnIndex("DAgeU")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("DAgeU")));
                 d._LiveInHouse = Integer.valueOf(cur.getString(cur.getColumnIndex("LiveInHouse")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("LiveInHouse")));
+                d._DeviceID = cur.getString(cur.getColumnIndex("DeviceID"));
 //                d._FinalStatus = cur.getString(cur.getColumnIndex("status"));
                 data.add(d);
 
@@ -306,6 +312,7 @@ public class Member_DataModel{
             d._DAgeU = Integer.valueOf(cur.getString(cur.getColumnIndex("DAgeU")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("DAgeU")));
             d._LiveInHouse = Integer.valueOf(cur.getString(cur.getColumnIndex("LiveInHouse")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("LiveInHouse")));
             d._FinalStatus = cur.getString(cur.getColumnIndex("status"));
+            d._DeviceID = cur.getString(cur.getColumnIndex("DeviceID"));
             data.add(d);
 
             cur.moveToNext();
