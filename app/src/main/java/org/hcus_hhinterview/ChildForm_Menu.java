@@ -24,6 +24,7 @@ public class ChildForm_Menu extends AppCompatActivity {
     static String MEMSL = "";
     static String AGE = "";
     static String NAME = "";
+    static String DEVICEID  = "";
 
     Button btnImu,btnTyphoid,btnMeningitis,btnPneumonia,btnDiarrhoea,btnOperation,btnOtitis,btnAddMissionRefusal,btnStatus;
 
@@ -40,6 +41,7 @@ public class ChildForm_Menu extends AppCompatActivity {
         MEMSL = IDbundle.getString("MemSl");
         AGE = IDbundle.getString("Age");
         NAME = IDbundle.getString("Name");
+        DEVICEID = IDbundle.getString("DeviceId");
 
 
         ImageButton cmdBack = (ImageButton) findViewById(R.id.cmdBack);
@@ -105,6 +107,7 @@ public class ChildForm_Menu extends AppCompatActivity {
                             IDbundle.putString("MemSl",""+MEMSL);
                             IDbundle.putString("Name",""+NAME);
 //                            IDbundle.putString("Age",""+AGE);
+                            IDbundle.putString("DeviceId", DEVICEID);
                             Intent f1 = new Intent(getApplicationContext(), Immunization_Master.class);
                             f1.putExtras(IDbundle);
                             startActivityForResult(f1,1);
@@ -134,6 +137,7 @@ public class ChildForm_Menu extends AppCompatActivity {
                             IDbundle.putString("VisitNo", VISITNO);
                             IDbundle.putString("MemSl",""+MEMSL);
                             IDbundle.putString("Name",""+NAME);
+                            IDbundle.putString("DeviceId", DEVICEID);
 //                            IDbundle.putString("Age",""+AGE);
                             Intent f1 = new Intent(getApplicationContext(), TyphoidCase.class);
                             f1.putExtras(IDbundle);
@@ -164,6 +168,7 @@ public class ChildForm_Menu extends AppCompatActivity {
                             IDbundle.putString("VisitNo", VISITNO);
                             IDbundle.putString("MemSl",""+MEMSL);
                             IDbundle.putString("Name",""+NAME);
+                            IDbundle.putString("DeviceId", DEVICEID);
 //                            IDbundle.putString("Age",""+AGE);
                             Intent f1 = new Intent(getApplicationContext(), MeningitisCase.class);
                             f1.putExtras(IDbundle);
@@ -194,6 +199,7 @@ public class ChildForm_Menu extends AppCompatActivity {
                             IDbundle.putString("VisitNo", VISITNO);
                             IDbundle.putString("MemSl",""+MEMSL);
                             IDbundle.putString("Name",""+NAME);
+                            IDbundle.putString("DeviceId", DEVICEID);
 //                            IDbundle.putString("Age",""+AGE);
                             Intent f1 = new Intent(getApplicationContext(), PneumoniaCase.class);
                             f1.putExtras(IDbundle);
@@ -224,6 +230,7 @@ public class ChildForm_Menu extends AppCompatActivity {
                             IDbundle.putString("VisitNo", VISITNO);
                             IDbundle.putString("MemSl",""+MEMSL);
                             IDbundle.putString("Name",""+NAME);
+                            IDbundle.putString("DeviceId", DEVICEID);
 //                            IDbundle.putString("Age",""+AGE);
                             Intent f1 = new Intent(getApplicationContext(), DiarrhoeaCase.class);
                             f1.putExtras(IDbundle);
@@ -254,6 +261,7 @@ public class ChildForm_Menu extends AppCompatActivity {
                             IDbundle.putString("VisitNo", VISITNO);
                             IDbundle.putString("MemSl",""+MEMSL);
                             IDbundle.putString("Name",""+NAME);
+                            IDbundle.putString("DeviceId", DEVICEID);
 //                            IDbundle.putString("Age",""+AGE);
                             Intent f1 = new Intent(getApplicationContext(), EmergencyOperation.class);
                             f1.putExtras(IDbundle);
@@ -284,6 +292,7 @@ public class ChildForm_Menu extends AppCompatActivity {
                             IDbundle.putString("VisitNo", VISITNO);
                             IDbundle.putString("MemSl",""+MEMSL);
                             IDbundle.putString("Name",""+NAME);
+                            IDbundle.putString("DeviceId", DEVICEID);
 //                            IDbundle.putString("Age",""+AGE);
                             Intent f1 = new Intent(getApplicationContext(), OtitisMediaCase.class);
                             f1.putExtras(IDbundle);
@@ -314,6 +323,7 @@ public class ChildForm_Menu extends AppCompatActivity {
                             IDbundle.putString("VisitNo", VISITNO);
                             IDbundle.putString("MemSl",""+MEMSL);
                             IDbundle.putString("Name",""+NAME);
+                            IDbundle.putString("DeviceId", DEVICEID);
 //                            IDbundle.putString("Age",""+AGE);
                             Intent f1 = new Intent(getApplicationContext(), Admission_Refusal.class);
                             f1.putExtras(IDbundle);
@@ -344,6 +354,7 @@ public class ChildForm_Menu extends AppCompatActivity {
                             IDbundle.putString("VisitNo", VISITNO);
                             IDbundle.putString("MemSl",""+MEMSL);
                             IDbundle.putString("Name",""+NAME);
+                            IDbundle.putString("DeviceId", DEVICEID);
                             Intent f1 = new Intent(getApplicationContext(), Child_Final_Status.class);
                             f1.putExtras(IDbundle);
                             startActivityForResult(f1,1);
@@ -383,7 +394,7 @@ public class ChildForm_Menu extends AppCompatActivity {
                 "left outer join Admission_Refusal ad on m.uncode=ad .uncode and m.StructureNo=ad .StructureNo and m.HouseholdSl=ad .HouseholdSl and m.VisitNo=ad .VisitNo and m.MemSl=ad .MemSl\n" +
                 "left outer join PneumoniaCase pc on m.uncode=pc .uncode and m.StructureNo=pc .StructureNo and m.HouseholdSl=pc .HouseholdSl and m.VisitNo=pc .VisitNo and m.MemSl=pc .MemSl\n" +
                 "left outer join Child_Final_Status cfs on m.uncode=cfs .uncode and m.StructureNo=cfs .StructureNo and m.HouseholdSl=cfs .HouseholdSl and m.VisitNo=cfs .VisitNo and m.MemSl=cfs .MemSl\n" +
-                "where m.uncode='"+UNCODE+"' and m.StructureNo='"+STRUCTURENO+"' and m.HouseholdSl='"+HOUSEHOLDSL+"' and m.VisitNo='"+VISITNO+"' and m.MemSl='"+MEMSL+"'";
+                "where m.uncode='"+UNCODE+"' and m.StructureNo='"+STRUCTURENO+"' and m.HouseholdSl='"+HOUSEHOLDSL+"' and m.VisitNo='"+VISITNO+"' and m.MemSl='"+MEMSL+"' and m.DeviceID='"+DEVICEID+"'";
         Connection c=new Connection(ChildForm_Menu.this);
         Cursor cur=c.ReadData(sql);
         cur.moveToFirst();

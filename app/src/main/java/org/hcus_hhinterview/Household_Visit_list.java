@@ -157,6 +157,7 @@ package org.hcus_hhinterview;
                          IDbundle.putString("StructureNo",STRUCTURENO );
                          IDbundle.putString("HouseholdSl", "");
                          IDbundle.putString("VisitNo", "");
+                         IDbundle.putString("DeviceId", "");
 
                          Intent intent = new Intent(getApplicationContext(), Household_Visit.class);
                          intent.putExtras(IDbundle);
@@ -454,6 +455,7 @@ package org.hcus_hhinterview;
                                  IDbundle.putString("StructureNo", data.getStructureNo());
                                  IDbundle.putString("HouseholdSl", ""+data.getHouseholdSl());
                                  IDbundle.putString("VisitNo", data.getVisitNo());
+                                 IDbundle.putString("DeviceId", data.get_DeviceID());
                                  Intent f1 = new Intent(getApplicationContext(), Household_Visit.class);
                                  f1.putExtras(IDbundle);
                                  startActivityForResult(f1,1);

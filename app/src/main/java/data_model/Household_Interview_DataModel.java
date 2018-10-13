@@ -14,11 +14,11 @@ package data_model;
         public void setUNCode(String newValue){
               _UNCode = newValue;
          }
-        private int _StructureNo = 0;
-        public int getStructureNo(){
+        private String _StructureNo = "";
+        public String getStructureNo(){
               return _StructureNo;
          }
-        public void setStructureNo(int newValue){
+        public void setStructureNo(String newValue){
               _StructureNo = newValue;
          }
         private String _HouseholdSl = "";
@@ -567,7 +567,8 @@ package data_model;
             {
                 d = new Household_Interview_DataModel();
                 d._UNCode = cur.getString(cur.getColumnIndex("UNCode"));
-                d._StructureNo = Integer.valueOf(cur.getString(cur.getColumnIndex("StructureNo")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("StructureNo")));
+                d._StructureNo = cur.getString(cur.getColumnIndex("StructureNo"));
+//                d._StructureNo = Integer.valueOf(cur.getString(cur.getColumnIndex("StructureNo")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("StructureNo")));
                 d._HouseholdSl = cur.getString(cur.getColumnIndex("HouseholdSl"));
                 d._VisitNo = cur.getString(cur.getColumnIndex("VisitNo"));
                 d._FHeadAvail = Integer.valueOf(cur.getString(cur.getColumnIndex("FHeadAvail")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("FHeadAvail")));

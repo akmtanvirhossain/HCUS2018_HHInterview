@@ -154,7 +154,7 @@
          g = Global.getInstance();
 
          STARTTIME = g.CurrentTime24();
-         DEVICEID  = sp.getValue(this, "deviceid");
+//         DEVICEID  = sp.getValue(this, "deviceid");
          ENTRYUSER = sp.getValue(this, "userid");
 
          IDbundle = getIntent().getExtras();
@@ -165,7 +165,12 @@
          MEMSL = IDbundle.getString("MemSl");
          MEMNAME = IDbundle.getString("Name");
 
+         DEVICEID = IDbundle.getString("DeviceId");
 
+         if(DEVICEID.length()==0)
+         {
+             DEVICEID  = sp.getValue(this, "deviceid");
+         }
 
          TableName = "Admission_Refusal";
 
@@ -433,7 +438,7 @@
      
            RadioButton rb;
            Admission_Refusal_DataModel d = new Admission_Refusal_DataModel();
-           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and MemSl='"+ MemSl +"'";
+           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and MemSl='"+ MemSl +"' and DeviceID='"+DEVICEID+"'";
            List<Admission_Refusal_DataModel> data = d.SelectAll(this, SQL);
            for(Admission_Refusal_DataModel item : data){
              txtUNCode.setText(item.getUNCode());

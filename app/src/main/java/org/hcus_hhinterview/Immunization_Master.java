@@ -194,7 +194,7 @@
          g = Global.getInstance();
 
          STARTTIME = g.CurrentTime24();
-         DEVICEID  = sp.getValue(this, "deviceid");
+//         DEVICEID  = sp.getValue(this, "deviceid");
          ENTRYUSER = sp.getValue(this, "userid");
 
          IDbundle = getIntent().getExtras();
@@ -205,7 +205,14 @@
          MEMSL = IDbundle.getString("MemSl");
          MEMNAME = IDbundle.getString("Name");
 
-         name=UNCODE+STRUCTURENO+HOUSEHOLDSL+VISITNO+MEMSL;
+         DEVICEID = IDbundle.getString("DeviceId");
+
+         if(DEVICEID.length()==0)
+         {
+             DEVICEID  = sp.getValue(this, "deviceid");
+         }
+
+         name=UNCODE+STRUCTURENO+HOUSEHOLDSL+VISITNO+MEMSL+DEVICEID;
 
          TableName = "Immunization_Master";
 
@@ -375,7 +382,7 @@
 
              public void onClick(View view) {
                  //write your code here
-                 DataSearch_Immunization("");
+                 DataSearch_Immunization("",DEVICEID);
 
              }});
 
@@ -448,7 +455,7 @@
 
          for (Immunization_List_DataModel item:immunizationList) {
 
-             if(C.Existence("Select * from Immunization_History Where UNCode='"+ UNCODE +"' and StructureNo='"+ STRUCTURENO +"' and HouseholdSl='"+ HOUSEHOLDSL +"' and VisitNo='"+ VISITNO +"' and MemSl='"+ MEMSL +"' and Vacc_Id='"+ item.getVacc_Id() +"' "))
+             if(C.Existence("Select * from Immunization_History Where UNCode='"+ UNCODE +"' and StructureNo='"+ STRUCTURENO +"' and HouseholdSl='"+ HOUSEHOLDSL +"' and VisitNo='"+ VISITNO +"' and MemSl='"+ MEMSL +"' and Vacc_Id='"+ item.getVacc_Id() +"' and DeviceID='"+DEVICEID+"'"))
              {
 
              }
@@ -487,7 +494,7 @@
 
          DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO,MEMSL);
 
-         DataSearch_Immunization("");
+         DataSearch_Immunization("",DEVICEID);
 
 
 
@@ -550,7 +557,7 @@
              }
          }
          if (requestCode != REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
-             DataSearch_Immunization("");
+             DataSearch_Immunization("",DEVICEID);
          }
      }
 
@@ -683,7 +690,7 @@
      
            RadioButton rb;
            Immunization_Master_DataModel d = new Immunization_Master_DataModel();
-           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and MemSl='"+ MemSl +"'";
+           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and MemSl='"+ MemSl +"'  and DeviceID='"+DEVICEID+"'";
            List<Immunization_Master_DataModel> data = d.SelectAll(this, SQL);
            for(Immunization_Master_DataModel item : data){
              txtUNCode.setText(item.getUNCode());

@@ -34,7 +34,12 @@ import android.content.Context;
         public void setDeviceID(String newValue){
               _DeviceID = newValue;
          }
-        private String _EntryUser = "";
+
+     public String get_DeviceID() {
+         return _DeviceID;
+     }
+
+     private String _EntryUser = "";
         public void setEntryUser(String newValue){
               _EntryUser = newValue;
          }
@@ -162,6 +167,8 @@ import android.content.Context;
 //                d._history_status = cur.getString(cur.getColumnIndex("history_status"));
                 d._Given = cur.getString(cur.getColumnIndex("Given"));
                 d._Source = cur.getString(cur.getColumnIndex("Source"));
+                d._DeviceID = cur.getString(cur.getColumnIndex("DeviceID"));
+
 
                 data.add(d);
 

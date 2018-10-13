@@ -157,7 +157,7 @@ import Utility.MySharedPreferences;
         recyclerView.setAdapter(mAdapter);
 
 
-         DataSearch_Immunization("");
+         DataSearch_Immunization("","");
 
 
      }
@@ -174,18 +174,18 @@ import Utility.MySharedPreferences;
      if (resultCode == Activity.RESULT_CANCELED) {
          //Write your code if there's no result
      } else {
-         DataSearch_Immunization(VACC_ID);
+         DataSearch_Immunization(VACC_ID,"");
      }
  }
 
- public void DataSearch_Immunization(String Vacc_Id)
+ public void DataSearch_Immunization(String Vacc_Id,String DeviceID)
      {
        try
         {
      
            Immunization_List_DataModel d = new Immunization_List_DataModel();
 //             String SQL = "Select * from "+ TableName ;//+"  Where Vacc_Id='"+ Vacc_Id +"'";
-            String SQL = "Select IL.[Vacc_Id],IL.[Vacc_Name],ifnull(IH.Given,'') Given,ifnull(IH.Source,'') Source FROM [Immunization_List] IL left outer join Immunization_History IH on IL.Vacc_Id=IH.Vacc_Id Where IH.Uncode='"+UNCODE+"' and IH.structureno='"+STRUCTURENO+"' and IH.householdsl='"+HOUSEHOLDSL+"' and IH.visitno='"+VISITNO+"' and IH.memsl='"+MEMSL+"'";
+            String SQL = "Select IH.[DeviceID],IL.[Vacc_Id],IL.[Vacc_Name],ifnull(IH.Given,'') Given,ifnull(IH.Source,'') Source FROM [Immunization_List] IL left outer join Immunization_History IH on IL.Vacc_Id=IH.Vacc_Id Where IH.Uncode='"+UNCODE+"' and IH.structureno='"+STRUCTURENO+"' and IH.householdsl='"+HOUSEHOLDSL+"' and IH.visitno='"+VISITNO+"' and IH.memsl='"+MEMSL+"' and IH.DeviceID='"+DeviceID+"'";
              List<Immunization_List_DataModel> data = d.SelectAll_WithHistory(this, SQL);
              dataList.clear();
 
@@ -300,6 +300,7 @@ import Utility.MySharedPreferences;
                                  IDbundle.putString("MemSl",""+MEMSL);
                                  IDbundle.putString("Vacc_Id",""+data.getVacc_Id());
                                  IDbundle.putString("Vacc_Name",""+data.getVacc_Name());
+                                 IDbundle.putString("DeviceId", data.get_DeviceID());
 //                            IDbundle.putString("Age",""+AGE);
                                  Intent f1 = new Intent(getApplicationContext(), Immunization_History.class);
                                  f1.putExtras(IDbundle);
