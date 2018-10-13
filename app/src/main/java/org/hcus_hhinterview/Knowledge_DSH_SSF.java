@@ -174,7 +174,8 @@
          UNCODE = IDbundle.getString("UNCode");
          STRUCTURENO = IDbundle.getString("StructureNo");
          HOUSEHOLDSL = IDbundle.getString("HouseholdSl");
-         VISITNO = IDbundle.getString("VisitNo");
+         VISITNO   = IDbundle.getString("VisitNo");
+         DEVICEID  = IDbundle.getString("DeviceId");
 
          TableName = "Knowledge_DSH_SSF";
 
@@ -537,7 +538,7 @@
          secSSFwayOth.setVisibility(View.GONE);
          lineSSFwayOth.setVisibility(View.GONE);
 
-         DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO);
+         DataSearch(UNCODE,STRUCTURENO,HOUSEHOLDSL,VISITNO,DEVICEID);
 
         Button cmdSave = (Button) findViewById(R.id.cmdSave);
         cmdSave.setOnClickListener(new View.OnClickListener() {
@@ -693,14 +694,14 @@
      }
  }
 
- private void DataSearch(String UNCode, String StructureNo, String HouseholdSl, String VisitNo)
+ private void DataSearch(String UNCode, String StructureNo, String HouseholdSl, String VisitNo, String DeviceId)
      {
        try
         {
      
            RadioButton rb;
            Knowledge_DSH_SSF_DataModel d = new Knowledge_DSH_SSF_DataModel();
-           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"'";
+           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and DeviceID='"+ DeviceId +"'";
            List<Knowledge_DSH_SSF_DataModel> data = d.SelectAll(this, SQL);
            for(Knowledge_DSH_SSF_DataModel item : data){
              txtUNCode.setText(item.getUNCode());

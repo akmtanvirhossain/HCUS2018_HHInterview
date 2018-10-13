@@ -3516,18 +3516,28 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
              alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                  @Override
                  public void onClick(DialogInterface dialog, int which) {
+                     Bundle IDbundle = new Bundle();
+                     IDbundle.putString("UNCode", UNCODE);
+                     IDbundle.putString("StructureNo", STRUCTURENO);
+                     IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
+                     IDbundle.putString("VisitNo", VISITNO);
+                     IDbundle.putString("DeviceId", DEVICEID);
                      Intent intent = new Intent(getApplicationContext(), Knowledge_DSH_SSF.class);
                      intent.putExtras(IDbundle);
                      startActivityForResult(intent, 1);
+
+                     /*Intent intent = new Intent(getApplicationContext(), Knowledge_DSH_SSF.class);
+                     intent.putExtras(IDbundle);
+                     startActivityForResult(intent, 1);*/
                  }
              });
              alert.show();
 
-             Bundle IDbundle = new Bundle();
+             /*Bundle IDbundle = new Bundle();
              IDbundle.putString("UNCode",UNCODE  );
              IDbundle.putString("StructureNo",STRUCTURENO );
              IDbundle.putString("HouseholdSl", HOUSEHOLDSL);
-             IDbundle.putString("VisitNo", VISITNO);
+             IDbundle.putString("VisitNo", VISITNO);*/
          }
          else{
              Connection.MessageBox(Household_Interview.this, status);
