@@ -3560,7 +3560,7 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
      
            RadioButton rb;
            Household_Interview_DataModel d = new Household_Interview_DataModel();
-           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ Integer.parseInt(StructureNo) +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and DeviceID='"+DEVICEID+"'";
+           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and cast(StructureNo as int)='"+ Integer.parseInt(StructureNo) +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and DeviceID='"+DEVICEID+"'";
 //           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and DeviceID='"+DEVICEID+"'";
            List<Household_Interview_DataModel> data = d.SelectAll(this, SQL);
            for(Household_Interview_DataModel item : data){
