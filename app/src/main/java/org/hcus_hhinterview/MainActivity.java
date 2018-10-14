@@ -98,11 +98,15 @@ public class MainActivity extends AppCompatActivity
 
                             //10 Oct 2018, Tanvir
                             //======================================================================
+                            String resp = "";
+                            String resp1 = "";
+                            String SQL = "";
+                            String SQL1 = "";
                             try {
                                 C.CreateTable("process_tab", "Create table process_tab(process_id int)");
                                 if (!C.Existence("Select * from process_tab where process_id=1")) {
-                                    String resp = "";
-                                    String SQL = "";
+
+
                                     C.ExecuteCommandOnServer("Delete from Sync_Management where UserId='"+ DEVICEID +"' and TableName='DatabaseTab'");
 
                                     C.Sync_Download("DatabaseTab", DEVICEID, "");
@@ -112,7 +116,6 @@ public class MainActivity extends AppCompatActivity
                                         String VarData[] = C.split(listItem.get(i), '^');
                                         resp = C.SaveData("alter table " + VarData[0] + " rename to " + VarData[0] + "1");
                                         C.CreateTable(VarData[0], VarData[1]);
-                                        //resp = C.SaveData("Insert into " + VarData[0] + " Select * from " + VarData[0] + "1");
 
                                         if(VarData[0].equalsIgnoreCase("OtitisMediaCase")){
                                             SQL = "Insert into OtitisMediaCase\n" +
@@ -120,13 +123,23 @@ public class MainActivity extends AppCompatActivity
                                                     " UNCode||StructureNo|| HouseholdSl|| VisitNo|| MemSl|| DeviceID not in(select\n" +
                                                     " UNCode||StructureNo|| HouseholdSl|| VisitNo|| MemSl|| DeviceID\n" +
                                                     " from OtitisMediaCase1 group by UNCode, StructureNo, HouseholdSl, VisitNo, MemSl, DeviceID having count(*)>1)";
+
+                                            SQL1 = "Insert into OtitisMediaCase\n" +
+                                                    " Select * from OtitisMediaCase1 where \n" +
+                                                    " UNCode||StructureNo|| HouseholdSl|| VisitNo|| MemSl|| DeviceID || Cast(rowid as text) in(\n" +
+                                                    " select UNCode||StructureNo|| HouseholdSl|| VisitNo|| MemSl|| DeviceID || Cast(rowid as text)\n" +
+                                                    " from OtitisMediaCase1 group by UNCode, StructureNo, HouseholdSl, VisitNo, MemSl, DeviceID having count(*)>1)";
+                                            resp = C.SaveData(SQL);
+                                            resp1 = C.SaveData(SQL1);
                                         }else{
                                             SQL = "Insert into " + VarData[0] + " Select * from " + VarData[0] + "1";
+                                            resp = C.SaveData(SQL);
                                         }
-                                        resp = C.SaveData(SQL);
+
                                     }
-                                    if (resp.length() == 0) C.Save("Insert into process_tab(process_id)values(1)");
+                                    if (resp.length() == 0 & resp1.length() == 0) C.Save("Insert into process_tab(process_id)values(1)");
                                 }
+
                             }catch (Exception ex){
 
                             }

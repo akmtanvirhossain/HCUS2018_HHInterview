@@ -438,7 +438,7 @@
      
            RadioButton rb;
            Admission_Refusal_DataModel d = new Admission_Refusal_DataModel();
-           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and MemSl='"+ MemSl +"' and DeviceID='"+DEVICEID+"'";
+           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and cast(StructureNo as int)='"+ Integer.valueOf(StructureNo) +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and MemSl='"+ MemSl +"' and DeviceID='"+DEVICEID+"'";
            List<Admission_Refusal_DataModel> data = d.SelectAll(this, SQL);
            for(Admission_Refusal_DataModel item : data){
              txtUNCode.setText(item.getUNCode());

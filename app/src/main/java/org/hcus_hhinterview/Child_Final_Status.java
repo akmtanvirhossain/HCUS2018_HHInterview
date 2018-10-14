@@ -387,7 +387,7 @@
      
            RadioButton rb;
            Child_Final_Status_DataModel d = new Child_Final_Status_DataModel();
-           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and MemSl='"+ MemSl +"' and DeviceID='"+DEVICEID+"'";
+           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and cast(StructureNo as int)='"+ Integer.valueOf(StructureNo) +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and MemSl='"+ MemSl +"' and DeviceID='"+DEVICEID+"'";
            List<Child_Final_Status_DataModel> data = d.SelectAll(this, SQL);
            for(Child_Final_Status_DataModel item : data){
              txtUNCode.setText(item.getUNCode());

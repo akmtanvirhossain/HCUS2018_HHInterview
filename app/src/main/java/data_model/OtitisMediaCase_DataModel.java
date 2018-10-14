@@ -230,7 +230,7 @@ package data_model;
         _modifyDate = newValue;
         }
 
-        String TableName = "OtitisMediaCase ";
+        String TableName = "OtitisMediaCase";
 
         public String SaveUpdateData(Context context)
         {

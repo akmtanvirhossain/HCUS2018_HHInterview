@@ -1590,7 +1590,7 @@
      
            RadioButton rb;
            OtitisMediaCase_DataModel d = new OtitisMediaCase_DataModel();
-           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and MemSl='"+ MemSl +"' and DeviceID='"+DEVICEID+"'";
+           String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and cast(StructureNo as int)='"+ Integer.valueOf(StructureNo) +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and MemSl='"+ MemSl +"' and DeviceID='"+DEVICEID+"'";
            List<OtitisMediaCase_DataModel> data = d.SelectAll(this, SQL);
            for(OtitisMediaCase_DataModel item : data){
              txtUNCode.setText(item.getUNCode());
