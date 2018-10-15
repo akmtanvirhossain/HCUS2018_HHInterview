@@ -2745,6 +2745,16 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
      }
  }
 
+     @Override
+     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+         super.onActivityResult(requestCode, resultCode, data);
+         if (resultCode == Activity.RESULT_CANCELED) {
+             //Write your code if there's no result
+         } else {
+             DataSearch_member(UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO,DEVICEID);
+         }
+     }
+
  private void DataSave()
  {
    try
@@ -2918,7 +2928,7 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
              txtChangedHouse.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtChangedHouse.getText().toString().length()==0 ? "1" : txtChangedHouse.getText().toString()) < 1 || Integer.valueOf(txtChangedHouse.getText().toString().length()==0 ? "9" : txtChangedHouse.getText().toString()) > 9)
+         else if(Integer.valueOf(txtChangedHouse.getText().toString().length()==0 ? "0" : txtChangedHouse.getText().toString()) < 0 || Integer.valueOf(txtChangedHouse.getText().toString().length()==0 ? "9" : txtChangedHouse.getText().toString()) > 9)
            {
              Connection.MessageBox(Household_Interview.this, "Value should be between 1 and 9(গত ৫ বৎরের ভিতরে, আপনি সর্বমোট কতবার আপনার বাড়ি/ বাসা/ বাসস্থান বদল করেছেন? (Altogether how many times have you changed your house/home/residence in the last five years?)).");
              txtChangedHouse.requestFocus(); 

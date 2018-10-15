@@ -2531,12 +2531,13 @@
                  {
                       secHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
                       lineHC_Hosp_a1_Oth.setVisibility(View.VISIBLE);
-                      txtHC_Hosp_a1_Oth.setText("");
+
                  }
                  else
                  {
                     secHC_Hosp_a1_Oth.setVisibility(View.GONE);
                     lineHC_Hosp_a1_Oth.setVisibility(View.GONE);
+                    txtHC_Hosp_a1_Oth.setText("");
                  }
              }
              @Override
@@ -2605,12 +2606,13 @@
                  {
                       secHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
                       lineHC_Hosp_a2_Oth.setVisibility(View.VISIBLE);
-                      txtHC_Hosp_a2_Oth.setText("");
+
                  }
                  else
                  {
                       secHC_Hosp_a2_Oth.setVisibility(View.GONE);
                       lineHC_Hosp_a2_Oth.setVisibility(View.GONE);
+                    txtHC_Hosp_a2_Oth.setText("");
                  }
              }
              @Override
@@ -2679,12 +2681,13 @@
                  {
                       secHC_Hosp_a3_Oth.setVisibility(View.VISIBLE);
                       lineHC_Hosp_a3_Oth.setVisibility(View.VISIBLE);
-                      txtHC_Hosp_a3_Oth.setText("");
+
                  }
                  else
                  {
                       secHC_Hosp_a3_Oth.setVisibility(View.GONE);
                       lineHC_Hosp_a3_Oth.setVisibility(View.GONE);
+                    txtHC_Hosp_a3_Oth.setText("");
                  }
              }
              @Override
@@ -2753,12 +2756,13 @@
                  {
                       secHC_Hosp_a4_Oth.setVisibility(View.VISIBLE);
                       lineHC_Hosp_a4_Oth.setVisibility(View.VISIBLE);
-                      txtHC_Hosp_a4_Oth.setText("");
+
                  }
                  else
                  {
                       secHC_Hosp_a4_Oth.setVisibility(View.GONE);
                       lineHC_Hosp_a4_Oth.setVisibility(View.GONE);
+                    txtHC_Hosp_a4_Oth.setText("");
                  }
              }
              @Override
@@ -2837,12 +2841,13 @@
                  {
                       secHC_Hosp_a5_Oth.setVisibility(View.VISIBLE);
                       lineHC_Hosp_a5_Oth.setVisibility(View.VISIBLE);
-                      txtHC_Hosp_a5_Oth.setText("");
+
                  }
                  else
                  {
                       secHC_Hosp_a5_Oth.setVisibility(View.GONE);
                       lineHC_Hosp_a5_Oth.setVisibility(View.GONE);
+                      txtHC_Hosp_a5_Oth.setText("");
                  }
              }
              @Override
