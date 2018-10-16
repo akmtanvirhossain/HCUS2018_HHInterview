@@ -214,7 +214,7 @@ package org.hcus_hhinterview;
         {
      
            Household_Visit_DataModel d = new Household_Visit_DataModel();
-             String SQL = "Select * from "+ TableName +" Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' order by HouseholdSl";
+             String SQL = "Select * from "+ TableName +" Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' order by Cast(HouseholdSl as int)";
              List<Household_Visit_DataModel> data = d.SelectAll(this, SQL);
              dataList.clear();
 
