@@ -469,7 +469,10 @@ public class MainActivity extends AppCompatActivity
                             List<String> tableList = ProjectSetting.TableList_Upload();
 
 
-                            int progressCount = 100/tableList.size();
+                            //50
+
+
+                            int progressCount = 50/tableList.size();
                             int count = 0;
                             for (int i = 0; i < tableList.size(); i++) {
                                 try {
@@ -484,7 +487,7 @@ public class MainActivity extends AppCompatActivity
                             tableList.add("StructureDB");
                             tableList.add("StructureID_Serial");
                             tableList.add("StructureIDSlot");
-                            tableList.add("StructureListing");
+
 
                             tableList.add("AreaDB");
                             tableList.add("Cluster");
@@ -492,16 +495,16 @@ public class MainActivity extends AppCompatActivity
 
                             //Download
                             //Stop download based on request : 12 Oct 2018
-                            /*progressCount = 50/tableList.size();
+                            progressCount = 50/tableList.size();
                             for (int i = 0; i < tableList.size(); i++) {
                                 try {
-                                    C.Sync_Download(tableList.get(i).toString(), DEVICEID,"");
+                                    C.Sync_Download(tableList.get(i).toString(), DEVICEID,"DeviceId='"+DEVICEID+"'");
                                     count +=progressCount;
                                     onProgressUpdate(tableList.get(i).toString()+","+String.valueOf(count));
                                 }catch(Exception ex){
 
                                 }
-                            }*/
+                            }
 
                             dialog.dismiss();
 
