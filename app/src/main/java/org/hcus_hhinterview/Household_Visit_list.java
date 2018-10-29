@@ -33,6 +33,8 @@ package org.hcus_hhinterview;
  import android.support.v7.widget.LinearLayoutManager;
  import android.view.GestureDetector;
  import android.support.v7.widget.DefaultItemAnimator;
+ import Utility.MySharedPreferences;
+
 
  public class Household_Visit_list extends AppCompatActivity {
     boolean networkAvailable=false;
@@ -82,6 +84,8 @@ package org.hcus_hhinterview;
     static String STRUCTURENO = "";
     static String HOUSEHOLDSL = "";
     static String VISITNO = "";
+     static String DEVICEID  = "";
+     MySharedPreferences sp;
 
      Bundle IDbundle;
 
@@ -102,6 +106,8 @@ package org.hcus_hhinterview;
          IDbundle = getIntent().getExtras();
          UNCODE = IDbundle.getString("UNCode");
          STRUCTURENO = IDbundle.getString("StructureNo");
+
+         DEVICEID  = sp.getValue(this, "deviceid");
 
 
          UPAZILA_NAME = IDbundle.getString("Upazila_Name");
@@ -385,11 +391,11 @@ package org.hcus_hhinterview;
 
              //******************** status ********************
              String sql="Select count(m.memsl) under18 from member m\n" +
-                     "where m.uncode='"+UNCODE+"' and m.StructureNo='"+STRUCTURENO+"' and m.HouseholdSl='"+data.getHouseholdSl()+"' and (age/365.25)<18";
+                     "where m.uncode='"+UNCODE+"' and m.StructureNo='"+STRUCTURENO+"' and m.HouseholdSl='"+data.getHouseholdSl()+"' and (age/365.25)<18 and m.DeviceId='213'";
              String under18=C.ReturnSingleValue(sql);
 
              sql="select count(m.memsl) totalStatus from Child_Final_Status m\n" +
-                     "where m.uncode='"+UNCODE+"' and m.StructureNo='"+STRUCTURENO+"' and m.HouseholdSl='"+data.getHouseholdSl()+"'";
+                     "where m.uncode='"+UNCODE+"' and m.StructureNo='"+STRUCTURENO+"' and m.HouseholdSl='"+data.getHouseholdSl()+"' and m.DeviceId='213'";
 
              String totalStatus=C.ReturnSingleValue(sql);
 

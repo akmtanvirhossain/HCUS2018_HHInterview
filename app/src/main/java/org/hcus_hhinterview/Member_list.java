@@ -176,7 +176,7 @@ package org.hcus_hhinterview;
            Member_DataModel d = new Member_DataModel();
 //             String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"'";
              String SQL = "Select m.*,ifnull(cfs.status,'') status from member m\n" +
-                     "left outer join Child_Final_Status cfs on m.uncode=cfs .uncode and m.StructureNo=cfs .StructureNo and m.HouseholdSl=cfs .HouseholdSl and m.HouseholdSl=cfs .HouseholdSl and m.VisitNo=cfs .VisitNo and m.MemSl=cfs .MemSl\n" +
+                     "left outer join Child_Final_Status cfs on m.uncode=cfs .uncode and m.StructureNo=cfs .StructureNo and m.HouseholdSl=cfs .HouseholdSl and m.HouseholdSl=cfs .HouseholdSl and m.VisitNo=cfs .VisitNo and m.MemSl=cfs .MemSl and m.DeviceId=cfs .DeviceId\n" +
                      "where m.uncode='"+UNCode+"' and m.StructureNo='"+STRUCTURENO+"' and m.HouseholdSl='"+HOUSEHOLDSL+"' and m.VisitNo='"+VISITNO+"' and m.DeviceID='"+DeviceID+"'";
              List<Member_DataModel> data = d.SelectAll_List(this, SQL);
              dataList.clear();
