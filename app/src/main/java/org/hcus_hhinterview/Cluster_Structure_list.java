@@ -315,7 +315,6 @@ public class Cluster_Structure_list extends Activity {
     {
         try
         {
-
             StructureListing_DataModel d = new StructureListing_DataModel();
 
             String SQL = "Select sd.* from StructureListing sd " +

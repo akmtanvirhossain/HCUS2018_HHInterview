@@ -135,11 +135,19 @@ public class MainActivity extends AppCompatActivity
                                             SQL = "Insert into " + VarData[0] + " Select * from " + VarData[0] + "1";
                                             resp = C.SaveData(SQL);
                                         }
-
                                     }
                                     if (resp.length() == 0 & resp1.length() == 0) C.Save("Insert into process_tab(process_id)values(1)");
                                 }
 
+                                //29 Oct 2018
+                                else if (!C.Existence("Select * from process_tab where process_id=2")) {
+                                    try {
+                                        resp = C.SaveData("Update Household_Interview set StructureNo=substr('00000'||StructureNo,-5) where length(structureno)<>5");
+                                        if(resp.length()==0) C.Save("Insert into process_tab(process_id)values(2)");
+                                    }catch (Exception ex){
+
+                                    }
+                                }
                             }catch (Exception ex){
 
                             }
@@ -498,7 +506,7 @@ public class MainActivity extends AppCompatActivity
                             progressCount = 50/tableList.size();
                             for (int i = 0; i < tableList.size(); i++) {
                                 try {
-                                    C.Sync_Download(tableList.get(i).toString(), DEVICEID,"DeviceId='"+DEVICEID+"'");
+                                    C.Sync_Download(tableList.get(i).toString(), DEVICEID,"DeviceId='"+ DEVICEID +"'");
                                     count +=progressCount;
                                     onProgressUpdate(tableList.get(i).toString()+","+String.valueOf(count));
                                 }catch(Exception ex){
