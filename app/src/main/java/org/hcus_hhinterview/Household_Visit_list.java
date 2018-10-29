@@ -391,11 +391,11 @@ package org.hcus_hhinterview;
 
              //******************** status ********************
              String sql="Select count(m.memsl) under18 from member m\n" +
-                     "where m.uncode='"+UNCODE+"' and m.StructureNo='"+STRUCTURENO+"' and m.HouseholdSl='"+data.getHouseholdSl()+"' and (age/365.25)<18 and m.DeviceId='213'";
+                     "where m.uncode='"+UNCODE+"' and m.StructureNo='"+STRUCTURENO+"' and m.HouseholdSl='"+data.getHouseholdSl()+"' and (age/365.25)<18 and m.DeviceId='"+DEVICEID+"'";
              String under18=C.ReturnSingleValue(sql);
 
              sql="select count(m.memsl) totalStatus from Child_Final_Status m\n" +
-                     "where m.uncode='"+UNCODE+"' and m.StructureNo='"+STRUCTURENO+"' and m.HouseholdSl='"+data.getHouseholdSl()+"' and m.DeviceId='213'";
+                     "where m.uncode='"+UNCODE+"' and m.StructureNo='"+STRUCTURENO+"' and m.HouseholdSl='"+data.getHouseholdSl()+"' and m.DeviceId='"+DEVICEID+"'";
 
              String totalStatus=C.ReturnSingleValue(sql);
 
