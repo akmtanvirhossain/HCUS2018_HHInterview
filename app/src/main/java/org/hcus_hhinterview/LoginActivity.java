@@ -108,10 +108,10 @@ public class LoginActivity extends Activity {
 
             //**************************************************************************************
             if (networkAvailable)
-        {
-            Intent syncService = new Intent(this, Sync_Service.class);
-            startService(syncService);
-        }
+            {
+                Intent syncService = new Intent(this, Sync_Service.class);
+                startService(syncService);
+            }
             //**************************************************************************************
 
             uid.setAdapter(C.getArrayAdapter("select UserId||'-'||UserName User from DataCollector order by UserName"));

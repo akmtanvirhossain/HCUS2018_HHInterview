@@ -77,7 +77,6 @@ public class MainActivity extends AppCompatActivity
         //NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         //navigationView.setNavigationItemSelectedListener(this);
 
-
         GridView gv = (GridView) findViewById(R.id.gridview);
         gv.setAdapter(new menuAdapter(this));
 
@@ -155,7 +154,7 @@ public class MainActivity extends AppCompatActivity
                             //======================================================================
 
                             //*********************************** Sakib 11-10-2018 *******************************
-                            C.SaveData("Update StructureListing set Upload='2' where Visit_Status !='' or Visit_No !=''");
+                            //C.SaveData("Update StructureListing set Upload='2' where Visit_Status !='' or Visit_No !=''");
                             //*********************************** Sakib 11-10-2018 *******************************
 
 
