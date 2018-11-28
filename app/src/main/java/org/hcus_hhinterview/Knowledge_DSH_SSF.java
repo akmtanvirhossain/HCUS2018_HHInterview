@@ -603,12 +603,18 @@
              txtDSHwayOth.requestFocus(); 
              return;	
            }
-         else if(txtReachDSH.getText().toString().length()==0 & secReachDSH.isShown())
+         else if(txtReachDSH.getText().toString().length()==0 & secReachDSH.isShown() )
            {
              Connection.MessageBox(Knowledge_DSH_SSF.this, "Required field: আপনার বাড়ী থেকে ঢাকা শিশু হাসপাতালে যেতে কত মিনিট সময় লাগবে?  (How many minutes would it.");
              txtReachDSH.requestFocus(); 
              return;	
            }
+           else if(Integer.valueOf(txtReachDSH.getText().toString())<5 & secReachDSH.isShown())
+         {
+             Connection.MessageBox(Knowledge_DSH_SSF.this, "DSH Required field: Value should be at least 5");
+             txtReachDSH.requestFocus();
+             return;
+         }
          
          else if(!rdoSSF1.isChecked() & !rdoSSF2.isChecked() & secSSF.isShown())
            {
@@ -634,6 +640,12 @@
              txtReachSSF.requestFocus(); 
              return;	
            }
+         else if(Integer.valueOf(txtReachSSF.getText().toString())<5 & secReachSSF.isShown())
+         {
+             Connection.MessageBox(Knowledge_DSH_SSF.this, "SSF Required field: Value should be at least 5");
+             txtReachSSF.requestFocus();
+             return;
+         }
  
          String SQL = "";
          RadioButton rb;
