@@ -2829,14 +2829,11 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
              spnEduLevelMHead.requestFocus(); 
              return;	
            }
-         else if(txtliveHouseM.getText().toString().length()==0 & secliveHouseM.isShown())
+         else if(txtliveHouseM.getText().toString().length()==0 & txtliveHouseY.getText().toString().length()==0  &  secliveHouseM.isShown())
            {
-               if(txtliveHouseY.getText().toString().length()==0)
-               {
                    Connection.MessageBox(Household_Interview.this, "Required field: কতমাস যাবৎ আপনার খানা/পরিবার এই বাড়িতে বাস করছে ? (How long has your household/family been living in this house for?).");
                    txtliveHouseM.requestFocus();
                    return;
-               }
            }
          else if(Integer.valueOf(txtliveHouseM.getText().toString().length()==0 ? "00" : txtliveHouseM.getText().toString()) < 00 || Integer.valueOf(txtliveHouseM.getText().toString().length()==0 ? "11" : txtliveHouseM.getText().toString()) > 11 && Integer.valueOf(txtliveHouseM.getText().toString())!=96)
            {
@@ -2846,11 +2843,9 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
            }
          else if(txtliveHouseY.getText().toString().length()==0 & secliveHouseY.isShown() & txtliveHouseM.getText().toString().length()==0)
            {
-
-                    Connection.MessageBox(Household_Interview.this, "Required field: .");
-                    txtliveHouseY.requestFocus();
-                    return;
-
+               Connection.MessageBox(Household_Interview.this, "Required field: .");
+               txtliveHouseY.requestFocus();
+               return;
            }
          else if(Integer.valueOf(txtliveHouseY.getText().toString().length()==0 ? "00" : txtliveHouseY.getText().toString()) < 00 || Integer.valueOf(txtliveHouseY.getText().toString().length()==0 ? "99" : txtliveHouseY.getText().toString()) > 99)
            {
@@ -2860,11 +2855,9 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
            }
          else if(txtLiveHH_Mon.getText().toString().length()==0 & secLiveHH_Mon.isShown() & txtLiveHH_Year.getText().toString().length()==0)
            {
-
-                   Connection.MessageBox(Household_Interview.this, "Required field: এই খানায় আপনি (যে সবচেয়ে বেশি দিন যাবত আছেন) কতদিন যাবত বাস করছেন? (How many months/Years have you lived at this household?).");
-                   txtLiveHH_Mon.requestFocus();
-                   return;
-
+               Connection.MessageBox(Household_Interview.this, "Required field: এই খানায় আপনি (যে সবচেয়ে বেশি দিন যাবত আছেন) কতদিন যাবত বাস করছেন? (How many months/Years have you lived at this household?).");
+               txtLiveHH_Mon.requestFocus();
+               return;
            }
          else if(Integer.valueOf(txtLiveHH_Mon.getText().toString().length()==0 ? "00" : txtLiveHH_Mon.getText().toString()) < 00 || Integer.valueOf(txtLiveHH_Mon.getText().toString().length()==0 ? "11" : txtLiveHH_Mon.getText().toString()) > 11)
            {
@@ -2874,11 +2867,9 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
            }
          else if(txtLiveHH_Year.getText().toString().length()==0 & secLiveHH_Year.isShown() & txtLiveHH_Mon.getText().toString().length()==0)
            {
-
-                   Connection.MessageBox(Household_Interview.this, "Required field: .");
-                   txtLiveHH_Year.requestFocus();
-                   return;
-
+               Connection.MessageBox(Household_Interview.this, "Required field: .");
+               txtLiveHH_Year.requestFocus();
+               return;
            }
          else if(Integer.valueOf(txtLiveHH_Year.getText().toString().length()==0 ? "00" : txtLiveHH_Year.getText().toString()) < 00 || Integer.valueOf(txtLiveHH_Year.getText().toString().length()==0 ? "99" : txtLiveHH_Year.getText().toString()) > 99)
            {
@@ -2889,9 +2880,9 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
          else if(txtLiveCity_Mon.getText().toString().length()==0 & secLiveCity_Mon.isShown() & txtLiveCity_Year.getText().toString().length()==0)
            {
 
-                   Connection.MessageBox(Household_Interview.this, "Required field: এই শহরে আপনি (যে সবচেয়ে বেশি দিন যাবত আছেন) কতদিন যাবত বাস করছেন? (How many months/Years have you lived in this city?).");
-                   txtLiveCity_Mon.requestFocus();
-                   return;
+               Connection.MessageBox(Household_Interview.this, "Required field: এই শহরে আপনি (যে সবচেয়ে বেশি দিন যাবত আছেন) কতদিন যাবত বাস করছেন? (How many months/Years have you lived in this city?).");
+               txtLiveCity_Mon.requestFocus();
+               return;
 
            }
          else if(Integer.valueOf(txtLiveCity_Mon.getText().toString().length()==0 ? "0" : txtLiveCity_Mon.getText().toString()) < 0 || Integer.valueOf(txtLiveCity_Mon.getText().toString().length()==0 ? "11" : txtLiveCity_Mon.getText().toString()) > 11)
@@ -2902,12 +2893,9 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
            }
          else if(txtLiveCity_Year.getText().toString().length()==0 & secLiveCity_Year.isShown() & txtLiveCity_Mon.getText().toString().length()==0)
            {
-
-                   Connection.MessageBox(Household_Interview.this, "Required field: .");
-                   txtLiveCity_Year.requestFocus();
-                   return;
-
-
+               Connection.MessageBox(Household_Interview.this, "Required field: .");
+               txtLiveCity_Year.requestFocus();
+               return;
            }
          else if(Integer.valueOf(txtLiveCity_Year.getText().toString().length()==0 ? "0" : txtLiveCity_Year.getText().toString()) < 0 || Integer.valueOf(txtLiveCity_Year.getText().toString().length()==0 ? "99" : txtLiveCity_Year.getText().toString()) > 99)
            {
@@ -2958,9 +2946,9 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
              txtMotherEdu.requestFocus(); 
              return;	
            }
-         else if((!txtMotherEdu.getText().toString().equals("98") & !txtMotherEdu.getText().toString().equals("88")) & (Integer.valueOf(txtMotherEdu.getText().toString().length()==0 ? "0" : txtMotherEdu.getText().toString()) < 0 || Integer.valueOf(txtMotherEdu.getText().toString().length()==0 ? "17" : txtMotherEdu.getText().toString()) > 17))
+         else if((!txtMotherEdu.getText().toString().equals("98") & !txtMotherEdu.getText().toString().equals("88")) & (Integer.valueOf(txtMotherEdu.getText().toString().length()==0 ? "0" : txtMotherEdu.getText().toString()) < 1 || Integer.valueOf(txtMotherEdu.getText().toString().length()==0 ? "17" : txtMotherEdu.getText().toString()) > 17))
            {
-             Connection.MessageBox(Household_Interview.this, "Value should be between 1 and 14(এই পরিবারের সবচেয়ে ছোট সন্তানরে মা কতক্লাস পর্যন্ত  পড়াশোনা শেষ করেছে? (How many educational years has the Mother of the youngest child of this family completed?)).");
+             Connection.MessageBox(Household_Interview.this, "Value should be between 1 and 17(এই পরিবারের সবচেয়ে ছোট সন্তানরে মা কতক্লাস পর্যন্ত  পড়াশোনা শেষ করেছে? (How many educational years has the Mother of the youngest child of this family completed?)).");
              txtMotherEdu.requestFocus(); 
              return;	
            }
@@ -3121,15 +3109,11 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
               rdoHHOwner1.requestFocus();
               return;
            }
-         else if(txtRentOfDwelling.getText().toString().length()==0 & secRentOfDwelling.isShown())
+         else if(txtRentOfDwelling.getText().toString().length()==0 & !chkRentOfDwellDK.isChecked()& secRentOfDwelling.isShown())
            {
-               if(!chkRentOfDwellDK.isChecked())
-               {
-                   Connection.MessageBox(Household_Interview.this, "Required field: আপনার এই বাসাটি আজ কেউ ভাড়া নিতে চাইলে তাকে মাসে কত টাকা ভাড়া দিতে হবে? If someone wanted to rent this dwelling today, how much money would they have to pay each month, considering just the part of the dwelling where your household is living?টাকা (amount in local currency)\nএই বাড়িটি তৈরিতে মূল কি কি উপাদান ব্যবহার করা হয়েছে (পরিদর্শন করে যাচাই করুন).");
-                   txtRentOfDwelling.requestFocus();
-                   return;
-               }
-
+               Connection.MessageBox(Household_Interview.this, "Required field: আপনার এই বাসাটি আজ কেউ ভাড়া নিতে চাইলে তাকে মাসে কত টাকা ভাড়া দিতে হবে? If someone wanted to rent this dwelling today, how much money would they have to pay each month, considering just the part of the dwelling where your household is living?");
+               txtRentOfDwelling.requestFocus();
+               return;
            }
          else if(Integer.valueOf(txtRentOfDwelling.getText().toString().length()==0 ? "1" : txtRentOfDwelling.getText().toString()) < 1 || Integer.valueOf(txtRentOfDwelling.getText().toString().length()==0 ? "99999" : txtRentOfDwelling.getText().toString()) > 99999)
            {
@@ -3234,14 +3218,14 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
 //             txtTimeToWalkInMin.requestFocus();
 //             return;
 //         }
-
+//
 //         else if(txtTimeToWalkInHours.getText().toString().length()==0 & secTimeToWalkInHours.isShown())
 //           {
 //             Connection.MessageBox(Household_Interview.this, "Required field: ঘণ্টা (Hours).");
 //             txtTimeToWalkInHours.requestFocus();
 //             return;
 //           }
-         else if(txtWeeklyWSupplyInHour.getText().toString().length()==0 & secWeeklyWSupplyInHour.isShown())
+        else if(txtWeeklyWSupplyInHour.getText().toString().length()==0 & secWeeklyWSupplyInHour.isShown())
            {
              Connection.MessageBox(Household_Interview.this, "Required field: সপ্তাহে গড়ে কত ঘণ্টা আপনার এলাকায় পানি থাকে? How many hours per week on average does water run in your community?.");
              txtWeeklyWSupplyInHour.requestFocus(); 
