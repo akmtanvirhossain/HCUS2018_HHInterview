@@ -613,7 +613,7 @@ package org.hcus_hhinterview;
         {
            RadioButton rb;
            Cluster_Structure_DataModel d = new Cluster_Structure_DataModel();
-           String SQL = "Select * from "+ TableName +"  Where Upazila='"+ Upazila +"' and UNCode='"+ UNCode +"' and Cluster='"+ Cluster +"' and StructureNo='"+ StructureNo +"' and VisitNo='"+ PREV +"'";
+           String SQL = "Select * from "+ TableName +"  Where Upazila='"+ Upazila +"' and UNCode='"+ UNCode +"' and Cluster='"+ Cluster +"' and StructureNo='"+ StructureNo +"' and VisitNo='"+ PREV +"' and DeviceId='"+DEVICEID+"'";
            List<Cluster_Structure_DataModel> data = d.SelectAll(this, SQL);
 
            if(data.size()==0)
