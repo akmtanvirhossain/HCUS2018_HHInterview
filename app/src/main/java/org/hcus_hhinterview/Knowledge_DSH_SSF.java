@@ -400,6 +400,7 @@
                     secReachSSF.setVisibility(View.VISIBLE);
                     lineReachSSF.setVisibility(View.VISIBLE);
              }
+
             }
          public void onNothingSelected(AdapterView<?> adapterView) {
              return;
@@ -473,11 +474,17 @@
                     lineSSFwayOth.setVisibility(View.GONE);
                     txtSSFwayOth.setText("");
                  }
-                 else
+                 else if(spnData.equalsIgnoreCase("97"))
                  {
                     secSSFwayOth.setVisibility(View.VISIBLE);
                     lineSSFwayOth.setVisibility(View.VISIBLE);
                  }
+                 else
+                     {
+                         secSSFwayOth.setVisibility(View.GONE);
+                         lineSSFwayOth.setVisibility(View.GONE);
+                         txtSSFwayOth.setText("");
+                     }
              }
              @Override
              public void onNothingSelected(AdapterView<?> parentView) {
@@ -609,7 +616,7 @@
              txtReachDSH.requestFocus(); 
              return;	
            }
-           else if(Integer.valueOf(txtReachDSH.getText().toString())<5 & secReachDSH.isShown())
+           else if(Integer.valueOf(txtReachDSH.getText().toString().length()==0 ? "0" : txtReachDSH.getText().toString()) < 5 & secReachDSH.isShown())
          {
              Connection.MessageBox(Knowledge_DSH_SSF.this, "DSH Required field: Value should be at least 5");
              txtReachDSH.requestFocus();
@@ -640,7 +647,7 @@
              txtReachSSF.requestFocus(); 
              return;	
            }
-         else if(Integer.valueOf(txtReachSSF.getText().toString())<5 & secReachSSF.isShown())
+         else if( Integer.valueOf(txtReachSSF.getText().toString().length()==0 ? "0" : txtReachSSF.getText().toString()) < 5 &  secReachSSF.isShown())
          {
              Connection.MessageBox(Knowledge_DSH_SSF.this, "SSF Required field: Value should be at least 5");
              txtReachSSF.requestFocus();

@@ -2946,9 +2946,9 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
              txtMotherEdu.requestFocus(); 
              return;	
            }
-         else if((!txtMotherEdu.getText().toString().equals("98") & !txtMotherEdu.getText().toString().equals("88")) & (Integer.valueOf(txtMotherEdu.getText().toString().length()==0 ? "0" : txtMotherEdu.getText().toString()) < 1 || Integer.valueOf(txtMotherEdu.getText().toString().length()==0 ? "17" : txtMotherEdu.getText().toString()) > 17))
+         else if((!txtMotherEdu.getText().toString().equals("98") & !txtMotherEdu.getText().toString().equals("88")) & (Integer.valueOf(txtMotherEdu.getText().toString().length()==0 ? "0" : txtMotherEdu.getText().toString()) < 0 || Integer.valueOf(txtMotherEdu.getText().toString().length()==0 ? "17" : txtMotherEdu.getText().toString()) > 17))
            {
-             Connection.MessageBox(Household_Interview.this, "Value should be between 1 and 17(এই পরিবারের সবচেয়ে ছোট সন্তানরে মা কতক্লাস পর্যন্ত  পড়াশোনা শেষ করেছে? (How many educational years has the Mother of the youngest child of this family completed?)).");
+             Connection.MessageBox(Household_Interview.this, "Value should be between 0 and 17(এই পরিবারের সবচেয়ে ছোট সন্তানরে মা কতক্লাস পর্যন্ত  পড়াশোনা শেষ করেছে? (How many educational years has the Mother of the youngest child of this family completed?)).");
              txtMotherEdu.requestFocus(); 
              return;	
            }
