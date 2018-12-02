@@ -2449,7 +2449,7 @@ txtChangedHouse.addTextChangedListener(new TextWatcher() {
          listToiletShare.add("");
          listToiletShare.add("1-একজন (Individual)");
          listToiletShare.add("2-দুইজন (Two)");
-         listToiletShare.add("3- তিন- পাঁচজন (3 to 5)");
+         listToiletShare.add("3-৩ থেকে ৫ জন (3 to 5)");
          listToiletShare.add("4-পাঁচজনের বেশি (More than 5)");
          ArrayAdapter<String> adptrToiletShare= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listToiletShare);
          spnToiletShare.setAdapter(adptrToiletShare);
