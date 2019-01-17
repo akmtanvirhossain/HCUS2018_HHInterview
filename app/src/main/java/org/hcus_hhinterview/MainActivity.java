@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity
                 {
                     if(position==0)
                     {
-                        Intent intent = new Intent(getApplicationContext(), Cluster_Structure_list.class);
+                        Intent intent = new Intent(getApplicationContext(), Typhoid_Extra_Master_list.class);
                         startActivity(intent);
                     }
                     else if(position==1)
@@ -97,59 +97,59 @@ public class MainActivity extends AppCompatActivity
 
                             //10 Oct 2018, Tanvir
                             //======================================================================
-                            String resp = "";
-                            String resp1 = "";
-                            String SQL = "";
-                            String SQL1 = "";
-                            try {
-                                C.CreateTable("process_tab", "Create table process_tab(process_id int)");
-                                if (!C.Existence("Select * from process_tab where process_id=1")) {
-
-
-                                    C.ExecuteCommandOnServer("Delete from Sync_Management where UserId='"+ DEVICEID +"' and TableName='DatabaseTab'");
-
-                                    C.Sync_Download("DatabaseTab", DEVICEID, "");
-                                    List<String> listItem = C.GetDataList("Select TableName||'^'||TableScript from DatabaseTab");
-
-                                    for (int i = 0; i < listItem.size(); i++) {
-                                        String VarData[] = C.split(listItem.get(i), '^');
-                                        resp = C.SaveData("alter table " + VarData[0] + " rename to " + VarData[0] + "1");
-                                        C.CreateTable(VarData[0], VarData[1]);
-
-                                        if(VarData[0].equalsIgnoreCase("OtitisMediaCase")){
-                                            SQL = "Insert into OtitisMediaCase\n" +
-                                                    " Select * from OtitisMediaCase1 where\n" +
-                                                    " UNCode||StructureNo|| HouseholdSl|| VisitNo|| MemSl|| DeviceID not in(select\n" +
-                                                    " UNCode||StructureNo|| HouseholdSl|| VisitNo|| MemSl|| DeviceID\n" +
-                                                    " from OtitisMediaCase1 group by UNCode, StructureNo, HouseholdSl, VisitNo, MemSl, DeviceID having count(*)>1)";
-
-                                            SQL1 = "Insert into OtitisMediaCase\n" +
-                                                    " Select * from OtitisMediaCase1 where \n" +
-                                                    " UNCode||StructureNo|| HouseholdSl|| VisitNo|| MemSl|| DeviceID || Cast(rowid as text) in(\n" +
-                                                    " select UNCode||StructureNo|| HouseholdSl|| VisitNo|| MemSl|| DeviceID || Cast(rowid as text)\n" +
-                                                    " from OtitisMediaCase1 group by UNCode, StructureNo, HouseholdSl, VisitNo, MemSl, DeviceID having count(*)>1)";
-                                            resp = C.SaveData(SQL);
-                                            resp1 = C.SaveData(SQL1);
-                                        }else{
-                                            SQL = "Insert into " + VarData[0] + " Select * from " + VarData[0] + "1";
-                                            resp = C.SaveData(SQL);
-                                        }
-                                    }
-                                    if (resp.length() == 0 & resp1.length() == 0) C.Save("Insert into process_tab(process_id)values(1)");
-                                }
-
-                                //29 Oct 2018
-                                else if (!C.Existence("Select * from process_tab where process_id=2")) {
-                                    try {
-                                        resp = C.SaveData("Update Household_Interview set StructureNo=substr('00000'||StructureNo,-5) where length(structureno)<>5");
-                                        if(resp.length()==0) C.Save("Insert into process_tab(process_id)values(2)");
-                                    }catch (Exception ex){
-
-                                    }
-                                }
-                            }catch (Exception ex){
-
-                            }
+//                            String resp = "";
+//                            String resp1 = "";
+//                            String SQL = "";
+//                            String SQL1 = "";
+//                            try {
+//                                C.CreateTable("process_tab", "Create table process_tab(process_id int)");
+//                                if (!C.Existence("Select * from process_tab where process_id=1")) {
+//
+//
+//                                    C.ExecuteCommandOnServer("Delete from Sync_Management where UserId='"+ DEVICEID +"' and TableName='DatabaseTab'");
+//
+//                                    C.Sync_Download("DatabaseTab", DEVICEID, "");
+//                                    List<String> listItem = C.GetDataList("Select TableName||'^'||TableScript from DatabaseTab");
+//
+//                                    for (int i = 0; i < listItem.size(); i++) {
+//                                        String VarData[] = C.split(listItem.get(i), '^');
+//                                        resp = C.SaveData("alter table " + VarData[0] + " rename to " + VarData[0] + "1");
+//                                        C.CreateTable(VarData[0], VarData[1]);
+//
+//                                        if(VarData[0].equalsIgnoreCase("OtitisMediaCase")){
+//                                            SQL = "Insert into OtitisMediaCase\n" +
+//                                                    " Select * from OtitisMediaCase1 where\n" +
+//                                                    " UNCode||StructureNo|| HouseholdSl|| VisitNo|| MemSl|| DeviceID not in(select\n" +
+//                                                    " UNCode||StructureNo|| HouseholdSl|| VisitNo|| MemSl|| DeviceID\n" +
+//                                                    " from OtitisMediaCase1 group by UNCode, StructureNo, HouseholdSl, VisitNo, MemSl, DeviceID having count(*)>1)";
+//
+//                                            SQL1 = "Insert into OtitisMediaCase\n" +
+//                                                    " Select * from OtitisMediaCase1 where \n" +
+//                                                    " UNCode||StructureNo|| HouseholdSl|| VisitNo|| MemSl|| DeviceID || Cast(rowid as text) in(\n" +
+//                                                    " select UNCode||StructureNo|| HouseholdSl|| VisitNo|| MemSl|| DeviceID || Cast(rowid as text)\n" +
+//                                                    " from OtitisMediaCase1 group by UNCode, StructureNo, HouseholdSl, VisitNo, MemSl, DeviceID having count(*)>1)";
+//                                            resp = C.SaveData(SQL);
+//                                            resp1 = C.SaveData(SQL1);
+//                                        }else{
+//                                            SQL = "Insert into " + VarData[0] + " Select * from " + VarData[0] + "1";
+//                                            resp = C.SaveData(SQL);
+//                                        }
+//                                    }
+//                                    if (resp.length() == 0 & resp1.length() == 0) C.Save("Insert into process_tab(process_id)values(1)");
+//                                }
+//
+//                                //29 Oct 2018
+//                                else if (!C.Existence("Select * from process_tab where process_id=2")) {
+//                                    try {
+//                                        resp = C.SaveData("Update Household_Interview set StructureNo=substr('00000'||StructureNo,-5) where length(structureno)<>5");
+//                                        if(resp.length()==0) C.Save("Insert into process_tab(process_id)values(2)");
+//                                    }catch (Exception ex){
+//
+//                                    }
+//                                }
+//                            }catch (Exception ex){
+//
+//                            }
 
                             //======================================================================
 
@@ -473,7 +473,9 @@ public class MainActivity extends AppCompatActivity
                         try {
 
                             //Upload
-                            List<String> tableList = ProjectSetting.TableList_Upload();
+//                            List<String> tableList = ProjectSetting.TableList_Upload();
+                            List<String> tableList = new ArrayList<>();
+                            tableList.add("Typhoid_Extra_Master");
 
 
                             //50
@@ -481,24 +483,24 @@ public class MainActivity extends AppCompatActivity
 
                             int progressCount = 50/tableList.size();
                             int count = 0;
-                            for (int i = 0; i < tableList.size(); i++) {
-                                try {
-                                    C.Sync_Upload_Process(tableList.get(i).toString());
-                                    count +=progressCount;
-                                    onProgressUpdate(tableList.get(i).toString()+","+String.valueOf(count));
-                                }catch(Exception ex){
+//                            for (int i = 0; i < tableList.size(); i++) {
+//                                try {
+//                                    C.Sync_Upload_Process(tableList.get(i).toString());
+//                                    count +=progressCount;
+//                                    onProgressUpdate(tableList.get(i).toString()+","+String.valueOf(count));
+//                                }catch(Exception ex){
+//
+//                                }
+//                            }
 
-                                }
-                            }
-
-                            tableList.add("StructureDB");
-                            tableList.add("StructureID_Serial");
-                            tableList.add("StructureIDSlot");
-
-
-                            tableList.add("AreaDB");
-                            tableList.add("Cluster");
-                            tableList.add("Immunization_List");
+//                            tableList.add("StructureDB");
+//                            tableList.add("StructureID_Serial");
+//                            tableList.add("StructureIDSlot");
+//
+//
+//                            tableList.add("AreaDB");
+//                            tableList.add("Cluster");
+//                            tableList.add("Immunization_List");
 
                             //Download
                             //Stop download based on request : 12 Oct 2018

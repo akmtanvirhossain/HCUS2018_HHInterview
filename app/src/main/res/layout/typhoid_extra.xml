@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/form_background_color">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/theme_color">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal">
+            <ImageButton android:id="@+id/cmdBack" android:background="@color/pageHeadingBack" android:src="@drawable/back" android:layout_width="50sp" android:layout_height="match_parent"/>
+            <TextView android:id="@+id/lblHeading" android:text="Typhoid Extra"  android:paddingLeft="10sp" android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:textSize="20sp" android:textColor="@color/pageHeading"/>
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="vertical">
+            <LinearLayout android:id="@+id/secUNCode" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+                <TextView android:id="@+id/lblUNCode" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <TextView android:id="@+id/VlblUNCode" android:text="Ward No" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <EditText android:id="@+id/txtUNCode" android:maxLength="2" android:layout_width="250sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+            </LinearLayout>
+            <View android:id="@+id/lineUNCode" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+            <LinearLayout android:id="@+id/secStructureNo" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+                <TextView android:id="@+id/lblStructureNo" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <TextView android:id="@+id/VlblStructureNo" android:text="Structure No" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <EditText android:id="@+id/txtStructureNo" android:maxLength="5" android:layout_width="250sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+            </LinearLayout>
+            <View android:id="@+id/lineStructureNo" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+            <LinearLayout android:id="@+id/secHouseholdSl" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+                <TextView android:id="@+id/lblHouseholdSl" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <TextView android:id="@+id/VlblHouseholdSl" android:text="Household Sl" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <EditText android:id="@+id/txtHouseholdSl" android:maxLength="2" android:layout_width="250sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+            </LinearLayout>
+            <View android:id="@+id/lineHouseholdSl" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+            <LinearLayout android:id="@+id/secVisitNo" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+                <TextView android:id="@+id/lblVisitNo" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <TextView android:id="@+id/VlblVisitNo" android:text="Visit No" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <EditText android:id="@+id/txtVisitNo" android:maxLength="2" android:layout_width="250sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+            </LinearLayout>
+            <View android:id="@+id/lineVisitNo" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+            <LinearLayout android:id="@+id/secMemSl" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+                <TextView android:id="@+id/lblMemSl" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <TextView android:id="@+id/VlblMemSl" android:text="Member Serial" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <EditText android:id="@+id/txtMemSl" android:maxLength="2" android:layout_width="250sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+            </LinearLayout>
+            <View android:id="@+id/lineMemSl" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+            <LinearLayout android:id="@+id/secHaveHosp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+                <TextView android:id="@+id/lblHaveHosp" android:text="2.19" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <TextView android:id="@+id/VlblHaveHosp" android:text="গত এক বছরে জ্বর জনিত কোন অসুস্থতার কারনে শিশুটি হাসপাতালে ভর্তি হয়েছিল? (Did he/she have any cases of febrile illness that led to hospitalization in the past year?)" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <RadioGroup android:id="@+id/rdogrpHaveHosp" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">
+                    <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoHaveHosp1" android:text="Yes" android:gravity="top|bottom" />
+                    <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoHaveHosp2" android:text="No" android:gravity="top|bottom" />
+                    <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoHaveHosp3" android:text="Don’t know" android:gravity="top|bottom"/>
+                </RadioGroup>
+            </LinearLayout>
+            <View android:id="@+id/lineHaveHosp" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+            <LinearLayout android:id="@+id/secHospNameLabel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <TextView android:id="@+id/lblHHospNameLabel" android:text=" সর্বশেষ জ্বর জনিত অসুস্থতার কারনে হাসপাতালে ভর্তির জন্য প্রশ্নগুলো করুন (Answer for the most recent episode of fever)" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="20sp" style="@style/rowHeading"/>
+            </LinearLayout>
+            <View android:id="@+id/lineHospNameLabel" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+            <LinearLayout android:id="@+id/secHospName" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+                <TextView android:id="@+id/lblHospName" android:text="2.19.1" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <TextView android:id="@+id/VlblHospName" android:text="শিশুকে কোন হাসপাতালে ভর্তি করেছিলেন? (What hospital was he/she taken to?)" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <Spinner android:id="@+id/spnHospName" android:drawSelectorOnTop="true" android:layout_width="250sp" android:layout_height="wrap_content" android:layout_weight="0" android:prompt="@string/planet_prompt" android:textSize="20sp" />
+            </LinearLayout>
+            <View android:id="@+id/lineHospName" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+            <LinearLayout android:id="@+id/secHospName_Oth" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+                <TextView android:id="@+id/lblHospName_Oth" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <TextView android:id="@+id/VlblHospName_Oth" android:text="Name of the other hospital" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <EditText android:id="@+id/txtHospName_Oth" android:maxLength="50" android:layout_width="250sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+            </LinearLayout>
+            <View android:id="@+id/lineHospName_Oth" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+            <LinearLayout android:id="@+id/secHaveRecordsLabel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <TextView android:id="@+id/lblHHaveRecordsLabel" android:text=" উত্তরদাতাকে জিজ্ঞেস করুন হাসপাতালের প্রেসক্রিপশন অথবা অন্য কোন প্রমানাদি/কাগজপত্র আছে কি না (Ask the respondent if they have records from this visit to the healthcare facility)" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="20sp" style="@style/rowHeading"/>
+            </LinearLayout>
+            <View android:id="@+id/lineHaveRecordsLabel" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+            <LinearLayout android:id="@+id/secHaveRecords" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+                <TextView android:id="@+id/lblHaveRecords" android:text="2.19.2" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <TextView android:id="@+id/VlblHaveRecords" android:text="উত্তরদাতা কি হাসপাতালের প্রেসক্রিপশন অথবা অন্য কোন প্রমানাদি/কাগজপত্র দেখাতে পেরেছেন? (Was the respondent able to produce records of this visit?)" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <RadioGroup android:id="@+id/rdogrpHaveRecords" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">
+                    <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoHaveRecords1" android:text="Yes" android:gravity="top|bottom" />
+                    <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoHaveRecords2" android:text="No" android:gravity="top|bottom"/>
+                </RadioGroup>
+            </LinearLayout>
+            <View android:id="@+id/lineHaveRecords" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+            <LinearLayout android:id="@+id/secDidRecordMatch2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+                <TextView android:id="@+id/lblDidRecordMatch2" android:text="2.19.3" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <TextView android:id="@+id/VlblDidRecordMatch2" android:text="হাসপাতালের প্রেসক্রিপশন অথবা প্রমানাদি/কাগজপত্র কি শিশু যে হাসপাতাল ভর্তি ছিল সেই হাসপাতালের?  (Did the records match the healthcare facility they stated the person was taken to?)" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <RadioGroup android:id="@+id/rdogrpDidRecordMatch2" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp">
+                    <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoDidRecordMatch21" android:text="Yes" android:gravity="top|bottom" />
+                    <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingRight="10dp" android:textSize="20sp" android:id="@+id/rdoDidRecordMatch22" android:text="No" android:gravity="top|bottom"/>
+                </RadioGroup>
+            </LinearLayout>
+            <View android:id="@+id/lineDidRecordMatch2" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+            <LinearLayout android:id="@+id/secDaysOfHosp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+                <TextView android:id="@+id/lblDaysOfHosp" android:text="2.19.4" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <TextView android:id="@+id/VlblDaysOfHosp" android:text="শিশুটি কত দিন হাসপাতালে ভর্তি ছিল? (How many days was he/she hospitalized?)" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <EditText android:id="@+id/txtDaysOfHosp" android:maxLength="2" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+            </LinearLayout>
+            <View android:id="@+id/lineDaysOfHosp" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+            <LinearLayout android:id="@+id/secDaysOfHospDK" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+                <TextView android:id="@+id/lblDaysOfHospDK" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <TextView android:id="@+id/VlblDaysOfHospDK" android:text="জানি না (Do not know)" android:layout_width="300sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <CheckBox android:id="@+id/chkDaysOfHospDK" android:layout_width="50sp" android:inputType="text" android:layout_height="wrap_content" android:layout_marginRight="10sp" android:textSize="20sp" />
+            </LinearLayout>
+            <View android:id="@+id/lineDaysOfHospDK" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+            <LinearLayout android:id="@+id/secTAboIll" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+                <TextView android:id="@+id/lblTAboIll" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <TextView android:id="@+id/VlblTAboIll" android:text="মন্তব্যঃ টাইফয়েড (Remarks:Typhoid)" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <EditText android:id="@+id/txtTAboIll" android:maxLength="300" android:layout_width="250sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+            </LinearLayout>
+            <View android:id="@+id/lineTAboIll" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+            <LinearLayout android:layout_width="fill_parent" android:paddingTop="20sp" android:layout_height="wrap_content" android:orientation="horizontal">
+                <Button android:id="@+id/cmdSave" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/button_style_green"
+                    android:textSize="20sp" android:text=" Save -> Continue " android:textColor="#FFFFFF" android:layout_marginBottom="20sp" android:layout_marginLeft="20sp" android:layout_marginRight="20sp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

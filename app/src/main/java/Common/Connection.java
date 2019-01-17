@@ -1119,11 +1119,12 @@ public class Connection extends SQLiteOpenHelper {
             });
             final List<String> tableList = new ArrayList<String>();
             tableList.add("DataCollector");
-            tableList.add("AreaDB");
-            tableList.add("StructureDB");
-            tableList.add("StructureID_Serial");
-            tableList.add("StructureIDSlot");
-            tableList.add("StructureListing");
+//            tableList.add("AreaDB");
+//            tableList.add("StructureDB");
+//            tableList.add("StructureID_Serial");
+//            tableList.add("StructureIDSlot");
+//            tableList.add("StructureListing");
+            tableList.add("Typhoid_Extra_Master");
             int progressCount = 100/tableList.size();
 
             for (int i = 0; i < tableList.size(); i++) {
@@ -1970,16 +1971,17 @@ public class Connection extends SQLiteOpenHelper {
             //Reqular data sync
             //--------------------------------------------------------------------------------------
             C.Sync_DatabaseStructure(UniqueID);
-            C.Sync_Download("DataCollector", UniqueID, "");
+//            C.Sync_Download("DataCollector", UniqueID, "");
 
 //            C.Sync_Download("module_variable", UniqueID, "");
-            C.Sync_Download("StructureListing", UniqueID, "");
-            C.Sync_Download("AreaDB", UniqueID, "");
-            C.Sync_Download("Cluster", UniqueID, "");
-            C.Sync_Download("StructureDB", UniqueID, "");
-            C.Sync_Download("StructureIDSlot", UniqueID, "");
-            C.Sync_Download("StructureID_Serial", UniqueID, "");
-            C.Sync_Download("Immunization_List", UniqueID, "");
+//            C.Sync_Download("StructureListing", UniqueID, "");
+//            C.Sync_Download("AreaDB", UniqueID, "");
+//            C.Sync_Download("Cluster", UniqueID, "");
+//            C.Sync_Download("StructureDB", UniqueID, "");
+//            C.Sync_Download("StructureIDSlot", UniqueID, "");
+//            C.Sync_Download("StructureID_Serial", UniqueID, "");
+//            C.Sync_Download("Immunization_List", UniqueID, "");
+            C.Sync_Download("Typhoid_Extra_Master", UniqueID, "");
 
             //Sync_Download
             // Parameter 1: table Name
@@ -1995,34 +1997,34 @@ public class Connection extends SQLiteOpenHelper {
             //Database File Upload
             //C.DatabaseUploadZip(UniqueID);
 
-            String UniqueID_Column = "";
-            String[] UniqueID_List;
-            try {
-                C.Sync_Download("DeleteID_List",UniqueID,"");
-
-                Cursor cur_H = C.ReadData("Select TableName,ID from DeleteID_List Where DeleteStatus='N' order by TableName");
-                cur_H.moveToFirst();
-                while (!cur_H.isAfterLast()) {
-                    UniqueID_Column = "";
-                    UniqueID = C.ReturnSingleValue("select UniqueID from DatabaseTab where TableName='" + cur_H.getString(cur_H.getColumnIndex("TableName")) + "'");
-                    UniqueID_List = UniqueID.split(",");
-                    for (int i = 0; i < UniqueID_List.length; i++) {
-                        UniqueID_Column += UniqueID_Column.length() == 0 ? "Cast(" + UniqueID_List[i] + " as varchar(50))" : "||Cast(" + UniqueID_List[i] + " as varchar(50))";
-                    }
-
-                    try {
-                        C.Save("Delete from " + cur_H.getString(cur_H.getColumnIndex("TableName")) + " where " + UniqueID_Column + "='" + cur_H.getString(cur_H.getColumnIndex("ID")) + "'");
-                        C.Save("Update DeleteID_List set DeleteStatus='Y' where ID='" + cur_H.getString(cur_H.getColumnIndex("ID")) + "'");
-                    } catch (Exception ex) {
-
-                    }
-                    cur_H.moveToNext();
-                }
-                cur_H.close();
-
-            }catch (Exception ex){
-
-            }
+//            String UniqueID_Column = "";
+//            String[] UniqueID_List;
+//            try {
+//                C.Sync_Download("DeleteID_List",UniqueID,"");
+//
+//                Cursor cur_H = C.ReadData("Select TableName,ID from DeleteID_List Where DeleteStatus='N' order by TableName");
+//                cur_H.moveToFirst();
+//                while (!cur_H.isAfterLast()) {
+//                    UniqueID_Column = "";
+//                    UniqueID = C.ReturnSingleValue("select UniqueID from DatabaseTab where TableName='" + cur_H.getString(cur_H.getColumnIndex("TableName")) + "'");
+//                    UniqueID_List = UniqueID.split(",");
+//                    for (int i = 0; i < UniqueID_List.length; i++) {
+//                        UniqueID_Column += UniqueID_Column.length() == 0 ? "Cast(" + UniqueID_List[i] + " as varchar(50))" : "||Cast(" + UniqueID_List[i] + " as varchar(50))";
+//                    }
+//
+//                    try {
+//                        C.Save("Delete from " + cur_H.getString(cur_H.getColumnIndex("TableName")) + " where " + UniqueID_Column + "='" + cur_H.getString(cur_H.getColumnIndex("ID")) + "'");
+//                        C.Save("Update DeleteID_List set DeleteStatus='Y' where ID='" + cur_H.getString(cur_H.getColumnIndex("ID")) + "'");
+//                    } catch (Exception ex) {
+//
+//                    }
+//                    cur_H.moveToNext();
+//                }
+//                cur_H.close();
+//
+//            }catch (Exception ex){
+//
+//            }
 
         }
         catch(Exception ex)
