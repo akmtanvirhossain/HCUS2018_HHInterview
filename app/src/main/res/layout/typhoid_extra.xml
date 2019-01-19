@@ -61,7 +61,7 @@
                 <TextView android:id="@+id/lblHHospNameLabel" android:text=" সর্বশেষ জ্বর জনিত অসুস্থতার কারনে হাসপাতালে ভর্তির জন্য প্রশ্নগুলো করুন (Answer for the most recent episode of fever)" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="20sp" style="@style/rowHeading"/>
             </LinearLayout>
             <View android:id="@+id/lineHospNameLabel" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
-            <LinearLayout android:id="@+id/secHospName" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+            <LinearLayout android:id="@+id/secHospName" android:paddingBottom="5sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
                 <TextView android:id="@+id/lblHospName" android:text="2.19.1" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
                 <TextView android:id="@+id/VlblHospName" android:text="শিশুকে কোন হাসপাতালে ভর্তি করেছিলেন? (What hospital was he/she taken to?)" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
                 <Spinner android:id="@+id/spnHospName" android:drawSelectorOnTop="true" android:layout_width="250sp" android:layout_height="wrap_content" android:layout_weight="0" android:prompt="@string/planet_prompt" android:textSize="20sp" />
@@ -95,7 +95,7 @@
                 </RadioGroup>
             </LinearLayout>
             <View android:id="@+id/lineDidRecordMatch2" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
-            <LinearLayout android:id="@+id/secDaysOfHosp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+            <LinearLayout android:id="@+id/secDaysOfHosp" android:paddingBottom="10sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
                 <TextView android:id="@+id/lblDaysOfHosp" android:text="2.19.4" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
                 <TextView android:id="@+id/VlblDaysOfHosp" android:text="শিশুটি কত দিন হাসপাতালে ভর্তি ছিল? (How many days was he/she hospitalized?)" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
                 <EditText android:id="@+id/txtDaysOfHosp" android:maxLength="2" android:layout_width="60sp" android:inputType="number" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />

@@ -25,6 +25,8 @@
  import android.location.LocationManager;
  import android.net.Uri;
  import android.provider.Settings;
+ import android.text.Editable;
+ import android.text.TextWatcher;
  import android.view.KeyEvent;
  import android.os.Bundle;
  import android.view.Menu;
@@ -114,6 +116,8 @@
     TextView VlblHaveHosp;
     RadioGroup rdogrpHaveHosp;
     RadioButton rdoHaveHosp1;
+    RadioButton rdoHaveHosp2;
+    RadioButton rdoHaveHosp3;
     LinearLayout secHospNameLabel;
     View lineHospNameLabel;
     LinearLayout secHospName;
@@ -131,11 +135,13 @@
     TextView VlblHaveRecords;
     RadioGroup rdogrpHaveRecords;
     RadioButton rdoHaveRecords1;
+    RadioButton rdoHaveRecords2;
     LinearLayout secDidRecordMatch2;
     View lineDidRecordMatch2;
     TextView VlblDidRecordMatch2;
     RadioGroup rdogrpDidRecordMatch2;
     RadioButton rdoDidRecordMatch21;
+    RadioButton rdoDidRecordMatch22;
     LinearLayout secDaysOfHosp;
     View lineDaysOfHosp;
     TextView VlblDaysOfHosp;
@@ -188,7 +194,7 @@
 
          TableName = "Typhoid_Extra";
          MODULEID = 0;
-         LANGUAGEID = Integer.parseInt(sp.getValue(this, "languageid"));
+//         LANGUAGEID = Integer.parseInt(sp.getValue(this, "languageid"));
          lblHeading = (TextView)findViewById(R.id.lblHeading);
 
          ImageButton cmdBack = (ImageButton) findViewById(R.id.cmdBack);
@@ -324,12 +330,14 @@
          VlblHaveHosp = (TextView) findViewById(R.id.VlblHaveHosp);
          rdogrpHaveHosp = (RadioGroup) findViewById(R.id.rdogrpHaveHosp);
          rdoHaveHosp1 = (RadioButton) findViewById(R.id.rdoHaveHosp1);
+         rdoHaveHosp2 = (RadioButton) findViewById(R.id.rdoHaveHosp2);
+         rdoHaveHosp3 = (RadioButton) findViewById(R.id.rdoHaveHosp3);
          rdogrpHaveHosp.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
          @Override
          public void onCheckedChanged(RadioGroup radioGroup,int radioButtonID) {
              String rbData = "";
              RadioButton rb;
-             String[] d_rdogrpHaveHosp = new String[] {"1"};
+             String[] d_rdogrpHaveHosp = new String[] {"1","2","8"};
              for (int i = 0; i < rdogrpHaveHosp.getChildCount(); i++)
              {
                rb = (RadioButton)rdogrpHaveHosp.getChildAt(i);
@@ -392,8 +400,8 @@
                     lineHospNameLabel.setVisibility(View.VISIBLE);
                     secHospName.setVisibility(View.VISIBLE);
                     lineHospName.setVisibility(View.VISIBLE);
-                    secHospName_Oth.setVisibility(View.VISIBLE);
-                    lineHospName_Oth.setVisibility(View.VISIBLE);
+//                    secHospName_Oth.setVisibility(View.VISIBLE);
+//                    lineHospName_Oth.setVisibility(View.VISIBLE);
                     secHaveRecordsLabel.setVisibility(View.VISIBLE);
                     lineHaveRecordsLabel.setVisibility(View.VISIBLE);
                     secHaveRecords.setVisibility(View.VISIBLE);
@@ -417,7 +425,12 @@
          List<String> listHospName = new ArrayList<String>();
          
          listHospName.add("");
-         listHospName.add("01-Dhaka Shishu Hospital  02-Dr. M. R. Khan Hospital  03-Popular Diagnostic Center Dhanmondi  04-Popular Diagnostic Center Mirpur  05-Popular Diagnostic Center Shyamoli  77-Other");
+         listHospName.add("01-Dhaka Shishu Hospital");
+         listHospName.add("02-Dr. M. R. Khan Hospital");
+         listHospName.add("03-Popular Diagnostic Center Dhanmondi");
+         listHospName.add("04-Popular Diagnostic Center Mirpur");
+         listHospName.add("05-Popular Diagnostic Center Shyamoli");
+         listHospName.add("77-Other");
          ArrayAdapter<String> adptrHospName= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listHospName);
          spnHospName.setAdapter(adptrHospName);
 
@@ -429,53 +442,17 @@
              {
                  spnData = Connection.SelectedSpinnerValue(spnHospName.getSelectedItem().toString(), "-");
              }
-                 if(spnData.equalsIgnoreCase("01"))
-                 {
-                    secHospName_Oth.setVisibility(View.GONE);
-                    lineHospName_Oth.setVisibility(View.GONE);
-                    txtHospName_Oth.setText("");
-                    secHaveRecordsLabel.setVisibility(View.GONE);
-                    lineHaveRecordsLabel.setVisibility(View.GONE);
-                 }
-                 else if(spnData.equalsIgnoreCase("02"))
-                 {
-                    secHospName_Oth.setVisibility(View.GONE);
-                    lineHospName_Oth.setVisibility(View.GONE);
-                    txtHospName_Oth.setText("");
-                    secHaveRecordsLabel.setVisibility(View.GONE);
-                    lineHaveRecordsLabel.setVisibility(View.GONE);
-                 }
-                 else if(spnData.equalsIgnoreCase("03"))
-                 {
-                    secHospName_Oth.setVisibility(View.GONE);
-                    lineHospName_Oth.setVisibility(View.GONE);
-                    txtHospName_Oth.setText("");
-                    secHaveRecordsLabel.setVisibility(View.GONE);
-                    lineHaveRecordsLabel.setVisibility(View.GONE);
-                 }
-                 else if(spnData.equalsIgnoreCase("04"))
-                 {
-                    secHospName_Oth.setVisibility(View.GONE);
-                    lineHospName_Oth.setVisibility(View.GONE);
-                    txtHospName_Oth.setText("");
-                    secHaveRecordsLabel.setVisibility(View.GONE);
-                    lineHaveRecordsLabel.setVisibility(View.GONE);
-                 }
-                 else if(spnData.equalsIgnoreCase("05"))
-                 {
-                    secHospName_Oth.setVisibility(View.GONE);
-                    lineHospName_Oth.setVisibility(View.GONE);
-                    txtHospName_Oth.setText("");
-                    secHaveRecordsLabel.setVisibility(View.GONE);
-                    lineHaveRecordsLabel.setVisibility(View.GONE);
-                 }
-                 else
-                 {
-                    secHospName_Oth.setVisibility(View.VISIBLE);
-                    lineHospName_Oth.setVisibility(View.VISIBLE);
-                    secHaveRecordsLabel.setVisibility(View.VISIBLE);
-                    lineHaveRecordsLabel.setVisibility(View.VISIBLE);
-                 }
+
+             if(spnData.equalsIgnoreCase("77"))
+             {
+                 secHospName_Oth.setVisibility(View.VISIBLE);
+                 lineHospName_Oth.setVisibility(View.VISIBLE);
+             }else
+             {
+                 secHospName_Oth.setVisibility(View.GONE);
+                 lineHospName_Oth.setVisibility(View.GONE);
+                 txtHospName_Oth.setText("");
+             }
              }
              @Override
              public void onNothingSelected(AdapterView<?> parentView) {
@@ -492,12 +469,13 @@
          VlblHaveRecords = (TextView) findViewById(R.id.VlblHaveRecords);
          rdogrpHaveRecords = (RadioGroup) findViewById(R.id.rdogrpHaveRecords);
          rdoHaveRecords1 = (RadioButton) findViewById(R.id.rdoHaveRecords1);
+         rdoHaveRecords2 = (RadioButton) findViewById(R.id.rdoHaveRecords2);
          rdogrpHaveRecords.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
          @Override
          public void onCheckedChanged(RadioGroup radioGroup,int radioButtonID) {
              String rbData = "";
              RadioButton rb;
-             String[] d_rdogrpHaveRecords = new String[] {"1"};
+             String[] d_rdogrpHaveRecords = new String[] {"1","2"};
              for (int i = 0; i < rdogrpHaveRecords.getChildCount(); i++)
              {
                rb = (RadioButton)rdogrpHaveRecords.getChildAt(i);
@@ -525,6 +503,7 @@
          VlblDidRecordMatch2 = (TextView) findViewById(R.id.VlblDidRecordMatch2);
          rdogrpDidRecordMatch2 = (RadioGroup) findViewById(R.id.rdogrpDidRecordMatch2);
          rdoDidRecordMatch21 = (RadioButton) findViewById(R.id.rdoDidRecordMatch21);
+         rdoDidRecordMatch22 = (RadioButton) findViewById(R.id.rdoDidRecordMatch22);
          secDaysOfHosp=(LinearLayout)findViewById(R.id.secDaysOfHosp);
          lineDaysOfHosp=(View)findViewById(R.id.lineDaysOfHosp);
          VlblDaysOfHosp=(TextView) findViewById(R.id.VlblDaysOfHosp);
@@ -537,6 +516,37 @@
          lineTAboIll=(View)findViewById(R.id.lineTAboIll);
          VlblTAboIll=(TextView) findViewById(R.id.VlblTAboIll);
          txtTAboIll=(EditText) findViewById(R.id.txtTAboIll);
+
+         txtDaysOfHosp.addTextChangedListener(new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+             }
+
+             @Override
+             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                 if(txtDaysOfHosp.getText().length()>0)
+                 {
+                     chkDaysOfHospDK.setChecked(false);
+                 }
+             }
+
+             @Override
+             public void afterTextChanged(Editable s) {
+
+             }
+         });
+
+         chkDaysOfHospDK.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+             @Override
+             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                 if(isChecked)
+                 {
+                     txtDaysOfHosp.setText("");
+                 }
+             }
+         });
+
      }
      catch(Exception  e)
      {
@@ -565,7 +575,7 @@
          objSave.setHouseholdSl(txtHouseholdSl.getText().toString());
          objSave.setVisitNo(txtVisitNo.getText().toString());
          objSave.setMemSl(txtMemSl.getText().toString());
-         String[] d_rdogrpHaveHosp = new String[] {"1"};
+         String[] d_rdogrpHaveHosp = new String[] {"1","2","8"};
          objSave.setHaveHosp(0);
          for (int i = 0; i < rdogrpHaveHosp.getChildCount(); i++)
          {
@@ -575,7 +585,7 @@
 
          objSave.setHospName(Integer.valueOf(spnHospName.getSelectedItemPosition() == 0 ? "0" : Connection.SelectedSpinnerValue(spnHospName.getSelectedItem().toString(), "-")));
          objSave.setHospName_Oth(txtHospName_Oth.getText().toString());
-         String[] d_rdogrpHaveRecords = new String[] {"1"};
+         String[] d_rdogrpHaveRecords = new String[] {"1","2"};
          objSave.setHaveRecords(0);
          for (int i = 0; i < rdogrpHaveRecords.getChildCount(); i++)
          {
@@ -583,7 +593,7 @@
              if (rb.isChecked()) objSave.setHaveRecords(Integer.valueOf(d_rdogrpHaveRecords[i]));
          }
 
-         String[] d_rdogrpDidRecordMatch2 = new String[] {"1"};
+         String[] d_rdogrpDidRecordMatch2 = new String[] {"1","2"};
          objSave.setDidRecordMatch2(0);
          for (int i = 0; i < rdogrpDidRecordMatch2.getChildCount(); i++)
          {
@@ -654,7 +664,7 @@
              ValidationMsg += "\nRequired field: Member Serial.";
              secMemSl.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),R.color.color_Section_Highlight));
            }
-         if(!rdoHaveHosp1.isChecked() & secHaveHosp.isShown())
+         if(!rdoHaveHosp1.isChecked() & !rdoHaveHosp2.isChecked() & !rdoHaveHosp3.isChecked() & secHaveHosp.isShown())
            {
              ValidationMsg += "\n2.19 Required field: গত এক বছরে জ্বর জনিত কোন অসুস্থতার কারনে শিশুটি হাসপাতালে ভর্তি হয়েছিল? (Did he/she have any cases of febrile illness that led to hospitalization in the past year?).";
              secHaveHosp.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),R.color.color_Section_Highlight));
@@ -669,31 +679,31 @@
              ValidationMsg += "\nRequired field: Name of the other hospital.";
              secHospName_Oth.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),R.color.color_Section_Highlight));
            }
-         if(!rdoHaveRecords1.isChecked() & secHaveRecords.isShown())
+         if(!rdoHaveRecords1.isChecked() & !rdoHaveRecords2.isChecked() & secHaveRecords.isShown())
            {
              ValidationMsg += "\n2.19.2 Required field: উত্তরদাতা কি হাসপাতালের প্রেসক্রিপশন অথবা অন্য কোন প্রমানাদি/কাগজপত্র দেখাতে পেরেছেন? (Was the respondent able to produce records of this visit?).";
              secHaveRecords.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),R.color.color_Section_Highlight));
            }
-         if(!rdoDidRecordMatch21.isChecked() & secDidRecordMatch2.isShown())
+         if(!rdoDidRecordMatch21.isChecked() & !rdoDidRecordMatch22.isChecked() & secDidRecordMatch2.isShown())
            {
              ValidationMsg += "\n2.19.3 Required field: হাসপাতালের প্রেসক্রিপশন অথবা প্রমানাদি/কাগজপত্র কি শিশু যে হাসপাতাল ভর্তি ছিল সেই হাসপাতালের?  (Did the records match the healthcare facility they stated the person was taken to?).";
              secDidRecordMatch2.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),R.color.color_Section_Highlight));
            }
-         if(txtDaysOfHosp.getText().toString().length()==0 & secDaysOfHosp.isShown())
+         if(txtDaysOfHosp.getText().toString().length()==0 & secDaysOfHosp.isShown() & !chkDaysOfHospDK.isChecked())
            {
              ValidationMsg += "\n2.19.4 Required field: শিশুটি কত দিন হাসপাতালে ভর্তি ছিল? (How many days was he/she hospitalized?).";
              secDaysOfHosp.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),R.color.color_Section_Highlight));
            }
-         if(secDaysOfHosp.isShown() & (Integer.valueOf(txtDaysOfHosp.getText().toString().length()==0 ? "1" : txtDaysOfHosp.getText().toString()) < 1 || Integer.valueOf(txtDaysOfHosp.getText().toString().length()==0 ? "99" : txtDaysOfHosp.getText().toString()) > 99))
+         if(!chkDaysOfHospDK.isChecked()&(secDaysOfHosp.isShown() & (Integer.valueOf(txtDaysOfHosp.getText().toString().length()==0 ? "1" : txtDaysOfHosp.getText().toString()) < 1 || Integer.valueOf(txtDaysOfHosp.getText().toString().length()==0 ? "99" : txtDaysOfHosp.getText().toString()) > 99)))
            {
              ValidationMsg += "\n2.19.4 Value should be between 1 and 99(শিশুটি কত দিন হাসপাতালে ভর্তি ছিল? (How many days was he/she hospitalized?)).";
              secDaysOfHosp.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),R.color.color_Section_Highlight));
            }
-         if(txtTAboIll.getText().toString().length()==0 & secTAboIll.isShown())
-           {
-             ValidationMsg += "\nRequired field: মন্তব্যঃ টাইফয়েড (Remarks:Typhoid).";
-             secTAboIll.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),R.color.color_Section_Highlight));
-           }
+//         if(txtTAboIll.getText().toString().length()==0 & secTAboIll.isShown())
+//           {
+//             ValidationMsg += "\nRequired field: মন্তব্যঃ টাইফয়েড (Remarks:Typhoid).";
+//             secTAboIll.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),R.color.color_Section_Highlight));
+//           }
      }
      catch(Exception  e)
      {
@@ -739,7 +749,7 @@
              txtHouseholdSl.setText(item.getHouseholdSl());
              txtVisitNo.setText(item.getVisitNo());
              txtMemSl.setText(item.getMemSl());
-             String[] d_rdogrpHaveHosp = new String[] {"1"};
+             String[] d_rdogrpHaveHosp = new String[] {"1","2","8"};
              for (int i = 0; i < d_rdogrpHaveHosp.length; i++)
              {
                  if (String.valueOf(item.getHaveHosp()).equals(String.valueOf(d_rdogrpHaveHosp[i])))
@@ -750,7 +760,7 @@
              }
              spnHospName.setSelection(Global.SpinnerItemPositionAnyLength(spnHospName, String.valueOf(item.getHospName())));
              txtHospName_Oth.setText(item.getHospName_Oth());
-             String[] d_rdogrpHaveRecords = new String[] {"1"};
+             String[] d_rdogrpHaveRecords = new String[] {"1","2"};
              for (int i = 0; i < d_rdogrpHaveRecords.length; i++)
              {
                  if (String.valueOf(item.getHaveRecords()).equals(String.valueOf(d_rdogrpHaveRecords[i])))
@@ -759,7 +769,7 @@
                      rb.setChecked(true);
                  }
              }
-             String[] d_rdogrpDidRecordMatch2 = new String[] {"1"};
+             String[] d_rdogrpDidRecordMatch2 = new String[] {"1","2"};
              for (int i = 0; i < d_rdogrpDidRecordMatch2.length; i++)
              {
                  if (String.valueOf(item.getDidRecordMatch2()).equals(String.valueOf(d_rdogrpDidRecordMatch2[i])))

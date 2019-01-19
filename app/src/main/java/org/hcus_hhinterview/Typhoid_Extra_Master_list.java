@@ -113,7 +113,7 @@ package org.hcus_hhinterview;
              @Override
              public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                  STRUCTURENO=Connection.SelectedSpinnerValue(spnStructureNo.getSelectedItem().toString(),"-");
-                 //DataSearch("");
+                 DataSearch(UNCODE,STRUCTURENO);
              }
 
              @Override
@@ -140,7 +140,7 @@ package org.hcus_hhinterview;
          btnRefresh.setOnClickListener(new View.OnClickListener() {
 
              public void onClick(View view) {
-                   DataSearch(txtSearch.getText().toString());
+                 DataSearch(UNCODE,STRUCTURENO);
 
              }});
 
@@ -192,17 +192,18 @@ package org.hcus_hhinterview;
      if (resultCode == Activity.RESULT_CANCELED) {
          //Write your code if there's no result
      } else {
-         DataSearch(txtSearch.getText().toString());
+//         DataSearch(txtSearch.getText().toString());
      }
  }
 
- private void DataSearch(String SearchText)
+ private void DataSearch(String uncode,String strno)
      {
        try
         {
      
            Typhoid_Extra_Master_DataModel d = new Typhoid_Extra_Master_DataModel();
-             String SQL = "Select * from "+ TableName +"  Where UNCode like('"+ SearchText +"%') or StructureNo like('"+ SearchText +"%') or HouseholdSl like('"+ SearchText +"%') or VisitNo like('"+ SearchText +"%') or MemSl like('"+ SearchText +"%')";
+//             String SQL = "Select * from "+ TableName +"  Where UNCode like('"+ SearchText +"%') or StructureNo like('"+ SearchText +"%') or HouseholdSl like('"+ SearchText +"%') or VisitNo like('"+ SearchText +"%') or MemSl like('"+ SearchText +"%')";
+             String SQL = "Select * from "+ TableName +"  Where UNCode ='"+ uncode +"' and StructureNo ='"+ strno +"'";
              List<Typhoid_Extra_Master_DataModel> data = d.SelectAll(this, SQL);
              dataList.clear();
 
@@ -225,8 +226,8 @@ package org.hcus_hhinterview;
          private List<Typhoid_Extra_Master_DataModel> dataList;
          public class MyViewHolder extends RecyclerView.ViewHolder {
          LinearLayout secListRow;
-         TextView UNCode;
-         TextView StructureNo;
+//         TextView UNCode;
+//         TextView StructureNo;
          TextView HouseholdSl;
          TextView VisitNo;
          TextView MemSl;
@@ -242,8 +243,8 @@ package org.hcus_hhinterview;
          public MyViewHolder(View convertView) {
              super(convertView);
              secListRow = (LinearLayout)convertView.findViewById(R.id.secListRow);
-             UNCode = (TextView)convertView.findViewById(R.id.UNCode);
-             StructureNo = (TextView)convertView.findViewById(R.id.StructureNo);
+//             UNCode = (TextView)convertView.findViewById(R.id.UNCode);
+//             StructureNo = (TextView)convertView.findViewById(R.id.StructureNo);
              HouseholdSl = (TextView)convertView.findViewById(R.id.HouseholdSl);
              VisitNo = (TextView)convertView.findViewById(R.id.VisitNo);
              MemSl = (TextView)convertView.findViewById(R.id.MemSl);
@@ -270,15 +271,20 @@ package org.hcus_hhinterview;
          @Override
          public void onBindViewHolder(MyViewHolder holder, int position) {
              final Typhoid_Extra_Master_DataModel data = dataList.get(position);
-             holder.UNCode.setText(data.getUNCode());
-             holder.StructureNo.setText(data.getStructureNo());
+//             holder.UNCode.setText(data.getUNCode());
+//             holder.StructureNo.setText(data.getStructureNo());
              holder.HouseholdSl.setText(data.getHouseholdSl());
              holder.VisitNo.setText(data.getVisitNo());
              holder.MemSl.setText(data.getMemSl());
              holder.HHHead.setText(data.getHHHead());
              holder.childName.setText(data.getchildName());
              holder.Age.setText(data.getAge());
-             holder.Sex.setText(data.getSex());
+             if(data.getSex().equals("1")) {
+                 holder.Sex.setText("Male");
+             }else
+             {
+                 holder.Sex.setText("Female");
+             }
              holder.Father.setText(data.getFather());
              holder.Mother.setText(data.getMother());
              holder.Holding.setText(data.getHolding());
@@ -296,9 +302,9 @@ package org.hcus_hhinterview;
                                  IDbundle.putString("HouseholdSl", data.getHouseholdSl());
                                  IDbundle.putString("VisitNo", data.getVisitNo());
                                  IDbundle.putString("MemSl", data.getMemSl());
-//                                 Intent f1 = new Intent(getApplicationContext(), Typhoid_Extra_Master.class);
-//                                 f1.putExtras(IDbundle);
-//                                 startActivityForResult(f1,1);
+                                 Intent f1 = new Intent(getApplicationContext(), Typhoid_Extra.class);
+                                 f1.putExtras(IDbundle);
+                                 startActivityForResult(f1,1);
                              } catch (Exception e) {
                              }
                              progDailog.dismiss();

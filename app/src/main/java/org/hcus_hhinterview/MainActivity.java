@@ -475,7 +475,8 @@ public class MainActivity extends AppCompatActivity
                             //Upload
 //                            List<String> tableList = ProjectSetting.TableList_Upload();
                             List<String> tableList = new ArrayList<>();
-                            tableList.add("Typhoid_Extra_Master");
+                            tableList.add("Typhoid_Extra");
+
 
 
                             //50
@@ -483,15 +484,15 @@ public class MainActivity extends AppCompatActivity
 
                             int progressCount = 50/tableList.size();
                             int count = 0;
-//                            for (int i = 0; i < tableList.size(); i++) {
-//                                try {
-//                                    C.Sync_Upload_Process(tableList.get(i).toString());
-//                                    count +=progressCount;
-//                                    onProgressUpdate(tableList.get(i).toString()+","+String.valueOf(count));
-//                                }catch(Exception ex){
-//
-//                                }
-//                            }
+                            for (int i = 0; i < tableList.size(); i++) {
+                                try {
+                                    C.Sync_Upload_Process(tableList.get(i).toString());
+                                    count +=progressCount;
+                                    onProgressUpdate(tableList.get(i).toString()+","+String.valueOf(count));
+                                }catch(Exception ex){
+
+                                }
+                            }
 
 //                            tableList.add("StructureDB");
 //                            tableList.add("StructureID_Serial");
@@ -501,6 +502,7 @@ public class MainActivity extends AppCompatActivity
 //                            tableList.add("AreaDB");
 //                            tableList.add("Cluster");
 //                            tableList.add("Immunization_List");
+                            tableList.add("Typhoid_Extra_Master");
 
                             //Download
                             //Stop download based on request : 12 Oct 2018
