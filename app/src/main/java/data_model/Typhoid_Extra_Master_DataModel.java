@@ -140,6 +140,14 @@ import android.content.Context;
         _modifyDate = newValue;
         }
 
+
+
+     private String _typhoid_extra;
+
+     public String get_typhoid_extra() {
+         return _typhoid_extra;
+     }
+
         String TableName = "Typhoid_Extra_Master";
 
         public String SaveUpdateData(Context context)
@@ -224,6 +232,8 @@ import android.content.Context;
                 d._Holding = cur.getString(cur.getColumnIndex("Holding"));
                 d._Road = cur.getString(cur.getColumnIndex("Road"));
                 d._Address = cur.getString(cur.getColumnIndex("Address"));
+                d._typhoid_extra = cur.getString(cur.getColumnIndex("typhoid_extra"));
+
                 data.add(d);
 
                 cur.moveToNext();

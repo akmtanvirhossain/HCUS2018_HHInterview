@@ -8,6 +8,7 @@ package org.hcus_hhinterview;
  import android.content.Context;
  import android.content.DialogInterface;
  import android.content.Intent;
+ import android.graphics.Color;
  import android.location.Location;
  import android.view.KeyEvent;
  import android.os.Bundle;
@@ -203,7 +204,11 @@ package org.hcus_hhinterview;
      
            Typhoid_Extra_Master_DataModel d = new Typhoid_Extra_Master_DataModel();
 //             String SQL = "Select * from "+ TableName +"  Where UNCode like('"+ SearchText +"%') or StructureNo like('"+ SearchText +"%') or HouseholdSl like('"+ SearchText +"%') or VisitNo like('"+ SearchText +"%') or MemSl like('"+ SearchText +"%')";
-             String SQL = "Select * from "+ TableName +"  Where UNCode ='"+ uncode +"' and StructureNo ='"+ strno +"'";
+//             String SQL = "Select * from "+ TableName +"  Where UNCode ='"+ uncode +"' and StructureNo ='"+ strno +"'";
+            String SQL = "Select t.*,ifnull((t.UNCode+t1.StructureNo+t1.HouseholdSl+t1.VisitNo+t1.MemSl+t1.DeviceID),'') typhoid_extra from Typhoid_Extra_Master t \n" +
+                    "left outer join Typhoid_Extra t1 on t1.UNCode=t.UNCode and t1.StructureNo=t.StructureNo and t1.HouseholdSl=t.HouseholdSl and t1.VisitNo=t.VisitNo\n" +
+                    "and t1.MemSl=t.MemSl and t1.DeviceID=t.DeviceID\n" +
+                    "  Where t.UNCode='"+uncode+"' and t.StructureNo='"+strno+"'";
              List<Typhoid_Extra_Master_DataModel> data = d.SelectAll(this, SQL);
              dataList.clear();
 
@@ -271,6 +276,7 @@ package org.hcus_hhinterview;
          @Override
          public void onBindViewHolder(MyViewHolder holder, int position) {
              final Typhoid_Extra_Master_DataModel data = dataList.get(position);
+
 //             holder.UNCode.setText(data.getUNCode());
 //             holder.StructureNo.setText(data.getStructureNo());
              holder.HouseholdSl.setText(data.getHouseholdSl());
@@ -278,7 +284,24 @@ package org.hcus_hhinterview;
              holder.MemSl.setText(data.getMemSl());
              holder.HHHead.setText(data.getHHHead());
              holder.childName.setText(data.getchildName());
-             holder.Age.setText(data.getAge());
+//             holder.Age.setText(data.getAge());
+
+             if(Integer.parseInt(data.getAge())<=60)
+             {
+                 holder.Age.setText(""+data.getAge()+" days");
+             }
+             else if(Integer.parseInt(data.getAge())>=61 & Integer.parseInt(data.getAge())<1826 )
+             {
+                 int age=(int) (Integer.parseInt(data.getAge())/30.4);
+                 holder.Age.setText(""+age+" months");
+
+             }
+             else if(Integer.parseInt(data.getAge())>=1826 & Integer.parseInt(data.getAge())<6574 )
+             {
+                 double age=(double) (Integer.parseInt(data.getAge())/365.25);
+                 holder.Age.setText(""+Math.ceil(age)+" years");
+             }
+
              if(data.getSex().equals("1")) {
                  holder.Sex.setText("Male");
              }else
@@ -290,6 +313,15 @@ package org.hcus_hhinterview;
              holder.Holding.setText(data.getHolding());
              holder.Road.setText(data.getRoad());
              holder.Address.setText(data.getAddress());
+
+             if(data.get_typhoid_extra().length()>0)
+             {
+                 holder.secListRow.setBackgroundColor(Color.GREEN);
+             }else
+             {
+                 holder.secListRow.setBackgroundColor(Color.WHITE);
+             }
+
              holder.secListRow.setOnClickListener(new View.OnClickListener() {
                  public void onClick(View v) {
                      final ProgressDialog progDailog = ProgressDialog.show(Typhoid_Extra_Master_list.this, "", "Please Wait . . .", true);

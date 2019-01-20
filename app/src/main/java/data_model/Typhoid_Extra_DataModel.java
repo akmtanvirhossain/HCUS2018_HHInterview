@@ -133,6 +133,9 @@ import android.content.Context;
         _modifyDate = newValue;
         }
 
+
+
+
         String TableName = "Typhoid_Extra";
 
         public String SaveUpdateData(Context context)
@@ -216,6 +219,7 @@ import android.content.Context;
                 d._DaysOfHosp = Integer.valueOf(cur.getString(cur.getColumnIndex("DaysOfHosp")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("DaysOfHosp")));
                 d._DaysOfHospDK = Integer.valueOf(cur.getString(cur.getColumnIndex("DaysOfHospDK")).length() == 0 ? "0" : cur.getString(cur.getColumnIndex("DaysOfHospDK")));
                 d._TAboIll = cur.getString(cur.getColumnIndex("TAboIll"));
+
                 data.add(d);
 
                 cur.moveToNext();

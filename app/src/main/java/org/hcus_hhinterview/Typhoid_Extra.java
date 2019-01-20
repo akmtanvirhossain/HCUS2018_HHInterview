@@ -742,6 +742,7 @@
            RadioButton rb;
            Typhoid_Extra_DataModel d = new Typhoid_Extra_DataModel();
            String SQL = "Select * from "+ TableName +"  Where UNCode='"+ UNCode +"' and StructureNo='"+ StructureNo +"' and HouseholdSl='"+ HouseholdSl +"' and VisitNo='"+ VisitNo +"' and MemSl='"+ MemSl +"' and DeviceId='"+DEVICEID+"'";
+
            List<Typhoid_Extra_DataModel> data = d.SelectAll(this, SQL);
            for(Typhoid_Extra_DataModel item : data){
              txtUNCode.setText(item.getUNCode());
