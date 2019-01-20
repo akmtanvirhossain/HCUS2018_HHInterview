@@ -69,13 +69,16 @@ package org.hcus_hhinterview;
     EditText txtSearch;
 
     static String STARTTIME = "";
+    static String UPAZILA = "";
     static String UNCODE = "";
+     static String CLUSTER = "";
+     static String MOHOLLA = "";
     static String STRUCTURENO = "";
     static String HOUSEHOLDSL = "";
     static String VISITNO = "";
     static String MEMSL = "";
 
-     Spinner spnUnion,spnStructureNo;
+     Spinner spnUpazila,spnUnion,spnMoholla,spnCluster,spnStructureNo;
      TextView txtTotal;
 
  public void onCreate(Bundle savedInstanceState) {
@@ -91,30 +94,22 @@ package org.hcus_hhinterview;
          lblHeading = (TextView)findViewById(R.id.lblHeading);
 
 
+         spnUpazila= (Spinner) findViewById(R.id.spnUpazila);
          spnUnion= (Spinner) findViewById(R.id.spnUnion);
+         spnMoholla= (Spinner) findViewById(R.id.spnMoholla);
+         spnCluster= (Spinner) findViewById(R.id.spnCluster);
          spnStructureNo= (Spinner) findViewById(R.id.spnStructureNo);
 
          txtTotal=findViewById(R.id.txtTotal);
 
-         spnUnion.setAdapter((C.getArrayAdapter("Select '' Union Select distinct UNCode from Typhoid_Extra_Master")));
-         spnUnion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-             @Override
-             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                 if (spnUnion.getSelectedItem().toString().length() == 0) return;
-                 UNCODE= Connection.SelectedSpinnerValue(spnUnion.getSelectedItem().toString(),"-");
-                 spnStructureNo.setAdapter((C.getArrayAdapter("Select '' Union Select distinct StructureNo from Typhoid_Extra_Master where UNCode='"+UNCODE+"'")));
 
-             }
-             @Override
-             public void onNothingSelected(AdapterView<?> parentView) {
-             }
-         });
-
-         spnStructureNo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+         spnUpazila.setAdapter((C.getArrayAdapter("Select '' Union Select distinct Upazila ||'-'|| UpName from Typhoid_Extra_Master")));
+         spnUpazila.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
              @Override
              public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                 STRUCTURENO=Connection.SelectedSpinnerValue(spnStructureNo.getSelectedItem().toString(),"-");
-                 DataSearch(UNCODE,STRUCTURENO);
+                 if (spnUpazila.getSelectedItem().toString().length() == 0) return;
+                 UPAZILA=Connection.SelectedSpinnerValue(spnUpazila.getSelectedItem().toString(),"-");
+                 spnUnion.setAdapter((C.getArrayAdapter("Select '' Union Select distinct UNCode ||'-'|| Uname from Typhoid_Extra_Master where Upazila='"+UPAZILA+"'")));
              }
 
              @Override
@@ -122,6 +117,65 @@ package org.hcus_hhinterview;
 
              }
          });
+
+
+         spnUnion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+             @Override
+             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                 if (spnUnion.getSelectedItem().toString().length() == 0) return;
+                 UNCODE= Connection.SelectedSpinnerValue(spnUnion.getSelectedItem().toString(),"-");
+                 spnMoholla.setAdapter((C.getArrayAdapter("Select '' Union Select distinct VCode ||'-'|| Vname from Typhoid_Extra_Master where Upazila='"+UPAZILA+"' and UNCode='"+UNCODE+"'")));
+                 spnCluster.setAdapter((C.getArrayAdapter("Select '' Union Select distinct Cluster from Typhoid_Extra_Master where Upazila='"+UPAZILA+"' and UNCode='"+UNCODE+"'")));
+
+             }
+             @Override
+             public void onNothingSelected(AdapterView<?> parentView) {
+             }
+         });
+
+         spnMoholla.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+             @Override
+             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                 MOHOLLA=Connection.SelectedSpinnerValue(spnMoholla.getSelectedItem().toString(),"-");
+             }
+
+             @Override
+             public void onNothingSelected(AdapterView<?> parent) {
+
+             }
+         });
+
+         spnCluster.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+             @Override
+             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                 CLUSTER=Connection.SelectedSpinnerValue(spnCluster.getSelectedItem().toString(),"-");
+                 spnStructureNo.setAdapter((C.getArrayAdapter("Select '' Union Select distinct StructureNo from Typhoid_Extra_Master where Upazila='"+UPAZILA+"' and UNCode='"+UNCODE+"' and Cluster='"+CLUSTER+"'")));
+
+             }
+
+             @Override
+             public void onNothingSelected(AdapterView<?> parent) {
+
+             }
+         });
+
+
+
+         spnStructureNo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+         @Override
+         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+             STRUCTURENO=Connection.SelectedSpinnerValue(spnStructureNo.getSelectedItem().toString(),"-");
+
+
+             DataSearch(UNCODE,STRUCTURENO);
+         }
+
+         @Override
+         public void onNothingSelected(AdapterView<?> parent) {
+
+         }
+     });
 
          ImageButton cmdBack = (ImageButton) findViewById(R.id.cmdBack);
          cmdBack.setOnClickListener(new View.OnClickListener() {
@@ -245,6 +299,8 @@ package org.hcus_hhinterview;
          TextView Holding;
          TextView Road;
          TextView Address;
+         TextView Device;
+         TextView VisitDate;
          public MyViewHolder(View convertView) {
              super(convertView);
              secListRow = (LinearLayout)convertView.findViewById(R.id.secListRow);
@@ -262,6 +318,8 @@ package org.hcus_hhinterview;
              Holding = (TextView)convertView.findViewById(R.id.Holding);
              Road = (TextView)convertView.findViewById(R.id.Road);
              Address = (TextView)convertView.findViewById(R.id.Address);
+             Device = (TextView)convertView.findViewById(R.id.Device);
+             VisitDate = (TextView)convertView.findViewById(R.id.VisitDate);
              }
          }
          public DataAdapter(List<Typhoid_Extra_Master_DataModel> datalist) {
@@ -313,6 +371,8 @@ package org.hcus_hhinterview;
              holder.Holding.setText(data.getHolding());
              holder.Road.setText(data.getRoad());
              holder.Address.setText(data.getAddress());
+             holder.Device.setText(data.get_DeviceID());
+             holder.VisitDate.setText(data.getVisitDate());
 
              if(data.get_typhoid_extra().length()>0)
              {
