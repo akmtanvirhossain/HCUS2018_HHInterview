@@ -86,23 +86,23 @@
     </LinearLayout>
     <View android:id="@+id/lineCluster" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
 
-    <LinearLayout  android:layout_marginTop="0sp" android:layout_width="fill_parent" android:gravity="start" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowHeading">
-        <TextView
-            android:text="Structure No"
-            android:layout_width="200sp"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:id="@+id/tvStructureNo"
-            android:paddingLeft="10sp"/>
+    <!--<LinearLayout  android:layout_marginTop="0sp" android:layout_width="fill_parent" android:gravity="start" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowHeading">-->
+        <!--<TextView-->
+            <!--android:text="Structure No"-->
+            <!--android:layout_width="200sp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="20sp"-->
+            <!--android:id="@+id/tvStructureNo"-->
+            <!--android:paddingLeft="10sp"/>-->
 
-        <Spinner
-            android:id="@+id/spnStructureNo"
-            android:layout_width="300sp"
-            android:layout_height="wrap_content"
-            android:drawSelectorOnTop="true"
-            android:textSize="20sp" />
-    </LinearLayout>
-    <View android:id="@+id/lineStructure" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+        <!--<Spinner-->
+            <!--android:id="@+id/spnStructureNo"-->
+            <!--android:layout_width="300sp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:drawSelectorOnTop="true"-->
+            <!--android:textSize="20sp" />-->
+    <!--</LinearLayout>-->
+    <!--<View android:id="@+id/lineStructure" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />-->
 
 
 
@@ -112,10 +112,10 @@
             style="@style/icddrb_search_edittext"
             android:layout_width="300dp" android:layout_toRightOf="@+id/spnSearch"
             android:layout_height="40dp" android:layout_marginBottom="10dp"
-            android:inputType="textCapCharacters" android:hint="UNCODE, STRUCTURENO, HOUSEHOLDSL, VISITNO, MEMSL"
+            android:inputType="textCapCharacters" android:hint="STRUCTURENO"
             android:maxLength="100" android:layout_marginRight="30dp"
             android:textSize="18sp" android:padding="10dp" android:layout_marginTop="10dp"/>
-        <Button android:id="@+id/btnRefresh" android:textAllCaps="false" android:background="@drawable/button_style_circle_line" android:textSize="18sp" android:textColor="@color/theme_color"
+        <Button android:id="@+id/btnRefresh" android:visibility="invisible" android:textAllCaps="false" android:background="@drawable/button_style_circle_line" android:textSize="18sp" android:textColor="@color/theme_color"
             android:layout_width="wrap_content" android:layout_height="30sp" android:layout_marginTop="5dip" android:layout_marginBottom="10sp" android:text=" Refresh " android:paddingLeft="5sp" android:paddingRight="5sp"/>
         <Button android:id="@+id/btnAdd" android:textAllCaps="false" android:layout_marginLeft="20sp" android:layout_marginRight="20sp"  android:textSize="18sp" android:textColor="@color/theme_color"
             android:background="@drawable/button_style_circle_line" android:layout_width="wrap_content" android:layout_height="30sp" android:layout_marginTop="5dip" android:layout_marginBottom="10sp" android:text=" + New " android:paddingLeft="5sp" android:paddingRight="5sp"/>

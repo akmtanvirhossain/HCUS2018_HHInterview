@@ -10,6 +10,8 @@ package org.hcus_hhinterview;
  import android.content.Intent;
  import android.graphics.Color;
  import android.location.Location;
+ import android.text.Editable;
+ import android.text.TextWatcher;
  import android.view.KeyEvent;
  import android.os.Bundle;
  import android.view.View;
@@ -78,7 +80,7 @@ package org.hcus_hhinterview;
     static String VISITNO = "";
     static String MEMSL = "";
 
-     Spinner spnUpazila,spnUnion,spnMoholla,spnCluster,spnStructureNo;
+     Spinner spnUpazila,spnUnion,spnMoholla,spnCluster;//,spnStructureNo;
      TextView txtTotal;
 
  public void onCreate(Bundle savedInstanceState) {
@@ -98,7 +100,7 @@ package org.hcus_hhinterview;
          spnUnion= (Spinner) findViewById(R.id.spnUnion);
          spnMoholla= (Spinner) findViewById(R.id.spnMoholla);
          spnCluster= (Spinner) findViewById(R.id.spnCluster);
-         spnStructureNo= (Spinner) findViewById(R.id.spnStructureNo);
+//         spnStructureNo= (Spinner) findViewById(R.id.spnStructureNo);
 
          txtTotal=findViewById(R.id.txtTotal);
 
@@ -149,8 +151,8 @@ package org.hcus_hhinterview;
              @Override
              public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                  CLUSTER=Connection.SelectedSpinnerValue(spnCluster.getSelectedItem().toString(),"-");
-                 spnStructureNo.setAdapter((C.getArrayAdapter("Select '' Union Select distinct StructureNo from Typhoid_Extra_Master where Upazila='"+UPAZILA+"' and UNCode='"+UNCODE+"' and Cluster='"+CLUSTER+"'")));
-
+//                 spnStructureNo.setAdapter((C.getArrayAdapter("Select '' Union Select distinct StructureNo from Typhoid_Extra_Master where Upazila='"+UPAZILA+"' and UNCode='"+UNCODE+"' and Cluster='"+CLUSTER+"'")));
+                 DataSearch("");
              }
 
              @Override
@@ -161,21 +163,21 @@ package org.hcus_hhinterview;
 
 
 
-         spnStructureNo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-         @Override
-         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-             STRUCTURENO=Connection.SelectedSpinnerValue(spnStructureNo.getSelectedItem().toString(),"-");
-
-
-             DataSearch(UNCODE,STRUCTURENO);
-         }
-
-         @Override
-         public void onNothingSelected(AdapterView<?> parent) {
-
-         }
-     });
+//         spnStructureNo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//         @Override
+//         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//
+//             STRUCTURENO=Connection.SelectedSpinnerValue(spnStructureNo.getSelectedItem().toString(),"-");
+//
+//
+//             DataSearch(UNCODE,STRUCTURENO);
+//         }
+//
+//         @Override
+//         public void onNothingSelected(AdapterView<?> parent) {
+//
+//         }
+//     });
 
          ImageButton cmdBack = (ImageButton) findViewById(R.id.cmdBack);
          cmdBack.setOnClickListener(new View.OnClickListener() {
@@ -195,7 +197,7 @@ package org.hcus_hhinterview;
          btnRefresh.setOnClickListener(new View.OnClickListener() {
 
              public void onClick(View view) {
-                 DataSearch(UNCODE,STRUCTURENO);
+                 DataSearch("");
 
              }});
 
@@ -215,6 +217,27 @@ package org.hcus_hhinterview;
 
              }});
         txtSearch = (EditText)findViewById(R.id.txtSearch);
+
+
+        txtSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(txtSearch.getText().length()!=0)
+                {
+                    DataSearch(txtSearch.getText().toString());
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
 
         recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
@@ -251,7 +274,7 @@ package org.hcus_hhinterview;
      }
  }
 
- private void DataSearch(String uncode,String strno)
+ private void DataSearch(String SearchText)
      {
        try
         {
@@ -262,7 +285,7 @@ package org.hcus_hhinterview;
             String SQL = "Select t.*,ifnull((t.UNCode+t1.StructureNo+t1.HouseholdSl+t1.VisitNo+t1.MemSl+t1.DeviceID),'') typhoid_extra from Typhoid_Extra_Master t \n" +
                     "left outer join Typhoid_Extra t1 on t1.UNCode=t.UNCode and t1.StructureNo=t.StructureNo and t1.HouseholdSl=t.HouseholdSl and t1.VisitNo=t.VisitNo\n" +
                     "and t1.MemSl=t.MemSl and t1.DeviceID=t.DeviceID\n" +
-                    "  Where t.UNCode='"+uncode+"' and t.StructureNo='"+strno+"'";
+                    "  Where t.Upazila='"+UPAZILA+"' and t.UNCode='"+UNCODE+"' and t. t.Cluster='"+CLUSTER+"' and t.StructureNo like '"+SearchText+"%' order by t.StructureNo,t.DeviceID,t.HouseholdSl";
              List<Typhoid_Extra_Master_DataModel> data = d.SelectAll(this, SQL);
              dataList.clear();
 
