@@ -227,10 +227,7 @@ package org.hcus_hhinterview;
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(txtSearch.getText().length()!=0)
-                {
-                    DataSearch(txtSearch.getText().toString());
-                }
+                DataSearch(txtSearch.getText().toString());
             }
 
             @Override
