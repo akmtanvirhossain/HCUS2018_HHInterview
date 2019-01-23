@@ -282,7 +282,7 @@ public class Global {
 		try {
 			VD = sdf.parse(Global.DateConvertYMD(EndDateDDMMYYYY));
 			BD = sdf.parse(Global.DateConvertYMD(StartDateDDMMYYYY));
-			diffInDays = (int) ((VD.getTime() - BD.getTime())/ (1000 * 60 * 60 * 24));
+			diffInDays = (int) (VD.getTime() - BD.getTime())/ (1000 * 60 * 60 * 24);
 			//age = (int)(diffInDays/365.25);
 		} catch (ParseException e) {
 			e.printStackTrace();

@@ -286,7 +286,7 @@ package org.hcus_hhinterview;
          public class MyViewHolder extends RecyclerView.ViewHolder {
          LinearLayout secListRow;
 //         TextView UNCode;
-//         TextView StructureNo;
+         TextView StructureNo;
          TextView HouseholdSl;
          TextView VisitNo;
          TextView MemSl;
@@ -294,8 +294,7 @@ package org.hcus_hhinterview;
          TextView childName;
          TextView Age;
          TextView Sex;
-         TextView Father;
-         TextView Mother;
+         TextView Member;
          TextView Holding;
          TextView Road;
          TextView Address;
@@ -305,7 +304,7 @@ package org.hcus_hhinterview;
              super(convertView);
              secListRow = (LinearLayout)convertView.findViewById(R.id.secListRow);
 //             UNCode = (TextView)convertView.findViewById(R.id.UNCode);
-//             StructureNo = (TextView)convertView.findViewById(R.id.StructureNo);
+             StructureNo = (TextView)convertView.findViewById(R.id.StructureNo);
              HouseholdSl = (TextView)convertView.findViewById(R.id.HouseholdSl);
              VisitNo = (TextView)convertView.findViewById(R.id.VisitNo);
              MemSl = (TextView)convertView.findViewById(R.id.MemSl);
@@ -313,8 +312,7 @@ package org.hcus_hhinterview;
              childName = (TextView)convertView.findViewById(R.id.childName);
              Age = (TextView)convertView.findViewById(R.id.Age);
              Sex = (TextView)convertView.findViewById(R.id.Sex);
-             Father = (TextView)convertView.findViewById(R.id.Father);
-             Mother = (TextView)convertView.findViewById(R.id.Mother);
+             Member = (TextView)convertView.findViewById(R.id.Member);
              Holding = (TextView)convertView.findViewById(R.id.Holding);
              Road = (TextView)convertView.findViewById(R.id.Road);
              Address = (TextView)convertView.findViewById(R.id.Address);
@@ -336,7 +334,7 @@ package org.hcus_hhinterview;
              final Typhoid_Extra_Master_DataModel data = dataList.get(position);
 
 //             holder.UNCode.setText(data.getUNCode());
-//             holder.StructureNo.setText(data.getStructureNo());
+             holder.StructureNo.setText(data.getStructureNo());
              holder.HouseholdSl.setText(data.getHouseholdSl());
              holder.VisitNo.setText(data.getVisitNo());
              holder.MemSl.setText(data.getMemSl());
@@ -366,13 +364,14 @@ package org.hcus_hhinterview;
              {
                  holder.Sex.setText("Female");
              }
-             holder.Father.setText(data.getFather());
-             holder.Mother.setText(data.getMother());
+
+             holder.Member.setText(data.getMember());
              holder.Holding.setText(data.getHolding());
              holder.Road.setText(data.getRoad());
              holder.Address.setText(data.getAddress());
              holder.Device.setText(data.get_DeviceID());
-             holder.VisitDate.setText(data.getVisitDate());
+             holder.VisitDate.setText(Global.Left(data.getVisitDate(),10));
+
 
              if(data.get_typhoid_extra().length()>0)
              {
