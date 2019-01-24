@@ -282,7 +282,7 @@ package org.hcus_hhinterview;
             String SQL = "Select t.*,ifnull((t.UNCode+t1.StructureNo+t1.HouseholdSl+t1.VisitNo+t1.MemSl+t1.DeviceID),'') typhoid_extra from Typhoid_Extra_Master t \n" +
                     "left outer join Typhoid_Extra t1 on t1.UNCode=t.UNCode and t1.StructureNo=t.StructureNo and t1.HouseholdSl=t.HouseholdSl and t1.VisitNo=t.VisitNo\n" +
                     "and t1.MemSl=t.MemSl and t1.DeviceID=t.DeviceID\n" +
-                    "  Where t.Upazila='"+UPAZILA+"' and t.UNCode='"+UNCODE+"' and t. t.Cluster='"+CLUSTER+"' and t.StructureNo like '"+SearchText+"%' order by t.StructureNo,t.DeviceID,t.HouseholdSl";
+                    "  Where t.Upazila='"+UPAZILA+"' and t.UNCode='"+UNCODE+"' and t.Cluster='"+CLUSTER+"' and t.StructureNo like '"+SearchText+"%' order by t.StructureNo,t.DeviceID,t.HouseholdSl";
              List<Typhoid_Extra_Master_DataModel> data = d.SelectAll(this, SQL);
              dataList.clear();
 
