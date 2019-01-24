@@ -150,6 +150,14 @@
     View lineDaysOfHospDK;
     TextView VlblDaysOfHospDK;
     CheckBox chkDaysOfHospDK;
+
+     LinearLayout secPhone;
+     View linePhone;
+     TextView VlblPhone;
+     EditText txtPhone;
+
+     TextView txtChildName;
+
     LinearLayout secTAboIll;
     View lineTAboIll;
     TextView VlblTAboIll;
@@ -170,6 +178,7 @@
     static String HOUSEHOLDSL = "";
     static String VISITNO = "";
     static String MEMSL = "";
+    static String CHILDNAME = "";
 
  public void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -182,7 +191,7 @@
          g = Global.getInstance();
 
          STARTTIME = g.CurrentTime24();
-         DEVICEID  = sp.getValue(this, "deviceid");
+//         DEVICEID  = sp.getValue(this, "deviceid");
          ENTRYUSER = sp.getValue(this, "userid");
 
          IDbundle = getIntent().getExtras();
@@ -191,6 +200,12 @@
          HOUSEHOLDSL = IDbundle.getString("HouseholdSl");
          VISITNO = IDbundle.getString("VisitNo");
          MEMSL = IDbundle.getString("MemSl");
+         DEVICEID = IDbundle.getString("DeviceID");
+         CHILDNAME = IDbundle.getString("ChildName");
+
+         txtChildName=findViewById(R.id.txtChildName);
+         txtChildName.setText(CHILDNAME);
+         txtChildName.setEnabled(false);
 
          TableName = "Typhoid_Extra";
          MODULEID = 0;
@@ -425,11 +440,11 @@
          List<String> listHospName = new ArrayList<String>();
          
          listHospName.add("");
-         listHospName.add("01-Dhaka Shishu Hospital");
-         listHospName.add("02-Dr. M. R. Khan Hospital");
-         listHospName.add("03-Popular Diagnostic Center Dhanmondi");
-         listHospName.add("04-Popular Diagnostic Center Mirpur");
-         listHospName.add("05-Popular Diagnostic Center Shyamoli");
+         listHospName.add("1-Dhaka Shishu Hospital");
+         listHospName.add("2-Dr. M. R. Khan Hospital");
+         listHospName.add("3-Popular Diagnostic Center Dhanmondi");
+         listHospName.add("4-Popular Diagnostic Center Mirpur");
+         listHospName.add("5-Popular Diagnostic Center Shyamoli");
          listHospName.add("77-Other");
          ArrayAdapter<String> adptrHospName= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listHospName);
          spnHospName.setAdapter(adptrHospName);
@@ -512,6 +527,12 @@
          lineDaysOfHospDK=(View)findViewById(R.id.lineDaysOfHospDK);
          VlblDaysOfHospDK=(TextView) findViewById(R.id.VlblDaysOfHospDK);
          chkDaysOfHospDK=(CheckBox) findViewById(R.id.chkDaysOfHospDK);
+
+         secPhone=(LinearLayout)findViewById(R.id.secPhone);
+         linePhone=(View)findViewById(R.id.linePhone);
+         VlblPhone=(TextView) findViewById(R.id.VlblPhone);
+         txtPhone=(EditText) findViewById(R.id.txtPhone);
+
          secTAboIll=(LinearLayout)findViewById(R.id.secTAboIll);
          lineTAboIll=(View)findViewById(R.id.lineTAboIll);
          VlblTAboIll=(TextView) findViewById(R.id.VlblTAboIll);
@@ -603,6 +624,7 @@
 
          objSave.setDaysOfHosp(Integer.valueOf(txtDaysOfHosp.getText().toString().length()==0?"0":txtDaysOfHosp.getText().toString()));
          objSave.setDaysOfHospDK(Integer.valueOf(chkDaysOfHospDK.isChecked()?"1":(secDaysOfHospDK.isShown()?"2":"0")));
+         objSave.setPhone(txtPhone.getText().toString());
          objSave.setTAboIll(txtTAboIll.getText().toString());
          objSave.setEnDt(Global.DateTimeNowYMDHMS());
          objSave.setStartTime(STARTTIME);
@@ -699,6 +721,11 @@
              ValidationMsg += "\n2.19.4 Value should be between 1 and 99(শিশুটি কত দিন হাসপাতালে ভর্তি ছিল? (How many days was he/she hospitalized?)).";
              secDaysOfHosp.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),R.color.color_Section_Highlight));
            }
+//         if(txtPhone.getText().toString().length()==0 & secPhone.isShown())
+//         {
+//             ValidationMsg += "\nRequired field: Phone Number.";
+//             secPhone.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),R.color.color_Section_Highlight));
+//         }
 //         if(txtTAboIll.getText().toString().length()==0 & secTAboIll.isShown())
 //           {
 //             ValidationMsg += "\nRequired field: মন্তব্যঃ টাইফয়েড (Remarks:Typhoid).";

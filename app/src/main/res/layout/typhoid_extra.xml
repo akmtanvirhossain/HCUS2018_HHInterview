@@ -47,6 +47,14 @@
                 <EditText android:id="@+id/txtMemSl" android:maxLength="2" android:layout_width="250sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
             </LinearLayout>
             <View android:id="@+id/lineMemSl" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+
+            <LinearLayout android:id="@+id/secChildName" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+                <TextView android:id="@+id/lblChildName" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <TextView android:id="@+id/VlblChildName" android:text="ChildName" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <EditText android:id="@+id/txtChildName"  android:layout_width="250sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+            </LinearLayout>
+            <View android:id="@+id/lineChildName" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+
             <LinearLayout android:id="@+id/secHaveHosp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
                 <TextView android:id="@+id/lblHaveHosp" android:text="2.19" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
                 <TextView android:id="@+id/VlblHaveHosp" android:text="গত এক বছরে জ্বর জনিত কোন অসুস্থতার কারনে শিশুটি হাসপাতালে ভর্তি হয়েছিল? (Did he/she have any cases of febrile illness that led to hospitalization in the past year?)" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
@@ -107,6 +115,14 @@
                 <CheckBox android:id="@+id/chkDaysOfHospDK" android:layout_width="50sp" android:inputType="text" android:layout_height="wrap_content" android:layout_marginRight="10sp" android:textSize="20sp" />
             </LinearLayout>
             <View android:id="@+id/lineDaysOfHospDK" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+
+            <LinearLayout android:id="@+id/secPhone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
+                <TextView android:id="@+id/lblPhone" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <TextView android:id="@+id/VlblPhone" android:text="Phone Number" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <EditText android:id="@+id/txtPhone" android:maxLength="11" android:layout_width="250sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
+            </LinearLayout>
+            <View android:id="@+id/linePhone" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
+
             <LinearLayout android:id="@+id/secTAboIll" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
                 <TextView android:id="@+id/lblTAboIll" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
                 <TextView android:id="@+id/VlblTAboIll" android:text="মন্তব্যঃ টাইফয়েড (Remarks:Typhoid)" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />

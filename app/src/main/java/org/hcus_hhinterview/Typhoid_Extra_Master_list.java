@@ -267,7 +267,7 @@ package org.hcus_hhinterview;
      if (resultCode == Activity.RESULT_CANCELED) {
          //Write your code if there's no result
      } else {
-//         DataSearch(txtSearch.getText().toString());
+         DataSearch(txtSearch.getText().toString());
      }
  }
 
@@ -413,6 +413,8 @@ package org.hcus_hhinterview;
                                  IDbundle.putString("HouseholdSl", data.getHouseholdSl());
                                  IDbundle.putString("VisitNo", data.getVisitNo());
                                  IDbundle.putString("MemSl", data.getMemSl());
+                                 IDbundle.putString("DeviceID", data.get_DeviceID());
+                                 IDbundle.putString("ChildName", data.getchildName());
                                  Intent f1 = new Intent(getApplicationContext(), Typhoid_Extra.class);
                                  f1.putExtras(IDbundle);
                                  startActivityForResult(f1,1);
