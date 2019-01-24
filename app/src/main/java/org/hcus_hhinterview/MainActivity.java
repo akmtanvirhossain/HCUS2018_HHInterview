@@ -509,7 +509,7 @@ public class MainActivity extends AppCompatActivity
                             progressCount = 50/tableList.size();
                             for (int i = 0; i < tableList.size(); i++) {
                                 try {
-                                    C.Sync_Download(tableList.get(i).toString(), DEVICEID,"DeviceId='"+ DEVICEID +"'");
+                                    C.Sync_Download(tableList.get(i).toString(), "","");
                                     count +=progressCount;
                                     onProgressUpdate(tableList.get(i).toString()+","+String.valueOf(count));
                                 }catch(Exception ex){

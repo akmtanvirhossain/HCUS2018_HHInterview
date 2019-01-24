@@ -71,7 +71,7 @@
             <View android:id="@+id/lineHospNameLabel" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
             <LinearLayout android:id="@+id/secHospName" android:paddingBottom="5sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
                 <TextView android:id="@+id/lblHospName" android:text="2.19.1" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-                <TextView android:id="@+id/VlblHospName" android:text="শিশুকে কোন হাসপাতালে ভর্তি করেছিলেন? (What hospital was he/she taken to?)" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <TextView android:id="@+id/VlblHospName" android:paddingBottom="10sp" android:text="শিশুকে কোন হাসপাতালে ভর্তি করেছিলেন? (What hospital was he/she taken to?)" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
                 <Spinner android:id="@+id/spnHospName" android:drawSelectorOnTop="true" android:layout_width="250sp" android:layout_height="wrap_content" android:layout_weight="0" android:prompt="@string/planet_prompt" android:textSize="20sp" />
             </LinearLayout>
             <View android:id="@+id/lineHospName" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />
@@ -125,7 +125,7 @@
 
             <LinearLayout android:id="@+id/secTAboIll" android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal" style="@style/rowStyle0">
                 <TextView android:id="@+id/lblTAboIll" android:text="" android:layout_width="40sp" android:layout_height="wrap_content" android:textSize="20sp" />
-                <TextView android:id="@+id/VlblTAboIll" android:text="মন্তব্যঃ টাইফয়েড (Remarks:Typhoid)" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
+                <TextView android:id="@+id/VlblTAboIll" android:paddingBottom="5sp" android:text="মন্তব্যঃ টাইফয়েড (Remarks:Typhoid)" android:layout_width="250sp" android:layout_height="wrap_content" android:textSize="20sp" />
                 <EditText android:id="@+id/txtTAboIll" android:maxLength="300" android:layout_width="250sp" android:inputType="text" android:layout_height="wrap_content" style="@style/customEdit" android:layout_marginRight="10sp" android:textSize="20sp" />
             </LinearLayout>
             <View android:id="@+id/lineTAboIll" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#CCCCCC" />

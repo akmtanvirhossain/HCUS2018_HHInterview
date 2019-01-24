@@ -1981,7 +1981,7 @@ public class Connection extends SQLiteOpenHelper {
 //            C.Sync_Download("StructureIDSlot", UniqueID, "");
 //            C.Sync_Download("StructureID_Serial", UniqueID, "");
 //            C.Sync_Download("Immunization_List", UniqueID, "");
-            C.Sync_Download("Typhoid_Extra_Master", UniqueID, "");
+            C.Sync_Download("Typhoid_Extra_Master", "", "");
 
             //Sync_Download
             // Parameter 1: table Name
