@@ -815,6 +815,7 @@
              {
                 chkDaysOfHospDK.setChecked(false);
              }
+               txtPhone.setText(item.getPhone());
              txtTAboIll.setText(item.getTAboIll());
            }
         }

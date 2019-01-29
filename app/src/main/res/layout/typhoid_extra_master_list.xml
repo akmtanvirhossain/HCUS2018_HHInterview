@@ -10,7 +10,7 @@
         <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal">
             <ImageButton android:id="@+id/cmdBack" android:background="@color/pageHeadingBack" android:src="@drawable/back" android:layout_width="50sp" android:layout_height="match_parent"/>
             <TextView android:id="@+id/lblHeading" android:text="Typhoid Extra Master"  android:paddingLeft="10sp" android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center_vertical" android:textSize="20sp" android:textColor="@color/pageHeading"/>
-            <TextView android:id="@+id/txtTotal" android:gravity="right" android:paddingRight="30sp" android:text="Total No:" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="20sp" android:textColor="#ffffff" />
+            <TextView android:id="@+id/txtTotal" android:gravity="right" android:paddingRight="30sp" android:text="Total: " android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="20sp" android:textColor="#ffffff" />
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
 

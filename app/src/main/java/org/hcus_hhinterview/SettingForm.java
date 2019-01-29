@@ -39,7 +39,7 @@ public class SettingForm extends Activity {
             }
 
             final Spinner spnUser = (Spinner)findViewById(R.id.spnUser);
-            SpinnerItem(spnUser, "select DeviceId+'-'+DeviceName from DeviceList order by DeviceId");
+            SpinnerItem(spnUser, "select DeviceId+'-'+DeviceName from DeviceList where setting=1 order by DeviceId");
 
             Button cmdSave = (Button)findViewById(R.id.cmdSave);
             cmdSave.setOnClickListener(new View.OnClickListener() {

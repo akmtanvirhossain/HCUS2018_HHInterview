@@ -289,6 +289,7 @@ package org.hcus_hhinterview;
              dataList.addAll(data);
              try {
                  mAdapter.notifyDataSetChanged();
+                 txtTotal.setText("Total: "+ dataList.size());
              }catch ( Exception ex){
                  Connection.MessageBox(Typhoid_Extra_Master_list.this,ex.getMessage());
              }
@@ -354,7 +355,7 @@ package org.hcus_hhinterview;
              final Typhoid_Extra_Master_DataModel data = dataList.get(position);
 
 //             holder.UNCode.setText(data.getUNCode());
-             holder.StructureNo.setText(data.getStructureNo());
+             holder.StructureNo.setText(data.getStructureNo()+" HH#: "+ data.getHouseholdSl());
              holder.HouseholdSl.setText(data.getHouseholdSl());
              holder.VisitNo.setText(data.getVisitNo());
              holder.MemSl.setText(data.getMemSl());
@@ -362,19 +363,19 @@ package org.hcus_hhinterview;
              holder.childName.setText(data.getchildName());
 //             holder.Age.setText(data.getAge());
 
-             if(Integer.parseInt(data.getAge())<=60)
+             if((int)Double.parseDouble(data.getAge())<=60)
              {
-                 holder.Age.setText(""+data.getAge()+" days");
+                 holder.Age.setText(""+ data.getAge() +" days");
              }
-             else if(Integer.parseInt(data.getAge())>=61 & Integer.parseInt(data.getAge())<1826 )
+             else if((int)Double.parseDouble(data.getAge())>=61 & (int)Double.parseDouble(data.getAge())<1826 )
              {
-                 int age=(int) (Integer.parseInt(data.getAge())/30.4);
-                 holder.Age.setText(""+age+" months");
+                 int age=(int) (((int)Double.parseDouble(data.getAge()))/30.4);
+                 holder.Age.setText(""+ age +" months");
 
              }
-             else if(Integer.parseInt(data.getAge())>=1826 & Integer.parseInt(data.getAge())<6574 )
+             else if((int)Double.parseDouble(data.getAge())>=1826 & (int)Double.parseDouble(data.getAge())<6574 )
              {
-                 double age=(double) (Integer.parseInt(data.getAge())/365.25);
+                 double age=(double) (((int)Double.parseDouble(data.getAge()))/365.25);
                  holder.Age.setText(""+Math.ceil(age)+" years");
              }
 
@@ -390,7 +391,7 @@ package org.hcus_hhinterview;
              holder.Road.setText(data.getRoad());
              holder.Address.setText(data.getAddress());
              holder.Device.setText(data.get_DeviceID());
-             holder.VisitDate.setText(Global.Left(data.getVisitDate(),10));
+             holder.VisitDate.setText(Global.DateConvertDMY(Global.Left(data.getVisitDate(),10)));
 
 
              if(data.get_typhoid_extra().length()>0)

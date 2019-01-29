@@ -1119,11 +1119,6 @@ public class Connection extends SQLiteOpenHelper {
             });
             final List<String> tableList = new ArrayList<String>();
             tableList.add("DataCollector");
-//            tableList.add("AreaDB");
-//            tableList.add("StructureDB");
-//            tableList.add("StructureID_Serial");
-//            tableList.add("StructureIDSlot");
-//            tableList.add("StructureListing");
             tableList.add("Typhoid_Extra_Master");
             int progressCount = 100/tableList.size();
 
@@ -1971,7 +1966,7 @@ public class Connection extends SQLiteOpenHelper {
             //Reqular data sync
             //--------------------------------------------------------------------------------------
             C.Sync_DatabaseStructure(UniqueID);
-//            C.Sync_Download("DataCollector", UniqueID, "");
+            C.Sync_Download("DataCollector", UniqueID, "");
 
 //            C.Sync_Download("module_variable", UniqueID, "");
 //            C.Sync_Download("StructureListing", UniqueID, "");
